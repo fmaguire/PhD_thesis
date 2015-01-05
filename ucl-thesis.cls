@@ -75,12 +75,12 @@
 		          {Size={10-13.0}, Font=*},
 		          {Size={13.01-19.9}, Font=* Subhead, Ligatures=Rare, Contextuals={Swash,Alternate}},
 		       {Size={19.91-},Font=* Display, Ligatures=Rare, Contextuals={Swash,Alternate}}}]
-			  {ArnoPro}  
+			  {Arno Pro}  
 %Set fonts for Mac Specific (Comment out on Windows XP)
 %\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Helvetica Neue} 
 %\setmonofont[Scale=MatchLowercase]{Consolas}
-\setmathsfont(Digits,Latin,Greek)[Numbers={OldStyle,Proportional}]{ArnoPro} 
-\setmathrm{ArnoPro}
+\setmathsfont(Digits,Latin,Greek)[Numbers={OldStyle,Proportional}]{Arno Pro} 
+\setmathrm{Arno Pro}
 
 % Colors
 %\RequirePackage[usenames,dvipsnames]{xcolor}
@@ -122,7 +122,7 @@
 	in partial fulfillment of the requirements\\ 
 	for the degree of\\ \@degree\\ 
 	\vspace*{\fill}
-	\includegraphics{front_material/NavyBlueu}\\
+    \includegraphics{front_material/NavyBlueu}\\
 	\vspace{12pt}
 	\@university\\ \@universitycity, \@universitycountry\\ 
 	\@degreemonth\ \@degreeyear
@@ -143,7 +143,7 @@
 \newcommand{\abstractpage}{
 	\newpage
 	\pagestyle{fancy}
-	\lhead{Thesis advisor: \@advisor} \rhead{\@author}
+	\lhead{Thesis advisors: \@advisor} \rhead{\@author}
 	\renewcommand{\headrulewidth}{0.0pt} 
 	\begin{center}
 	\vspace*{1pt}
@@ -165,20 +165,12 @@
 }
 
 % Acknowledgments page
-\newcommand{\acknowledgments}{
-	\chapter*{Acknowledgments}
+\newcommand{\acknowledgements}{
+	\chapter*{Acknowledgements}
 	\noindent
 	\input{front_material/thanks}
 	\vspace*{\fill} 
 	\newpage
-}
-
-% Quote page
-\newcommand{\quote}{
-    \pagestyle{fancy}
-	\newpage \thispagestyle{fancy} \vspace*{\fill}
-    \sc \noindent \input{front_material/quote}
-	\vspace*{\fill} \newpage \rm
 }
 
 % An environment for paragraph-style section
