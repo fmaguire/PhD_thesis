@@ -173,6 +173,16 @@
 	\newpage
 }
 
+%authorlist page
+\newcommand{\authorlist}{
+    \pagestyle{fancy}
+    \newpage
+    \thispagestyle{fancy}
+    \chapter*{Author List}
+    \noindent \input{front_material/authorlist}
+    \newpage \rm
+}
+
 % An environment for paragraph-style section
 \providecommand\newthought[1]{
    \addvspace{1.0\baselineskip plus 0.5ex minus 0.2ex}%

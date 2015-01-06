@@ -18,19 +18,23 @@ all: $(THESIS).pdf
 # -pdf tells latexmk to generate a pdf directly
 # -pdflatex="xelatex" tell latexmk to use xelatex backend
 
-$(THESIS).pdf: $(THESIS).tex install
+$(THESIS).pdf: $(THESIS).tex 
 	latexmk $(LATEXOPTS) $(LATEX) -use-make $(THESIS).tex
 
-packages:
-	cp $(TYPESETS)/texmf/* $(TEXMF)
-	#export TEXINPUTS=.:./typesetting/texmf
-
-fonts:
-	cp $(TYPESETS)/fonts/* $(FONTDIR)
-
-install: packages fonts
-	touch $(TYPESETS)/install_marker
+#packages:
+#	cp $(TYPESETS)/texmf/* $(TEXMF)
+#	#export TEXINPUTS=.:./typesetting/texmf
+#
+#fonts:
+#	cp $(TYPESETS)/fonts/* $(FONTDIR)
+#
+#install: packages fonts
+#	touch $(TYPESETS)/install_marker
 
 clean:
+	latexmk -c
+	-@rm -v *pdfsync *synctex.gz *.fls
+
+reset:
 	latexmk -CA
-	rm *pdfsync *synctex.gz 
+	-@rm -v *pdfsync *synctex.gz *.fls
