@@ -1,8 +1,8 @@
 # variables
 
 THESIS := thesis
-LATEX := -xelatex
-LATEXOPTS := -pdf
+LATEX := xelatex
+LATEXOPTS := pdf
 TYPESETS := ./typesetting
 FONTDIR := ~/.fonts
 TEXMF := ~/texmf
@@ -19,7 +19,7 @@ all: $(THESIS).pdf
 # -pdflatex="xelatex" tell latexmk to use xelatex backend
 
 $(THESIS).pdf: $(THESIS).tex 
-	latexmk $(LATEXOPTS) $(LATEX) -use-make $(THESIS).tex
+	latexmk -$(LATEXOPTS) -$(LATEX) --halt-on-error -use-make $(THESIS).tex
 
 #packages:
 #	cp $(TYPESETS)/texmf/* $(TEXMF)

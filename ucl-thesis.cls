@@ -1,17 +1,18 @@
-% -------------------------------------------------------------------
+%% -------------------------------------------------------------------
 %  @LaTeX-class-file{
 %     filename        = "ucl-thesis.cls",
 %     version         = "0.5",
 %     date            = "27 September 2014",
 %     codetable       = "ISO/ASCII",
 %     keywords        = "LaTeX, ucl-thesis, harvard-thesis",
-%     supported       = "send email to pim.messelink.10@ucl.ac.uk",
+%     supported       = "send email to pim.messelink.10@ucl.ac.uk or root@finlaymagui.re",
 %     docstring       = "A thesis class for a UCL dissertation."
 % --------------------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{ucl-thesis}[2014/09/27 v0.5 University College London Thesis Class]
-\LoadClass[12pt, oneside, a4paper]{book}
+\ProvidesClass{ucl-thesis}[2015/01/07 v0.5 University College London Thesis Class]
+\LoadClass[10pt, oneside, a4paper]{book}
+%book}
 
 
 % Figures & Tables
@@ -47,23 +48,21 @@
 \RequirePackage[titles]{tocloft}
 \setcounter{tocdepth}{1}
 \renewcommand{\cftchapfont}{\normalsize \scshape}
-\renewcommand\listfigurename{Listing of figures}
 \RequirePackage{rotating}
 \RequirePackage{lscape}
 \RequirePackage{lettrine}
-\RequirePackage[margin=20mm, left=40mm, a4paper]{geometry}
+\RequirePackage[margin=20mm, bindingoffset=20mm, a4paper]{geometry}
 \RequirePackage{fancyhdr} 
 \pagestyle{plain} % options: empty , plain , fancy
-\RequirePackage[palatino]{quotchap}
+\RequirePackage[helvetica]{quotchap}
 \RequirePackage{titling}
 \RequirePackage{setspace}
 
-\setlength{\headheight}{15pt}
 \onehalfspacing
 \raggedright
-\parindent 12pt
 
 % Font
+\RequirePackage{microtype}
 \RequirePackage[LY1,T1,EU1]{fontenc}
 \RequirePackage{fontspec,xltxtra,xunicode}
 \defaultfontfeatures{Mapping=tex-text, Numbers=OldStyle}
@@ -76,9 +75,6 @@
 		          {Size={13.01-19.9}, Font=* Subhead, Ligatures=Rare, Contextuals={Swash,Alternate}},
 		       {Size={19.91-},Font=* Display, Ligatures=Rare, Contextuals={Swash,Alternate}}}]
 			  {Arno Pro}  
-%Set fonts for Mac Specific (Comment out on Windows XP)
-%\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Helvetica Neue} 
-%\setmonofont[Scale=MatchLowercase]{Consolas}
 \setmathsfont(Digits,Latin,Greek)[Numbers={OldStyle,Proportional}]{Arno Pro} 
 \setmathrm{Arno Pro}
 
@@ -87,7 +83,6 @@
 \RequirePackage{color}
 \definecolor{NavyBlue}{rgb}{0.0627, 0.2510, 0.4627}
 \definecolor{chaptergrey}{rgb}{0.0627, 0.2510, 0.4627}
-
 
 % Bibliography
 \RequirePackage[numbers, comma, sort&compress]{natbib}      
@@ -115,8 +110,8 @@
 	\singlespacing
 	\thispagestyle{empty}
 	\vspace*{\fill} \vspace{150pt} \begin{center}
-	\Huge \textcolor{NavyBlue}{\textit{\thetitle}} \normalsize \\ \sc \vspace{100pt}
-	a dissertation presented \\ by\\
+	\Huge \textcolor{NavyBlue}{\textit{\thetitle}} \normalsize \\ \vspace{100pt}
+    \textsc{a dissertation presented \\ by\\
 	\theauthor\\ to\\ The \@department\\ 
 	\vspace{12pt}
 	in partial fulfillment of the requirements\\ 
@@ -125,18 +120,19 @@
     \includegraphics{front_material/NavyBlueu}\\
 	\vspace{12pt}
 	\@university\\ \@universitycity, \@universitycountry\\ 
-	\@degreemonth\ \@degreeyear
+    \@degreemonth\ \@degreeyear}
 	\end{center}
 }
 
 % Copyright page
 \newcommand{\copyrightpage}{
 	\newpage \thispagestyle{empty} \vspace*{\fill}
-	\sc \noindent I, \theauthor, confirm that the work presented in this thesis is my own. Where information has been derived from other sources, I confirm that this has been indicated in the thesis. \\ \vspace*{\fill}
-	\sc \noindent \copyright~\textit{\@degreeyear \hspace{3pt}~- \theauthor} \\
+    \textsc{ \noindent I, \theauthor, confirm that the work presented in this thesis is my own. Where information has been derived from other sources, I confirm that this has been indicated in the thesis.} \\ \vspace*{\fill}
+    \textsc{ \noindent \copyright~\textit{\@degreeyear \hspace{3pt}~- \theauthor}} \\
 	\noindent All rights reserved.
-	\vspace*{\fill} \newpage \rm
+	\vspace*{\fill} \newpage 
 }
+
 % You might also consider licensing your work under Creative Commons). See: http://creativecommons.org/weblog/entry/12824 for other PhD students who have released their work under creative commons.
 
 % Abstract page
@@ -149,7 +145,7 @@
 	\vspace*{1pt}
 	\Large \textcolor{NavyBlue}{\textit{\@title}} \normalsize\\
 	\vspace*{15pt}
-	\sc Abstract \\ \rm
+    \textsc{Abstract} \\ 
 	\end{center}
 	\input{front_material/abstract}
 	\newpage \lhead{} \rhead{}
@@ -160,8 +156,8 @@
 \newcommand{\dedicationpage}{
 	\pagestyle{fancy}
 	\newpage \thispagestyle{fancy} \vspace*{\fill}
-	\sc \noindent \input{front_material/dedication}
-	\vspace*{\fill} \newpage \rm
+    \textsc{ \noindent \input{front_material/dedication}}
+	\vspace*{\fill} \newpage 
 }
 
 % Acknowledgments page
@@ -180,7 +176,7 @@
     \thispagestyle{fancy}
     \chapter*{Author List}
     \noindent \input{front_material/authorlist}
-    \newpage \rm
+    \newpage 
 }
 
 % An environment for paragraph-style section
