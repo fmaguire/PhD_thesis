@@ -14,7 +14,6 @@
 \LoadClass[10pt, oneside, a4paper]{book}
 %book}
 
-
 % Figures & Tables
 \RequirePackage{graphicx}
 \RequirePackage[closeFloats, noSeparatorLine]{fltpage} 
@@ -79,13 +78,13 @@
 \setmathrm{Arno Pro}
 
 % Colors
-%\RequirePackage[usenames,dvipsnames]{xcolor}
 \RequirePackage{color}
 \definecolor{NavyBlue}{rgb}{0.0627, 0.2510, 0.4627}
 \definecolor{chaptergrey}{rgb}{0.0627, 0.2510, 0.4627}
 
 % Bibliography
-\RequirePackage[numbers, comma, sort&compress]{natbib}      
+\RequirePackage{natbib}
+%[numbers, comma, sort&compress]{natbib}      
 
 % Misc
 \RequirePackage{pdfsync}
@@ -179,8 +178,8 @@
     \newpage 
 }
 
-% An environment for paragraph-style section
-\providecommand\newthought[1]{
-   \addvspace{1.0\baselineskip plus 0.5ex minus 0.2ex}%
-   \noindent\textsc{#1}
-}
+%% An environment for paragraph-style section
+%\providecommand\newthought[1]{
+%   \addvspace{1.0\baselineskip plus 0.5ex minus 0.2ex}%
+%   \noindent\textsc{#1}
+%}
