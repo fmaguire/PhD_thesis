@@ -33,8 +33,8 @@ $(THESIS).pdf: $(THESIS).tex
 
 clean:
 	latexmk -c
-	-@rm -v *pdfsync *synctex.gz *.fls
+	-@rm -f -v *pdfsync *synctex.gz *.fls
 
 reset:
 	latexmk -CA
-	-@rm -v *pdfsync *synctex.gz *.fls
+	-@rm -f -v *pdfsync *synctex.gz *.fls
