@@ -111,3 +111,9 @@ sympy-plots-for-*.tex/
 ## Editor
 *.swp
 *.swp*
+
+## BibTeX
+
+*.bib
+!bibliography/PhD_thesis.bib
+
