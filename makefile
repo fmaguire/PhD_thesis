@@ -1,6 +1,7 @@
 # variables
 
 THESIS := thesis
+DRAFT := draft
 LATEX := xelatex
 LATEXOPTS := pdf
 TYPESETS := ./typesetting
@@ -9,17 +10,23 @@ TEXMF := ~/texmf
 
 # latexmk is necessary for correct building
 # and we want it to run every time
-.PHONY: $(THESIS).pdf all clean
+.PHONY: $(THESIS).pdf all clean draft reset
 
-# default make 
-all: $(THESIS).pdf
 
-# MAIN LATEXMK RULES
+# default make - makes full thesis.pdf
+# MAIN LATEXMK RULES 
 # -pdf tells latexmk to generate a pdf directly
 # -pdflatex="xelatex" tell latexmk to use xelatex backend
+all: $(THESIS).pdf
 
 $(THESIS).pdf: $(THESIS).tex 
 	latexmk -$(LATEXOPTS) -$(LATEX) --halt-on-error -use-make $(THESIS).tex
+
+# make draft using just what is in draft.tex
+draft: $(DRAFT).pdf
+
+$(DRAFT).pdf: $(DRAFT).tex
+	latexmk -$(LATEXOPTS) -$(LATEX) --halt-on-error -use-make $(DRAFT).tex
 
 #packages:
 #	cp $(TYPESETS)/texmf/* $(TEXMF)
@@ -33,7 +40,7 @@ $(THESIS).pdf: $(THESIS).tex
 
 clean:
 	latexmk -c
-	-@rm -f -v *pdfsync *synctex.gz *.fls
+	-@rm -f -v *pdfsync *synctex.gz *.fls *.log *.bbl
 
 reset:
 	latexmk -CA
