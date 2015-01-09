@@ -58,7 +58,6 @@
 \RequirePackage{setspace}
 
 \onehalfspacing
-\raggedright
 
 % Font
 \RequirePackage{microtype}
