@@ -1,5 +1,4 @@
 # variables
-
 THESIS := thesis
 DRAFT := draft
 LATEX := xelatex
@@ -12,11 +11,7 @@ TEXMF := ~/texmf
 # and we want it to run every time
 .PHONY: $(THESIS).pdf all clean draft reset
 
-
-# default make - makes full thesis.pdf
 # MAIN LATEXMK RULES 
-# -pdf tells latexmk to generate a pdf directly
-# -pdflatex="xelatex" tell latexmk to use xelatex backend
 all: $(THESIS).pdf
 
 $(THESIS).pdf: $(THESIS).tex 
@@ -37,6 +32,11 @@ $(DRAFT).pdf: $(DRAFT).tex
 #
 #install: packages fonts
 #	touch $(TYPESETS)/install_marker
+
+#(echo t.svg --export-pdf=t.pdf;
+#echo u.svg --export-pdf=u.pdf) |
+#  DISPLAY= inkscape --shell
+
 
 clean:
 	latexmk -c
