@@ -52,17 +52,432 @@ DRAFT DUE: END OF FEB
 
 
 
- 
-For reference RNA-Seq there is diminishing returns with 1M reads providing approximately the same level of accuracy in estimate transcript abundance as >30M reads for highly-expressed gene in six standard model organisms \citep{Lei2014} however for \textit{de-Novo} efforts like ours who knows
+
+
+
+
+
+
+
+\section{Omics}
+
+The ability to use transcriptomics and genomic methods to investigate non-model
+organisms is a relatively novel technological and methodological development. 
+While, \textit{Paramecium bursaria} and green algae such as \textit{Micractinium
+reisseri} could be considered ``model'' organisms throughout the early days of 
+molecular biology they very much aren't ``models'' in the light of the genomics
+era of biology.  Particularly, when compared to such powerhouses of modern biology
+as \textit{Arabidopsis thaliana}, \textit{Mus musculus}, \textit{Saccharomyces
+cerevisiae} and even ourselves (\textit{Homo sapiens}).
+
+
+Several relatively recent works have demonstrated the potential for functional 
+and adaptive analysis of non-model organisms using combined genomics and transcriptomic
+approaches (e.g. \texit{Munoz-Merida2013,Feldmesser2014}). Increasingly,
+some researchers are able to dispense with the genomics nearly entirely to mixed
+success even in the PbMr system itself \textit{Kodama2014}.
+
+
+
+
+
+
+
+
+\begin{figure}
+    Summary of stages of sequencing
+    % 
+\end{figure}
+
+
+\subsection{Genomics}
+
+Assemblathon 1 \citep{Earl2011}
+GAGE \citep{Schatz2012}
+Assemblathon 2 \citep{Bradnam2013}
+Nucleotid.es: Linux Container (specifically Docker \citep{Merkel2014})  based continuous assembly evaluation using QUAST \citep{Gurevich2013a})
+
+
+Project standards:
+Standard Draft: Minimally filtered, incomplete, assembled into contigs, may have poor regions and be incomplete, may have some contamination
+High-quality Draft: coverage of at least 90\% of genomes or target regions, contamination exluded, little manual review, still might be seq errors or misassemblies, no implied order and oreintation to contigs (can be assessed for gene content)
+Improved-high quality draft: manual or automated additional work, gap resolution, no obvious missassemblies, normally adequate for comparison with other genomes
+Annotated-Directed Imrpovement: Overlapping, improved with annotation, verified, gene models etc useful for gene comarpsiosns, alt splicing, pathway reconstruction
+Noncontiguous finished: high quality, finished apart from a few repeats or gaps, good enough for almost all analayses
+Finished: gold standard, less than 1 error per 100,000, replicon in contig seqs, reference quality \citep{Chain2009
+
+\subsection{Transcriptomics}
+
+While generally computationally simpler than genomic assembly \citep{MacManes2014}
+owing to the relatively fragmented nature of transcripts compared to genomic 
+sequences (i.e. lots of transcripts of various lengths rather than several 
+long chromosomes).  There a few key challenges to transcriptomic assembly
+that is absent in genomic work specifically:
+\begin{itemize}
+    \item Handling assembly of alternative isoforms of transcripts \citep{Pyrkosz2013}
+    \item Assembly of transcripts from gene-dense genomes with overlapping 5' UTR 
+    \item Assembly of data with highly heterogeneous read coverage, as transcript
+        expression level is proportional to read coverage (indeed expression analysis
+        using RNA-Seq datasets relies upon this fact).
+    \item Random hexamer bias
+    \item GC content bias, particularly so in PbMr
+\end{itemize}
+
+These problems are particularly problematic in \textit{de novo} approaches,
+however referenced assembly has its own issues in transcriptomics
+
+
+
 
 
 
 The correlation of transcript level to protein level is difficult
 
 
-Benchmarks for mapping tools - include benchmarks paper showing we used the best tools generally or tested all the tools in the case of trinity etc
+
+
+
+
+
+
+
+
+
 
 http://rnaseq.uoregon.edu/
+http://bioinformatics.bc.edu/marthlab/scotty/scotty.php
 
-http://bioinformatics.bc.edu/marthlab/scotty/scotty.phphttp://rnaseq.uoregon.edu/
-M
+Experiemntal design, read depth, ENCODE, Tarazona S 2012 fdiff exp in RNA-seq
+a matter of depth
+
+\begin{itemize}
+    \item Check Quality (FASTQC)
+    \item Trim reads (Trimmomatic)
+    \item Re-check quality (FASTQC)
+    \item Error-correct reads (?)
+    \item Normalize coverage (khmer)
+    \item Test paramters for multiple assemblers
+    \item Run each assembler with best parameters
+    \item Analyse all and merge best assemblies
+    \item Annotate transcriptome
+    \item Map reads to assembly, count
+    \item Differential expression analysis
+\end{itemize}
+
+Further complications from single cell:
+Fusions are created in cDNA ligation step prior to MDA in WTA
+However, poly-A tails should mean fusion reads are unlikely as they need to a
+span poly-A trac in all 4 possible fusions apart from 3'-5':5'-3'
+So to get high levels of chimeric reads we would need the two same transcripts
+in the same fused orientation multiple times.  Otherwise any other 3'-5':5'-3'
+fusions should be fairly rare so likely discarded in error-correction etc steps
+
+\subsubsection{Quality Checking}
+
+FastQC tool and its parameters
+
+\subsubsection{Read trimming}
+
+MacManes suggests that gentle trimming is generally better \citep{MacManes2014}
+However, phred score of 30 was the best balance of reads trimmed to mapping
+MAKE GRAPH using this data
+% /storage/fin/raw_reads/raw_sct_reads/optimising_trimming_paramters/test_mapping_to_bulk
+
+
+\subsubsection{Error correction}
+
+While second-generation sequencing technologies have massively increased
+throughput on an individual read basis they exhibit a much higher error
+rate than earlier Sanger approaches with Illumina HiSeq reads showing \[0.5-2.5%\]
+error rate \citep{Kelley2010}.  
+
+These errors complicate assembly as they will rapidly increase
+the complexity of the de-Bruijn graphs 
+
+Typically the most widely used error-correction algorithms for 2nd-generation
+sequencing reads. 
+
+
+While explained later in \ref{Assembly}, generally OCC assembly is reliant on 
+fast and accuarte overalp calculations while de Bruijn approaches require
+robust error correction \citep{Palmer2010}.
+
+
+
+Single-cell genomics sequencing reads display high variance in their coverage 
+across the genome with some sections. Previously error correction tools (such as
+QUAKE \citep{Kelley2010}
+
+\citep{Nikolenko2013}
+
+
+\subsubsection{Digital normalisation}
+
+\subsubsection{Assembly}
+Optimising parameters
+Theory
+Combining
+
+
+Almost every \textit{de-Novo} assembly algorithm use one of two approaches:
+overlap-contig-consensus (OCC) e.g. Celera etc
+de Bruijn is more widely used but even as recently as 2010 it was unclear
+which approach was superior \citep{Palmer2010}.
+However, it has become rapidly evident with further expanding sequencing capacity
+
+
+
+
+
+\subsubsection{Annotation}
+
+\subsubsection{Mapping}
+
+
+However, studies on simulated datasets have shown that the main sources of error
+when conducting mapping to a reference transcriptome to infer expression counts
+the most important sources fo error are splice variants and missing transcripts
+\citep{Pyrkosz2013}.  Interestingly, this paper also found that different mapping
+strategies did not yield substantial differences in mapping quality \citep{Pyrkosz2013}.
+
+When mapping RNA-Seq data there is diminishing returns with 1M reads providing 
+approximately the same level of accuracy in estimate transcript abundance 
+as >30M reads for highly-expressed gene in six standard model organisms \citep{Lei2014} 
+
+
+
+\section{Machine Learning and Statistical Pattern Recognition}
+
+Machine learning is a diverse field devoted to the challenge of the development
+and application of algorithms capable of learning from data.
+It is the product of a convergence of several fields: Pattern Recognition, Optimisation,
+Artifical Intelligence, and Multivariate Statistics. 
+With concepts derived from a range of Ur-Fields such as Engineering, 
+Computer Science, Physics and Statistics.
+
+Machine learning applications range in complexity from simple linear regression
+common to every science undergraduate to deep convoluted neural networks running
+on dedicated super-computers \citep{Wu2014} and intricate methods 
+capable of beating human-performance on complex image classification tasks 
+such as IMAGENET \citep{Berg2014,He2015}.
+
+
+\subsection{Cost functions and Gradient descent}
+
+\subsection{Supervised Learning}
+
+\subsubsection{Support Vector Machines}
+
+\subsection{Unsupervised Learning}
+
+\subsubsection{K-means}
+
+
+\section{Phylogenetics}
+
+Phylogenetics is an effective tool with which to investigate the evolutionary 
+ancestry biological sequence data, specifically DNA/RNA and protein sequences.
+
+Phylogenetics can be used for identification of genes, species, and even populations.
+Used for the estimation of evolutionary processes such as selection pressure,
+migration, genome reduction, horizontal gene transfer.
+Comparisons of different species/genes/populations, pin-pointing of ancestral states
+and transitionary processes.
+
+
+
+Estimation of phylogenetic trees is non-trivial as the number of possible trees
+expands rapidly with the number of sequences.
+
+For rooted phylogenies:
+\begin{displaymath}
+    N_{trees} = \prod_{x=2}^{N_{taxa}} (2x - 3)
+\end{displaymath}
+
+
+
+Essentially, phylogenetics is a process by which these possible trees are searched
+in order to find an optimal tree according to certain criteria.
+
+
+
+
+Furthermore, phylogenetic trees are important beyond just direct molecular evolution
+as many biological processess can be effectively modeled in bifurcating systems
+SUCH AS
+
+
+% The next key method in this project is that of phylogenetics as it is an effective tool with
+% which to investigate the evolutionary ancestry of the genes recovered in the transcriptome and
+% to identify the likely origin (host, endosymbiont, contaminant) of these transcripts. It can also
+% be used to identify potential horizontal gene transfer events between host and endosymbiont
+% by searching for single gene/transcript phylogenies that have an incongruent branching pattern
+% compared to established species trees. The key stages in a phylogenetic analysis are that of
+% alignment (in which homologous sites in the sampled sequences are aligned with one another),
+% masking (in which sites which are evolutionarily informative – can be determined to be ho-
+% mologous but also non-invariant are selected), model selection (in which a sequence evolution
+% model is selected using criteria such as Akaike’s information criterion which penalise increased
+% parameterisation but attempt to maximise model likelihood), and finally, phylogenetic recon-
+% struction (in which the selected evolutionary models are applied to the dataset using principally
+% maximum-likelihood or Bayesian methodologies in order to reconstruct the likely evolutionary
+% relationships in the masked sequences).
+
+\subsection{Sequence sampling}
+
+Bias, long branches
+
+\subsection{Multiple Sequence Alignment}
+
+Arguably the most important step in phylogenetics is that of multiple sequence
+alignment (MSA).  The goal of MSA is to align sets sequences such that 
+evolutionarily homologous residues occupy the same column. In other words,
+any given column in the alignment theoretically should contain amino acid or nucleotide residues
+that derive from the same common ancestor and have evolved in each sequence lineage.
+It is also possible that insertion or deletion events have taken place
+and a particular residue is absent in the ancestral node or a sequence lineage.
+
+This is a non-trivial computational problem which has been proven to have an NP-complete
+\footnote{A decision problem for which an answer can be verified in polynomial time 
+    by a non-deterministic turing machine and to and from which any NP-hard problem
+    can be translated \citep{Karp1972}.} computational complexity \citep{Wang1994}.
+Specifically, the optimal alignment of N sequences has a complexity of \[ O(L^{N}) \]
+for \[ N\] sequences of length \[ L \]\citep{Sievers2011}.
+
+Due to this complexity, the majority of MSA algorithms implement heuristic approaches
+in order to get, if not the optimal solution, but a sufficiently good one in a reasonable
+amount of time. 
+
+Typically, MSA algorithms start by generating the sets of all pairwise alignments. 
+This alignments are all generated 
+
+Pairwise alignment algorithms are almost all based upon a
+pair of ``Ur-algorithms'' with different goals: 
+Needleman-Wunsch, a global alignment algorithms (which attempt to maximise 
+alignment quality over entire sequence lengths) \citep{Needleman1970} and Smith-Waterman, 
+a local alignment algorithms (which are optimised towards producing high quality alignments
+in sub-strings) \citep{Smith1981}.  While early, MSA algorithms were typically
+largely derived from Needleman-Wunsch most modern algorithms seek to combine 
+optimisation of local and global alignments 
+
+
+The mostly widely heuristic used to go from a series of pair-wise alignments to
+a useful MSA is that of progressive-alignment \citep{Feng1987} (implemented in 
+tools such as CLUSTAL W \citep{Thompson1994}) in which the pairwise alignment
+scores are built into a distance matrix summarising the relative divergence of 
+each pair of sequences. From this matrix a ``guide-tree'' is generated using simple
+neighbour-joining methods (in which a tree is built by recursively clustering
+the least dissimilar sequences \citep{Saitou1987}).  Sequences are then progressively
+aligned using their branching order within this guide-tree \citep{Thompson1994}..
+This drastically reduces the \[O(L^{N})\] complexity to approximately \[O(N^{2})\]
+\citep{Sievers2011}. While there have been various improvements and alternative approaches
+created such as merging both local and global alignment \citep{Notredame2000}, 
+rapid identification of homologous regions using Fast Fourier Transforms \citep{Katoh2002},
+iterative refinement of alignments \citep{Edgar2004a} and use of Hidden-Markov Models \citep{
+
+
+
+
+
+
+
+That is the theoretical goal of MSA, however, clearly we cannot directly observe
+the ancestral state of a residue in the common ancestor of two sequence lineages.
+Therefore, MSA algorithms seek to indirectly infer a homologous alignment by 
+introducing gaps into sequences in order maximise
+an alignment ``score'' in which matches or alignments of more frequent
+substituions (e.g. Leucine and its isomer Isoleucine or Adenine to its fellow purine base
+Guanine (transition)) are positively scored and gaps (extension of a gap is typically
+less penalised than creating a gap) or unlikely changes (e.g. the transversion
+of Adenine to Cytosine or Glutamine to Cysteine) penalised.
+
+This will generally be codified in a substitution matrix e.g. the PAM \citep{Dayhoff1978}, 
+BLOSUM \citep{Henikoff1992} amino acid matrices and their numerous subsequent
+derivations and improvements. 
+
+
+
+
+Using these matrices MSA algorithms will typically
+align pairs of sequences and then use this set of pairwise-alignment scores
+to estimate a ``guide tree''.  This guide-tree is then used to infer the order 
+in which the MSA is built
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+There have been compelling arguments as early as 1991 that MSA are inherently flawed as consideration of 
+evolutionary processess in the objective weighting and assessment of potential alignments \citep{Thorne1991}.
+Furthermore, joint inference of alignment and phylogenetic trees minimises the risk
+of conscious or subconscious research bias towards alignments and subsequent 
+phylogenies that support their pre-conceived ideas.
+
+
+and trees should be jointly inferred \citep{Thorne1991,Bouchard-Cote2013}
+
+bias that alignment and inferences should be jointly estimated \citep{Redelings2005}.
+While, this approach has been coded in interest probabilistic programming approaches
+such as that implemented in BALI-phy \citep{Suchard2006} it is still far too
+slow a process to infer phylogenies in this manner on large or even moderate datasets.
+Therefore, for now independent alignment estimation is here to stay, at least until
+computation resources and algorithmic development has continued until these more
+theoretically satisfying approaches become feasible.
+
+\subsection{Masking}
+
+\subsection{Model selection}
+
+\subsection{Phylogenetic inference}
+
+
+
+\subsubsection{Maximum likelihood}
+
+\subsubsection{Bayesian}
+
+\subsection{Assessing Assemblies}
+
+RSEM-eval, mappings, NG50, L50, N50
+
+\subsection{The Problem with Ploidy}
+
+One important complication in the assembly on eukaryotic genomes and transcriptomes
+is the issue of highly heterozygous polyploid genomes.
+
+This is problematic as the de Bruijn graphs constructed during the assembly
+rapidly increase in complexity when reads from heterozygous samples become
+incorporated \citep{Kajitani2014}.
+
+
+Specialised genome assemblers have been produced to address this problem,
+for example Platanus performed well on both highly and lowly heterozygous 
+genomes \citep{Katjitani2014}
+
+Likewise, transcriptome assembly rapidly increases with the number of alleles
+expected per gene determined by ploidy, heterozygosity and complex gene families
+and in turn how many transcripts per allele in light of alternative splicing.
+
+This is particularly problematic in the PbMr system owing to the massive
+ploidy of the host \textit{Paramecium bursaria} and the numerous whole genome
+duplications in its relatively recent evolutionary history (1).  This also 
+explains the difficulties in using sister species, as the most sequenced Paramecium
+genus species are the aurelia complex which have undergone 2 WGD since divergence with
+\textit{P. bursaria}.
+
+, especially in line with multiple splicing, overlapping 5' UTR (e.g.
+the fungi).
+
+
+
+
