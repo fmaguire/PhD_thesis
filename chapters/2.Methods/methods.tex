@@ -481,3 +481,450 @@ the fungi).
 
 
 
+
+
+\section{OLD CRAP}
+%\subsection{RNA-Seq}
+%Transcriptomics and specifically RNA-Seq is one of the key investigative techniques that will be used in this project.  
+%By extracting and sequencing mRNA expressed by host and endosymbiont during day and night conditions we will identify key genes involved in endosymbiotic interactions.
+%RNA-seq is a second-generation sequencing technology developed to perform high-throughput short-read sequencing of cDNA generated from extracted RNA [Grabherr, 2011]. 
+%As ribosomal RNA forms such a significant portion of cellular RNA it is necessary to remove it before sequencing in order to make meaningful inferences of transcript expression.  
+%This can be achieved either by ribosomal depletion in which ribosomal sequences are bound by adaptors which in turn bind to magnetic beads allowing the mechanical removal of these molecules.  
+%This methodology allows the preservation of smaller non-coding RNAs present in the system. However, as we are principally interested in transcripts and are operating in a eukaryotic system with poly-adenylated mRNA we can efficiently isolate mRNA via a poly-A selection, in which poly-T primers are used in reverse-transcription of mRNA into cDNA.
+%From this point RNA-Seq proceeds in the same manner as other next-generation sequencing methods. 
+%We are using a method known as paired-end sequencing (available on the Illumina HiSeq 2000 platform) in which 76bp reads are sequenced at either end of a 200-500bp insert. 
+%This improves the ease of transcriptome assembly by providing additional positional information when producing de-Bruijn graphs. 
+%
+%\subsection{Transcriptome Assembly}
+%Assembly is the process by which the short high-throughput sequencing reads are combined to recover the longer transcripts from which they have been randomly sampled.  
+%In the simplest sense, this process relies on the quality score weighted alignment of reads.  
+%Transcriptome assembly can be done in two ways: referenced (in which reads are aligned to a reference genome), and de-novo (in which the reads are assembled without a reference).  
+%De-novo assembly are mainly conducted using k-mer based de-Bruijn graph creation.  
+%Very briefly, reads are subdivided into k-mers (\textasciitilde $15-30$ nucleotide sequences) to aid in computation and then assembled in graphs based on k-1 overlaps between k-mers.
+%With the exception of repeated regions the transcript is recovered by finding the shortest path around the graph visiting all vertexes once (i.e. a hamiltonian path). 
+%In reality, assembly algorithms weight the construction of these k-mers and graphs using sequence quality scores and a large number of established heuristics.
+%Referenced assemblies are often considered sub-optimal in some eukaryotic organisms due to alternative splicing and other transcript modifications not directly represented in the genomic sequences.  
+%Despite this, for a \textit{Paramecium - Chlorella} transcriptome, host transcripts could still potentially be assembled as the closest available genome sequence is that of the \textit{Paramecium tetraurelia} macronuclei in which most intronic elements have been spliced out [Mayer \& Forney 1999].  
+%However, using this genome as a reference for the assembly of host transcripts may be highly misleading due to the fact that this organism does not harbour \textit{Chlorella} endosymbionts and thus may lack the genes required to maintain this system and also has undergone two rounds of whole genome duplication since sharing a common ancestor with \textit{Paramecium bursaria} potentially leading to high levels of sequence divergence.  
+%On the other hand, endosymbiont transcripts could be assembled using the endosymbiotic \textit{Chlorella} NC64A genome [Blanc et al., 2010] once the relationship between this organism and the endosymbiont within the CCAP 1660/12 culture is determined phylogenetically and is determined as meaningfully close.  However, the potential issue of alternative splicing would occur if we were to use this genome sequence.  
+%Therefore, our initial assembly was conducted de-novo (i.e. without any reference genomes) in order to attempt to avoid biasing due to these reference genomes.   
+%
+%
+%\subsection{Phylogenetics}
+%The next key method in this project is that of phylogenetics as it is an effective tool with which to investigate the evolutionary ancestry of the genes recovered in the transcriptome and to identify the likely origin (host, endosymbiont, contaminant) of these transcripts.  
+%It can also be used to identify potential horizontal gene transfer events between host and endosymbiont by searching for single gene/transcript phylogenies that have an incongruent branching pattern compared to established species trees.    
+%The key stages in a phylogenetic analysis are that of alignment (in which homologous sites in the sampled sequences are aligned with one another), masking (in which sites which are evolutionarily informative – can be determined to be homologous but also non-invariant are selected), model selection (in which a sequence evolution model is selected using criteria such as Akaike's information criterion which penalise increased parameterisation but attempt to maximise model likelihood), and finally, phylogenetic reconstruction (in which the selected evolutionary models are applied to the dataset using principally maximum-likelihood or Bayesian methodologies in order to reconstruct the likely evolutionary relationships in the masked sequences). 
+%
+%\subsection{Annotation}
+%In order to identify proteins putatively involved in endosymbiosis – namely transporters and secreted proteins and to identify proteins likely involved in their regulation it is necessary to functionally annotate assembled transcripts.  
+%This was achieved in a variety of ways including Hidden-Markov Models or HMMs (via HMMer, PFAM and other similar resources), alignment (via BLAST), KEGG Ontology and Gene Ontology annotation (via tools such as the KEGG Automated Annotation Server or BLAST2Go). 
+%HMMs are a commonly used tool in sequence identification and depending on their training are generally more sensitive than alignment based methods [Eddy., 2011].
+%This will be further discussed within the methods.
+%
+%\section{Methods}
+%\subsection{Culturing}
+%
+%\subsubsection{Media}
+%\textit{Paramecium bursaria – Chlorella} CCAP1660/12 cultures were obtained from the UK Culture Collection of Algae and Protozoa and were maintained in New Cereal Leaf-Prescott Liquid (NCL) media (4.3g/l CaCl$_{2}$.2H$_{2}$0, 1.6g/l KCl, 5.1g/l K$_{2}$HPO$_{4}$, 2.8g/l MgSO$_{4}$.7H$_{2}$O, 1g/l wheat bran, gravity filtered via GF/C paper and autoclaved) and stored in a lit incubator at 15$^{o}$C. [\url{http://www.ccap.ac.uk/media/documents/NCL.pdf}].  
+%Cultures were sub-cultured every 2 weeks with fresh NCL media and were inspected using light microscopy to assess culture health.  
+%
+%\subsubsection{Harvesting cells for transcriptome analysis}
+%To harvest \textit{P. bursaria} and minimise the number of bacterial prey species from the culture, \textasciitilde $10^{6}$ cell aliquots were strained through 40$\mu m$ sieves, filtered on 10$\mu m$ nylon filters, before finally being filtered on 8$\mu m$ TETP polycarbonate filters using a low-pressure filtration pump.  
+%Collected samples were either immediately quick-frozen in liquid nitrogen for storage ($-20^{o}$C for short-term storage and $-80^{o}$C for longer storage) or harvested by centrifugation.  
+%In order to investigate the two main metabolic states of the symbiosis (i.e. under light conditions during active photosynthesis and in the dark when no photosynthesis is taking place) samples were extracted 5 hours into the light and dark phase of the day/night cycle.
+%
+%\subsubsection{Culture Health}
+%To ensure extracted RNA was representative of healthy and interacting host and endosymbionts care was taken to minimise the number of dead/dying cells from which RNA was extracted.  
+%In order to do this, a subsample was taken from each culture during the process of harvesting and scored for dead/dying cells.  
+%Cell assays were formed by taking 1-2ml of each harvest cell pellet and fixed using 40$\mu l$ Lugol's solution (0.5g I$_{2}$ and 1g KCl in 8.5ml of MilliQ water). D
+%ead/dying cells were identified as broken or puckered cells and counted using light microscopy.  
+%Samples containing >10\% dead/dying cells were discarded and no RNA extracted from them.
+%
+%\subsubsection{RNA Extraction and Isolation}
+%In order to lyse collected samples, cells were washed from the filter or the pellet was resuspended in 1ml TriReagent (Sigma) heated to $60^{o}$C. Cells were vortexed with sterile 300$\mu m$ glass-beads for 15s, incubated at room temperature for 10 minute, vortexed for 15s, quick-frozen in liquid nitrogen and stored at $-20^{o}$C before further processing.  
+%Samples were defrosted, vortexed for 15s, placed in a heat-block set to $60^{o}$C for 10 minutes while continuing to be vortexed, removed from heating and vortexed again for 15s.  
+%RNA was extracted by adding 0.2ml of Chloroform to the glass-bead-trizol-sample solution, shaking for 15s, incubating for 5 minutes at room temperature and centrifuging at 12,000g for 15 minutes at $4^{o}$C.  
+%The upper-phase was then transferred to an RNAse-free 1.5ml tube and an equal volume (\textasciitilde$0.5$ml) of isopropanol was added before shaking for 15s.  
+%The isolated RNA was then incubated at $-20^{o}$C for 10 minutes (up to several hours) before being collected as a pellet using a centrifuge at 10,000g for 10 minutes at $4^{o}$C (supernatant was discarded). 
+%The RNA pellet was then washed with 1ml of 75\% ethanol and centrifuged twice at 10,000g for 10 minutes at $4^{o}$C with the supernatant being discarded after each centrifugation.  
+%Pellet was dried before being resuspended in 100$\mu l$ of RNAse-free water.  
+%The RNA was then cleaned further using the Qiagen RNeasy clean-up kit before being assessed for quality using ND-1000 (NanoDrop) and BioAnalyzer (Agilent).
+%
+%\subsection{RNA-Seq}
+%\subsubsection{cDNA generation and library preparation}
+%
+%Purified RNA from day and night samples were pooled into a single day and a single night sample due to limitations on the quantity of extracted RNA. 
+%These two samples were then prepared for sequencing using the TruSeq Stranded RNA preparation kit (Illumina).  
+%mRNA was selected using a poly-A selection method before being fragmented, cleaned-up using ethanol and then reverse transcribed into single-stranded cDNA using random hexamer primers. 
+%The prepared ds cDNA was then end-repaired or cleaved to produce blunt-ended fragments.  
+%By the addition of a trailing A-base to these fragments sequencing adaptors were added using an overlapping complementary T-base.  
+%Fragments were then denatured and amplified before cluster generation using the standard Illumina sequence library preparation methods [\url{http://res.illumina.com/documents/products/datasheets/datasheet_truseq_sample_prep_kits.pdf}].
+%
+%\subsubsection{Sequencing}
+%
+%Clonal cluster generation by bridge amplification was conducted on the cBot (Illumina) platform using the TruSeq Paired-End cluster kit (Illumina).  
+%The samples were run in individual lanes on a HiSeq 2000 8-lane flow-cell (Illumina) to produce 76bp paired-end reads. 
+%Sequencing was conducted at the University of Exeter sequencing service.
+%
+%\subsubsection{Assembly}
+%The paired-end fastq reads from the sequencing experiment were trimmed to sequences of sufficient quality and sequencing adaptors removed. 
+%Reads from day-and-night runs were assembled separately as well as a combined assembly of all the reads. 
+%As the \textit{Paramecium bursaria} 1660 genome or the \textit{Chlorella} endosymbiont (CCAP12) have not yet been sequenced de-novo transcriptome assembly was conducted (further explanation for this in background section).  
+%This was done using both the Oases package [Schluz, 2012] from European Bioinformatics Institute [\url{http://www.ebi.ac.uk/~zerbino/oases/}] and the Trinity package [Haas, 2013] provided by the Broad Institute [\url{http://trinityrnaseq.sourceforge.net/}] using a high-memory computing cluster at the University of Exeter.  
+%Assemblies were compared and a single assembly methodology was selected for further downstream analysis. 
+%
+%\subsubsection{Saturation}
+%In order to assess whether increased sequencing depth would recover further transcripts a read-saturation analysis was conducted.  
+%This was achieved by developing a program to repeatedly take random subsamples of the paired-end reads (from the day sample, the night sample and the combined pool) and assessing the number of the assembled transcripts that could be successfully recovered using these reads.  
+%This was done with the aid of a short-read aligner bowtie-2 [Langmead, 2012], standard GNU/Linux command line tools, and a custom python script.  
+%The results were plotted using python+matplotlib and assessed for saturation in transcript recovery
+%
+%\subsubsection{Extracting Likely Coding Regions}
+%As host and endosymbiont use different codon tables it was necessary to identify ORFs in the assembled transcripts using both tetrahymena (i.e. Host/Paramecium) and universal (endosymbiont/Chlorella and bacterial contaminant/foodstock) encodings.  
+%The ciliate `tetrahymena' encoding differs from universal codon look up tables in that UAA and UAG which are normally stop codons instead code for glutamine, this means \textit{Paramecium} only has a single stop codon (UGA) [Harper \& Jahn, 1989].
+%This was conducted using the Trinity transcripts\_to\_best\_scoring\_ORFs tool [\url{http://trinityrnaseq.sourceforge.net/analysis/extract_proteins_from_trinity_transcripts.html}].  
+%Initially, this tool identifies the longest ORF within each assembled transcript.  
+%These longest ORFs are used to train a hexamer-based HMM which is then used to identify the ORFs with highest likelihood.  
+%These ORFs are then translated into peptide sequences. 
+%
+%\subsubsection{Transcript Identification}
+%Despite care being taken in filtering and washing-off bacteria from the \textit{Paramecium} prey food-stock and usage of poly-A selection, bacterial contamination was still present in our assembled contigs.  
+%Therefore, it was necessary to develop a pipeline to identify the transcript origins to filter those transcripts originating from host and endosymbiont. 
+%Initially transcripts were binned into their predicted source - Host (H), Unknown but likely Host (U(H)), Endosymbiont (E), Unknown but likely Endosymbiont (U(E)), Food (F), Unknown but likely Food (U(F)), and Unknown (U).  
+%Each of the assembled transcripts were BLASTed against a database consisting of the following genomes: \textit{Chlorella} NC64A, \textit{Chlamydomonas reinhardtii}, \textit{Coccomyxa} C169, \textit{Paramecium tetraurelia}, \textit{Tetrahymena thermophila},  \textit{Arabidopsis thaliana}, \textit{Homo sapiens} (helping to identify contamination), \textit{Saccharomyces cerevisiae}, \textit{Schizosaccharomyces pombe}, \textit{Bacillus cereus} ATCC 14579, \textit{Escherichia coli} 536, \textit{Escherichia coli} O157 H-7, \textit{Salmonella typhimurium} LT2 and \textit{Escherichia coli} K-12 (the last 5 genome datasets helping to identify food bacterial genes).  
+%The bins were classified as follows:
+%\begin{itemize}
+%  \item Endosymbiont (E): Transcript's highest scoring BLAST hit at -50E was to \textit{Coccomyxa}, \textit{Chlamydomonas} or \textit{Chlorella}.  Or transcript's highest scoring hit at -20E was one of those species and the longest likely coding region in the transcript was using the universal codon table. 
+%  \item Unknown but likely Endosymbiont (U(E)): -10E hit to \textit{Coccomyxa}, \textit{Chlamydomonas} or \textit{Chlorella} and longest likely coding region was using the universal codon table. Or transcript's highest hits at -10E and -20E were to one of those genomes regardless of coding region presence.
+%  \item Host (H): Transcript's highest hits at -50E were to \textit{Paramecium tetraurelia} or \textit{Tetrahymena thermophila}.  Or highest hit at -20E was one of those species and longest likely coding region was using the Tetrahymena codon table.
+%  \item Unknown but likely Host (U(H)): -10E hit to \textit{Paramecium tetraurelia} or \textit{Tetrahymena thermophila} and longest likely coding region was was using the Tetrahymena codon table. Or transcript's highest hits at -10E and -20E were to one of those genomes regardless of coding region presence.
+%  \item Food (F): Transcript's highest scoring BLAST hit at -50E was to one of the \textit{E. coli} species or \textit{Salmonella}.  Or transcript's highest scoring hit at -20E was one of those species and the longest likely coding region in the transcript was using the universal codon table.
+%  \item Unknown but likely Food (U(F)): -10E hit to one of the \textit{E. coli} species or \textit{Salmonella} and longest likely coding region was using the universal codon table. Or transcript's highest hits at -10E and -20E were to one of those genomes regardless of coding region presence.
+%  \item Unknown (U): highest scoring hits to \textit{Arabidopsis}, \textit{Homo sapiens}, \textit{Saccharomyces} or \textit{Schizosaccharomyces} or any sequence not fitting into the above categories.
+%\end{itemize}
+%
+%In order to assess the accuracy of the `binning' of endosymbiont sequences and to estimate how many host or endosymbiont transcripts we would accidentally discard using these categories we used a phylogenetic analysis pipeline to verify the likely ancestry and therefore point of origin within the endosymbiosis of each sequence.  
+%A script was created used the translated transcript peptide sequences to search a database of over 900 representative genomes using BLASTp.  This script recovered all sequences above an E-value of $10^{-5}$. 
+%These sequences were then automatically aligned and masked using MUSCLE [Edgar, 2004] and TrimAL [Capella-Gutierrez, 2009]. 
+%Fast maximum-likelihood trees were then generated for each masked alignment using FASTREE2 program [Price, 2010].  
+%These trees were then converted to scalable vector graphics and using the NCBI taxonomy API each branch was colour coded depending on taxonomic group.  
+%This allowed for quick manual inspection to determine the likely origin identity of the initial transcript.  
+%For example, if a transcript sequence was found to branch largely within archaeplastida species it was considered as likely originating from the endosymbiont.  
+%Likewise, if it branched largely among ciliate species it was considered as likely host-derived.  
+%Continuing in the same vein, those sequences considered as being derived from bacterial food-stocks were considered as those that branched largely within bacterial clades and those sequences that branched with no clear pattern were considered to be `Unknown'.  
+%Any transcripts where endosymbiont sequences were found to branch incongruently with accepted topologies (especially within the ciliate or bacteria) were determined to be showing signs of potential horizontal gene transfers and were recorded for further analysis.  
+%For example, if a transcript branched with another endosymbiotic algae (particularly \textit{Chlorella} NC64A) within a clade of ciliates this would be considered a potential HGT event to be further investigated.
+%The entire initial `Endosymbiont Bin' (2,825 transcripts), the `Unknown but likely Endosymbiont Bin' (600) and the `Unknown Bin' (2,096) were phylogenetically tested using this pipeline.  
+%However, owing to the size of the initial `Food Bin' (5,129) and `Host Bin' (27,907) it wasn't possible to exhaustively test all transcripts in these two bins therefore 2000 transcripts were randomly selected from each them and tested using the pipeline. 
+%In the cases where too few sequences were recovered to produce a phylogeny (<3 including seed) the source proteomes of the sequences that were recovered were assessed. For example, if the recovered sequences were from the archaeplastida that was considered sufficient evidence to class that transcript as belonging to that `Endosymbiont Bin' and so on.  If no other sequences were recovered using BLASTp then the transcript was placed into the `Unknown Bin'.
+%The change in initial binning after phylogenetic verification were then plotted using python+matplotlib and an estimate for the numbers of unidentified endosymbiont transcripts was made.
+%
+%\subsubsection{Identification of putative secreted and putative transporter proteins}
+%Initial transcript functional annotation was conducted via BLAST and mapping Gene Ontology terms using the Blast2GO application [Conesa, A. et al., 2005] [\url{http://www.blast2go.com/b2ghome}].  
+%In order to more accurately identify the likely proteins involved in the maintenance of the \textit{Paramecium-Chlorella} photosynthetic endosymbiosis we attempted to identify all transporter and secreted proteins within the verified endosymbiont and host transcript complements. A permissive set and conservative subset of host and endosymbiont transporter and secreted proteins were identified using a combination of pipelines.
+% Putative transporter proteins were identified as all coding sequences within each bin containing 1 or more transmembrane domains (as identified by the HMM implemented in the program tmhmm 2.0c  [Krogh et al., 2001, Sonnhammer et al., 1998]).  
+%The conservative subset of transporter proteins were those identified as containing 4 or more TM domains.  
+%The predicted host and endosymbiont secretome was determined by combining the outputs of several established and widely-published programs for identification of secreted proteins - SignalP 4.1 [Petersen et al., 2011], tmhmm 2.0c, TargetP 1.1 [Emanuelsson et al., 2000], and WoLFPSORT 0.2 [Horton et al., 2007] (with the assistance of some accessory scripts from from UCSC [\url{http://hgdownload.cse.ucsc.edu/admin/exe/}] and the FASTX-toolkit [\url{http://hannonlab.cshl.edu/fastx_toolkit/index.html}]). 
+%Input sequences were checked for the presence of N-terminal signal peptides primarily via the detection of signal peptide cleavage sites by the HMM implemented in SignalP 4.1. 
+%Mature peptides (i.e. those with the detected signal peptide cleaved) output from SignalP 4.1 were then processed in tmhmm 2.0c to detect and remove any sequences containing transmembrane domains. 
+%The output from these two stages were then combined with all initial input sequences detected as secreted (S) by TargetP 1.1 and as having an extracellular localisation via WoLFPSORT 0.2 to produce a single fasta formatted output file containing the entire predicted secretome, i.e. a set of proteins predicted to be secreted by all three bioinformatic methods. 
+%This therefore identified the conservative subset of host and endosymbiont secreted proteins. 
+%A second list of putative secreted proteins was identified as any protein predicted to be secreted by any one of either SignalP 4.1, WoLFPSORT 0.2, or TargetP 1.1. It must be noted that such prediction approaches are only as good as the quality of each individual transcript assembly. 
+%Genes with low transcript levels are likely to have low coverage and assembly quality potentially leading to false negative detection of N-terminal signal peptides. 
+%This was investigated in more detail below.
+%
+%\subsubsection{Coverage}
+%As the identification of the secreted proteins hinged upon the recovery and accurate prediction of N-terminal signal peptides it was necessary to assess the position-specific read coverage across the transcript specifically at the C- and N- termini. 
+%This was achieved by developing a script to count and average (median) the number of reads aligning to each nucleotide in both tetrahymena and universal (i.e. host and endosymbiont) likely coding regions using a custom python script.  
+%This was done for all tetrahymena and universal coding regions in transcripts, all phylogenetically confirmed host and endosymbiont binned sequences, conservatively and permissively identified putative secreted and transporter proteins in the `Host Bin' and `Endosymbiont Bin'. 
+%Results were then plotted using python+matplotlib.
+%
+%\subsubsection{Endosymbiont Species Confirmation}
+%In order to confirm the identity of the endosymbiont species from CCAP two analyses were conducted. 
+%Firstly, the endosymbiont binned transcripts were searched for any 18S rRNA sequences present in the transcriptome.  
+%The two identified fragments of 18S sequence were aligned against a database of green algal 18S sequences (from [Hoshina and Imamura, 2008]) using MUSCLE.    
+%The multiple-sequence alignments were then masked manually using Seaview [Gouy, 2010].  
+%Evolutionary model was estimated using Prottest3 [Dariba, 2011] for each masked alignment and as highest likelihood models were identical (LG+$\Gamma$+I) alignments were concatenated into a single masked alignment.  
+%Bayesian and Maximum Likelihood phylogenetic reconstructions were then conducted using an un-partitioned suggested model and both MrBayes v3 and PhyML [Guindon, 2010].  
+%The ML phylogeny was plotted as an SVG and key taxa were highlighted.
+%
+%Secondly, \textit{Chlorella} specific primers were used to amplify, clone and sequence the identifying ITS2 region.  
+%This was achieved by using the Qiagen DNeasy Plant DNA extraction kit after bead beating to disrupt the \textit{Chlorella} cells from a culture aliquot. 
+%Using \textit{Chlorella} specific primers (from [Hoshina and Imamura, 2008]) PCR was used to amplify the \textit{Chlorella} ITS2 region from the  extracted DNA samples.  
+%These extracted samples were then sub-cloned using the StrataClone-TA-cloning kit (StrataClone) and blue-white screened for successful insert ligation. 
+%9 white colonies were selected and prepared for sequencing using the SV Wizard MiniPrep kit and PCR ligation of M13 universal sequencing primers.  
+%Sequences were then Sanger sequenced via Beckman-Coulter Sequencing Service.  
+%The returned sequences were then used to reconstruct a phylogeny of ITS2 region using BLAST against species outlined by [Hoshina and Imamura, 2008], aligned using MUSCLE, masked in Seaview, model testing in Prottest3 and reconstructed using MrBayes and PhyML.
+%
+%\section{Results}
+%\subsection{RNA-Seq Assembly}
+%The comparison of De-novo transcriptome assemblies can be seen in assembly summary below.
+%The metrics clearly show the Trinity assembly is far superior to that of the Oases assembly with over a 50\% reduction in total contig number while recovering consistently longer contigs (a histogram of the Trinity contigs lengths and distribution can be see in contig lengths). 
+%All further analyses were done using Trinity based pooled assembly.
+%
+%\begin{table}
+%\centering
+%\begin{tabular}{| c || c | c |}
+%\hline
+%\textbf{Assembly Metric} & \textbf{Oases Assembly} & \textbf{Trinity Assembly} \\
+%\hline
+%\textbf{Min Contig Length:} & 100 & 201\\
+%\textbf{Max Contig Length:} & 16,202 & 17,729\\
+%\textbf{Mean Contig Length:} & 648.90 & 959.32\\
+%\textbf{Standard Deviation of Contig Length:} & 939.04 & 1080\\
+%\textbf{N50 Contig Length:} & 1,368 & 1,621 \\
+%\textbf{Number of Contigs:} & 117,570 & 48,003\\
+%\textbf{Number of Contigs >=1kb:} & 22,225 & 14,774\\
+%\textbf{Number of Contigs in N50:} & 14,977 & 8,060\\
+%\textbf{Number of Bases in All Contigs:} & 76,290,606 & 46,050,097\\
+%\textbf{Number of Bases in All Contigs >=1kb:} & 46,695,005 & 31,602,626\\
+%\textbf{GC Content of Contigs:} & 28.99\% & 30.97\% \\
+%\hline
+%\end{tabular}
+%
+%\caption{Pooled read RNA-Seq De-Novo Assembly Comparison}
+%\label{tab:assembly_summary}
+%\end{table}
+%
+%The saturation analysis (in which we test whether further sequencing depth would recover more transcripts) is shown in saturation.  
+%As can be seen the combined reads quickly trend to an asymptote suggesting the majority of transcripts were recovered at this sequencing depth.
+%
+%\subsection{Transcript Analysis}
+%The initial identification and binning of recovered transcripts into host and endosymbiont categories was tested using a phylogenetic approach. 
+%The results of this analysis were plotted in phylogenetic confirmation.  
+%This demonstrates that the initial bin identifications were accurate for endosymbiont (\textasciitilde92\%) and food ( \textasciitilde94\%) derived transcripts.  
+%Of the bins that were too large to be comprehensively phylogenetically tested (`Host Bin' and `Food Bin') we screened a subset of 2000 transcripts using a phylogenomic approach. 
+%There were almost no detected endosymbiont sequences in 2000 randomly selected `Food Bin' transcripts therefore the `Host Bin' was the only cause for concern in containing misidentified endosymbiont transcripts.  
+%\textasciitilde 2\% of the 2000 randomly sampled `Host Bin' transcripts were found to be wrongly identified endosymbiont sequences, assuming this random sample is representative of the `Host Bin' in general this suggests approximately 500 endosymbiont transcripts are misidentified as host sequences (within the 27,907 host sequences).  
+%A key result here is that the bins that are to be discarded as contaminants (i.e. `Food Bin' and `Unknown Bin') have been either exhaustively checked and all host or endosymbiont transcripts they contain recovered or, as in the case of the `Food Bin', there are minimal sequences to be found.  
+%This, combined with the saturation analysis allows us to be confident that we have recovered the maximum possible (even if \textasciitilde 500 endosymbiont are misidentified as Host) host and endosymbiont expressed transcripts during day and night conditions.
+%
+%In order to assess the accuracy of secretome predictions it was necessary to assess terminal coverage of likely coding regions.  
+%The median coverage is plotted in coverage.  The key concern that this plot raises is that of poor terminal coverage throughout the `Host Bin' and `Endosymbiont Bin'. 
+%As expected the identified secreted proteins (as these predictions largely hinge on detection of terminal signalling peptides) demonstrate a greater coverage suggesting on average only those transcripts with high terminal coverage were identifiable as secreted.  
+%Due to the general low level of terminal coverage in the bins as a whole this raises the distinct possibility that many secreted proteins are undetected in the `Host Bin' and `Endosymbiont Bin'. 
+%Transporter proteins are principally identified by the presence of trans-membrane domains so terminal coverage is not a concern for their identification. 
+%For this reason, we are initially focusing on transporter proteins, however, there is a possibility to investigate secreted proteins using alternative strategies, in particular, proteomics.  
+%Mass-spectrometry based proteomics may allow the identification (via peptide fingerprinting) of secreted proteins.
+%
+%\subsection{Preliminary Metabolic Mapping}
+%Using the KEGG Automated Annotated Server KEGG Ontology annotations were recovered for the phylogenetically verified host and endosymbiont sequences and plotted onto the KEGG complete metabolic pathway (see metabolic mapping).  This is a rough preliminary tool that we can use to target later regulatory and interaction investigations for our candidate proteins.
+%
+%\subsection{Endosymbiont Species Confirmation}
+%
+%The phylogeny generated using detected Chlorella 18S sequences (see phylogeny) within the transcriptome clearly shows the concatenated sequence branching with high basal support (99.1\%) among the clade containing \textit{Chlorella} NC64A and endosymbionts 10 and 12. 
+%The concatenated sequences branch directly (with low support) with \textit{Chlorella} 12 endosymbiont as expected from the CCAP provided \textit{Paramecium bursaria – Chlorella} CCAP 1660/12 culture.  
+%ITS2 sequencing is still to be completed and thus this phylogeny cannot be reconstructed at this time, this will be completed within 2 months.
+%Regardless, preliminary results support the identity of the endosymbiont as being the \textit{Paramecium bursaria} CCAP 1660/12 endosymbiont and the immediate sister to \textit{Chlorella} NC64A.  This piece of data is particularly important as \textit{Chlorella} NC64A has a complete published genome sequence [Blanc et al., 2010]. As NC64A strain is both endosymbiotic and a close-relative it may form a useful resource in annotating and further exploring the assembled transcriptomic data.  
+%Potentially, this genome sequence may even be used for a referenced transcriptome assembly and allow improvement in assembled transcript quality.
+%
+%
+%\section{Progress so far}
+%\begin{itemize}
+%  \item Verified the taxonomic identity of \textit{Chlorella} endosymbiont within \textit{Paramecium bursaria} sample provided by CCAP using molecular phylogenetics.
+%  \item Cultured and purified transcripts from \textit{Paramecium-Chlorella} system in the two key metabolic states in their relationship – active and inactive photosynthesis during lit and dark conditions
+%  \item Conducted a de-novo transcriptome assembly of the day/night transcripts
+%  \item Assessed assembly quality and, in particular, average terminal coverage to determine the relative quality of annotation methods.
+%  \item Phylogenomically identified host and endosymbiont transcripts, as well as filtering out those derived from contaminants such as bacterial food-stocks.
+%  \item Annotated extracted transcripts with a focus on transporters and secreted proteins
+%  \item Generated a guide-line differential expression analysis to help target further work
+%  \item Assembled preliminary metabolic network of host and endosymbiont transcripts
+%  \item Identified a set of transporters putatively involved in maintenance of endosymbiosis
+%  \item Begun design of antibodies to determine the localisation of these transporters
+%\end{itemize}
+%
+%
+%\section{Further Work}
+%The work conducted so far forms the ground-work necessary in order make meaningful insights into possible proteins involved in the maintenance of the endosymbiosis.
+%Namely, confirmation of the endosymbiont species, day and night transcriptome sequencing and assembly, identification and verification of host and endosymbiont transcripts from the transcriptome and identification of transporter and secreted proteins within these subsets.  
+%Using these greatly reduced numbers of sequences it is possible to manually identify candidates to further investigate, to ideally identify their role in maintaining the endosymbiosis.  
+%Once we have developed our shortlist of candidates further we hope to verify our predictions using a variety of molecular methodologies:
+%\begin{itemize}
+%  \item Localisation - Polyclonal antibodies to confirm candidate is able to have a direct role in endosymbiosis (localised to perialgal vacuole or endosymbiont membrane for example) within the next 6 months.
+%  \item Proteomics - Shotgun Mass Spectrometry - confirm presence of protein in system rather than just transcripts within 9 months.
+%  \item Differential Expression Analysis - qPCR - to verify the regulation of candidate proteins at various points in the endosymbiosis (e.g. establishment, day, night) within the next 3-6 months.
+%  \item RNAi - direct testing of predictions by determining the effect of candidate protein knock-out on state of endosymbiosis within 9 months.
+%\end{itemize}
+%
+%\section{References}
+%
+%\noindent Achilles-Day, Undine E M,  Day, John G Isolation of clonal cultures of endosymbiotic green algae from their ciliate hosts, 2012 Journal of microbiological methods,  92,  3, 355, 7
+%
+% 
+%\noindent Beijirnick, M. W. 1890 Kulturversuche mit Zoolchlorellen, Lichengonidien, und anderen Algen. Botan. Zeit., Jahrg. 48].   MISSING
+%
+% 
+%\noindent Berger J  Feeding behavior of Didinium nasutum on Paramecium bursaria with normal or apochlorotic zoochlorellae 1980 . J Gen Microbiol 118 : 397 – 404
+%
+% 
+%\noindent Chen, Tze-Tuan, Polyploidy in Paramecium bursaria, 1940,Genentics,  26(1)
+%
+% 
+%\noindent Blanc G, Duncan G, Agarkova I, Borodovsky M, Gurnon J, Kuo A, Lindquist E, Lucas S, Pangilinan J, Polle J The Chlorella variabilis NC64A genome reveals adaptation to photosymbiosis, coevolution with viruses, and cryptic sex. 2010 Plant Cell 22(9):2943–2955
+%
+% 
+%\noindent Darriba D, Taboada GL, Doallo R, Posada D. Prottest3: Fast selection of best-fit models of protein evolution. Bioinformatics, 27:1164-1165, 2011
+%
+% 
+%\noindent Dolan, John, Mixotrophy in Ciliates: A Review of Chlorella Symbiosis and Chloroplast Retention, 1992,  Marine Microbial Food Webs,  6(2)
+%
+% 
+%\noindent Edgar, R.C MUSCLE: multiple sequence alignment with high accuracy and high throughput, 2004, Nucleic Acids Res. 32(5):1792-1797 
+%
+% 
+%\noindent Eddy, S.R., Accelerated Profile HMM Searches, 2011, PLoS Comp. Biol.
+%
+% 
+%\noindent Emanuelsson, O., Nielsen, H., Brunak, S., von Heijne, G., Predicting subcellular localization of proteins based on their N-terminal amino acid sequence. J. Mol. Biol.,2000. 300: 1005-1016,
+%
+% 
+%\noindent Fujishima, Masahiro,  Kodama, Yuuki, Endosymbionts in paramecium, 2012, European journal of protistology, 48,2
+%
+% 
+%\noindent Gouy M., Guindon S. \& Gascuel O. (2010) SeaView version 4 : a multiplatform graphical user interface for sequence alignment and phylogenetic tree building. Molecular Biology and Evolution 27(2):221-224.
+%
+% 
+%\noindent Guindon S., Dufayard J.F., Lefort V., Anisimova M., Hordijk W., Gascuel O. "New Algorithms and Methods to Estimate Maximum-Likelihood Phylogenies: Assessing the Performance of PhyML 3.0." Systematic Biology, 59(3):307-21, 2010.
+%
+% 
+%\noindent Krogh A., Larsson B., von Heijne G., Sonnhammer EL., Predicting transmembrane protein topology with a hidden Markov model: application to complete genomes. J Mol Biol. 2001 Jan 19;305(3): 567-80.
+%
+% 
+%\noindent Haas et al., De novo transcript sequence reconstruction from RNA-seq using the Trinity platform for reference generation and analysis, Nat. Protocols 2013 XXX
+%
+% 
+%\noindent Harper, D.S., Jahn, C.L. Differential use of termination codons in ciliated protozoa 1989, PNAS, Vol. 86, pp. 3252-3256, XX
+%
+% 
+%\noindent Horton, P., Park, K-J., Obayashi, T., Fujita, N., Harada, H., Adams-Collier, CJ., Nakai, K., WoLF PSORT: protein localization predictor Nucl. Acids Res. 2007 35 suppl 2: 585-587
+%
+% 
+%\noindent A. Conesa, S. Götz, J. M. Garcia-Gomez, J. Terol, M. Talon and M. Robles. "Blast2GO: a universal tool for annotation, visualization and analysis in functional genomics research", Bioinformatics, Vol. 21, September, 2005, pp. 3674-3676.
+%
+% 
+%\noindent Hoshina, R., Imamura, N,  Multiple Origins of the Symbioses in Paramecium bursaria 2008 Protist, vol. 159, 53-63
+%
+% 
+%\noindent Hoshina, R., Imamura N., Origins of algal symbions in Paramecium Bursaria 2009, Microbiology Monographs 12 Endosymbtions in Paramecium (ed: Fujishima M.)
+%
+% 
+%\noindent Hosoya, Hiroshi,  Kimura, Kouki, Matsuda, Seiji, Kitaura, Miyuki,  Takahashi, Tadao, Kosaka, Toshikazu, Symbiotic Algae-free Strains of The Green Paramecium Paramecium bursaria produced by the Herbicide Paraquat, 1995, Zoological Science, 12
+%
+% 
+%\noindent Johnson, Matthew D,  Acquired phototrophy in ciliates: a review of cellular interactions and structural adaptations , 2011, The Journal of eukaryotic microbiology, 58(3)
+%
+% 
+%\noindent Karakashian, S.J., Growth of Paramecium bursaria as Influenced by the Presence of Algal Symbionts, 1963,  Physiological Zoology, 36(1)
+%
+% 
+%\noindent Karkashian, S.J.,  Karkashian, M.W., Evolution and Symbiosis in the Genus Chlorella and Related Algae, 1965, Evolution,  19(3)
+%
+% 
+%\noindent Kato Y, Imamura, N. Metabolic Control Between the Symbiotic Chlorella and the Host Paramecium, 2009,  Microbiology Monographs 12,  Endosymbionts in Paramecium
+%
+% 
+%\noindent Kodama, Yuuki, Nakahara, Miho, Fujishima, Masahiro,  Symbiotic alga Chlorella vulgaris of the ciliate Paramecium bursaria shows temporary resistance to host lysosomal enzymes during the early infection process, 2007, Protoplasma, 230(1,2)
+%
+% 
+%\noindent Kodama, Yuuki, Fujishima, Masahiro, Infection of Paramecium bursaria by Symbiotic Chlorella Species, 2009, Microbiology Monographs 12,  Infection of Paramecium bursaria by Symbiotic Chlorella Species
+%
+% 
+%\noindent Kodama, Y, Fujishima, M,  Induction of secondary symbiosis between the ciliate Paramecium and the green alga Chlorella 2010,  Current Research, Technology and Education Topics in Applied Microbiology and Microbial Biotechnology
+%
+% 
+%\noindent Kodama, Yuuki, Inouye, Isao,  Fujishima, Masahiro, Symbiotic Chlorella vulgaris of the ciliate Paramecium bursaria plays an important role in maintaining perialgal vacuole membrane functions, 2011, Protist, 162(2)
+%
+% 
+%\noindent Kadono T , Kawano T , Hosoya H , and Kosaka T (2004) Flow cytometric studies of the host-regu- lated cell cycle in algae symbiotic with green paramecium . Protoplasma 223 : 133 – 141
+%
+% 
+%\noindent Kodama, Yuuki, Fujishima, Masahiro, Endosymbiosis of Chlorella species to the ciliate Paramecium bursaria alters the distribution of the host's trichocysts beneath the host cell cortex.2011, Protoplasma, 248(2)
+%
+% 
+%\noindent Kodama, Yuuki,  Fujishima, Masahiro, Characteristics of the digestive vacuole membrane of the alga-bearing ciliate Paramecium bursaria , 2012  Protist 163(4)
+%
+% 
+%\noindent Langmead B, Salzberg S. Fast gapped-read alignment with Bowtie 2. Nature Methods. 2012, 9:357-359.
+%
+% 
+%\noindent Loefer,J. B., Bacteria free cultures of Paramecium bursaria and concentrations of the medium as a factor in growth. 1936 J. Exp. Zoo!., 72: 387
+%
+% 
+%\noindent Mayer, K.M., Forney J.D., A Mutation in the Flanking 5'-TA-3' Dinucleotide Prevents Excision of an Internal Eliminated Sequence From the Paramecium tetraurelia Genome 1999 genetics vol. 151 no. 2 597-604
+%
+% 
+%\noindent Miwa I., Regulation of Circadian Rhythms of Paramecium bursaria by Symbiotic Chlorella Species 2009, Microbiology Monographs 12, Endosymbions in Paramecium.
+%
+% 
+%\noindent Meier, Renate, Wiessner, Wolfgang, Infection of algae-free Pammecium bursaria with symbiotic Chlorella sp. isolated from green paramecia, 1989, Journal of cell science, 93
+%
+% 
+%\noindent{} Muscatine L Glycerol excretion by symbiotic algae from corals and Tridacna and its control by the host 1967  Science 156 : 516 – 519
+%
+% 
+%\noindent Nishihara, N, Horiike, S,  Takahashi, T, Kosaka, T, Shigenaka, Y, Hosoya, H, Cloning and characterization of endosymbiotic algae isolated from Paramecium bursaria 1998, Protoplasma, 203
+%
+% 
+%\noindent Parker, Raymond C, Symbiosis in Paramecium bursaria, 1926, Journal of Experimental Zoology,  46
+%
+% 
+%\noindent Pérez MT , Dolan JR , Fukai E (1997) Planktonic oligotrich ciliates in the NW Mediterranean growth rates and consumption by copepods . Mar Ecol Prog Ser 155 : 89 – 101
+%
+% 
+%\noindent Petersen, TN., Soren, B., von Heijne, G., Nielsen, H., SignalP 4.0: discriminating signal peptides from transmembrane regions. Nat Meth 2011; 8(10):785-786
+%
+% 
+%\noindent Price, M.N., Dehal, P.S., and Arkin, A.P. FastTree 2 -- Approximately Maximum-Likelihood Trees for Large Alignments. 2010 PLoS ONE, 5(3):e9490.
+%
+% 
+%\noindent Putt M Abundance, chlorophyll content and photosynthetic rates of clliates in the Nordic Seds during summer.1990  Deep-Sea Res 37:1713-1731
+%
+% 
+%\noindent Raven JA Phagotrophy in phototrophs 1997 Limnol Oceanography 42:198–205
+%
+% 
+%\noindent Reisser W  The metabolic interactions between Paramecium bursaria Ehrbg. and Chlorella spec. in the Paramecium bursaria -symbiosis III. The influence of different CO2 concentrations and of glucose on the photosynthetic and respiratory capacity of the symbiotic unit  1980. Arch Microbiol 125 : 291 – 293
+%
+% 
+%\noindent Salvador Capella-Gutierrez; Jose M. Silla-Martinez; Toni Gabaldon. trimAl: a tool for automated alignment trimming in large-scale phylogenetic analyses. Bioinformatics 2009 25: 1972-1973.
+%
+% 
+%\noindent M.H. Schulz, D.R. Zerbino, M. Vingron and Ewan Birney. Oases: Robust de novo RNA-seq assembly across the dynamic range of expression levels. Bioinformatics, 2012. DOI: 10.1093/bioinformatics/bts094.
+%
+% 
+%\noindent Sonnhammer, EL, von Heijne, G., Krogh, A., A hidden Markov model for predicting transmembrane helices in protein sequences. Proc Int Conf Intell Syst Mol Biol 1998;6:175-82
+%
+% 
+%\noindent Sommaruga, R., Sonntag, B., Photobiological Aspects of the Mutualistic Association Between Paramecium bursaria and Chlorella 2009, Microbiological Monographs 12, Endosymbionts in Paramecium
+%
+% 
+%\noindent Summerer, Monika, Sonntag, Bettina,  Sommaruga, Ruben,  An experimental test of the symbiosis specificity between the ciliate Paramecium bursaria and strains of the unicellular green alga Chlorella., 2007,  Environmental microbiology, 9(8)
+%
+% 
+%\noindent Summerer, Monika, Sonntag, Bettina, Hörtnagl, Paul, Sommaruga, Ruben, Symbiotic ciliates receive protection against UV damage from their algae: a test with Paramecium bursaria and Chlorella. 2009,  Protist, 160(2)
+%
+% 
+%\noindent Taguchi, K, Hirota, S, Nakayama, H, Kunugihara, D, Mihara, Y - Optical Manipulation of Symbiotic Chlorella in Paramecium Bursaria Using a Fiber Axicon Microlens, 2012, Journal of Physics: Conference Series, 352
+%
+% 
+%\noindent Takeda H , Sekiguchi T , Nunokawa S , Usuki I (1998) Species-specificity of Chlorella for estab- lishment of symbiotic association with Paramecium bursaria . Does infectivity depend upon sugar components of the cell wall? Eur J Protistol 34 : 133 – 137
+%
+% 
+%\noindent Takahashi T , Shirai Y , Kosaka T , Hosoya H (2007) Arrest of cytoplasmic streaming induces algal proliferation in green paramecia . PLoS ONE 2 (12) : e1352 . doi: 10.1371/journal.pone.0001352
+%
+% 
+%\noindent Van Etten JL , Meints HR , Kuczmarski D , Meints RH  Virus infection for culturable Chlorella-like algae and development of a plaque assay (1983). Science 219 : 994 – 996
+%
+% 
+%\noindent Wootton, E. C., et al. Biochemical prey recognition by planktonic protozoa. 2007 , Environ. Microbiol. 9: 216 –222.
+%
+% 
+%\noindent Weis, Dale S, Ayala, Alfred, Effect of Exposure Period and Algal Concentration on the Frequency of Infection of Aposymbiotic Ciliates by Symbiotic Algae from Paramecium bursaria, 1976,  Journal of protozoology, 26(2)
+%
+% 
+%\noindent Yashchenko, Varvara V, Gavrilova, Olga V,  Rautian, Maria S, Jakobsen, Kjetill S, Association of Paramecium bursaria Chlorella viruses with Paramecium bursaria cells: ultrastructural studies. ,2012,  European journal of protistology, 48(2)
+%
+%
+%
+
+
