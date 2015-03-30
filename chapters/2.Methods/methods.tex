@@ -50,17 +50,63 @@ univariate mathematical distributions reference\citep{Leemis2008}
 
 DRAFT DUE: END OF FEB
 
-
-
-
-
-
-
-
-
-
 \section{Omics}
 
+``-omic'' technologies are those aimed at globally characterising a class of biomolecules 
+within a specific biological sample (charactising the ``-ome''). The most prevalent and developed 
+are genomics, transcriptomics, metabolomics and proteomics. Specifically, genomics aims to detect and analyse DNA, seeking to describe and discover genes and non-coding DNA
+features. Similarly, transcriptomics is orientated around the characterisation
+of mRNA in a sample and thus to investigate mRNA transcription, usually assessing
+gene expression in response to a given condition or feature. 
+Metabolomics, seeks to identify and quantify small biomolecules that make up the terminal and
+intermediate products of cellular metabolism e.g. carbohydrates, alcohols, and animo acids.
+Proteomics, on the other hand, is orientated towards the characterisation  
+of proteins present in a sample. 
+Furthermore, there are a plethora of different applications seeking to characterise
+different of subsets of these biomolecules e.g. epigenomics (epigenetic modification to DNA such as methylation
+and histone binding), gylcomics (characterisation of saccharides) and microbiomics (community genomics of organisms associated with a metazoan organism e.g. microbes present in the human digestive tract).
+``Meta-\ldots-omics'' is the application of specific ``omic'' method to a biological sample 
+containing multiple organisms. For example, ``metagenomics'' has been used to investigate
+the cellular community composition of marine micro-eukaryotes \citep{}<++> %BIOMARKS PAPER.
+
+The major utility of ``omic'' technologies is to globally identify and quantify key cellular components
+in a largely non-biased manner (although many biases exist across the different platforms
+they are still less biased than a targeted approach seeking to identify a specific cellular component
+e.g. A specific transcript abundance using RT-PCR). Furthermore, while previously existing
+datasets will massively aid analysis of omic datasets, they largely don't require
+as much \texit{a priori} knowledge of a specific organism or environment as a targeted approach.
+Therefore, it is possible to investigate novel non-model organisms and systems.
+
+However, care must be taken with ``omics'' approaches as they can easily become purely descriptive,
+not provide explanatory or mechanistic insight, not generate testable hypotheses or produce
+models without biological relevance \citep{Fang2011}. This is generally true
+of so-called ``holistic'' or systems approaches.  However, alternatively the methodological 
+reductionist approaches
+\footnote{
+    Epistemological reductionism: ``explain all biology in terms of physics and chemistry'' \citep{Crick1966}
+    i.e. biology is applied chemistry which is applied physics which is applied maths. 
+    Ontological reductionism: a biological system is only the sum total of its component molecules and their
+    interactions.
+    Methodological reductionism: examination of simple components can be used to understand complex system \citep{Fang2011}}.
+    modern biology is founded upon are not without their limitations.
+Specifically, by considering elements of a system in isolation one can omit the existence of
+more complex systemic mechanisms/features (or at the extreme ``emergent propoerties'') \citep{Fang2011} they also
+require \textit{a priori} data from which to generate hypotheses/identify individual system components.
+
+However, this is ultimately a false dichotomy, both approaches are best utilised in
+a complementary manner in which a system approach is used to generate novel and interesting
+hypotheses that can then be tested in isolation \citep{Casadevall2008}.  
+For example, generating a model of interorganism metabolism and then testing
+hypotheses in this model e.g. testing that a particular protein transporter is responsible
+for the transfer of metabolites that supports a particular relationship by knocking out
+that transporter and observing the resultant phenotype: is the relationship broken?.
+
+
+
+
+
+
+%not quite sure how this fits: segue model organisms into description
 The ability to use transcriptomics and genomic methods to investigate non-model
 organisms is a relatively novel technological and methodological development. 
 While, \textit{Paramecium bursaria} and green algae such as \textit{Micractinium
@@ -68,29 +114,128 @@ reisseri} could be considered ``model'' organisms throughout the early days of
 molecular biology they very much aren't ``models'' in the light of the genomics
 era of biology.  Particularly, when compared to such powerhouses of modern biology
 as \textit{Arabidopsis thaliana}, \textit{Mus musculus}, \textit{Saccharomyces
-cerevisiae} and even ourselves (\textit{Homo sapiens}).
+cerevisiae} and even ourselves (\textit{Homo sapiens}) resources to guide -omic
+analyses of this system is relatively scant.
 
 
-Several relatively recent works have demonstrated the potential for functional 
-and adaptive analysis of non-model organisms using combined genomics and transcriptomic
-approaches (e.g. \texit{Munoz-Merida2013,Feldmesser2014}). Increasingly,
-some researchers are able to dispense with the genomics nearly entirely to mixed
-success even in the PbMr system itself \textit{Kodama2014}.
+The potential for functional and adaptive analysis of non-model organisms using 
+combined genomics and transcriptomic approaches (e.g. \citep{Munoz-Merida2013,Feldmesser2014})
+has recently been demonstrated. Furthermore, it is increasingly feasible  to dispense
+with genomics and conduct functional analyses using transcriptomic datasets alone.
+This has been achieved even in the PbMr system \citep{Kodama2014}.
+
+% remove if we don't use this - metabolomics vs proteomics MS MALDI-TOF
+% \subsection{Mass spectrometry}
+% \subsubsection{Metabolomics}
+
+
+\subsection{DNA Sequencing}
+
+DNA sequencing is the key technology behind genomics and transcriptomics (and
+their special case applications). These technologies can largely be divided into
+3 technological eras up with today (2015) at the crux of transition between 2nd and 3rd
+generation. 
+
+1st generation sequencing technology is based on the work of Fred Sanger and operates
+on the principal of chain termination and reading gels.
+This was later much improved by the implementation of capillary methods but largely
+this was just a more efficient higher throughput of the same principal.  The major
+benefit of 1st generation technology is that of long high quality sequences, however,
+scaling to a whole genomes rapidly becomes infeasible.  The key use case currently
+of these technologies is targeted sequencing e.g. of cloned PCR products. ABI CAPILLARY
+
+3rd generation technologies have emerged only relatively recently.
+These platforms are so called single-molecule sequencing.  The more prevalent
+example is that of PacBio, however the Oxford Nanopore MinIon is showing much promise.
+Unfortunately, partly as an element of their recent nascence and partly due to the
+poorer signal:noise of single molecule approaches instead of analysing large 
+batches of identical DNA sequences these technologies have a relatively high error rate.
+Thus, currently at least, are inadequate for most assembly tasks by themselves.
+Where they have shown great utility is in conjunction with 2nd generation datasets
+as a scaffolding tool i.e. long noisy reads upon which high quality but shorter
+reads can be assembled.
+
+
+In contrast, 2nd generation sequencing technologies are largely orientated
+around high-throughput producing millions of relatively short DNA reads.  
+Unfortunately, this increases the error rate and biases but at the benefit of 
+generating massive amounts of extra data.
+The dominant 2nd generation technology is that of Illumina's bridge amplification
+paradigm - specifically the HiSeq and MiSeq platforms.  This PhD principally
+used HiSeq so I will focus my explanations on the function of this platform.
+454, iontorrent
+
+
+Sequencing by synthesis
 
 
 
 
+Methodological innovations have improved the accuracy of assembly using these platforms.
+Specifically, that of increasing the amount of positional information and individual read
+provides by generation of paired-end or mate-pair libraries.  These are libraries in which
+a pair of reads is sequenced at the ends of a fragment of approximately known size.
+This spacing information can then be used by genome assemblers and resolve graphs.
 
 
+Single cell
+
+
+
+Fundamentally at the end of the sequencing process and base calling what is output is 
+a FastQ formatted file (or several depending on the library preparation used).
+These files contain 
+
+These scores (Q) are calculated as a logarithmic relation to the base-called error probability (P)
+\[ Q = -10\log{10}{P} \]
+and conversely: 
+\[ P = 10^{frac{-Q}{10}} \]
+Therefore \[Q = 30 \] corresponds to 99.9\% base call accuracy
 
 
 \begin{figure}
-    Summary of stages of sequencing
-    % 
+    Summary of stages of illumina sequencing
 \end{figure}
 
 
-\subsection{Genomics}
+
+
+\subsection{Assessing Assemblies}
+
+RSEM-eval, mappings, NG50, L50, N50
+j
+\subsection{The Problem with Ploidy}
+
+One important complication in the assembly on eukaryotic genomes and transcriptomes
+is the issue of highly heterozygous polyploid genomes.
+
+This is problematic as the de Bruijn graphs constructed during the assembly
+rapidly increase in complexity when reads from heterozygous samples become
+incorporated \citep{Kajitani2014}.
+
+
+Specialised genome assemblers have been produced to address this problem,
+for example Platanus performed well on both highly and lowly heterozygous 
+genomes \citep{Katjitani2014}
+
+Likewise, transcriptome assembly rapidly increases with the number of alleles
+expected per gene determined by ploidy, heterozygosity and complex gene families
+and in turn how many transcripts per allele in light of alternative splicing.
+
+This is particularly problematic in the PbMr system owing to the massive
+ploidy of the host \textit{Paramecium bursaria} and the numerous whole genome
+duplications in its relatively recent evolutionary history (1).  This also 
+explains the difficulties in using sister species, as the most sequenced Paramecium
+genus species are the aurelia complex which have undergone 2 WGD since divergence with
+\textit{P. bursaria}.
+
+, especially in line with multiple splicing, overlapping 5' UTR (e.g.
+the fungi).
+
+
+
+
+\subsubsection{Genomics}
 
 Assemblathon 1 \citep{Earl2011}
 GAGE \citep{Schatz2012}
@@ -105,6 +250,54 @@ Improved-high quality draft: manual or automated additional work, gap resolution
 Annotated-Directed Imrpovement: Overlapping, improved with annotation, verified, gene models etc useful for gene comarpsiosns, alt splicing, pathway reconstruction
 Noncontiguous finished: high quality, finished apart from a few repeats or gaps, good enough for almost all analayses
 Finished: gold standard, less than 1 error per 100,000, replicon in contig seqs, reference quality \citep{Chain2009}
+
+
+
+
+\paragraph{Single cell genomics - RepliG kit}
+The Qiagen REPLI-g single cell method used for both transcriptomic and genomic
+sequencing in this thesis is principally a two setp process
+
+
+
+\subsubsection{Annotation}
+
+Reed \textit{et al.} \citep{Reed2006} divided components annotation into a useful dimension paradigm as follows:
+\begin{enumerate}
+    \item Enumeration: identification of genes and assignment of their predicted or known functions. What?
+    \item Interaction: integration of protein-protein, regulatory and metabolic interaction data between components Can they interact?
+    \item Genomic Localisation: analysis of genomic localisation of genes i.e. epigenetics.
+    \item Plasticity: investigation of the change of other dimensions over evolutionary time. Does their interaction change over time? \citep{Reed2006} 
+\end{enumerate}
+
+Clearly, at a systems level it is difficult (if not impossible currently), 
+even in well defined model organisms, to complete a full 4-dimensional annotation 
+for all cellular components. However, it is more than feasible to have a largely
+complete 1D and even 2D annotation with 3D and 4D investigated for specific 
+components.  Furthermore, annotation can be conducted with a range of confidences
+from in silico predicted interactions to biochemically validating those predictions in vivo
+and incorporating the precision and recall of various methodologies. Generally, such a process
+is inherently iterative with successive model building and experimental testing and validation 
+or rejection of such models \citep{Reed2006}.
+
+One of the major goals of this thesis is to reconstruct a preliminary predicted
+2D annotation of the PbMr system.
+
+The most important step towards this goal is that of eukaryotic gene prediction.
+
+
+Eukaryotic gene prediction is achieved by generally two methods - \textit{de Novo} HMM based
+methodologies (e.g. GENESCAN, TWINSCAN \citep{}<++>) and expression evidence based methods
+in which reads from sequenced cDNA (or in older approaches ESTs) are aligned to the 
+assembled genomic contigs \citep{Brent2007}.  Unfortunately even relatively deep
+sequencing of cDNA can fail to identify the structure of 20-40\% of genes in a typical
+eukaryote genome owing to these genes being expressed only at very low levels or in
+different conditions than that from which the cDNA was extracted \citep{Brent2007}.
+
+
+
+
+
 
 \subsection{Transcriptomics}
 
@@ -190,10 +383,82 @@ FastQC tool and its parameters
 
 \subsubsection{Read trimming}
 
-MacManes suggests that gentle trimming is generally better \citep{MacManes2014}
-However, phred score of 30 was the best balance of reads trimmed to mapping
-MAKE GRAPH using this data
 % /storage/fin/raw_reads/raw_sct_reads/optimising_trimming_paramters/test_mapping_to_bulk
+
+
+
+Difficulties: 
+A major source of bias in transcriptomic datasets is that of compositional biases induced
+by the random hexamer priming used in the generation of cDNA in many library preparations.
+(see \ref{}<++>) %previous section of sequencing itself %does SCT kit do random hexamers?
+Specifically, these random hexamers do not bind uniformly across the transcripts,
+therefore the location of reads are not uniform \citep{Hansen2010}\citep{Hansen2010}.
+Fortunately, the single cell kits do not utilise random hexamer priming {}<++> %Check with DAVID
+So despite inducing other biases, they do not induce this one!
+
+
+Another source of bias is the strong correlation between GC richness in read coverage
+observed in 2nd-generation Illumina sequencing \citep{Dohm2008,}
+This is possibly to do with the different biophysical properties of GC-rich dsDNA (high melting point) \citep{Dohm2008} %is this relevant?
+Or biases in PCR -ampligication, or specifically i9n bridge PCR of cluster amplification
+
+
+Errors are more common at the start and end of 
+
+
+
+
+Sequencing errors: Illumina sequencing has non-random error distribution across length of read, increasing towards the 3' end liu2012. These errors are generally substitution errors yang2013 at a rate of 1-3\% globally \citep{MacManes2014}.  However, while the latest assemblers (see \ref{}<++>) are capable of %ref to assembly section
+handling many of these errors, inevitably sequencing error does cause some
+assembly error MacManesANDEISEN2013.
+Furthermore, errors rapidly increase both the space and time complexity of the assembly (discussed in \ref{}<++>) problem \citep{MacManes2014}.
+
+One of the most important and prevalent methods to try and improve assembly
+accuracy in the face of sequencing errors is that of read trimming, typically
+using one of a range of tools: TRIMMOMATIC, SICKLE, FASTX-TOOLKIT, BIOPIECES \citep{}<++>. %citations for tools
+
+Trimmomatic is the preferred tool of choice as it more read-pair aware than
+FASTX-TOOLKIT and BIOPIECES, retaining pair ordering and conducting more
+advanced trimming checks using pairing information such as adaptor read-through.
+By retaining pairing information and outputting ``surviving'' paired reads and
+unpaired reads TRIMMOMATIC precludes lengthy repairing of header pairing information
+in large datasets. \citep{}<++> %More information about how trimmomatic oworks and comparison to other trimmers
+
+The main approaches used individually or as a combination in trimming tools are that 
+of adaptor trimming (identifying and removing sequencing adapter sequences from reads),
+sliding windows (removing nucleotides that fall below a provided average quality threshold),
+basic terminal quality trimming (remove individual 5' or 3' nucleotides that have an associated PHRED score
+below a ceratin threshold) and minimum length (discard reads that fall below a minimum length). 
+\citep{}<++> %citations explaining these methods
+
+The key difficulty is that all widely used tools above require user-defined thresholds
+for the various trimming parameters e.g. for sliding window approaches - a window size
+and a minimum average quality threshold over the window.  
+This leads to a careful trade-off, if conservative/aggresive (i.e. high) quality thresholds
+are used many reads will be discarded, reducing the amount of data from which to 
+construct an assembly.  This will reduce feature resolution such as alternative splices 
+and in will lead to the loss/reduced assembly accuracy of lowly expressed (but potentially biologically interesting) transcripts \citep{MacManes2014}. On the otherhand, instinctually if permissive (i.e. low)
+quality parameters are set then potentially erroneous reads will be incorporated into the assembly
+and global assembly accuracy will decline. 
+
+Relatively little work on the optimisation of these parameters has been conducted, and generally
+researchers conducting high-profile \textit{de novo} assemblies utilise aggressive thresholds \citep{MacManes2014}.
+However, for \textit{de novo} transcriptome assembly assessed using a range of metrics
+(e.g. mismatches to previous datasets, kmer number, PE reads mapping back to assembly etc.)
+most of the gain of assembly accuracy occurred at a threshold of \[\geq 5\].
+Particularly, low abundance kmers are largely discarded with a threshold of \[\geq 5\].
+Suggesting, that a very low threshold of 2 or 5 optimises assembly quality potentially
+followed by kmer abundance based error correction \citep{MacManes2014}.
+
+
+
+% TRY THIS FOR SCT
+
+
+
+
+
+
 
 
 \subsubsection{Error correction}
@@ -222,6 +487,15 @@ QUAKE \citep{Kelley2010}
 
 \citep{Nikolenko2013}
 
+Sequence error correction improves \textit{de novo} assembly \citep{MacManes2013}
+
+
+
+
+
+
+
+
 
 \subsubsection{Digital normalisation}
 
@@ -239,6 +513,13 @@ However, it has become rapidly evident with further expanding sequencing capacit
 
 
 
+
+
+Assembly assessment:
+Adapter trimmed PE reads concordantly mapping to assembly \citep{MacManes2014} 
+Number of complete ORFs (start and stop codons) using TRANSDECODER 
+Unique transcript number using BlastP (80\% similarity over 100aa and e-10)
+Expression for each contig https://github.com/macmanes/trimming_paper/tree/recreate_ms_analyses/scripts
 
 
 \subsubsection{Annotation}
@@ -458,37 +739,6 @@ theoretically satisfying approaches become feasible.
 
 \subsubsection{Bayesian}
 
-\subsection{Assessing Assemblies}
-
-RSEM-eval, mappings, NG50, L50, N50
-
-\subsection{The Problem with Ploidy}
-
-One important complication in the assembly on eukaryotic genomes and transcriptomes
-is the issue of highly heterozygous polyploid genomes.
-
-This is problematic as the de Bruijn graphs constructed during the assembly
-rapidly increase in complexity when reads from heterozygous samples become
-incorporated \citep{Kajitani2014}.
-
-
-Specialised genome assemblers have been produced to address this problem,
-for example Platanus performed well on both highly and lowly heterozygous 
-genomes \citep{Katjitani2014}
-
-Likewise, transcriptome assembly rapidly increases with the number of alleles
-expected per gene determined by ploidy, heterozygosity and complex gene families
-and in turn how many transcripts per allele in light of alternative splicing.
-
-This is particularly problematic in the PbMr system owing to the massive
-ploidy of the host \textit{Paramecium bursaria} and the numerous whole genome
-duplications in its relatively recent evolutionary history (1).  This also 
-explains the difficulties in using sister species, as the most sequenced Paramecium
-genus species are the aurelia complex which have undergone 2 WGD since divergence with
-\textit{P. bursaria}.
-
-, especially in line with multiple splicing, overlapping 5' UTR (e.g.
-the fungi).
 
 
 
