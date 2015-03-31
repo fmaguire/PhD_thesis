@@ -50,8 +50,78 @@ univariate mathematical distributions reference\citep{Leemis2008}
 
 DRAFT DUE: END OF FEB
 
-\section{Omics}
 
+\section{Microbiology}
+
+\subsection{Media}
+\textit{Paramecium bursaria – Chlorella} CCAP1660/12 cultures were obtained from 
+the UK Culture Collection of Algae and Protozoa and were maintained in 
+New Cereal Leaf-Prescott Liquid (NCL) media 
+(4.3g/l CaCl$_{2}$.2H$_{2}$0, 1.6g/l KCl, 5.1g/l K$_{2}$HPO$_{4}$, 2.8g/l MgSO$_{4}$.7H$_{2}$O, 
+1g/l wheat bran, gravity filtered via GF/C paper and autoclaved) and stored in 
+a lit incubator at 15$^{o}$C. [\url{http://www.ccap.ac.uk/media/documents/NCL.pdf}].  
+
+Cultures were sub-cultured every 2 weeks with fresh NCL media and were 
+inspected using light microscopy to assess culture health.  
+
+\subsection{Cell Harvesting}
+For bulk transcriptomic analyses cells were harvested in a way to minimise the 
+number of bacterial prey species from the culture, \textasciitilde $10^{6}$ 
+cell aliquots were strained through 40$\mu m$ sieves, filtered on 
+10$\mu m$ nylon filters, 
+before finally being filtered on 8$\mu m$ TETP polycarbonate filters using a 
+low-pressure filtration pump.  Collected samples were either immediately 
+quick-frozen in liquid nitrogen for storage ($-20^{o}$C for short-term storage 
+and $-80^{o}$C for longer storage) or harvested by centrifugation.  
+In order to investigate the two main metabolic states of the symbiosis 
+(i.e. under light conditions during active photosynthesis and in the dark 
+when no photosynthesis is taking place) samples were extracted 5 hours into 
+the light and dark phase of the day/night cycle.
+
+To ensure extracted RNA was representative of healthy and interacting host 
+and endosymbionts care was taken to minimise the number of dead/dying cells 
+from which RNA was extracted.  In order to do this, a subsample was taken 
+from each culture during the process of harvesting and scored for dead/dying cells.  
+Cell assays were formed by taking 1-2ml of each harvest cell pellet and 
+fixed using 40$\mu l$ Lugol's solution (0.5g I$_{2}$ and 1g KCl in 8.5ml 
+of MilliQ water). Dead/dying cells were identified as broken or puckered cells 
+and counted using light microscopy.  Samples containing >10\% dead/dying cells 
+were discarded and no RNA extracted from them.
+
+Similarly for single cell methodologies a ``cell-picking'' approach was used in which
+PbMr cells were isolated using oral aspirated drawn Pasteur glass pipettes on 
+an inverted light microscope and serially washed in fresh NCL media \citep{Garcia-Cuetos2012}.
+
+\subsubsection{Bulk RNA Extraction and Isolation}
+In order to lyse collected samples, cells were washed from the filter or the 
+pellet was resuspended in 1ml TriReagent (Sigma) heated to $60^{o}$C. 
+Cells were vortexed with sterile 300$\mu m$ glass-beads for 15s, incubated at 
+room temperature for 10 minute, vortexed for 15s, quick-frozen in liquid 
+nitrogen and stored at $-20^{o}$C before further processing.  
+Samples were defrosted, vortexed for 15s, placed in a heat-block set 
+to $60^{o}$C for 10 minutes while continuing to be vortexed, removed from 
+heating and vortexed again for 15s.  
+RNA was extracted by adding 0.2ml of Chloroform to the glass-bead-trizol-sample 
+solution, shaking for 15s, incubating for 5 minutes at room temperature and 
+centrifuging at 12,000g for 15 minutes at $4^{o}$C.  
+The upper-phase was then transferred to an RNAse-free 1.5ml tube and an 
+equal volume (\textasciitilde$0.5$ml) of isopropanol was added before shaking for 15s.  
+The isolated RNA was then incubated at $-20^{o}$C for 10 minutes 
+(up to several hours) before being collected as a pellet using a centrifuge at 
+10,000g for 10 minutes at $4^{o}$C (supernatant was discarded). 
+The RNA pellet was then washed with 1ml of 75\% ethanol and centrifuged 
+twice at 10,000g for 10 minutes at $4^{o}$C with the supernatant being 
+discarded after each centrifugation.  
+Pellet was dried before being resuspended in 100$\mu l$ of RNAse-free water.  
+The RNA was then cleaned further using the Qiagen RNeasy clean-up kit 
+before being assessed for quality using ND-1000 (NanoDrop) and BioAnalyzer (Agilent).
+
+\subsubsection{Single Cell RNA and DNA Extraction}
+Qiagen Repli-G kit
+
+
+
+\section{Omics}
 ``-omic'' technologies are those aimed at globally characterising a class of biomolecules 
 within a specific biological sample (charactising the ``-ome''). The most prevalent and developed 
 are genomics, transcriptomics, metabolomics and proteomics. Specifically, genomics aims to detect and analyse DNA, seeking to describe and discover genes and non-coding DNA
@@ -541,12 +611,34 @@ as >30M reads for highly-expressed gene in six standard model organisms \citep{L
 
 \section{Machine Learning and Statistical Pattern Recognition}
 
-Machine learning is a diverse field devoted to the challenge of the development
-and application of algorithms capable of learning from data.
-It is the product of a convergence of several fields: Pattern Recognition, Optimisation,
-Artifical Intelligence, and Multivariate Statistics. 
-With concepts derived from a range of Ur-Fields such as Engineering, 
-Computer Science, Physics and Statistics.
+Machine learning (ML) is a diverse field devoted to the challenge of developing and applying
+algorithms capable of automatically inferring and utilising patterns in datasets \citep{Murphy2012}
+In other words, machine learning is the parameterisation of adaptive functions
+that maps a training dataset to a target output (\[f(X) -> Y\]) \citep{Bishop2006}.
+Or to use Tom Mitchell's formal definition: ``A computer is said to learn from experience
+E with respect to some class of tasks T and performance measure P, if its performance at tasks T,
+as measured by P, improves with experience E.'' \citep{Mitchell1997}
+
+
+ML is the product of a convergence of several fields: Pattern Recognition, Optimisation,
+Artifical Intelligence, and Multivariate Statistics. Historically, there has been somewhat
+of a rift between classicial statisticians and machine learning researchers despite
+sharing common goals of identifying mechanistic processes within data and/or 
+generating predictive functions using that data. It should be noted the distinction
+of ``classical statistics'' and ``ML'' is not quite accurate and is a very blurred line
+therefore it is better to apply new labels of ``Data Modelling'' vs.
+``Algorithmic Modelling'' cultures.
+
+Data Modelling with its traditional residuals analysis and yes-no goodness-of-fit
+tests can be problematic and downright misleading with higher dimensional analyses
+or when discriminating between competing models.  This is compounded by the fairly poor
+use of cross-validation. 
+The rise of bayesian statistics into mainstream prominence the last couple of decades
+has reduced this somewhat.
+
+
+
+
 
 Machine learning applications range in complexity from simple linear regression
 common to every science undergraduate to deep convoluted neural networks running
@@ -555,15 +647,96 @@ capable of beating human-performance on complex image classification tasks
 such as IMAGENET \citep{Berg2014,He2015}.
 
 
+
 \subsection{Cost functions and Gradient descent}
+
+The 
+
+
 
 \subsection{Supervised Learning}
 
+
+In supervised (also referred to as predictive) learning the principal aim is 
+to learn a mapping between inputs/features \(x\) and output/response \(y\) given a provided tuple of 
+\(x\) and \(y\) pairs i.e. \(\mathcal{D} = {(x_{i}, y_{i}) \forall i \in N}\) where \(N\) is 
+the cardinality of the training set \citep{Murphy2012}.  
+
+For a given problem \(x_{i}\) is typically a \({1, \cdots, D}\) dimension vector containing
+feature values (i.e. experimental measurements).  However, more complex multidimensional
+structures are often encoded in this vector format by flattening (i.e. an image 
+or graph structure).  Likewise, \(y_{i}\) is typically either a categorical variable 
+\( y_{i} \in {0, \cdots, C}\) or a continuous real-valued scalar.
+
+Supervised learning algorithms and applications that attempt to learn a mapping to a
+categorical output variable are referred to as classification problems. Inversely,
+attempts to map to a continuous (or ordinal) value is known as regression \footnote{Although note
+the simplest classification algorithm is referred to as ``logistic regression''}.
+The most prevalent example of the latter is that of basic linear regression.
+
+Classification may be binary in which there are 2 possible values of y (i.e. \( y \in {0, 1}\),
+multiclass in which y can be any of \(C\) different classes (i.e. \(y \in {0, \cdots C}\)) and
+multi-label in which classes are not mutually exclusive.  Typically we are seeking to approximate
+an unknown function \(f(x) = y\) using our training dataset (\(\mathcal{D}\)) in such a 
+way that our approximation \( \hat{f}(x) = \hat{y}\) generalises to new inputs not 
+in the training dataset (\(x_{i} \not\in \mathcal{D}\)) \citep{Murphy2012}. 
+
+\[\begin{bmatrix}
+        x_{0,0} & \cdots & x_{0,j}\\
+        \vdots & \ddots & \vdots \\
+        x_{i,0} & \cdots & x_{i,j}\\
+    \end{bmatrix} \overset{\hat{f}}{\rightarrow} \begin{bmatrix}
+        y_{0} \\
+        \vdots \\
+        y_{i} \\
+    \end{bmatrix}
+\]
+
+Generally, our functional approximation is probablistic - it will return the most
+probable class label \(\( \hat{f}(x) = \argmax{C} p(y = c|x,\mathcal{D}) = \hat{y}\) 
+where \(p(y|x,\mathcal{D})\) represents the probability distribution over possible labels 
+with a specific input vector \(x\) and training set \(\mathcal{D}\).
+
+
+
+
+
+
+
+
+The other form of supversied learning is that of regression in which the response
+variable is continuously valued.  For example, linear or polynomial regression in which
+we are seeking to generate a function that gives us an approximation of a value of y
+for a given x.  Visually, for trivial 2-dimensional regression this function is 
+plotted as a line on the dataset.
+
+
+% figure showing regression vs classification side-by-side
+
 \subsubsection{Support Vector Machines}
+
+
+
 
 \subsection{Unsupervised Learning}
 
+The other main form of machine learning is that of unsupervised or descriptive learning.
+In which the training dataset has no provided output labels (y) i.e. 
+\(\mathcal{D} = {x_{i} \forall i \in N}\) where again N is the cardinality of 
+this training dataset. This is slightly more difficult as it lacks an obvious error
+metric like supervised learning but is important in attempts to discover patterns
+in datasets.
+
+
+
+
+
+
+
 \subsubsection{K-means}
+
+
+
 
 
 \section{Phylogenetics}
@@ -665,7 +838,7 @@ This drastically reduces the \[O(L^{N})\] complexity to approximately \[O(N^{2})
 \citep{Sievers2011}. While there have been various improvements and alternative approaches
 created such as merging both local and global alignment \citep{Notredame2000}, 
 rapid identification of homologous regions using Fast Fourier Transforms \citep{Katoh2002},
-iterative refinement of alignments \citep{Edgar2004a} and use of Hidden-Markov Models \citep{
+iterative refinement of alignments \citep{Edgar2004a} and use of Hidden-Markov Models \citep{}<++>
 
 
 
@@ -785,32 +958,6 @@ theoretically satisfying approaches become feasible.
 %
 %\section{Methods}
 %\subsection{Culturing}
-%
-%\subsubsection{Media}
-%\textit{Paramecium bursaria – Chlorella} CCAP1660/12 cultures were obtained from the UK Culture Collection of Algae and Protozoa and were maintained in New Cereal Leaf-Prescott Liquid (NCL) media (4.3g/l CaCl$_{2}$.2H$_{2}$0, 1.6g/l KCl, 5.1g/l K$_{2}$HPO$_{4}$, 2.8g/l MgSO$_{4}$.7H$_{2}$O, 1g/l wheat bran, gravity filtered via GF/C paper and autoclaved) and stored in a lit incubator at 15$^{o}$C. [\url{http://www.ccap.ac.uk/media/documents/NCL.pdf}].  
-%Cultures were sub-cultured every 2 weeks with fresh NCL media and were inspected using light microscopy to assess culture health.  
-%
-%\subsubsection{Harvesting cells for transcriptome analysis}
-%To harvest \textit{P. bursaria} and minimise the number of bacterial prey species from the culture, \textasciitilde $10^{6}$ cell aliquots were strained through 40$\mu m$ sieves, filtered on 10$\mu m$ nylon filters, before finally being filtered on 8$\mu m$ TETP polycarbonate filters using a low-pressure filtration pump.  
-%Collected samples were either immediately quick-frozen in liquid nitrogen for storage ($-20^{o}$C for short-term storage and $-80^{o}$C for longer storage) or harvested by centrifugation.  
-%In order to investigate the two main metabolic states of the symbiosis (i.e. under light conditions during active photosynthesis and in the dark when no photosynthesis is taking place) samples were extracted 5 hours into the light and dark phase of the day/night cycle.
-%
-%\subsubsection{Culture Health}
-%To ensure extracted RNA was representative of healthy and interacting host and endosymbionts care was taken to minimise the number of dead/dying cells from which RNA was extracted.  
-%In order to do this, a subsample was taken from each culture during the process of harvesting and scored for dead/dying cells.  
-%Cell assays were formed by taking 1-2ml of each harvest cell pellet and fixed using 40$\mu l$ Lugol's solution (0.5g I$_{2}$ and 1g KCl in 8.5ml of MilliQ water). D
-%ead/dying cells were identified as broken or puckered cells and counted using light microscopy.  
-%Samples containing >10\% dead/dying cells were discarded and no RNA extracted from them.
-%
-%\subsubsection{RNA Extraction and Isolation}
-%In order to lyse collected samples, cells were washed from the filter or the pellet was resuspended in 1ml TriReagent (Sigma) heated to $60^{o}$C. Cells were vortexed with sterile 300$\mu m$ glass-beads for 15s, incubated at room temperature for 10 minute, vortexed for 15s, quick-frozen in liquid nitrogen and stored at $-20^{o}$C before further processing.  
-%Samples were defrosted, vortexed for 15s, placed in a heat-block set to $60^{o}$C for 10 minutes while continuing to be vortexed, removed from heating and vortexed again for 15s.  
-%RNA was extracted by adding 0.2ml of Chloroform to the glass-bead-trizol-sample solution, shaking for 15s, incubating for 5 minutes at room temperature and centrifuging at 12,000g for 15 minutes at $4^{o}$C.  
-%The upper-phase was then transferred to an RNAse-free 1.5ml tube and an equal volume (\textasciitilde$0.5$ml) of isopropanol was added before shaking for 15s.  
-%The isolated RNA was then incubated at $-20^{o}$C for 10 minutes (up to several hours) before being collected as a pellet using a centrifuge at 10,000g for 10 minutes at $4^{o}$C (supernatant was discarded). 
-%The RNA pellet was then washed with 1ml of 75\% ethanol and centrifuged twice at 10,000g for 10 minutes at $4^{o}$C with the supernatant being discarded after each centrifugation.  
-%Pellet was dried before being resuspended in 100$\mu l$ of RNAse-free water.  
-%The RNA was then cleaned further using the Qiagen RNeasy clean-up kit before being assessed for quality using ND-1000 (NanoDrop) and BioAnalyzer (Agilent).
 %
 %\subsection{RNA-Seq}
 %\subsubsection{cDNA generation and library preparation}
