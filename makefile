@@ -6,6 +6,8 @@ LATEXOPTS := pdf
 TYPESETS := ./typesetting
 FONTDIR := ~/.fonts
 TEXMF := ~/texmf
+FIGURES := $(basename $(shell find chapters -type f -name '*.svg'))
+
 
 # latexmk is necessary for correct building
 # and we want it to run every time
@@ -14,15 +16,20 @@ TEXMF := ~/texmf
 # MAIN LATEXMK RULES 
 all: $(THESIS).pdf
 
-$(THESIS).pdf: $(THESIS).tex 
+$(THESIS).pdf: $(THESIS).tex #figs
 	latexmk -$(LATEXOPTS) -$(LATEX) --halt-on-error -use-make $(THESIS).tex
 
 # make draft using just what is in draft.tex
 draft: $(DRAFT).pdf
 
-$(DRAFT).pdf: $(DRAFT).tex
+$(DRAFT).pdf: $(DRAFT).tex #figs
 	latexmk -$(LATEXOPTS) -$(LATEX) --halt-on-error -use-make $(DRAFT).tex
-
+#
+#figs: $(FIGURES)
+#	@for n in $(FIGURES); do\
+#		inkscape -f $$n.svg -A $$n.pdf ;\
+#	done
+#
 #packages:
 #	cp $(TYPESETS)/texmf/* $(TEXMF)
 #	#export TEXINPUTS=.:./typesetting/texmf

@@ -18,6 +18,20 @@
    sodipodi:docname="single_cell_RNAseq.svg">
   <defs
      id="defs4">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="-195.02487 : 337.79297 : 0"
+       inkscape:vp_y="0 : 999.99998 : 0"
+       inkscape:vp_z="380.24928 : 0 : 0"
+       inkscape:persp3d-origin="-175.95276 : 234.78739 : 1"
+       id="perspective10419" />
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="-195.02487 : 337.79298 : 0"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="380.24928 : 0 : 0"
+       inkscape:persp3d-origin="-186.95276 : 257.7874 : 1"
+       id="perspective10347" />
     <marker
        inkscape:stockid="Arrow2Send"
        orient="auto"
@@ -227,16 +241,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="333.55788"
-     inkscape:cy="644.77432"
+     inkscape:zoom="0.5"
+     inkscape:cx="145.3237"
+     inkscape:cy="709.30419"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="556"
-     inkscape:window-height="1011"
-     inkscape:window-x="560"
-     inkscape:window-y="18"
+     inkscape:window-width="836"
+     inkscape:window-height="664"
+     inkscape:window-x="0"
+     inkscape:window-y="365"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata7">

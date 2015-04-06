@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="189.89256mm"
+   height="110.91333mm"
+   viewBox="0 0 672.84766 392.99999"
+   id="svg10421"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="integration_vs_dependence.svg">
+  <defs
+     id="defs10423">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18108 : 1"
+       inkscape:vp_y="0 : 999.99995 : 0"
+       inkscape:vp_z="744.09449 : 526.18108 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78738 : 1"
+       id="perspective4340" />
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Mend"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path4588"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker11239"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path11241"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(0.4,0,0,0.4,4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Mstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path4585"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(0.4,0,0,0.4,4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path4579"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(0.8,0,0,0.8,10,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.9899495"
+     inkscape:cx="385.27076"
+     inkscape:cy="95.356598"
+     inkscape:document-units="px"
+     inkscape:current-layer="g11471"
+     showgrid="false"
+     inkscape:window-width="1680"
+     inkscape:window-height="1050"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata10426">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-15.080859,-35.862212)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:11px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="74.246208"
+       y="339.19452"
+       id="text10577"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan10579"
+         x="74.246208"
+         y="339.19452" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:11px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="259.35641"
+       y="62.2481"
+       id="text10641"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan10643"
+         x="259.35641"
+         y="62.2481"
+         style="font-weight:bold;font-size:13.75px">Degree of interdependence</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:11px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="576.17365"
+       y="225.01105"
+       id="text10645"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan10647"
+         x="578.24884"
+         y="225.01105"
+         style="font-weight:bold;font-size:12.5px;text-align:center;text-anchor:middle">Degree of </tspan><tspan
+         sodipodi:role="line"
+         x="578.24884"
+         y="240.63605"
+         id="tspan11313"
+         style="font-weight:bold;font-size:12.5px;text-align:center;text-anchor:middle">host-symbiont </tspan><tspan
+         sodipodi:role="line"
+         x="576.17365"
+         y="256.26105"
+         id="tspan11317"
+         style="font-weight:bold;font-size:12.5px;text-align:center;text-anchor:middle">integration</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#Arrow1Mstart)"
+       d="m 358.60415,83.625914 c 0,304.055916 0,304.055916 0,304.055916"
+       id="path10649"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
+       d="m 195.96959,235.65387 c 323.24882,0 325.26912,0 325.26912,0"
+       id="path10651"
+       inkscape:connector-curvature="0" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot11319"
+       style="font-style:normal;font-weight:normal;font-size:11px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"><flowRegion
+         id="flowRegion11321"><rect
+           id="rect11323"
+           width="60.714287"
+           height="25.714285"
+           x="465"
+           y="220.93364" /></flowRegion><flowPara
+         id="flowPara11325" /></flowRoot>    <g
+       id="g11471">
+      <g
+         id="g4213"
+         transform="translate(14.285714,-7.8571428)">
+        <g
+           id="g4364"
+           transform="translate(-25.357143,0)">
+          <rect
+             ry="19.461363"
+             rx="19.461363"
+             y="96.757736"
+             x="456.93445"
+             height="38.922726"
+             width="164.83694"
+             id="rect4356"
+             style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#800000;fill-opacity:0.49019608;fill-rule:nonzero;stroke:#000000;stroke-width:2.54384351;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate" />
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:11px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             x="539.35291"
+             y="112.45128"
+             id="text11523"
+             sodipodi:linespacing="125%"><tspan
+               style="text-align:center;text-anchor:middle"
+               sodipodi:role="line"
+               id="tspan11525"
+               x="539.35291"
+               y="112.45128">Endosymbiotic Organelles</tspan><tspan
+               style="text-align:center;text-anchor:middle"
+               sodipodi:role="line"
+               x="539.35291"
+               y="126.20128"
+               id="tspan11667">(mitochondria/chloroplasts)</tspan></text>
+        </g>
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:11px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="321.22852"
+         y="337.17419"
+         id="text11594"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan11596"
+           x="321.22852"
+           y="337.17419" /></text>
+      <g
+         id="g4382"
+         transform="translate(-19.408266,-31.682385)">
+        <g
+           id="g4428"
+           transform="translate(3.5355339,-17.172593)">
+          <g
+             id="g4437"
+             transform="translate(-14.464286,-23.928571)">
+            <rect
+               ry="24.539492"
+               rx="24.539492"
+               y="338.19223"
+               x="394.40543"
+               height="49.078983"
+               width="72.731979"
+               id="rect4380"
+               style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#008000;fill-opacity:0.49019608;fill-rule:nonzero;stroke:#000000;stroke-width:3.62116814;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate" />
+            <text
+               sodipodi:linespacing="125%"
+               id="text11598"
+               y="352.05936"
+               x="430.30414"
+               style="font-style:normal;font-weight:normal;font-size:11px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               xml:space="preserve"><tspan
+                 style="font-style:normal;text-align:center;text-anchor:middle"
+                 y="352.05936"
+                 x="432.17328"
+                 id="tspan11600"
+                 sodipodi:role="line">Rhizobia </tspan><tspan
+                 style="font-style:normal;text-align:center;text-anchor:middle"
+                 y="365.80936"
+                 x="432.17328"
+                 sodipodi:role="line"
+                 id="tspan4422">and </tspan><tspan
+                 style="font-style:normal;text-align:center;text-anchor:middle"
+                 y="379.55936"
+                 x="430.30414"
+                 sodipodi:role="line"
+                 id="tspan4426">legumes</tspan></text>
+          </g>
+        </g>
+      </g>
+      <g
+         id="g4404"
+         transform="translate(-15.714286,-14.285714)">
+        <g
+           id="g4411"
+           transform="translate(0,13.131983)">
+          <g
+             transform="translate(12.857143,0)"
+             id="g4401">
+            <rect
+               ry="10.9769"
+               rx="10.9769"
+               y="239.20531"
+               x="324.44934"
+               height="21.428572"
+               width="128.57143"
+               id="rect4399"
+               style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#ffff00;fill-opacity:0.49019608;fill-rule:nonzero;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate" />
+          </g>
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:11px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             x="341.71255"
+             y="254.0607"
+             id="text11602"
+             sodipodi:linespacing="125%"><tspan
+               sodipodi:role="line"
+               id="tspan11604"
+               x="341.71255"
+               y="254.0607"><tspan
+   style="font-style:italic"
+   id="tspan11655">Wolbachia</tspan> and insects</tspan></text>
+        </g>
+      </g>
+      <g
+         id="g4393"
+         transform="translate(-29.294424,-3.0304576)">
+        <rect
+           ry="10.976913"
+           rx="10.976913"
+           y="159.92868"
+           x="323.65378"
+           height="21.953827"
+           width="128.77747"
+           id="rect11545"
+           style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:0.97000002;fill:#008080;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate" />
+        <text
+           sodipodi:linespacing="125%"
+           id="text11606"
+           y="174.01277"
+           x="331.67557"
+           style="font-style:normal;font-weight:normal;font-size:11px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             y="174.01277"
+             x="331.67557"
+             id="tspan11608"
+             sodipodi:role="line"><tspan
+   id="tspan11653"
+   style="font-style:italic">Buchnera</tspan> and aphids</tspan></text>
+      </g>
+      <circle
+         style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#800080;fill-opacity:0.49019608;fill-rule:nonzero;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate"
+         id="path4387"
+         cx="237.05293"
+         cy="365.69077"
+         r="36.45219" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:11px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="209.60664"
+         y="361.92294"
+         id="text11610"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="209.60664"
+           y="361.92294"
+           id="tspan11614">Incidental </tspan><tspan
+           sodipodi:role="line"
+           x="209.60664"
+           y="375.67294"
+           id="tspan11665">symbionts</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:11px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="576.55231"
+         y="276.03641"
+         id="text11620"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan11622"
+           x="576.55231"
+           y="276.03641"
+           style="font-size:12.5px;text-align:center;text-anchor:middle">(generally heritable, stable,</tspan><tspan
+           sodipodi:role="line"
+           x="576.55231"
+           y="291.66141"
+           id="tspan11626"
+           style="font-size:12.5px;text-align:center;text-anchor:middle">EGT, metabolic connectivity)</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:11px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="298.50009"
+         y="404.34933"
+         id="text11628"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan11630"
+           x="298.50009"
+           y="404.34933">(generally facultative)</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:11px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="299.15591"
+         y="78.746666"
+         id="text11642"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan11644"
+           x="299.15591"
+           y="78.746666"
+           style="font-size:12.5px">(generally obligate)</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:11px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="116.13258"
+         y="218.13605"
+         id="text11620-7"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="116.13258"
+           y="218.13605"
+           id="tspan11626-4"
+           style="font-size:12.5px;text-align:center;text-anchor:middle">(Generally unstable,</tspan><tspan
+           sodipodi:role="line"
+           x="118.25661"
+           y="233.76105"
+           style="font-size:12.5px;text-align:center;text-anchor:middle"
+           id="tspan4261">without vertical transmission, </tspan><tspan
+           sodipodi:role="line"
+           x="118.25661"
+           y="249.38605"
+           style="font-size:12.5px;text-align:center;text-anchor:middle"
+           id="tspan4271">EGT or significant </tspan><tspan
+           sodipodi:role="line"
+           x="116.13258"
+           y="265.01105"
+           style="font-size:12.5px;text-align:center;text-anchor:middle"
+           id="tspan4263">metabolic interaction)</tspan><tspan
+           sodipodi:role="line"
+           x="116.13258"
+           y="280.63605"
+           style="font-size:12.5px;text-align:center;text-anchor:middle"
+           id="tspan4242" /></text>
+      <g
+         id="g4213-7"
+         transform="matrix(0.80467815,0,0,1.008018,-44.979965,215.92806)" />
+      <g
+         id="g4332"
+         transform="translate(-106.10191,-0.2661304)">
+        <g
+           id="g4370"
+           transform="translate(-9.2857142,21.428571)">
+          <rect
+             ry="20.143852"
+             rx="16.080446"
+             y="272.11752"
+             x="305.77115"
+             height="32.632305"
+             width="163.16153"
+             id="rect4338"
+             style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#000000;fill-opacity:0.49019608;fill-rule:nonzero;stroke:#000000;stroke-width:3.22483945;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate" />
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:11px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             x="387.04578"
+             y="284.66586"
+             id="text11616"
+             sodipodi:linespacing="125%"><tspan
+               sodipodi:role="line"
+               id="tspan11618"
+               x="388.91492"
+               y="284.66586"
+               style="text-align:center;text-anchor:middle">Sacgoglossan sea slugs </tspan><tspan
+               sodipodi:role="line"
+               x="387.04578"
+               y="298.41586"
+               id="tspan11657"
+               style="text-align:center;text-anchor:middle">(kleptoplasty)</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

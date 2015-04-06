@@ -9,63 +9,161 @@ Hofstadter's Law: It always takes longer than you expect, even when you take int
 
 \chapter{Introduction}
 
+%Diversity of endosymbiosis - its a lot of things, complex, ununified, lots of research
+% most prevalent examples shape the eukaroytes - plastids and mitochondria
+% hard to study as things have been fixed
+%Paramecium biology
+%Chlorella biology
+%Knowledge of their interaction
+
 \section{Endosymbiosis}
 
 Endosymbiosis has proven one of the most fundamental processes in the evolution of the
 eukaryotic cell. This process has both shaped the global climate and
-created the cellular (and environmental) context in which specialised multicellular
-organisms have evolved.
+created the cellular context in which specialised multicellular organisms have evolved.
+% Not sure I like as biofilms etc are arguably complex multicellular organisms
 
-Endosymbiosis is special case of symbiosis, which is a long-term stable interdependent 
+Endosymbiosis is a special case of symbiosis, which in turn is a long-term stable interdependent 
 living together (``sym/σύν'' -- together, ``bios/βίωσις'' -- living) of two or more 
-organisms to a point of mutual benefit \citep{DeBary1879,Pound1893} (although some expand 
-this definition beyond mutualism to include parasitism and/or commensal interactions \citep{OMalley2015}).
+organisms to a point of mutual benefit \citep{DeBary1869,Pound1893} (although many now expand %citations not first use but mention symbiosis to mutual benefit in the latter citing the former
+this definition beyond mutualism to include other categories of biological interactions \citep{Leung2008,OMalley2015}).
 What differentiates endosymbiosis from symbiosis in general is that one partner (the endosymbiont) lives wholly
-inside (``endo/ἔνδον'' - inside) of another (the host).  
+inside (``endo/ἔνδον'' - inside) of another (the host). This ``inside'' can refer to symbionts within intracellular
+spaces or in tissues of multicelluar organisms but excludes niches such as the digestive tract of metazoa as 
+as this can be considered as an external surface of the host. These latter symbionts are occasionally termed ectosymbionts.
+\begin{table}[h]
+    \begin{tabular}{@{}cc@{}}
+        \toprule
+        \multicolumn{1}{r}{\textbf{Interaction Name}} & \multicolumn{1}{l}{\textbf{Interaction Outcome}} \\ 
+        \midrule
+        \multicolumn{1}{|c|}{Mutualism}               & \multicolumn{1}{c|}{(+, +)}                      \\
+        \multicolumn{1}{|c|}{Antagonism}              & \multicolumn{1}{c|}{(+, -)}                      \\
+        \multicolumn{1}{|c|}{Competition}             & \multicolumn{1}{c|}{(-, -)}                      \\
+        \multicolumn{1}{|c|}{Commensalism}            & \multicolumn{1}{c|}{(+, 0)}                      \\
+        \multicolumn{1}{|c|}{Amensalism}              & \multicolumn{1}{c|}{(-, 0)}                      \\
+        \multicolumn{1}{|c|}{Neutralism}              & \multicolumn{1}{c|}{(0, 0)}                      \\ 
+        \bottomrule
+    \end{tabular}
+    \caption{An overview of the categories of biological interaction and the effect they have on the two interacting
+        biological units, which may be anything from individual species to whole populations. The outcome relates to the effect
+        such an interaction has on each of the interacting biological units and is often assessed in in terms of metrics such as 
+        individual fitness, population size and/or growth rate.  
+        Note: parasitism and predation are mechanisms by which an antagonistic interaction may take place \citep{Abrams1987}.
+        For example, Commensalism is an interaction which benefits one unit but does not effect the other positively or
+        negatively.
+        Furthermore, in reality most interactions will not fall neatly into one of these categories and throughout the interaction
+    may have components of interaction which could be described under multiple categories \citep{Leung2008}}. 
+    \label{table:biointeractions}
+\end{table}
 
-The degree to which each partner is reliant upon the other ranges considerably. 
-For example, there are facultative interactions where each partner is
-capable of, and does, live aposymbiotically for extended life phases such as that found between nitrogen
-fixating \textit{Rhizobium} bacteria and the root nodules of legume plants.  On the other end of the spectrum,
-there are endosymbioses where the distinction between the two organisms is all but lost and arguably
-two distinct evolutionary lineages have become a single unit of selection e.g. the bioenergetic eukaryote organelles
-the mitochondria and the chloroplast. 
+It is important not to consider an endosymbiosis in isolation from other endosymbionts present in the same host.
+There are examples where facultative so-called ``secondary endosymbionts'' (a potentially misleading term) 
+are able to compensate for the loss of an obligate endosymbiont \citep{Koga2003}.  Symbiont-symbiont 
+interactions have been found to play a role in determining which endosymbionts are capable of establishing themselves 
+in a certain host and can even be capable of generating additional phenotypes e.g. the R-bodies of ``killer'' \textit{Paramecium} 
+species which may be a product of an interaction between the \textit{Paramecium} host, \textit{Caedibacter} and a bacteriophage
+\citep{Schrallhammer2009}.
+
+There is a considerable range of different endosymbiotic relationships in nature. They display large variation in the 
+degree of host-symbiont integration, interdepdence and ecological interaction type (see \ref{table:biointeractions}.  
+Even if we restrict ourselves to endosymbioses that are largely ``mutualistic'' (noting that the exact nature of
+a certain endosymbiosis is highly dependent on the exact ecological context even for the same partners and doesn't 
+always easily divide into discrete categories \citep{Leung2008}\footnote{Even as early as this we 
+    must address a common motif of modern biology: discrete schemas are frequently 
+    overlaid on inherently continuous distributions.  These biological quantizations are prone to error (fuzzy delineations)
+    and are constantly challenged by novel discoveries which exhibit a mosaic of category features.  
+    There are a plethora of examples of this including classification of 
+    mitochondria-related organelles \citep{Maguire2014}, types of biological interactions 
+    (see \ref{table:biointeractions}), and discussions of the species concept \citep{DeQueiroz2007,Boenigk2012}.
+    This is not say biological quantization is without utility or is a futile task.  Indeed, as long as there is a clarity to 
+    the application and synthesis these schema then they form a critical epistemological framework upon which further 
+    research and communication can build. They allow innumerable diversity to be reduced into a manageable, countable set of categories. 
+    However, care must be taken not to forget that these schema do not reflect reality and can inadvertently obscure
+    to the grey areas \citep{Leung2008}.  We also must ensure that the schema used are in concordance with the practalities of the 
+discussion at hand (generalising on \citep{Boenigk2012}).}) there is considerable variety.
+
+For example, the degree to which each partner is reliant upon the other ranges considerably. 
+A spectrum can be drawn with facultative almost incidental non-heritable endosymbioses such as when a pathogen
+escapes digestion by a macrophage at one extreme through facultative interactions where each partner is
+capable of, and does, live aposymbiotically for extended life phases. An example of this would be the relationship of
+Rhizobia bacteria and legume (Fabaceaea) plants in which the former reduces atmospheric \(N_{2}\) to ammonia (in turn
+assimilated into amino acids) \citep{Hirsch1992} in exchange for host derived carbon sources (typically malate 
+and succinate) \citep{Prell2006} at a rate of approximately \(5-10g\) C per \(1g\) N 
+fixed \citep{Phillips1980} in carefully controlled specialised root nodule structures \citep{Crespi2008}.
+On the other end of the spectrum, there are endosymbioses where the distinction between the two organisms is 
+all but lost and arguably two distinct evolutionary lineages have become a single unit of selection 
+e.g. the bioenergetic eukaryote organelles the mitochondria and the chloroplast. 
+
+Equally, there is a broad diversity in the degree of host-symbiont integration. This is principally in terms of
+metabolic connectivity (direct connections between biosynthetic and other metabolic pathways betwee partners) \citep{Karkar2015},
+genomic integration (transfer and/or incorporation of genetic material between partners) \citep{Timmis2004} and 
+heritability of the relationship between generations \citep{Wernegreen2012}.
+
+\begin{figure}[h!]
+\includegraphics[width=\textwidth]{integration_vs_dependence.pdf}
+    \caption{ 
+        An approximate plot of a range of endosymbioses.
+        Host-symbiont integration is a rough measure of how connected the host and symbiont have become.  For example,
+        metabolic integration - degree of influence on the other's metabolism, genomic integration - number of endosymbiotic
+        gene transfers, inheritability - how are symbionts passed generation to generation?  On the other hand,
+        degree of inter-dependence is an approximate measure of the degree to which the relationship is necessary for 
+        life of organisms involved. To a lesser extent the other axis can be highly reliant 
+        on environmental conditions. For example, the endosymbiotic organelles are highly integrated into host metabolism and 
+        genome whereas \textit{Buchnera} is moderately integrated in Aphid metabolism and is moderately obligate but
+        can be replaced with other symbionts \citep{Koga2003}.
+    }
+    \label{fig:integrationvsdependence}
+\end{figure}
+
+Furthermore, even just intracellular endosymbionts display a stunning diversity in their cellular inhabitation with endosymbionts existing
+within the nucleus, cytoplasmically, contained in any of a vast number of specialised and unspecialised host membranes.
 
 
+With this considerable diversity it is perhaps not surprising that endosymbioses have been discovered featuring partners from all 3 domains of celullar life. %side-steppin the ole viruses thing 
+However, with the exception of one extant Bacteria-Bacteria endosymbiosis \citep{vonDohlen2001}, typically the majority of known
+endosymbioses feature a eukaryotic host\footnote{There are however many examples of mutualistic symbioses which are Bacteria-Bacteria (e.g. biofilms \citep{Watnick2000}),
+    Bacteria-Archaea (e.g. anaerobic methanotrophic archaea and sulphate-reducing bacteria likely responsible
+    for a large proportion of global methane consumption \citep{Boetius2000,Knittel2009} and SM1 euryarchaea/\textit{Thiothrix} sp. sulphide-oxidising bacteria \citep{Henneberger2006,Wrede2012}), 
+    and at least one example of Archaea-Archaea (\textit{Igniococcus hospitalis/Nanoarchaeum equitans} \citep{Huber2002}. 
+Interestingly \textit{Igniococcus} is the first identified case of an energised outer-membrane in double-membrane bound archaea or bacteria, a significant finding for the development of theories of
+eukaryogenesis \citep{Kuper2010})} but can include endosymbionts from all 3 domains.
+For example:
+\begin{itemize}
+    \item Eukaryote-Archaea \citep{Moissl-Eichinger2011}
+    \begin{itemize}
+        \item Methanogenic archaea within various ciliates species (e.g. \textit{Plagioplya frontata}) \citep{Fenchel1992,Lange2005}
+        \item \textit{Cenarchaeaum symbiosum} within the tissues of marine sponges \citep{Preston1996,Wrede2012}
+    \end{itemize}
+        \item Eukaryote-Bacteria 
+    \begin{itemize}
+         \item intranuclear parasites
+         \item 
+         \item mitochondria and plastids
+    \end{itemize}
+    \item Eukaryote-Eukaryote
+    \begin{itemize}
+         \item
+         \item
+    \end{itemize}
+\end{itemize}
 
 
+While most discovered endosymbioses typically demonstrate large eukaryotic cells to benefit from the extensive metabolic diversity
+present in the bacterial and archael pangenome, especially the only known forms of primary energy
+production - photosynthesis and chemosynthesis \citep{Wernegreen2012}
 
+Endosymbiosis is considerably more prevalent in cases where the host is eukaryotic (indeed some consider this as foundational 
+in eukaryogenisis), with symbionts including other eukaryotes (e.g. red algae, ), archaea (e.g. 
 
-However, all discovered endosymbioses take involve a eukaryotic host and a bacterial, archael, or (in the case of
-higher order endosymbioses i.e. secondary and tertiary) a eukaryote endosymbiont. 
+ndeed, the innovation of endosymbiosis is considered by some as synonymous with the origin of the eukaryotes.
 
-Indeed, the innovation of endosymbiosis is considered by some as synonymous with the origin of the eukaryotes.
-The presence of 
-
-
-
-
-
-between either a eukaryote and bacteria or a eukaryote and an archaea.
-
-
-
-
-
-
-Largely in part to these latter endosymbioses 
-
-
-
-EGT is the key marker of organelle evolution
 
 
 
 
 Recombination via transduction, conjugation and/or transformation as found in the bacteria and archaea is
 qualitatively different from that of recombination by sex found in the eukaryotes. 
-Typically, the former leads to the generation of a pan-genome whereas the latter promotes vertical inheritance.
-
+Typically, the former leads to the generation of a pan-genome whereas the latter promotes vertical inheritance. \citep{Ku2015}
 
 
 
@@ -82,6 +180,10 @@ Typically, the former leads to the generation of a pan-genome whereas the latter
 Plastids and mitochdonria aare 
 
 
+
+
+
+\subsection{Mitochondria}
 
 Every known eukaryotic cell appears to harbour at least 1 endosymbiont in the form of the mitochondria (or a highly
 reduced mitochondria-related organelle (MRO)). Indeed, some consider this as a the defining event in the 
@@ -133,8 +235,12 @@ Thus far, I have only discussed primary endosymbioses, secondary yada yada
 
 
 \subsection{History of Endosymbiosis}
+
+As an area 
+
+
 The development of a formal endosymbiotic theory for organellar origin was a process that
-lasted 84 years. The first tentative mention of such as theory was in a 19th century footnote\footnote{``Sollte es sich definitiv best\"atigen, dass die Plastiden in den 
+lasted 84 years. From, a first tentative mention in a 19th century footnote\footnote{``Sollte es sich definitiv best\"atigen, dass die Plastiden in den 
 Eizellen nicht neu gebildet werden, so w\"urde ihre Beziehung zu dem sie 
 enthaltenden Organismus einigermaassen an eine Symbiose erinnern. M\"oglicherweise
 verdanken die gr\"unen Pflanzen wirklich einer Vereinigung eines farblosen Organismus
@@ -147,7 +253,6 @@ their origin to a union of a colourless organism and a chlorophyll tinged one.''
 where Andreas Schimper considered the potential origin of plants by a symbiotic union. 
 
 
-regarding the potential origin of plants by a symbiotic union by Andreas Schimper, 
 to theory of symbiogenisis of Constantin Mereschkowsky (Константи́н Серге́евич Мережко́вский)\footnote{As 
     an aside Mereschkowsky personally strikes a disturbing, having
     collaborated with the Czar's secret police reporting ``dangerous''
@@ -176,7 +281,7 @@ on the basis of earlier work by Paul Portier attemping to independently
 culture mitochondria \citep{Sapp2002} (interestingly, 
 Mereschkowsky had strongly refuted this idea just a couple of years earlier as 
 an idea that would ruin his ``theory of symbiogenisis'' \citep{Sapp2002} but 
-had elaborately comitted suicide the year prior to Wallin's publication \citep{Sapp200}).
+had elaborately comitted suicide the year prior to Wallin's publication \citep{Sapp2002}).
 
 However, these theories never truly reached mainstream acceptance at the time
 partially due to the repeated failures to generate direct evidence that mitochondria
@@ -208,7 +313,7 @@ molecular revoltion of biology. Despite ignorance of the earlier work of these
 
 One of Margulis key innovations was a recognition of the need to expand the
 work being conducted in eukaryotic genetic beyond just that of the nucleus
-\citep{Archibald2002}.
+\citep{Archibald2012}.
 
 
 
@@ -229,22 +334,6 @@ However,
 
 
 
-
-
-
-
-
-Interestingly Margulis was strongly influenced and inspired by research conducted
-in organisms closely related to both \textit{Paramecium bursaria} and 
-\textit{Micractinium reisseri}. Specifically, the discovery of Tracey Sonneborn
-of non-mendelian cytoplasmic inheritance in \textit{Paramecium bursaria} \citep{Sonneborn1950}
-and the multiple lines of evidence of the presence of DNA within the chloroplasts
-gleaned from several species of green algae related to \textit{Micractinium reisseri}
-(\textit{Spriogyra} \citep{Stocking1959}, \textit{Chalymdomonas moewussii}, and 
-\textit{Chlorella ellipsoidea} \cite{Ris1962}).  Therefore, it is more than apt
-that I propose to use the photosynthetic endosymbiotic system of \textit{Paramecium bursaria}
-and \textit{Micractinium reisseri} to further investigate the mechanisms by which
-photosynthetic endosymbioses come to take place.
 
 
 
@@ -282,25 +371,12 @@ that proved endosmybiosis \citep{Schwartz1976}
 
 However, despite the importance of this evolutionary process there is a relative
 paucity of models in which researchers can dissect the mechanisms by which it occur
-in-situ before metabolic co-dependence becomes fixed\.
+in\-situ before metabolic co-dependence becomes fixed.
 
 
 
 
 
-
-
-endosymbiosis is not unique to the eukaryotes (with at least one example in the
-bacteria \citep{vonDohlen2001} and one symbiosis (not endo) in the Archaea \citep{Huber2002})
-
-Other archaea symbioses:
-Ignicoccus hospitalis/Nanaoarchaeum equitans, Cell-cell contact, Transfer of essential biological macromolecules from host to symbiont
-SM1/Thiothrix   Cell appendages Sulfur redox cycling?
-ANME-Archaea/sulfate reducing Bacteria  Cell-cell contact/ no direct contact    Anaerobic methane oxidation coupled to sulfate reduction
-Methanogenic Archaea/Ciliates, Archamoebae   Endosymbiotic   Methanogen/hydrogenosome association, transfer of hydrogen, and/or C1/C2 compounds
-Porifera-associated Thaumarchaeota  Tissue associated   Ammonia oxidation
-Diverse associations between insect and vertebrate guts
-\citep{Wrede2012}
 
 
 
@@ -584,7 +660,7 @@ sequenced paramecium genomes ranges from 28.2 25.8 28.0 24.1 gc percentage \cite
 
 \section{\textit{Paramecium bursaria}}
 
-\texit{Paramecium bursaria} is a single-celled eukaryote belonging to sub-grouping of the alveolates known
+\textit{Paramecium bursaria} is a single-celled eukaryote belonging to sub-grouping of the alveolates known
 as the ciliates. They belong to the class Oligohymenophorea along with \textit{Tetrahymena spp.} \citep{Jahn2002}.
 
 Ciliates form an intriguing group as they are only known unicellular organisms that display germineline 
@@ -652,7 +728,11 @@ of an cestral apicomplexans. \citep{Reyes-Prieto2008}
 
 
 \textit{Paramecium} appears to be particularly competent for endosymbioses with an array of over 60 
-genetically diverse endosymbionts described \citep{Gortz2009}
+genetically diverse endosymbionts described \citep{Gortz2009}.
+
+Ciliates in general are known to have bacterial \citep{Gortz2009}, archaeal \citep{Wrede2012} and eukaryotic \citep{}<++>
+
+
 
 bacterial endosymbionts documented in the literature \citep{Gortz2009}
 These endosymbionts range in degree from mutualist to downright parasitic and are cytoplastmic, endomicronucleic,
@@ -688,19 +768,6 @@ Laterly these particles are mostly identified as symbionts
 
 
 \citep{Corliss1974} 
-
-Species-Knowledge Index (SKI) is rough metric assessing the ``publication''
-coverage of various organisms to assess available data to inform genomics projects.
-It is a count of publications related to that organism and normalised by its gene
-count \citep{Janssen2005}. As of March 2015, \textit{``Paramecium bursaria''} only appears
-in 228 PubMed abstract and just \textit{``Paramecium''} in 2802 corresponding to a
-SKI of approximately 0.0057 to 0.07 assuming approximately 40,000 genes.  Even with the
-dubious utility of a such a metric in 2015 when this SKI value is 
-is compared to model organisms such as \textit{Escherichia coli} (52.79) or 
-\textit{Dictyostelium discodeium} (0.4) the relative paucity of the literature
-pertaining to \textit{P. bursaria} becomes apparent.
-
-
 
 
 
@@ -776,23 +843,14 @@ only sharing the most ancient of the WGDs.
 
 
 \begin{figure}
+
     \caption{\textbf{A}: Schematic of the current best estimate of the tree of life demonstrating the 2D and 3D hypotheses,
 dashed lines indicate multiple potential branch location, arrowed lines demonstrate known endosymbiotic events (based on work reviewed in \citep{Gribaldo2010})
 \textbf{B}: Schematic of the current known eukaryotic portion of the tree of life (based on work reviewed in \citep{Burki2014,Adl2013},
 \textbf{C}: Schematic of phylogeny of the ciliates (based on work by \citep{Bachvaroff2011,},
 \textbf{D}: Schematic of phylogeny of the green algae (based on work reviewed in \citep{Leliaert2012,}}
-    <++>
 \end{figure}
 
-%\subsection{History}
-%
-%\subsection{Biology}
-%
-%\subsection{History}
-%
-%
-%
-%\section{Background}
 \section{\textit{Paramecium bursaria} Chlorella Virus}
 
 \textit{Paramecium bursaria} Chlorella Virus (PBCV) is a large icosahedral double-stranded DNA virus belonging to 
@@ -822,13 +880,26 @@ R-obdy uncoils are kills  \citep{Schrallhammer2009}
 
 
 \section{\textit{Micractinium reisseri}}
+%chlorella biology
+% photosynthesis
+% secondary endosymbiosis
+
 From H\"ammerling's pioneering research with \textit{Acetabularia} in the 1930s 
 which played a fundamental role in the process of 
 of unravelling central dogma with the first clear demonstration of the 
 developmental role the nucleus plays, anticipating the discovery of mRNA by 30 years\footnote{CITATION}, research on green algae has made fundamental contributions
 to basic biological understanding
 
-\subsection{\textit{Paramecium bursaria – Chlorella}}
+Prone to symbioses as well
+
+
+\section{\textit{Paramecium bursaria – Chlorella} endosymbiosis}
+% what is already known and why would it be a good system
+
+\subsection{Genomic integration}
+
+\subsection{Metabolomic integration}
+
 
 Ysa2 aposymbiotic \textit{P. bursaria} strain genetic cross experiments demonstrate that stable symbiosis
 is both genetically determined and heritable \citep{Tonooka2007}
@@ -852,6 +923,27 @@ However, there is experimental evidence that \textit{P. bursaria} can only be in
 \textit{Chlorella} is eliminated \citep{Gortz1982}
 
 Killer phenotypes have been observed in \textit{P. bursaria} but I can't read the damn paper chen1955 and 1956 \citep{Gortz2009}
+
+
+This is consistent with bacterial symbionts having been repeatedly identified as providing resistance to parasites in organisms
+such as the insects \citep{Martinez2014}
+
+
+Interestingly Margulis was strongly influenced and inspired by research conducted
+in organisms closely related to both \textit{Paramecium bursaria} and 
+\textit{Micractinium reisseri}. Specifically, the discovery of Tracey Sonneborn
+of non-mendelian cytoplasmic inheritance in \textit{Paramecium bursaria} \citep{Sonneborn1950}
+and the multiple lines of evidence of the presence of DNA within the chloroplasts
+gleaned from several species of green algae related to \textit{Micractinium reisseri}
+(\textit{Spriogyra} \citep{Stocking1959}, \textit{Chalymdomonas moewussii}, and 
+\textit{Chlorella ellipsoidea} \cite{Ris1962}).  Therefore, it is more than apt
+that I propose to use the photosynthetic endosymbiotic system of \textit{Paramecium bursaria}
+and \textit{Micractinium reisseri} to further investigate the mechanisms by which
+photosynthetic endosymbioses come to take place.
+
+
+
+
 
 %\textit{Paramecium bursaria} or the `green \textit{Paramecium}' is an alveolate ciliate protist that forms a secondary photosynthetic endosymbiosis with several species of \textit{Chlorella}, a green algae.  
 %Each \textit{Paramecium bursaria} cell contains \textasciitilde 300 endosymbiotic \textit{Chlorella} maintained in individual perialgal vacuoles in a stable, heritable (roughly equal partitioning of endosymbionts into daughter host cells), mutually beneficial, faculative endosymbiosis. 
@@ -918,6 +1010,20 @@ Killer phenotypes have been observed in \textit{P. bursaria} but I can't read th
 %This regulation of the timing of cell division for both members of the system appears well co-ordinated and takes place in such a way that neither host or endosymbionts outgrow one another [Kadono et al. 2004; Takahashi et al. 2007].
 %
 %% Mieosis turned off %
-%
-%
+
+
+
+\subsection{Pros and Cons of PbMr as a system to study endosymbiosis}
+Species-Knowledge Index (SKI) is rough metric assessing the ``publication''
+coverage of various organisms to assess available data to inform genomics projects.
+It is a count of publications related to that organism and normalised by its gene
+count \citep{Janssen2005}. As of March 2015, \textit{``Paramecium bursaria''} only appears
+in 228 PubMed abstract and just \textit{``Paramecium''} in 2802 corresponding to a
+SKI of approximately 0.0057 to 0.07 assuming approximately 40,000 genes.  Even with the
+dubious utility of a such a metric in 2015 when this SKI value is 
+is compared to model organisms such as \textit{Escherichia coli} (52.79) or 
+\textit{Dictyostelium discodeium} (0.4) the relative paucity of the literature
+pertaining to \textit{P. bursaria} becomes apparent.
+
+
 
