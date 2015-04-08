@@ -34,6 +34,7 @@
 % Typesetting
 \RequirePackage{url}
 \RequirePackage{hyperref}
+\RequirePackage{fancyref}
 \hypersetup{
 	linktocpage,
     colorlinks,
