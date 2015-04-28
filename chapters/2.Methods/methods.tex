@@ -9,8 +9,6 @@
 Materials and methods section
 
 \begin{itemize}
-    \item Culturing - how to culture paramecium/micractinium
-    \item cDNA synthesis - creating cDNA from cultures, washing, cell picking etc
     \item Sequencing - general sequencing background sanger -> 2nd gen
     \item Genomics/transcriptomics - how this is specifically applied via HiSeq
     \item Phylogenetics - general, alignment, masking, model selection, tree reconstructions 
@@ -19,39 +17,13 @@ Materials and methods section
 
 univariate mathematical distributions reference\citep{Leemis2008}
 
-%Might move to methods:\{
-%flowchart of program tree-pipe
-%
-%UML of lab MYSQL Database
-%
-%Figure of serial tree pipe vs by-stage-parallel vs by-class parallel:
-%e.g.
-%     |XYZ                   X=1st stage of pipe, Y=2nd, Z=3rd etc .=syswait
-%trees|   XYZ
-%     |      XXYYZ             3rd form (by-class) is best because 2nd IO bounds
-%     |
-%     |X.Y.Z
-%     |X.Y.Z
-%     |XXYYZ
-%     |
-%     |XYZ
-%     |XYZ
-%     |XYYZZ
-%     |____________
-%        TIME
-%
-%
-%Figure of profiling on multicore tools being quicker on random sample of dataset
-%when they are run on a single core but multiple instances are run of them e.g.
-%on 4 samples its quicker to run a 4-core tool as 4x1core instances than 4x4core
-%\}
-%
-%
-
-DRAFT DUE: END OF FEB
-
 
 \section{Microbiology}
+
+
+Paramecium bursaria NBRP Yad1G1N - Masahiro Fujishima
+Paramecium bursaria - Coccomyxa CCAP 1660/13
+Paramecium bursaria - Micractinium reisseri
 
 \subsection{Media}
 \textit{Paramecium bursaria – Chlorella} CCAP1660/12 cultures were obtained from 
@@ -117,7 +89,12 @@ The RNA was then cleaned further using the Qiagen RNeasy clean-up kit
 before being assessed for quality using ND-1000 (NanoDrop) and BioAnalyzer (Agilent).
 
 \subsubsection{Single Cell RNA and DNA Extraction}
+
+
+Single cell 
 Qiagen Repli-G kit
+
+
 
 
 
@@ -459,6 +436,25 @@ FastQC tool and its parameters
 % /storage/fin/raw_reads/raw_sct_reads/optimising_trimming_paramters/test_mapping_to_bulk
 
 
+Currently, there is no clear answer to the question, which is the best trimming algorithm.
+This is due to many dataset-specific effects as well parameter-dependence \citep{DelFabbro2013}.
+However, 
+
+
+
+Trimming algorithms can be divided into two groups: running-sum based approaches e.g. Cutadapt and ERNE-FILTER
+and window-based e.g. FASTX, PRINSEQ, Sickle and Trimmomatic \citep{DelFabbro2013}.
+
+
+
+
+
+
+
+
+
+
+
 
 Difficulties: 
 A major source of bias in transcriptomic datasets is that of compositional biases induced
@@ -598,6 +594,12 @@ Expression for each contig https://github.com/macmanes/trimming_paper/tree/recre
 \subsubsection{Annotation}
 
 \subsubsection{Mapping}
+
+The tradeoff between read-mapping sensitivity (number aligned) and specificity (number correctly aligned)
+Modern aligners overcome most errors making trimming unecessary \citep{DelFabbro2013}
+
+
+
 
 
 However, studies on simulated datasets have shown that the main sources of error
