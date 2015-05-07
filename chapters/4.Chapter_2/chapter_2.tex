@@ -27,8 +27,12 @@ Transcriptome Assembly:
 - Trimming: MacManes 5, 30 (also did 12 and 35)
 - Error correction: Spades error correction
 - GC clustering parKour
-\section{Single Cell Transcriptome Assembly}
 
+
+\section{Transcriptome Assembly}
+
+
+SCT
 \subsection{Trimming optimisation}
 To determine optimal trimming parameters for the raw single-cell paired-end RNA-Seq reads 
 I used a trivial grid search algorithm using random read sub-samples from each library.
@@ -164,6 +168,13 @@ ILLUMINACLIP:/storage/fin/adapters/exeter_sequencing_adaptors.fasta:2:30:10
 ILLUMINACLIP:/storage/fin/adapters/exeter_sequencing_adaptors.fasta:2:30:20
 
 \subsubsection{Optimising Quality Thresholds}
+
+
+\subsection{Bulk Transcriptome Trimming}
+
+FastX-toolkit adapative trimming Q20 applied by sequencing service.
+Raw untrimmed FASTQ data not available
+
 
 
 \subsection{Library selection}
