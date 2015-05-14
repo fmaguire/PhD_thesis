@@ -28,6 +28,89 @@ Transcriptome Assembly:
 - Error correction: Spades error correction
 - GC clustering parKour
 
+\section{Sample Preparation and Sequencing}
+
+\subsection{Bulk transcriptomic RNA preparation}
+For bulk transcriptomic analyses CCAP 1660/12 cells were harvested in a way to minimise the 
+number of bacterial prey species from the culture, \textasciitilde \(10^{6}\) 
+cell aliquots were strained through 40\(\mu m\) sieves, filtered on 
+10\(\mu m\) nylon filters, 
+before finally being filtered on 8\(\mu m\) TETP polycarbonate filters using a 
+low-pressure filtration pump.  Collected samples were either immediately 
+quick-frozen in liquid nitrogen for storage (\(-20\)\celsius for short-term storage 
+and \(-80\)\celsius for longer storage) or harvested by centrifugation.  
+In order to investigate the two main metabolic states of the symbiosis 
+(i.e. under light conditions during active photosynthesis and in the dark 
+when no photosynthesis is taking place) samples were extracted 5 hours into 
+the light and dark phase of the 12:12 hour day-night cycle.
+
+To ensure extracted RNA was representative of healthy and interacting host 
+and endosymbionts care was taken to minimise the number of dead/dying cells 
+from which RNA was extracted.  In order to do this, a subsample was taken 
+from each culture during the process of harvesting and scored for dead/dying cells.  
+Cell assays were formed by taking 1-2ml of each harvest cell pellet and 
+fixed using 40\(\mu l\) Lugol's solution (0.5g \(I_{2}\) and 1g KCl in 8.5ml 
+of MilliQ water). Dead/dying cells were identified as broken or puckered cells 
+and counted using light microscopy.  Samples containing >10\% dead/dying cells 
+were discarded and no RNA extracted from them.
+
+In order to lyse collected samples, cells were washed from the filter or the 
+pellet was resuspended in 1ml TriReagent (Sigma) heated to \(60\)\celsius. 
+Cells were vortexed with sterile 300$\mu m$ glass-beads for 15s, incubated at 
+room temperature for 10 minute, vortexed for 15s, quick-frozen in liquid 
+nitrogen and stored at $-20^{o}$C before further processing.  
+Samples were defrosted, vortexed for 15s, placed in a heat-block set 
+to $60^{o}$C for 10 minutes while continuing to be vortexed, removed from 
+heating and vortexed again for 15s.  
+RNA was extracted by adding 0.2ml of Chloroform to the glass-bead-trizol-sample 
+solution, shaking for 15s, incubating for 5 minutes at room temperature and 
+centrifuging at 12,000g for 15 minutes at $4^{o}$C.  
+The upper-phase was then transferred to an RNAse-free 1.5ml tube and an 
+equal volume (\textasciitilde$0.5$ml) of isopropanol was added before shaking for 15s.  
+The isolated RNA was then incubated at $-20^{o}$C for 10 minutes 
+(up to several hours) before being collected as a pellet using a centrifuge at 
+10,000g for 10 minutes at $4^{o}$C (supernatant was discarded). 
+The RNA pellet was then washed with 1ml of 75\% ethanol and centrifuged 
+twice at 10,000g for 10 minutes at $4^{o}$C with the supernatant being 
+discarded after each centrifugation.  
+Pellet was dried before being resuspended in 100$\mu l$ of RNAse-free water.  
+The RNA was then cleaned further using the Qiagen RNeasy clean-up kit 
+before being assessed for quality using ND-1000 (NanoDrop) and BioAnalyzer (Agilent).
+
+
+\subsection{Single Cell preparations}
+
+For single cell genomics and transcriptomics, a ``cell-picking'' approach was used in which
+\textit{P. bursaria} cells were inspected on an inverted light microscope before being picked
+using an orally aspirated drawn-glass Pasteur pipette \citep{Garcia-Cuetos2012}.
+In order to mininmise contamination from food bacteria present in the media these picked cells
+were washed 3 times by serial transfer to \(10\mu l\) droplets of sterile NCL media.
+The washed cell was then transferred to a \(10\mu l\) droplet of sterile water.
+
+\subsubsection{Single Cell transcriptomic cDNA preparation}
+Cells were transferred from their respective \(10\mu l\) droplets of sterile water to
+a PCR tube containing \(6\mu l\) water and \(4\mu l \) lysis buffer (from the Qiagen
+REPLI-g WTA Single Cell Kit). To disrupt the cell beads (Sigma, \(425-600\mu m\), acid-washed)
+were added to the meniscus, before submersion in liquid nitrogen for 5 seconds.  The sample was 
+then thawed before vortexing for 1 minute.  
+mRNA was selectively amplified and reverse transcribed to cDNA using poly-A selection.  The cDNA
+was then amplified using multiple displacement amplification and the amplified cDNA purified
+using a QIAamp DNA mini kit eluted in \(100\mu l\) elution buffer.
+
+\subsubsection{Single Cell genomic DNA preparation}
+Cells were transferred from their respective \(10\mu l\) droplets of sterile water to a microncentrifuge tube.
+CTAB method adapted from \citep{Winnepenninckx1993}.  Cells were disrupted by vortexing for 5 minutes with
+\(748.5\mu l\) CTAB extraction buffer (at 37\celsius) and ceramic beads (Sigma, \(425-600\mu m\), acid-washed).
+The tube was then incubated for 50 minutes at 37\celsius, vortexed for 5 minutes, and incubated for a further 50
+minutes at 60\celsius. DNA was extracted 3 times using phenol, chloroform and isoamylalcohol at a 25:24:1 ratio (pH 8),
+washed with 70\% ethanol and re-suspended in \(2.5\mu l\) TE buffer (pH 8). This DNA then underwent 
+Multiple displacement-based whole genome amplification using the Repli-G Single Cell Kit before purification using a 
+QIAmp DNA mini kit before elution in \(100\mu l\) elution buffer.
+
+
+
+
+
 
 \section{Transcriptome Assembly}
 
@@ -321,6 +404,13 @@ Training data manually parsed
 \section{Saturation}
 Estimating saturation can only be done after binning as we are only interested in host and algal endosymbiont
 So saturation on binned contigs.
+
+
+\section{ORFs calling}
+
+ORFs were extracted from transcriptome using transdecoder and a minimum protein size of 50aa
+because
+
 
 
 
