@@ -253,6 +253,64 @@ ILLUMINACLIP:/storage/fin/adapters/exeter_sequencing_adaptors.fasta:2:30:20
 \subsubsection{Optimising Quality Thresholds}
 
 
+\subsection{Error correction}
+
+Made very little difference
+
+
+paired library sizes after correction using spades SCT
+macmanes_5_min60_cherpick_Sample_Pb_DARK2_3_R1_paired_output.00.0_4.cor.fastq.readcount
+macmanes_5_min60_cherpick_Sample_Pb_DARK2_6_R1_paired_output.00.0_5.cor.fastq.readcount
+macmanes_5_min60_cherpick_Sample_Pb_DARK2_8_R1_paired_output.00.0_6.cor.fastq.readcount
+macmanes_5_min60_cherpick_Sample_Pb_dark_2_R1_paired_output.00.0_3.cor.fastq.readcount
+macmanes_5_min60_cherpick_Sample_Pb_light_10_R1_paired_output.00.0_1.cor.fastq.readcount
+macmanes_5_min60_cherpick_Sample_Pb_light_11_R1_paired_output.00.0_2.cor.fastq.readcount
+macmanes_5_min60_cherpick_Sample_Pb_light_9_R2_paired_output.00.0_0.cor.fastq.readcount
+
+Even for largely untrimmed reads the error-correction implemented in the single cell
+mode of Spades assembler removed only 
+
+Sequences parsed: 18341703
+Sequences parsed: 18341831
+
+Sequences parsed: 18600931
+Sequences parsed: 18601013
+
+Sequences parsed: 22998263
+Sequences parsed: 22998453
+
+Sequences parsed: 3783069
+Sequences parsed: 3783086
+
+Sequences parsed: 15729222
+Sequences parsed: 15729271
+Sequences parsed: 14165813
+Sequences parsed: 14165851
+
+Total trinity 'genes':  113884
+Total trinity transcripts:      126927
+Percent GC: 48.75
+Contig N50: 493
+Median contig length: 375
+Average contig: 472.55
+Total assembled bases: 53815780
+
+
+
+
+Uncorrected but with fixed l9 
+Total trinity 'genes':  99441
+Total trinity transcripts:      112182
+Percent GC: 49.42
+Contig N50: 465
+Median contig length: 351
+Average contig: 447.02
+Total assembled bases: 44451866
+
+For this SCT transcriptome the spades error correction decreased assembly quality
+
+
+
 \subsection{Bulk Transcriptome Trimming}
 
 FastX-toolkit adapative trimming Q20 applied by sequencing service.

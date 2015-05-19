@@ -6,31 +6,14 @@
 
 \chapter{Methods}
 
-Materials and methods section
-
-\begin{itemize}
-    \item Sequencing - general sequencing background sanger -> 2nd gen
-    \item Genomics/transcriptomics - how this is specifically applied via HiSeq
-    \item Phylogenetics - general, alignment, masking, model selection, tree reconstructions 
-    \item Dendrogenous - UML of database, flowchart of program, comparison of parallelisation, profiling of tools process-level parallelism vs built in parallellism
-\end{itemize}
-
-univariate mathematical distributions reference\citep{Leemis2008}
-
-
-
-
 \section{Microbiology}
-
-
-\subsection{Cultures}
-
-During this project 3 \textit{Paramecium bursaria} cultures have been used at various stages from 
+\subsection{Strain information}
+During this project 3 \textit{Paramecium bursaria} cultures have been used.  These have been obtained from 
 the UK Culture Collection of Algae and Protozoa (CCAP) and the Japanese National BioResource Project (NBRP).
 Specifically:
 \begin{itemize}
     \item CCAP 1660/12: European \textit{Paramecium bursaria} SW1 with \textit{Micractinium reisseri} SW1-ZK \citep{Hoshina2010}
-    \item CCAP 1660/13: European \textit{Paramecium bursaria} with \textit{Coccomyxa} CCAP 216/24 \footnote{This is a mixed culture 
+    \item CCAP 1660/13: European \textit{Paramecium bursaria} (unknown strain) with \textit{Coccomyxa} CCAP 216/24 \footnote{This is a mixed culture 
             containing both CCAP 1660/12 strain with \textit{Micractinium} and the \textit{Coccomyxa} bearing strain, 
         the \textit{Coccomyxa} endosymbiont has been further isolated in CCAP under the description CCAP 216/24 (pers. comm. Undine Achilles-Day CCAP)}
     \item NBRP Yad1g1N: Japanese \textit{Paramecium bursaria} Yad1w with \textit{Chlorella variabilis} 1N \footnote{
@@ -42,184 +25,348 @@ Specifically:
 Both CCAP cultures (1660/12 and 1660/13) were isolated from the same pond in Cambridge, UK (pers. comm. Undine Achilles-Day CCAP)
 CCAP 1660/12 was the principal culture and all genomic, transcriptomic and metabolomics analyses were conducted using these cultures. 
 Theoretically, these 3 cultures provide us with \textit{Paramecium bursaria} strains harbouring members of each of the 3 species of 
-green algal endosymbiont (see \ref{chap1} for more details).
+green algal \textit{Paramecium} endosymbiont (see \ref{chap1} for more details).
 
 \subsection{Media and Culture conditions}
 All \textit{P. bursaria} and green algae cultures are maintained in 
 New Cereal Leaf-Prescott Liquid (NCL) media 
 (4.3g/l \(CaCl_{2}.2H$_{2}O\), 1.6g/l KCl, 5.1g/l \(K_{2}HPO_{4}\), 2.8g/l \(MgSO_{4}.7H_{2}O\), 
-1g/l wheat bran, gravity filtered via GF/C paper and autoclaved) and stored in 
-a 12:12 light:dark cycle incubator at 15\celsius. [\url{http://www.ccap.ac.uk/media/documents/NCL.pdf}].  
+1g/l wheat bran, gravity filtered via GF/C paper and autoclaved) \citep{NCLCCAP} and stored in 
+a 12:12 light:dark cycle incubator at 15\celsius. 
 %2x21 watt 865 daylight tubes at 2000 lumen each
 Cultures were sub-cultured every 2 weeks with fresh NCL media and were inspected using light microscopy to monitor health.  
-
 No bacteria was provided in cultures using for transcriptomics or genomics but otherwise the medium was bacterised with
 \textit{Klebsiella pneumoniae} SMC (strain donated by the Meyer Lab, Ecole Normale Supérieure, Paris) the day before use. 
+
 
 \section{Omics}
 ``-omic'' technologies are those aimed at globally characterising a class of biomolecules 
 within a specific biological sample (charactising the ``-ome''). The most prevalent and developed 
 are genomics, transcriptomics, metabolomics and proteomics. 
 Genomics aims to detect and analyse DNA, seeking to describe and discover genes and non-coding DNA
-features. Similarly, transcriptomics is orientated around the characterisation
-of mRNA in a sample and thus to investigate mRNA transcription, usually assessing
-gene expression in response to a given condition or feature. 
-Metabolomics, on the other hand, seeks to identify and quantify small biomolecules that make up the terminal and
+features often for comparative and evolutionary purposes. Similarly, transcriptomics is orientated 
+around the characterisation of RNA in a sample and thus to investigate RNA transcription. This can include
+mRNA as well as small and non-coding RNAs and usually seeks to catalogue transcripts,
+aid annotation of genomic data, investigate splicing and transcript modifications
+and/or assess transcriptional response to a given condition or cellular state \citep{Wang2009}.
+Metabolomics seeks to identify and quantify small biomolecules that make up the terminal and
 intermediate products of cellular metabolism e.g. carbohydrates, alcohols, and animo acids.
 Proteomics, on the other hand, is orientated towards the characterisation  
 of proteins present in a sample. 
-Furthermore, there are a plethora of different approaches which seek to characterise
+There are also a plethora of additional approaches which seek to characterise
 different subsets of these biomolecules e.g. epigenomics (epigenetic modification to DNA such as methylation
 and histone binding), gylcomics (characterisation of saccharides) and microbiomics (community genomics of organisms associated with a metazoan organism e.g. microbes present in the human digestive tract).
 ``Meta-\ldots-omics'' is the application of specific ``omic'' method to a biological sample 
 containing multiple organisms. For example, ``metagenomics'' has been used to investigate
 the cellular community composition of marine micro-eukaryotes \citep{}<++> (BIOMARKS PAPER WHEN PUBLISHED) %BIOMARKS PAPER WHEN PUBLISHED
 
-The major utility of ``omic'' technologies is to globally identify and quantify key cellular components
-in a largely non-biased manner (although many biases exist across the different platforms
-relative to targeted approach focussing on a specific cellular component
-e.g. abundance of a certain transcript using RT-PCR they are unbiased). 
-Furthermore, while pre-existing databases and literature will aid analysis of omic datasets, 
-they largely don't require as much \texit{a priori} knowledge of a specific organism or environment as a targeted approach.
-Therefore, it is possible to investigate novel non-model organisms and systems.
+
+The major benefit of ``-omic'' approaches is that of obtaining global (or near global) characterisation
+without as much \textit{a priori} knowledge of the system being studied (i.e. organism,
+environment etc) and much higher throughput (at a lower cost) than more targeted
+approaches. For example, estimating the abundance of all transcripts using RT-PCR
+would require sequence knowledge to design primers as well as an infeasible amount of
+reactions to acquire a characterisation remotely similar to that obtainable by transcriptomics (RNA-Seq).
+This ``non-targeted'' (or rather less targeted) approach also removes a degree of scientist-induced bias 
+by omitting conscious selection of molecule specific probes.
+
+Even so, the ability to use ``omic'' methods to investigate non-model
+organisms is a relatively novel technological and methodological development.
+This is due to the necessary maturation of technology and databases to provide
+enough annotated resources to identify and determine the likely function of characterised
+molecules. While, \textit{Paramecium bursaria} and green algae such as \textit{Micractinium
+reisseri} could be considered ``model'' organisms throughout the early days of 
+molecular biology that claim is weaker in terms of the genomics era
+of biology (2000-today).  Particularly, when compared to such powerhouses of modern 
+biology as \textit{Arabidopsis thaliana}, \textit{Mus musculus}, \textit{Saccharomyces
+cerevisiae} and even ourselves (\textit{Homo sapiens}) resources to guide ``omic''
+analyses of this system are relatively scant.
+This potential for functional and adaptive analysis of non-model organisms using 
+combined ``omics'' (i.e. genomics and transcriptomic) approaches (e.g. \citep{Munoz-Merida2013,Feldmesser2014})
+has recently been demonstrated. Furthermore, it is increasingly feasible to dispense
+with genomics as a pre-cursor step and conduct functional analyses using transcriptomic datasets alone.
+This has been achieved even in the PbMr system \citep{Kodama2014}.
 
 However, care must be taken with ``omics'' approaches as they can easily become purely descriptive,
-not provide explanatory or mechanistic insight, not generate testable hypotheses or produce
+not provide explanatory or mechanistic insight, not generate testable hypotheses and/or produce
 models without biological relevance \citep{Fang2011}. This is generally true
-of so-called ``holistic'' or systems approaches, and has been raised as a concern \citep{Dougherty2008}.  
-However, alternatively the methodological 
-reductionist approaches
+for systems-level approaches, and has been raised as a concern \citep{Dougherty2008}.  
+However, alternatively the methodological reductionist approaches
 \footnote{
     Epistemological reductionism: ``explain all biology in terms of physics and chemistry'' \citep{Crick1966}
     i.e. biology is applied chemistry which is applied physics which is applied maths. 
     Ontological reductionism: a biological system is only the sum total of its component molecules and their
     interactions.
     Methodological reductionism: examination of simple components can be used to understand complex system \citep{Fang2011}}.
-modern biology is founded upon are not without their limitations.
-Specifically, by considering elements of a system in isolation one can omit the existence of
-more complex systemic mechanisms/features (or at the extreme ``emergent propoerties'') \citep{Fang2011}.  As mentioned above,
-they also require \textit{a priori} data from which to generate hypotheses/identify individual system components.
+that modern biology is founded upon are not without their limitations.
+On top of the lacking the benefits of ``omics'' mentioned above, by only considering elements of a system in isolation
+one can omit the existence of more complex systemic mechanisms/features (or at the extreme ``emergent propoerties'') \citep{Fang2011}.  
 
-
-However, this is ultimately a false dichotomy, both approaches are best utilised in
-a complementary manner in which a system approach is used to generate novel and interesting
-hypotheses that can then be tested in isolation \citep{Casadevall2008}.  
+In reality, this is a false dichotomy, both approaches are best utilised in
+a complementary manner in which a systems approach is used to generate novel and interesting
+hypotheses which can then be tested in isolation using reductionist methods \citep{Casadevall2008}.  
 For example, generating a model of interorganism metabolism and then testing
 hypotheses in this model e.g. testing that a particular protein transporter is responsible
 for the transfer of metabolites that supports a particular relationship by knocking out
-that transporter and observing the resultant phenotype: is the relationship broken?.
+that transporter and observing the resultant phenotype: is the relationship perturbed predictably?
 
-%not quite sure how this fits: segue model organisms into description
-The ability to use transcriptomics and genomic methods to investigate non-model
-organisms is a relatively novel technological and methodological development. 
-While, \textit{Paramecium bursaria} and green algae such as \textit{Micractinium
-reisseri} could be considered ``model'' organisms throughout the early days of 
-molecular biology that claim is weaker in terms of the genomics era
-of biology (2000-today).  Particularly, when compared to such powerhouses of modern 
-biology as \textit{Arabidopsis thaliana}, \textit{Mus musculus}, \textit{Saccharomyces
-cerevisiae} and even ourselves (\textit{Homo sapiens}) resources to guide -omic
-analyses of this system are relatively scant.
 
-The potential for functional and adaptive analysis of non-model organisms using 
-combined genomics and transcriptomic approaches (e.g. \citep{Munoz-Merida2013,Feldmesser2014})
-has recently been demonstrated. Furthermore, it is increasingly feasible  to dispense
-with genomics and conduct functional analyses using transcriptomic datasets alone.
-This has been achieved even in the PbMr system \citep{Kodama2014}.
 
 % remove if we don't use this - metabolomics vs proteomics MS MALDI-TOF
 % \subsection{Mass spectrometry}
 % \subsubsection{Metabolomics}
 
 
-\subsection{DNA Sequencing}
+\subsection{Genomics and Transcriptomics}
 
-DNA sequencing is the key technology behind genomics and transcriptomics (and
-their special case applications). These technologies can largely be divided into
-3 technological eras up with today (2015) at the crux of transition between 2nd and 3rd
-generation. 
+They key technology behind state of the art genomics and transcriptomics is that of
+DNA sequencing (whether the source template is genomic DNA (gDNA) or RNA reverse transcribed into cDNA)
+\footnote{Typically, RNA molecules are characterised following
+    conversion to cDNA using reverse transcriptases (RT).  There are disadvantages of this RT step, for example 
+it is potentially artefact generating and error prone, and thus can complicate detection of lowly expressed
+transcripts and strand-specific information. Additionally, it can place restrictions on the possible
+input RNA quantity and quality. It is possible to directly sequence RNA \citep{Ozsolak2009}.
+Fortunately, this method shares most of its basic mechanisms with DNA sequencing, specifically 3rd generation single molecule 
+sequencing \citep{Ozsolak2011} but has only been commercially available with the now defunct Helicoscope.}
+These technologies can largely be divided into 3 technological eras with today (2015) 
+broadly at the transition between 2nd and 3rd generations.
 
-1st generation sequencing technology is based on the 1977 work of Fred Sanger and
-Alan R. Coulson which operated on the principal of chain termination during synthesis
-and subsequent relative fragment size determination.
-Briefly, by having 4 separated reactions in which PCR of DNA terminates on the incorporation
+1st generation sequencing technology originates in 1970s with the work of Sanger \&
+Coulson \citep{Sanger1975,Sanger1977,Sanger1977a} which 
+developed the principal of chain termination during synthesis and subsequent relative fragment size determination. 
+Briefly, by having 4 separate reactions in which PCR terminates on the incorporation
 of dideoxy nucleotides (ddNTP) corresponding to each of the 4 principal DNA bases (i.e. ddATP, ddGTP etc.) 
 you can generate a series of DNA fragments of various sizes.  Size fraction separation of these fragments 
 using gel electrophoresis means the DNA sequence can be easily read from the fragment size distribution
 across the 4 ddNTP reactions \citep{Sanger1977a}. This
-technique was used to sequence the first DNA genome (bacteriophage \(\phi X174\) \citep{Sanger1977}. 
-
+technique was used to sequence the first DNA genome (bacteriophage \(\phi X174\) \citep{Sanger1977}).
 The metholodogy was subsequently improved by use of flourescently labelled ddNTPs by Leroy Hood,
 massively simplifying automation of the process \citep{Smith1985,Smith1986}.
 Further improvements followed throughout the 1990s and early 2000s with dye-termination, capillary electrophoresis
-and general throughput and length automation. Applied Biosystem's 3730XL capillary sequencer is an example
-of a successful commerical 1st generation sequencing platform \citep{Schuster2008}.
-
+and general throughput and length automation. 
+One of the most successful commercial sanger sequencing platforms is that of
+highly automated 96-reaction Applied Biosystem's 3730XL capillary sequencer \citep{Bonetta2006}.
 While, surpassed in throughput by later techniques, Sanger sequencing remains the gold standard for 
-cheap, rapid, high quality 300-1000nt sequencing and has extensive use for targeted approaches such as 
-cloning confirmation.
-However, scaling 1st generation methods to whole eukaryotic genomes rapidly became infeasible 
-and the sheer size of the human genome project is testament to that.
+cheap, rapid, high quality 300-1000bp sequencing and has extensive use for targeted approaches such as 
+cloning confirmation \citep{Bonetta2006,Tsiatis2010}.  
+Transcriptomic analysis without prior genomic sequence data 
+was possible using Sanger sequencing in the form of EST or cDNA sequencing \citep{Adams1991,Gerhard2004}.
+In which partial or complete cDNA was generated from transcripts, cloned and sequenced.
+Although these approaches did allow transcriptomic goals such as resolution of different isoforms without pre-existing genomic information
+and aided annotation \citep{Adams1991}. Accurate relative expression levels were not resolvable beyond broad inferences
+on expression enrichment of highly expressed transcripts from the proportion of the cDNA/EST library they made up.
 
-2nd generation sequencing, also known as sequencing-by-synthesis, emerged in 2005 via the work
-of both George Church and 454 Life Sciences \citep{Margulies2005} reducing reaction volume and thus increasing the number
-of reactions \citep{Schuster2008}.  
-
-
-
-
-
-In contrast, 2nd generation sequencing technologies are largely orientated
-around high-throughput producing millions of relatively short DNA reads.  
-Unfortunately, this increases the error rate and biases but at the benefit of 
-generating massive amounts of extra data.
-The dominant 2nd generation technology is that of Illumina's bridge amplification
-paradigm - specifically the HiSeq and MiSeq platforms.  This PhD principally
-used HiSeq so I will focus my explanations on the function of this platform.
-454, iontorrent
+Additionally, scaling 1st generation methods to whole eukaryotic genomes or transcriptomes 
+rapidly became infeasible for most research. The scale of the human genome project \citep{Lander2001,Venter2001} is testament to that 
+(20 public centers in 6 countries 
+\citep{Collins2003} and \($70m\) \citep{Pettersson2009}).  
 
 
+2nd generation sequencing emerged commercially in 2005 with the work
+of both George Church and 454 Life Sciences \citep{Margulies2005} and featured
+reduced individual reaction volumes and thus greater parallelisation (and so throughput),
+cell-free preparation not requiring time-consuming cloning of DNA fragments into bacterial vectors to generate
+clonal templates for sequencing, and direct sequencing detection obviating the need
+for electrophoresis \citep{Jaszczyszyn2014}.
+%which reduced necessary volume for 
+%step-wise ``pyrosequencing'' \citep{Ronaghi1996} reations possible \citep{Schuster2008}. 
+These technologies generate huge amounts (on the order of \(10^{6}-10^{9}\) relatively short (on the order of \(10^{1}-10^{3}\)bp) DNA sequences 
+    (reads) randomly sampled from the input (c)DNA.  
+Available 2nd generation platforms include 454's GSLFLX and GSJunior (now Roche),
+Ion Torrent's (now Life Technologies) PGM, Applied Biosystem's (now Life Technologies) SOLiD and Illumina's (formerly Solexa) 
+HiSeq, MiSeq and NextSeq \citep{Nederbragt2013}.
 
-3rd generation technologies have emerged only relatively recently.
-These platforms are so called single-molecule sequencing.  The more prevalent
-example is that of PacBio, however the Oxford Nanopore MinIon is showing much promise.
+\begin{figure}
+    \includegraphics[width=\textwidth]{illumina_lib_prep.pdf}
+    \label{fig:libprep}
+    \caption{A brief overview of library preparation for Illumina}
+\end{figure}
+
+
+Although these platforms use a range of different implementations and largely exhibit trade-offs between read number and read length they all largely follow the same basic process \citep{Shendure2008}:
+\begin{enumerate}
+        \item Library generation: Randomly fragmenting input DNA into short fragments of a specific size
+            followed by ligation of adapter sequences with some platforms allowing development of ``paired-end'' or ``mate-pair'' libraries in which
+            each end of a fragment is sequenced separated with a known size unsequenced fragment aiding subsequent assembly.
+        \item Clonal amplification: Generation of clonally identical spatially distinct clusters of DNA mainly via emulsion PCR \citep{Dressman2003} (SOLiD, Ion Torrent, 454)
+            or bridge PCR \citep{Adessi2000,Fedurco2006} (Illumina) 
+        \item Sequencing-by-synthesis: In which a complementary DNA strand is generated base by base via sequentially flooding and clearing a
+            chamber with each dNTP and a polymerase (or ligase in the case of SOLiD).  On incorporation of a base into a cluster a detectable signal is released such as emission of certain wavelengths of light 
+detectable using optics (e.g. Illumina, 454, SOLiD) or release of hydrogen ion (e.g. Ion Torrent).
+\end{enumerate}
+
+The currently dominant 2nd generation technology is that of less cumbersome \citep{Shendure2008} Illumina's bridge amplification
+paradigm - specifically the HiSeq, NextSeq, and MiSeq platforms.  
+The HiSeq2500 is by far the highest throughput individual platform (not counting the multi-machine HiSeqX's) able to generate up to 
+400M 125bp reads per run (1TBase of data) \citep{Nederbragt2013}.
+Illumina's platforms are estimated to generate 90\% of all sequenced DNA data as of 2014 \citep{Regalado2014}.
+
+\begin{figure}
+    \includegraphics[width=\textwidth]{illumina_PE_seq.pdf}
+    \label{fig:libprep}
+    \caption{A brief overview of paired end sequencing in an Illumina flowcell after library preparation}
+\end{figure}
+
+
+Not only has this explosion in sequencing throughput driven a massive decrease in per-base sequencing cost
+leading to a subsequent explosion in available data it has also allowed the development of 
+RNA-Seq (high throughput sequencing of cDNA generated from cellular RNAs).
+
+One other innovation required for effective RNA-Seq is means of enriching fractions of RNA.
+Owing to the overwhelming amount of ribosomal RNA present in a cell (or selection of cells) to avoid
+wasting many sequencing reads on these instead of the mRNA or ncRNA of interesting it is necessary
+to enrich extracted RNA samples.  For eukaryotic mRNA enrichment this can be easily achieved by
+using poly-T primers during RT which selectively bind to the poly-adenylated tail of these messenger 
+transcripts.  However, for bacterial/archael work and transcriptomic analyses focussing on non-poly-adenylated
+trascripts such as ncRNAs/siRNAs/miRNAs etc. ribosomal depletion is used.  This is a process by which 
+ribosomal probes are attached to magnetic beads. Ribosomal RNAs bind to these probes and the magnetic
+beads can be used to partition the majority of ribosomal sequences away from the other RNA.
+While, 2nd generation sequencing has driven down per-base sequencing costs the cost of library preparation 
+has fallen more slowly \citep{Blainey2013}.
+For this reason, combined with the higher throughput it has become common to multiplex difference samples 
+during sequencing runs.  Multiple distinct samples can be be sequenced
+in the same reaction (e.g. flowcell lane for Illumina platforms) by adding an indexed tags during library
+preparation.  These tags can then be used to partition the reads back to their original separate samples
+after sequencing. 
+
+
+Finally, 3rd generation technologies are generally known as single-molecule sequencing.
+These platforms still use the sequencing-by-synthesis concept but omit the generation of
+clonal clusters (by emulsion or bridge PCR) by using highly sensitive detection methods to
+determine base incorporation in indvidual strands of DNA.
+The benefits of these approaches are that they allow avoiding the bias and error prone 
+amplification step present in 2nd generation sequencing.  They also allow 
+
+are avoiding the bias and error prone elements of the DNA sample 
+preparation process allowing smaller amounts of input DNA as well as potentially degraded samples.
+RNA can also be directly sequenced without the reverse transcription step to cDNA \citep{Ozsolak2009}.
+Additionally, in the case of the MinIon and PacBio longer reads can be generated even than Sanger
+sequencing methods (1kb to 1mb) 
+
+The first 3rd generation platform was that of the now defunct Helicos Bioscience's Helicoscope \citep{Harris2008}
+based on breakthroughs in the resolution of fluoresence visualiation using paired FRET methods \citep{Braslavsky2003}.
+However, currently the main mature platform is that of Pacific Biosciences PacBio RS.  The PacBio
+operates by using nanostructures known as zero-point waveguides with DNA polyermases fixed
+at the bootom of to increase resolution for detecting
+fluorescent signals for incorporation of bases while reducing incidental noise ``leaking'' between 
+cells.  The platform-specific disadvantage of the PacBio RS is the price and size of the platform.
+
+The MinIon differs in that is doesn't do sequencing-by-synthesis, but rather feeds DNA strands incrementally
+through a biological pore protein and detects the identity of the protein using the biophysical profile.
+
 Unfortunately, partly as an element of their recent nascence and partly due to the
 poorer signal:noise of single molecule approaches instead of analysing large 
-batches of identical DNA sequences these technologies have a relatively high error rate.
-Thus, currently at least, are inadequate for most assembly tasks by themselves.
+batches of identical DNA sequences 3rd generation technologies have a relatively high error rate.
+Thus, currently at least, are inadequate for most eukaryotic assembly tasks by themselves.
 Where they have shown great utility is in conjunction with 2nd generation datasets
-as a scaffolding tool i.e. long noisy reads upon which high quality but shorter
+as a scaffolding tool i.e. producing long noisy reads upon which more accurate but shorter
 reads can be assembled.
 
+PacBio generates 20kb and longer reads but has a high cost and high error rate (14\%) \citep{Jaszczyszyn2014}
+
+
+It should be noted that there are other approaches to DNA sequencing (and characterisation of 
+transcriptomes) specifically that of hybridisation based methods.  The most famous of these,
+and indeed the principal way by which transcriptomics was conducted prior to the maturity of
+RNA-Seq via DNA sequencing platforms is that of microarrays largely popularised by the Agilent
+arrays.  These involve the binding of
+fragments of complementary DNA to a tiled array with a fluorescent marker.  This fluorescence
+can be detected and either relative expression level of the corresponding transcript evaluted
+or in the case of genomics, the presence of a particular sequence variant determined.  
+Microarrays suffer from requiring more prior information to effectively generate that direct
+sequencing methods, they also lack the ease of analysis due to the continuous nature of their output
+and extensive processing is required to convert relative fluorescence values at points into biologically
+relaevant and comparable scales.  However, they do have the advantage of very high throughput and quick
+analysis with established arrays and thus are best suited for approaches such as medical diagnostics
+and detection of SNPs in well characterised genomes such as the human genome.
+
+Microarrays also required pre-existing genomic sequence to design arrays, had limited sequence resolution,
+were difficult to use to distinguish alternative isoforms or allelic expression, as well as having relatively
+poor dynamic range in recognising different transcription levels.  While microarrays are higher throughput
+than older EST sequencing even that allowed isoform distinguishing but did lack accurate evaluation of 
+gene expression. \citep{Wang2009}
 
 
 
-Methodological innovations have improved the accuracy of assembly using these platforms.
-Specifically, that of increasing the amount of positional information and individual read
-provides by generation of paired-end or mate-pair libraries.  These are libraries in which
-a pair of reads is sequenced at the ends of a fragment of approximately known size.
-This spacing information can then be used by genome assemblers and resolve graphs.
+
+Therefore, all genomic and transcriptomic sequencing in this PhD has been performed using the 2nd generation
+Illumina HiSeq platform due to its relative maturity, high-throughput, relatively accurate
+paired-end output making it currently the most amenable platform to effectively
+use \textit{de novo} genomic and transcriptomics approaches.  Additionally, Sanger sequencing
+has been used when accurate targeted sequencing was called for, such as investigating the
+taxonomic distribution of \textit{Paramecium} green algal endosymbionts (see \ref{chap1}).
 
 
-Single cell
+
+\subsubsection{Single Cell Sequencing}
+
+
+While the quality of the output of earlier sequencing techniques
+was highly reliant on both the quantity and quality of the input DNA (or cDNA) (not to mention
+characterisics such as GC\%) precluding many systems from easy analysis.  This is especially
+problematic for the majority of systems that are not easily culturable and thus can't be
+grown up in sufficient quantities to easily extract sufficient nucleic acids to conduct.
 
 
 
-Fundamentally at the end of the sequencing process and base calling what is output is 
-a FastQ formatted file (or several depending on the library preparation used).
-These files contain 
+Starting with single-cell single-gene sequencing experiments (e.g. \citep{Kuppers1993}) 
 
+
+Single cell sequencing allows obtaining data directly from individual cells
+avoiding the bias and complication of culturing or have to decompose a complex environmental
+metagenome or metatranscriptome containing a plethora of diverse cells \citep{Blainey2013}.  It also allows 
+investigation of cells at particular life stages e.g. sexual reproduction without difficult
+and potentially biasing synchronisation methodologies.  
+
+
+
+Currently, single cell genomics still requires whole genome amplification (WGA) even with 
+3rd generation sequencing platforms due to the relatively inefficient library preparation
+methods requiring relatively more starting material than is avaiable in the DNA extracted
+from a single cell (on the range of nanograms). \citep{Blainey2013} %%find support quote for transcriptomics needing WGA too
+
+
+
+
+Single cell methods use multiple-displacement amplification to increase the concentraion of
+nucleic acids 
+
+For example. the Qiagen Repli-G kit used for both single cell transcriptomic and genomic analysis
+of the \textit{PbMr} system.
+
+Transcripts are reverse transcribed and then ligated into larger fragments.  MDA
+is then undergone on the larger fragments before the usual library preparation process.
+
+MORE DETAILS ABOUT THE METHOD
+
+
+One interesting consideration for single cell transcriptomics is the possible generation
+of chimeric reads that will cross the boundary between two randomly ligated transcripts.
+
+However, the risk of this can largely be mitigated by selection of a relatively small fragment
+size for paired end sequencing.
+
+5'-3' - 5'-3'  - sequencing primers are unlikely to rpim
+
+
+
+\subsubsection{Assembly}
+
+All major 2nd and 3rd generation sequencing platforms output a FastQ formatted file.
+These are files containing the sequence of a read and a per-base quality score known as a Q score.
 These scores (Q) are calculated as a logarithmic relation to the base-called error probability (P)
 \[ Q = -10\log{10}{P} \]
 and conversely: 
 \[ P = 10^{frac{-Q}{10}} \]
 Therefore \[Q = 30 \] corresponds to 99.9\% base call accuracy
 
+\textit{De novo} transcriptome and genome assembly 
+
+
 
 \begin{figure}
     Summary of stages of illumina sequencing
 \end{figure}
-
-
 
 
 
@@ -275,12 +422,6 @@ Annotated-Directed Imrpovement: Overlapping, improved with annotation, verified,
 Noncontiguous finished: high quality, finished apart from a few repeats or gaps, good enough for almost all analayses
 Finished: gold standard, less than 1 error per 100,000, replicon in contig seqs, reference quality \citep{Chain2009}
 
-
-
-
-\paragraph{Single cell genomics - RepliG kit}
-The Qiagen REPLI-g single cell method used for both transcriptomic and genomic
-sequencing in this thesis is principally a two setp process
 
 
 
@@ -632,6 +773,8 @@ It also determines how well this will generalise to new data.
 \end{figure}
 
 
+Machine learning can be split into 3 basic components: representation (the form of the model e.g. and input) in which 
+evalution (cost functions) and optimisation (gradient descent) \citep{Domingos2012}
 
 %Similar to statistics in general, approaches can be parametric or non-parametric in machine learning and can
 %be easily distinguished by the change in numbers of parameters are training set size increases.
@@ -730,9 +873,12 @@ classifiers performing better as the training set grows \citep{Ng2002}.
 \subsubsection{Support Vector Machines}
 
 Support Vector Machines (SVMs) are a type of sparse kernel maximum-margin supervised classification algorithm.
-With the innovation of the kernel trick in 1992 \citep{Boser1992} and soft-margins in 1993 (not published until \citep{Cortes1995}) SVMs have been among the most successfully applied classification algorithms throughout the 
-90s and early 2000s and have only recently begun to lose ground to the resurgence of deep- and/or convolutional
-neural networks e.g. \citep{LeCun1998}.  
+With the innovation of the kernel trick in 1992 \citep{Boser1992} and soft-margins in 1993 (not published until \citep{Cortes1995}) SVMs have been 
+among the most successfully applied classification algorithms throughout the 90s and early 2000s.
+Only relatively recently have they begun to lose ground to the deep-learning methods such as deep-convolutional neural networks (e.g. LeNet \citep{LeCunn1998}) exemplified 
+by the defeat of SVMs by the LeNet on the MNIST digit recognition dataset \citep{Hinton2006,Bengio2007} \citep{Bengio2013}
+
+
 
 As SVMs are a type of maximum-margin classifier this means that not only do they try to determine the parameters \(w,b\) of a hyperplane \(h_{w,b}(x) = g(w^{T}x+b)\) 
 
@@ -740,6 +886,18 @@ As SVMs are a type of maximum-margin classifier this means that not only do they
 which separates two different sets of data with different class labels but that they try to find
 
 the hyperplane which maximises this separation.  
+
+
+
+Good generalisation in theory and practice, works well with limited training, relatively efficient, 
+convex optimisation (best global model), kernal trick works
+
+increasing margin reduced capactiy - fewer possible models
+
+Learning theory: if the following holds - H is sufficiently consitrained in suize and/oprthe sizer of trainin data set is large
+then low training error is liekly to in dicate low generalisation error
+
+Similar to logistic regression but better
 
 
 
@@ -967,58 +1125,50 @@ Ways of specifying numbers of clusters \(k \equivalent \root{\frac{N}{2}}\) or i
 
 
 
+
 \section{Phylogenetics}
+Phylogenetics in its simplest form involves arranging a set of sequences into an optimal hierarchial
+branching tree structure that reflects some measure of relatedness (and occasionally other criteria).
+This estimation can be a non-trivial process (especially with more complex
+measures of relatedness that take into account observed evolution) as the number of
+possible trees rapidly increases with the number of sequences \(N_{trees} = \prod_{x=2}^{N_{taxa}} (2x - 3)\).
 
 Phylogenetics is an effective tool with which to investigate the evolutionary 
-ancestry biological sequence data, specifically DNA/RNA and protein sequences.
+ancestry of biological sequence data, specifically DNA/RNA and protein sequences.
+It can be used to identify how closely related a given pair of sequences are, as
+well as an indication of what the sequence most likely looked like in a shared common
+ancestor (ancestral node reconstruction). Phylogenetic methods allow estimation
+of evolutionary processes such as selection pressure,
+migration, genome reduction, and horizontal gene transfer.
+In the context of endosymbiosis, phylogenetics can be used to determine evolutionary ancestry of 
+the genes recovered in a transcriptome and to aid identification the likely origin 
+(host, endosymbiont, contaminant) of these transcripts. Additionally, it can pinpoint
+likely horizontal gene transfer events between host and endosymbiont by searching for single 
+gene/transcript phylogenies that have an incongruent branching pattern
+compared to established species trees.  Finally, it can be used to identify the likely function 
+of novel transcripts based on similarity to other transcripts of known function in various
+databases such as genbank.
 
-Phylogenetics can be used for identification of genes, species, and even populations.
-Used for the estimation of evolutionary processes such as selection pressure,
-migration, genome reduction, horizontal gene transfer.
-Comparisons of different species/genes/populations, pin-pointing of ancestral states
-and transitionary processes.
-
-
-
-Estimation of phylogenetic trees is non-trivial as the number of possible trees
-expands rapidly with the number of sequences.
-
-For rooted phylogenies:
-\begin{displaymath}
-    N_{trees} = \prod_{x=2}^{N_{taxa}} (2x - 3)
-\end{displaymath}
-
-
-
-Essentially, phylogenetics is a process by which these possible trees are searched
-in order to find an optimal tree according to certain criteria.
-
-
-
-
-Furthermore, phylogenetic trees are important beyond just direct molecular evolution
-as many biological processess can be effectively modeled in bifurcating systems
-SUCH AS
-
-
-% The next key method in this project is that of phylogenetics as it is an effective tool with
-% which to investigate the evolutionary ancestry of the genes recovered in the transcriptome and
-% to identify the likely origin (host, endosymbiont, contaminant) of these transcripts. It can also
-% be used to identify potential horizontal gene transfer events between host and endosymbiont
-% by searching for single gene/transcript phylogenies that have an incongruent branching pattern
-% compared to established species trees. The key stages in a phylogenetic analysis are that of
-% alignment (in which homologous sites in the sampled sequences are aligned with one another),
-% masking (in which sites which are evolutionarily informative – can be determined to be ho-
-% mologous but also non-invariant are selected), model selection (in which a sequence evolution
-% model is selected using criteria such as Akaike’s information criterion which penalise increased
-% parameterisation but attempt to maximise model likelihood), and finally, phylogenetic recon-
-% struction (in which the selected evolutionary models are applied to the dataset using principally
-% maximum-likelihood or Bayesian methodologies in order to reconstruct the likely evolutionary
-% relationships in the masked sequences).
+The key stages in a phylogenetic analysis are that of sequence sampling,
+ alignment (in which homologous sites in the sampled sequences are aligned with one another),
+ masking (in which sites which are evolutionarily informative – can be determined to be ho-
+ mologous but also non-invariant are selected), model selection (in which the best-fitting
+ evolutionary model is selected) and finally, phylogenetic reconstruction (in which the tree
+ is generated).
 
 \subsection{Sequence sampling}
 
+Sequence sampling is arguably the most important stage in phylogenetic analysis as poor sampling
+
+
+It is key to producing consistent, efficient and robust trees. 
+
 Bias, long branches
+
+\subsubsection{BLAST}
+
+\subsubsection{HMM}
+
 
 \subsection{Multiple Sequence Alignment}
 
@@ -1102,14 +1252,6 @@ in which the MSA is built
 
 
 
- 
-
-
-
-
-
-
-
 
 There have been compelling arguments as early as 1991 that MSA are inherently flawed as consideration of 
 evolutionary processess in the objective weighting and assessment of potential alignments \citep{Thorne1991}.
@@ -1128,6 +1270,15 @@ Therefore, for now independent alignment estimation is here to stay, at least un
 computation resources and algorithmic development has continued until these more
 theoretically satisfying approaches become feasible.
 
+
+\begin{figure}
+    \caption{Redrawn from a slide by Derrick Zwickl
+\end{figure}
+
+
+
+
+
 \subsection{Masking}
 
 \subsection{Model selection}
@@ -1145,6 +1296,63 @@ theoretically satisfying approaches become feasible.
 
 
 
+
+
+\section{Informatics languages and hardware}
+
+\subsection{Languages and Libraries} 
+Several programming languages and a range of libraries were used throughout this PhD depending
+on the suitability of a particular tool for a task.
+The full details of the specific tools used for the main analyses are outlined during the description
+of these analyses, however, the tools used for prototyping as well as those used for smaller tasks not covered
+in detail are omitted elsewhere. 
+
+Languages and libraries were chosen depending on their best fit for a particular task.
+Performance sensitive code such as those dealing with large datasets (e.g. high-throughput sequencing 
+libraries or image data) were principally conducted using the C++ language 
+in line with the C++11 standard \citep{ISOInternationalStandard2011}
+
+The main C++ libraries used in addition to the C++11 standard library were:
+\begin{itemize}
+    \item Seqtk - fastq/a sequence parsing library \citep{SeqtkGitHub}
+    \item MLPACK - a high-performance machine learning library \url{http://www.mlpack.org/} \citep{mlpack2013}
+    \item OpenCV3 - widely used computer vision library \citep{opencv_library}
+    \item Armadillo - numerical computation library \citep{Sanderson2010}
+\end{itemize}
+
+The majority of tasks were accomplished using the high-level python language (python2.7 or python3.4
+depending on the application) \citep{}.  In addition to the standard library, the numerical
+computation libraries numpy \citep{} and theano \citep{}, machine learning library scikit-learn \citep{},
+statistical and scientific libraries scipy \citep{} and pandas \citep{}, the bioinformatics libraries
+scikit-bio \citep{} and biopython \citep{}, and plotting libraries holoviews \citep{}, 
+matplotlib \citep{} and bokeh \citep{} were all used extensively.
+Frequent use was made of literate programming offered by environments such as the ipython notebook (recently
+renamed jupyter).
+
+The statistical programming language R \citep{RCoreTeam2015} was used for some data analysis
+and visualisation primarily using ggplot2 \citep{Wickham2009} and dplyr \citep{Wickham2014}.
+This was primarily done using the R-Studio \url{http://www.rstudio.com/} integrated development environment) and 
+R-markdown \citep{Allaire2014}.
+
+All code was version controlled using git \url{http://git-scm.com/} and remotely hosted using github \url{https://github.com/} and bitbucket \url{https://bitbucket.org/} 
+services.  Unit tests were automatically run on synchronisation (`push') with these remote servers using 
+the Travis \url{https://travis-ci.org/} Continuous Integration service.
+
+Incidental scripting was done using zsh and bash languages and all code was written using a simple vim terminal.
+
+\subsection{Hardware}
+
+All analyses were conducted on either the lab cluster (running Ubuntu Server LTS 12.04 and 14.04 \url{http://www.ubuntu.com}:
+\begin{itemize} 
+    \item PowerEdgeM910 with 2 x Intel Xeon CPU \(E6510 @ 1.73GHz, 512GB\) RAM
+    \item PowerEdgeM910 with 2 x Intel Xeon CPU \(E7-4807 @ 1.87GHz, 512GB\) RAM
+    \item PowerEdgeM620 with 2 x Intel Xeon CPU \(E5-2650 v2 @ 2.60GHz, 512GB\) RAM
+\end{itemize}
+Or on two workstations both running continuously updated versions of Arch Linux \url{https://www.archlinux.org/}.
+\begin{itemize}
+    \item Apple MacPro with 2 x Intel Xeon CPU \(E5520 @ 2.27GHz, 16GB\) RAM
+    \item Dell Precision T7500 with 2 x Intel Xeon \(E5620 @ 2.4GHz, 48GB\) RAM
+\end{itemize}
 
 \section{OLD CRAP}
 %\subsection{RNA-Seq}
@@ -1370,198 +1578,4 @@ theoretically satisfying approaches become feasible.
 %  \item Begun design of antibodies to determine the localisation of these transporters
 %\end{itemize}
 %
-%
-%\section{Further Work}
-%The work conducted so far forms the ground-work necessary in order make meaningful insights into possible proteins involved in the maintenance of the endosymbiosis.
-%Namely, confirmation of the endosymbiont species, day and night transcriptome sequencing and assembly, identification and verification of host and endosymbiont transcripts from the transcriptome and identification of transporter and secreted proteins within these subsets.  
-%Using these greatly reduced numbers of sequences it is possible to manually identify candidates to further investigate, to ideally identify their role in maintaining the endosymbiosis.  
-%Once we have developed our shortlist of candidates further we hope to verify our predictions using a variety of molecular methodologies:
-%\begin{itemize}
-%  \item Localisation - Polyclonal antibodies to confirm candidate is able to have a direct role in endosymbiosis (localised to perialgal vacuole or endosymbiont membrane for example) within the next 6 months.
-%  \item Proteomics - Shotgun Mass Spectrometry - confirm presence of protein in system rather than just transcripts within 9 months.
-%  \item Differential Expression Analysis - qPCR - to verify the regulation of candidate proteins at various points in the endosymbiosis (e.g. establishment, day, night) within the next 3-6 months.
-%  \item RNAi - direct testing of predictions by determining the effect of candidate protein knock-out on state of endosymbiosis within 9 months.
-%\end{itemize}
-%
-%\section{References}
-%
-%\noindent Achilles-Day, Undine E M,  Day, John G Isolation of clonal cultures of endosymbiotic green algae from their ciliate hosts, 2012 Journal of microbiological methods,  92,  3, 355, 7
-%
-% 
-%\noindent Beijirnick, M. W. 1890 Kulturversuche mit Zoolchlorellen, Lichengonidien, und anderen Algen. Botan. Zeit., Jahrg. 48].   MISSING
-%
-% 
-%\noindent Berger J  Feeding behavior of Didinium nasutum on Paramecium bursaria with normal or apochlorotic zoochlorellae 1980 . J Gen Microbiol 118 : 397 – 404
-%
-% 
-%\noindent Chen, Tze-Tuan, Polyploidy in Paramecium bursaria, 1940,Genentics,  26(1)
-%
-% 
-%\noindent Blanc G, Duncan G, Agarkova I, Borodovsky M, Gurnon J, Kuo A, Lindquist E, Lucas S, Pangilinan J, Polle J The Chlorella variabilis NC64A genome reveals adaptation to photosymbiosis, coevolution with viruses, and cryptic sex. 2010 Plant Cell 22(9):2943–2955
-%
-% 
-%\noindent Darriba D, Taboada GL, Doallo R, Posada D. Prottest3: Fast selection of best-fit models of protein evolution. Bioinformatics, 27:1164-1165, 2011
-%
-% 
-%\noindent Dolan, John, Mixotrophy in Ciliates: A Review of Chlorella Symbiosis and Chloroplast Retention, 1992,  Marine Microbial Food Webs,  6(2)
-%
-% 
-%\noindent Edgar, R.C MUSCLE: multiple sequence alignment with high accuracy and high throughput, 2004, Nucleic Acids Res. 32(5):1792-1797 
-%
-% 
-%\noindent Eddy, S.R., Accelerated Profile HMM Searches, 2011, PLoS Comp. Biol.
-%
-% 
-%\noindent Emanuelsson, O., Nielsen, H., Brunak, S., von Heijne, G., Predicting subcellular localization of proteins based on their N-terminal amino acid sequence. J. Mol. Biol.,2000. 300: 1005-1016,
-%
-% 
-%\noindent Fujishima, Masahiro,  Kodama, Yuuki, Endosymbionts in paramecium, 2012, European journal of protistology, 48,2
-%
-% 
-%\noindent Gouy M., Guindon S. \& Gascuel O. (2010) SeaView version 4 : a multiplatform graphical user interface for sequence alignment and phylogenetic tree building. Molecular Biology and Evolution 27(2):221-224.
-%
-% 
-%\noindent Guindon S., Dufayard J.F., Lefort V., Anisimova M., Hordijk W., Gascuel O. "New Algorithms and Methods to Estimate Maximum-Likelihood Phylogenies: Assessing the Performance of PhyML 3.0." Systematic Biology, 59(3):307-21, 2010.
-%
-% 
-%\noindent Krogh A., Larsson B., von Heijne G., Sonnhammer EL., Predicting transmembrane protein topology with a hidden Markov model: application to complete genomes. J Mol Biol. 2001 Jan 19;305(3): 567-80.
-%
-% 
-%\noindent Haas et al., De novo transcript sequence reconstruction from RNA-seq using the Trinity platform for reference generation and analysis, Nat. Protocols 2013 XXX
-%
-% 
-%\noindent Harper, D.S., Jahn, C.L. Differential use of termination codons in ciliated protozoa 1989, PNAS, Vol. 86, pp. 3252-3256, XX
-%
-% 
-%\noindent Horton, P., Park, K-J., Obayashi, T., Fujita, N., Harada, H., Adams-Collier, CJ., Nakai, K., WoLF PSORT: protein localization predictor Nucl. Acids Res. 2007 35 suppl 2: 585-587
-%
-% 
-%\noindent A. Conesa, S. Götz, J. M. Garcia-Gomez, J. Terol, M. Talon and M. Robles. "Blast2GO: a universal tool for annotation, visualization and analysis in functional genomics research", Bioinformatics, Vol. 21, September, 2005, pp. 3674-3676.
-%
-% 
-%\noindent Hoshina, R., Imamura, N,  Multiple Origins of the Symbioses in Paramecium bursaria 2008 Protist, vol. 159, 53-63
-%
-% 
-%\noindent Hoshina, R., Imamura N., Origins of algal symbions in Paramecium Bursaria 2009, Microbiology Monographs 12 Endosymbtions in Paramecium (ed: Fujishima M.)
-%
-% 
-%\noindent Hosoya, Hiroshi,  Kimura, Kouki, Matsuda, Seiji, Kitaura, Miyuki,  Takahashi, Tadao, Kosaka, Toshikazu, Symbiotic Algae-free Strains of The Green Paramecium Paramecium bursaria produced by the Herbicide Paraquat, 1995, Zoological Science, 12
-%
-% 
-%\noindent Johnson, Matthew D,  Acquired phototrophy in ciliates: a review of cellular interactions and structural adaptations , 2011, The Journal of eukaryotic microbiology, 58(3)
-%
-% 
-%\noindent Karakashian, S.J., Growth of Paramecium bursaria as Influenced by the Presence of Algal Symbionts, 1963,  Physiological Zoology, 36(1)
-%
-% 
-%\noindent Karkashian, S.J.,  Karkashian, M.W., Evolution and Symbiosis in the Genus Chlorella and Related Algae, 1965, Evolution,  19(3)
-%
-% 
-%\noindent Kato Y, Imamura, N. Metabolic Control Between the Symbiotic Chlorella and the Host Paramecium, 2009,  Microbiology Monographs 12,  Endosymbionts in Paramecium
-%
-% 
-%\noindent Kodama, Yuuki, Nakahara, Miho, Fujishima, Masahiro,  Symbiotic alga Chlorella vulgaris of the ciliate Paramecium bursaria shows temporary resistance to host lysosomal enzymes during the early infection process, 2007, Protoplasma, 230(1,2)
-%
-% 
-%\noindent Kodama, Yuuki, Fujishima, Masahiro, Infection of Paramecium bursaria by Symbiotic Chlorella Species, 2009, Microbiology Monographs 12,  Infection of Paramecium bursaria by Symbiotic Chlorella Species
-%
-% 
-%\noindent Kodama, Y, Fujishima, M,  Induction of secondary symbiosis between the ciliate Paramecium and the green alga Chlorella 2010,  Current Research, Technology and Education Topics in Applied Microbiology and Microbial Biotechnology
-%
-% 
-%\noindent Kodama, Yuuki, Inouye, Isao,  Fujishima, Masahiro, Symbiotic Chlorella vulgaris of the ciliate Paramecium bursaria plays an important role in maintaining perialgal vacuole membrane functions, 2011, Protist, 162(2)
-%
-% 
-%\noindent Kadono T , Kawano T , Hosoya H , and Kosaka T (2004) Flow cytometric studies of the host-regu- lated cell cycle in algae symbiotic with green paramecium . Protoplasma 223 : 133 – 141
-%
-% 
-%\noindent Kodama, Yuuki, Fujishima, Masahiro, Endosymbiosis of Chlorella species to the ciliate Paramecium bursaria alters the distribution of the host's trichocysts beneath the host cell cortex.2011, Protoplasma, 248(2)
-%
-% 
-%\noindent Kodama, Yuuki,  Fujishima, Masahiro, Characteristics of the digestive vacuole membrane of the alga-bearing ciliate Paramecium bursaria , 2012  Protist 163(4)
-%
-% 
-%\noindent Langmead B, Salzberg S. Fast gapped-read alignment with Bowtie 2. Nature Methods. 2012, 9:357-359.
-%
-% 
-%\noindent Loefer,J. B., Bacteria free cultures of Paramecium bursaria and concentrations of the medium as a factor in growth. 1936 J. Exp. Zoo!., 72: 387
-%
-% 
-%\noindent Mayer, K.M., Forney J.D., A Mutation in the Flanking 5'-TA-3' Dinucleotide Prevents Excision of an Internal Eliminated Sequence From the Paramecium tetraurelia Genome 1999 genetics vol. 151 no. 2 597-604
-%
-% 
-%\noindent Miwa I., Regulation of Circadian Rhythms of Paramecium bursaria by Symbiotic Chlorella Species 2009, Microbiology Monographs 12, Endosymbions in Paramecium.
-%
-% 
-%\noindent Meier, Renate, Wiessner, Wolfgang, Infection of algae-free Pammecium bursaria with symbiotic Chlorella sp. isolated from green paramecia, 1989, Journal of cell science, 93
-%
-% 
-%\noindent{} Muscatine L Glycerol excretion by symbiotic algae from corals and Tridacna and its control by the host 1967  Science 156 : 516 – 519
-%
-% 
-%\noindent Nishihara, N, Horiike, S,  Takahashi, T, Kosaka, T, Shigenaka, Y, Hosoya, H, Cloning and characterization of endosymbiotic algae isolated from Paramecium bursaria 1998, Protoplasma, 203
-%
-% 
-%\noindent Parker, Raymond C, Symbiosis in Paramecium bursaria, 1926, Journal of Experimental Zoology,  46
-%
-% 
-%\noindent Pérez MT , Dolan JR , Fukai E (1997) Planktonic oligotrich ciliates in the NW Mediterranean growth rates and consumption by copepods . Mar Ecol Prog Ser 155 : 89 – 101
-%
-% 
-%\noindent Petersen, TN., Soren, B., von Heijne, G., Nielsen, H., SignalP 4.0: discriminating signal peptides from transmembrane regions. Nat Meth 2011; 8(10):785-786
-%
-% 
-%\noindent Price, M.N., Dehal, P.S., and Arkin, A.P. FastTree 2 -- Approximately Maximum-Likelihood Trees for Large Alignments. 2010 PLoS ONE, 5(3):e9490.
-%
-% 
-%\noindent Putt M Abundance, chlorophyll content and photosynthetic rates of clliates in the Nordic Seds during summer.1990  Deep-Sea Res 37:1713-1731
-%
-% 
-%\noindent Raven JA Phagotrophy in phototrophs 1997 Limnol Oceanography 42:198–205
-%
-% 
-%\noindent Reisser W  The metabolic interactions between Paramecium bursaria Ehrbg. and Chlorella spec. in the Paramecium bursaria -symbiosis III. The influence of different CO2 concentrations and of glucose on the photosynthetic and respiratory capacity of the symbiotic unit  1980. Arch Microbiol 125 : 291 – 293
-%
-% 
-%\noindent Salvador Capella-Gutierrez; Jose M. Silla-Martinez; Toni Gabaldon. trimAl: a tool for automated alignment trimming in large-scale phylogenetic analyses. Bioinformatics 2009 25: 1972-1973.
-%
-% 
-%\noindent M.H. Schulz, D.R. Zerbino, M. Vingron and Ewan Birney. Oases: Robust de novo RNA-seq assembly across the dynamic range of expression levels. Bioinformatics, 2012. DOI: 10.1093/bioinformatics/bts094.
-%
-% 
-%\noindent Sonnhammer, EL, von Heijne, G., Krogh, A., A hidden Markov model for predicting transmembrane helices in protein sequences. Proc Int Conf Intell Syst Mol Biol 1998;6:175-82
-%
-% 
-%\noindent Sommaruga, R., Sonntag, B., Photobiological Aspects of the Mutualistic Association Between Paramecium bursaria and Chlorella 2009, Microbiological Monographs 12, Endosymbionts in Paramecium
-%
-% 
-%\noindent Summerer, Monika, Sonntag, Bettina,  Sommaruga, Ruben,  An experimental test of the symbiosis specificity between the ciliate Paramecium bursaria and strains of the unicellular green alga Chlorella., 2007,  Environmental microbiology, 9(8)
-%
-% 
-%\noindent Summerer, Monika, Sonntag, Bettina, Hörtnagl, Paul, Sommaruga, Ruben, Symbiotic ciliates receive protection against UV damage from their algae: a test with Paramecium bursaria and Chlorella. 2009,  Protist, 160(2)
-%
-% 
-%\noindent Taguchi, K, Hirota, S, Nakayama, H, Kunugihara, D, Mihara, Y - Optical Manipulation of Symbiotic Chlorella in Paramecium Bursaria Using a Fiber Axicon Microlens, 2012, Journal of Physics: Conference Series, 352
-%
-% 
-%\noindent Takeda H , Sekiguchi T , Nunokawa S , Usuki I (1998) Species-specificity of Chlorella for estab- lishment of symbiotic association with Paramecium bursaria . Does infectivity depend upon sugar components of the cell wall? Eur J Protistol 34 : 133 – 137
-%
-% 
-%\noindent Takahashi T , Shirai Y , Kosaka T , Hosoya H (2007) Arrest of cytoplasmic streaming induces algal proliferation in green paramecia . PLoS ONE 2 (12) : e1352 . doi: 10.1371/journal.pone.0001352
-%
-% 
-%\noindent Van Etten JL , Meints HR , Kuczmarski D , Meints RH  Virus infection for culturable Chlorella-like algae and development of a plaque assay (1983). Science 219 : 994 – 996
-%
-% 
-%\noindent Wootton, E. C., et al. Biochemical prey recognition by planktonic protozoa. 2007 , Environ. Microbiol. 9: 216 –222.
-%
-% 
-%\noindent Weis, Dale S, Ayala, Alfred, Effect of Exposure Period and Algal Concentration on the Frequency of Infection of Aposymbiotic Ciliates by Symbiotic Algae from Paramecium bursaria, 1976,  Journal of protozoology, 26(2)
-%
-% 
-%\noindent Yashchenko, Varvara V, Gavrilova, Olga V,  Rautian, Maria S, Jakobsen, Kjetill S, Association of Paramecium bursaria Chlorella viruses with Paramecium bursaria cells: ultrastructural studies. ,2012,  European journal of protistology, 48(2)
-%
-%
-%
-
 
