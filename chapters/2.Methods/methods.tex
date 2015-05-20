@@ -204,7 +204,8 @@ Illumina's platforms are estimated to generate 90\% of all sequenced DNA data as
 \begin{figure}
     \includegraphics[width=\textwidth]{illumina_PE_seq.pdf}
     \label{fig:libprep}
-    \caption{A brief overview of paired end sequencing in an Illumina flowcell after library preparation}
+    \caption{A brief overview of paired end sequencing in an Illumina flowcell after library preparation, derived
+        from \citep{Mardis2008} and Illumina 
 \end{figure}
 
 
@@ -370,26 +371,38 @@ Therefore \[Q = 30 \] corresponds to 99.9\% base call accuracy
 
 
 
+\textit{de novo} assembly
+
 
 \subsection{Assessing Assemblies}
 
 RSEM-eval, mappings, NG50, L50, N50
 
-\subsection{The Problem with Ploidy}
+Assemblathon 1 \citep{Earl2011}
+GAGE \citep{Schatz2012}
+Assemblathon 2 \citep{Bradnam2013}
+Nucleotid.es: Linux Container (specifically Docker \citep{Merkel2014})  based continuous assembly evaluation using QUAST \citep{Gurevich2013a})
 
-One important complication in the assembly on eukaryotic genomes and transcriptomes
-is the issue of highly heterozygous polyploid genomes.
 
-This is problematic as the de Bruijn graphs constructed during the assembly
+\subsubsection{The Problem with Ploidy}
+
+One important complication in the assembly on eukaryotic genomes 
+relative to bacteria or archael sources is the issue of highly heterozygous polyploid genomes.
+This is problematic as the de Bruijn graphs constructed during assembly
 rapidly increase in complexity when reads from heterozygous samples become
-incorporated \citep{Kajitani2014}.
-
+incorporated \citep{Kajitani2014}.  This is because k-mers derived from heterozygous regions of 
+homologous chromosomes will partition the assembly graph into bubbles that cannot be easily 
+or accurately resolved by most assemblers expecting only limited structural variation during
+assembly.  Previously, attempts to work around this included inbreeding to generate
+homozygous lines or fosmid based approaches.
 
 Specialised genome assemblers have been produced to address this problem,
 for example Platanus performed well on both highly and lowly heterozygous 
-genomes \citep{Katjitani2014}
+genomes using k-mer autoextension approaches and by merging haplotypes
+at both contig assembly and scaffolding steps, as well as incorporation
+of various heuristics involving bubble resolution \citep{Bradnam2013,Katjitani2014}
 
-Likewise, transcriptome assembly rapidly increases with the number of alleles
+Likewise, transcriptome assembly complexity rapidly increases with the number of alleles
 expected per gene determined by ploidy, heterozygosity and complex gene families
 and in turn how many transcripts per allele in light of alternative splicing.
 
@@ -398,29 +411,18 @@ ploidy of the host \textit{Paramecium bursaria} and the numerous whole genome
 duplications in its relatively recent evolutionary history (1).  This also 
 explains the difficulties in using sister species, as the most sequenced Paramecium
 genus species are the aurelia complex which have undergone 2 WGD since divergence with
-\textit{P. bursaria}.
-
-, especially in line with multiple splicing, overlapping 5' UTR (e.g.
-the fungi).
-
+\textit{P. bursaria} \citep{McGrath2014}.
 
 
 
 \subsubsection{Genomics}
-
-Assemblathon 1 \citep{Earl2011}
-GAGE \citep{Schatz2012}
-Assemblathon 2 \citep{Bradnam2013}
-Nucleotid.es: Linux Container (specifically Docker \citep{Merkel2014})  based continuous assembly evaluation using QUAST \citep{Gurevich2013a})
-
-
-Project standards:
-Standard Draft: Minimally filtered, incomplete, assembled into contigs, may have poor regions and be incomplete, may have some contamination
-High-quality Draft: coverage of at least 90\% of genomes or target regions, contamination exluded, little manual review, still might be seq errors or misassemblies, no implied order and oreintation to contigs (can be assessed for gene content)
-Improved-high quality draft: manual or automated additional work, gap resolution, no obvious missassemblies, normally adequate for comparison with other genomes
-Annotated-Directed Imrpovement: Overlapping, improved with annotation, verified, gene models etc useful for gene comarpsiosns, alt splicing, pathway reconstruction
-Noncontiguous finished: high quality, finished apart from a few repeats or gaps, good enough for almost all analayses
-Finished: gold standard, less than 1 error per 100,000, replicon in contig seqs, reference quality \citep{Chain2009}
+%Project standards:
+%Standard Draft: Minimally filtered, incomplete, assembled into contigs, may have poor regions and be incomplete, may have some contamination
+%High-quality Draft: coverage of at least 90\% of genomes or target regions, contamination exluded, little manual review, still might be seq errors or misassemblies, no implied order and oreintation to contigs (can be assessed for gene content)
+%Improved-high quality draft: manual or automated additional work, gap resolution, no obvious missassemblies, normally adequate for comparison with other genomes
+%Annotated-Directed Imrpovement: Overlapping, improved with annotation, verified, gene models etc useful for gene comarpsiosns, alt splicing, pathway reconstruction
+%Noncontiguous finished: high quality, finished apart from a few repeats or gaps, good enough for almost all analayses
+%Finished: gold standard, less than 1 error per 100,000, replicon in contig seqs, reference quality \citep{Chain2009}
 
 
 
@@ -1127,17 +1129,11 @@ Ways of specifying numbers of clusters \(k \equivalent \root{\frac{N}{2}}\) or i
 
 
 \section{Phylogenetics}
-Phylogenetics in its simplest form involves arranging a set of sequences into an optimal hierarchial
-branching tree structure that reflects some measure of relatedness (and occasionally other criteria).
-This estimation can be a non-trivial process (especially with more complex
-measures of relatedness that take into account observed evolution) as the number of
-possible trees rapidly increases with the number of sequences \(N_{trees} = \prod_{x=2}^{N_{taxa}} (2x - 3)\).
 
-Phylogenetics is an effective tool with which to investigate the evolutionary 
-ancestry of biological sequence data, specifically DNA/RNA and protein sequences.
+Phylogenetics is an effective tool to investigate the evolutionary ancestry of biological sequence data.
 It can be used to identify how closely related a given pair of sequences are, as
-well as an indication of what the sequence most likely looked like in a shared common
-ancestor (ancestral node reconstruction). Phylogenetic methods allow estimation
+well as indicate what the sequence most likely looked like in a shared common
+ancestor (ancestral node reconstruction). Phylogenetic methods also allow estimation
 of evolutionary processes such as selection pressure,
 migration, genome reduction, and horizontal gene transfer.
 In the context of endosymbiosis, phylogenetics can be used to determine evolutionary ancestry of 
@@ -1145,27 +1141,139 @@ the genes recovered in a transcriptome and to aid identification the likely orig
 (host, endosymbiont, contaminant) of these transcripts. Additionally, it can pinpoint
 likely horizontal gene transfer events between host and endosymbiont by searching for single 
 gene/transcript phylogenies that have an incongruent branching pattern
-compared to established species trees.  Finally, it can be used to identify the likely function 
+compared to established species trees.  Finally, it can be used to aid identification of the likely function 
 of novel transcripts based on similarity to other transcripts of known function in various
 databases such as genbank.
 
-The key stages in a phylogenetic analysis are that of sequence sampling,
+Molecular phylogenetics brought a degree of statistical objectivity to philosophical principles of Willi Hennig's cladistics \citep{Felsenstein2001}
+
+
+Phylogenetics can be defined as a means of arranging a set of character sequences into an optimal hierarchial
+branching tree structure reflecting some measure of relatedness 
+between the sequences (and occasionally other criteria). Usually, these trees will have variable
+branch lengths that are product of a measure of divergence between the connected nodes.
+
+Typically, these sequences take the form of protein or DNA sequences\footnote{
+Strictly phylogenetics refers to the study of molecular sequence data although the same methods are applicable to
+non-molecular characters such as morphological traits (and occasionally originated in this domain) as well as any
+other set of discrete data vectors. It has even been applied to fields such as linguistics \citep{}
+} and the measure of relatedness is some proxy for evolutionary distance ranging from simple distance measures 
+e.g. Hamming distance (\(D = \sum_{k=0}^{N}|x_{k} - y_{k}|\) for two sequences \(x\) and \(y\) of length \(N\))
+to more complicated probablistic estimations based on observed data.
+A character is an element of a sequence such as an individual base or amino acid, homologous 
+characters are those in separate sequences that are descended from a common ancestor.  
+
+This phylogenetic estimation can be a non-trivial process (especially with more complex
+measures of relatedness) as the number of
+possible trees rapidly increases with the number of sequences \(N_{trees} = \prod_{x=2}^{N_{taxa}} (2x - 3)\).
+However, the key stages in a phylogenetic analysis are that of sequence sampling,
  alignment (in which homologous sites in the sampled sequences are aligned with one another),
- masking (in which sites which are evolutionarily informative – can be determined to be ho-
- mologous but also non-invariant are selected), model selection (in which the best-fitting
+ masking (in which sites which are evolutionarily informative – can be determined to be homologous 
+     but also non-invariant are selected), model selection (in which the best fitting
  evolutionary model is selected) and finally, phylogenetic reconstruction (in which the tree
- is generated).
+ is generated that minimises some measure e.g. most likely tree for probabilistic models or 
+ least distance).
+
+
+
+One consideration worth raising is that increasingly it is becoming apparent
+ that a tree-like pattern of evolutionary descent does not necessarily best represent
+ actual evolutionary relationships.  This is due to the frequency of horizontal gene transfers (HGT)
+ between distinct organisms (i.e. branches in a species trees).
+
 
 \subsection{Sequence sampling}
+Sequence sampling, the selection and identification of sequences for initial inclusion in a 
+phylogenetic analysis, is arguably the most important stage in phylogenetic analysis.
+Any biases introduced here will propagate throughout the rest of the analysis. 
+While some biases can be mitigated to lesser and greater extents 
+by careful application of various methods in the following
+stages, there is a degree of fundamental truth in the statement ``garbage in - garbage out''.
 
-Sequence sampling is arguably the most important stage in phylogenetic analysis as poor sampling
+
+
+
+The aim of proper taxon sampling is to maximise phylogenetic accuracy and to allow
+testing of specific hypotheses. 
+Phylogenetic accuracy is usually considered in terms of consistency (as data increases 
+    the analysis tends towards the correct tree), efficiency (how quickly does this convergence
+occur), and robustness (how sensitive is the phylogeny to violation of assumptions in reconstruction) \citep{Nabhan2012}
+
+The main issues caused by poor taxonomic sampling in molecular phylogenetics are that
+of conflicting phylogenetic signals, inadequate rate of evolution to resolve relationships
+of interest, and violations of assumptions e.g. expectation of a uniform distribution of traits \citep{Nabhan2012}.
+
+
+
+Generally, increased taxon sampling has a strong positive effect on phylogenetic accuracy \citep{Zwickl2002}
+however, it can also lead to a situation where there are too many sequences to efficiently
+reconstruct a phylogeny.
+
+
+and this 
+
+However, care care must also be taken not to unintentionally bias datasets by removing 
+any sequences that are considered ``problematic'' especially when conflicting phylogenetic signal
+or model violations can be biologically informative.  Therefore, it is usually necessary to include
+borderline error-generating sequences within a phylogeny initially and to iteratively remove them
+and repeat the phylogenetic inference.
+
+
+Compositional bias 
+
+
+Long branch attraction is one of the most famous artefacts, it is the erroneous grouping of long (usually fast evolving)
+branches in a tree as sister groups.  It is caused by 
+
+
+Sequence sampling is important both between taxa and within taxa.
+
+Hidden paralogy is another artefact that can be exacerbated with poor taxon sampling, this occurs when a sequence has
+been duplicated within an ancestral taxa (creating paralogs) but differentially lost in its descendents.  
+If, due to either deletion or poor sampling, the incorrect paralog is incoporated into a phylogeny 
+
+
+Homoplasy - convergent evolution
+Poor taxon sampling that is unrepresentative of the diversity that the phylogenetic tree
+is intended to span 
+
+
+
+With increasing size of available datasets a problem has emerged of acquiring too many homologous 
+sequences to easily/feasibly use for phylogenetic inference.  Generally, this can and is typically reduced
+to a representative subset by largely bias-prone heuristics or naive clustering.  However,
+tools exist that utilise taxonomic database information to automatically a subset of specified
+cardinality of sequences that display the maximium possible taxonomic diversity for that subset size \citep{Zhou2014}.
 
 
 It is key to producing consistent, efficient and robust trees. 
 
 Bias, long branches
 
+
+The two principal ways in which putatively homologous sequences are identified in
+sequence databases are those based upon Basic Local Alignment Search Tool (BLAST) and
+its variants and Hidden-Markov Model based approaches (HMM).
+
 \subsubsection{BLAST}
+
+BLAST, its variants and improvements are the most widely used algorithms currently used to search sequence databases.
+Fundamentally, they are sequence 
+
+Likely homologous sequences can be identified via weak but biologically significant sequence similarities to a
+given query sequence.
+
+
+
+A variation BLAT (Basic Local Alignment Tool)
+
+
+
+
+to identity likely homologous sequences 
+to a given query.
+
+
 
 \subsubsection{HMM}
 
@@ -1275,21 +1383,36 @@ theoretically satisfying approaches become feasible.
     \caption{Redrawn from a slide by Derrick Zwickl
 \end{figure}
 
-
-
-
-
 \subsection{Masking}
+
+Concatenation - assumes common evolutionary patterns
 
 \subsection{Model selection}
 
+
+Regardless of how many sequences and how many characters are used to generate a phylogeny 
+
+model selection is 
+Maximum likelihood model
+
+Simple models such as parsimony and distance approaches are more susceptible to artefacts such as LBA.
+
 \subsection{Phylogenetic inference}
 
+Parsimony \citep{Camin1965} on molecular sequences \citep{}
+
+
+
+Prestige of parsimony methods declined with discoveries that they can produce statistically inconsistent
+phylogenies \citep{Felsenstein2001}
 
 
 \subsubsection{Maximum likelihood}
 
 \subsubsection{Bayesian}
+
+
+
 
 
 
@@ -1483,99 +1606,5 @@ Or on two workstations both running continuously updated versions of Arch Linux 
 %This was achieved by developing a script to count and average (median) the number of reads aligning to each nucleotide in both tetrahymena and universal (i.e. host and endosymbiont) likely coding regions using a custom python script.  
 %This was done for all tetrahymena and universal coding regions in transcripts, all phylogenetically confirmed host and endosymbiont binned sequences, conservatively and permissively identified putative secreted and transporter proteins in the `Host Bin' and `Endosymbiont Bin'. 
 %Results were then plotted using python+matplotlib.
-%
-%\subsubsection{Endosymbiont Species Confirmation}
-%In order to confirm the identity of the endosymbiont species from CCAP two analyses were conducted. 
-%Firstly, the endosymbiont binned transcripts were searched for any 18S rRNA sequences present in the transcriptome.  
-%The two identified fragments of 18S sequence were aligned against a database of green algal 18S sequences (from [Hoshina and Imamura, 2008]) using MUSCLE.    
-%The multiple-sequence alignments were then masked manually using Seaview [Gouy, 2010].  
-%Evolutionary model was estimated using Prottest3 [Dariba, 2011] for each masked alignment and as highest likelihood models were identical (LG+$\Gamma$+I) alignments were concatenated into a single masked alignment.  
-%Bayesian and Maximum Likelihood phylogenetic reconstructions were then conducted using an un-partitioned suggested model and both MrBayes v3 and PhyML [Guindon, 2010].  
-%The ML phylogeny was plotted as an SVG and key taxa were highlighted.
-%
-%Secondly, \textit{Chlorella} specific primers were used to amplify, clone and sequence the identifying ITS2 region.  
-%This was achieved by using the Qiagen DNeasy Plant DNA extraction kit after bead beating to disrupt the \textit{Chlorella} cells from a culture aliquot. 
-%Using \textit{Chlorella} specific primers (from [Hoshina and Imamura, 2008]) PCR was used to amplify the \textit{Chlorella} ITS2 region from the  extracted DNA samples.  
-%These extracted samples were then sub-cloned using the StrataClone-TA-cloning kit (StrataClone) and blue-white screened for successful insert ligation. 
-%9 white colonies were selected and prepared for sequencing using the SV Wizard MiniPrep kit and PCR ligation of M13 universal sequencing primers.  
-%Sequences were then Sanger sequenced via Beckman-Coulter Sequencing Service.  
-%The returned sequences were then used to reconstruct a phylogeny of ITS2 region using BLAST against species outlined by [Hoshina and Imamura, 2008], aligned using MUSCLE, masked in Seaview, model testing in Prottest3 and reconstructed using MrBayes and PhyML.
-%
-%\section{Results}
-%\subsection{RNA-Seq Assembly}
-%The comparison of De-novo transcriptome assemblies can be seen in assembly summary below.
-%The metrics clearly show the Trinity assembly is far superior to that of the Oases assembly with over a 50\% reduction in total contig number while recovering consistently longer contigs (a histogram of the Trinity contigs lengths and distribution can be see in contig lengths). 
-%All further analyses were done using Trinity based pooled assembly.
-%
-%\begin{table}
-%\centering
-%\begin{tabular}{| c || c | c |}
-%\hline
-%\textbf{Assembly Metric} & \textbf{Oases Assembly} & \textbf{Trinity Assembly} \\
-%\hline
-%\textbf{Min Contig Length:} & 100 & 201\\
-%\textbf{Max Contig Length:} & 16,202 & 17,729\\
-%\textbf{Mean Contig Length:} & 648.90 & 959.32\\
-%\textbf{Standard Deviation of Contig Length:} & 939.04 & 1080\\
-%\textbf{N50 Contig Length:} & 1,368 & 1,621 \\
-%\textbf{Number of Contigs:} & 117,570 & 48,003\\
-%\textbf{Number of Contigs >=1kb:} & 22,225 & 14,774\\
-%\textbf{Number of Contigs in N50:} & 14,977 & 8,060\\
-%\textbf{Number of Bases in All Contigs:} & 76,290,606 & 46,050,097\\
-%\textbf{Number of Bases in All Contigs >=1kb:} & 46,695,005 & 31,602,626\\
-%\textbf{GC Content of Contigs:} & 28.99\% & 30.97\% \\
-%\hline
-%\end{tabular}
-%
-%\caption{Pooled read RNA-Seq De-Novo Assembly Comparison}
-%\label{tab:assembly_summary}
-%\end{table}
-%
-%The saturation analysis (in which we test whether further sequencing depth would recover more transcripts) is shown in saturation.  
-%As can be seen the combined reads quickly trend to an asymptote suggesting the majority of transcripts were recovered at this sequencing depth.
-%
-%\subsection{Transcript Analysis}
-%The initial identification and binning of recovered transcripts into host and endosymbiont categories was tested using a phylogenetic approach. 
-%The results of this analysis were plotted in phylogenetic confirmation.  
-%This demonstrates that the initial bin identifications were accurate for endosymbiont (\textasciitilde92\%) and food ( \textasciitilde94\%) derived transcripts.  
-%Of the bins that were too large to be comprehensively phylogenetically tested (`Host Bin' and `Food Bin') we screened a subset of 2000 transcripts using a phylogenomic approach. 
-%There were almost no detected endosymbiont sequences in 2000 randomly selected `Food Bin' transcripts therefore the `Host Bin' was the only cause for concern in containing misidentified endosymbiont transcripts.  
-%\textasciitilde 2\% of the 2000 randomly sampled `Host Bin' transcripts were found to be wrongly identified endosymbiont sequences, assuming this random sample is representative of the `Host Bin' in general this suggests approximately 500 endosymbiont transcripts are misidentified as host sequences (within the 27,907 host sequences).  
-%A key result here is that the bins that are to be discarded as contaminants (i.e. `Food Bin' and `Unknown Bin') have been either exhaustively checked and all host or endosymbiont transcripts they contain recovered or, as in the case of the `Food Bin', there are minimal sequences to be found.  
-%This, combined with the saturation analysis allows us to be confident that we have recovered the maximum possible (even if \textasciitilde 500 endosymbiont are misidentified as Host) host and endosymbiont expressed transcripts during day and night conditions.
-%
-%In order to assess the accuracy of secretome predictions it was necessary to assess terminal coverage of likely coding regions.  
-%The median coverage is plotted in coverage.  The key concern that this plot raises is that of poor terminal coverage throughout the `Host Bin' and `Endosymbiont Bin'. 
-%As expected the identified secreted proteins (as these predictions largely hinge on detection of terminal signalling peptides) demonstrate a greater coverage suggesting on average only those transcripts with high terminal coverage were identifiable as secreted.  
-%Due to the general low level of terminal coverage in the bins as a whole this raises the distinct possibility that many secreted proteins are undetected in the `Host Bin' and `Endosymbiont Bin'. 
-%Transporter proteins are principally identified by the presence of trans-membrane domains so terminal coverage is not a concern for their identification. 
-%For this reason, we are initially focusing on transporter proteins, however, there is a possibility to investigate secreted proteins using alternative strategies, in particular, proteomics.  
-%Mass-spectrometry based proteomics may allow the identification (via peptide fingerprinting) of secreted proteins.
-%
-%\subsection{Preliminary Metabolic Mapping}
-%Using the KEGG Automated Annotated Server KEGG Ontology annotations were recovered for the phylogenetically verified host and endosymbiont sequences and plotted onto the KEGG complete metabolic pathway (see metabolic mapping).  This is a rough preliminary tool that we can use to target later regulatory and interaction investigations for our candidate proteins.
-%
-%\subsection{Endosymbiont Species Confirmation}
-%
-%The phylogeny generated using detected Chlorella 18S sequences (see phylogeny) within the transcriptome clearly shows the concatenated sequence branching with high basal support (99.1\%) among the clade containing \textit{Chlorella} NC64A and endosymbionts 10 and 12. 
-%The concatenated sequences branch directly (with low support) with \textit{Chlorella} 12 endosymbiont as expected from the CCAP provided \textit{Paramecium bursaria – Chlorella} CCAP 1660/12 culture.  
-%ITS2 sequencing is still to be completed and thus this phylogeny cannot be reconstructed at this time, this will be completed within 2 months.
-%Regardless, preliminary results support the identity of the endosymbiont as being the \textit{Paramecium bursaria} CCAP 1660/12 endosymbiont and the immediate sister to \textit{Chlorella} NC64A.  This piece of data is particularly important as \textit{Chlorella} NC64A has a complete published genome sequence [Blanc et al., 2010]. As NC64A strain is both endosymbiotic and a close-relative it may form a useful resource in annotating and further exploring the assembled transcriptomic data.  
-%Potentially, this genome sequence may even be used for a referenced transcriptome assembly and allow improvement in assembled transcript quality.
-%
-%
-%\section{Progress so far}
-%\begin{itemize}
-%  \item Verified the taxonomic identity of \textit{Chlorella} endosymbiont within \textit{Paramecium bursaria} sample provided by CCAP using molecular phylogenetics.
-%  \item Cultured and purified transcripts from \textit{Paramecium-Chlorella} system in the two key metabolic states in their relationship – active and inactive photosynthesis during lit and dark conditions
-%  \item Conducted a de-novo transcriptome assembly of the day/night transcripts
-%  \item Assessed assembly quality and, in particular, average terminal coverage to determine the relative quality of annotation methods.
-%  \item Phylogenomically identified host and endosymbiont transcripts, as well as filtering out those derived from contaminants such as bacterial food-stocks.
-%  \item Annotated extracted transcripts with a focus on transporters and secreted proteins
-%  \item Generated a guide-line differential expression analysis to help target further work
-%  \item Assembled preliminary metabolic network of host and endosymbiont transcripts
-%  \item Identified a set of transporters putatively involved in maintenance of endosymbiosis
-%  \item Begun design of antibodies to determine the localisation of these transporters
-%\end{itemize}
 %
 
