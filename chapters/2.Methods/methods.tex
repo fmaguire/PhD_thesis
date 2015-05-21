@@ -361,6 +361,7 @@ and conversely:
 \[ P = 10^{frac{-Q}{10}} \]
 Therefore \[Q = 30 \] corresponds to 99.9\% base call accuracy
 
+
 \textit{De novo} transcriptome and genome assembly 
 
 
@@ -1162,6 +1163,8 @@ e.g. Hamming distance (\(D = \sum_{k=0}^{N}|x_{k} - y_{k}|\) for two sequences \
 to more complicated probablistic estimations based on observed data.
 A character is an element of a sequence such as an individual base or amino acid, homologous 
 characters are those in separate sequences that are descended from a common ancestor.  
+As they were the first molecular sequences easily available much of the early work in molecular phylogenetics
+was conducted using protein sequences e.g. \citep{eck1966atlas,fitch1967}.
 
 This phylogenetic estimation can be a non-trivial process (especially with more complex
 measures of relatedness) as the number of
@@ -1180,6 +1183,19 @@ One consideration worth raising is that increasingly it is becoming apparent
  that a tree-like pattern of evolutionary descent does not necessarily best represent
  actual evolutionary relationships.  This is due to the frequency of horizontal gene transfers (HGT)
  between distinct organisms (i.e. branches in a species trees).
+
+
+Most analyses in this PhD are conducted using amino acid sequences.  
+DNA is more likely to display a compositional bias, indepdence of sites
+is often severely violated due to the structure of codons (3rd base wobble and so on)
+(non-synoynmous mutations more likely to become fixed whereas synonymous mutations are
+prone to drift).  Amino acids also have more states so are less susceptible to back mutations
+than DNA.  
+
+
+
+
+
 
 
 \subsection{Sequence sampling}
@@ -1202,6 +1218,15 @@ occur), and robustness (how sensitive is the phylogeny to violation of assumptio
 The main issues caused by poor taxonomic sampling in molecular phylogenetics are that
 of conflicting phylogenetic signals, inadequate rate of evolution to resolve relationships
 of interest, and violations of assumptions e.g. expectation of a uniform distribution of traits \citep{Nabhan2012}.
+
+
+
+Most contemporary models of phylogenetic inference only infer unrooted trees. 
+Therefore, it is common practice to ``root a tree'' by selecting a set of sequences from known evolutionarily distance
+organisms to form an outgroup. If this outgroup is correctly recovered (monophyletically) the root can be placed between
+it and the other sequences in the phylogeny \citep{Yang2012}.  Additional, prior information is also occasionally used
+to place restrictions on the tree topology such as known organismal relationships and fossil data.
+
 
 
 
@@ -1387,7 +1412,74 @@ theoretically satisfying approaches become feasible.
 
 Concatenation - assumes common evolutionary patterns
 
-\subsection{Model selection}
+\subsection{Substitution model selection}
+
+
+Parsimony does not need a model.
+
+
+
+
+Substitution models typically assume neutrality, independence and finite sites.
+With the probability of substitution rates having an idendently identical distribution (i.i.d) \citep{Hasegawa1985}
+
+
+
+
+Branch length is the expected number of substitutions per site.
+
+This measure of distance can be naive models where rates of change between character
+states and the frequency of each state is equal (e.g. \(p(x \rightarrow y) \forall x \forall y \in {G,C,T,A} \text{where} x\neq y\)
+\citep{jukes1969evolution}) to models fully paramaterised in terms of character frequency and rates of change by the masked alignment 
+(e.g. the generalised time-reversible (GTR) model \citep{Tavare1986} see \ref{eq:gtr})
+
+\begin{figure}
+    \[Q=\begin{pmatrix}
+        . & \alpha\pi_{C}  & \beta\pi_{A} & \gamma\pi_{G}\\ 
+        \alpha\pi_{T} & . & \delta\pi_{A} & \epsilon\pi_{G}\\ 
+        \beta\pi_{T} & \delta\pi_{C} & . & \zeta\pi_{G}\\ 
+        \gamma\pi_{T} & \epsilon\pi_{C} & \zeta_\pi_{A} & .
+    \end{pmatrix}\\
+    Q_{ii} = -\sum_{{j | j \neq i}} Q_{ij}\\
+    \Pi = (\pi_{G}, \pi_{T}, \pi_{C}, \pi_{A})\\
+    \Pi * Q = 0 \\
+    \alpha = p(T \leftrightarrow C)\\
+    \beta = p(A \leftrightarrow T)\\
+    \gamma = p(G \leftrightarrow T)\\
+    \delta = p(C \leftrightarrow A)\\
+    \epsilon = p(G \leftrightarrow C)\\
+        \zeta = p(A \leftrightarrow G)\]
+        \caption{Generalised time-reversible model for DNA sequence evolution under a reversible homogeneous markov process where \(\Pi\) is the 
+        frequency of each state and \(\alpha\) through \(\zeta\) are substitution rates \citep{Tavare1986,Yang1994}.  All other markov process models
+    of sequence evolution are special cases of GTR.   Time-reversability refers to the fact that \(\pi_{i}Q_{ij} = \pi_{j}Q_{ji}\) therefore
+   the direction of state changes is irrelevant}
+        \label{eq:gtr}
+\end{figure}
+
+While models like GTR can feasibly be paramaterised 
+
+In order to allow the oft violated assumption of a simple substitution that the rate of substitutions is constant (partially relaxes i.i.d)
+across the alignment there are many improvements.  The most frequent of which allowing the rates to vary across
+sites in the form of \(\Gamma\) distribution \(Var = \frac{\alpha}{\beta^{2}}, \mu = \frac{\alpha}{\beta}\) with a given shape \(\alpha\) and 
+trivial scale factor \(\beta\) depending on the dataset 
+
+For datasets that have a high degree
+of rate heterogeneity a low valued \(\alpha\) produces a broad distribution of rates, whereas a high value will generate 
+a narrow distribution for datasets with low rate heterogeneity \citep{Yang1993}.
+For reasons of computational efficiency \(\Gamma\) is typically approximated as a discrete distribution of 4 to 8 
+categories of equal probability \citep{Yang1994a}. 
+
+A more limited version of this is the invariant sites model in which sites are divided into 2 classes, one considered invariable while the 
+other has normal substitution rates applied \citep{Hasegawa1985}.
+
+Unfortunately, these models still assume other model parameters namely the equilibrium frequencies and relative rates are the same across
+sites.  Some models have been proposed with multiple rate matrices  \citep{Lartillot2004}
+
+State frequency can be defined at each site \citep{} but needs lots of taxa \citep{Lartillot2004}
+
+
+
+A model is stationary if Q does not change with time.
 
 
 Regardless of how many sequences and how many characters are used to generate a phylogeny 
@@ -1397,14 +1489,107 @@ Maximum likelihood model
 
 Simple models such as parsimony and distance approaches are more susceptible to artefacts such as LBA.
 
+
+
+Distance, ML and Bayesian inferences also suffer from LBA if the assumed model does not account for rate variation using \Gamma etc \citep{Yang1996}
+
+
+
+
+
+
+
+
+
 \subsection{Phylogenetic inference}
 
-Parsimony \citep{Camin1965} on molecular sequences \citep{}
+
+The simplest phylogenetic inferences are that of distance matrix methods.
+Distance matrix methods \citep{Fitch1967} work on the basis of generating 
+a matrix representing the pairwise distances of each sequence using the selected
+substitution model and inferring a phylogeny from this.  The simplest case
+would be searching tree space for the optimal tree using a standard least-squares
+criteria between actual and expected branch lengths (i.e. distances) \citep{Fitch1967,Cavalli-Sforza1967}.
+
+However, the most common is that of neighbour-joining which begins with the distance matrix and a 
+star topology tree in which all leaf node branches are connected to a single shared central node.
+Then:
+\begin{enumerate}
+    \item Find the closest two branches in the distance matrix 
+    \item Join the closest pair into a single branch with a new internal node connected to central node
+    \item Generate a new distance matrix reducing the selected pair to the new node (     
+        the distance of the selected pair of leafs to the new internal node 
+    and the distance between every other leaf and the new internal node)
+    \item Repeat the process with the new matrix \citep{Nei1987}
+\end{enumerate}
+
+It works on the assumption that the true tree has the smallest expected length (minimum evolution) and a short tree
+that has similar topology can be achieved using the fast simple agglomerative algorithm.
+
+
+NJ is one of the best distance methods and is more reliable than maximum-parsimony which can be asymptotically inconsistent
+
+While already efficient (possibly efficient as possible) can be made more efficient using effective heuristics
+to search tree space \citep{Kumar1996}
+
+As well as improvements where variance is minimised instead of pure distance improving performance in datasets with high
+substitution rates e.g. BIONJ \citep{Gascuel1997}
 
 
 
+Distance methods are fast as they don't have to compare as many trees as MP or ML meothds \citep{} but can perform
+very poorly for divergent sequences with large sampling errors as they don't generally account for variance in 
+distance estimates \citep{Yang2012} (BIONJ kind of does).
+They are also sensisitve to gaps in the alignment.
+
+
+
+
+
+Parsimony approaches \citep{Camin1965} on molecular sequences \citep{eck1966atlas} seek to infer the maximum parsimony (MP) tree.
+That is the tree which requires the smallest number of character changes (has the best tree score).  Where the tree score is the sum of 
+all character lengths (the minimum number of changes for each site in the alignment).  Any site that is invariable is not
+informative for generation of a parsimony tree.
+It has no explicit assumptions relative to other methods however, this means it is difficult to build in 
+prior knowledge of sequence evolution when generating a tree.
+
+It also fails when multiple substitutions have occurred at the same site or with parallel changes in two long branches 
+and therefore is especially prone to long-branch attraction.
+\citep{Felsenstein1978}
 Prestige of parsimony methods declined with discoveries that they can produce statistically inconsistent
 phylogenies \citep{Felsenstein2001}
+
+
+
+
+
+
+
+
+Maximum likelihood methods seek to discover the maximum-likelihood estimates (MLEs) of the tree parameters (topology, branch length and usually substitution model parameters)
+for the data.
+These MLEs are estimated numerically using standard iterative optimisation algorithms.
+%%%MLEs have been proven to be asymptotically have high phylogenetic accuracy (unbiased, consistent and efficient). for true tree not ML tree
+MLE are proven consistent \citep{Wald1949}
+
+Explicit model assumptions,  can make use of sophisticated evolutionary models, 
+almost all major published phylogenies use ML or bayes
+
+LRTs can examine fit for evolutionary models: \(2ln(\frac{L_{1}}{L_{0}})\) \citep{Goldman1987}
+
+ML is relative slow to calculate 
+
+
+
+
+
+
+
+
+Likelihood models using symmetric changes between all proteins \citep{neyman1971molecular}
+and more efficient implementations \citep{Felsenstein1981}
+
+
 
 
 \subsubsection{Maximum likelihood}
