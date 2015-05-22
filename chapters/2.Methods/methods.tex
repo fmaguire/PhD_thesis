@@ -2,7 +2,13 @@
 % Enough for an expert to reproduce without needing extensive references
 % all data should be in thesis so they can be checked (appendix maybe and supplements)
 % Methods commonly used throughout maybe leaving chapter specific methods to that chapter
-\graphicspath{{chapters/2.Methods/figures}}
+\graphicspath{{chapters/2.Methods/figures/}}
+
+
+\begin{savequote}[75mm]
+    Something pithy
+    \qauthor{ when I think of it}
+\end{savequote}
 
 \chapter{Methods}
 
@@ -30,7 +36,7 @@ green algal \textit{Paramecium} endosymbiont (see \ref{chap1} for more details).
 \subsection{Media and Culture conditions}
 All \textit{P. bursaria} and green algae cultures are maintained in 
 New Cereal Leaf-Prescott Liquid (NCL) media 
-(4.3g/l \(CaCl_{2}.2H$_{2}O\), 1.6g/l KCl, 5.1g/l \(K_{2}HPO_{4}\), 2.8g/l \(MgSO_{4}.7H_{2}O\), 
+(4.3g/l \(CaCl_{2}.2H_{2}O\), 1.6g/l KCl, 5.1g/l \(K_{2}HPO_{4}\), 2.8g/l \(MgSO_{4}.7H_{2}O\), 
 1g/l wheat bran, gravity filtered via GF/C paper and autoclaved) \citep{NCLCCAP} and stored in 
 a 12:12 light:dark cycle incubator at 15\celsius. 
 %2x21 watt 865 daylight tubes at 2000 lumen each
@@ -159,7 +165,7 @@ on expression enrichment of highly expressed transcripts from the proportion of 
 Additionally, scaling 1st generation methods to whole eukaryotic genomes or transcriptomes 
 rapidly became infeasible for most research. The scale of the human genome project \citep{Lander2001,Venter2001} is testament to that 
 (20 public centers in 6 countries 
-\citep{Collins2003} and \($70m\) \citep{Pettersson2009}).  
+\citep{Collins2003} and \(\$70m\) \citep{Pettersson2009}).  
 
 
 2nd generation sequencing emerged commercially in 2005 with the work
@@ -202,10 +208,10 @@ The HiSeq2500 is by far the highest throughput individual platform (not counting
 Illumina's platforms are estimated to generate 90\% of all sequenced DNA data as of 2014 \citep{Regalado2014}.
 
 \begin{figure}
-    \includegraphics[width=\textwidth]{illumina_PE_seq.pdf}
+    \includegraphics[width=\textwidth]{illumina_PE_sequencing.pdf}
     \label{fig:libprep}
     \caption{A brief overview of paired end sequencing in an Illumina flowcell after library preparation, derived
-        from \citep{Mardis2008} and Illumina 
+    from \citep{Mardis2008} and Illumina }
 \end{figure}
 
 
@@ -638,8 +644,8 @@ Relatively little work on the optimisation of these parameters has been conducte
 researchers conducting high-profile \textit{de novo} assemblies utilise aggressive thresholds \citep{MacManes2014}.
 However, for \textit{de novo} transcriptome assembly assessed using a range of metrics
 (e.g. mismatches to previous datasets, kmer number, PE reads mapping back to assembly etc.)
-most of the gain of assembly accuracy occurred at a threshold of \[\geq 5\].
-Particularly, low abundance kmers are largely discarded with a threshold of \[\geq 5\].
+most of the gain of assembly accuracy occurred at a threshold of \(\geq 5\).
+Particularly, low abundance kmers are largely discarded with a threshold of \(\geq 5\).
 Suggesting, that a very low threshold of 2 or 5 optimises assembly quality potentially
 followed by kmer abundance based error correction \citep{MacManes2014}.
 
@@ -658,7 +664,7 @@ followed by kmer abundance based error correction \citep{MacManes2014}.
 
 While second-generation sequencing technologies have massively increased
 throughput on an individual read basis they exhibit a much higher error
-rate than earlier Sanger approaches with Illumina HiSeq reads showing \[0.5-2.5%\]
+rate than earlier Sanger approaches with Illumina HiSeq reads showing \(0.5-2.5\%\)
 error rate \citep{Kelley2010}.  
 
 These errors complicate assembly as they will rapidly increase
@@ -712,7 +718,7 @@ Assembly assessment:
 Adapter trimmed PE reads concordantly mapping to assembly \citep{MacManes2014} 
 Number of complete ORFs (start and stop codons) using TRANSDECODER 
 Unique transcript number using BlastP (80\% similarity over 100aa and e-10)
-Expression for each contig https://github.com/macmanes/trimming_paper/tree/recreate_ms_analyses/scripts
+%Expression for each contig https://github.com/macmanes/trimming_paper/tree/recreate_ms_analyses/scripts
 
 
 \subsubsection{Annotation}
@@ -1013,7 +1019,7 @@ some better at preserving global structure (e.g. isomap) and others local data s
 One of the most recent innovations in this area is that of t-distributed stochastic neighbour-embedding
 (t-SNE) in which the similarity of data points in the input space is modelled as pairwise probabilities 
 using Gaussian distributions.
-These probabilties are then translated into positions in the map \mathcal{Y} and similarities re-calculated
+These probabilties are then translated into positions in the map \(\mathcal{Y}\) and similarities re-calculated
 using Student's t-distributions.  The position and variance of these points and distributions respectively
 is then optimised by mininising the difference between the similarity probabilities in the input space
 and on the map \citep{Maaten2008}.
@@ -1036,7 +1042,7 @@ So, with k-means clustering we actually seek the set of K cluster centroids \({\
 which minimise the sum of squares distances of each data point from its closest cluster centroid.
 \citep{Bishop2006}
 
-If we define a 1-of-K coding scheme with \(r_{nk} \belongs {0,1}\) as a binary variable that is 1 when \(x_{n}\) has been
+If we define a 1-of-K coding scheme with \(r_{nk} \in {0,1}\) as a binary variable that is 1 when \(x_{n}\) has been
 assigned to cluster \(k\) (with centroid \(\mu_{k}\)) and 0 otherwise then we can define an objective cost function (\(J\)) 
 that represents the sum of squares distances of each data point \(x_{n}\) from its assigned cluster centroid \(\mu_{k}\).
 
@@ -1053,9 +1059,9 @@ function \ref{eq:kmeans_cost}.
 The standard algorithm proceeds in two alternating steps following the initialisation of \(\mu_{k}\) with starting
 cluster centroid locations \citep{Forgy1965,Lloyd1982}:
 \begin{enumerate}
-    \item \(\argmin_{r_{nk}} J\) i.e. minimise \ref{eq:kmeans_cost} w.r.t the assignment of points to clusters while keeping
+    \item \(argmin_{r_{nk}} J\) i.e. minimise \ref{eq:kmeans_cost} w.r.t the assignment of points to clusters while keeping
         the cluster centroids fixed.
-    \item \(\argmin_{\mu_{k}} J\) i.e. minimise \ref{eq:kmeans_cost} w.r.t the position of the cluster centroids while keeping
+    \item \(argmin_{\mu_{k}} J\) i.e. minimise \ref{eq:kmeans_cost} w.r.t the position of the cluster centroids while keeping
         the assignment of points to centroids fixed.
 \end{enumerate}
 
@@ -1064,7 +1070,7 @@ assigning each point to the cluster represented by the nearest centroid or forma
 \[
     r_{nk} = 
     \begin{cases}
-        1,& \text{if} k=\argmin_{j} \|x_{n} - \mu_{j}\|^{2}\\
+        1,& \text{if} k=argmin_{j} \|x_{n} - \mu_{j}\|^{2}\\
         0,& \text{otherwise}
     \end{cases}
 \]
@@ -1099,7 +1105,7 @@ An efficient implementation of the k-means algorithm is available in the MLPACK 
 Disadvantages of K-means, requires a specified number of clusters (therefore diagnostics to check number of clusters)
 Can converge to local optima.
 
-Ways of specifying numbers of clusters \(k \equivalent \root{\frac{N}{2}}\) or information criteroin
+Ways of specifying numbers of clusters \(k \equiv \sqrt{\frac{N}{2}}\) or information criteroin
 
 
 
@@ -1172,7 +1178,7 @@ to more complicated probablistic estimations based on observed data.
 A character is an element of a sequence such as an individual base or amino acid, homologous 
 characters are those in separate sequences that are descended from a common ancestor.  
 As they were the first molecular sequences easily available much of the early work in molecular phylogenetics
-was conducted using protein sequences e.g. \citep{eck1966atlas,fitch1967}.
+was conducted using protein sequences e.g. \citep{eck1966atlas,Fitch1967}.
 
 This phylogenetic estimation can be a non-trivial process (especially with more complex
 measures of relatedness) as the number of
@@ -1421,7 +1427,7 @@ theoretically satisfying approaches become feasible.
 
 
 \begin{figure}
-    \caption{Redrawn from a slide by Derrick Zwickl
+    \caption{Redrawn from a slide by Derrick Zwickl}
 \end{figure}
 
 \subsection{Masking}
@@ -1466,7 +1472,7 @@ states and the frequency of each state is equal (e.g. \(p(x \rightarrow y) \fora
         . & \alpha\pi_{C}  & \beta\pi_{A} & \gamma\pi_{G}\\ 
         \alpha\pi_{T} & . & \delta\pi_{A} & \epsilon\pi_{G}\\ 
         \beta\pi_{T} & \delta\pi_{C} & . & \zeta\pi_{G}\\ 
-        \gamma\pi_{T} & \epsilon\pi_{C} & \zeta_\pi_{A} & .
+        \gamma\pi_{T} & \epsilon\pi_{C} & \zeta\pi_{A} & .
     \end{pmatrix}\\
     Q_{ii} = -\sum_{{j | j \neq i}} Q_{ij}\\
     \Pi = (\pi_{G}, \pi_{T}, \pi_{C}, \pi_{A})\\

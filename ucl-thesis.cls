@@ -26,6 +26,7 @@
 % Maths
 \RequirePackage[centertags]{amsmath}
 \RequirePackage{amssymb}
+\RequirePackage{gensymb}
 \RequirePackage{mathspec}
 
 %Physics
