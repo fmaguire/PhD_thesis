@@ -375,6 +375,11 @@ Therefore \[Q = 30 \] corresponds to 99.9\% base call accuracy
 \textit{de novo} assembly
 
 
+Spades \citep{Bankevich2012}
+
+Trinity \citep{Grabherr2011}
+
+
 \subsection{Assessing Assemblies}
 
 RSEM-eval, mappings, NG50, L50, N50
@@ -883,6 +888,8 @@ by the defeat of SVMs by the LeNet on the MNIST digit recognition dataset \citep
 
 
 
+Still among the best classifier (RF better) \citep{Fernandez-Delgado2014}
+
 As SVMs are a type of maximum-margin classifier this means that not only do they try to determine the parameters \(w,b\) of a hyperplane \(h_{w,b}(x) = g(w^{T}x+b)\) 
 
 
@@ -965,6 +972,7 @@ This is known as the `margin'
 
 
 SVMs are very good with low training datasets, and fast to classify (if not train) 
+
 
 
 
@@ -1196,6 +1204,14 @@ than DNA.
 
 
 
+Supertree generate tree for each gene and use heuristic algorithm to combine \citep{Bininda-Emonds2004}, can spot HGT but is inefficient
+
+Supermatrix, concatenation \citep{DeQueiroz2007a} - ignore differences in dynamics between gene, if partitioned then same as supertree
+
+
+
+Best approach is supermatrix with a model that incoprotates rate heterogeneity \citep{Ren2009}
+
 
 
 \subsection{Sequence sampling}
@@ -1412,6 +1428,18 @@ theoretically satisfying approaches become feasible.
 
 Concatenation - assumes common evolutionary patterns
 
+
+MSA is imperfect - especially for faster algorithms necessary with larger datasets
+and higher throughput.
+
+Trimming ambiguously aligned and absent sites improves phylogenetic accuracy \citep{Talavera2007}
+
+Automating this process - score each column indepdendently  gap score, similarity score and/or consistency score
+fraction of seq without gap, ss mean distatnce between residues, sc can be calced with multiple alignments of same seqs:
+how consistently is a column found in different alignments 
+
+Trimal automatically trims based on these thresholds \citep{Capella-Gutierrez2009}
+
 \subsection{Substitution model selection}
 
 
@@ -1475,7 +1503,27 @@ other has normal substitution rates applied \citep{Hasegawa1985}.
 Unfortunately, these models still assume other model parameters namely the equilibrium frequencies and relative rates are the same across
 sites.  Some models have been proposed with multiple rate matrices  \citep{Lartillot2004}
 
-State frequency can be defined at each site \citep{} but needs lots of taxa \citep{Lartillot2004}
+
+
+State frequency can be defined at each site \citep{Bruno1996} but needs lots of taxa \citep{Lartillot2004}
+Mixture model with K classes each containing a different state frequency. if K=N sites then same as Bruno
+if k=1 same as naive model.  DPP can be used to determine total number of classes \citep{Lartillot2004}
+
+
+Can explicitly partition or use DPP etc and complex models - depends on prefrence for fixed-effects models or random-effects
+\citep{Yang2012}
+
+
+Codon models
+
+
+Covarion model - heterotachy  variation of rate at a site across time  - site change between on and off (prop at each site is different)
+covarion model using infinite mixture model\citep{Zhou2010} 
+
+
+
+
+
 
 
 
@@ -1495,9 +1543,17 @@ Distance, ML and Bayesian inferences also suffer from LBA if the assumed model d
 
 
 
+Advantage of model-based approaches is that assumptions are explicit and thus can be tested in a statistically robust manner.
 
 
 
+
+
+
+
+
+actually choosing a model - prottest AIC/BIC/DT criteria - guide tree - matrix selection \citep{Abascal2005}
+Review of model selection \citep{Sullivan2005}
 
 
 
@@ -1564,13 +1620,21 @@ phylogenies \citep{Felsenstein2001}
 
 
 
+Bootstraps resampling data with replacement and reanalyse - variation estimates the aize of error in estimates \citep{Felsenstein1985}
+Majority-rul conensus strees show number of trees supporting 
 
+
+
+
+
+\subsubsection{Maximum likelihood}
 
 Maximum likelihood methods seek to discover the maximum-likelihood estimates (MLEs) of the tree parameters (topology, branch length and usually substitution model parameters)
 for the data.
 These MLEs are estimated numerically using standard iterative optimisation algorithms.
 %%%MLEs have been proven to be asymptotically have high phylogenetic accuracy (unbiased, consistent and efficient). for true tree not ML tree
-MLE are proven consistent \citep{Wald1949}
+MLE are proven consistent \citep{Wald1949} but the due to the complexity of phylogenetic inference
+this proof does not apply \citep{Yang2012}
 
 Explicit model assumptions,  can make use of sophisticated evolutionary models, 
 almost all major published phylogenies use ML or bayes
@@ -1580,25 +1644,37 @@ LRTs can examine fit for evolutionary models: \(2ln(\frac{L_{1}}{L_{0}})\) \cite
 ML is relative slow to calculate 
 
 
-
-
-
-
-
-
 Likelihood models using symmetric changes between all proteins \citep{neyman1971molecular}
 and more efficient implementations \citep{Felsenstein1981}
 
-
-
-
-\subsubsection{Maximum likelihood}
+higher efficiency than distance or parsimony 
 
 \subsubsection{Bayesian}
 
+Bayesian inference is, as the name suggests, based on the Baye's therem.
+
+\(p(\theta | D) = \frac{p(\theta)p(D|\theta)}{p(D)}\)
+
+with \(p(\theta)\) being the prior probability for model parameters (topology, branch length, substituion model)
+\(p(D|\theta)\) being the likelihood of the data given a certain set of parameters with \(p(D)\) as the marginal 
+probability.
+
+Due to the computational infeasability of directly calculating the marginal likelihood (integrated over all possible
+paramater values in all dimensions) phylogenetic inference uses MCMC 
 
 
+Posterior probabilityes so no need to calculate bootstraps 
 
+PP sensitive to model violations
+Prior lets new data added  but difficult to specify with complex pathologies 
+Bayesian robutness analysis is important when setting priors 
+
+Chain length is highly data dependent
+
+slower
+
+
+Robuse to missing data \citep{Wiens2008} so is ML
 
 
 
@@ -1692,7 +1768,6 @@ Or on two workstations both running continuously updated versions of Arch Linux 
 %\subsection{Phylogenetics}
 %The next key method in this project is that of phylogenetics as it is an effective tool with which to investigate the evolutionary ancestry of the genes recovered in the transcriptome and to identify the likely origin (host, endosymbiont, contaminant) of these transcripts.  
 %It can also be used to identify potential horizontal gene transfer events between host and endosymbiont by searching for single gene/transcript phylogenies that have an incongruent branching pattern compared to established species trees.    
-%The key stages in a phylogenetic analysis are that of alignment (in which homologous sites in the sampled sequences are aligned with one another), masking (in which sites which are evolutionarily informative – can be determined to be homologous but also non-invariant are selected), model selection (in which a sequence evolution model is selected using criteria such as Akaike's information criterion which penalise increased parameterisation but attempt to maximise model likelihood), and finally, phylogenetic reconstruction (in which the selected evolutionary models are applied to the dataset using principally maximum-likelihood or Bayesian methodologies in order to reconstruct the likely evolutionary relationships in the masked sequences). 
 %
 %\subsection{Annotation}
 %In order to identify proteins putatively involved in endosymbiosis – namely transporters and secreted proteins and to identify proteins likely involved in their regulation it is necessary to functionally annotate assembled transcripts.  
