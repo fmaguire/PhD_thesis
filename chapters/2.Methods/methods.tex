@@ -5,10 +5,10 @@
 \graphicspath{{chapters/2.Methods/figures/}}
 
 
-\begin{savequote}[75mm]
-    Something pithy
-    \qauthor{ when I think of it}
-\end{savequote}
+%\begin{savequote}[75mm]
+%    Something pithy
+%    \qauthor{ when I think of it}
+%\end{savequote}
 
 \chapter{Methods}
 
@@ -138,6 +138,18 @@ or flow cytometry or more typically (and with all the biases it involves) establ
 a culture of the organisms of interest (if possible) and growing that up to sufficient biomass.
 
 
+
+
+For bulk analyses we used a trizol based extraction
+
+
+For single cell gDNA CTAB \citep{}
+
+
+
+
+
+
 material either from a large
 environmental sample or by culturing 
 
@@ -152,10 +164,53 @@ grown up in sufficient quantities to easily extract sufficient nucleic acids to 
 
 Starting with single-cell single-gene sequencing experiments (e.g. \citep{Kuppers1993}) 
 single cell methods allows obtaining data directly from individual cells
-avoiding the bias and complication of culturing or have to decompose a complex environmental
+avoiding the bias and complication of culturing or having to decompose a complex environmental
 metagenome or metatranscriptome containing a plethora of diverse cells \citep{Blainey2013}.  It also allows 
 investigation of cells at particular life stages e.g. sexual reproduction without difficult
-and potentially biasing synchronisation methodologies.  
+and potentially biasing synchronisation methodologies and the sequencing of long genes hard to obtain
+from metagenomes.  
+
+Single-cell genomic (SCG) sequencing has been demonstrated across the tree-of-life as sufficient to infer 
+cellular metabolism \citep{Chitsaz2011}, the dynamics of interactions between organisms \citep{Yoon2011} and
+environmental diversity \citep{Swan2013,Rinke2013}.
+
+Likewise, single-cell transcriptomic (SCT) sequencing has been demonstrated to be an effective tool to investigate
+
+
+Bulk transcriptomic methods involve analysis of an ensemble of transcripts therefore expression 
+inferences are an average across all cells \citep{Stegle2015}
+
+Sufficient for some purposes, e.g. broad-stroke comparisons it masks the underlying and potentially
+biologically informative stochastic nature of gene expression \citep{Raj2008}.  SCT 
+revolutionises being able to compare different tissues, populations, and cell states in both
+single cell and multicellular systems by allowing direct interrogation of inter- and intra-
+grouping variation and could potentially revolutionise areas such as medicine \citep{Sandberg2014}
+and ecology (Moore Marine Microbe Project \url{http://marinemicroeukaryotes.org/}).
+
+While single cell level analyses have been possible for a while they have largely been restricted
+to low-throughput methods e.g. reporter constructs, FISH etc.
+
+
+Cell isolation, FACS, microfluidics, cell picking
+
+
+SCT has relatively high levels of technical noise specifically sampling noise for low-level
+expression and sample-specific variability in sequencing efficiency for highly-expressed 
+transcripts for one SCT method \citep{Grun2014}.
+
+
+
+
+
+
+
+
+
+
+
+mRNA was selected using a poly-A selection method before being fragmented, cleaned-up using ethanol and then 
+reverse transcribed into single-stranded cDNA using random hexamer primers.
+
 
 
 
@@ -176,47 +231,47 @@ potential chimeric reads and incongruent read-pairs \citep{Bankevich2012}.
 This complicates assembly RODRIQUE PAPER MENTIONED IN SPADES 
 
 
-E+VSCV paper chisatz 
-
-However, such a different type of data that a new algorithm was needed not just modificaitons \citep{Bankevich2012}
-
-Paired-end data typically only used post-processing step of de-Bruijn graphs.
-Proper use of pairing information at the graph assembly phase is a potential 
-source of improvement.
-2011a medvedev PDBG but fixed insert size
-
-Idury and waterman DBG for assembly: originally considered infeasible as low coverage
-sanger even qitrh few errors needs error correction
-
-Pezner A-bruijn graphs
-everything else special case
-
-
-
-
-
-
-Single cell methods use multiple-displacement amplification to increase the concentraion of
-nucleic acids 
-
-For example. the Qiagen Repli-G kit used for both single cell transcriptomic and genomic analysis
-of the \textit{PbMr} system.
-
-Transcripts are reverse transcribed and then ligated into larger fragments.  MDA
-is then undergone on the larger fragments before the usual library preparation process.
-
-MORE DETAILS ABOUT THE METHOD
-
-
-One interesting consideration for single cell transcriptomics is the possible generation
-of chimeric reads that will cross the boundary between two randomly ligated transcripts.
-
-However, the risk of this can largely be mitigated by selection of a relatively small fragment
-size for paired end sequencing.
-
-5'-3' - 5'-3'  - sequencing primers are unlikely to rpim
-
-
+%E+VSCV paper chisatz 
+%
+%However, such a different type of data that a new algorithm was needed not just modificaitons \citep{Bankevich2012}
+%
+%Paired-end data typically only used post-processing step of de-Bruijn graphs.
+%Proper use of pairing information at the graph assembly phase is a potential 
+%source of improvement.
+%2011a medvedev PDBG but fixed insert size
+%
+%Idury and waterman DBG for assembly: originally considered infeasible as low coverage
+%sanger even qitrh few errors needs error correction
+%
+%Pezner A-bruijn graphs
+%everything else special case
+%
+%
+%
+%
+%
+%
+%Single cell methods use multiple-displacement amplification to increase the concentraion of
+%nucleic acids 
+%
+%For example. the Qiagen Repli-G kit used for both single cell transcriptomic and genomic analysis
+%of the \textit{PbMr} system.
+%
+%Transcripts are reverse transcribed and then ligated into larger fragments.  MDA
+%is then undergone on the larger fragments before the usual library preparation process.
+%
+%MORE DETAILS ABOUT THE METHOD
+%
+%
+%One interesting consideration for single cell transcriptomics is the possible generation
+%of chimeric reads that will cross the boundary between two randomly ligated transcripts.
+%
+%However, the risk of this can largely be mitigated by selection of a relatively small fragment
+%size for paired end sequencing.
+%
+%5'-3' - 5'-3'  - sequencing primers are unlikely to rpim
+%
+%
 
 \subsubsection{DNA sequencing}
 
@@ -380,66 +435,64 @@ has been used when accurate targeted sequencing was called for, such as investig
 taxonomic distribution of \textit{Paramecium} green algal endosymbionts (see \ref{chap1}).
 
 
-\subsubsection{Assembly}
+%\subsubsection{Assembly}
+%
+%All major 2nd and 3rd generation sequencing platforms output a FastQ formatted file.
+%These are files containing the sequence of a read and a per-base quality score known as a Q score.
+%These scores (Q) are calculated as a logarithmic relation to the base-called error probability (P)
+%\[ Q = -10\log{10}{P} \]
+%and conversely: 
+%\[ P = 10^{frac{-Q}{10}} \]
+%Therefore \[Q = 30 \] corresponds to 99.9\% base call accuracy
+%
+%
+%
+%
+%Spades \citep{Bankevich2012}
+%
+%Trinity \citep{Grabherr2011}
+%
+%
+%\subsection{Assessing Assemblies}
+%
+%RSEM-eval, mappings, NG50, L50, N50
+%
+%Assemblathon 1 \citep{Earl2011}
+%GAGE \citep{Schatz2012}
+%Assemblathon 2 \citep{Bradnam2013}
+%Nucleotid.es: Linux Container (specifically Docker \citep{Merkel2014})  based continuous assembly evaluation using QUAST \citep{Gurevich2013a})
+%
 
-All major 2nd and 3rd generation sequencing platforms output a FastQ formatted file.
-These are files containing the sequence of a read and a per-base quality score known as a Q score.
-These scores (Q) are calculated as a logarithmic relation to the base-called error probability (P)
-\[ Q = -10\log{10}{P} \]
-and conversely: 
-\[ P = 10^{frac{-Q}{10}} \]
-Therefore \[Q = 30 \] corresponds to 99.9\% base call accuracy
+%\subsubsection{The Problem with Ploidy}
+%
+%One important complication in the assembly on eukaryotic genomes 
+%relative to bacteria or archael sources is the issue of highly heterozygous polyploid genomes.
+%This is problematic as the de Bruijn graphs constructed during assembly
+%rapidly increase in complexity when reads from heterozygous samples become
+%incorporated \citep{Kajitani2014}.  This is because k-mers derived from heterozygous regions of 
+%homologous chromosomes will partition the assembly graph into bubbles that cannot be easily 
+%or accurately resolved by most assemblers expecting only limited structural variation during
+%assembly.  Previously, attempts to work around this included inbreeding to generate
+%homozygous lines or fosmid based approaches.
+%
+%Specialised genome assemblers have been produced to address this problem,
+%for example Platanus performed well on both highly and lowly heterozygous 
+%genomes using k-mer autoextension approaches and by merging haplotypes
+%at both contig assembly and scaffolding steps, as well as incorporation
+%of various heuristics involving bubble resolution \citep{Bradnam2013,Katjitani2014}
+%
+%Likewise, transcriptome assembly complexity rapidly increases with the number of alleles
+%expected per gene determined by ploidy, heterozygosity and complex gene families
+%and in turn how many transcripts per allele in light of alternative splicing.
+%
+%This is particularly problematic in the PbMr system owing to the massive
+%ploidy of the host \textit{Paramecium bursaria} and the numerous whole genome
+%duplications in its relatively recent evolutionary history (1).  This also 
+%explains the difficulties in using sister species, as the most sequenced Paramecium
+%genus species are the aurelia complex which have undergone 2 WGD since divergence with
+%\textit{P. bursaria} \citep{McGrath2014}.
 
-
-
-
-Spades \citep{Bankevich2012}
-
-Trinity \citep{Grabherr2011}
-
-
-\subsection{Assessing Assemblies}
-
-RSEM-eval, mappings, NG50, L50, N50
-
-Assemblathon 1 \citep{Earl2011}
-GAGE \citep{Schatz2012}
-Assemblathon 2 \citep{Bradnam2013}
-Nucleotid.es: Linux Container (specifically Docker \citep{Merkel2014})  based continuous assembly evaluation using QUAST \citep{Gurevich2013a})
-
-
-\subsubsection{The Problem with Ploidy}
-
-One important complication in the assembly on eukaryotic genomes 
-relative to bacteria or archael sources is the issue of highly heterozygous polyploid genomes.
-This is problematic as the de Bruijn graphs constructed during assembly
-rapidly increase in complexity when reads from heterozygous samples become
-incorporated \citep{Kajitani2014}.  This is because k-mers derived from heterozygous regions of 
-homologous chromosomes will partition the assembly graph into bubbles that cannot be easily 
-or accurately resolved by most assemblers expecting only limited structural variation during
-assembly.  Previously, attempts to work around this included inbreeding to generate
-homozygous lines or fosmid based approaches.
-
-Specialised genome assemblers have been produced to address this problem,
-for example Platanus performed well on both highly and lowly heterozygous 
-genomes using k-mer autoextension approaches and by merging haplotypes
-at both contig assembly and scaffolding steps, as well as incorporation
-of various heuristics involving bubble resolution \citep{Bradnam2013,Katjitani2014}
-
-Likewise, transcriptome assembly complexity rapidly increases with the number of alleles
-expected per gene determined by ploidy, heterozygosity and complex gene families
-and in turn how many transcripts per allele in light of alternative splicing.
-
-This is particularly problematic in the PbMr system owing to the massive
-ploidy of the host \textit{Paramecium bursaria} and the numerous whole genome
-duplications in its relatively recent evolutionary history (1).  This also 
-explains the difficulties in using sister species, as the most sequenced Paramecium
-genus species are the aurelia complex which have undergone 2 WGD since divergence with
-\textit{P. bursaria} \citep{McGrath2014}.
-
-
-
-\subsubsection{Genomics}
+%\subsubsection{Genomics}
 %Project standards:
 %Standard Draft: Minimally filtered, incomplete, assembled into contigs, may have poor regions and be incomplete, may have some contamination
 %High-quality Draft: coverage of at least 90\% of genomes or target regions, contamination exluded, little manual review, still might be seq errors or misassemblies, no implied order and oreintation to contigs (can be assessed for gene content)
@@ -449,319 +502,335 @@ genus species are the aurelia complex which have undergone 2 WGD since divergenc
 %Finished: gold standard, less than 1 error per 100,000, replicon in contig seqs, reference quality \citep{Chain2009}
 
 
-
-
-\subsubsection{Annotation}
-
-Reed \textit{et al.} \citep{Reed2006} divided components annotation into a useful dimension paradigm as follows:
-\begin{enumerate}
-    \item Enumeration: identification of genes and assignment of their predicted or known functions. What?
-    \item Interaction: integration of protein-protein, regulatory and metabolic interaction data between components Can they interact?
-    \item Genomic Localisation: analysis of genomic localisation of genes i.e. epigenetics.
-    \item Plasticity: investigation of the change of other dimensions over evolutionary time. Does their interaction change over time? \citep{Reed2006} 
-\end{enumerate}
-
-Clearly, at a systems level it is difficult (if not impossible currently), 
-even in well defined model organisms, to complete a full 4-dimensional annotation 
-for all cellular components. However, it is more than feasible to have a largely
-complete 1D and even 2D annotation with 3D and 4D investigated for specific 
-components.  Furthermore, annotation can be conducted with a range of confidences
-from in silico predicted interactions to biochemically validating those predictions in vivo
-and incorporating the precision and recall of various methodologies. Generally, such a process
-is inherently iterative with successive model building and experimental testing and validation 
-or rejection of such models \citep{Reed2006}.
-
-One of the major goals of this thesis is to reconstruct a preliminary predicted
-2D annotation of the PbMr system.
-
-The most important step towards this goal is that of eukaryotic gene prediction.
-
-Eukaryotic gene prediction is achieved by generally two methods - \textit{de novo} HMM based
-methodologies (e.g. GENESCAN, TWINSCAN \citep{}<++>) and expression evidence based methods
-in which reads from sequenced cDNA (or in older approaches ESTs) are aligned to the 
-assembled genomic contigs \citep{Brent2007}.  Unfortunately even relatively deep
-sequencing of cDNA can fail to identify the structure of 20-40\% of genes in a typical
-eukaryote genome owing to these genes being expressed only at very low levels or in
-different conditions than that from which the cDNA was extracted \citep{Brent2007}.
-
-
-
-\subsection{Transcriptomics}
-While generally computationally simpler than genomic assembly \citep{MacManes2014}
-owing to the relatively fragmented nature of transcripts compared to genomic 
-sequences (i.e. lots of transcripts of various lengths rather than several 
-long chromosomes).  There a few key challenges to transcriptomic assembly
-that is absent in genomic work specifically:
-\begin{itemize}
-    \item Handling assembly of alternative isoforms of transcripts \citep{Pyrkosz2013}
-    \item Assembly of transcripts from gene-dense genomes with overlapping 5' UTR 
-    \item Assembly of data with highly heterogeneous read coverage, as transcript
-        expression level is proportional to read coverage (indeed expression analysis
-        using RNA-Seq datasets relies upon this fact).
-    \item Random hexamer bias
-    \item GC content bias, particularly so in PbMr
-\end{itemize}
-
-These problems are particularly problematic in \textit{de novo} approaches,
-however referenced assembly has its own issues in transcriptomics
-
-
-
-
-
-
-
-
-
-
-
-The correlation of transcript level to protein level is difficult
-
-
-
-
-
-Unfortunately, conventional RNA-seq requires either an established moderate-to-high
-density culture of the organism of interest 
-
-
-
-
-
-
-
-
-http://rnaseq.uoregon.edu/
-http://bioinformatics.bc.edu/marthlab/scotty/scotty.php
-
-Experiemntal design, read depth, ENCODE, Tarazona S 2012 fdiff exp in RNA-seq
-a matter of depth
-
-\begin{itemize}
-    \item Check Quality (FASTQC)
-    \item Trim reads (Trimmomatic)
-    \item Re-check quality (FASTQC)
-    \item Error-correct reads (?)
-    \item Normalize coverage (khmer)
-    \item Test paramters for multiple assemblers
-    \item Run each assembler with best parameters
-    \item Analyse all and merge best assemblies
-    \item Annotate transcriptome
-    \item Map reads to assembly, count
-    \item Differential expression analysis
-\end{itemize}
-
-
-
-
-
-
-
-
-
-
-Further complications from single cell:
-Fusions are created in cDNA ligation step prior to MDA in WTA
-However, poly-A tails should mean fusion reads are unlikely as they need to a
-span poly-A trac in all 4 possible fusions apart from 3'-5':5'-3'
-So to get high levels of chimeric reads we would need the two same transcripts
-in the same fused orientation multiple times.  Otherwise any other 3'-5':5'-3'
-fusions should be fairly rare so likely discarded in error-correction etc steps
-
-\subsubsection{Quality Checking}
-
-FastQC tool and its parameters
-
-\subsubsection{Read trimming}
-
-% /storage/fin/raw_reads/raw_sct_reads/optimising_trimming_paramters/test_mapping_to_bulk
-
-
-Currently, there is no clear answer to the question, which is the best trimming algorithm.
-This is due to many dataset-specific effects as well parameter-dependence \citep{DelFabbro2013}.
-However, 
-
-
-
-Trimming algorithms can be divided into two groups: running-sum based approaches e.g. Cutadapt and ERNE-FILTER
-and window-based e.g. FASTX, PRINSEQ, Sickle and Trimmomatic \citep{DelFabbro2013}.
-
-
-
-
-
-
-
-
-
-
-
-
-Difficulties: 
-A major source of bias in transcriptomic datasets is that of compositional biases induced
-by the random hexamer priming used in the generation of cDNA in many library preparations.
-(see \ref{}<++>) %previous section of sequencing itself %does SCT kit do random hexamers?
-Specifically, these random hexamers do not bind uniformly across the transcripts,
-therefore the location of reads are not uniform \citep{Hansen2010}\citep{Hansen2010}.
-Fortunately, the single cell kits do not utilise random hexamer priming {}<++> %Check with DAVID
-So despite inducing other biases, they do not induce this one!
-
-
-Another source of bias is the strong correlation between GC richness in read coverage
-observed in 2nd-generation Illumina sequencing \citep{Dohm2008,}
-This is possibly to do with the different biophysical properties of GC-rich dsDNA (high melting point) \citep{Dohm2008} %is this relevant?
-Or biases in PCR -ampligication, or specifically i9n bridge PCR of cluster amplification
-
-
-Errors are more common at the start and end of 
-
-
-
-
-Sequencing errors: Illumina sequencing has non-random error distribution across length of read, increasing towards the 3' end liu2012. These errors are generally substitution errors yang2013 at a rate of 1-3\% globally \citep{MacManes2014}.  However, while the latest assemblers (see \ref{}<++>) are capable of %ref to assembly section
-handling many of these errors, inevitably sequencing error does cause some
-assembly error MacManesANDEISEN2013.
-Furthermore, errors rapidly increase both the space and time complexity of the assembly (discussed in \ref{}<++>) problem \citep{MacManes2014}.
-
-One of the most important and prevalent methods to try and improve assembly
-accuracy in the face of sequencing errors is that of read trimming, typically
-using one of a range of tools: TRIMMOMATIC, SICKLE, FASTX-TOOLKIT, BIOPIECES \citep{}<++>. %citations for tools
-
-Trimmomatic is the preferred tool of choice as it more read-pair aware than
-FASTX-TOOLKIT and BIOPIECES, retaining pair ordering and conducting more
-advanced trimming checks using pairing information such as adaptor read-through.
-By retaining pairing information and outputting ``surviving'' paired reads and
-unpaired reads TRIMMOMATIC precludes lengthy repairing of header pairing information
-in large datasets. \citep{}<++> %More information about how trimmomatic oworks and comparison to other trimmers
-
-The main approaches used individually or as a combination in trimming tools are that 
-of adaptor trimming (identifying and removing sequencing adapter sequences from reads),
-sliding windows (removing nucleotides that fall below a provided average quality threshold),
-basic terminal quality trimming (remove individual 5' or 3' nucleotides that have an associated PHRED score
-below a ceratin threshold) and minimum length (discard reads that fall below a minimum length). 
-\citep{}<++> %citations explaining these methods
-
-The key difficulty is that all widely used tools above require user-defined thresholds
-for the various trimming parameters e.g. for sliding window approaches - a window size
-and a minimum average quality threshold over the window.  
-This leads to a careful trade-off, if conservative/aggresive (i.e. high) quality thresholds
-are used many reads will be discarded, reducing the amount of data from which to 
-construct an assembly.  This will reduce feature resolution such as alternative splices 
-and in will lead to the loss/reduced assembly accuracy of lowly expressed (but potentially biologically interesting) transcripts \citep{MacManes2014}. On the otherhand, instinctually if permissive (i.e. low)
-quality parameters are set then potentially erroneous reads will be incorporated into the assembly
-and global assembly accuracy will decline. 
-
-Relatively little work on the optimisation of these parameters has been conducted, and generally
-researchers conducting high-profile \textit{de novo} assemblies utilise aggressive thresholds \citep{MacManes2014}.
-However, for \textit{de novo} transcriptome assembly assessed using a range of metrics
-(e.g. mismatches to previous datasets, kmer number, PE reads mapping back to assembly etc.)
-most of the gain of assembly accuracy occurred at a threshold of \(\geq 5\).
-Particularly, low abundance kmers are largely discarded with a threshold of \(\geq 5\).
-Suggesting, that a very low threshold of 2 or 5 optimises assembly quality potentially
-followed by kmer abundance based error correction \citep{MacManes2014}.
-
-
-
-% TRY THIS FOR SCT
-
-
-
-
-
-
-
-
-\subsubsection{Error correction}
-
-While second-generation sequencing technologies have massively increased
-throughput on an individual read basis they exhibit a much higher error
-rate than earlier Sanger approaches with Illumina HiSeq reads showing \(0.5-2.5\%\)
-error rate \citep{Kelley2010}.  
-
-These errors complicate assembly as they will rapidly increase
-the complexity of the de-Bruijn graphs 
-
-Typically the most widely used error-correction algorithms for 2nd-generation
-sequencing reads. 
-
-
-While explained later in \ref{Assembly}, generally OCC assembly is reliant on 
-fast and accuarte overalp calculations while de Bruijn approaches require
-robust error correction \citep{Palmer2010}.
-
-
-
-Single-cell genomics sequencing reads display high variance in their coverage 
-across the genome with some sections. Previously error correction tools (such as
-QUAKE \citep{Kelley2010}
-
-\citep{Nikolenko2013}
-
-Sequence error correction improves \textit{de novo} assembly \citep{MacManes2013}
-
-
-
-
-
-
-
-
-
-\subsubsection{Digital normalisation}
-
-\subsubsection{Assembly}
-Optimising parameters
-Theory
-Combining
-
-
-Almost every \textit{de-Novo} assembly algorithm use one of two approaches:
-overlap-contig-consensus (OCC) e.g. Celera etc
-de Bruijn is more widely used but even as recently as 2010 it was unclear
-which approach was superior \citep{Palmer2010}.
-However, it has become rapidly evident with further expanding sequencing capacity
-
-
-
-
-
-Assembly assessment:
-Adapter trimmed PE reads concordantly mapping to assembly \citep{MacManes2014} 
-Number of complete ORFs (start and stop codons) using TRANSDECODER 
-Unique transcript number using BlastP (80\% similarity over 100aa and e-10)
-%Expression for each contig https://github.com/macmanes/trimming_paper/tree/recreate_ms_analyses/scripts
-
-
-\subsubsection{Annotation}
-
-\subsubsection{Mapping}
-
-The tradeoff between read-mapping sensitivity (number aligned) and specificity (number correctly aligned)
-Modern aligners overcome most errors making trimming unecessary \citep{DelFabbro2013}
-
-
-
-
-
-However, studies on simulated datasets have shown that the main sources of error
-when conducting mapping to a reference transcriptome to infer expression counts
-the most important sources fo error are splice variants and missing transcripts
-\citep{Pyrkosz2013}.  Interestingly, this paper also found that different mapping
-strategies did not yield substantial differences in mapping quality \citep{Pyrkosz2013}.
-
-When mapping RNA-Seq data there is diminishing returns with 1M reads providing 
-approximately the same level of accuracy in estimate transcript abundance 
-as >30M reads for highly-expressed gene in six standard model organisms \citep{Lei2014} 
-
-
-
+%\subsubsection{Annotation}
+%
+%Reed \textit{et al.} \citep{Reed2006} divided components annotation into a useful dimension paradigm as follows:
+%\begin{enumerate}
+%    \item Enumeration: identification of genes and assignment of their predicted or known functions. What?
+%    \item Interaction: integration of protein-protein, regulatory and metabolic interaction data between components Can they interact?
+%    \item Genomic Localisation: analysis of genomic localisation of genes i.e. epigenetics.
+%    \item Plasticity: investigation of the change of other dimensions over evolutionary time. Does their interaction change over time? \citep{Reed2006} 
+%\end{enumerate}
+%
+%Clearly, at a systems level it is difficult (if not impossible currently), 
+%even in well defined model organisms, to complete a full 4-dimensional annotation 
+%for all cellular components. However, it is more than feasible to have a largely
+%complete 1D and even 2D annotation with 3D and 4D investigated for specific 
+%components.  Furthermore, annotation can be conducted with a range of confidences
+%from in silico predicted interactions to biochemically validating those predictions in vivo
+%and incorporating the precision and recall of various methodologies. Generally, such a process
+%is inherently iterative with successive model building and experimental testing and validation 
+%or rejection of such models \citep{Reed2006}.
+%
+%One of the major goals of this thesis is to reconstruct a preliminary predicted
+%2D annotation of the PbMr system.
+%
+%The most important step towards this goal is that of eukaryotic gene prediction.
+%
+%Eukaryotic gene prediction is achieved by generally two methods - \textit{de novo} HMM based
+%methodologies (e.g. GENESCAN, TWINSCAN \citep{}<++>) and expression evidence based methods
+%in which reads from sequenced cDNA (or in older approaches ESTs) are aligned to the 
+%assembled genomic contigs \citep{Brent2007}.  Unfortunately even relatively deep
+%sequencing of cDNA can fail to identify the structure of 20-40\% of genes in a typical
+%eukaryote genome owing to these genes being expressed only at very low levels or in
+%different conditions than that from which the cDNA was extracted \citep{Brent2007}.
+%
+%
+%
+%\subsection{Transcriptomics}
+%While generally computationally simpler than genomic assembly \citep{MacManes2014}
+%owing to the relatively fragmented nature of transcripts compared to genomic 
+%sequences (i.e. lots of transcripts of various lengths rather than several 
+%long chromosomes).  There a few key challenges to transcriptomic assembly
+%that is absent in genomic work specifically:
+%\begin{itemize}
+%    \item Handling assembly of alternative isoforms of transcripts \citep{Pyrkosz2013}
+%    \item Assembly of transcripts from gene-dense genomes with overlapping 5' UTR 
+%    \item Assembly of data with highly heterogeneous read coverage, as transcript
+%        expression level is proportional to read coverage (indeed expression analysis
+%        using RNA-Seq datasets relies upon this fact).
+%    \item Random hexamer bias
+%    \item GC content bias, particularly so in PbMr
+%\end{itemize}
+%
+%These problems are particularly problematic in \textit{de novo} approaches,
+%however referenced assembly has its own issues in transcriptomics
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%The correlation of transcript level to protein level is difficult
+%
+%
+%
+%
+%
+%Unfortunately, conventional RNA-seq requires either an established moderate-to-high
+%density culture of the organism of interest 
+%
+%
+%
+%
+%
+%
+%
+%
+%http://rnaseq.uoregon.edu/
+%http://bioinformatics.bc.edu/marthlab/scotty/scotty.php
+%
+%Experiemntal design, read depth, ENCODE, Tarazona S 2012 fdiff exp in RNA-seq
+%a matter of depth
+%
+%\begin{itemize}
+%    \item Check Quality (FASTQC)
+%    \item Trim reads (Trimmomatic)
+%    \item Re-check quality (FASTQC)
+%    \item Error-correct reads (?)
+%    \item Normalize coverage (khmer)
+%    \item Test paramters for multiple assemblers
+%    \item Run each assembler with best parameters
+%    \item Analyse all and merge best assemblies
+%    \item Annotate transcriptome
+%    \item Map reads to assembly, count
+%    \item Differential expression analysis
+%\end{itemize}
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%Further complications from single cell:
+%Fusions are created in cDNA ligation step prior to MDA in WTA
+%However, poly-A tails should mean fusion reads are unlikely as they need to a
+%span poly-A trac in all 4 possible fusions apart from 3'-5':5'-3'
+%So to get high levels of chimeric reads we would need the two same transcripts
+%in the same fused orientation multiple times.  Otherwise any other 3'-5':5'-3'
+%fusions should be fairly rare so likely discarded in error-correction etc steps
+%
+%\subsubsection{Quality Checking}
+%
+%FastQC tool and its parameters
+%
+%\subsubsection{Read trimming}
+%
+%% /storage/fin/raw_reads/raw_sct_reads/optimising_trimming_paramters/test_mapping_to_bulk
+%
+%
+%Currently, there is no clear answer to the question, which is the best trimming algorithm.
+%This is due to many dataset-specific effects as well parameter-dependence \citep{DelFabbro2013}.
+%However, 
+%
+%
+%
+%Trimming algorithms can be divided into two groups: running-sum based approaches e.g. Cutadapt and ERNE-FILTER
+%and window-based e.g. FASTX, PRINSEQ, Sickle and Trimmomatic \citep{DelFabbro2013}.
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%Difficulties: 
+%A major source of bias in transcriptomic datasets is that of compositional biases induced
+%by the random hexamer priming used in the generation of cDNA in many library preparations.
+%(see \ref{}<++>) %previous section of sequencing itself %does SCT kit do random hexamers?
+%Specifically, these random hexamers do not bind uniformly across the transcripts,
+%therefore the location of reads are not uniform \citep{Hansen2010}\citep{Hansen2010}.
+%Fortunately, the single cell kits do not utilise random hexamer priming {}<++> %Check with DAVID
+%So despite inducing other biases, they do not induce this one!
+%
+%
+%Another source of bias is the strong correlation between GC richness in read coverage
+%observed in 2nd-generation Illumina sequencing \citep{Dohm2008,}
+%This is possibly to do with the different biophysical properties of GC-rich dsDNA (high melting point) \citep{Dohm2008} %is this relevant?
+%Or biases in PCR -ampligication, or specifically i9n bridge PCR of cluster amplification
+%
+%
+%Errors are more common at the start and end of 
+%
+%
+%
+%
+%Sequencing errors: Illumina sequencing has non-random error distribution across length of read, increasing towards the 3' end liu2012. These errors are generally substitution errors yang2013 at a rate of 1-3\% globally \citep{MacManes2014}.  However, while the latest assemblers (see \ref{}<++>) are capable of %ref to assembly section
+%handling many of these errors, inevitably sequencing error does cause some
+%assembly error MacManesANDEISEN2013.
+%Furthermore, errors rapidly increase both the space and time complexity of the assembly (discussed in \ref{}<++>) problem \citep{MacManes2014}.
+%
+%One of the most important and prevalent methods to try and improve assembly
+%accuracy in the face of sequencing errors is that of read trimming, typically
+%using one of a range of tools: TRIMMOMATIC, SICKLE, FASTX-TOOLKIT, BIOPIECES \citep{}<++>. %citations for tools
+%
+%Trimmomatic is the preferred tool of choice as it more read-pair aware than
+%FASTX-TOOLKIT and BIOPIECES, retaining pair ordering and conducting more
+%advanced trimming checks using pairing information such as adaptor read-through.
+%By retaining pairing information and outputting ``surviving'' paired reads and
+%unpaired reads TRIMMOMATIC precludes lengthy repairing of header pairing information
+%in large datasets. \citep{}<++> %More information about how trimmomatic oworks and comparison to other trimmers
+%
+%The main approaches used individually or as a combination in trimming tools are that 
+%of adaptor trimming (identifying and removing sequencing adapter sequences from reads),
+%sliding windows (removing nucleotides that fall below a provided average quality threshold),
+%basic terminal quality trimming (remove individual 5' or 3' nucleotides that have an associated PHRED score
+%below a ceratin threshold) and minimum length (discard reads that fall below a minimum length). 
+%\citep{}<++> %citations explaining these methods
+%
+%The key difficulty is that all widely used tools above require user-defined thresholds
+%for the various trimming parameters e.g. for sliding window approaches - a window size
+%and a minimum average quality threshold over the window.  
+%This leads to a careful trade-off, if conservative/aggresive (i.e. high) quality thresholds
+%are used many reads will be discarded, reducing the amount of data from which to 
+%construct an assembly.  This will reduce feature resolution such as alternative splices 
+%and in will lead to the loss/reduced assembly accuracy of lowly expressed (but potentially biologically interesting) transcripts \citep{MacManes2014}. On the otherhand, instinctually if permissive (i.e. low)
+%quality parameters are set then potentially erroneous reads will be incorporated into the assembly
+%and global assembly accuracy will decline. 
+%
+%Relatively little work on the optimisation of these parameters has been conducted, and generally
+%researchers conducting high-profile \textit{de novo} assemblies utilise aggressive thresholds \citep{MacManes2014}.
+%However, for \textit{de novo} transcriptome assembly assessed using a range of metrics
+%(e.g. mismatches to previous datasets, kmer number, PE reads mapping back to assembly etc.)
+%most of the gain of assembly accuracy occurred at a threshold of \(\geq 5\).
+%Particularly, low abundance kmers are largely discarded with a threshold of \(\geq 5\).
+%Suggesting, that a very low threshold of 2 or 5 optimises assembly quality potentially
+%followed by kmer abundance based error correction \citep{MacManes2014}.
+%
+%
+%
+%% TRY THIS FOR SCT
+%
+%
+%
+%
+%
+%
+%
+%
+%\subsubsection{Error correction}
+%
+%While second-generation sequencing technologies have massively increased
+%throughput on an individual read basis they exhibit a much higher error
+%rate than earlier Sanger approaches with Illumina HiSeq reads showing \(0.5-2.5\%\)
+%error rate \citep{Kelley2010}.  
+%
+%These errors complicate assembly as they will rapidly increase
+%the complexity of the de-Bruijn graphs 
+%
+%Typically the most widely used error-correction algorithms for 2nd-generation
+%sequencing reads. 
+%
+%
+%While explained later in \ref{Assembly}, generally OCC assembly is reliant on 
+%fast and accuarte overalp calculations while de Bruijn approaches require
+%robust error correction \citep{Palmer2010}.
+%
+%
+%
+%Single-cell genomics sequencing reads display high variance in their coverage 
+%across the genome with some sections. Previously error correction tools (such as
+%QUAKE \citep{Kelley2010}
+%
+%\citep{Nikolenko2013}
+%
+%Sequence error correction improves \textit{de novo} assembly \citep{MacManes2013}
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%\subsubsection{Digital normalisation}
+%
+%\subsubsection{Assembly}
+%Optimising parameters
+%Theory
+%Combining
+%
+%
+%Almost every \textit{de-Novo} assembly algorithm use one of two approaches:
+%overlap-contig-consensus (OCC) e.g. Celera etc
+%de Bruijn is more widely used but even as recently as 2010 it was unclear
+%which approach was superior \citep{Palmer2010}.
+%However, it has become rapidly evident with further expanding sequencing capacity
+%
+%
+%
+%
+%
+%Assembly assessment:
+%Adapter trimmed PE reads concordantly mapping to assembly \citep{MacManes2014} 
+%Number of complete ORFs (start and stop codons) using TRANSDECODER 
+%Unique transcript number using BlastP (80\% similarity over 100aa and e-10)
+%%Expression for each contig https://github.com/macmanes/trimming_paper/tree/recreate_ms_analyses/scripts
+%
+%
+%\subsubsection{Annotation}
+%
+%\subsubsection{Mapping}
+%
+%The tradeoff between read-mapping sensitivity (number aligned) and specificity (number correctly aligned)
+%Modern aligners overcome most errors making trimming unecessary \citep{DelFabbro2013}
+%
+%
+%
+%
+%
+%However, studies on simulated datasets have shown that the main sources of error
+%when conducting mapping to a reference transcriptome to infer expression counts
+%the most important sources fo error are splice variants and missing transcripts
+%\citep{Pyrkosz2013}.  Interestingly, this paper also found that different mapping
+%strategies did not yield substantial differences in mapping quality \citep{Pyrkosz2013}.
+%
+%When mapping RNA-Seq data there is diminishing returns with 1M reads providing 
+%approximately the same level of accuracy in estimate transcript abundance 
+%as >30M reads for highly-expressed gene in six standard model organisms \citep{Lei2014} 
+%
+%
+%\subsubsection{Transcriptomic Analysis}
+%
+%The first stage in an analysis of expression is the mapping of
+%RNA-Seq reads to the transcripts (whether these have been derived
+%from \textit{de novo} assemblies and/or genome annotations).
+%This produces a set of digital counts for each transcript, approximately
+%in proportion to its relative expression level.
+%
+%This mapping is done with any of many short-read alignment algorithms
+%which are optimised for both speed and accurately mapping short queries (i.e. reads)
+%to longer databases (transcriptome/genome) (see \citep{Fonseca2012} for a review of
+%tools).
+%
+%This is true for both bulk and SC RNA-Seq \citep{Stegle2015}.
+%
+%
+%
+%
+%Mapping reads to 
 
 \section{Machine Learning and Statistical Pattern Recognition}
 
 Machine learning (ML) is a field of computer science 
 devoted to the challenge of developing and applying algorithms capable of 
 automatically inferring and utilising patterns in data \citep{Murphy2012}.
-A formal definition of machine learning is:
+A commonly used formal definition of machine learning:
 ``A computer is said to learn from experience E with respect to some class of tasks 
 T and performance measure P, if its performance at tasks T, as measured by P, improves 
 with experience E.'' \citep{Mitchell1997}
@@ -775,20 +844,43 @@ which are capable of beating human-performance on complex image classification t
 Typically, we seek to set the parameters (\theta) of a function in such a way
 that another property is minimised.  For example, in linear regression we try to find 
 parameters of a straight line \(h_{theta}(x) = \theta_{0} + \theta_{1} * x_{1}\) which minimise the distance
-between the line and the data (usually the sum of squares distance).
-This distance/error is calculated using something known as the cost function e.g. \(J(\theta) = \frac{1}{2} \sum^{m}_{i=1} h_{\theta}(x_{i}) - y_{i})^2\) (where \(m\) is the number of \(x, y\) pairs in the dataset for linear regression.  
+between the line and the data (for example, the sum of squares distance).
+This distance/error is calculated using something known as the cost function e.g. \(J(\theta) = \frac{1}{2} \sum^{m}_{i=1} (h_{\theta}(x_{i}) - y_{i})^2\) (where \(m\) is the number of \(x, y\) pairs in the dataset for linear regression.  
 Most algorithms will seek to minimise the value of this cost function \(J(\theta)\) with respect to 
 the parameters of the original function \(h_{theta}(x)\).  Typically, this is achieved using a variety of algorithmic optimisation techniques.
 The most prevalent of these are gradient descent based methods in which the value of \theta is modified 
 in the direction of the gradient of the cost function (determined using the partial derivative of \(J\) with respect to \theta: \(\frac{\partial J_{\theta}}{\partial\theta}\)).  
-The choice of model is important as it determines how well this error can be mininmised for the current data.
-It also determines how well this will generalise to new data.
+
+
+In an ideal world, the best ML model trained using our data will generalise well for novel data generated from the same underlying process
+which generated the training data.  This is known as generalisability and it plays into the concept of `fit'.  A model that minimises 
+its particular cost function on the training dataset has been fit to that dataset, however, it is possible to for the model to fit the training
+data in such a way that it has low error on the training data but performs incredibly poorly when applied to new data from the same process.
+This is typically the case when a model has overfit the data.  The classic example of this is fitting a line to a set of points using a
+high degree polynomial.  This polynomial will perfectly pass through all the points but is likely to be a worse predictor for the value 
+of some new data than a much simpler model that while it fits the original training data, may not fit quite as well.  Likewise, a model that is misspecified
+or cannot fit the training data well e.g. the training data follows a non-linear distribution but the model is linear, is known as underfitted.
+Underfitted models will perform poorly on both the training and test data.  However, it isn't particularly useful to only discover
+how useful your model is likely to be on the test data therefore almost all ML analyses will use the principal of cross-validation.
+Cross-validation is the partitioning of the training dataset to create a validation dataset which can be used as a proxy test set.
+
+Unfortunately, no single model will perform best for all tasks (to paraphrase and simplify Wolpert and McCreedy's ``No Free Lunch Theorem'' \citep{Wolpert1996}),
+there are no shortcuts in machine learning (and many other areas) or optimisation.  Therefore, testing different models (and hyperparameter values) using
+cross-validation is key to generating a useful ML model.  Another important way to prevent overfitting is to introduce regularisation in the cost function, in other
+words a term which penalises model complexity.
+
+%Generally, our functional approximation is probablistic - it will return the most
+%probable class label \(\( \hat{f}(x) = \argmax{C} p(y = c|x,\mathcal{D}) = \hat{y}\) 
+%where \(p(y|x,\mathcal{D})\) represents the probability distribution over possible labels 
+%with a specific input vector \(x\) and training set \(\mathcal{D}\).
+%probablistic classifiers 
+
 
 \begin{figure}[h]
     \includegraphics[width=\textwidth]{fitting.pdf}
     \caption{Plot showing a high bias (underfit) model in yellow and a high variance (overfit) model in yellow.
         Below are learning curves corresponding to each of these respectively.
-        Learninv curves show the effect of different training set sizes on the training and test error of misspecified models.
+        Learning curves show the effect of different training set sizes on the training and test error of misspecified models.
         Overfitted models show a large gap between test and training errors, they fit to the training data well but don't generalise
         to new data (i.e. test data).
         Underfit models show a very high training error and little difference between test and training data as the model is too simple
@@ -798,8 +890,8 @@ It also determines how well this will generalise to new data.
 \end{figure}
 
 
-Machine learning can be split into 3 basic components: representation (the form of the model e.g. and input) in which 
-evalution (cost functions) and optimisation (gradient descent) \citep{Domingos2012}
+%Machine learning can be split into 3 basic components: representation (the form of the model e.g. and input) in which 
+%evaluation (cost functions) and optimisation (gradient descent) \citep{Domingos2012}
 
 %Similar to statistics in general, approaches can be parametric or non-parametric in machine learning and can
 %be easily distinguished by the change in numbers of parameters are training set size increases.
@@ -820,6 +912,8 @@ density estimation and dimensionality reduction).
 There are also approaches that blend features of both supervised and unsupervised learning known as semi-supervised
 learning as well as an alternative idea known as reinforcement learning built on the premise of the psychology
 of behaviour and the indirect reward of trial and error approaches \citep{Bishop2006}.
+
+
 
 \subsection{Supervised Learning}
 
@@ -858,18 +952,17 @@ dataset (\(\mathcal{D}\)) composed of pairs of \(x\) and \(y\) values.  Once thi
 can use it to predict the value of \(\hat{y_{i}}\) for data in the test set \(x_{i} \not \in \mathcal{D}\).
 
 
-On the otherhand, in classification applications are supervised learning problem in which the expected outputs are 
+On the other hand, in classification the expected outputs are 
 categorical or nominal variables such as class labels like ``host'' and ``endosymbiont'' 
 (\(y_{i} \in {host, endosymbiont, ... C}\)).  These classifications can be binary (two possible outputs i.e. 
 \(y={0,1}\)), multiclass (\(\left\vert{{y}}\right\vert > 2\)),
-or multi-label (similar to multiclass but outputs aren't mutually exclusive, i.e. an input can belong
-to multiple classes) \citep{Murphy2012}. 
+or multilabel (similar to multiclass but outputs aren't mutually exclusive, i.e. an input have multiple labels
+) \citep{Murphy2012}. 
 
-
-Supervised learning algorithms can additionally be either probabalistic or non-probablistic and generative or 
+Supervised learning algorithms can also be either probabilistic or non-probabilistic and generative or 
 discriminative.
 Probabilistic functions will return a probability distribution associated with possible class labels or
-regression values whereas non-probablistic approaches will only return the most likely class label or value.
+regression values whereas non-probabilistic approaches will only return the most likely class label or value.
 Continuing 
 Generative algorithms, such as Naive Bayes, seek to model the process by which the output data was generated 
 from the input i.e. learn the joint probability \(p(x,y)\) and make predictions on that basis via Baye's Theorem (see \ref{eq:bayes}) 
@@ -882,92 +975,56 @@ from the input i.e. learn the joint probability \(p(x,y)\) and make predictions 
 \]
 
 Whereas, discriminative classifiers, such as logistic regression/linear classifiers,
-model the posterior probability \(p(y|x)\) directly or just learn mappings in the case of non-probabalistic approaches.
+model the posterior probability \(p(y|x)\) directly or just learn mappings in the case of non-probabilistic approaches.
 In other words, for classification problems a generative model would determine the statistical distribution of 
 individual classes whereas discriminative models would just determine the boundaries between them.
 Generative models often perform better on small training sets by preventing overfitting with discriminative
 classifiers performing better as the training set grows \citep{Ng2002}.
 
-
-%Generally, our functional approximation is probablistic - it will return the most
-%probable class label \(\( \hat{f}(x) = \argmax{C} p(y = c|x,\mathcal{D}) = \hat{y}\) 
-%where \(p(y|x,\mathcal{D})\) represents the probability distribution over possible labels 
-%with a specific input vector \(x\) and training set \(\mathcal{D}\).
-%probablistic classifiers 
-
 \subsubsection{Support Vector Machines}
 
 Support Vector Machines (SVMs) are a type of sparse kernel maximum-margin supervised classification algorithm.
 With the innovation of the kernel trick in 1992 \citep{Boser1992} and soft-margins in 1993 (not published until \citep{Cortes1995}) SVMs have been 
-among the most successfully applied classification algorithms throughout the 90s and early 2000s.
+among the most successfully applied classification algorithms \citep{Fernandez-Delgado2014}.
 Only relatively recently have they begun to lose ground to the deep-learning methods such as deep-convolutional neural networks (e.g. LeNet \citep{LeCunn1998}) exemplified 
 by the defeat of SVMs by the LeNet on the MNIST digit recognition dataset \citep{Hinton2006,Bengio2007} \citep{Bengio2013}
 
+The goal of SVMs is to learn a hyperplane which separates two sets of labels in the dataset. Note, for multiclass classification a series of one-vs-all
+classifiers are typically trained (that is for \(K\) classes, \(K\) SVMs are trained each classifying between a label \(k\) and all other labels).
+However, not all possible hyperplanes that could separate the labels will necessarily generalise well to novel data (and this generalisation
+is the ultimate goal of supervised ML).  Therefore, it is necessary to determine a way to select the hyperplane which should generalise best and to do
+this in a manner that will be relatively efficient especially with high dimension datasets.  This optimal hyperplane for separable classes can be demonstrated to be
+the hyperplane which maximise the margin between the two classes \citep{vapnik1982estimation} in other words, the optimal boundary is the one that has the largest
+possible distance from each class (while still separating them).  Conceptually, the positioning of this boundary is only dependent
+on the relatively small subset of the training data \(\mathcal{D}\) that is near the boundary and it would be inefficient to consider all points when
+placing the decision boundary.  For this reason, SVMs can define the decision boundary in terms of the namesake support vectors and can reformulate
+their cost function in a more efficient constrained way.
+
+\begin{figure}[h]
+    \includegraphics[width=\textwidth]{margin.pdf}
+    \caption{A: Demonstration of 3 valid decision boundaries in a 2D classification problem, B: The optimal boundary (H2) is that which maximises
+        the separation of different classes.  This optimal boundary can be defined in terms of support vectors.  The bias/intercept has been 
+    folded into \(\theta\) directly.}
+    \label{fig:margin}
+\end{figure}
+
+A naive formulation of this problem is simple specifically we are trying to find a linear model \(f(x) = \theta_{0} + \theta^{T}x\) which can be simplified 
+to \(f(x) = \theta * x \) if we assume that the first element of \(x\) is fixed to \(1\). We thus want to minimise \(J\) in terms of \(\theta\) to find
+the largest margin that correctly labels all the training data (in other words is constrained).  Fortunately, due to geometry the margin is property of
+the norm of \(\theta\) i.e. \(||\theta||\) but we use \(\frac{1}{2} ||\theta||^{2}\) for mathematical convenience.
+
+\[argmin_{\theta} J(\theta) = \frac{1}{2} ||\theta||^{2} s.t. y_{i}(\theta x_{i}) \geq 1 \forall i\]
+
+In reality, this cost function would be converted to a constrained optimisation problem using Lagrange multipliers and reformulated using the Lagrangian dual form. 
 
 
-Still among the best classifier (RF better) \citep{Fernandez-Delgado2014}
+The 2nd major enhancement of SVMs is that of soft-margins \citep{Cortes1995}. Soft-margins are a way of allowing a degree of misclassification
+if doing so would increase the size of the margin that can be generated.  Specifically, a user defined penalty constant \(C\) is specified and 
+added to the cost function penalising the degree of misclassification \(\xi\), e.g.:
 
-As SVMs are a type of maximum-margin classifier this means that not only do they try to determine the parameters \(w,b\) of a hyperplane \(h_{w,b}(x) = g(w^{T}x+b)\) 
+\[argmin_{theta} J(\theta) = \frac{1}{2} ||\theta||^{2}  + C \sum^{n}_{i=1} \xi_{i} s.t. y_{i}(\theta x_{i}) \geq 1 - \xi_{i} \forall i\]
 
-
-which separates two different sets of data with different class labels but that they try to find
-
-the hyperplane which maximises this separation.  
-
-
-
-Good generalisation in theory and practice, works well with limited training, relatively efficient, 
-convex optimisation (best global model), kernal trick works
-
-increasing margin reduced capactiy - fewer possible models
-
-Learning theory: if the following holds - H is sufficiently consitrained in suize and/oprthe sizer of trainin data set is large
-then low training error is liekly to in dicate low generalisation error
-
-Similar to logistic regression but better
-
-
-
-differentiates two groups of class labels but they attempt to find a function that maximises the boundary
-between the two groups.
-
-
-%A function \( f: A\to B \text{where} A \text{and} B\) are any sets, the kernel or null space is defined
-%by \(Ker(f) = {x: x \belongs A \text{such that} f(x) = 0}\).  The kernel is the subset of A that maps to 
-%0 in the function.
-
-
-Many kernel based functions are computationally infeasible on large datasets due to the combinatorial explosion
-of functions which must be evaluated when every pair must be considered.
-
-Sparse kernel methods are those that only evaluate the kernel on a subset of training points.
-
-A major advantage of SVM are that is a true convex optimisation problem so any solution is a the global
-optimum and it can't get stuck in local optima.
-
-Only outputs decisions (i.e. labels) not label probabilities (RVM for that).
-
-
-
-
-SVMs builds on the concept of a basic 2-class linear classifier i.e. learning the weights \(w\) and biases \(b\)
-to return a label \(y\) for a given \(x\):
-\[
-    y(x) = w^{T} \phi(x) + b
-\]
-
-
-
-For linearly separable data, there will be many solutions to this as many different lines (i.e. weights and biases, aka gradient and intercept) 
-can be drawn to perfectly separate the two groups of data. Therefore, the goal is then to find the line which minimises generalisation error.
-In other words, the line that performs best on new data that the classifier hasn't been trained on. 
-
-SVMs attempt to do this by maximising the distance between any samples in the training data and the decision boundary (i.e. line). 
-This is known as the `margin' 
-
-
-
-
+This can improve robustness to outlier data and generally improve generalisability by keeping the margin as large as possible.
 
 \begin{figure}[h]
     \includegraphics[width=\textwidth]{boundary.pdf}
@@ -976,24 +1033,41 @@ This is known as the `margin'
     \label{fig:boundary}
 \end{figure}
 
-
-
+Finally, the 3rd major advantage of SVMs is that despite nominally being linear classifiers they can effectively classify data which 
+is not linearly separable in the input dimensions using the kernel trick.  Conceptually, a kernel function is used to transform
+which transforms data from the input dimensions to a higher dimensional space in which the data is linearly separable.
+These transformed feature spaces can have incredibly high number of dimensions (in the case of popular kernels like radial basis
+function, an infinite number of dimensions).  Explicitly transforming data in this way would be computationally intensive
+so instead the ``kernel trick'' is used, where instead of explicitly transforming all the data into the feature space
+it is done implicitly by computing the inner product of all pairs data points transformed.  This is a lot more efficient
+and precludes the computationally intensive step of converting the data into the new, potentially infinite, co-ordinate space.
+Radial basis function (RBF) kernel is an example \(K(x_{i}, x_{j}) = exp ( - \frac{||x_{i} - x_{j}||^{2}}{2\sigma^{2}})\) kernel.
+Even with the kernel trick, operations on every pair of points can become infeasible for large datasets due to the combinatorial
+explosion in necessary operations as the dataset increases in size.  However, in the same way that the decision boundary parameters 
+are determined using only a subset of the training data (i.e. the support vectors) the kernel trick only needs
+evaluated on a subset of points near the decision boundary.  This is the reason SVMs are sometimes
+referred to as sparse kernel methods.
 
 \begin{figure}[h]
-    \includegraphics[width=\textwidth]{boundary.pdf}
-    \caption{Demonstration of the utility of a soft-decision boundary to improve the overall
-    fit of a decision boundary by allowing a degree of misclassification during training}
-    \label{fig:boundary}
+    \includegraphics[width=\textwidth]{kernel.pdf}
+    \caption{A kernel transform can allow SVM to produce non-linear classification boundaries by mapping
+        the data to a higher dimensional space in which they are linearly separable. This is known as the kernel
+        trick and the key to its efficiency in SVM is that it is only evaluated for those sets of points near the 
+    decision boundary}
+    \label{fig:kernel}
 \end{figure}
 
 
 
-SVMs are very good with low training datasets, and fast to classify (if not train) 
-
-
-
-
-
+The advantages of SVM is that they are somewhat resistant to the curse of dimensionality i.e. they are effective with large numbers of features
+even if the number of features is greater than the size of the training set.  By using support vectors, the kernel trick, and Lagrange bound optimisation 
+they are relatively fast and memory efficient to train and as classification only depends on the location of the decision boundary very fast to test.
+Additionally, in simple form finding the hyperplane of an SVM is a true convex optimisation therefore is guaranteed to always find the global optimum (this
+guarantee does break with more complex kernels and soft-margins).  
+The major disadvantage is not natively generating probabilistic output (i.e. attaching a probability to a certain classification).  However, this can be achieved
+using methods like Platt Scaling or the related Relevance Vector Machine algorithm.   The other disadvantage is that hyper-parameters such as the misclassification
+penalty for soft-margins (\(C\)) and kernel choice (and its parameters) need chosen, typically this is solved by training using a grid-search of permutations
+of these parameter settings and selecting the best model via cross-validation.
 
 
 \subsection{Unsupervised Learning}
@@ -1007,7 +1081,7 @@ This is slightly more difficult problem as it lacks an obvious error metric like
 try to discover patterns in datasets.
 
 There are two major groups of unsupervised learning algorithms, the first of which is clustering algorithms
-such as K-means that seeks to partition a dataset into a set of groups (see \ref{k-means} for more details).
+such as K-means that seeks to partition a dataset into a set of groups (see \ref{fig:kmeans} for more details).
 The other major group of unsupervised algorithms are those used for visualisation and/or
 dimensionality reduction.  Dimensionality reduction is a way of projecting a multidimensional
 dataset into a lower number of dimensions in a way that still corresponds to
@@ -1026,13 +1100,12 @@ hidden features within the dataset that can explain a high degree of the variati
 
 As ever different methodologies have a range of pros and cons, with
 some better at preserving global structure (e.g. isomap) and others local data structures (e.g. local linear embedding) and so on.
-
 One of the most recent innovations in this area is that of t-distributed stochastic neighbour-embedding
 (t-SNE) in which the similarity of data points in the input space is modelled as pairwise probabilities 
 using Gaussian distributions.
-These probabilties are then translated into positions in the map \(\mathcal{Y}\) and similarities re-calculated
+These probabilities are then translated into positions in the map \(\mathcal{Y}\) and similarities re-calculated
 using Student's t-distributions.  The position and variance of these points and distributions respectively
-is then optimised by mininising the difference between the similarity probabilities in the input space
+is then optimised by minimising the difference between the similarity probabilities in the input space
 and on the map \citep{Maaten2008}.
 
 \subsubsection{K-means}
@@ -1086,7 +1159,7 @@ assigning each point to the cluster represented by the nearest centroid or forma
     \end{cases}
 \]
 
-Step 2 roughtly corresponds to the maximisation step in EM is can be determined by taking the partial derivative of \(J\) w.r.t 
+Step 2 roughly corresponds to the maximisation step in EM is can be determined by taking the partial derivative of \(J\) w.r.t 
 \(\mu_{k}\) setting it to 0 and solving for \(\mu_{k}\):
 \[
     \frac{\partial J}{\partial \mu_{k}} = 2 \sum_{n=1}^{N} r_{nk} (x_{n} - \mu_{k})
@@ -1094,31 +1167,26 @@ Step 2 roughtly corresponds to the maximisation step in EM is can be determined 
     \mu_{k} = \frac{\sum_{n} r_{nk}x_{n}}{\sum_{n} r_{nk}}
 \]
 
-In otherwords set \(\mu_{k}\) to the mean of all data points \(x_{n}\) assigned to cluster \(k\) thus k-means \citep{Bishop2006}
+In other words set \(\mu_{k}\) to the mean of all data points \(x_{n}\) assigned to cluster \(k\) thus k-means \citep{Bishop2006}
 
 These two steps are repeated until a specified maximum number of iterations are reached or no points change cluster assignment during
 step 1.
 
 \(J\) \ref{eq:kmeans_cost} will converge but is liable to get stuck in a local rather than global minimum.
 
-K-means has many modifications and improvements such as refinining the initialisation of the clusters by 
+K-means has many modifications and improvements such as refining the initialisation of the clusters by 
 the Bradley-Fayyad method (clustering random samples of the dataset and then k-means clustering the resulting clusters) \citep{Bradley1998} 
-or overclustering (running more than k-means clustering with more than the specified number of clusters and merging clusters at the end
+or over-clustering (running more than k-means clustering with more than the specified number of clusters and merging clusters at the end
 to generate the correct number of clusters).
-
 An efficient implementation of the k-means algorithm is available in the MLPACK C++ Machine Learning library \citep{mlpack2013}.
+While very efficient and effective, k-means has some limitations, it requires a user specified number of clusters
+and therefore diagnostics to check for obvious misspecification in the number clusters.  Information criterion
+can be used to determine the optimal number of clusters.
+Additionally, it is not guaranteed
+to discover the global optimal clusters (can converge to local optima).  This can be amortised by running multiple times 
+with different initialisations.
 
-
-
-
-
-
-Disadvantages of K-means, requires a specified number of clusters (therefore diagnostics to check number of clusters)
-Can converge to local optima.
-
-Ways of specifying numbers of clusters \(k \equiv \sqrt{\frac{N}{2}}\) or information criteroin
-
-
+%Ways of specifying numbers of clusters \(k \equiv \sqrt{\frac{N}{2}}\) or information criteroin
 
 \begin{figure}[h]
     \includegraphics[width=\textwidth]{knn.pdf}
@@ -1156,6 +1224,8 @@ Ways of specifying numbers of clusters \(k \equiv \sqrt{\frac{N}{2}}\) or inform
 
 \section{Phylogenetics}
 
+%Molecular phylogenetics brought a degree of statistical objectivity to philosophical principles of Willi Hennig's cladistics \citep{Felsenstein2001}
+
 Phylogenetics is an effective tool to investigate the evolutionary ancestry of biological sequence data.
 It can be used to identify how closely related a given pair of sequences are, as
 well as indicate what the sequence most likely looked like in a shared common
@@ -1163,15 +1233,13 @@ ancestor (ancestral node reconstruction). Phylogenetic methods also allow estima
 of evolutionary processes such as selection pressure,
 migration, genome reduction, and horizontal gene transfer.
 In the context of endosymbiosis, phylogenetics can be used to determine evolutionary ancestry of 
-the genes recovered in a transcriptome and to aid identification the likely origin 
+the genes recovered in a transcriptome and to aid identification of the likely origin 
 (host, endosymbiont, contaminant) of these transcripts. Additionally, it can pinpoint
-likely horizontal gene transfer events between host and endosymbiont by searching for single 
+potential horizontal gene transfer events between host and endosymbiont by searching for single 
 gene/transcript phylogenies that have an incongruent branching pattern
-compared to established species trees.  Finally, it can be used to aid identification of the likely function 
-of novel transcripts based on similarity to other transcripts of known function in various
-databases such as genbank.
-
-Molecular phylogenetics brought a degree of statistical objectivity to philosophical principles of Willi Hennig's cladistics \citep{Felsenstein2001}
+compared to established species trees.  Finally, it can be used to aid identification of the putative function 
+of novel transcripts by comparison to other transcripts of known function 
+from databases such as genbank.
 
 
 Phylogenetics can be defined as a means of arranging a set of character sequences into an optimal hierarchial
@@ -1194,8 +1262,8 @@ was conducted using protein sequences e.g. \citep{eck1966atlas,Fitch1967}.
 This phylogenetic estimation can be a non-trivial process (especially with more complex
 measures of relatedness) as the number of
 possible trees rapidly increases with the number of sequences \(N_{trees} = \prod_{x=2}^{N_{taxa}} (2x - 3)\).
-However, the key stages in a phylogenetic analysis are that of sequence sampling,
- alignment (in which homologous sites in the sampled sequences are aligned with one another),
+However, the key stages in a phylogenetic analysis are that of sequence sampling (selection of
+sequences for inclusion in the analysis),  alignment (in which homologous sites in the sampled sequences are aligned with one another),
  masking (in which sites which are evolutionarily informative – can be determined to be homologous 
      but also non-invariant are selected), model selection (in which the best fitting
  evolutionary model is selected) and finally, phylogenetic reconstruction (in which the tree
@@ -1203,32 +1271,46 @@ However, the key stages in a phylogenetic analysis are that of sequence sampling
  least distance).
 
 
+%
+%There are 4 major sources of error in the generation of phylogenetic trees that 
+%can be reduced to greater and lesser extents depending on the methodology used.
+%Compositional bias 
+%
+%
+%
+%
+%Long branch attraction is one of the most famous artefacts, it is the erroneous grouping of long (usually fast evolving)
+%branches in a tree as sister groups.  It is caused by 
+%
+%
+%Sequence sampling is important both between taxa and within taxa.
+%
+%Hidden paralogy is another artefact that can be exacerbated with poor taxon sampling, this occurs when a sequence has
+%been duplicated within an ancestral taxa (creating paralogs) but differentially lost in its descendents.  
+%If, due to either deletion or poor sampling, the incorrect paralog is incoporated into a phylogeny 
+%
+%
+%Homoplasy - convergent evolution
+%Poor taxon sampling that is unrepresentative of the diversity that the phylogenetic tree
+%is intended to span 
+%
 
-One consideration worth raising is that increasingly it is becoming apparent
- that a tree-like pattern of evolutionary descent does not necessarily best represent
- actual evolutionary relationships.  This is due to the frequency of horizontal gene transfers (HGT)
- between distinct organisms (i.e. branches in a species trees).
+
+
+
+One implication of most current phylogenetic methods is that they implicitly
+assume a branching tree structure is the best representative of the evolutionary
+process that is being modelled.  However, as the discovered prevalence of
+horizontal gene transfer has increased it is becoming that in some cases
+a network like structure may in fact be more appropriate.
 
 
 Most analyses in this PhD are conducted using amino acid sequences.  
-DNA is more likely to display a compositional bias, indepdence of sites
+DNA is more likely to display a compositional bias, independence of sites
 is often severely violated due to the structure of codons (3rd base wobble and so on)
 (non-synoynmous mutations more likely to become fixed whereas synonymous mutations are
 prone to drift).  Amino acids also have more states so are less susceptible to back mutations
 than DNA.  
-
-
-
-
-
-Supertree generate tree for each gene and use heuristic algorithm to combine \citep{Bininda-Emonds2004}, can spot HGT but is inefficient
-
-Supermatrix, concatenation \citep{DeQueiroz2007a} - ignore differences in dynamics between gene, if partitioned then same as supertree
-
-
-
-Best approach is supermatrix with a model that incoprotates rate heterogeneity \citep{Ren2009}
-
 
 
 \subsection{Sequence sampling}
@@ -1239,107 +1321,122 @@ While some biases can be mitigated to lesser and greater extents
 by careful application of various methods in the following
 stages, there is a degree of fundamental truth in the statement ``garbage in - garbage out''.
 
-
-
-
 The aim of proper taxon sampling is to maximise phylogenetic accuracy and to allow
 testing of specific hypotheses. 
 Phylogenetic accuracy is usually considered in terms of consistency (as data increases 
     the analysis tends towards the correct tree), efficiency (how quickly does this convergence
 occur), and robustness (how sensitive is the phylogeny to violation of assumptions in reconstruction) \citep{Nabhan2012}
+Typically, sequence sampling will be conducted from the basis of a single
+seed sequence which will be used to query existing databases using alignment 
+tools such as BLAST and HMMs (explained in \ref{nextsection}) to attempt to discover
+potentially homologous sequences from different organisms.  
+
 
 The main issues caused by poor taxonomic sampling in molecular phylogenetics are that
 of conflicting phylogenetic signals, inadequate rate of evolution to resolve relationships
 of interest, and violations of assumptions e.g. expectation of a uniform distribution of traits \citep{Nabhan2012}.
 
 
-
-Most contemporary models of phylogenetic inference only infer unrooted trees. 
-Therefore, it is common practice to ``root a tree'' by selecting a set of sequences from known evolutionarily distance
-organisms to form an outgroup. If this outgroup is correctly recovered (monophyletically) the root can be placed between
-it and the other sequences in the phylogeny \citep{Yang2012}.  Additional, prior information is also occasionally used
-to place restrictions on the tree topology such as known organismal relationships and fossil data.
-
-
-
-
 Generally, increased taxon sampling has a strong positive effect on phylogenetic accuracy \citep{Zwickl2002}
 however, it can also lead to a situation where there are too many sequences to efficiently
 reconstruct a phylogeny.
-
-
-and this 
-
 However, care care must also be taken not to unintentionally bias datasets by removing 
 any sequences that are considered ``problematic'' especially when conflicting phylogenetic signal
 or model violations can be biologically informative.  Therefore, it is usually necessary to include
 borderline error-generating sequences within a phylogeny initially and to iteratively remove them
-and repeat the phylogenetic inference.
+and repeat the phylogenetic inference.  Unfortunately, the reduction of the input sequences
+to a representative subset by heuristics and/or naive clustering can generate
+biases of their own.  However, tools exist that utilise taxonomic database 
+information to automatically a subset of specified cardinality of sequences 
+that display the maximium possible taxonomic diversity for that subset size \citep{Zhou2014}.
 
 
-Compositional bias 
-
-
-Long branch attraction is one of the most famous artefacts, it is the erroneous grouping of long (usually fast evolving)
-branches in a tree as sister groups.  It is caused by 
-
-
-Sequence sampling is important both between taxa and within taxa.
-
-Hidden paralogy is another artefact that can be exacerbated with poor taxon sampling, this occurs when a sequence has
-been duplicated within an ancestral taxa (creating paralogs) but differentially lost in its descendents.  
-If, due to either deletion or poor sampling, the incorrect paralog is incoporated into a phylogeny 
-
-
-Homoplasy - convergent evolution
-Poor taxon sampling that is unrepresentative of the diversity that the phylogenetic tree
-is intended to span 
-
-
-
-With increasing size of available datasets a problem has emerged of acquiring too many homologous 
-sequences to easily/feasibly use for phylogenetic inference.  Generally, this can and is typically reduced
-to a representative subset by largely bias-prone heuristics or naive clustering.  However,
-tools exist that utilise taxonomic database information to automatically a subset of specified
-cardinality of sequences that display the maximium possible taxonomic diversity for that subset size \citep{Zhou2014}.
-
-
-It is key to producing consistent, efficient and robust trees. 
-
-Bias, long branches
-
+Another source of bias in sequence sampling is the usually heuristic choice
+of outgroup taxa. Most contemporary models of phylogenetic inference only infer unrooted trees. 
+Therefore, it is common practice to ``root a tree'' by selecting a set of sequences from known evolutionarily distance
+organisms to form an outgroup. If this outgroup is correctly recovered (monophyletically) the root can be placed between
+it and the other sequences in the phylogeny \citep{Yang2012}.  
+However, choice of outgroup can change implications which may be drawn from
+a phylogeny regardless of methodology used to infer it \citep{Milinkovitch1996}.
+and care must be taken to ensure the selected outgroup doesn't actively
+distort the accuracy of inference of the rest of the phylogeny regardless
+of the issue of root placement \citep{Milinkovitch1998}.
 
 The two principal ways in which putatively homologous sequences are identified in
 sequence databases are those based upon Basic Local Alignment Search Tool (BLAST) and
 its variants and Hidden-Markov Model based approaches (HMM).
+We seek a way of identifying and aligning homologous sequences in 
+a target sequence database with our query sequence.
 
-\subsubsection{BLAST}
-
-BLAST, its variants and improvements are the most widely used algorithms currently used to search sequence databases.
-Fundamentally, they are sequence 
-
-Likely homologous sequences can be identified via weak but biologically significant sequence similarities to a
-given query sequence.
-
-
-
-A variation BLAT (Basic Local Alignment Tool)
-
-
-
-
-to identity likely homologous sequences 
-to a given query.
-
-
-
-\subsubsection{HMM}
-
+%
+%\subsubsection{BLAST}
+%
+%BLAST, its variants and improvements are the most widely used algorithms currently used to search sequence databases.
+%Fundamentally, they are sequence 
+%
+%Likely homologous sequences can be identified via weak but biologically significant sequence similarities to a
+%given query sequence.
+%
+%
+%
+%A variation BLAT (Basic Local Alignment Tool)
+%
+%
+%
+%
+%to identity likely homologous sequences 
+%to a given query.
+%
+%
+%
+%\subsubsection{HMM}
+%
+%Hidden Markov models are an established method to probabilistically model
+%sequences of data such as a series of events or residues.
+%A hidden Markov model consists of a finite number \(N\) of states 
+%with transition between states determined at a fixed interval using a 
+%transition probability distribution dependent on the previous state.
+%This is known as the Markov property: ``the independence of the future from the
+%past, given the present''.
+%Hidden refers to the fact the true states are a latent process that must
+%be inferred indirectly from the observed data.
+%For example, if the HMM states are the set of conserved protein domains
+%making up a particular query 
+%An HMM is specified with a finite symbol alphabet e.g. the set of amino acid residues,
+%the number of model states, emission probability for each state that normalise to 1
+%over the symbol alphabet and the transition probabilities for each state
+%going to any other state (self included) marginalising to 1 over states
+%\(K\) symbol alphabet
+%
+%The 3 benefits of Markov models are: 
+%\begin{itemize}
+%    \item incorporation of heterogeneous
+%sources of information e.g. combining data about codon bias, exon distribution and/or 
+%splice-sites with the underlying DNA sequence.
+%    \item full probabilistic output instead of an arbitrary score function
+%    \item general and extensible i.e. the HMM can be extended to incorporate new sources of information as they are discovered \citep{Eddy2004}
+%\end{itemize}
+%
+%HMMs are used widely in biology especially versatile with sequence data applications such as search for sequences
+%annotation.
+%They are at the heart of a diverse range of programs, including genefinding, profile searches, multiple sequence alignment and regulatory site identification
+%
+%Highly sensitive, specificity depends on quality of MSA.
+%
+%Detection of sequence divergent homologs
+%
+%
+%
+%Supertree generate tree for each gene and use heuristic algorithm to combine \citep{Bininda-Emonds2004}, can spot HGT but is inefficient
+%
+%Supermatrix, concatenation \citep{DeQueiroz2007a} - ignore differences in dynamics between gene, if partitioned then same as supertree
+%
+%Best approach is supermatrix with a model that incoprotates rate heterogeneity \citep{Ren2009}
+%
 
 \subsection{Multiple Sequence Alignment}
 
-Arguably the most important step in phylogenetics is that of multiple sequence
-alignment (MSA).  The goal of MSA is to align sets sequences such that 
+The goal of MSA is to align sets sequences such that 
 evolutionarily homologous residues occupy the same column. In other words,
 any given column in the alignment theoretically should contain amino acid or nucleotide residues
 that derive from the same common ancestor and have evolved in each sequence lineage.
@@ -1350,16 +1447,15 @@ This is a non-trivial computational problem which has been proven to have an NP-
 \footnote{A decision problem for which an answer can be verified in polynomial time 
     by a non-deterministic turing machine and to and from which any NP-hard problem
     can be translated \citep{Karp1972}.} computational complexity \citep{Wang1994}.
-Specifically, the optimal alignment of N sequences has a complexity of \[ O(L^{N}) \]
-for \[ N\] sequences of length \[ L \]\citep{Sievers2011}.
+Specifically, the optimal alignment of N sequences has a complexity of \( O(L^{N}) \)
+for \( N\) sequences of length \( L \)\citep{Sievers2011}.
 
 Due to this complexity, the majority of MSA algorithms implement heuristic approaches
 in order to get, if not the optimal solution, but a sufficiently good one in a reasonable
 amount of time. 
 
-Typically, MSA algorithms start by generating the sets of all pairwise alignments. 
-This alignments are all generated 
-
+Typically, MSA algorithms start by generating the sets of all pairwise alignments
+using established pairwise alignment algorithms.
 Pairwise alignment algorithms are almost all based upon a
 pair of ``Ur-algorithms'' with different goals: 
 Needleman-Wunsch, a global alignment algorithms (which attempt to maximise 
@@ -1367,10 +1463,19 @@ alignment quality over entire sequence lengths) \citep{Needleman1970} and Smith-
 a local alignment algorithms (which are optimised towards producing high quality alignments
 in sub-strings) \citep{Smith1981}.  While early, MSA algorithms were typically
 largely derived from Needleman-Wunsch most modern algorithms seek to combine 
-optimisation of local and global alignments 
+optimisation of local and global alignments.  The distances used in these
+pairwise alignments will typically be ``scored'' based upon which matches or 
+alignments are more frequent substituions (e.g. Leucine and its isomer Isoleucine 
+or Adenine to its fellow purine base Guanine (transition)) 
+are positively scored and gaps (extension of a gap is typically
+less penalised than creating a gap) or unlikely changes (e.g. the transversion
+of Adenine to Cytosine or Glutamine to Cysteine) penalised.
+This will generally be codified in a substitution matrix e.g. the PAM \citep{Dayhoff1978}, 
+BLOSUM \citep{Henikoff1992} amino acid matrices and their numerous subsequent
+derivations and improvements. 
 
 
-The mostly widely heuristic used to go from a series of pair-wise alignments to
+The mostly widely heuristic used to go from these series of pair-wise alignments to
 a useful MSA is that of progressive-alignment \citep{Feng1987} (implemented in 
 tools such as CLUSTAL W \citep{Thompson1994}) in which the pairwise alignment
 scores are built into a distance matrix summarising the relative divergence of 
@@ -1382,200 +1487,168 @@ This drastically reduces the \[O(L^{N})\] complexity to approximately \[O(N^{2})
 \citep{Sievers2011}. While there have been various improvements and alternative approaches
 created such as merging both local and global alignment \citep{Notredame2000}, 
 rapid identification of homologous regions using Fast Fourier Transforms \citep{Katoh2002},
-iterative refinement of alignments \citep{Edgar2004a} and use of Hidden-Markov Models \citep{}<++>
+iterative refinement of alignments \citep{Edgar2004a} and use of Hidden-Markov Models \citep{Eddy1995}
 
 
-
-
-
-
-
-That is the theoretical goal of MSA, however, clearly we cannot directly observe
-the ancestral state of a residue in the common ancestor of two sequence lineages.
-Therefore, MSA algorithms seek to indirectly infer a homologous alignment by 
-introducing gaps into sequences in order maximise
-an alignment ``score'' in which matches or alignments of more frequent
-substituions (e.g. Leucine and its isomer Isoleucine or Adenine to its fellow purine base
-Guanine (transition)) are positively scored and gaps (extension of a gap is typically
-less penalised than creating a gap) or unlikely changes (e.g. the transversion
-of Adenine to Cytosine or Glutamine to Cysteine) penalised.
-
-This will generally be codified in a substitution matrix e.g. the PAM \citep{Dayhoff1978}, 
-BLOSUM \citep{Henikoff1992} amino acid matrices and their numerous subsequent
-derivations and improvements. 
-
-
-
-
-Using these matrices MSA algorithms will typically
-align pairs of sequences and then use this set of pairwise-alignment scores
-to estimate a ``guide tree''.  This guide-tree is then used to infer the order 
-in which the MSA is built
-
-
-
-
-
-
-
-
-There have been compelling arguments as early as 1991 that MSA are inherently flawed as consideration of 
-evolutionary processess in the objective weighting and assessment of potential alignments \citep{Thorne1991}.
-Furthermore, joint inference of alignment and phylogenetic trees minimises the risk
-of conscious or subconscious research bias towards alignments and subsequent 
-phylogenies that support their pre-conceived ideas.
-
-
-and trees should be jointly inferred \citep{Thorne1991,Bouchard-Cote2013}
-
-bias that alignment and inferences should be jointly estimated \citep{Redelings2005}.
-While, this approach has been coded in interest probabilistic programming approaches
-such as that implemented in BALI-phy \citep{Suchard2006} it is still far too
+There have been compelling arguments as early as 1991 that MSA in isolation from
+phylogenetic inference is inherently flawed as the consideration of 
+evolutionary processes (only really done during phylogenetic inference) 
+is key in the objective weighting and assessment of potential alignments \citep{Thorne1991}.
+Therefore, the phylogeny and MSA should be jointly inferred \citep{Thorne1991,Redelings2005,Bouchard-Cote2013}
+This approach also minimises the risk of conscious or subconscious researcher bias 
+towards alignments and subsequent phylogenies that support their pre-conceived ideas.
+This approach has been attempted using interesting probabilistic programming approaches
+i.e. BALI-phy \citep{Suchard2006}, however, it is still far too
 slow a process to infer phylogenies in this manner on large or even moderate datasets.
-Therefore, for now independent alignment estimation is here to stay, at least until
-computation resources and algorithmic development has continued until these more
+Therefore, for now, independent MSA estimation is here to stay, at least until
+computational resources and algorithmic development has continued until these more
 theoretically satisfying approaches become feasible.
 
 
-\begin{figure}
-    \caption{Redrawn from a slide by Derrick Zwickl}
-\end{figure}
+%\begin{figure}
+%    \caption{Redrawn from a slide by Derrick Zwickl}
+%\end{figure}
 
 \subsection{Masking}
 
-Concatenation - assumes common evolutionary patterns
+Unfortunately, MSA is far from perfect, especially with the faster algorithms 
+necessary for larger datasets and higher throughput.  Therefore,
+it is often necessary to trim alignments to manually fix any obviously 
+misaligned residues, and remove any ambiguously aligned or absent sites.
+This has been demonstrated to improve phylogenetic accuracy \citep{Talavera2007}.
 
 
-MSA is imperfect - especially for faster algorithms necessary with larger datasets
-and higher throughput.
+However, manual masking can also be a major source of researcher-bias as well
+as a painstaking process.  For this reason, there are tools that attempt to 
+automate this process.   They typically score each column independently with
+criteria including number of absent character states, how similar/variable the
+character is and if there are multiple putative alignments - how likely is
+that column to be found in multiple different MSAs.
+These criteria can then be used to mask out certain columns based on certain
+thresholds and trade-offs between the length of the alignment and inclusion
+of low-scoring columns.  
+Trimal is an example of a tool that automates the masking process
+using this sort of methodology \citep{Capella-Gutierrez2009}
 
-Trimming ambiguously aligned and absent sites improves phylogenetic accuracy \citep{Talavera2007}
-
-Automating this process - score each column indepdendently  gap score, similarity score and/or consistency score
-fraction of seq without gap, ss mean distatnce between residues, sc can be calced with multiple alignments of same seqs:
-how consistently is a column found in different alignments 
-
-Trimal automatically trims based on these thresholds \citep{Capella-Gutierrez2009}
 
 \subsection{Substitution model selection}
 
+While the simplest means of phylogenetic inference - parsimony i.e. finding
+the tree that requires the fewest sequence changes does not require any explicit
+model of sequence evolution, all other means of phylogenetic inference do \citep{Le2008}.
 
-Parsimony does not need a model.
 
-
-
+A substitution model is in its simplest sense the same as the PAM and BLOSUM
+matrices used in pairwise and MSA.  They are a means of scoring and weighting
+the significance of different character changes, is an A to a G a more evolutionarily
+rare state change than an A to a T for example.
 
 Substitution models typically assume neutrality, independence and finite sites.
-With the probability of substitution rates having an idendently identical distribution (i.i.d) \citep{Hasegawa1985}
-
-
-
-
-Branch length is the expected number of substitutions per site.
-
+With the probability of substitution rates having an independently identical distribution (i.i.d) \citep{Hasegawa1985}
 This measure of distance can be naive models where rates of change between character
 states and the frequency of each state is equal (e.g. \(p(x \rightarrow y) \forall x \forall y \in {G,C,T,A} \text{where} x\neq y\)
-\citep{jukes1969evolution}) to models fully paramaterised in terms of character frequency and rates of change by the masked alignment 
-(e.g. the generalised time-reversible (GTR) model \citep{Tavare1986} see \ref{eq:gtr})
+\citep{jukes1969evolution}) to models fully parameterised in terms of character frequency and rates of change by the masked alignment 
+(e.g. the generalised time-reversible (GTR) model \citep{Tavare1986})
 
 \begin{figure}
     \[Q=\begin{pmatrix}
-        . & \alpha\pi_{C}  & \beta\pi_{A} & \gamma\pi_{G}\\ 
-        \alpha\pi_{T} & . & \delta\pi_{A} & \epsilon\pi_{G}\\ 
-        \beta\pi_{T} & \delta\pi_{C} & . & \zeta\pi_{G}\\ 
-        \gamma\pi_{T} & \epsilon\pi_{C} & \zeta\pi_{A} & .
-    \end{pmatrix}\\
+        . & \alpha\pi_{C}  & \beta\pi_{A} & \gamma\pi_{G} \\ 
+        \alpha\pi_{T} & . & \delta\pi_{A} & \epsilon\pi_{G} \\ 
+        \beta\pi_{T} & \delta\pi_{C} & . & \zeta\pi_{G} \\ 
+        \gamma\pi_{T} & \epsilon\pi_{C} & \zeta\pi_{A} & .\\
+     \end{pmatrix} 
+
     Q_{ii} = -\sum_{{j | j \neq i}} Q_{ij}\\
+
     \Pi = (\pi_{G}, \pi_{T}, \pi_{C}, \pi_{A})\\
+
     \Pi * Q = 0 \\
+
     \alpha = p(T \leftrightarrow C)\\
+
     \beta = p(A \leftrightarrow T)\\
+
     \gamma = p(G \leftrightarrow T)\\
+
     \delta = p(C \leftrightarrow A)\\
+
     \epsilon = p(G \leftrightarrow C)\\
+
         \zeta = p(A \leftrightarrow G)\]
-        \caption{Generalised time-reversible model for DNA sequence evolution under a reversible homogeneous markov process where \(\Pi\) is the 
-        frequency of each state and \(\alpha\) through \(\zeta\) are substitution rates \citep{Tavare1986,Yang1994}.  All other markov process models
-    of sequence evolution are special cases of GTR.   Time-reversability refers to the fact that \(\pi_{i}Q_{ij} = \pi_{j}Q_{ji}\) therefore
+        \caption{Generalised time-reversible model for DNA sequence evolution under a reversible homogeneous Markov process where \(\Pi\) is the 
+        frequency of each state and \(\alpha\) through \(\zeta\) are substitution rates \citep{Tavare1986,Yang1994}.  All other Markov process models
+    of sequence evolution are special cases of GTR.   Time-reversibility refers to the fact that \(\pi_{i}Q_{ij} = \pi_{j}Q_{ji}\) therefore
    the direction of state changes is irrelevant}
         \label{eq:gtr}
 \end{figure}
 
-While models like GTR can feasibly be paramaterised 
+While models like GTR can feasibly be fully parameterised with DNA sequence
+data due to DNA's relatively few character states it is usually necessary
+to use empirically-defined models for amino acid datasets.  These are substitution
+matrices that have been determined using the empirically observed
+substitution rates for various amino acids changes in many large MSAs \citep{Le2008}.
 
-In order to allow the oft violated assumption of a simple substitution that the rate of substitutions is constant (partially relaxes i.i.d)
-across the alignment there are many improvements.  The most frequent of which allowing the rates to vary across
-sites in the form of \(\Gamma\) distribution \(Var = \frac{\alpha}{\beta^{2}}, \mu = \frac{\alpha}{\beta}\) with a given shape \(\alpha\) and 
-trivial scale factor \(\beta\) depending on the dataset 
 
-For datasets that have a high degree
-of rate heterogeneity a low valued \(\alpha\) produces a broad distribution of rates, whereas a high value will generate 
+Unfortunately, a single substitution model will rarely hold true over an entire
+alignment with the rate of evolution varying both across and within sites (heterogeneity
+and heterotachy). The frequency of character states also frequently changes
+across a phylogeny.  It is important to control for these phenomena, because, 
+as mentioned earlier, violation of model assumptions can decrease phylogenetic
+accuracy.
+
+
+The most frequent violation that is controlled for is allowing the rate of substitution to vary across
+sites by using a \(\Gamma\) distribution \(Var = \frac{\alpha}{\beta^{2}}, \mu = \frac{\alpha}{\beta}\) with a given shape \(\alpha\) and 
+trivial scale factor \(\beta\) depending on the dataset to scale rates at each site.
+For datasets that have a high degree of rate heterogeneity a low valued \(\alpha\) produces a broad distribution of rates, whereas a high value will generate 
 a narrow distribution for datasets with low rate heterogeneity \citep{Yang1993}.
 For reasons of computational efficiency \(\Gamma\) is typically approximated as a discrete distribution of 4 to 8 
 categories of equal probability \citep{Yang1994a}. 
-
 A more limited version of this is the invariant sites model in which sites are divided into 2 classes, one considered invariable while the 
 other has normal substitution rates applied \citep{Hasegawa1985}.
 
+
 Unfortunately, these models still assume other model parameters namely the equilibrium frequencies and relative rates are the same across
-sites.  Some models have been proposed with multiple rate matrices  \citep{Lartillot2004}
+sites (but just scaled).  
+However, some models have been proposed with multiple rate matrices \citep{Lartillot2004} and 
+state frequency can be defined at each site \citep{Bruno1996} but needs lots of taxa \citep{Lartillot2004}
+An alternative to this is the CAT model which a mixture model mixture model with 
+K classes each containing a different state frequency.  If \(K=N\) then this is
+the same as Bruno's model however, generally \(K < N\).  A 
+ probabilistic process known as a Dirichlet Process Prior is used to assign
+ columns to various state frequency classes and simultaneously
+ determines the optimal value of \(K\) during this process \citep{Lartillot2004}.
+An alternative to this approach is explicitly partitioning a masked alignment
+and generating a model and state frequencies for each partition, 
+some consider this equivalent to a CAT model depending akin to preferences
+for fixed-effects vs random-effects models \citep{Yang2012}.  However, personally,
+automated partitioning using a Dirichlet process has the advantage of not
+requiring arbitrary user-defined partitions, which could be a source of bias.
+
+
+Finally, the rate of evolution can vary even with a site itself (a process 
+known as heterotachy) especially when large numbers of divergent taxa are included
+in a masked alignment.  One model modification which attempts to control 
+for this is that of the covarion model.  It allows sites to switch between
+on and off using an infinite mixture model.  The proportion of on and off sites
+is determined at each site \citep{Zhou2010} 
 
 
 
-State frequency can be defined at each site \citep{Bruno1996} but needs lots of taxa \citep{Lartillot2004}
-Mixture model with K classes each containing a different state frequency. if K=N sites then same as Bruno
-if k=1 same as naive model.  DPP can be used to determine total number of classes \citep{Lartillot2004}
-
-
-Can explicitly partition or use DPP etc and complex models - depends on prefrence for fixed-effects models or random-effects
-\citep{Yang2012}
-
-
-Codon models
-
-
-Covarion model - heterotachy  variation of rate at a site across time  - site change between on and off (prop at each site is different)
-covarion model using infinite mixture model\citep{Zhou2010} 
-
-
-
-
-
-
-
-
-A model is stationary if Q does not change with time.
-
-
-Regardless of how many sequences and how many characters are used to generate a phylogeny 
-
-model selection is 
-Maximum likelihood model
-
-Simple models such as parsimony and distance approaches are more susceptible to artefacts such as LBA.
-
-
-
-Distance, ML and Bayesian inferences also suffer from LBA if the assumed model does not account for rate variation using \Gamma etc \citep{Yang1996}
-
-
-
-Advantage of model-based approaches is that assumptions are explicit and thus can be tested in a statistically robust manner.
-
-
-
-
-
-
-
-
-actually choosing a model - prottest AIC/BIC/DT criteria - guide tree - matrix selection \citep{Abascal2005}
-Review of model selection \citep{Sullivan2005}
-
+Generally, simpler models such as the ``null'' parsimony model or basic models
+that don't account for complex evolutionary phenomena are more susceptible to
+artefacts such as LBA \citep{Yang1996}.  However, in the grand tradition of
+``no-free lunch'', there is no universally best model for all datasets.
+Therefore, it is necessary to test multiple competing models using a provided
+MSA.  Typically, these models are then compared for their fit to the observed
+data using information criterion such as Akaike's (AIC) which assess
+fit while penalising model complexity in a standard regularisation trade-off.
+These model selection processes have been automated in tools such as ProtTest  
+\citep{Abascal2005}
+%Review of model selection \citep{Sullivan2005}
 
 
 \subsection{Phylogenetic inference}
-
 
 The simplest phylogenetic inferences are that of distance matrix methods.
 Distance matrix methods \citep{Fitch1967} work on the basis of generating 
@@ -1596,26 +1669,18 @@ Then:
     \item Repeat the process with the new matrix \citep{Nei1987}
 \end{enumerate}
 
-It works on the assumption that the true tree has the smallest expected length (minimum evolution) and a short tree
-that has similar topology can be achieved using the fast simple agglomerative algorithm.
-
-
-NJ is one of the best distance methods and is more reliable than maximum-parsimony which can be asymptotically inconsistent
-
-While already efficient (possibly efficient as possible) can be made more efficient using effective heuristics
-to search tree space \citep{Kumar1996}
-
+It works on the assumption that the true tree has the smallest expected length (minimum evolution) and a short tree that has similar topology can be achieved using the 
+fast simple agglomerative algorithm.  NJ is one of the best distance methods and 
+is more reliable than maximum-parsimony which can be asymptotically inconsistent
+While already efficient (possibly efficient as possible) NJ can be made more efficient 
+using effective heuristics to search tree space \citep{Kumar1996}
 As well as improvements where variance is minimised instead of pure distance improving performance in datasets with high
 substitution rates e.g. BIONJ \citep{Gascuel1997}
 
-
-
-Distance methods are fast as they don't have to compare as many trees as MP or ML meothds \citep{} but can perform
+Distance methods are very fast but can perform
 very poorly for divergent sequences with large sampling errors as they don't generally account for variance in 
-distance estimates \citep{Yang2012} (BIONJ kind of does).
-They are also sensisitve to gaps in the alignment.
-
-
+distance estimates \citep{Yang2012} (BIONJ partially adds this).  They are also
+particularly sensitive to gaps in the alignment.
 
 
 
@@ -1625,7 +1690,6 @@ all character lengths (the minimum number of changes for each site in the alignm
 informative for generation of a parsimony tree.
 It has no explicit assumptions relative to other methods however, this means it is difficult to build in 
 prior knowledge of sequence evolution when generating a tree.
-
 It also fails when multiple substitutions have occurred at the same site or with parallel changes in two long branches 
 and therefore is especially prone to long-branch attraction.
 \citep{Felsenstein1978}
@@ -1633,83 +1697,63 @@ Prestige of parsimony methods declined with discoveries that they can produce st
 phylogenies \citep{Felsenstein2001}
 
 
-
-
-
-
-Bootstraps resampling data with replacement and reanalyse - variation estimates the aize of error in estimates \citep{Felsenstein1985}
-Majority-rul conensus strees show number of trees supporting 
-
-
-
-
+In order to get an estimate for the robustness of a particular phylogenetic
+inference, the masked alignment can be repeatedly resampled with replacement
+and phylogenies regenerated.  This generates a variance estimate for the 
+phylogenetic inference error \citep{Felsenstein1985}.
+A majority consensus tree will typically be presented with each node
+annotated with the number of bootstrapped trees that supported its existence.
 
 \subsubsection{Maximum likelihood}
 
 Maximum likelihood methods seek to discover the maximum-likelihood estimates (MLEs) of the tree parameters (topology, branch length and usually substitution model parameters)
 for the data. These MLEs are estimated numerically using standard iterative optimisation algorithms.
-%%%MLEs have been proven to be asymptotically have high phylogenetic accuracy (unbiased, consistent and efficient). for true tree not ML tree
-MLE are proven consistent \citep{Wald1949} but the due to the complexity of phylogenetic inference
-this proof does not apply \citep{Yang2012}.
+They were developed relatively early in molecular phylogenetics using relatively
+simple models \citep{neyman1971molecular} but more efficient implementations e.g. \citep{Felsenstein1981}
+and increased computational power has made them one of the more popular means
+for phylogenetic inference.
+%Additionally, MLE are proven consistent \citep{Wald1949} but the due to the complexity of phylogenetic inference
+%this proof does not apply \citep{Yang2012}.
 
 Generally, an ML approach will sequentially perturb a starting tree topology (often BIONJ or simple ML tree itself) 
 using branch swapping operations such as Nearest-Neighbour Interchanges (NNI)
-or Subtree-Prune-and-Regraph (SPR) where whole subtrees are removed and reattached to a different part of tree. Expectation-maximisation
-can then be used to find the MLE for branch length and model parameters.
-
-PhyML uses BIONJ and hill-climbing changing topology and branch lengths simultaneously
-
+or Subtree-Prune-and-Regraph (SPR) where whole subtrees are removed and reattached to a different part of tree. 
 SPR is slower but less prone to get caught in local optima than NNI and thus will
 lead to higher likelihood phylogenies overall \citep{Criscuolo2011}
+Expectation-maximisation can then be used to find the MLE for branch length and model parameter.
+For example, PhyML uses an initial BIONJ and standard hill-climbing which perturbs topology and branch lengths simultaneously 
 
 
-The advantage of ML approaches is that is has explicit model assumptions (which can therefore be tested), is relatively robust to model
-misspecification, is relatively efficient in a phylogenetic sense, and can make use of sophisticated evolutionary models and thus compensate
+The advantage of ML approaches is that they have explicit model assumptions (which can therefore be tested), are relatively robust to model
+misspecification, are relatively efficient in a phylogenetic sense, and can make use of sophisticated evolutionary models and thus compensate
 for many pathological data features (heterotachy, state and rate heterogeneity within and across sites).
-
-Almost all published phylogenies are Bayesian or ML (or ideally both) for this reason.
-
-LRTs can examine fit for evolutionary models: \(2ln(\frac{L_{1}}{L_{0}})\) \citep{Goldman1987}
-
-
+\citep{Yang2012}. Almost all published phylogenies are Bayesian or ML (or ideally both) for this reason.
+%LRTs can examine fit for evolutionary models: \(2ln(\frac{L_{1}}{L_{0}})\) \citep{Goldman1987}
 Unfortunately, ML inference is also relatively slow to calculate especially in comparison to distance methods.
-
-Likelihood models using symmetric changes between all proteins \citep{neyman1971molecular} and more efficient implementations \citep{Felsenstein1981}
 
 
 \subsubsection{Bayesian}
 
-Bayesian inference is, as the name suggests, based on the Baye's therem.
-
+Bayesian inference is, as the name suggests, based on the Baye's theorem.
 \(p(\theta | D) = \frac{p(\theta)p(D|\theta)}{p(D)}\)
-
-with \(p(\theta)\) being the prior probability for model parameters (topology, branch length, substituion model)
+with \(p(\theta)\) being the prior probability for model parameters (topology, branch length, substitution model)
 \(p(D|\theta)\) being the likelihood of the data given a certain set of parameters with \(p(D)\) as the marginal 
 probability.
 
-Due to the computational infeasability of directly calculating the marginal likelihood (integrated over all possible
-paramater values in all dimensions) phylogenetic inference uses MCMC 
+Due to the computational difficulty directly calculating the marginal likelihood 
+(integrated over all possible parameter values in all dimensions) phylogenetic inference uses 
+a process known as Monte-Carlo Markov-Chains to sequentially randomly sample
+the posterior probability distribution.  Conceptually, these can be considered
+as random walkers on the probability distribution that are more likely to accept
+new movements that increase likelihood than decrease.
 
-
-Posterior probabilityes so no need to calculate bootstraps 
-
-PP sensitive to model violations
-Prior lets new data added  but difficult to specify with complex pathologies 
-Bayesian robutness analysis is important when setting priors 
-
-Chain length is highly data dependent
-
-slower
-
-
-Robuse to missing data \citep{Wiens2008} so is ML
-
-
-re those which based upon  
-hybridisation of extracted DNA and RNA to probes of known sequence 
-
-
-
+An advantage of Bayesian inference is that the posterior probability of a given
+node means ``support'' values are built-in to the inference and additional
+bootstrapping is unnecessary.  Unfortunately, posterior probabilities are
+sensitive to model violations and have been found to not be very conservative estimators.
+Additionally, the prior distribution in Bayesian Inference allows information
+that is already known about the dataset to effectively built-in to the inference
+potentially improving phylogenetic accuracy.
 
 
 \section{Informatics languages and hardware}
@@ -1768,133 +1812,4 @@ Or on two workstations both running continuously updated versions of Arch Linux 
     \item Dell Precision T7500 with 2 x Intel Xeon \(E5620 @ 2.4GHz, 48GB\) RAM
 \end{itemize}
 
-\section{OLD CRAP}
-%\subsection{RNA-Seq}
-%Transcriptomics and specifically RNA-Seq is one of the key investigative techniques that will be used in this project.  
-%By extracting and sequencing mRNA expressed by host and endosymbiont during day and night conditions we will identify key genes involved in endosymbiotic interactions.
-%RNA-seq is a second-generation sequencing technology developed to perform high-throughput short-read sequencing of cDNA generated from extracted RNA [Grabherr, 2011]. 
-%As ribosomal RNA forms such a significant portion of cellular RNA it is necessary to remove it before sequencing in order to make meaningful inferences of transcript expression.  
-%This can be achieved either by ribosomal depletion in which ribosomal sequences are bound by adaptors which in turn bind to magnetic beads allowing the mechanical removal of these molecules.  
-%This methodology allows the preservation of smaller non-coding RNAs present in the system. However, as we are principally interested in transcripts and are operating in a eukaryotic system with poly-adenylated mRNA we can efficiently isolate mRNA via a poly-A selection, in which poly-T primers are used in reverse-transcription of mRNA into cDNA.
-%From this point RNA-Seq proceeds in the same manner as other next-generation sequencing methods. 
-%We are using a method known as paired-end sequencing (available on the Illumina HiSeq 2000 platform) in which 76bp reads are sequenced at either end of a 200-500bp insert. 
-%This improves the ease of transcriptome assembly by providing additional positional information when producing de-Bruijn graphs. 
-%
-%\subsection{Transcriptome Assembly}
-%Assembly is the process by which the short high-throughput sequencing reads are combined to recover the longer transcripts from which they have been randomly sampled.  
-%In the simplest sense, this process relies on the quality score weighted alignment of reads.  
-%Transcriptome assembly can be done in two ways: referenced (in which reads are aligned to a reference genome), and de-novo (in which the reads are assembled without a reference).  
-%De-novo assembly are mainly conducted using k-mer based de-Bruijn graph creation.  
-%Very briefly, reads are subdivided into k-mers (\textasciitilde $15-30$ nucleotide sequences) to aid in computation and then assembled in graphs based on k-1 overlaps between k-mers.
-%With the exception of repeated regions the transcript is recovered by finding the shortest path around the graph visiting all vertexes once (i.e. a hamiltonian path). 
-%In reality, assembly algorithms weight the construction of these k-mers and graphs using sequence quality scores and a large number of established heuristics.
-%Referenced assemblies are often considered sub-optimal in some eukaryotic organisms due to alternative splicing and other transcript modifications not directly represented in the genomic sequences.  
-%Despite this, for a \textit{Paramecium - Chlorella} transcriptome, host transcripts could still potentially be assembled as the closest available genome sequence is that of the \textit{Paramecium tetraurelia} macronuclei in which most intronic elements have been spliced out [Mayer \& Forney 1999].  
-%However, using this genome as a reference for the assembly of host transcripts may be highly misleading due to the fact that this organism does not harbour \textit{Chlorella} endosymbionts and thus may lack the genes required to maintain this system and also has undergone two rounds of whole genome duplication since sharing a common ancestor with \textit{Paramecium bursaria} potentially leading to high levels of sequence divergence.  
-%On the other hand, endosymbiont transcripts could be assembled using the endosymbiotic \textit{Chlorella} NC64A genome [Blanc et al., 2010] once the relationship between this organism and the endosymbiont within the CCAP 1660/12 culture is determined phylogenetically and is determined as meaningfully close.  However, the potential issue of alternative splicing would occur if we were to use this genome sequence.  
-%Therefore, our initial assembly was conducted de-novo (i.e. without any reference genomes) in order to attempt to avoid biasing due to these reference genomes.   
-%
-%
-%\subsection{Phylogenetics}
-%The next key method in this project is that of phylogenetics as it is an effective tool with which to investigate the evolutionary ancestry of the genes recovered in the transcriptome and to identify the likely origin (host, endosymbiont, contaminant) of these transcripts.  
-%It can also be used to identify potential horizontal gene transfer events between host and endosymbiont by searching for single gene/transcript phylogenies that have an incongruent branching pattern compared to established species trees.    
-%
-%\subsection{Annotation}
-%In order to identify proteins putatively involved in endosymbiosis – namely transporters and secreted proteins and to identify proteins likely involved in their regulation it is necessary to functionally annotate assembled transcripts.  
-%This was achieved in a variety of ways including Hidden-Markov Models or HMMs (via HMMer, PFAM and other similar resources), alignment (via BLAST), KEGG Ontology and Gene Ontology annotation (via tools such as the KEGG Automated Annotation Server or BLAST2Go). 
-%HMMs are a commonly used tool in sequence identification and depending on their training are generally more sensitive than alignment based methods [Eddy., 2011].
-%This will be further discussed within the methods.
-%
-%\section{Methods}
-%\subsection{Culturing}
-%
-%\subsection{RNA-Seq}
-%\subsubsection{cDNA generation and library preparation}
-%
-%Purified RNA from day and night samples were pooled into a single day and a single night sample due to limitations on the quantity of extracted RNA. 
-%These two samples were then prepared for sequencing using the TruSeq Stranded RNA preparation kit (Illumina).  
-%mRNA was selected using a poly-A selection method before being fragmented, cleaned-up using ethanol and then reverse transcribed into single-stranded cDNA using random hexamer primers. 
-%The prepared ds cDNA was then end-repaired or cleaved to produce blunt-ended fragments.  
-%By the addition of a trailing A-base to these fragments sequencing adaptors were added using an overlapping complementary T-base.  
-%Fragments were then denatured and amplified before cluster generation using the standard Illumina sequence library preparation methods [\url{http://res.illumina.com/documents/products/datasheets/datasheet_truseq_sample_prep_kits.pdf}].
-%
-%\subsubsection{Sequencing}
-%
-%Clonal cluster generation by bridge amplification was conducted on the cBot (Illumina) platform using the TruSeq Paired-End cluster kit (Illumina).  
-%The samples were run in individual lanes on a HiSeq 2000 8-lane flow-cell (Illumina) to produce 76bp paired-end reads. 
-%Sequencing was conducted at the University of Exeter sequencing service.
-%
-%\subsubsection{Assembly}
-%The paired-end fastq reads from the sequencing experiment were trimmed to sequences of sufficient quality and sequencing adaptors removed. 
-%Reads from day-and-night runs were assembled separately as well as a combined assembly of all the reads. 
-%As the \textit{Paramecium bursaria} 1660 genome or the \textit{Chlorella} endosymbiont (CCAP12) have not yet been sequenced de-novo transcriptome assembly was conducted (further explanation for this in background section).  
-%This was done using both the Oases package [Schluz, 2012] from European Bioinformatics Institute [\url{http://www.ebi.ac.uk/~zerbino/oases/}] and the Trinity package [Haas, 2013] provided by the Broad Institute [\url{http://trinityrnaseq.sourceforge.net/}] using a high-memory computing cluster at the University of Exeter.  
-%Assemblies were compared and a single assembly methodology was selected for further downstream analysis. 
-%
-%\subsubsection{Saturation}
-%In order to assess whether increased sequencing depth would recover further transcripts a read-saturation analysis was conducted.  
-%This was achieved by developing a program to repeatedly take random subsamples of the paired-end reads (from the day sample, the night sample and the combined pool) and assessing the number of the assembled transcripts that could be successfully recovered using these reads.  
-%This was done with the aid of a short-read aligner bowtie-2 [Langmead, 2012], standard GNU/Linux command line tools, and a custom python script.  
-%The results were plotted using python+matplotlib and assessed for saturation in transcript recovery
-%
-%\subsubsection{Extracting Likely Coding Regions}
-%As host and endosymbiont use different codon tables it was necessary to identify ORFs in the assembled transcripts using both tetrahymena (i.e. Host/Paramecium) and universal (endosymbiont/Chlorella and bacterial contaminant/foodstock) encodings.  
-%The ciliate `tetrahymena' encoding differs from universal codon look up tables in that UAA and UAG which are normally stop codons instead code for glutamine, this means \textit{Paramecium} only has a single stop codon (UGA) [Harper \& Jahn, 1989].
-%This was conducted using the Trinity transcripts\_to\_best\_scoring\_ORFs tool [\url{http://trinityrnaseq.sourceforge.net/analysis/extract_proteins_from_trinity_transcripts.html}].  
-%Initially, this tool identifies the longest ORF within each assembled transcript.  
-%These longest ORFs are used to train a hexamer-based HMM which is then used to identify the ORFs with highest likelihood.  
-%These ORFs are then translated into peptide sequences. 
-%
-%\subsubsection{Transcript Identification}
-%Despite care being taken in filtering and washing-off bacteria from the \textit{Paramecium} prey food-stock and usage of poly-A selection, bacterial contamination was still present in our assembled contigs.  
-%Therefore, it was necessary to develop a pipeline to identify the transcript origins to filter those transcripts originating from host and endosymbiont. 
-%Initially transcripts were binned into their predicted source - Host (H), Unknown but likely Host (U(H)), Endosymbiont (E), Unknown but likely Endosymbiont (U(E)), Food (F), Unknown but likely Food (U(F)), and Unknown (U).  
-%Each of the assembled transcripts were BLASTed against a database consisting of the following genomes: \textit{Chlorella} NC64A, \textit{Chlamydomonas reinhardtii}, \textit{Coccomyxa} C169, \textit{Paramecium tetraurelia}, \textit{Tetrahymena thermophila},  \textit{Arabidopsis thaliana}, \textit{Homo sapiens} (helping to identify contamination), \textit{Saccharomyces cerevisiae}, \textit{Schizosaccharomyces pombe}, \textit{Bacillus cereus} ATCC 14579, \textit{Escherichia coli} 536, \textit{Escherichia coli} O157 H-7, \textit{Salmonella typhimurium} LT2 and \textit{Escherichia coli} K-12 (the last 5 genome datasets helping to identify food bacterial genes).  
-%The bins were classified as follows:
-%\begin{itemize}
-%  \item Endosymbiont (E): Transcript's highest scoring BLAST hit at -50E was to \textit{Coccomyxa}, \textit{Chlamydomonas} or \textit{Chlorella}.  Or transcript's highest scoring hit at -20E was one of those species and the longest likely coding region in the transcript was using the universal codon table. 
-%  \item Unknown but likely Endosymbiont (U(E)): -10E hit to \textit{Coccomyxa}, \textit{Chlamydomonas} or \textit{Chlorella} and longest likely coding region was using the universal codon table. Or transcript's highest hits at -10E and -20E were to one of those genomes regardless of coding region presence.
-%  \item Host (H): Transcript's highest hits at -50E were to \textit{Paramecium tetraurelia} or \textit{Tetrahymena thermophila}.  Or highest hit at -20E was one of those species and longest likely coding region was using the Tetrahymena codon table.
-%  \item Unknown but likely Host (U(H)): -10E hit to \textit{Paramecium tetraurelia} or \textit{Tetrahymena thermophila} and longest likely coding region was was using the Tetrahymena codon table. Or transcript's highest hits at -10E and -20E were to one of those genomes regardless of coding region presence.
-%  \item Food (F): Transcript's highest scoring BLAST hit at -50E was to one of the \textit{E. coli} species or \textit{Salmonella}.  Or transcript's highest scoring hit at -20E was one of those species and the longest likely coding region in the transcript was using the universal codon table.
-%  \item Unknown but likely Food (U(F)): -10E hit to one of the \textit{E. coli} species or \textit{Salmonella} and longest likely coding region was using the universal codon table. Or transcript's highest hits at -10E and -20E were to one of those genomes regardless of coding region presence.
-%  \item Unknown (U): highest scoring hits to \textit{Arabidopsis}, \textit{Homo sapiens}, \textit{Saccharomyces} or \textit{Schizosaccharomyces} or any sequence not fitting into the above categories.
-%\end{itemize}
-%
-%In order to assess the accuracy of the `binning' of endosymbiont sequences and to estimate how many host or endosymbiont transcripts we would accidentally discard using these categories we used a phylogenetic analysis pipeline to verify the likely ancestry and therefore point of origin within the endosymbiosis of each sequence.  
-%A script was created used the translated transcript peptide sequences to search a database of over 900 representative genomes using BLASTp.  This script recovered all sequences above an E-value of $10^{-5}$. 
-%These sequences were then automatically aligned and masked using MUSCLE [Edgar, 2004] and TrimAL [Capella-Gutierrez, 2009]. 
-%Fast maximum-likelihood trees were then generated for each masked alignment using FASTREE2 program [Price, 2010].  
-%These trees were then converted to scalable vector graphics and using the NCBI taxonomy API each branch was colour coded depending on taxonomic group.  
-%This allowed for quick manual inspection to determine the likely origin identity of the initial transcript.  
-%For example, if a transcript sequence was found to branch largely within archaeplastida species it was considered as likely originating from the endosymbiont.  
-%Likewise, if it branched largely among ciliate species it was considered as likely host-derived.  
-%Continuing in the same vein, those sequences considered as being derived from bacterial food-stocks were considered as those that branched largely within bacterial clades and those sequences that branched with no clear pattern were considered to be `Unknown'.  
-%Any transcripts where endosymbiont sequences were found to branch incongruently with accepted topologies (especially within the ciliate or bacteria) were determined to be showing signs of potential horizontal gene transfers and were recorded for further analysis.  
-%For example, if a transcript branched with another endosymbiotic algae (particularly \textit{Chlorella} NC64A) within a clade of ciliates this would be considered a potential HGT event to be further investigated.
-%The entire initial `Endosymbiont Bin' (2,825 transcripts), the `Unknown but likely Endosymbiont Bin' (600) and the `Unknown Bin' (2,096) were phylogenetically tested using this pipeline.  
-%However, owing to the size of the initial `Food Bin' (5,129) and `Host Bin' (27,907) it wasn't possible to exhaustively test all transcripts in these two bins therefore 2000 transcripts were randomly selected from each them and tested using the pipeline. 
-%In the cases where too few sequences were recovered to produce a phylogeny (<3 including seed) the source proteomes of the sequences that were recovered were assessed. For example, if the recovered sequences were from the archaeplastida that was considered sufficient evidence to class that transcript as belonging to that `Endosymbiont Bin' and so on.  If no other sequences were recovered using BLASTp then the transcript was placed into the `Unknown Bin'.
-%The change in initial binning after phylogenetic verification were then plotted using python+matplotlib and an estimate for the numbers of unidentified endosymbiont transcripts was made.
-%
-%\subsubsection{Identification of putative secreted and putative transporter proteins}
-%Initial transcript functional annotation was conducted via BLAST and mapping Gene Ontology terms using the Blast2GO application [Conesa, A. et al., 2005] [\url{http://www.blast2go.com/b2ghome}].  
-%In order to more accurately identify the likely proteins involved in the maintenance of the \textit{Paramecium-Chlorella} photosynthetic endosymbiosis we attempted to identify all transporter and secreted proteins within the verified endosymbiont and host transcript complements. A permissive set and conservative subset of host and endosymbiont transporter and secreted proteins were identified using a combination of pipelines.
-% Putative transporter proteins were identified as all coding sequences within each bin containing 1 or more transmembrane domains (as identified by the HMM implemented in the program tmhmm 2.0c  [Krogh et al., 2001, Sonnhammer et al., 1998]).  
-%The conservative subset of transporter proteins were those identified as containing 4 or more TM domains.  
-%The predicted host and endosymbiont secretome was determined by combining the outputs of several established and widely-published programs for identification of secreted proteins - SignalP 4.1 [Petersen et al., 2011], tmhmm 2.0c, TargetP 1.1 [Emanuelsson et al., 2000], and WoLFPSORT 0.2 [Horton et al., 2007] (with the assistance of some accessory scripts from from UCSC [\url{http://hgdownload.cse.ucsc.edu/admin/exe/}] and the FASTX-toolkit [\url{http://hannonlab.cshl.edu/fastx_toolkit/index.html}]). 
-%Input sequences were checked for the presence of N-terminal signal peptides primarily via the detection of signal peptide cleavage sites by the HMM implemented in SignalP 4.1. 
-%Mature peptides (i.e. those with the detected signal peptide cleaved) output from SignalP 4.1 were then processed in tmhmm 2.0c to detect and remove any sequences containing transmembrane domains. 
-%The output from these two stages were then combined with all initial input sequences detected as secreted (S) by TargetP 1.1 and as having an extracellular localisation via WoLFPSORT 0.2 to produce a single fasta formatted output file containing the entire predicted secretome, i.e. a set of proteins predicted to be secreted by all three bioinformatic methods. 
-%This therefore identified the conservative subset of host and endosymbiont secreted proteins. 
-%A second list of putative secreted proteins was identified as any protein predicted to be secreted by any one of either SignalP 4.1, WoLFPSORT 0.2, or TargetP 1.1. It must be noted that such prediction approaches are only as good as the quality of each individual transcript assembly. 
-%Genes with low transcript levels are likely to have low coverage and assembly quality potentially leading to false negative detection of N-terminal signal peptides. 
-%This was investigated in more detail below.
-%
-%\subsubsection{Coverage}
-%As the identification of the secreted proteins hinged upon the recovery and accurate prediction of N-terminal signal peptides it was necessary to assess the position-specific read coverage across the transcript specifically at the C- and N- termini. 
-%This was achieved by developing a script to count and average (median) the number of reads aligning to each nucleotide in both tetrahymena and universal (i.e. host and endosymbiont) likely coding regions using a custom python script.  
-%This was done for all tetrahymena and universal coding regions in transcripts, all phylogenetically confirmed host and endosymbiont binned sequences, conservatively and permissively identified putative secreted and transporter proteins in the `Host Bin' and `Endosymbiont Bin'. 
-%Results were then plotted using python+matplotlib.
-%
 
