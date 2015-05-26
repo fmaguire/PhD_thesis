@@ -128,108 +128,108 @@ is the relationship perturbed predictably?
 
 \subsection{Genomics and Transcriptomics}
 
-\subsubsection{Extracting Nucleic Acids}
-
-The first stage of any genomic or transcriptomic analysis is the extraction
-of nucleic acids from the sample of interest.
-Typically, this involves obtaining large amounts of source biomass either by
-taking large environmental samples and fractionating this using methods like filtration, 
-or flow cytometry or more typically (and with all the biases it involves) establishing
-a culture of the organisms of interest (if possible) and growing that up to sufficient biomass.
-
-
-
-
-For bulk analyses we used a trizol based extraction
-
-
-For single cell gDNA CTAB \citep{}
-
-
-
-
-
-
-material either from a large
-environmental sample or by culturing 
-
-SPADES PAPER HAS GOOD CITES
-
-
-While the quality of the output of earlier sequencing techniques
-was highly reliant on both the quantity and quality of the input DNA (or cDNA) (not to mention
-characteristics such as GC\%) precluding many systems from easy analysis.  This is especially
-problematic for the majority of systems that are not easily culturable and thus can't be
-grown up in sufficient quantities to easily extract sufficient nucleic acids to conduct.
-
-Starting with single-cell single-gene sequencing experiments (e.g. \citep{Kuppers1993}) 
-single cell methods allows obtaining data directly from individual cells
-avoiding the bias and complication of culturing or having to decompose a complex environmental
-metagenome or metatranscriptome containing a plethora of diverse cells \citep{Blainey2013}.  It also allows 
-investigation of cells at particular life stages e.g. sexual reproduction without difficult
-and potentially biasing synchronisation methodologies and the sequencing of long genes hard to obtain
-from metagenomes.  
-
-Single-cell genomic (SCG) sequencing has been demonstrated across the tree-of-life as sufficient to infer 
-cellular metabolism \citep{Chitsaz2011}, the dynamics of interactions between organisms \citep{Yoon2011} and
-environmental diversity \citep{Swan2013,Rinke2013}.
-
-Likewise, single-cell transcriptomic (SCT) sequencing has been demonstrated to be an effective tool to investigate
-
-
-Bulk transcriptomic methods involve analysis of an ensemble of transcripts therefore expression 
-inferences are an average across all cells \citep{Stegle2015}
-
-Sufficient for some purposes, e.g. broad-stroke comparisons it masks the underlying and potentially
-biologically informative stochastic nature of gene expression \citep{Raj2008}.  SCT 
-revolutionises being able to compare different tissues, populations, and cell states in both
-single cell and multicellular systems by allowing direct interrogation of inter- and intra-
-grouping variation and could potentially revolutionise areas such as medicine \citep{Sandberg2014}
-and ecology (Moore Marine Microbe Project \url{http://marinemicroeukaryotes.org/}).
-
-While single cell level analyses have been possible for a while they have largely been restricted
-to low-throughput methods e.g. reporter constructs, FISH etc.
-
-
-Cell isolation, FACS, microfluidics, cell picking
-
-
-SCT has relatively high levels of technical noise specifically sampling noise for low-level
-expression and sample-specific variability in sequencing efficiency for highly-expressed 
-transcripts for one SCT method \citep{Grun2014}.
-
-
-
-
-
-
-
-
-
-
-
-mRNA was selected using a poly-A selection method before being fragmented, cleaned-up using ethanol and then 
-reverse transcribed into single-stranded cDNA using random hexamer primers.
-
-
-
-
-Currently, single cell genomics still requires whole genome amplification (WGA) even with 
-3rd generation sequencing platforms due to the relatively inefficient library preparation
-from a single cell (on the range of nanograms). \citep{Blainey2013} %%find support quote for transcriptomics needing WGA too
- 
-
-
-Multiple-displacement amplification \citep{Dean2001} is the main method for
-single-cell sequencing.
-REASONS IT IS GREAT
-However, it also generates many biases orders of magnitude differences in coverage
-in different regions 
-SINGLE CELL TRANSCRIPTOMICS ARE SUSPECT
-potential chimeric reads and incongruent read-pairs \citep{Bankevich2012}.
-
-This complicates assembly RODRIQUE PAPER MENTIONED IN SPADES 
-
+%\subsubsection{Extracting Nucleic Acids}
+%
+%The first stage of any genomic or transcriptomic analysis is the extraction
+%of nucleic acids from the sample of interest.
+%Typically, this involves obtaining large amounts of source biomass either by
+%taking large environmental samples and fractionating this using methods like filtration, 
+%or flow cytometry or more typically (and with all the biases it involves) establishing
+%a culture of the organisms of interest (if possible) and growing that up to sufficient biomass.
+%
+%
+%
+%
+%For bulk analyses we used a trizol based extraction
+%
+%
+%For single cell gDNA CTAB \citep{}
+%
+%
+%
+%
+%
+%
+%material either from a large
+%environmental sample or by culturing 
+%
+%SPADES PAPER HAS GOOD CITES
+%
+%
+%While the quality of the output of earlier sequencing techniques
+%was highly reliant on both the quantity and quality of the input DNA (or cDNA) (not to mention
+%characteristics such as GC\%) precluding many systems from easy analysis.  This is especially
+%problematic for the majority of systems that are not easily culturable and thus can't be
+%grown up in sufficient quantities to easily extract sufficient nucleic acids to conduct.
+%
+%Starting with single-cell single-gene sequencing experiments (e.g. \citep{Kuppers1993}) 
+%single cell methods allows obtaining data directly from individual cells
+%avoiding the bias and complication of culturing or having to decompose a complex environmental
+%metagenome or metatranscriptome containing a plethora of diverse cells \citep{Blainey2013}.  It also allows 
+%investigation of cells at particular life stages e.g. sexual reproduction without difficult
+%and potentially biasing synchronisation methodologies and the sequencing of long genes hard to obtain
+%from metagenomes.  
+%
+%Single-cell genomic (SCG) sequencing has been demonstrated across the tree-of-life as sufficient to infer 
+%cellular metabolism \citep{Chitsaz2011}, the dynamics of interactions between organisms \citep{Yoon2011} and
+%environmental diversity \citep{Swan2013,Rinke2013}.
+%
+%Likewise, single-cell transcriptomic (SCT) sequencing has been demonstrated to be an effective tool to investigate
+%
+%
+%Bulk transcriptomic methods involve analysis of an ensemble of transcripts therefore expression 
+%inferences are an average across all cells \citep{Stegle2015}
+%
+%Sufficient for some purposes, e.g. broad-stroke comparisons it masks the underlying and potentially
+%biologically informative stochastic nature of gene expression \citep{Raj2008}.  SCT 
+%revolutionises being able to compare different tissues, populations, and cell states in both
+%single cell and multicellular systems by allowing direct interrogation of inter- and intra-
+%grouping variation and could potentially revolutionise areas such as medicine \citep{Sandberg2014}
+%and ecology (Moore Marine Microbe Project \url{http://marinemicroeukaryotes.org/}).
+%
+%While single cell level analyses have been possible for a while they have largely been restricted
+%to low-throughput methods e.g. reporter constructs, FISH etc.
+%
+%
+%Cell isolation, FACS, microfluidics, cell picking
+%
+%
+%SCT has relatively high levels of technical noise specifically sampling noise for low-level
+%expression and sample-specific variability in sequencing efficiency for highly-expressed 
+%transcripts for one SCT method \citep{Grun2014}.
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%mRNA was selected using a poly-A selection method before being fragmented, cleaned-up using ethanol and then 
+%reverse transcribed into single-stranded cDNA using random hexamer primers.
+%
+%
+%
+%
+%Currently, single cell genomics still requires whole genome amplification (WGA) even with 
+%3rd generation sequencing platforms due to the relatively inefficient library preparation
+%from a single cell (on the range of nanograms). \citep{Blainey2013} %%find support quote for transcriptomics needing WGA too
+% 
+%
+%
+%Multiple-displacement amplification \citep{Dean2001} is the main method for
+%single-cell sequencing.
+%REASONS IT IS GREAT
+%However, it also generates many biases orders of magnitude differences in coverage
+%in different regions 
+%SINGLE CELL TRANSCRIPTOMICS ARE SUSPECT
+%potential chimeric reads and incongruent read-pairs \citep{Bankevich2012}.
+%
+%This complicates assembly RODRIQUE PAPER MENTIONED IN SPADES 
+%
 
 %E+VSCV paper chisatz 
 %
@@ -1549,39 +1549,41 @@ This measure of distance can be naive models where rates of change between chara
 states and the frequency of each state is equal (e.g. \(p(x \rightarrow y) \forall x \forall y \in {G,C,T,A} \text{where} x\neq y\)
 \citep{jukes1969evolution}) to models fully parameterised in terms of character frequency and rates of change by the masked alignment 
 (e.g. the generalised time-reversible (GTR) model \citep{Tavare1986})
-
-\begin{figure}
-    \[Q=\begin{pmatrix}
-        . & \alpha\pi_{C}  & \beta\pi_{A} & \gamma\pi_{G} \\ 
-        \alpha\pi_{T} & . & \delta\pi_{A} & \epsilon\pi_{G} \\ 
-        \beta\pi_{T} & \delta\pi_{C} & . & \zeta\pi_{G} \\ 
-        \gamma\pi_{T} & \epsilon\pi_{C} & \zeta\pi_{A} & .\\
-     \end{pmatrix} 
-
-    Q_{ii} = -\sum_{{j | j \neq i}} Q_{ij}\\
-
-    \Pi = (\pi_{G}, \pi_{T}, \pi_{C}, \pi_{A})\\
-
-    \Pi * Q = 0 \\
-
-    \alpha = p(T \leftrightarrow C)\\
-
-    \beta = p(A \leftrightarrow T)\\
-
-    \gamma = p(G \leftrightarrow T)\\
-
-    \delta = p(C \leftrightarrow A)\\
-
-    \epsilon = p(G \leftrightarrow C)\\
-
-        \zeta = p(A \leftrightarrow G)\]
-        \caption{Generalised time-reversible model for DNA sequence evolution under a reversible homogeneous Markov process where \(\Pi\) is the 
-        frequency of each state and \(\alpha\) through \(\zeta\) are substitution rates \citep{Tavare1986,Yang1994}.  All other Markov process models
-    of sequence evolution are special cases of GTR.   Time-reversibility refers to the fact that \(\pi_{i}Q_{ij} = \pi_{j}Q_{ji}\) therefore
-   the direction of state changes is irrelevant}
-        \label{eq:gtr}
-\end{figure}
-
+%
+%\begin{figure}
+%    \[
+%    Q=\begin{pmatrix}
+%        \.             & \alpha\pi_{C}   & \beta\pi_{A}    & \gamma\pi_{G} \\ 
+%        \alpha\pi_{T} & \.               & \delta\pi_{A}   & \epsilon\pi_{G} \\ 
+%        \beta\pi_{T}  & \delta\pi_{C}   & \.               & \zeta\pi_{G} \\ 
+%        \gamma\pi_{T} & \epsilon\pi_{C} & \zeta\pi_{A}    & \. \\
+%    \end{pmatrix} 
+%
+%    Q_{ii} = - \sum_{\{j | j \neq i\}} Q_{ij}\\
+%
+%    \Pi = (\pi_{G}, \pi_{T}, \pi_{C}, \pi_{A})\\
+%
+%    \Pi * Q = 0 \\
+%
+%    \alpha = p(T \leftrightarrow C)\\
+%
+%    \beta = p(A \leftrightarrow T)\\
+%
+%    \gamma = p(G \leftrightarrow T)\\
+%
+%    \delta = p(C \leftrightarrow A)\\
+%
+%    \epsilon = p(G \leftrightarrow C)\\
+%
+%    \zeta = p(A \leftrightarrow G)
+%    \]
+%        \caption{Generalised time-reversible model for DNA sequence evolution under a reversible homogeneous Markov process where \(\Pi\) is the 
+%        frequency of each state and \(\alpha\) through \(\zeta\) are substitution rates \citep{Tavare1986,Yang1994}.  All other Markov process models
+%    of sequence evolution are special cases of GTR.   Time-reversibility refers to the fact that \(\pi_{i}Q_{ij} = \pi_{j}Q_{ji}\) therefore
+%   the direction of state changes is irrelevant}
+%        \label{eq:gtr}
+%\end{figure}
+%
 While models like GTR can feasibly be fully parameterised with DNA sequence
 data due to DNA's relatively few character states it is usually necessary
 to use empirically-defined models for amino acid datasets.  These are substitution
@@ -1684,7 +1686,7 @@ particularly sensitive to gaps in the alignment.
 
 
 
-Parsimony approaches \citep{Camin1965} on molecular sequences \citep{eck1966atlas} seek to infer the maximum parsimony (MP) tree.
+Parsimony approaches \citep{Camin1965} on molecular sequences \citep{Eck1966} seek to infer the maximum parsimony (MP) tree.
 That is the tree which requires the smallest number of character changes (has the best tree score).  Where the tree score is the sum of 
 all character lengths (the minimum number of changes for each site in the alignment).  Any site that is invariable is not
 informative for generation of a parsimony tree.
