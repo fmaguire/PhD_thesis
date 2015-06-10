@@ -6,27 +6,47 @@
 \end{savequote}
 
 
-\chapter{Identification of Transcript Origin}
+\chapter{Transcriptomic and genomics analysis of the \textit{Paramecium bursaria} and \textit{Micractinium reisseri} endosymbiosis}
 
-Can you separate transcripts from host, endosymbiont and food bacteria?
-Current practices and how they were applied - BLAST, GC etc
-Initial binning vs phylogenetics - seems better
-But still too work intensive - use manually done 10,000 for rest of transcriptome therefore ML
-Flowchart of tool 
-t-SNE plot of vectors
-classifier log-loss and learning curve comparison using logistic regression, SVM with diff kernels
-Convergence check for SVM hyperparameters
-anomaly detection?
+Transcriptomics, and specifically RNA-Seq, are a powerful method by which the \textit{Paramecium bursaria}-\textit{Micractinium reisseri}
+endosymbiosis can be investigated. Through extraction and sequencing of mRNA transcripts expressed by the host and endosymbiont
+during day and night conditions it is possible to identify key genes involved in the maintenance of this photosynthetic endosymbiosis.
 
-\bf{DUE DATE: END OF APRIL}
+Towards this end we conducted a bulk RNA-Seq sequencing of cultured PbMr, unfortunately due to limitations in the quantity of
+extracted RNA and maintainable culture density it was necessary to pool biological replicate day and night samples into single
+day and night samples.  Therefore, to facilitate accurate inference of differential expression it was necessary
+to sequence a number of day and night replicates using recently developed single-cell RNA-Seq (scRNA-Seq) methods.
+
+Additionally, to aid with transcriptome assembly and investigate the possibility genes that are not expressed
+when \textit{P. bursaria} has endosymbiotic \textit{Micractinium reisseri}.  This allows cross-comparison with
+the only other published transcriptomic or genomic interrogation of \textit{P. bursaria} and a green algal endosymbiont: Kodama \textit{et. al.} 2014 \citep{Kodama2014}.
+This study looked at the transcriptome of the \textit{P. bursaria} Yad1g strain with and without its \textit{Chlorella variabilis} 1N endosymbiont \citep{Kodama2014}.
+
+Therefore, this chapter addresses the key difficulties of recapitulating the metatranscriptome and metagenome of \textit{Paramecium bursaria}
+and \textit{Micractinium reisseri} from 2nd generation sequencing datasets (high-throughput short-reads), filtering unavoidable contamination
+in the form of bacterial food species (and potentially endosymbionts) and viruses, utilising single cell approaches,
+and identifying the provenance of assembled sequences, specifically whether they derive from host or endosymbiont.
 
 
 
-Transcriptome Assembly:
+%%Can you separate transcripts from host, endosymbiont and food bacteria?
+%Current practices and how they were applied - BLAST, GC etc
+%Initial binning vs phylogenetics - seems better
+%But still too work intensive - use manually done 10,000 for rest of transcriptome therefore ML
+%Flowchart of tool 
+%t-SNE plot of vectors
+%classifier log-loss and learning curve comparison using logistic regression, SVM with diff kernels
+%Convergence check for SVM hyperparameters
+%anomaly detection?
+%
+%Transcriptome Assembly:
+%
+%- Trimming: MacManes 5, 30 (also did 12 and 35)
+%- Error correction: Spades error correction
+%- GC clustering parKour
 
-- Trimming: MacManes 5, 30 (also did 12 and 35)
-- Error correction: Spades error correction
-- GC clustering parKour
+%%Abstract intro - in order to interrogate a system need to assemble the transcripts corresponding
+%to them 
 
 \section{Sample Preparation and Sequencing}
 
@@ -77,7 +97,6 @@ Pellet was dried before being resuspended in 100$\mu l$ of RNAse-free water.
 The RNA was then cleaned further using the Qiagen RNeasy clean-up kit 
 before being assessed for quality using ND-1000 (NanoDrop) and BioAnalyzer (Agilent).
 
-
 \subsection{Single Cell preparations}
 
 For single cell genomics and transcriptomics, a ``cell-picking'' approach was used in which
@@ -109,11 +128,34 @@ QIAmp DNA mini kit before elution in \(100\mu l\) elution buffer.
 
 
 
+\section{Genome Assembly}
+
+
+\subsection{Library Preparation}
+
+\subsection{Library Assessment}
+
+\subsection{Trimming}
+
+\subsection{Error Correction}
+
+\subsection{Assembly}
+
+
+Genome assembly - spades macmanes trimming was worse than spades harash trimming (shorter contigs)
+
+
+
 
 
 
 \section{Transcriptome Assembly}
 
+
+
+
+As mapping to even divergent (up to 15\%) genomes can generate transcriptomes of higher-quality
+than de novo \citep{Vijay2013}
 
 SCT
 \subsection{Trimming optimisation}
@@ -254,6 +296,16 @@ ILLUMINACLIP:/storage/fin/adapters/exeter_sequencing_adaptors.fasta:2:30:20
 
 
 \subsection{Error correction}
+
+Can estimate error rate using ``shadow regression'' without a reference 
+linear relationship between copy number of a read and the number of error reads
+\citep{Wang2012}
+
+
+As there are well over 50M reads and there is no hardware restriction of memory
+``seecer'' is likely the ideal error correction algorithm \citep{Macmanes2015}
+
+Use spades error correction as single cell data
 
 Made very little difference
 
@@ -441,8 +493,29 @@ Error correction: yay or nay
 Digital normalisation: yay or nay
 
 \subsubsection{Assembly assessment}
+CEGMA - not perfect for genomic - numbers are not directly as the transcriptome metabolic and cellular function
+genes will be overrpretented 
 RSEM-eval
 Mapping percentage
+
+
+Assembly parameters e.g. N50, transcript number, total bp assembled are not necessarily useful
+as wildly different valuesreturn similar gene content \citep{Lowe2014}
+These parameters have been demonstrated as being inconsistent for test ``perfect assemblies'' 
+
+
+
+
+
+After assembly transcripts shorter than 200bp were removed and CD-HIT was sued to elimiate small 
+transcripts with 99\% idendity to longer transcripts  ``cd-hit-est -i TREANSCRIT -c 0.99 -o Ol:UTPU''
+
+
+Trinity assemblies have been found to include more low-abundance k-mers than oases, many different isoforms
+but doesn't recover many more unique genes just more isoforms \citep{Lowe2014} 
+
+k-mer spectrum can be used to evaluate reocvoeery of low-abundance transcrtipts \citep{Pop2009}
+
 
 
 
@@ -471,11 +544,5 @@ because
 
 
 
-
-\section{Genome assembly}
-
-
-
-Genome assembly - spades macmanes trimming was worse than spades harash trimming (shorter contigs)
 
 

@@ -337,6 +337,8 @@ rapidly became infeasible for most research projects. The scale necessary in the
 (20 public centers in 6 countries \citep{Collins2003} and \(\$70m\) \citep{Pettersson2009}).  
 Regardless, Sanger sequencing remains the gold standard for cheap, rapid, high quality \(300-1000bp\) sequencing and 
 is widely used to determine or confirm the sequence of specific DNA fragments such as vectors or PCR products \citep{Bonetta2006,Tsiatis2010}.  
+Higly accurate 99.999\% 
+
 
 
 2nd generation sequencing emerged commercially in 2005 with the work
@@ -348,7 +350,9 @@ for size fractionation \citep{Jaszczyszyn2014}.
 %which reduced necessary volume for 
 %step-wise ``pyrosequencing'' \citep{Ronaghi1996} reations possible \citep{Schuster2008}. 
 These technologies generate huge amounts (on the order of \(10^{6}-10^{9}\) of relatively short (on the order of \(10^{1}-10^{3}bp\)) DNA sequences 
-    (reads) randomly sampled from the input (c)DNA.  
+    (reads) randomly sampled from the input (c)DNA. 
+
+
 Commercially available 2nd generation platforms include 454's GSLFLX and GSJunior (now Roche),
 Ion Torrent's (now Life Technologies) PGM, Applied Biosystem's (now Life Technologies) SOLiD and Illumina's (formerly Solexa) 
 HiSeq, MiSeq and older Gene Analyzer II \citep{Nederbragt2012}.
@@ -397,6 +401,7 @@ has allowed Illumina to capitalise on outstripping competition in terms of throu
 The HiSeq2500 is by far the highest throughput individual platform (not counting the multi-machine HiSeqX's) and is capable of generating up to 
 400M 125bp reads per run (1TBase of data) \citep{Nederbragt2013}.
 Illumina's platforms are estimated to generate 90\% of all sequenced DNA data as of 2014 \citep{Regalado2014}.
+The typical error rate of the Illumina platform is between 1-3\% \citep{Wang2012}
 
 
 Finally, 3rd generation technologies are generally known as single-molecule sequencing.
@@ -445,13 +450,35 @@ taxonomic distribution of \textit{Paramecium} green algal endosymbionts (see \re
 %\[ P = 10^{frac{-Q}{10}} \]
 %Therefore \[Q = 30 \] corresponds to 99.9\% base call accuracy
 %
+% mapping reads to reference can introduce biases even with relatively \citep{Wang2012}
+% but even if the reference is divergent it may still produce a higher quality assembly
+% than de novo methods \citep{Vijay2013}
+% Soap-denovo trans and trinity performed better than transabyss \citep{Vijay2013}
+% In De Bruijn graph assembly generated from exact subsequence matches - errors exponentially increase
+%possible graph traversal paths increasing graph comp-lexity and assembly time and memory \citep{Pop2009}
 %
 %
-%
+%https://www.biostars.org/p/52178/ sequencing papers theory
 %Spades \citep{Bankevich2012}
 %
 %Trinity \citep{Grabherr2011}
 %
+%\subsubsection{Trimming}
+% Hard filters can improve assembly and mapping but will likeluy lose lowly-expressed transcripts \citep{MacManes2014}
+%\subsubsection{Error correction}
+% Error correction of Illumina sequencing reads has been acknowledged as an increasingly important step in the
+% creation of both genomic \citep{Schatz2012a} and transcriptomic \citep{Macmanes2013} high quality assemblies.  
+% Difficult for transcriptomic datasets (and SC) because can't rely of varied coverage \citep{Macmanes2015}
+% Under 50M reads bfc is best, more than 50M seecer is better and if research is sensitive to erroneous correction Lighter is best \citep{Macmanes2015}
+% Seecer developed explicitly for RNA-Seq
+
+
+% Cluster kmers - then mininmise size of kmers clusters: kmer-spectra, suffic array, MSA, and HMM
+% Methods reviewed here \citep{Molnar2014}
+% A key component of the Spades single cell genomic assembler is the error correction using Bayeshammer 
+% SCT have very non-uniform coverage \citep{Nikolenko2013}
+%
+
 %
 %\subsection{Assessing Assemblies}
 %
