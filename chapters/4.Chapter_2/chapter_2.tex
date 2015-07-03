@@ -8,107 +8,51 @@
 
 \chapter{Transcriptomic analysis of the \textit{Paramecium bursaria} and \textit{Micractinium reisseri} endosymbiosis}
 
-Transcriptomics, and specifically RNA-Seq, are a powerful method by which the \textit{Paramecium bursaria}-\textit{Micractinium reisseri}
+\section{Introduction}
+
+Transcriptomics, and specifically RNA-Seq, is a powerful method by which the \textit{Paramecium bursaria}-\textit{Micractinium reisseri}
 endosymbiosis can be investigated. Due to the photosynthetic basis of this endosymbiosis, a (relatively) unbiased
 global metatranscriptomic profile of host and endosymbiont simultaneously in both lit and dark conditions can be used
-to identify key transcripts involved its maintenance. This is evidenced by several studies (e.g. \citep{Nowack2011,Jiggins2013,Xiang2015}) using a similar approach
-to investigate host-chloroplast interactions. These transcriptomic methods which fall between analysis of homogeneous single organism cultures and
-large scale metatranscriptomics have been dubbed by some ``dual-RNAseq'' \citep{Westermann2012} and are exemplified by Tierney \textit{et. al.} in the context 
+to identify key transcripts involved its maintenance (although this will not identify essential but constitutively expressed
+components). Specifically, transcripts which are significantly differentially expressed
+between these conditions are likely to play a role in key metabolic functions that form the basis of this relationship.
+The effectiveness of this approach is evidenced by several studies (e.g. \citep{Nowack2011,Jiggins2013,Xiang2015}) using a similar approach
+to investigate host-chloroplast interactions. Such transcriptomic methods, focussing on a limited and defined number of interacting organisms, and thus falling 
+falling between analysis of homogeneous single organism cultures and
+large scale metatranscriptomics, have been dubbed by some ``dual-RNAseq'' \citep{Westermann2012} and are exemplified by Tierney \textit{et. al.} in the context 
 of eukaryote-eukaryote host-pathogen interactions \citep{Tieryney2012}.
 
-\textit{Paramecium bursaria} - \textit{Micractinium reisseri} is well placed for a ``dual-RNAseq'' analysis as it has 
+The plethora of literature relating to the physiology and behaviour of \textit{Paramecium bursaria} and green algal endosymbioses (e.g. \citep{Iwatsuki1988}, 
+    see \citep{Kato2009a} and \chap{introduction} for more details) as well as the relative transcriptomic tractability of these two groups of 
+    organisms individually (e.g. \citep{Guarnieri2011,Rowe2014,Bashan2015} and \citep{Arnaiz2010,Kolisko2014})\footnote{It may be worth noting
+        that \citep{Guarnieri2011} is an example of \textit{C. vulgaria} transcriptome without a reference genome, and \citep{Kolisko2014} undertook
+    a preliminary single cell transcriptomic approach to analysing a species of \textit{Paramecia}}
+and together \citep{Kodama2014} makes \textit{Paramecium bursaria} - \textit{Micractinium reisseri} (PbMr)
+well suited for such a ``dual-RNAseq'' analysis.  
 
-
-
-
-(even custom bioinformatics pipelines aimed at this host-pathogen ``dual-RNAseq'' analysis have been published \citep{Xu2015}).
-
-
-
-
-However, there are several key difficulties in simultaneously profiling multiple organisms: first and foremost the identification
-of transcript origins 
-
-
-
-
-There are several key difficulties in applying this ``dual-RNAseq'' approach to the PbMr system: a relative paucity of
-reference genomes and/or transcriptomes to aid assembly, 
-
-Lack of other examples, the Kodama PbCv transcriptome filtered out endosymbiont reads.  
-
-
-Identifying the provenance of assembled transcripts after assembly, this is particularly non-trivial due to potential
-origins ranging from partially digested bacterial food species as well as standard run of the mill contamination
-from reagents and sequencing operations.
-
-
-
-
-
-However, as both target species - host and endosymbiont are eukaryotes the complication of mRNA enrichment 
-is simplified due to the sufficiency of poly-A selection for this task (instead of rRNA depletion methods)
-
-Determining the necessary sequencing depth is also difficult.
-
-
-
-Unfortunately, due to the unforseen problem of generating sufficient culture density with the CCAP1660/12
-strain bulk transcriptome methods were only able to generate a single day and night library.
-
-
-To solve this, and specifically, to allow accurate inference of differential expression 
-
-
-
-
-Therefore, the solution to this generated a new set of complications.
-
-
-Interestingly, Westermann \textit{et. al.} observed that single-cell methodologies were a likely source of future
-innovation in ``dual RNA-Seq'' studies \citep{Westermann2012}
-
-
-First achieved in \citep{Lao2009}
-
-
-
-\begin{itemize}
-    \item 
-    \item
-    \item
-    \item
-\end{itemize}
+The only other published analysis of \textit{Paramecium bursaria} and its green algal endosymbionts by \citep{Kodama2014} largely
+side-stepped this issue by focussing on the analysis of host transcripts with and without the endosymbiont by filtering
+likely endosymbiont derived contigs from analysis using a crude MEGABLAST \(e^{-40}\) approach.
 
 
 
 
 
 
-It should also be noted that by only looking at transcripts that are differentially or generally highly expressed in both
-day and night conditions we preclude the ability to discover necessary but constitutively expressed transcripts and necessarily
-constitutively inhibited transcripts.  
-Fortunately, to this end, the only other published 2nd generation sequencing analysis of \textit{P. bursaria} and a green algal,
-endosymbiont: Kodama \textit{et. al.} 2014 \citep{Kodama2014} partially addressed this issue.  This analysis investigated 
-the differential global metatranscriptome profile of \textit{P. bursaria} Yad1g strain with and without its \textit{Chlorella variabilis} 1N endosymbiont 
-\citep{Kodama2014}.   While, this is a different strain of both host and endosymbiont to the CCAP1660/12 strains (\textit{P. bursaria} and \textit{Micractinium reisseri}) 
-used in this thesis it offers a potential avenue to investigate these other components.
-An attempt was made to replicate this work using the CCAP1660/12 strains, unfortunately, elimination of the endosymbionts without death of the host
-didn't prove possible in these strains.  Despite using 
-
-(despite earlier publications to the contrary) by either maintaining the culture in the dark \citep{Siegel1960} (although some studies have thrown doubt on
-    how effective this method is at completely elimiating the photobiont \citep{Tanaka2002}) or treatment with various titrations of herbicides 
-    (e.g. paraquat \citep{Hosoya1995a}) or the protein synthesis inhibitor cyclohexamide \citep{weis1984effect}).\footnote{
-There are naturally aposymbiotic strains of \textit{Paramecium bursaria} \citep{Tonooka2002a}}
+Having said this, dual-RNA-seq in the PbMr system also presents difficulties which must be overcome to facilitate effective analysis.
+The foremost amongst these difficulties are accurate reconstruction of transcripts \textit{de novo} and ``binning'' reconstructed
+transcripts into groups depending on their originating organisms.  
 
 
+%Studies in related ciliates have demonstrated a high prevalence of alternative splicing events (5.2\% of genes in \textit{Tetrahymena
+%    thermophila} for a single celled eukaryote \citep{Xiong2012}
+%This paper also demonstrated the huge dynamic range of expression (and thus necessity of RNA-Seq over microarray approaches) in \textit{T. thermophila})
+%with approximately 6 order of magnitude range \citep{Xiong2012}
 
-
-
-
-
-
-
+%However, as both target species - host and endosymbiont are eukaryotes the complication of mRNA enrichment 
+%is simplified due to the sufficiency of poly-A selection for this task (instead of rRNA depletion methods)
+%Determining the necessary sequencing depth is also difficult.
+%
 
 
 
@@ -118,14 +62,120 @@ extracted RNA and maintainable culture density it was necessary to pool biologic
 day and night samples.  Therefore, to facilitate accurate inference of differential expression 
 a number of day and night replicates were also sequenced using single-cell RNA-Seq (scRNA-Seq) methods.
 To aid with transcriptome assembly and investigate the presence of genes that are not expressed in host
-or endosymbiont during endosymbiosis.  This can be used combined with transcriptome data from 
+or endosymbiont during endosymbiosis.  Interestingly, Westermann \textit{et. al.} observed that single-cell methodologies were a likely source of future
+innovation in ``dual RNA-Seq'' studies \citep{Westermann2012}.
+While offering complications in relation to noise, contamination as well as many unknowns in the most effective way to synthesise
+single cell and bulk RNA-Seq sequencing data from a metatranscriptomic unicellular eukaryotic system.
+Single cell methods are still relatively new to non-model unicellular eukaryotes without genomic resources, with one of the few
+examples being the remarkably brief treatment in \citep{Kolisko2014}.
 
 
 
-Therefore, this chapter addresses the key difficulties of recapitulating the metatranscriptome and metagenome of \textit{Paramecium bursaria}
-and \textit{Micractinium reisseri} from 2nd generation sequencing datasets (high-throughput short-reads), filtering unavoidable contamination
-in the form of bacterial food species (and potentially endosymbionts) and viruses, utilising single cell approaches,
-and identifying the provenance of assembled sequences, specifically whether they derive from host or endosymbiont.
+
+
+
+One advantage of the single cell approach is that due to the ligation step prior to WTA
+terminal coverage issue of bulk RNA-Seq should be mininised.  This is particularly important as it is
+expected that secreted peptides are likely to play an important role in maintenance of any cellular relationship
+that involves multiple intermediate membranes and secretion is frequently controlled by terminal peptide sequences.
+
+
+
+%First achieved in \citep{Lao2009}
+
+
+Therefore, this chapter addresses the key difficulties of optimally recapitulating transcripts from the \textit{Paramecium bursaria}
+and \textit{Micractinium reisseri} system \textit{de novo} as well as identifying 
+
+Investigating the 
+
+
+
+as well as attempting to determine the optimal means for integration
+of 2nd generation bulk and single cell transcriptomic datasets. 
+
+
+
+
+
+
+Much as library contamination is one of the key issues with single cell genomics \citep{Blainey2013,Lusk2014}, it is a key
+issue in single cell transcriptomics.  Single cell methods are particularly prone to contamination issues
+from reagents, laboratory environment and enigmatic nucleic acids within the biological samples themselves due to 
+low-input concentration and high amplification necessary found in these approaches \citep{Blainey2013}.
+Furthermore, when utilising single cell libraries in a \textit{de novo} assembly instead of merely mapping
+it is doubly important to attempt to discard libraries that are likely to be contaminated by unwanted
+reads.  The importance of this was observed during preliminary assemblies when the inclusion of particular
+libraries were liable to fragmenting and hugely expanding the resultant assembly.  
+
+
+Fortunately, as we are seeking to approximately characterise whole libraries and identify aberrant contaminated 
+
+
+
+
+
+Therefore, to this end a set of scripts, known as ``dueydrop'', were developed to allow rapid 
+
+
+The utility of a tool capable of this form of rapid taxonomic screening of sequenced libraries is evidenced
+by the emergence of commercial platforms providing such tools as a cloud service e.g. \url{http://blog.onecodex.com/}
+
+
+
+
+
+
+
+While there has been some analysis of optimal trimming for bulk RNA-Seq (particularly \citep{MacManes2014})
+there has not been an investigation of the optimal trimming parameters for single cell RNA-Seq Illumina reads.
+Correct trimming is important to minimise sequence error (mostly substitutions \citep{Yang2013}) as these
+result in assembly of spurious sequences \citep{Macmanes2013,MacManes2014}.  Therefore, to determine
+optimal trimming parameters for the raw single-cell paired-end RNA-Seq reads 
+a naive grid search algorithm using random reads sub-sampled from each library was used and effect on mapping
+statistics against a ``baseline'' Trinity assembly of bulk reads \citep{Haas2013}.
+Additionally, there has been emerging evidence that error correction is a key stage in the accurate
+recapitulation of reads especially from single cell libraries.  Therefore, the effect and feasability 
+of read error correction on this assembly was also assessed.
+
+Finally, on the basis of the strong GC-AT bias exhibited by host and endosymbiont transcripts
+the performance of pre-assembly read partitioning using a custom clustering tool known as
+ParKour was assessed.  The logic behind this was based on the clear bimodal GC distribution
+displayed in FastQC library quality checking as well as known 30\% host and 50\% endosymbiont
+GC biases from sequenced genomes of relatives (i.e. \textit{P. tetaurelia} \citep{Aury2006} and 
+\textit{Chlorella} NC64A \citep{Blanc2010a}) and the occasional practice of binning found in
+meta-omic analyses (for example those discussed in \citep{Droge2012}).  Theoretically, accurate
+pre-assembly read binning could transform a complex assembly graph into two relatively simpler
+assembly tasks.  As well as simplifying path resolution accuracy, if this method were to work
+it would speed up assembly considerably and thus allow more iterations to optimise other
+assembly paramters.
+
+
+However, even once a good assembly has been generated it is still necessary to identify the likely
+originating species of a given transcript i.e. host, endosymbiont, food bacterial contaminant or other
+contaminant.  While a successful partitioned assembly strategy may simplify this process it would still
+be sensible to confirm bins using downstream analyses that use full length assembled transcripts and thus
+more potential data than are present in shorter individual PE reads.  Rough, approximate bins were
+generated using a simple "top BLAST hit" approach following ORF calling (using Tetrahymena and Universal
+encodings) against a set of representative predicted proteomes.  In order to assess how accurate these
+bins were likely to be, 10,000 were randomly selected and rapid maximimum-likelihood phylogenies were
+generated using the transcript sequence as a seed to sample the entire RefSeq protein nr database.
+This was accomplished using ``Dendrogenous'', a rewritten and modified version of a pipeline originally known 
+as ``Darren's Orchard'' which first appeared in \citep{Richards2009g}.  Phylogenies were manually assessed to check
+whether the resultant topology was congruent with the BLAST based binning i.e. are supposedly ``endosymbiont''
+transcripts branching principally with archaeplastida taxa.  
+
+
+While, due to the painfully manual nature of this phylogeny assessment process, 
+it would be infeasible to repeat this phylogeny binning procedure for all transcripts, ``Dendrogenous'' allowed
+relatively rapidy generation of phylogenies for all transcripts.  Therefore, this presented an ideal
+challenge for supervised classification with the corpus of 10,000 manually validated phylogenies providing an effective
+training dataset for a supervised classification algorithm.  
+
+
+
+
+
 
 
 
@@ -144,13 +194,11 @@ and identifying the provenance of assembled sequences, specifically whether they
 %- Trimming: MacManes 5, 30 (also did 12 and 35)
 %- Error correction: Spades error correction
 %- GC clustering parKour
+\section{Methods} 
 
-%%Abstract intro - in order to interrogate a system need to assemble the transcripts corresponding
-%to them 
+\subsection{Sample Preparation and Sequencing}
 
-\section{Sample Preparation and Sequencing}
-
-\subsection{Bulk transcriptomic RNA preparation}
+\subsubsection{Bulk transcriptomic RNA preparation}
 For bulk transcriptomic analyses CCAP 1660/12 cells were harvested in a way to minimise the 
 number of bacterial prey species from the culture, \textasciitilde \(10^{6}\) 
 cell aliquots were strained through \(40\mu m\) sieves, filtered on 
@@ -201,15 +249,7 @@ The bulk day and night library were paired-end \(76bp\) sequenced using an Illum
 Analyzer II by the Exeter University Sequencing Service.  The two libraries were sequenced
 on separate flowcells.
 
-\subsection{Bulk Transcriptome Trimming}
-
-FastX-toolkit adapative trimming Q20 applied by sequencing service.
-Raw untrimmed FASTQ data not available
-
-
-
-
-\subsection{Single Cell preparations}
+\subsubsection{Single Cell preparations}
 
 For single cell transcriptomics, a ``cell-picking'' approach was used in which
 \textit{P. bursaria} cells were inspected on an inverted light microscope before being picked
@@ -218,7 +258,6 @@ In order to mininmise contamination from food bacteria present in the media thes
 were washed 3 times by serial transfer to \(10\mu l\) droplets of sterile NCL media.
 The washed cell was then transferred to a \(10\mu l\) droplet of sterile water.
 
-\subsubsection{Single Cell transcriptomic cDNA preparation}
 Cells were transferred from their respective \(10\mu l\) droplets of sterile water to
 a PCR tube containing \(6\mu l\) water and \(4\mu l \) lysis buffer (from the Qiagen
 REPLI-g WTA Single Cell Kit). To disrupt the cell beads (Sigma, \(425-600\mu m\), acid-washed)
@@ -253,95 +292,48 @@ NEBNext reagents.  Finally, prepared libraries were size selected using a Blue P
 of \(350bp\) (range \(315-385bp\)).
 
 A final bioanalyzer step was conducted with individual library concentrations ranging from \(0.66-4.09nM\).
-All libraries 
+
+\subsubsection{Baseline bulk assembly}
+
+A ``baseline'' assembly was completed of the bulk RNA-Seq libraries so that there was a fixed
+means of comparison against which the most effective means of incorporating single cell
+sequencing data could be incorporated.
+
+Adapters and bases <Q20 were trimmed from these bulk reads by the Exeter Sequencing Service
+using Fastq-MCF \citep{Aronesty2013} and assembled using the 4 available \textit{de novo} 
+transcriptome assembly tools with their default settings: SOAPdenovo-Trans \citep{Xie2014}, 
+Trans-ABySS \citep{Robertson2010}, Trinity \citep{Haas2013} and Velvet/Oases \citep{Schulz2012a}
+
+Resultant assemblies were then compared using standard assembly statistics and the reference
+free probabilistic assembly assessment RSEM-EVAL package (part of DETONATE) \citep{Li2014}.
+Using these metrics a single assembler and assembly was selected for further downstream
+analysis including incorporation of single-cell libraries.
 
 
-\section{Transcriptome Assembly}
+\subsection{Library Screening}
 
-As mapping to even divergent (up to 15\%) genomes can generate transcriptomes of higher-quality
-than de novo \citep{Vijay2013}
+To investigate contamination and the taxonomic profile of sequenced single cell libraries 
+the ``DueyDrop'' tool was developed.  
 
-SCT
-
-
-\subsection{Library Assessment}
-
-For all sequencing project is is important to perform quality control on the sequenced libraries.
-This is especially important for single 
-
-
-As assemblies were observed to considerably worsen or improve depending on the exact 
-SCT library inclusion.  I sought to get a rough approximation for possible differences between
-the libraries and to investigate possible contamination.  For this purpose, I created a tool
-christened "DueyDrop".
-
-To achieve this 5 batches of 10,000 PE reads were sampled from each library after trimming %which trim?
-using seqtk's \citep{SeqtkGitHub} reservoir sampling algorithm with a common seed used to sample paired
-reads for the forward and reverse read files for each PE library in the same manner as trimming optimisation.
-
-While 5 batches of 10,000 should be equivalent to 50,000 random samples by splitting sampling and using
-a different random seed each time the risk of poor implementation of this randomisation algorithm is 
-somewhat offset and standard deviations can be easily calculated to assess consistency of later results.
-
-These random samples were subsequently used to query the NCBI Protein NR database via BLASTX as implemented
-in Diamond.  A tool optimised for efficient BLASTing of short reads against larger databases.
-
-The top hit for each read was kept and the GIs extracted.  Subsequently, these GIs were used to query
-a local taxdump of the NCBI taxonomy database via BioPerl.
-
-These taxonomic data were then tallied at multiple taxonomic levels summarised below.
-
-
-
-
-\begin{table}[h]
-\begin{tabular}{@{}|l|l|llllll@{}}
-\toprule
-\textbf{SCT Library} & \textit{\textbf{PE}} & \multicolumn{1}{l|}{\textbf{Eukaryote}} & \multicolumn{1}{l|}{\textbf{Bacteria}} & \multicolumn{1}{l|}{\textbf{Alveolate}} & \multicolumn{1}{l|}{\textbf{Viridiplantae}} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Total Hits}} \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
-\textit{Light1-9}    & \textit{R1}          & \multicolumn{1}{l|}{51.89 +/- 0.45}     & \multicolumn{1}{l|}{9.37 +/- 0.26}     & \multicolumn{1}{l|}{25.15 +/-  0.71}    & \multicolumn{1}{l|}{7.45 +/- 0.33}          & \multicolumn{1}{l|}{} & 69.49 +/- 0.37                           \\ \cmidrule(lr){2-2}
-                     & \textit{R2}          & 51.75 +/- 0.25                          & 8.82 +/- 0.24                          & 24.85 +/- 0.56                          & 7.49 +/- 0.21                               &                       & 68.75 +/- 0.29                           \\ \cmidrule(r){1-2}
-\textit{Light1-10}   & \textit{R1}          &                                         &                                        &                                         & \multicolumn{1}{l|}{}                       & \multicolumn{1}{l|}{} &                                          \\ \cmidrule(lr){2-2}
-                     & \textit{R2}          &                                         &                                        &                                         &                                             &                       &                                          \\ \cmidrule(r){1-2}
-\textit{Light1-11}   & \textit{R1}          &                                         &                                        &                                         & \multicolumn{1}{l|}{}                       & \multicolumn{1}{l|}{} &                                          \\ \cmidrule(lr){2-2}
-                     & \textit{R2}          &                                         &                                        &                                         &                                             &                       &                                          \\ \cmidrule(r){1-2}
-\textit{Dark1-2}     & \textit{R1}          &                                         &                                        &                                         & \multicolumn{1}{l|}{}                       & \multicolumn{1}{l|}{} &                                          \\ \cmidrule(lr){2-2}
-                     & \textit{R2}          &                                         &                                        &                                         &                                             &                       &                                          \\ \cmidrule(r){1-2}
-\textit{Dark1-3}     & \textit{R1}          &                                         &                                        &                                         & \multicolumn{1}{l|}{}                       & \multicolumn{1}{l|}{} &                                          \\ \cmidrule(lr){2-2}
-                     & \textit{R2}          &                                         &                                        &                                         &                                             &                       &                                          \\ \cmidrule(r){1-2}
-\textit{Dark1-5}     & \textit{R1}          &                                         &                                        &                                         & \multicolumn{1}{l|}{}                       & \multicolumn{1}{l|}{} &                                          \\ \cmidrule(lr){2-2}
-                     & \textit{R2}          &                                         &                                        &                                         &                                             &                       &                                          \\ \cmidrule(r){1-2}
-\textit{Dark2-2}     & \textit{R1}          &                                         &                                        &                                         & \multicolumn{1}{l|}{}                       & \multicolumn{1}{l|}{} &                                          \\ \cmidrule(lr){2-2}
-                     & \textit{R2}          &                                         &                                        &                                         &                                             &                       &                                          \\ \cmidrule(r){1-2}
-\textit{Dark2-3}     & \textit{R1}          &                                         &                                        &                                         & \multicolumn{1}{l|}{}                       & \multicolumn{1}{l|}{} &                                          \\ \cmidrule(lr){2-2}
-                     & \textit{R2}          &                                         &                                        &                                         &                                             &                       &                                          \\ \cmidrule(r){1-2}
-\textit{Dark2-6}     & \textit{R1}          &                                         &                                        &                                         & \multicolumn{1}{l|}{}                       & \multicolumn{1}{l|}{} &                                          \\ \cmidrule(lr){2-2}
-                     & \textit{R2}          &                                         &                                        &                                         &                                             &                       &                                          \\ \cmidrule(r){1-2}
-\textit{Dark2-7}     & \textit{R1}          &                                         &                                        &                                         & \multicolumn{1}{l|}{}                       & \multicolumn{1}{l|}{} &                                          \\ \cmidrule(lr){2-2}
-                     & \textit{R2}          &                                         &                                        &                                         &                                             &                       &                                          \\ \cmidrule(r){1-2}
-\textit{Dark2-8}     & \textit{R1}          &                                         &                                        &                                         & \multicolumn{1}{l|}{}                       & \multicolumn{1}{l|}{} &                                          \\ \cmidrule(lr){2-2} \cmidrule(l){7-8} 
-                     & \textit{R2}          &                                         &                                        &                                         &                                             &                       &                                          \\ \cmidrule(r){1-2}
-\end{tabular}
-\end{table}
-
-
+Briefly, for each library 5 batches of 10,000 PE reads were sampled 
+using the reservoir sampler \citep{Vitter1985} implemented in Heng Li's seqtk library \citep{SeqtkGitHub}.
+Despite 5 batches of 10,000 reads theoretically being equivalent to 50,000 random samples by splitting
+sampling and using a different random seed any problems from poor randomisation implementation 
+was minimised and consistency of taxonomic profiles could be easily assessed.
+These randomly sampled reads were subsequently aligned to NCBI's Protein NR RefSeq database \citep{Pruitt2007}
+using the efficient short-read optimised BLASTX implementation of DIAMOND \citep{Buchfink2015} (at a expectation
+    of \(e^{-5}\) and top hits for each read retained.  Gene identifiers (GI) were extracted from these tops hits and queried against a
+local copy of the NCBI taxonomy database \citep{Federhen2012} to recover a hit taxonomic lineage for each
+read that aligned to a sequence within NR database. These lineages were then interactively tallied 
+at several different taxonomic levels (e.g. domain level - eukaryote vs bacteria, or lower level - viridiplantae vs ciliate) and variances
+calculated.  Results were then tabulated and libraries compared to assess whether any libraries appeared
+abberrant.
 
 Scripts used to conduct this are available in my thesis scripts github repository:
 \url{https://github.com/fmaguire/dueydrop}
 
-
-
-
 \subsection{Trimming optimisation}
-
-While there has been some analysis of optimal trimming for bulk RNA-Seq (particularly \citep{MacManes2014})
-there has not been an investigation of the optimal trimming parameters for single cell RNA-Seq Illumina reads.
-Correct trimming is important to minimise sequence error (mostly substitutions \citep{Yang2013}) as these
-result in assembly of spurious sequences \citep{Macmanes2013,MacManes2014}
-
-
-To determine optimal trimming parameters (\(\theta\)) for the raw single-cell paired-end RNA-Seq reads 
-I used a naive grid search algorithm using random reads sub-sampled from each library and compared mapping
-to bulk transcriptome assembly described above.
+To investigate optimal trimming for single cell libraries a naive grid search across trimming parameters was used.
 Specifically, 5000 PE reads were randomly sampled without replacement from each of the raw FASTQ libraries 
 using the streaming reservoir sampling \citep{Vitter1985} algorithm implemented in Heng Li's 
 seqtk C library (\citep{SeqtkGitHub}).
@@ -349,11 +341,9 @@ To guarantee the pairing was maintained the same random seed was used for the le
 of each library. This seed was subsequently incremented with each library sampled.
 These random samples were subsequently trimmed using a variety of parameter values and combinations therein 
 (see \ref{table:parameters} for details).
-The trimmed samples were then mapped to the bulk RNA-Seq transcriptome reference dataset using bowtie2
+The trimmed samples were then mapped to the ``baseline'' bulk RNA-Seq transcriptome reference dataset using bowtie2
 \citep{Langmead2012} with maximum and minimum insert sizes of 37bp and 1161bp (derived from library preparation
 fragment size distribution and histrogram of mapped insert sizes for untrimmed reads against bulk reference).
-
-
 For each set of trimming parameters the following bowtie2 mapping statistics were recorded: 
 \begin{itemize}
     \item number of paired reads uniquely mapping in a paired 
@@ -365,139 +355,44 @@ singly (discordantly exactly 1 time),
 
 These values were assessed in comparison to the ``null mapping'' i.e. these same mapping statistics for the same
 randomly sample reads for each library but this time entirely untrimmed.  
-Therefore, 
 
-
-If \(i\) represents the SCT library being sampled and \(j\) represents the number of random samples of
+Therefore, if \(i\) represents the SCT library being sampled and \(j\) represents the number of random samples of
 5000 PE reads from each library, then a function \(f\) which applies trimming with a given set of a 
 paramaters \(\theta\) and returns a weighted sum of the mapping statistics can be defined as follows:
 \[
-    f(x_{ij}, \theta) = map_{concord} - map_{discord}
-
-    SOMETHING
+    f(x_{ij}, \theta) = (map_{\theta,concord} - map_{\theta,discord})^{2}
 
 \]
 
 Therefore, the optimal trimming paramters \theta are those which maximise the following cost function
 
 \[
-    J(\theta) = \sum^{6}_{i=0} \sum^{4}_{j=0} f(x_{ij}, \theta) - f(x_{ij}, \emptyset)
+    J(\theta) = \sum^{I}_{i=0} \sum^{J}_{j=0} f(x_{ij}, \theta) - f(x_{ij}, \emptyset)
 \]
 
 
-
-We are particularly interested in maximising the raw number of reads mapping rather than
+We are particularly interested in determing the trimming parameters which maximise the raw number of reads mapping rather than
 the proportion, as a harsh trim may generate a high proportion of mapping reads due to spuriously discarding 
 many reads.  
 
 
-
-
-Parameters used in gridsearch
+Parameters used in gridsearch:
 
 Trimmomatic ILLUMINACLIP parameters: 
-
-exeter_sequencing_adaptors.fasta
-
-ILLUMINACLIP:/storage/fin/adapters/exeter_sequencing_adaptors.fasta:4:20:15
-ILLUMINACLIP:/storage/fin/adapters/exeter_sequencing_adaptors.fasta:6:30:15
-ILLUMINACLIP:/storage/fin/adapters/exeter_sequencing_adaptors.fasta:2:30:15
-ILLUMINACLIP:/storage/fin/adapters/exeter_sequencing_adaptors.fasta:2:30:10
-ILLUMINACLIP:/storage/fin/adapters/exeter_sequencing_adaptors.fasta:2:30:20
-
+\begin{itemize}
+    \item ILLUMINACLIP:/storage/fin/adapters/exeter_sequencing_adaptors.fasta:4:20:15
+    \item ILLUMINACLIP:/storage/fin/adapters/exeter_sequencing_adaptors.fasta:6:30:15
+    \item ILLUMINACLIP:/storage/fin/adapters/exeter_sequencing_adaptors.fasta:2:30:15
+    \item ILLUMINACLIP:/storage/fin/adapters/exeter_sequencing_adaptors.fasta:2:30:10
+    \item ILLUMINACLIP:/storage/fin/adapters/exeter_sequencing_adaptors.fasta:2:30:20
+\end{itemize}
 
 
-
-
-
-While, there are many available tools for read-trimming (as discussed in \ref{ch:methods}) , 
-Trimmomatic was my preferred tool as it maintains read-pair correspondence, is optimised for Illumina datasets and, allows user-defined ordering of trimming operations and can do adapter trimming \citep{Bolger2014a}.  
-Furthermore, it has adequate (if not perfect) performance and is well documented.
-However, other tools were also considered specifically Sickle \citep{JoshiGitHub}, FASTX-toolkit \citep{gordon2010fastx}, 
-and cutadapt \citep{martin2011cutadapt}.
-
-Sickle is an adaptive quality trimmer that has previously been used in single-cell transcriptome datasets 
-from free-living eukaryotes \citep{Kolisko2014}, however it is not capable of removing 
- 5' or 3' contaminants such as sequencing adapters and/or multiplexing tags.  
-While these latter steps could be achieved with individual tools (such as Skewer \citep{Jiang2014}, 
-TagDust \citep{Lassmann2009} and Scythe \citep{Buffalo}) this increases the number of ``moving parts'' 
-, highly complicates the optimisation process, and increases the number of possible points of failure.  
-Furthermore, Sickle has particularly poor documentation and requires study of the option parsing code to 
-even determine all available options.
-As for other trimming tools, both cutadapt and FASTX (along with PRINSEQ \citep{Schmieder2011}), 
-have been found to largely perform equivalently across multiple RNA-Seq and DNA-Seq datasets and applications 
-(see File S2 \citep{DelFabbro2013}).
-
-Therefore, as cutadapt was recently used by Kodama \textit{et. al.} (with a threshold of 30 and a minimum length of 50bp) 
-in their bulk \textit{P. bursaria} transcriptome analysis \citep{Kodama2014} I compared the optimised performance 
-cutadapt with the optimised performance of Trimmomatic.
-%of cutadapt to Trimmomatic using as similar parameters as possible. Specifically, Trimmomatic
-%was run using the full ILLUMINACLIP option with the adapter fasta file from the Exeter 
-%Sequencing Service (and 2:30:15 for mismatches, palindrome clip and simple clip quality threshold respectively)
-%and a SLIDINGWINDOW quality trim with a window size of 10 and a minimum quality threshold of 30 and length of 60.
-%Similarly, cutadapt was run on each random sample in paired end mode with all the adapter sequences using
-%an error rate of 0.03 (approximately equivalent to the trimmomatic adapter simple threshold of Q15 
-%via the relationship \(P=10^{\frac{Q}{10}}\)) and a minimum length of 60.
-As we can see in \ref{fig:cutadapt_vs_trimmomatic} cutadapt appears to have been slightly more permissive
-and subsequently has very slightly more reads mapping to the reference.  This may be due to the slightly
-more advanced and sensitive adapter trimming implemented in Trimmomatic's ILLUMINACLIP detecing more 
-adapters and subsequently discarding more reads.  Having said this, both tools generate largely similar
-mapping statistics and display similar qualitative patterns in the individual libraries. 
-At the very least, the difference is well within the range of results achievable with different
-Trimmomatic parameters.  Unfortunately, unlike Trimmomatic, cutadapt requires either manual repair of 
-paired read correspondence or discards all reads that are unpaired after trimming. It also requires
-use of ancillary shell scripting to input all desired adapter sequences from a sequencing service
-provided adapter fasta file.  Similarly, neither PRINSEQ or FASTX are competent to trim paired-end datasets natively requiring
-irksome work-arounds to retain pairing fidelity and are also likely to produce the same trimming 
-results as cutadapt \citep{DelFabbro2013}. 
-
-Therefore, due to this and the tool design advantages listed above Trimmomatic was used exclusively for 
-in-depth trimming parameter optimisation via grid-search.
-
-
-\begin{figure}[h]
-    \includegraphics[width=\textwidth]{null_mapping.pdf}
-    %plot of parameters random sampling and how they map 
-    %null_mapping.svg
-    %cutadapt vs trimmomatic plot
-    \caption{Null mapping of 5000 randomly sampled PE reads from each SCT library 
-                against a reference bulk transcriptome using bowtie2.
-                %Of particular interest is the abnormal mapping of Light1\_9 library,
-       %     where almost all reads map incongruently with their pair, despite bioanalyser
-       %     traces showing fragment size selection with a clear peak at 360-385bp similarly
-       % to the other libraries}
-            }
-    \label{fig:null_mapping}
-\end{figure}
+Different trimming tools were also compared to attempt to determine the optimal tool.
+This will be discussed in the results/discussion section, however
 
 
 
-
-\begin{figure}[h]
-    \includegraphics[width=\textwidth]{trimmomatic_vs_cutadapt.pdf}
-    %plot of parameters random sampling and how they map 
-    %null_mapping.svg
-    %cutadapt vs trimmomatic plot
-    \caption{Comparison of Trimmomatic and Cutadapt using approximately identical settings:
-        specifically minimum length of 60, the entire contents of the Exeter Sequencing Service
-        adapter file with respective error rate of 0.03 and Q15 for a simple match and an overall
-        error threshold of Q30.
-
-        Interestingly, cutadapt relatively increases the number of PE congruently mapping ends
-        relative to untrimmed reads, whereas Trimmomatic generally leads to more PE reads mapping incongruently
-        
-        However, overall Trimmomatic with these settings has very slightly more paired reads mapping 
-        181 vs 180.  
-
-        The other advantages of Trimmomatic outweigh this slight performance deficit
-    \label{fig:cvt}
-\end{figure}
-
-
-
-\begin{figure}[h]
-    \includegraphis[width=\textwidth]{light9_insert_mapping.pdf}
-\end{figure}
 
 
 Scripts used to conduct this are available in my thesis scripts github repository:
@@ -510,9 +405,7 @@ Scripts used to conduct this are available in my thesis scripts github repositor
 
 Error correction of Illumina reads has been considered by some authors as a key
 step in the assembly of error-correction.  This is particularly true for single-cell
-data generated via MDA.
-
-
+data generated via MDA. 
 Error-correction is typically achieved by discarding lowly expressed k-mers 
 as these are likely to have been generated by errors.
 
@@ -534,13 +427,15 @@ DID WHAT
 
 \subsection{GC Partitioning of Reads}
 
-
+To assess the utility of pre-assembly read partitioning an unsupervised clustering tool was created:
 Paired Arrangement of Reads via K-means On Unlabelled Reads (parKour).
 
-As we expect the metagenome to contain predominantly a highly AT-rich organism, \textit{Paramecium},
+As we expect the PbMr metatranscriptome to contain predominantly a highly AT-rich organism, \textit{Paramecium},
 (ranging from 24.1 to 28.2\%GC in \textit{P. aurelia} species complex and \textit{P. caudatum} \citep{Aury2006,McGrath2014})
 and a very GC-rich organism, \textit{Micractinium}, (\textit{Chlorella variabilis} NC64A genome is approximately 67.1\%GC, the highest
-found in a sequenced eukaryote genome (in 2010) \citep{Blanc2010}).
+found in a sequenced eukaryote genome (in 2010) \citep{Blanc2010}).  
+
+
 
 Although intriguingly low-GC regions 55-65\%GC have a significantly higher number of mapped genes suggesting they are highly expressed \citep{Blanc2010}
 
@@ -640,7 +535,24 @@ k-mer spectrum can be used to evaluate reocvoeery of low-abundance transcrtipts 
 
 
 
-\section{ORFs calling}
+
+
+
+\subsection{Bulk Transcriptome Trimming}
+
+FastX-toolkit adapative trimming Q20 applied by sequencing service.
+Raw untrimmed FASTQ data not available
+
+
+\subsection{Transcriptome Assembly}
+
+As mapping to even divergent (up to 15\%) genomes can generate transcriptomes of higher-quality
+than de novo \citep{Vijay2013}
+SCT
+
+
+
+\subsection{ORFs calling}
 
 Too many transcripts 
 
@@ -650,31 +562,253 @@ The ciliate code reassigns 2 universal stop codons (UAA, UAG) to Gln amab
 
 
 
-
-
 ORFs were extracted from transcriptome using transdecoder and a minimum protein size of 50aa
 because
 
 
-\section{Binning}
+\subsection{Binning}
+
+
+\subsubsection{Initial bins}
+
+Initially, 10,000 randomly chosen transcripts were binned into their predicted source - 
+Host (H), Unknown but likely Host (U(H)), Endosymbiont (E), Unknown but likely Endosymbiont (U(E)), Food (F), Unknown but likely Food (U(F)), and
+Unknown (U). 
+Each of the assembled transcripts were BLASTed against a database consisting of the following predicted proteomes: 
+\textit{Chlorella} NC64A, \textit{Chlamydomonas reinhardtii}, \textit{Coccomyxa} C169,
+\textit{Paramecium tetraurelia}, \textit{Tetrahymena thermophila}, \textit{Arabidopsis thaliana}, \textit{Homo sapiens} (help-
+    ing to identify contamination), \textit{Saccharomyces cerevisiae}, \textit{Schizosaccharomyces pombe}, \textit{Bacillus
+cereus} ATCC 14579, \textit{Escherichia coli} 536, \textit{Escherichia coli} O157 H-7, \textit{Salmonella typhimurium}
+LT2 and \textit{Escherichia coli} K-12 (the last 5 genome datasets helping to identify food bacterial
+genes). Then initial bins were classified as follows:
+\begin{itemize}
+    \item Endosymbiont (E): Transcript’s highest scoring BLAST hit at \(-50E\) was to Coccomyxa,
+        Chlamydomonas or Chlorella. Or transcript’s highest scoring hit at \(-20E\) was one of those
+species and the longest likely coding region in the transcript was using the universal codon
+table.
+\item Unknown but likely Endosymbiont (U(E)): \(-10E\) hit to Coccomyxa, Chlamydomonas or
+Chlorella and longest likely coding region was using the universal codon table. Or tran
+script’s highest hits at \(-10E\) and \(-20E\) were to one of those genomes regardless of coding
+region presence.
+\item Host (H): Transcript’s highest hits at \(-50E\) were to Paramecium tetraurelia or Tetrahymena
+    thermophila. Or highest hit at \(-20E\) was one of those species and longest likely coding
+region was using the Tetrahymena codon table.
+\item Unknown but likely Host (U(H)): \(-10E\) hit to Paramecium tetraurelia or Tetrahymena
+thermophila and longest likely coding region was was using the Tetrahymena codon table.
+Or transcript’s highest hits at \(-10E\) and \(-20E\) were to one of those genomes regardless of
+coding region presence.
+\item Food (F): Transcript’s highest scoring BLAST hit at \(-50E\) was to one of the E. coli species
+    or Salmonella. Or transcript’s highest scoring hit at \(-20E\) was one of those species and
+the longest likely coding region in the transcript was using the universal codon table.
+\item Unknown but likely Food (U(F)): \(-10E\) hit to one of the E. coli species or Salmonella and
+longest likely coding region was using the universal codon table. Or transcript’s highest
+hits at \(-10E\) and \(-20E\) were to one of those genomes regardless of coding region presence.
+\item Unknown (U): highest scoring hits to Arabidopsis, Homo sapiens, Saccharomyces or Schizosac-
+charomyces or any sequence not fitting into the above categories.
+\end{itemize}
+
+
+
+
+
+
+
+\subsubsection{Dendrogenous}
 For this purpose ete2 library was ported to python3 (pull request outstanding to merge this into ete2 codebase)
 
 
-\subsection{Dendrogenous}
 Phylogeny generation
 
-\subsection{Arboretum}
+
+\subsubsection{Arboretum}
 Binner 
 
 Training data manually parsed
 
 
 
-\section{Saturation}
+\subsection{Saturation}
 Estimating saturation can only be done after binning as we are only interested in host and algal endosymbiont
 So saturation on binned contigs.
 
 
+
+
+\section{Results and Discussion} 
+
+\subsection{Library selection}
+
+\begin{table}[h]
+     \begin{tabular}{@{}|l|l|l|l|l|l|l|l|@{}}
+         \cmidrule(r){1-6} \cmidrule(l){8-8}
+         \textbf{SCT Library} & \textit{\textbf{PE}} & \textbf{Eukaryote} & \textbf{Bacteria} & \textbf{Alveolate} & \textbf{Viridiplantae} &  & \textbf{Total Hits} \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
+         \textit{Light1-9}    & \textit{R1}          & 51.89 +/- 0.45     & 9.37 +/- 0.26     & 25.15 +/-  0.71    & 7.45 +/- 0.33          &  & 69.49 +/- 0.37      \\ \cmidrule(lr){2-2}
+                              & \textit{R2}          & 51.75 +/- 0.25     & 8.82 +/- 0.24     & 24.85 +/- 0.56     & 7.49 +/- 0.21          &  & 68.75 +/- 0.29      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
+         \textit{Light1-10}   & \textit{R1}          & 46.35 +/- 0.56     & 15.72 +/- 0.46    & 22.96 +/- 0.24     & 6.94 +/- 0.26          &  & 68.73 +/- 0.30      \\ \cmidrule(lr){2-2}
+                              & \textit{R2}          & 46.12 +/- 0.83     & 15.14 +/- 0.48    & 23.13 +/- 0.38     & 6.99 +/- 0.37          &  & 68.73 +/- 0.30      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
+         \textit{Light1-11}   & \textit{R1}          & 58.28 +/- 0.47     & 3.62 +/- 0.12     & 28.68 +/- 0.43     & 8.20 +/- 0.40          &  & 71.38 +/- 0.49      \\ \cmidrule(lr){2-2}
+                              & \textit{R2}          & 57.74 +/- 0.27     & 3.50 +/- 0.10     & 28.23 +/- 0.36     & 8.41 +/- 0.31          &  & 70.42 +/- 0.20      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
+         \textit{Dark1-2}     & \textit{R1}          & 28.64 +/- 0.51     & 22.88 +/- 0.61    & 12.23 +/- 0.28     & 4.93 +/- 0.19          &  & 60.31 +/- 0.49      \\ \cmidrule(lr){2-2}
+                              & \textit{R2}          & 28.29 +/- 0.24     & 21.06 +/- 0.21    & 12.13 +/- 0.28     & 4.87 +/- 0.34          &  & 57.65 +/- 0.35      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
+         \textit{Dark1-3}     & \textit{R1}          & 9.48 +/- 0.43      & 25.07 +/- 0.42    & 2.15 +/- 0.13      & 2.60 +/- 0.27          &  & 41.43 +/- 0.68      \\ \cmidrule(lr){2-2}
+                              & \textit{R2}          & 8.89 +/- 0.19      & 23.11 +/- 0.52    & 2.13 +/- 0.16      & 2.45 +/- 0.18          &  & 38.50 +/- 0.46      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
+         \textit{Dark1-5}     & \textit{R1}          & 5.56 +/- 0.19      & 23.99 +/- 0.44    & 1.07 +/- 0.07      & 2.89 +/- 0.11          &  & 36.72 +/- 0.33      \\ \cmidrule(lr){2-2}
+                              & \textit{R2}          & 4.94 +/- 0.21      & 21.75 +/- 0.53    & 1.02 +/- 0.11      & 2.33 +/- 0.17          &  & 33.06 +/- 0.52      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
+         \textit{Dark2-2}     & \textit{R1}          & 12.32 +/- 0.25     & 9.81 +/- 0.19     & 3.73 +/- 0.16      & 4.33 +/- 0.17          &  & 27.65 +/- 0.47      \\ \cmidrule(lr){2-2}
+                              & \textit{R2}          & 11.53 +/- 0.15     & 9.00 +/- 0.17     & 3.67 +/- 0.22      & 3.74 +/- 0.12          &  & 25.71 +/- 0.39      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
+         \textit{Dark2-3}     & \textit{R1}          & 32.07 +/- 0.31     & 7.43 +/- 0.15     & 12.81 +/- 0.21     & 4.71 +/- 0.21          &  & 48.42 +/- 0.53      \\ \cmidrule(lr){2-2}
+                              & \textit{R2}          & 32.47 +/- 0.24     & 6.68 +/- 0.21     & 13.11 +/- 0.43     & 4.58 +/- 0.12          &  & 47.92 +/- 0.28      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
+         \textit{Dark2-6}     & \textit{R1}          & 24.11 +/- 0.28     & 8.55 +/- 0.11     & 9.04 +/- 0.35      & 5.27 +/- 0.15          &  & 41.69 +/- 0.45      \\ \cmidrule(lr){2-2}
+                              & \textit{R2}          & 22.89 +/- 0.55     & 7.44 +/- 0.17     & 8.74 +/- 0.49      & 4.36 +/- 0.24          &  & 38.85 +/- 0.58      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
+         \textit{Dark2-7}     & \textit{R1}          & 9.96 +/- 0.24      & 16.89 +/- 0.27    & 4.22 +/- 0.24      & 2.83 +/- 0.17          &  & 37.06 +/- 0.40      \\ \cmidrule(lr){2-2}
+                              & \textit{R2}          & 8.77 +/- 0.18      & 15.00 +/- 0.43    & 3.94 +/- 0.14      & 2.16 +/- 0.11          &  & 32.86 +/- 0.29      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
+         \textit{Dark2-8}     & \textit{R1}          & 28.24 +/- 0.48     & 4.45 +/- 0.13     & 12.00 +/- 0.32     & 4.69 +/- 0.06          &  & 40.50 +/- 0.37      \\ \cmidrule(lr){2-2}
+                              & \textit{R2}          & 28.22 +/- 0.47     & 4.30 +/- 0.22     & 11.98 +/- 0.37     & 4.32 +/- 0.24          &  & 40.05 +/- 0.22      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
+     \end{tabular}
+\end{table}
+
+Using this approach we identified and discarded Dark1-3 Dark1-5 Dark2-2, and Dark 2-7 as likely contaminated, particularly noteworth is the incredibly
+low proportion of sampled reads mapping to known alveolate (or even eukaryotic) sequences.   Interestingly, these samples didn't appear to be uniformly
+especially enriched for likely bacteria derived reads.  
+
+
+Briefly, this would involve quantifying exact k-mer matches between library reads and a pre-generated database of known taxa
+using efficient probabilstic hashing datastructures such as a bloom filter, or more likely count-min sketch and an efficient
+k-mer counting library such as Jellyfish \citep{Marcais2011}.  This would have a major speed advantage compared to the BLASTX-based method of ``dueydrop''
+and would thus allow entire libraries to be checked quickly instead of random subsets.  However, it would require laborious workarounds to handle
+k-mers shared between multiple taxa in the database, translation of reads and/or database sequences into a matching sense and form (e.g. protein),
+and use of a locality-sensitive hash function to handle scenarios where there is no exact k-mer match. This latter issue is particularly
+problematic for libraries consisting of transcripts from poorly sampled reaches of the tree of life where exact matches would become
+commensuately rarer as sampling sparsity increases.  
+While still affected by this problem, the BLASTX/Diamond approach implemented in the ``dueydrop'' scripts are relatively more robust to these
+problems due the explicit probabilistic modelling of sequence divergence built into the BLAST alignment algorithm (e.g. E-values).
+
+
+
+
+
+\subsection{Assembly optimisation}
+
+\subsubsection{Trimming}
+While, there are many available tools for read-trimming (as discussed in \ref{ch:methods}) , 
+Trimmomatic was my preferred tool as it maintains read-pair correspondence, is optimised for Illumina datasets and, allows user-defined ordering of trimming operations and can do adapter trimming \citep{Bolger2014a}.  
+Furthermore, it has adequate (if not perfect) performance and is well documented.
+However, other tools were also considered specifically Sickle \citep{JoshiGitHub}, FASTX-toolkit \citep{gordon2010fastx}, 
+and cutadapt \citep{martin2011cutadapt}.
+
+Sickle is an adaptive quality trimmer that has previously been used in single-cell transcriptome datasets 
+from free-living eukaryotes \citep{Kolisko2014}, however it is not capable of removing 
+ 5' or 3' contaminants such as sequencing adapters and/or multiplexing tags.  
+While these latter steps could be achieved with individual tools (such as Skewer \citep{Jiang2014}, 
+TagDust \citep{Lassmann2009} and Scythe \citep{Buffalo}) this increases the number of ``moving parts'' 
+, highly complicates the optimisation process, and increases the number of possible points of failure.  
+Furthermore, Sickle has particularly poor documentation and requires study of the option parsing code to 
+even determine all available options.
+As for other trimming tools, both cutadapt and FASTX (along with PRINSEQ \citep{Schmieder2011}), 
+have been found to largely perform equivalently across multiple RNA-Seq and DNA-Seq datasets and applications 
+(see File S2 \citep{DelFabbro2013}).
+
+Therefore, as cutadapt was recently used by Kodama \textit{et. al.} (with a threshold of 30 and a minimum length of 50bp) 
+in their bulk \textit{P. bursaria} transcriptome analysis \citep{Kodama2014} I compared the optimised performance 
+cutadapt with the optimised performance of Trimmomatic.
+%of cutadapt to Trimmomatic using as similar parameters as possible. Specifically, Trimmomatic
+%was run using the full ILLUMINACLIP option with the adapter fasta file from the Exeter 
+%Sequencing Service (and 2:30:15 for mismatches, palindrome clip and simple clip quality threshold respectively)
+%and a SLIDINGWINDOW quality trim with a window size of 10 and a minimum quality threshold of 30 and length of 60.
+%Similarly, cutadapt was run on each random sample in paired end mode with all the adapter sequences using
+%an error rate of 0.03 (approximately equivalent to the trimmomatic adapter simple threshold of Q15 
+%via the relationship \(P=10^{\frac{Q}{10}}\)) and a minimum length of 60.
+As we can see in \ref{fig:cutadapt_vs_trimmomatic} cutadapt appears to have been slightly more permissive
+and subsequently has very slightly more reads mapping to the reference.  This may be due to the slightly
+more advanced and sensitive adapter trimming implemented in Trimmomatic's ILLUMINACLIP detecing more 
+adapters and subsequently discarding more reads.  Having said this, both tools generate largely similar
+mapping statistics and display similar qualitative patterns in the individual libraries. 
+At the very least, the difference is well within the range of results achievable with different
+Trimmomatic parameters.  Unfortunately, unlike Trimmomatic, cutadapt requires either manual repair of 
+paired read correspondence or discards all reads that are unpaired after trimming. It also requires
+use of ancillary shell scripting to input all desired adapter sequences from a sequencing service
+provided adapter fasta file.  Similarly, neither PRINSEQ or FASTX are competent to trim paired-end datasets natively requiring
+irksome work-arounds to retain pairing fidelity and are also likely to produce the same trimming 
+results as cutadapt \citep{DelFabbro2013}. 
+
+Therefore, due to this and the tool design advantages listed above Trimmomatic was used exclusively for 
+in-depth trimming parameter optimisation via grid-search.
+
+
+\begin{figure}[h]
+    \includegraphics[width=\textwidth]{null_mapping.pdf}
+    %plot of parameters random sampling and how they map 
+    %null_mapping.svg
+    %cutadapt vs trimmomatic plot
+    \caption{Null mapping of 5000 randomly sampled PE reads from each SCT library 
+                against a reference bulk transcriptome using bowtie2.
+                %Of particular interest is the abnormal mapping of Light1\_9 library,
+       %     where almost all reads map incongruently with their pair, despite bioanalyser
+       %     traces showing fragment size selection with a clear peak at 360-385bp similarly
+       % to the other libraries}
+            }
+    \label{fig:null_mapping}
+\end{figure}
+
+
+\begin{figure}[h]
+    \includegraphics[width=\textwidth]{trimmomatic_vs_cutadapt.pdf}
+    %plot of parameters random sampling and how they map 
+    %null_mapping.svg
+    %cutadapt vs trimmomatic plot
+    \caption{Comparison of Trimmomatic and Cutadapt using approximately identical settings:
+        specifically minimum length of 60, the entire contents of the Exeter Sequencing Service
+        adapter file with respective error rate of 0.03 and Q15 for a simple match and an overall
+        error threshold of Q30.
+
+        Interestingly, cutadapt relatively increases the number of PE congruently mapping ends
+        relative to untrimmed reads, whereas Trimmomatic generally leads to more PE reads mapping incongruently
+        
+        However, overall Trimmomatic with these settings has very slightly more paired reads mapping 
+        181 vs 180.  
+
+        The other advantages of Trimmomatic outweigh this slight performance deficit
+    \label{fig:cvt}
+\end{figure}
+
+
+
+\subsubsection{Error correction}
+
+Error 
+
+
+\subsubsection{GC partitioning}
+\subsubsection{Assembly}
+\subsubsection{Saturation}
+
+\subsection{Binning}
+
+%Fortunately, to this end, the only other published 2nd generation sequencing analysis of \textit{P. bursaria} and a green algal,
+%endosymbiont: Kodama \textit{et. al.} 2014 \citep{Kodama2014} partially addressed this issue.  This analysis investigated 
+%the differential global metatranscriptome profile of \textit{P. bursaria} Yad1g strain with and without its \textit{Chlorella variabilis} 1N endosymbiont 
+%\citep{Kodama2014}.   While, this is a different strain of both host and endosymbiont to the CCAP1660/12 strains (\textit{P. bursaria} and \textit{Micractinium reisseri}) 
+%used in this thesis it offers a potential avenue to investigate these other components.
+%An attempt was made to replicate this work using the CCAP1660/12 strains, unfortunately, elimination of the endosymbionts without death of the host
+%didn't prove possible in these strains.  Despite using 
+%
+%(despite earlier publications to the contrary) by either maintaining the culture in the dark \citep{Siegel1960} (although some studies have thrown doubt on
+%        how effective this method is at completely elimiating the photobiont \citep{Tanaka2002}) or treatment with various titrations of herbicides 
+%            (e.g. paraquat \citep{Hosoya1995a}) or the protein synthesis inhibitor cyclohexamide \citep{weis1984effect}).\footnote{
+%        There are naturally aposymbiotic strains of \textit{Paramecium bursaria} \citep{Tonooka2002a}}
+
+
+
+\section{Conclusion}
+In conclusion,
+
+Library filtering is key with single cell possibly due to the increased inefficiency of poly-A selection
+
+GC partitioning doesn't work - splits up contigs
+
+Trimming and error correction makes little difference on unsaturated complex single cell 
+
+Arboretum offers a useful way to accurately classify transcripts into likely origins 
 
 
 
