@@ -30,29 +30,10 @@ The plethora of literature relating to the physiology and behaviour of \textit{P
 and together \citep{Kodama2014} makes \textit{Paramecium bursaria} - \textit{Micractinium reisseri} (PbMr)
 well suited for such a ``dual-RNAseq'' analysis.  
 
-The only other published analysis of \textit{Paramecium bursaria} and its green algal endosymbionts by \citep{Kodama2014} largely
-side-stepped this issue by focussing on the analysis of host transcripts with and without the endosymbiont by filtering
-likely endosymbiont derived contigs from analysis using a crude MEGABLAST \(e^{-40}\) approach.
-
-
-
-
-
-
 Having said this, dual-RNA-seq in the PbMr system also presents difficulties which must be overcome to facilitate effective analysis.
 The foremost amongst these difficulties are accurate reconstruction of transcripts \textit{de novo} and ``binning'' reconstructed
 transcripts into groups depending on their originating organisms.  
 
-
-%Studies in related ciliates have demonstrated a high prevalence of alternative splicing events (5.2\% of genes in \textit{Tetrahymena
-%    thermophila} for a single celled eukaryote \citep{Xiong2012}
-%This paper also demonstrated the huge dynamic range of expression (and thus necessity of RNA-Seq over microarray approaches) in \textit{T. thermophila})
-%with approximately 6 order of magnitude range \citep{Xiong2012}
-
-%However, as both target species - host and endosymbiont are eukaryotes the complication of mRNA enrichment 
-%is simplified due to the sufficiency of poly-A selection for this task (instead of rRNA depletion methods)
-%Determining the necessary sequencing depth is also difficult.
-%
 
 
 
@@ -71,32 +52,35 @@ examples being the remarkably brief treatment in \citep{Kolisko2014}.
 
 
 
+%The only other published analysis of \textit{Paramecium bursaria} and its green algal endosymbionts by \citep{Kodama2014} largely
+%side-stepped this issue by focussing on the analysis of host transcripts with and without the endosymbiont by filtering
+%likely endosymbiont derived contigs from analysis using a crude MEGABLAST \(e^{-40}\) approach.
 
 
+%Studies in related ciliates have demonstrated a high prevalence of alternative splicing events (5.2\% of genes in \textit{Tetrahymena
+%    thermophila} for a single celled eukaryote \citep{Xiong2012}
+%This paper also demonstrated the huge dynamic range of expression (and thus necessity of RNA-Seq over microarray approaches) in \textit{T. thermophila})
+%with approximately 6 order of magnitude range \citep{Xiong2012}
 
-One advantage of the single cell approach is that due to the ligation step prior to WTA
-terminal coverage issue of bulk RNA-Seq should be mininised.  This is particularly important as it is
-expected that secreted peptides are likely to play an important role in maintenance of any cellular relationship
-that involves multiple intermediate membranes and secretion is frequently controlled by terminal peptide sequences.
+%However, as both target species - host and endosymbiont are eukaryotes the complication of mRNA enrichment 
+%is simplified due to the sufficiency of poly-A selection for this task (instead of rRNA depletion methods)
+%Determining the necessary sequencing depth is also difficult.
 
-
+%One advantage of the single cell approach is that due to the ligation step prior to WTA
+%terminal coverage issue of bulk RNA-Seq should be mininised.  This is particularly important as it is
+%expected that secreted peptides are likely to play an important role in maintenance of any cellular relationship
+%that involves multiple intermediate membranes and secretion is frequently controlled by terminal peptide sequences.
 
 %First achieved in \citep{Lao2009}
 
 
 Therefore, this chapter addresses the key difficulties of optimally recapitulating transcripts from the \textit{Paramecium bursaria}
 and \textit{Micractinium reisseri} system \textit{de novo} as well as identifying 
-
-Investigating the 
-
-
-
 as well as attempting to determine the optimal means for integration
-of 2nd generation bulk and single cell transcriptomic datasets. 
-
-
-
-
+of 2nd generation bulk and single cell transcriptomic datasets.  Specifically, identifying and processing 
+sequencing library contamination, determining optimal trimming and error correction paramters for SC libraries,
+investigating the optimal assembler and parameters to combine bulk and single cell libraries and finally,
+developing a means of accurate transcript binning into putative species origins.
 
 
 Much as library contamination is one of the key issues with single cell genomics \citep{Blainey2013,Lusk2014}, it is a key
@@ -107,24 +91,12 @@ Furthermore, when utilising single cell libraries in a \textit{de novo} assembly
 it is doubly important to attempt to discard libraries that are likely to be contaminated by unwanted
 reads.  The importance of this was observed during preliminary assemblies when the inclusion of particular
 libraries were liable to fragmenting and hugely expanding the resultant assembly.  
-
-
-Fortunately, as we are seeking to approximately characterise whole libraries and identify aberrant contaminated 
-
-
-
-
-
-Therefore, to this end a set of scripts, known as ``dueydrop'', were developed to allow rapid 
-
-
+Therefore, to this end a set of scripts, known as ``dueydrop'', were developed to allow rapid taxonomic profiling of a
+representative subset of each library.  These profiles can then be grouped using unsupervised learning methods 
+to investigate the existence of ``normal'' and ``aberrant'' libraries. The user can then determine, based on heuristics
+of their dataset, which libraries are to be included in downstream analyses.
 The utility of a tool capable of this form of rapid taxonomic screening of sequenced libraries is evidenced
 by the emergence of commercial platforms providing such tools as a cloud service e.g. \url{http://blog.onecodex.com/}
-
-
-
-
-
 
 
 While there has been some analysis of optimal trimming for bulk RNA-Seq (particularly \citep{MacManes2014})
@@ -135,8 +107,13 @@ optimal trimming parameters for the raw single-cell paired-end RNA-Seq reads
 a naive grid search algorithm using random reads sub-sampled from each library was used and effect on mapping
 statistics against a ``baseline'' Trinity assembly of bulk reads \citep{Haas2013}.
 Additionally, there has been emerging evidence that error correction is a key stage in the accurate
-recapitulation of reads especially from single cell libraries.  Therefore, the effect and feasability 
-of read error correction on this assembly was also assessed.
+recapitulation of reads, especially from single cell libraries \citep{Medvedev2011}.  Therefore, the effect and feasability 
+of read error correction on this assembly was also assessed.  
+The efficacy of digital normalization, a method to remove redundant read data from libraries and thus
+reduce the computational burden of assembly \citep{Brown2012}, was also investigated for this dataset.
+Interestingly, some have argued that error correction is special case of general digital normalization
+\citep{Krasileva2013}.
+
 
 Finally, on the basis of the strong GC-AT bias exhibited by host and endosymbiont transcripts
 the performance of pre-assembly read partitioning using a custom clustering tool known as
@@ -149,6 +126,86 @@ pre-assembly read binning could transform a complex assembly graph into two rela
 assembly tasks.  As well as simplifying path resolution accuracy, if this method were to work
 it would speed up assembly considerably and thus allow more iterations to optimise other
 assembly paramters.
+
+
+Unfortunately, while it is possible to infer pre-processing parameterisation and options that
+are likely to improve an assembly using heuristic measures like mapping metrics
+it is very difficult to accurately say which paramaters 
+will lead to the ``best'' assembly.  Assembly is an example of
+Wolpert and Macready's ``No Free Lunch Theorems'' \citep{Wolpert1995,Wolpert1997} 
+as \textit{de novo} as it is fundamentally a hamiltonian/eulerian cycle search problem (equivalent
+    in the de-Bruijn formulation) and therefore any two assembly implementations (in different assemblers and/or
+    with different parameters) should ultimately be equivalent across all possible input datasets.\footnote{
+    This should be taken with a pinch of salt, a proof of this theorem applied to the case of assembly is beyond
+both the scope of this thesis and my abilities}
+
+
+
+
+
+Error correction of Illumina reads has been considered by some authors as a key
+step in the assembly of error-correction.  This is particularly true for single-cell
+data generated via MDA. 
+Error-correction is typically achieved by discarding lowly expressed k-mers 
+as these are likely to have been generated by errors.
+
+
+
+
+
+
+
+
+
+With candidate optima identified for read/library pre-processing, assembly itself could be 
+attempted.  Consequently, several assemblers and a range of assembly settings were 
+used and compared to determine the ``best'' assembly.   Both \textit{de novo} assembly
+in which transcripts were attempted to be recovered using just raw bulk and single cell
+PE Illumina libraries and referenced assemblies were attempted.
+
+
+
+
+
+
+The task of identifying the ``best'' \textit{de novo} transcriptome assembly is also a non-trivial 
+task \citep{Neil2013}.  Many widely used assembly assessment metrics have been shown to be
+inconsistent measures in simulated sequencing data, especially those metrics related to invidual
+contigs (theoretically different transcript splices).  Metrics such as average length and N50
+prove consistent across both simulated sequencing depth and read lengths i.e. they improve 
+towards \citep{Neil2013}.  Furthermore, the number of possible metrics is greatly reduced
+if assessment mainly is conducted in a reference-free manner (i.e. not based on comparison
+to transcripts derived from other sequencing projects).   A reference-free approach was chosen
+primarily 
+
+
+
+
+
+
+
+
+
+
+due to the divergence
+of related organisms in thi
+
+
+
+
+
+
+Average unigene () length, \% of reads used in contigs, unigene N50
+
+
+
+
+
+
+with many suggested methods and metrics.
+
+
+
 
 
 However, even once a good assembly has been generated it is still necessary to identify the likely
@@ -171,6 +228,7 @@ it would be infeasible to repeat this phylogeny binning procedure for all transc
 relatively rapidy generation of phylogenies for all transcripts.  Therefore, this presented an ideal
 challenge for supervised classification with the corpus of 10,000 manually validated phylogenies providing an effective
 training dataset for a supervised classification algorithm.  
+
 
 
 
@@ -358,11 +416,17 @@ randomly sample reads for each library but this time entirely untrimmed.
 
 Therefore, if \(i\) represents the SCT library being sampled and \(j\) represents the number of random samples of
 5000 PE reads from each library, then a function \(f\) which applies trimming with a given set of a 
-paramaters \(\theta\) and returns a weighted sum of the mapping statistics can be defined as follows:
+paramaters \(\theta\) and returns a weighted sum of the mapping statistics can be defined as follows with
+weights defined by our priorities:
+
 \[
-    f(x_{ij}, \theta) = (map_{\theta,concord} - map_{\theta,discord})^{2}
+    f(x_{ij}, \theta) = map_{\theta,concord} + \frac{1}{2} * map_{\theta,discord} + \frac{1}{4} * survive_{\theta} 
 
 \]
+
+Specifically, we are particularly interested in maximising the number of reads which congruently map to the baseline
+bulk assembly.  
+
 
 Therefore, the optimal trimming paramters \theta are those which maximise the following cost function
 
@@ -375,40 +439,21 @@ We are particularly interested in determing the trimming parameters which maximi
 the proportion, as a harsh trim may generate a high proportion of mapping reads due to spuriously discarding 
 many reads.  
 
-
-Parameters used in gridsearch:
-
-Trimmomatic ILLUMINACLIP parameters: 
-\begin{itemize}
-    \item ILLUMINACLIP:/storage/fin/adapters/exeter_sequencing_adaptors.fasta:4:20:15
-    \item ILLUMINACLIP:/storage/fin/adapters/exeter_sequencing_adaptors.fasta:6:30:15
-    \item ILLUMINACLIP:/storage/fin/adapters/exeter_sequencing_adaptors.fasta:2:30:15
-    \item ILLUMINACLIP:/storage/fin/adapters/exeter_sequencing_adaptors.fasta:2:30:10
-    \item ILLUMINACLIP:/storage/fin/adapters/exeter_sequencing_adaptors.fasta:2:30:20
-\end{itemize}
-
-
 Different trimming tools were also compared to attempt to determine the optimal tool.
-This will be discussed in the results/discussion section, however
+This will be discussed and explained in the results/discussion section, however Trimmomatic \citep{Bolger2014a}
+was chosen for targeted trimming parameter optimisation.
 
-
-
-
+To that end a gridsearch was conducted over a sliding window trim of size 5, 10 
+with mininum quality score of 5, 10, 20, 25, and 30 in Trimmomatic.  Additionally, 
+a head and tail crop of 5 was used, and adapters trimming parameters
+ranged from seed mismatch of 2, 4, palindrome clip thresholds of 20 and 30, 
+and a simple clip threshold of 10, 15 and 20 in Trimmomatic's ILLUMINACLIP setting.
 
 Scripts used to conduct this are available in my thesis scripts github repository:
 \url{https://github.com/fmaguire/thesis_scripts/tree/master/chapter_2_assembly_and_binning/trimming_optimisation}
 
 
-
-
 \subsection{Error correction}
-
-Error correction of Illumina reads has been considered by some authors as a key
-step in the assembly of error-correction.  This is particularly true for single-cell
-data generated via MDA. 
-Error-correction is typically achieved by discarding lowly expressed k-mers 
-as these are likely to have been generated by errors.
-
 
 
 However, Bayeshammer as implemented in the Spades genome assembler, even on lightly trimmed
