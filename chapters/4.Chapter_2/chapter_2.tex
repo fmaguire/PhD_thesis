@@ -168,6 +168,8 @@ PE Illumina libraries and referenced assemblies were attempted.
 
 
 
+
+
 The task of identifying the ``best'' \textit{de novo} transcriptome assembly is also a non-trivial 
 task \citep{Neil2013}.  Many widely used assembly assessment metrics have been shown to be
 inconsistent measures in simulated sequencing data, especially those metrics related to invidual
@@ -470,6 +472,10 @@ DID WHAT
 
 
 
+Made very little difference on bulk alone using Seecer
+
+
+
 \subsection{GC Partitioning of Reads}
 
 To assess the utility of pre-assembly read partitioning an unsupervised clustering tool was created:
@@ -518,6 +524,73 @@ Scripts used to conduct this are available in a github repository:
 
 
 \subsection{Assembly}
+
+\subsubsection{Referenced}
+
+Trimmed bulk and taxonomically selected single cell libraries
+were mapped to \textit{Chlorella} NC64A
+\textit{Coccomyxa C169}, \textit{Tetrahymena 
+thermophila} and \textit{Paramecium caudatum} genomes.
+The former pair being the closest available genomes
+to the endosymbiont and the latter to the host.
+
+
+
+
+There are \(4^{100}\) possible \(100bp\) reads
+therefore if we randomly sampled from this
+uniformly 
+\(\frac{4.68*10^{5}}{4^{100}}\)
+
+
+
+
+
+46,819,1  44 characters
+
+reads:
+
+
+16,054,289,700
+
+NC64A
+Input     : 16,054,289,700
+Mapped   :    662905 ( 0.4% of input)
+
+We can calculate the probability of matches given
+random reads and a random 46.82Mb of host genome
+as a generalisation of the birthday 
+problem which asymptotically states
+\(p\equivalent 1 - exp(-n\frac{n-1}{2d})\)
+where \(d = 4^{100}\) i.e. the number of possible
+\(100bp\) 4-character reads and \(n =\) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+genomes
+
+
+endosymbiont
+and host genomes.
+
+
+
+
+ 0.4% overall read mapping rate.
+
+
+
+\subsubsection{\textit{de novo}}
 
 Trinity uber alles
 
