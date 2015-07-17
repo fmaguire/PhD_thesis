@@ -11,52 +11,54 @@
 \section{Introduction}
 
 Transcriptomics, and specifically RNA-Seq, is a powerful method by which the \textit{Paramecium bursaria}-\textit{Micractinium reisseri}
-endosymbiosis can be investigated. Due to the photosynthetic basis of this endosymbiosis, a (relatively) unbiased
-global metatranscriptomic profile of host and endosymbiont simultaneously in both lit and dark conditions can be used
-to identify key transcripts involved its maintenance (although this will not identify essential but constitutively expressed
-components). Specifically, transcripts which are significantly differentially expressed
-between these conditions are likely to play a role in key metabolic functions that form the basis of this relationship.
+endosymbiosis can be investigated. This endosymbiosis enables phototrophy in the host \citep{Karakashian1963} as well as 
+the numerous photobiological behavioural and biochemical traits (e.g. \citep{Berk1991,Saji1974,Nakajima1989,Niess1982a,Iwatsuki1988,Summerer2009}, partially reviewed in \citep{Sommaruga2009}).
+Additionally, there is experimental evidence as to the importance of photosynthesis and unidentified light-induced factors for the establishment
+and maintenance of this endosymbiosis (and prevention of algal digestion by the host) \citep{Karakashian1963,Hosoya1995a,Kodama2007,Kodama2014c}.
+Therefore, a (relatively) unbiased global metatranscriptomic profile of host and endosymbiont in both lit and dark conditions can be used to 
+identify key transcripts likely to be involved in the establishment and maintenance of this endosymbiosis as well as those related to
+mechanisms of the acquired photobiological traits.
+%constitutively expressed photosynthetic components
+Such a profile will allow metabolic reconstruction of host and endosymbiont in both photosynthetically active and inactive
+states as well as a means to identify significantly differentially expressed transcripts between these states.
+
+
 The effectiveness of this approach is evidenced by several studies (e.g. \citep{Nowack2011,Jiggins2013,Xiang2015}) using a similar approach
 to investigate host-chloroplast interactions. Such transcriptomic methods, focussing on a limited and defined number of interacting organisms, and thus falling 
-falling between analysis of homogeneous single organism cultures and
+falling between analysis of axenic cultures and
 large scale metatranscriptomics, have been dubbed by some ``dual-RNAseq'' \citep{Westermann2012} and are exemplified by Tierney \textit{et. al.} in the context 
 of eukaryote-eukaryote host-pathogen interactions \citep{Tieryney2012}.
 
 The plethora of literature relating to the physiology and behaviour of \textit{Paramecium bursaria} and green algal endosymbioses (e.g. \citep{Iwatsuki1988}, 
-    see \citep{Kato2009a} and \chap{introduction} for more details) as well as the relative transcriptomic tractability of these two groups of 
-    organisms individually (e.g. \citep{Guarnieri2011,Rowe2014,Bashan2015} and \citep{Arnaiz2010,Kolisko2014})\footnote{It may be worth noting
+    see \citep{Kato2009a} and \chap{introduction} for more details) as well as the relative transcriptomic tractability demonstrated separately in relatives of
+    both of these organisms (e.g. \citep{Guarnieri2011,Rowe2014,Bashan2015} and \citep{Arnaiz2010,Kolisko2014})\footnote{It may be worth noting
         that \citep{Guarnieri2011} is an example of \textit{C. vulgaria} transcriptome without a reference genome, and \citep{Kolisko2014} undertook
     a preliminary single cell transcriptomic approach to analysing a species of \textit{Paramecia}}
 and together \citep{Kodama2014} makes \textit{Paramecium bursaria} - \textit{Micractinium reisseri} (PbMr)
 well suited for such a ``dual-RNAseq'' analysis.  
 
-Having said this, dual-RNA-seq in the PbMr system also presents difficulties which must be overcome to facilitate effective analysis.
-The foremost amongst these difficulties are accurate reconstruction of transcripts \textit{de novo} and ``binning'' reconstructed
-transcripts into groups depending on their originating organisms.  
-
-
-
+Having said this, dual-RNAseq in the PbMr system also presents difficulties which must be overcome to facilitate effective analysis.
+Principally, these are the dual challenges of accurately reconstructing transcripts from a complex and genomically uncharacterised complex system and 
+that of subsetting these transcripts into groups dependent on their originating organism.  This latter step is particularly important
+as it allows the removal of transcripts originating from bacterial food species of the mixotrophic host, as well as from other potential
+host endosymbionts and general sequencing contamination.
 
 
 Towards this end we conducted a bulk RNA-Seq sequencing of cultured PbMr, unfortunately due to limitations in the quantity of
-extracted RNA and maintainable culture density it was necessary to pool biological replicate day and night samples into single
-day and night samples.  Therefore, to facilitate accurate inference of differential expression 
-a number of day and night replicates were also sequenced using single-cell RNA-Seq (scRNA-Seq) methods.
-To aid with transcriptome assembly and investigate the presence of genes that are not expressed in host
-or endosymbiont during endosymbiosis.  Interestingly, Westermann \textit{et. al.} observed that single-cell methodologies were a likely source of future
-innovation in ``dual RNA-Seq'' studies \citep{Westermann2012}.
-While offering complications in relation to noise, contamination as well as many unknowns in the most effective way to synthesise
-single cell and bulk RNA-Seq sequencing data from a metatranscriptomic unicellular eukaryotic system.
-Single cell methods are still relatively new to non-model unicellular eukaryotes without genomic resources, with one of the few
-examples being the remarkably brief treatment in \citep{Kolisko2014}.
+extracted RNA and maintainable culture density for sequencing it was necessary to pool all day and night replicates into 
+a single pair of day and night libraries.  Therefore, to facilitate accurate inference of differential expression 
+a number of day and night replicates were also sequenced using single-cell RNA-Seq (scRNA-Seq) methods in order to generate
+independent biological replicates \citep{Auer2010}.  scRNA-Seq is a relatively new technology whose potential
+in ``dual-RNAseq'' systems has been previously observed \citep{Westermann2012}.  Additionally, application of scRNA-Seq is relatively
+new to non-model unicellular eukaryotes without genomic resources with only one currently published investigation \citep{Kolisko2014}.
+The most effective way to utilise both single cell and bulk RNAseq datasets to investigate a single reference-free system is also entirely
+uncharacterised.
 
 
 
 %The only other published analysis of \textit{Paramecium bursaria} and its green algal endosymbionts by \citep{Kodama2014} largely
 %side-stepped this issue by focussing on the analysis of host transcripts with and without the endosymbiont by filtering
 %likely endosymbiont derived contigs from analysis using a crude MEGABLAST \(e^{-40}\) approach.
-
-
 %Studies in related ciliates have demonstrated a high prevalence of alternative splicing events (5.2\% of genes in \textit{Tetrahymena
 %    thermophila} for a single celled eukaryote \citep{Xiong2012}
 %This paper also demonstrated the huge dynamic range of expression (and thus necessity of RNA-Seq over microarray approaches) in \textit{T. thermophila})
@@ -75,12 +77,13 @@ examples being the remarkably brief treatment in \citep{Kolisko2014}.
 
 
 Therefore, this chapter addresses the key difficulties of optimally recapitulating transcripts from the \textit{Paramecium bursaria}
-and \textit{Micractinium reisseri} system \textit{de novo} as well as identifying 
-as well as attempting to determine the optimal means for integration
-of 2nd generation bulk and single cell transcriptomic datasets.  Specifically, identifying and processing 
-sequencing library contamination, determining optimal trimming and error correction paramters for SC libraries,
-investigating the optimal assembler and parameters to combine bulk and single cell libraries and finally,
+and \textit{Micractinium reisseri} system \textit{de novo} as well as 
+determining the optimal way in which 2nd generation bulk and single cell RNAseq libaries may be integrated together.
+Specifically, we seek to generate methods by which libraries may be screened for contamination before assembly, 
+determining the optimal trimming and error correction parameters for single cell libraries, investigating the optimal
+assembler and assembly parameters to combine bulk and single cell libraries and finally,
 developing a means of accurate transcript binning into putative species origins.
+
 
 
 Much as library contamination is one of the key issues with single cell genomics \citep{Blainey2013,Lusk2014}, it is a key
@@ -90,13 +93,14 @@ low-input concentration and high amplification necessary found in these approach
 Furthermore, when utilising single cell libraries in a \textit{de novo} assembly instead of merely mapping
 it is doubly important to attempt to discard libraries that are likely to be contaminated by unwanted
 reads.  The importance of this was observed during preliminary assemblies when the inclusion of particular
-libraries were liable to fragmenting and hugely expanding the resultant assembly.  
+libraries were liable to fragment and hugely expanding the resultant assembly.  
 Therefore, to this end a set of scripts, known as ``dueydrop'', were developed to allow rapid taxonomic profiling of a
-representative subset of each library.  These profiles can then be grouped using unsupervised learning methods 
-to investigate the existence of ``normal'' and ``aberrant'' libraries. The user can then determine, based on heuristics
-of their dataset, which libraries are to be included in downstream analyses.
+representative subset of each library.  These profiles can then be manually analysed or grouped using unsupervised learning methods 
+to investigate the existence of outlier libraries likely to be the product of contamination or sequencing failure.
+The user can then determine, based on heuristics of their dataset, which libraries are to be included in downstream analyses.
 The utility of a tool capable of this form of rapid taxonomic screening of sequenced libraries is evidenced
 by the emergence of commercial platforms providing such tools as a cloud service e.g. \url{http://blog.onecodex.com/}
+
 
 
 While there has been some analysis of optimal trimming for bulk RNA-Seq (particularly \citep{MacManes2014})

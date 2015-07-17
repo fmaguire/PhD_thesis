@@ -1204,7 +1204,13 @@ step 1.
 K-means has many modifications and improvements such as refining the initialisation of the clusters by 
 the Bradley-Fayyad method (clustering random samples of the dataset and then k-means clustering the resulting clusters) \citep{Bradley1998} 
 or over-clustering (running more than k-means clustering with more than the specified number of clusters and merging clusters at the end
-to generate the correct number of clusters).
+to generate the correct number of clusters). One of the most recent and promising improvements is that of ``ying-yang'' k-means
+clustering which gains a moderate speed-up over the conventional algorithm by minimising the number of distance calculation required.
+This is achieved by creating upper and lower bound distance filters using the triangle inequality (i.e. \(d(a,b) \leq d(a,c) + d(b,c)\) where 
+\(d\) is a function that calculates the distance between 2 points) \citep{Ding2015}.
+
+
+
 An efficient implementation of the k-means algorithm is available in the MLPACK C++ Machine Learning library \citep{mlpack2013}.
 While very efficient and effective, k-means has some limitations, it requires a user specified number of clusters
 and therefore diagnostics to check for obvious misspecification in the number clusters.  Information criterion
@@ -1221,9 +1227,6 @@ with different initialisations.
     1a,2a,3a, and 1b,2b,3b respectively) }
     \label{fig:knn}
 \end{figure}
-
-
-
 
 %\subsubsection{t-Distributed Stochastic Neighbour Embedding (t-SNE)}
 %t-SNE is recently developed unsupervised visualisation/dimensionality reduction algorithm 
