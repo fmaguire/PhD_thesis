@@ -11,49 +11,83 @@
 \section{Introduction}
 
 Transcriptomics, and specifically RNA-Seq, is a powerful method by which the \textit{Paramecium bursaria}-\textit{Micractinium reisseri}
-endosymbiosis can be investigated. This endosymbiosis enables phototrophy \citep{Karakashian1963} as well as 
-the conveying numerous photobiological behavioural and biochemical traits (e.g. \citep{Berk1991,Saji1974,Nakajima1989,Niess1982a,Iwatsuki1988,Summerer2009}, 
+endosymbiosis can be investigated. This endosymbiosis conveys phototrophy \citep{Karakashian1963} as well as 
+numerous photobiological behavioural and biochemical traits (e.g. \citep{Berk1991,Saji1974,Nakajima1989,Niess1982a,Iwatsuki1988,Summerer2009}, 
 partially reviewed in \citep{Sommaruga2009}).  Additionally, photosynthesis and unidentified light-induced factors have been identified as key to the establishment
 and maintenance of this endosymbiosis (and prevention of algal digestion by the host) \citep{Karakashian1963,Hosoya1995a,Kodama2007,Kodama2014c}.
 Therefore, a (relatively) unbiased global metatranscriptomic profile of host and endosymbiont in both lit and dark conditions can be used to 
 identify key transcripts playing a role in the establishment, maintenance, and photobiological traits of this endosymbiosis. 
 %constitutively expressed photosynthetic components
-This profile can be used to create a metabolic 
-
-Such a profile will allow metabolic reconstruction of host and endosymbiont in both photosynthetically active and inactive
-states as well as a means to identify significantly differentially expressed transcripts between these states.
+This profile will allow metabolic reconstruction of host and endosymbiont in both photosynthetically active and inactive
+states as well as offering a means to identify significantly differentially expressed transcripts between these states.
 
 
-The effectiveness of this approach is evidenced by several studies (e.g. \citep{Nowack2011,Jiggins2013,Xiang2015}) using a similar approach
-to investigate host-chloroplast interactions. Such transcriptomic methods, focussing on a limited and defined number of interacting organisms, and thus falling 
+The effectiveness of this approach is evidenced by several studies (e.g. \citep{Nowack2011,Jiggins2013,Xiang2015}) investigating
+host-chloroplast interactions. Such transcriptomic methods, focussing on a limited and defined number of interacting organisms, and thus falling 
 falling between analysis of axenic cultures and
-large scale metatranscriptomics, have been dubbed by some ``dual-RNAseq'' \citep{Westermann2012} and are exemplified by Tierney \textit{et. al.} in the context 
-of eukaryote-eukaryote host-pathogen interactions \citep{Tieryney2012}.
+large scale metatranscriptomics, have been dubbed by some ``dual-RNAseq'' \citep{Westermann2012}.  
+``Dual-RNASeq'' methods are exemplified by Tierney \textit{et. al.} in the context of eukaryote-eukaryote host-pathogen interactions \citep{Tieryney2012}.
+
 
 The plethora of literature relating to the physiology and behaviour of \textit{Paramecium bursaria} and green algal endosymbioses (e.g. \citep{Iwatsuki1988}, 
     see \citep{Kato2009a} and \chap{introduction} for more details) as well as the relative transcriptomic tractability demonstrated separately in relatives of
     both of these organisms (e.g. \citep{Guarnieri2011,Rowe2014,Bashan2015} and \citep{Arnaiz2010,Kolisko2014})\footnote{It may be worth noting
-        that \citep{Guarnieri2011} is an example of \textit{C. vulgaria} transcriptome without a reference genome, and \citep{Kolisko2014} undertook
+        that \citep{Guarnieri2011} is an example of \textit{C. vulgaris} transcriptome without a reference genome, and \citep{Kolisko2014} undertook
     a preliminary single cell transcriptomic approach to analysing a species of \textit{Paramecia}}
 and together \citep{Kodama2014} makes \textit{Paramecium bursaria} - \textit{Micractinium reisseri} (PbMr)
 well suited for such a ``dual-RNAseq'' analysis.  
 
 Having said this, dual-RNAseq in the PbMr system also presents difficulties which must be overcome to facilitate effective analysis.
-Principally, these are the dual challenges of accurately reconstructing transcripts from a complex and genomically uncharacterised complex system and 
+Principally, accurately reconstructing transcripts from a complex, relatively genomically uncharacterised, system and 
 that of subsetting these transcripts into groups dependent on their originating organism.  This latter step is particularly important
 as it allows the removal of transcripts originating from bacterial food species of the mixotrophic host, as well as from other potential
-host endosymbionts and general sequencing contamination.
+host endosymbionts and general sequencing contamination.  
 
 
-Towards this end we conducted a bulk RNA-Seq sequencing of cultured PbMr, unfortunately due to limitations in the quantity of
-extracted RNA and maintainable culture density for sequencing it was necessary to pool all day and night replicates into 
-a single pair of day and night libraries.  Therefore, to facilitate accurate inference of differential expression 
-a number of day and night replicates were also sequenced using single-cell RNA-Seq (scRNA-Seq) methods in order to generate
-independent biological replicates \citep{Auer2010}.  scRNA-Seq is a relatively new technology whose potential
-in ``dual-RNAseq'' systems has been previously observed \citep{Westermann2012}.  Additionally, application of scRNA-Seq is relatively
-new to non-model unicellular eukaryotes without genomic resources with only one currently published investigation \citep{Kolisko2014}.
+Towards this end we conducted a bulk RNA-Seq sequencing of cultured PbMr using 76bp paired-end reads and the Illumina GAII platform.
+Unfortunately, due to limitations in the maintainable culture density of the \textit{Paramecium bursaria} CCAP 1660/12 and thus the quantity of extractable
+mRNA it was necessary to pool all day and night replicates into a single pair of day and night libraries. 
+While this provided sufficient material for sequencing it precluded accurate inference of significant differential expression between day or night
+as it masked all biological replicates \citep{Auer2010}.  We, therefore, also sequenced a set of 3 (followed later by an additional 5) dark and 3 light
+biological replicates using single-cell RNA-Seq (scRNA-Seq) methods. 
+
+
+scRNA-Seq is a relatively new set of technologies facilitating sequencing transcriptomes from miniscule quantities of starting material, on the order of picograms
+and from 1 to a few cells (reviewed \citep{Macaulay2014,Liang2014,Wu2014a}).  Specifically, we used a poly-A reverse-transcription
+and multiple displacement amplification (MDA) based method.  
+This was chosen instead of other scRNA-Seq methods e.g. Quartzseq \citep{Sasagawa2013} or 
+Tang's method \citep{Tang2009} as its base method (MDA) has been widely applied and characterised in single cell genomics (i.e. \citep{Spits2006}) and is
+relatively WHY????? 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ASASASASASASA
+It is also among the cheaper, simpler and easily available scRNA-Seq kits 
+%SMARTSEQ is 1.3k for 12rxns maybe checkw ith david
+
+
+While nascent, these technologies have shown a lot of promise in well characterised systems, 
+demonstrate heterogeneity between cells expression patterns (preventing the masking of effects by group)
+
+These methods also reduce the risk of a Yule-Simpson effect \citep{Yule1903a,Simpson1951} situation in which the expression patterns
+in two distinct subpopulations generates a spurious pattern if these populations are falsely amalgamated.
+
+
+
+in ``dual-RNAseq'' systems has been previously observed \citep{Westermann2012}. Additionally, as the application of scRNA-Seq
+is relatively new to non-model unicellular eukaryotes without genomic resources (with only one currently published preliminary investigation \citep{Kolisko2014}),
+these samples presented an opportunity to investigate both the feasability of single cell methods in 
+
+
+
 The most effective way to utilise both single cell and bulk RNAseq datasets to investigate a single reference-free system is also entirely
 uncharacterised.
+
+
+We also investigated two 
+scRNA-Seq also allowed 
+
+
+
+However, MDA is prone to a degree of amplification bias \citep{Liang2014} which may be problematic in accurate inference of differential expression
+therefore, the suitability of MDA-based scRNA-Seq in particular will also need to be assessed.
 
 
 
@@ -86,6 +120,7 @@ assembler and assembly parameters to combine bulk and single cell libraries and 
 developing a means of accurate transcript binning into putative species origins.
 
 
+\subsection{Assembly}
 
 Much as library contamination is one of the key issues with single cell genomics \citep{Blainey2013,Lusk2014}, it is a key
 issue in single cell transcriptomics.  Single cell methods are particularly prone to contamination issues
@@ -132,6 +167,33 @@ assembly tasks.  As well as simplifying path resolution accuracy, if this method
 it would speed up assembly considerably and thus allow more iterations to optimise other
 assembly paramters.
 
+As we expect the PbMr metatranscriptome to contain predominantly a highly AT-rich organism, \textit{Paramecium},
+(ranging from 24.1 to 28.2\%GC in \textit{P. aurelia} species complex and \textit{P. caudatum} \citep{Aury2006,McGrath2014})
+and a very GC-rich organism, \textit{Micractinium}, (\textit{Chlorella variabilis} NC64A genome is approximately 67.1\%GC, the highest
+found in a sequenced eukaryote genome (in 2010) \citep{Blanc2010}).  
+
+
+
+Although intriguingly low-GC regions 55-65\%GC have a significantly higher number of mapped genes suggesting they are highly expressed \citep{Blanc2010}
+
+Also correlations with increased GC richness in highly expressed regions of paramecium
+
+Therefore,  would be closer than whole genome richness but still separable, this can be seen in the bimodal GC distribution in the raw and trimmed sequencing 
+reads.
+
+\begin{figure}
+    Example GC plot showing bimodal distribution
+\end{figure}
+
+Due to the difficulties generating a high quality \textit{de novo} metatranscriptome assembly, I considered  it worth investigating whether there could be GC\%
+clusters and furthermore whether assigning reads to these clusters and assembling the reads corresponding to a cluster would generate any meaningful groupings of reads.
+
+To this end, I 
+
+
+
+
+
 
 Unfortunately, while it is possible to infer pre-processing parameterisation and options that
 are likely to improve an assembly using heuristic measures like mapping metrics
@@ -167,7 +229,6 @@ attempted.  Consequently, several assemblers and a range of assembly settings we
 used and compared to determine the ``best'' assembly.   Both \textit{de novo} assembly
 in which transcripts were attempted to be recovered using just raw bulk and single cell
 PE Illumina libraries and referenced assemblies were attempted.
-
 
 
 
@@ -214,6 +275,8 @@ with many suggested methods and metrics.
 
 
 
+
+\subsection{Binning}
 
 However, even once a good assembly has been generated it is still necessary to identify the likely
 originating species of a given transcript i.e. host, endosymbiont, food bacterial contaminant or other
@@ -310,27 +373,27 @@ Pellet was dried before being resuspended in 100$\mu l$ of RNAse-free water.
 The RNA was then cleaned further using the Qiagen RNeasy clean-up kit 
 before being assessed for quality using ND-1000 (NanoDrop) and BioAnalyzer (Agilent).
 
-The bulk day and night library were paired-end \(76bp\) sequenced using an Illumina Genome
-Analyzer II by the Exeter University Sequencing Service.  The two libraries were sequenced
-on separate flowcells.
 
-\subsubsection{Single Cell preparations}
+\subsubsection{Single Cell RNA preparation}
 
 For single cell transcriptomics, a ``cell-picking'' approach was used in which
-\textit{P. bursaria} cells were inspected on an inverted light microscope before being picked
-using an orally aspirated drawn-glass Pasteur pipette \citep{Garcia-Cuetos2012}.
+\textit{P. bursaria} cells (from the CCAP1660/12 culture) were inspected on an inverted light microscope 
+before being picked using an orally aspirated drawn-glass Pasteur pipette \citep{Garcia-Cuetos2012}.
 In order to mininmise contamination from food bacteria present in the media these picked cells
 were washed 3 times by serial transfer to \(10\mu l\) droplets of sterile NCL media.
 The washed cell was then transferred to a \(10\mu l\) droplet of sterile water.
+3 cells were picked 5 hours into both the lit and dark phase of the 12:12 hour day-night cycle.
 
 Cells were transferred from their respective \(10\mu l\) droplets of sterile water to
 a PCR tube containing \(6\mu l\) water and \(4\mu l \) lysis buffer (from the Qiagen
-REPLI-g WTA Single Cell Kit). To disrupt the cell beads (Sigma, \(425-600\mu m\), acid-washed)
+REPLI-g WTA Single Cell Kit) \citep{Korfhage2015}. To disrupt the cell beads (Sigma, \(425-600\mu m\), acid-washed)
 were added to the meniscus, before submersion in liquid nitrogen for 5 seconds.  The sample was 
 then thawed before vortexing for 1 minute.  
 mRNA was selectively amplified and reverse transcribed to cDNA using poly-A selection.  The cDNA
 was then amplified using multiple displacement amplification and the amplified cDNA purified
 using a QIAamp DNA mini kit eluted in \(100\mu l\) elution buffer.
+
+Subsequently, this process was repeated for a further 5 dark samples.
 
 %\subsubsection{Single Cell genomic DNA preparation}
 %Cells were transferred from their respective \(10\mu l\) droplets of sterile water to a microncentrifuge tube.
@@ -344,7 +407,7 @@ using a QIAamp DNA mini kit eluted in \(100\mu l\) elution buffer.
 
 \subsubsection{Library preparation}
 
-Each cDNA sample was fragmented in \(130\mu l\) 1xTE buffer on the Covaris E220 
+For both bulk and single cell preparations each cDNA sample was fragmented in \(130\mu l\) 1xTE buffer on the Covaris E220 
 with a target size of \(225bp\) (duty factor of \(10\%\), 200 cycles per burst, peak incident power
 of 175, \(200s\) at \(7^{o}C\)). Fragment sizes were checked on a BioAnalyzer (Agilent) 7500 DNA chip.
 cDNA was then concentrated using a GeneRead kit column with a elution in \(35\mu l\). Fragmentation
@@ -357,6 +420,17 @@ NEBNext reagents.  Finally, prepared libraries were size selected using a Blue P
 of \(350bp\) (range \(315-385bp\)).
 
 A final bioanalyzer step was conducted with individual library concentrations ranging from \(0.66-4.09nM\).
+
+\subsubsection{Sequencing}
+
+The bulk day and night library were paired-end \(76bp\) sequenced using an Illumina Genome
+Analyzer II by the Exeter University Sequencing Service.  The two libraries were sequenced
+on separate flowcells.
+
+Single cell libraries were paired-end \(150bp\) using an Illumina HiSeq 2500 by Exeter
+Sequencing Service. 3 dark and 3 light samples were sequenced multiplexed on a single 
+flowcell lane.  The 5 additional dark samples were later sequenced multiplexed on a single
+flowcell lane.
 
 \subsubsection{Baseline bulk assembly}
 
@@ -374,13 +448,12 @@ free probabilistic assembly assessment RSEM-EVAL package (part of DETONATE) \cit
 Using these metrics a single assembler and assembly was selected for further downstream
 analysis including incorporation of single-cell libraries.
 
-
 \subsection{Library Screening}
 
 To investigate contamination and the taxonomic profile of sequenced single cell libraries 
 the ``DueyDrop'' tool was developed.  
 
-Briefly, for each library 5 batches of 10,000 PE reads were sampled 
+Briefly, for each single cell library 5 batches of 10,000 PE reads were sampled 
 using the reservoir sampler \citep{Vitter1985} implemented in Heng Li's seqtk library \citep{SeqtkGitHub}.
 Despite 5 batches of 10,000 reads theoretically being equivalent to 50,000 random samples by splitting
 sampling and using a different random seed any problems from poor randomisation implementation 
@@ -421,30 +494,31 @@ singly (discordantly exactly 1 time),
 These values were assessed in comparison to the ``null mapping'' i.e. these same mapping statistics for the same
 randomly sample reads for each library but this time entirely untrimmed.  
 
-Therefore, if \(i\) represents the SCT library being sampled and \(j\) represents the number of random samples of
-5000 PE reads from each library, then a function \(f\) which applies trimming with a given set of a 
-paramaters \(\theta\) and returns a weighted sum of the mapping statistics can be defined as follows with
-weights defined by our priorities:
-
-\[
-    f(x_{ij}, \theta) = map_{\theta,concord} + \frac{1}{2} * map_{\theta,discord} + \frac{1}{4} * survive_{\theta} 
-
-\]
-
-Specifically, we are particularly interested in maximising the number of reads which congruently map to the baseline
-bulk assembly.  
-
-
-Therefore, the optimal trimming paramters \theta are those which maximise the following cost function
-
-\[
-    J(\theta) = \sum^{I}_{i=0} \sum^{J}_{j=0} f(x_{ij}, \theta) - f(x_{ij}, \emptyset)
-\]
+%Therefore, if \(i\) represents the SCT library being sampled and \(j\) represents the number of random samples of
+%5000 PE reads from each library, then a function \(f\) which applies trimming with a given set of a 
+%paramaters \(\theta\) and returns a weighted sum of the mapping statistics can be defined as follows with
+%weights defined by our priorities:
+%
+%\[
+%    f(x_{ij}, \theta) = map_{\theta,concord} + \frac{1}{2} * map_{\theta,discord} + \frac{1}{4} * survive_{\theta} 
+%
+%\]
+%
+%Specifically, we are particularly interested in maximising the number of reads which congruently map to the baseline
+%bulk assembly.  
+%
+%
+%Therefore, the optimal trimming paramters \theta are those which maximise the following cost function
+%
+%\[
+%    J(\theta) = \sum^{I}_{i=0} \sum^{J}_{j=0} f(x_{ij}, \theta) - f(x_{ij}, \emptyset)
+%\]
 
 
 We are particularly interested in determing the trimming parameters which maximise the raw number of reads mapping rather than
 the proportion, as a harsh trim may generate a high proportion of mapping reads due to spuriously discarding 
 many reads.  
+
 
 Different trimming tools were also compared to attempt to determine the optimal tool.
 This will be discussed and explained in the results/discussion section, however Trimmomatic \citep{Bolger2014a}
@@ -462,23 +536,18 @@ Scripts used to conduct this are available in my thesis scripts github repositor
 
 \subsection{Error correction}
 
+The effect of error correction on assemblies involving single cell libraries was assessed 
+by applying two different error correction algorithms. 
 
-However, Bayeshammer as implemented in the Spades genome assembler, even on lightly trimmed
-(\(Q>5\)) discarded a maximum \(0.0007\%\) of reads per 7 selected SCT libraries 
-making next to no difference to final assembly.
+Firstly, trimmed and taxonomically selected libraries were error corrected using the
+Bayeshammer \citep{Nikolenko2013} based approach implemented as part of the Spades single-cell  
+genome assembler \citep{Bankevich2012}.
 
+Additionally, an RNA-Seq (but not scRNA-Seq) error correction tool ``SEECER'' \citep{Le2013} was 
+applied to trimmed bulk and single cell reads.
 
-While not optimised for SC datasets, the recommended error correction
-algorithm ``seecer'' 
-As there are well over 50M reads and there is no hardware restriction of memory
-``seecer'' is likely the ideal error correction algorithm \citep{Macmanes2015}
-
-DID WHAT 
-
-
-
-Made very little difference on bulk alone using Seecer
-
+The impact of each of these error correction algorithms at the read level was assessed as well 
+as their subsequent impact on downstream assembly metrics, particularly RSEM-EVAL likelihood.
 
 
 \subsection{GC Partitioning of Reads}
@@ -486,47 +555,16 @@ Made very little difference on bulk alone using Seecer
 To assess the utility of pre-assembly read partitioning an unsupervised clustering tool was created:
 Paired Arrangement of Reads via K-means On Unlabelled Reads (parKour).
 
-As we expect the PbMr metatranscriptome to contain predominantly a highly AT-rich organism, \textit{Paramecium},
-(ranging from 24.1 to 28.2\%GC in \textit{P. aurelia} species complex and \textit{P. caudatum} \citep{Aury2006,McGrath2014})
-and a very GC-rich organism, \textit{Micractinium}, (\textit{Chlorella variabilis} NC64A genome is approximately 67.1\%GC, the highest
-found in a sequenced eukaryote genome (in 2010) \citep{Blanc2010}).  
-
-
-
-Although intriguingly low-GC regions 55-65\%GC have a significantly higher number of mapped genes suggesting they are highly expressed \citep{Blanc2010}
-
-Also correlations with increased GC richness in highly expressed regions of paramecium
-
-Therefore,  would be closer than whole genome richness but still separable, this can be seen in the bimodal GC distribution in the raw and trimmed sequencing 
-reads.
-
-\begin{figure}
-    Example GC plot showing bimodal distribution
-\end{figure}
-
-Due to the difficulties generating a high quality \textit{de novo} metatranscriptome assembly, I considered  it worth investigating whether there could be GC\%
-clusters and furthermore whether assigning reads to these clusters and assembling the reads corresponding to a cluster would generate any meaningful groupings of reads.
-
-To this end, I 
-
 parKour:
 \begin{enumerate}
     \item Parse user input of paired FASTQ files corresponding to Forward and Reverse Paired-End reads, and desired number of clusters
     \item Simultaneously iterate over the pair of FASTQ files calculating the GC\% for each loading results into an Armadillo \(2xN\) matrix where \(N\) is the total number of PE reads
-    \item MLPACK K-means clustering:
-        \begin{itemize}
-            \item \
-        \end{itemize}
-    \item 
+    \item K-means clustering as implemented in the MLPACK library
     \item Re-read the two input FASTQs assigning them to output files based on the assigned cluster of the pair
 \end{enumerate}
 
-
-
 Scripts used to conduct this are available in a github repository:
 \url{https://github.com/fmaguire/parKour}
-
-
 
 \subsection{Assembly}
 
@@ -898,10 +936,35 @@ in-depth trimming parameter optimisation via grid-search.
 
 \subsubsection{Error correction}
 
+Despite numerous indications that error correction is important for improving the accuracy
+of genomic and transcriptomic assemblies using Illumina reads (e.g. \citep{Molnar2014,MacManes2015}).
+In the case of this dataset error correction appeared to be have a minimal effect with few
+reads being corrected and downstream assemblies being largely equivalent (if slightly improved).
+
+Specifically, Bayeshammer as implemented in the Spades genome assembler, even on lightly trimmed
+(\(Q>5\)) discarded a maximum \(0.0007\%\) of reads in the 7 selected SCT libraries 
+making next to no difference to final assembly.  However, while Bayeshammer is designed for
+single cell genomic reads and thus expects uneven coverage as might be found in a transcriptome
+it should be noted that it is not specifically designed for RNA-Seq datasets.
+
+Unfortunately, there are still not error correction algorithms directly optimised for scRNA-Seq 
+data.  This is potentially due to the relative level of methodological flux still in this 
+actively developing area compared to the more established MDA-based single cell genomics methods.
+
+While, there are several available Illumina RNA-Seq error correction tools available 
+``SEECER'' was chosen in accordance to the recommendations based on dataset and hardware
+heuristics (\(>50M\) reads and the availablility of a high memory system) \citep{Macmanes2015}.
+
+
+Made very little difference on bulk alone using Seecer
 Error 
 
 
 \subsubsection{GC partitioning}
+
+While the GC partitioning algorithm itself proved very effective 
+
+
 \subsubsection{Assembly}
 \subsubsection{Saturation}
 
