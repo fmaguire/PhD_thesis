@@ -57,39 +57,29 @@ and from 1 to a few cells (reviewed \citep{Macaulay2014,Liang2014,Wu2014a}).  Sp
 and multiple displacement amplification (MDA) based method.  
 This was chosen instead of other scRNA-Seq methods e.g. Quartzseq \citep{Sasagawa2013} or 
 Tang's method \citep{Tang2009} as its base method (MDA) has been widely applied and characterised in single cell genomics (i.e. \citep{Spits2006}) and is
-relatively WHY????? 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ASASASASASASA
+relatively WHY?
+
+
 It is also among the cheaper, simpler and easily available scRNA-Seq kits 
 %SMARTSEQ is 1.3k for 12rxns maybe checkw ith david
 
 
-While nascent, these technologies have shown a lot of promise in well characterised systems, 
-demonstrate heterogeneity between cells expression patterns (preventing the masking of effects by group)
 
-These methods also reduce the risk of a Yule-Simpson effect \citep{Yule1903a,Simpson1951} situation in which the expression patterns
-in two distinct subpopulations generates a spurious pattern if these populations are falsely amalgamated.
-
-
-
-in ``dual-RNAseq'' systems has been previously observed \citep{Westermann2012}. Additionally, as the application of scRNA-Seq
-is relatively new to non-model unicellular eukaryotes without genomic resources (with only one currently published preliminary investigation \citep{Kolisko2014}),
-these samples presented an opportunity to investigate both the feasability of single cell methods in 
-
-
-
-The most effective way to utilise both single cell and bulk RNAseq datasets to investigate a single reference-free system is also entirely
-uncharacterised.
+While nascent, these technologies have shown a lot of promise in well characterised systems such as human cell cultures \citep{Bengtsson2005,Shalek2013}
+and \textit{Saccharomyces cerevisiae} \citep{Lipson2009}.  
+    Additionally, there are high expectations of them as emerging technologies to address difficult outstanding issues in ``dual-RNASeq'' \citep{Westermann2012} and transcriptomics 
+    in general.
+Specifically, allowing analysis of unculturable or poorly culturable systems \citep{Murray2012} and offering a means to investigate cell-cell heterogeneity 
+in expression patterns (e.g. \citep{Raj2008,Shalek2013}).  This is important as it reduces the risk of a Yule-Simpson effect \citep{Yule1903a,Simpson1951}, where
+distinct expression patterns in subpopulations of cells could generate a spurious overall pattern if falsely amalgamated (as may occur in population level
+bulk RNA-Seq).  However, as best as I can tell there has only been one published use of scRNA-Seq in non-model unicellular eukaryotes without genomic resources.
+This study by \citet{Kolisko2014} while an interesting and important study was largely a preliminary pilot and proof of concept of scRNA-Seq in unicellular 
+eukaryotes.  These samples present an opportunity to investigate in-depth the most effective way to use MDA-based scRNA-Seq in a complex
+eukaryotic ``dual-RNASeq'' system as well the general feasability of such an approach.
 
 
-We also investigated two 
-scRNA-Seq also allowed 
-
-
-
-However, MDA is prone to a degree of amplification bias \citep{Liang2014} which may be problematic in accurate inference of differential expression
-therefore, the suitability of MDA-based scRNA-Seq in particular will also need to be assessed.
-
-
+%However, MDA is prone to a degree of amplification bias \citep{Liang2014} which may be problematic in accurate inference of differential expression
+%therefore, the suitability of MDA-based scRNA-Seq in particular will also need to be assessed.
 
 %The only other published analysis of \textit{Paramecium bursaria} and its green algal endosymbionts by \citep{Kodama2014} largely
 %side-stepped this issue by focussing on the analysis of host transcripts with and without the endosymbiont by filtering
@@ -111,11 +101,15 @@ therefore, the suitability of MDA-based scRNA-Seq in particular will also need t
 %First achieved in \citep{Lao2009}
 
 
-Therefore, this chapter addresses the key difficulties of optimally recapitulating transcripts from the \textit{Paramecium bursaria}
+Therefore, this chapter addresses the key difficulties of accurately recapitulating transcripts from the \textit{Paramecium bursaria}
 and \textit{Micractinium reisseri} system \textit{de novo} as well as 
-determining the optimal way in which 2nd generation bulk and single cell RNAseq libaries may be integrated together.
+determining the optimal way in which 2nd generation bulk and single cell RNAseq libaries may be integrated together in a reference-free
+system.
 Specifically, we seek to generate methods by which libraries may be screened for contamination before assembly, 
-determining the optimal trimming and error correction parameters for single cell libraries, investigating the optimal
+determining the optimal preprocessing and assembly paramaters, the utility of divergent ``reference'' genomes 
+
+
+trimming and error correction parameters for single cell libraries, investigating the optimal
 assembler and assembly parameters to combine bulk and single cell libraries and finally,
 developing a means of accurate transcript binning into putative species origins.
 
@@ -471,6 +465,7 @@ Scripts used to conduct this are available in my thesis scripts github repositor
 \url{https://github.com/fmaguire/dueydrop}
 
 \subsection{Trimming optimisation}
+
 To investigate optimal trimming for single cell libraries a naive grid search across trimming parameters was used.
 Specifically, 5000 PE reads were randomly sampled without replacement from each of the raw FASTQ libraries 
 using the streaming reservoir sampling \citep{Vitter1985} algorithm implemented in Heng Li's 
@@ -514,11 +509,9 @@ randomly sample reads for each library but this time entirely untrimmed.
 %    J(\theta) = \sum^{I}_{i=0} \sum^{J}_{j=0} f(x_{ij}, \theta) - f(x_{ij}, \emptyset)
 %\]
 
-
 We are particularly interested in determing the trimming parameters which maximise the raw number of reads mapping rather than
 the proportion, as a harsh trim may generate a high proportion of mapping reads due to spuriously discarding 
 many reads.  
-
 
 Different trimming tools were also compared to attempt to determine the optimal tool.
 This will be discussed and explained in the results/discussion section, however Trimmomatic \citep{Bolger2014a}
@@ -532,7 +525,6 @@ and a simple clip threshold of 10, 15 and 20 in Trimmomatic's ILLUMINACLIP setti
 
 Scripts used to conduct this are available in my thesis scripts github repository:
 \url{https://github.com/fmaguire/thesis_scripts/tree/master/chapter_2_assembly_and_binning/trimming_optimisation}
-
 
 \subsection{Error correction}
 
@@ -554,103 +546,44 @@ as their subsequent impact on downstream assembly metrics, particularly RSEM-EVA
 
 To assess the utility of pre-assembly read partitioning an unsupervised clustering tool was created:
 Paired Arrangement of Reads via K-means On Unlabelled Reads (parKour).
+This C++ tool implements a fast and efficient K-means clustering of reads based on the dual features
+of GC\% in forward and reverse paired reads.
 
-parKour:
+Specifically, parKour:
 \begin{enumerate}
     \item Parse user input of paired FASTQ files corresponding to Forward and Reverse Paired-End reads, and desired number of clusters
-    \item Simultaneously iterate over the pair of FASTQ files calculating the GC\% for each loading results into an Armadillo \(2xN\) matrix where \(N\) is the total number of PE reads
-    \item K-means clustering as implemented in the MLPACK library
+    \item Simultaneously iterate over the pair of FASTQ files calculating the GC\% for each loading results into an Armadillo \(2xN\) matrix \citep{Sanderson2010} where \(N\) is the total number of PE reads
+    \item Bradley-Fayyad K-means \citep{Bradley1998} clustering as implemented in the MLPACK library \citep{mlpack2013}
     \item Re-read the two input FASTQs assigning them to output files based on the assigned cluster of the pair
 \end{enumerate}
 
+GNUplot \citep{Gnuplot_4.4} was used to visualise classification and cluster assignment.
+This approach was attempted using a range of expected clusters from 2 to 5.
+
 Scripts used to conduct this are available in a github repository:
 \url{https://github.com/fmaguire/parKour}
+
 
 \subsection{Assembly}
 
 \subsubsection{Referenced}
 
 Trimmed bulk and taxonomically selected single cell libraries
-were mapped to \textit{Chlorella} NC64A
-\textit{Coccomyxa C169}, \textit{Tetrahymena 
-thermophila} and \textit{Paramecium caudatum} genomes.
-The former pair being the closest available genomes
-to the endosymbiont and the latter to the host.
+were mapped to \textit{Chlorella} NC64A, \textit{Coccomyxa C169}, 
+\textit{Tetrahymena thermophila} and \textit{Paramecium caudatum} MAC genomes.
+The former pair being the closest available genomes to the endosymbiont and the latter to the host.
 
-
-
-
-There are \(4^{100}\) possible \(100bp\) reads
-therefore if we randomly sampled from this
-uniformly 
-\(\frac{4.68*10^{5}}{4^{100}}\)
-
-
-
-
-
-46,819,1  44 characters
-
-reads:
-
-
-16,054,289,700
-
-NC64A
-Input     : 16,054,289,700
-Mapped   :    662905 ( 0.4% of input)
-
-We can calculate the probability of matches given
-random reads and a random 46.82Mb of host genome
-as a generalisation of the birthday 
-problem which asymptotically states
-\(p\equivalent 1 - exp(-n\frac{n-1}{2d})\)
-where \(d = 4^{100}\) i.e. the number of possible
-\(100bp\) 4-character reads and \(n =\) 
-
-
-
-
-
-
-
-
-
-
-
-
-
-genomes
-
-
-endosymbiont
-and host genomes.
-
-
-
-
- 0.4% overall read mapping rate.
-
+Mapping was done using the TopHat2 spliced aligner \citep{Kim2013} against
+the genomes and was supplemented with and without annotated ORF information (in the form of gtf).
+GTF files were generated from best avaiable gene annotations in the form of GFF files using gffread (part of
+cufflinks).
+Cufflinks \citep{Trapnell2011} was then used to extract isoforms from the spliced alignments.
 
 
 \subsubsection{\textit{de novo}}
 
-Trinity uber alles
+\textit{de novo} assemblies were conducted 
 
-
-
-\begin{table}[h]
-\begin{tabular}{|l|rrrrrrrl}
-\hline
-\multicolumn{1}{|c|}{Assembly} & \multicolumn{1}{c|}{Raw Reads (paired)} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Trimmed Reads \\ (assuming all paired)\end{tabular}} & \multicolumn{1}{c|}{Assembled Contigs} & \multicolumn{1}{c|}{Assembled "Genes"} & \multicolumn{1}{c|}{"Gene" N50} & \multicolumn{1}{c|}{"Gene" Mean Length} & \multicolumn{1}{c|}{"Gene" Total Assembled Bases} & \multicolumn{1}{c|}{GC\%} \\ \hline
-Kodama Trinity                 & 232.3M                                  & 218.5M                                                                                              & 68,175                                 & 40,805                                 & 904                             & 1,832                                   & 36.9M                                             & \multicolumn{1}{c}{?}     \\ \cline{1-1}
-SCT Q30                        & 126.9M                                  & 93.2M                                                                                               & 99,784                                 & 88,573                                 & 475                             & 451                                     & 40.0M                                             & 48.67                     \\ \cline{1-1}
-SCT Q30 + Bulk                 & 179.4M                                  & 145.6M                                                                                              & 127,508                                & 103,506                                & 646                             & 564                                     & 58.2M                                             & 40.30                     \\ \cline{1-1}
-SCT Q5                         & 126.9M                                  & 108.2M                                                                                              & 112,182                                & 99,441                                 & 465                             & 447                                     & 44.5M                                             & 49.42                     \\ \cline{1-1}
-SCT Q5 + Bulk                  & 179.4M                                  & 160.6M                                                                                              & 139,226                                & 113,685                                & 615                             & 549                                     & 62.5M                                             & 41.28                     \\ \cline{1-1}
-Bulk                           & 52.4M                                   & 52.4M                                                                                               & 43,261                                 & 30,706                                 & 1264                            & 861                                     & 26.5M                                             & 29.61                     \\ \cline{1-1}
-\end{tabular}
-\end{table}
 
 
 
@@ -966,6 +899,55 @@ While the GC partitioning algorithm itself proved very effective
 
 
 \subsubsection{Assembly}
+
+
+%There are \(4^{100}\) possible \(100bp\) reads
+%therefore if we randomly sampled from this
+%uniformly 
+%\(\frac{4.68*10^{5}}{4^{100}}\)
+
+
+
+
+
+46,819,1  44 characters
+
+reads:
+
+
+16,054,289,700
+
+NC64A
+Input     : 16,054,289,700
+Mapped   :    662905 ( 0.4% of input)
+
+We can calculate the probability of matches given
+random reads and a random 46.82Mb of host genome
+as a generalisation of the birthday 
+problem which asymptotically states
+\(p\equivalent 1 - exp(-n\frac{n-1}{2d})\)
+where \(d = 4^{100}\) i.e. the number of possible
+\(100bp\) 4-character reads and \(n =\) 
+
+
+
+
+
+\begin{table}[h]
+\begin{tabular}{|l|rrrrrrrl}
+\hline
+\multicolumn{1}{|c|}{Assembly} & \multicolumn{1}{c|}{Raw Reads (paired)} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Trimmed Reads \\ (assuming all paired)\end{tabular}} & \multicolumn{1}{c|}{Assembled Contigs} & \multicolumn{1}{c|}{Assembled "Genes"} & \multicolumn{1}{c|}{"Gene" N50} & \multicolumn{1}{c|}{"Gene" Mean Length} & \multicolumn{1}{c|}{"Gene" Total Assembled Bases} & \multicolumn{1}{c|}{GC\%} \\ \hline
+Kodama Trinity                 & 232.3M                                  & 218.5M                                                                                              & 68,175                                 & 40,805                                 & 904                             & 1,832                                   & 36.9M                                             & \multicolumn{1}{c}{?}     \\ \cline{1-1}
+SCT Q30                        & 126.9M                                  & 93.2M                                                                                               & 99,784                                 & 88,573                                 & 475                             & 451                                     & 40.0M                                             & 48.67                     \\ \cline{1-1}
+SCT Q30 + Bulk                 & 179.4M                                  & 145.6M                                                                                              & 127,508                                & 103,506                                & 646                             & 564                                     & 58.2M                                             & 40.30                     \\ \cline{1-1}
+SCT Q5                         & 126.9M                                  & 108.2M                                                                                              & 112,182                                & 99,441                                 & 465                             & 447                                     & 44.5M                                             & 49.42                     \\ \cline{1-1}
+SCT Q5 + Bulk                  & 179.4M                                  & 160.6M                                                                                              & 139,226                                & 113,685                                & 615                             & 549                                     & 62.5M                                             & 41.28                     \\ \cline{1-1}
+Bulk                           & 52.4M                                   & 52.4M                                                                                               & 43,261                                 & 30,706                                 & 1264                            & 861                                     & 26.5M                                             & 29.61                     \\ \cline{1-1}
+\end{tabular}
+\end{table}
+
+
+
 \subsubsection{Saturation}
 
 \subsection{Binning}
