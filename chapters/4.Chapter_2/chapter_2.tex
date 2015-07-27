@@ -73,9 +73,16 @@ Specifically, allowing analysis of unculturable or poorly culturable systems \ci
 in expression patterns (e.g. \citep{Raj2008,Shalek2013}).  This is important as it reduces the risk of a Yule-Simpson effect \citep{Yule1903a,Simpson1951}, where
 distinct expression patterns in subpopulations of cells could generate a spurious overall pattern if falsely amalgamated (as may occur in population level
 bulk RNA-Seq).  However, as best as I can tell there has only been one published use of scRNA-Seq in non-model unicellular eukaryotes without genomic resources.
-This study by \citet{Kolisko2014} while an interesting and important study was largely a preliminary pilot and proof of concept of scRNA-Seq in unicellular 
-eukaryotes.  These samples present an opportunity to investigate in-depth the most effective way to use MDA-based scRNA-Seq in a complex
-eukaryotic ``dual-RNASeq'' system as well the general feasability of such an approach.
+This study by \citet{Kolisko2014} briefly addressed bias, contamination and gene discovery effectiveness in a set of complex unicellular eukaryotic
+systems.  However, it used a SMART based approach instead of MDA \citep{Kolisko2014} and didn't address in depth the optimal way to process, assemble and utilise
+single cell datasets.
+
+
+These samples present an opportunity to investigate in-depth the most effective way to use MDA-based scRNA-Seq in a complex
+eukaryotic ``dual-RNASeq'' system as well the general feasability of such an approach.  For example, is the best use of this sort of data to use
+bulk and SCTs together for assembly, or is it more efficient to use a bulk assembly as a reference and map the single cell reads to it for quantification
+and/or further assembly (i.e. referenced assembly of SCT data subset which maps to bulk transcriptome, and then further \textit{de novo} assembly
+of remaining transcripts)?
 
 
 %However, MDA is prone to a degree of amplification bias \citep{Liang2014} which may be problematic in accurate inference of differential expression
@@ -103,15 +110,13 @@ eukaryotic ``dual-RNASeq'' system as well the general feasability of such an app
 
 Therefore, this chapter addresses the key difficulties of accurately recapitulating transcripts from the \textit{Paramecium bursaria}
 and \textit{Micractinium reisseri} system \textit{de novo} as well as 
-determining the optimal way in which 2nd generation bulk and single cell RNAseq libaries may be integrated together in a reference-free
-system.
-Specifically, we seek to generate methods by which libraries may be screened for contamination before assembly, 
-determining the optimal preprocessing and assembly paramaters, the utility of divergent ``reference'' genomes 
-
-
-trimming and error correction parameters for single cell libraries, investigating the optimal
-assembler and assembly parameters to combine bulk and single cell libraries and finally,
-developing a means of accurate transcript binning into putative species origins.
+determining the optimal way in which 2nd generation bulk and single cell RNAseq libaries may be integrated together in a complex 
+reference-free system.
+Specifically, we seek to generate methods by which libraries may be screened before assembly, 
+determine the optimal preprocessing (trimming and error correction), optimal assembler and \textit{de novo} 
+assembly parameters, the utility of very divergent related genomes as a ``reference'', and/or mixed
+self-mapping assembly methods between bulk and SCT data. 
+Finally, developing a means of accurate transcript binning into putative species origins.
 
 
 \subsection{Assembly}
@@ -124,6 +129,10 @@ Furthermore, when utilising single cell libraries in a \textit{de novo} assembly
 it is doubly important to attempt to discard libraries that are likely to be contaminated by unwanted
 reads.  The importance of this was observed during preliminary assemblies when the inclusion of particular
 libraries were liable to fragment and hugely expanding the resultant assembly.  
+
+Additionally, these methods
+
+
 Therefore, to this end a set of scripts, known as ``dueydrop'', were developed to allow rapid taxonomic profiling of a
 representative subset of each library.  These profiles can then be manually analysed or grouped using unsupervised learning methods 
 to investigate the existence of outlier libraries likely to be the product of contamination or sequencing failure.
@@ -766,6 +775,8 @@ low proportion of sampled reads mapping to known alveolate (or even eukaryotic) 
 especially enriched for likely bacteria derived reads.  
 
 
+
+
 Briefly, this would involve quantifying exact k-mer matches between library reads and a pre-generated database of known taxa
 using efficient probabilstic hashing datastructures such as a bloom filter, or more likely count-min sketch and an efficient
 k-mer counting library such as Jellyfish \citep{Marcais2011}.  This would have a major speed advantage compared to the BLASTX-based method of ``dueydrop''
@@ -777,6 +788,16 @@ commensuately rarer as sampling sparsity increases.
 While still affected by this problem, the BLASTX/Diamond approach implemented in the ``dueydrop'' scripts are relatively more robust to these
 problems due the explicit probabilistic modelling of sequence divergence built into the BLAST alignment algorithm (e.g. E-values).
 
+
+Despite evidence that nanoscale methods can greatly reduce levels of contamination \citep{Blainey2011}, the taxonomic profiling conducted here
+indicates a high level of bacterial (and viral) contamination in the scRNA-Seq.  Intriguingly, this seems even more extreme than in
+the bulk analyses (see \ref{tab:bulk_duey}).
+
+<> Insert BULK data 
+
+
+Possibly, due to the high level of 
+amplification required, the poly-A selection step of cDNA synthesis is less effective and genomic DNA removal.
 
 
 
