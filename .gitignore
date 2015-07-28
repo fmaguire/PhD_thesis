@@ -110,6 +110,7 @@ sympy-plots-for-*.tex/
 
 ## Editor
 *.swp
+*.sw*
 *.swp*
 
 ## BibTeX

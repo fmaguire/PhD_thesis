@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="parkour.svg">
+   sodipodi:docname="out11.svg">
   <metadata
      id="metadata2300">
     <rdf:RDF>
@@ -23,7 +23,6 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title>Gnuplot</dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
