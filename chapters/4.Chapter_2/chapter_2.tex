@@ -5,6 +5,7 @@
 \qauthor{- David Hume: \textit{A Treastie of Human Nature, 1738}}
 \end{savequote}
 
+% what about negative samples 
 
 \chapter{Transcriptomic analysis of the \textit{Paramecium bursaria} and \textit{Micractinium reisseri} endosymbiosis}
 
@@ -40,12 +41,12 @@ one published analysis of host transcriptome with and without a \textit{Chlorell
 Unfortunately, this system is also genomically complex, with \textit{P. bursaria}'s classical ciliate nuclear
 dimorphism, sexual reproduction, partially digested bacterial prey foodstock, and range of associated
 bacterial and viral organisms.  There are also no available reference genomes for either \textit{Paramecium bursaria} or \textit{Micractinium reisseri}.
-However, sequenced genomes for other divergent ciliates (i.e. \textit{Tetrahymena thermophila} \citep{Eisen2006} and \textit{Paramecium tetaurelia}
-\citep{Aury2006}) and for fairly closely related algae \textit{Chlorella variabilis} NC64A \citep{Blanc2010} and \textit{Coccomyxa subellipsoidea} C-169 \citep{Blanc2012}
-(see \ref{fig:introduction} and \ref{fig:introduction}), which could potentially aid transcriptome assembly.  
+However, sequenced genomes for other divergent ciliates (i.e. \textit{Tetrahymena thermophila} \citep{Eisen2006} and \textit{Paramecium caudatum}
+\citep{McGrath2014}) and for fairly closely related algae \textit{Chlorella variabilis} NC64A \citep{Blanc2010} and \textit{Coccomyxa subellipsoidea} C-169 \citep{Blanc2012}
+(see \ref{fig:introduction} and \ref{fig:introduction}), %phylogenies in introduction
+which could potentially aid transcriptome assembly.  
 It should be noted that \citep{Kodama2014}, \citep{Kolisko2014} and \citep{Guarnieri2011} all recapitulated 
 \textit{Paramecium bursaria}, another \textit{Paramecium} species, and \textit{Chlorella vulgaris} transcriptomes \textit{de novo} (without a reference genome).
-
 
 
 Towards this end we conducted a bulk RNAseq sequencing of cultured PbMr using 76bp paired-end reads and the Illumina Gene Analyzer II platform.
@@ -143,9 +144,10 @@ parameters were also invesigated, as well the potential utility of highly diverg
 in assembly.
 
 
+\textbf{Not sure whether the following sections belong in chapter introduction or discussion}
 \subsection{Assembly}
 
-\subsubsection{Pre-processing} 
+\subsubsection{Pre-processing}
 Much as library contamination is one of the key issues with single cell genomics \citep{Blainey2013,Lusk2014}, it highly
 important in SCT.  Single cell methods are particularly prone to contamination issues
 from reagents, laboratory environment and enigmatic nucleic acids within the biological samples themselves.
@@ -214,56 +216,48 @@ assembly tasks.  As well as simplifying path resolution accuracy, if this method
 it would speed up assembly considerably and thus allow more iterations to optimise other
 assembly paramters.
 
-
 \begin{figure}
-<> GC PERCENTAGE
+    \includegraphics{gc_count_example.png}
+    \caption{Example plot of the Light1\_9 showing the characteristic bimodal GC distribution of these libraries}
+    \label{fig:gc}
 \end{figure}
 
+\subsusbsection{Assembly and assembly assessment}
 
-
-
-
-Unfortunately, while it is possible to infer pre-processing parameterisation and options that
-are likely to improve an assembly using heuristic measures like mapping metrics
-it is very difficult to accurately say which paramaters 
-will lead to the ``best'' assembly.  Assembly is an example of
-Wolpert and Macready's ``No Free Lunch Theorems'' \citep{Wolpert1995,Wolpert1997} 
-as \textit{de novo} as it is fundamentally a hamiltonian/eulerian cycle search problem (equivalent
+While an attempt can be made to identify optimal pre-processing
+parameters using heuristic measures like mapping metrics against a reference. 
+It is very difficult to identify the parameters (preprocessing or otherwise) which will leads to the ``best'' 
+\textit{de novo} assembly prior to actually generating the assembly.
+  Assembly can be considered an example of Wolpert and Macready's ``No Free Lunch Theorems'' \citep{Wolpert1995,Wolpert1997} 
+  as (in the case of \textit{de novo} assembly) it is fundamentally a hamiltonian/eulerian cycle search problem (equivalent
     in the de-Bruijn formulation) and therefore any two assembly implementations (in different assemblers and/or
     with different parameters) should ultimately be equivalent across all possible input datasets.\footnote{
     This should be taken with a pinch of salt, a proof of this theorem applied to the case of assembly is beyond
-both the scope of this thesis and my abilities}
+both the scope of this thesis and my abilities}.  For this reason, it is necessary to try
+assembly using a random of assembly parameters and indeed a range of both \textit{de novo} and referenced assemblers. 
+For this reason, 4 \textit{de novo} assemblers were used: Trinity, SOAPdenovo, TransAbyss, and Velvet/Oases (see \ref{sec:methods} for details)
+as well as Cufflinks/TopHat2/Bowtie2 for referenced assemblies.  However, as Trinity overwhelming generated the best 
+\textit{de novo} assemblies in preliminary assemblies the majority of optimisation focussed on this assembler.
 
 
-
-
-
-
-
-
-
-The task of identifying the ``best'' \textit{de novo} transcriptome assembly is also a non-trivial 
+Unfortunately, the task of identifying the ``best'' \textit{de novo} transcriptome assembly is also a non-trivial 
 task \citep{Neil2013}.  Many widely used assembly assessment metrics have been shown to be
 inconsistent measures in simulated sequencing data, especially those metrics related to invidual
 contigs (theoretically different transcript splices).  Metrics such as average length and N50
 prove consistent across both simulated sequencing depth and read lengths i.e. they improve 
 towards \citep{Neil2013}.  Furthermore, the number of possible metrics is greatly reduced
-if assessment mainly is conducted in a reference-free manner (i.e. not based on comparison
-to transcripts derived from other sequencing projects).   A reference-free approach was chosen
-primarily 
-
-
-
-
-
-
+if assessment is mainly conducted in a reference-free manner \citep{Li2014}.  As the majority of
+assemblies were \textit{de novo} and the suitability of the related but divergent genomes
+as references was one area that was being investigated it was necessary to restrict to reference-free
+assembly assessments.  Therefore, a model-based reference-free assembly scoring algorithm (RSEM-EVAL \citep{Li2014} was,
+    along with standard (if imperfect) metrics, used to evaluate different assemblies. 
 
 
 \subsection{Binning}
 
 However, even once a good assembly has been generated it is still necessary to identify the likely
 originating species of a given transcript i.e. host, endosymbiont, food bacterial contaminant or other
-contaminant.  While a successful partitioned assembly strategy may simplify this process it would still
+contaminant.  While a successful partitioned pre-assembly strategy may simplify this process it would still
 be sensible to confirm bins using downstream analyses that use full length assembled transcripts and thus
 more potential data than are present in shorter individual PE reads.  Rough, approximate bins were
 generated using a simple "top BLAST hit" approach following ORF calling (using Tetrahymena and Universal
@@ -274,19 +268,13 @@ This was accomplished using ``Dendrogenous'', a rewritten and modified version o
 as ``Darren's Orchard'' which first appeared in \citep{Richards2009g}.  Phylogenies were manually assessed to check
 whether the resultant topology was congruent with the BLAST based binning i.e. are supposedly ``endosymbiont''
 transcripts branching principally with archaeplastida taxa.  
+However, due to the slow largely manual nature of this phylogeny assessment process it would be infeasible
+to repeat this for all transcripts generated from a single assembly, let alone investigating several. 
 
-
-While, due to the painfully manual nature of this phylogeny assessment process, 
-it would be infeasible to repeat this phylogeny binning procedure for all transcripts, ``Dendrogenous'' allowed
-relatively rapidy generation of phylogenies for all transcripts.  Therefore, this presented an ideal
-challenge for supervised classification with the corpus of 10,000 manually validated phylogenies providing an effective
-training dataset for a supervised classification algorithm.  
-
-
-
-
-
-
+Therefore, this became a fundamental classification problem with the 10,000 manually verified phylogenies
+forming a handy training dataset for supervised learning.   To determine the best performing
+classification algorithm and hyperparameters for this dataset an automated search was conducted 
+using bayesian optimisation.  This was then converted to a binning script named ``Arboretum''.
 
 
 
@@ -555,8 +543,6 @@ Scripts used to conduct this are available in a github repository:
 
 \subsection{Assembly}
 
-\subsubsection{Referenced}
-
 Trimmed bulk and taxonomically selected single cell libraries
 were mapped to \textit{Chlorella} NC64A, \textit{Coccomyxa C169}, 
 \textit{Tetrahymena thermophila} and \textit{Paramecium caudatum} MAC genomes.
@@ -569,88 +555,24 @@ cufflinks).
 Cufflinks \citep{Trapnell2011} was then used to extract isoforms from the spliced alignments.
 
 
-\subsubsection{\textit{de novo}}
-
-\textit{de novo} assemblies were conducted 
-
-
-
-
-\subsubsection{Comparing assemblers}
-Trinity,
-SOAP de novo Trans
-TransAbyss
-Velvet+Oases
-
-Trinity best
-
-\subsubsection{Optimising Trinity Assembly}
-
-minkmer cov 2: yay or nay
-
-Error correction: yay or nay
-
-Digital normalisation: yay or nay
-
-\subsubsection{Assembly assessment}
-CEGMA - not perfect for genomic - numbers are not directly as the transcriptome metabolic and cellular function
-genes will be overrpretented 
-RSEM-eval
-Mapping percentage
+For \textit{de novo} assembly, assemblies were conducted using Trinity \citep{Grabherr2011}, 
+SOAPdenovo-Trans \citep{Xie2014}, TransAbyss \citep{Robertson2010} and Velvet/Oases \citep{Schulz2012}.
+However, as Trinity overwhelming generated the best assemblies i.e. recovered the same trancripts
+but generally longer and more accurately collapsed into different isoforms, Trinity was 
+used for all further downstream optimisation.
 
 
-Assembly parameters e.g. N50, transcript number, total bp assembled are not necessarily useful
-as wildly different valuesreturn similar gene content \citep{Lowe2014}
-These parameters have been demonstrated as being inconsistent for test ``perfect assemblies'' 
+ORFs were called from assembled transcripts using transdecoder \citep{Haas2013} with 
+a minimum protein size of 100aa.  \textit{Paramecium} uses an alternative
+genetic code in which two universal stop codons (UAA, UAG) are reassigned to glutamine.
+Due to this all ORFs were initially called using this encoding for initial binning
+purposes as spuriously extended transcripts were favourable to falsely truncated
+ones.  
 
-
-
-
-
-After assembly transcripts shorter than 200bp were removed and CD-HIT was sued to elimiate small 
-transcripts with 99\% idendity to longer transcripts  ``cd-hit-est -i TREANSCRIT -c 0.99 -o Ol:UTPU''
-
-
-Trinity assemblies have been found to include more low-abundance k-mers than oases, many different isoforms
-but doesn't recover many more unique genes just more isoforms \citep{Lowe2014} 
-
-k-mer spectrum can be used to evaluate reocvoeery of low-abundance transcrtipts \citep{Pop2009}
-
-
-
-
-
-
-\subsection{Bulk Transcriptome Trimming}
-
-FastX-toolkit adapative trimming Q20 applied by sequencing service.
-Raw untrimmed FASTQ data not available
-
-
-\subsection{Transcriptome Assembly}
-
-As mapping to even divergent (up to 15\%) genomes can generate transcriptomes of higher-quality
-than de novo \citep{Vijay2013}
-SCT
-
-
-
-\subsection{ORFs calling}
-
-Too many transcripts 
-
-Universal or tetrahymena genetic code.
-
-The ciliate code reassigns 2 universal stop codons (UAA, UAG) to Gln amab
-
-
-
-ORFs were extracted from transcriptome using transdecoder and a minimum protein size of 50aa
-because
-
+%After assembly transcripts shorter than 200bp were removed and CD-HIT was sued to elimiate small 
+%transcripts with 99\% idendity to longer transcripts  ``cd-hit-est -i TREANSCRIT -c 0.99 -o Ol:UTPU''
 
 \subsection{Binning}
-
 
 \subsubsection{Initial bins}
 
@@ -691,35 +613,130 @@ charomyces or any sequence not fitting into the above categories.
 \end{itemize}
 
 
-
-
-
-
-
 \subsubsection{Dendrogenous}
-For this purpose ete2 library was ported to python3 (pull request outstanding to merge this into ete2 codebase)
 
+To rapidly generate phylogenies an established lab tree generation pipeline, known as ``Darren's Orchard'' 
+\citep{Richards2009g} was modified and converted to python3.  This new pipeline ``Dendrogenous'' 
+takes in a multi-fasta set of inputs and a set of genomes to search against.
+For each input sequence:
+\begin{enumerate} 
+    \item The specified genome database is queried using BLASTP
+    \item The results are parsed and a fasta file of putative homologues is created, with inputs that have fewer than a specified 
+        number of hits (default of 5) ejected.
+    \item A multiple sequence alignment (MSA) is created from this fasta using Kalign (chosen for its speed) \citep{Lassmann2009}
+    \item This MSA is then masked automatically to remove ambiguous sites using TrimAL \citep{Capella-Gutierrez2009} and masked alignments
+        with fewer than a specified number of sites (default of 30) are ejected from the pipeline.
+    \item A rapid maximum-likelihood phylogenetic tree is generated using FastTree2 \citep{Price2010}
+    \item Finally, encoded taxonomic information is recovered from the ``cider'' database of the original ``Darren's Orchard'' pipeline 
+        and the trees are named with full species names.
+\end{enumerate}
+The two key improvements are that of full and efficient parallelisation of the tree generation process (see \ref{fig:ddg})
+and increased use of filestreams to pass data between pipeline stages.  This latter modification reduces costly and slowly
+file reading and writing operations.
 
-Phylogeny generation
+In the process of creating this modified phylogenetic pipeline I upgraded the general purpose python phylogenetic toolkit
+ETE \citep{Huerta-Cepas2010} to support python3.  As ETE is an open source project I submitted these changes
+to the maintainer and they have subsequently been merged into the master.  These changes compose a significant proportion of
+the latest major release version of this toolkit \url{https://github.com/jhcepas/ete/pull/105}.
+
+\begin{figure}
+    \includegraphs[width=\textwidth]{dendrogenous_parallel.pdf}
+    \caption{A explanatory plot showing 3 different possible architectures for a tree generation pipeline. 
+        Serial, in which each phylogeny is run one after another.  This form makes no use of multiprocessing
+        facilities, however, a moderate but significant performance improvement can be achieved by allowing
+        each stage in the pipeline to utilise multiple cores i.e. the trees are generated serially but during
+        their generation alignment and blasting making use of multiple processors.          
+        Stagewise parallel, where for example, all alignments for each input sequence are run side-by-side 
+        and masking begins once the last sequence has finished alignment.  The disadvantage of this is a single
+        slow stage for one input sequence can hold up the whole pipeline and leave resources idle.  Additionally,
+        by running many of the same type of process at the same time, each with similar resource requirements,
+        the risk of hardware bottlenecking is increased compared to a more heterogenous load.
+        Finally, fully parallel runs each input sequence through the pipeline stage-by-stage separately
+    from all other inputs to the pipeline. This prevents blocking and allows efficient using of resources.}
+    \label{fig:ddg}
+\end{figure}
+
+40 genomes covering the diversity of the tree of life, with a particular focus on green algal and ciliate representatives 
+were selected for this phylogenetic generation.
+\begin{itemize}
+    \item \textit{Arabidopsis thaliana}
+    \item \textit{Chlamydomonas reinhardtii }
+    \item \textit{Ostreococcus tauri}
+    \item \textit{Micromonas pusilla CCMP1545}
+    \item \textit{Chlorella variabilis NC64A}
+    \item \textit{Chlorella vulgaris C-169}
+    \item \textit{Physcomitrella patens}
+    \item \textit{Saccharomyces cerevisiae S288C}
+    \item \textit{Neurospora crassa OR74A}
+    \item \textit{Homo sapiens}
+    \item \textit{Mus musculus}
+    \item \textit{Dictyostelium discoideum}
+    \item \textit{Paramecium caudatum}
+    \item \textit{Paramecium tetraurelia}
+    \item \textit{Tetrahymena thermophila macronucleus}
+    \item \textit{Oxytricha trifallax}
+    \item \textit{Toxoplasma gondii}
+    \item \textit{Guillardia theta}
+    \item \textit{Bigelowiella natans}
+    \item \textit{Emiliania huxleyi CCMP1516 }
+    \item \textit{Aureococcus anophagefferens}
+    \item \textit{Ectocarpus siliculosus}
+    \item \textit{Schizosaccharomyces pombe}
+    \item \textit{Bacillus cereus ATCC 14579}
+    \item \textit{Escherichia coli str. K-12 substr. MG1655}
+    \item \textit{Escherichia coli O157 H7 str. Sakai}
+    \item \textit{Salmonella enterica subsp. enterica serovar Typhi str. CT18}
+    \item \textit{Amycolatopsis mediterranei U32}
+    \item \textit{Aquifex aeolicus VF5}
+    \item \textit{Borrelia burgdorferi B31}
+    \item \textit{Chlamydophila pneumoniae CWL029}
+    \item \textit{Chlorobium tepidum TLS}
+    \item \textit{Deinococcus radiodurans R1}
+    \item \textit{Caulobacter crescentus CB15}
+    \item \textit{Sulfolobus islandicus M.14.25}
+    \item \textit{Nanoarchaeum equitans Kin4-M}
+    \item \textit{Haloferax mediterranei ATCC 33500}
+    \item \textit{Methanococcus maripaludis S2}
+    \item \textit{Cenarchaeum symbiosum A}
+\end{itemize}
+
+10,000 transcripts from the initial BLAST based bins were used to generate phylogenies 
+and were manually parsed and assessed for phylogenetic congruence with their bin.
+For example, do host binned sequences predominantly branch with other ciliate sequences?
+Do endosymbiont binned sequences mainly branch with archaeplastida sequences. 
 
 
 \subsubsection{Arboretum}
-Binner 
 
-Training data manually parsed
-
-
-
-\subsection{Saturation}
-Estimating saturation can only be done after binning as we are only interested in host and algal endosymbiont
-So saturation on binned contigs.
+Using these 10,000 manually verified phylogenetic bins as a training dataset a supervised classification
+script ``Arboretum'' was created.  The cardinalities of this training set are relatively balanced, all within
+the same order of magnitude 1975 endosymbiont phylogenies, 2600 host, 3456 food, and 1969
+unknown. 
 
 
+``Arboretum'' parses phylogenies and identifies the k (default of 10) nearest branches to the seed transcript
+the phylogeny was generated from.  The species of these closest leaves is queried taxonomically using the
+NCBI taxonomy local database implemented in the ETE toolkit.  With a set of look-up filters e.g.
+sequences from ciliates can be defined as "host-like", a set of vectors is created for each phylogeny.  
+These are N-dimensional vectors where N is the number of class labels being used. 
+For example, in this specific case: "endosymbiont", "host", "food/bacterial", and "unknown".
+The magnitude of each dimension is the summed reciprocal phylogenetic distance between the root node and all
+of the nearest branches that have been identified as being indicative of a certain class.
 
+1,000 vectors from this training set were held out to form the test set and all models were then trained
+using stratified 5-fold cross-validation on the remaining 9,000 training vectors. 
+Support vector machines, random forest and logistic regression algorithms as implemented in scikit-learn 
+were evaluated for performance manually and best performing classification algorithm was selected.
+Additionally, an autoML method in which all available models are considered as hyperparameters in an efficient
+bayesian optimisation approach was also attempted \citep{Komer2014}. 
+Model performance was evaluated using a weighted average of all against one f1-scores.
 
 \section{Results and Discussion} 
 
 \subsection{Library selection}
+
+
+% negatives ??
 
 \begin{table}[h]
      \begin{tabular}{@{}|l|l|l|l|l|l|l|l|@{}}
@@ -913,6 +930,43 @@ While the GC partitioning algorithm itself proved very effective
 
 \subsubsection{Assembly}
 
+Referenced assembly using the divergent \textit{Chlorella NC64A},
+\textit{Coccomyxa subellipsoidea} C-169, \textit{Tetrahymena thermophila},
+\textit{Paramecium caudatum} genomes as references was largely fruitess.
+Of all bulk and SCT reads only 0.3 and 0.4\% mapped to the 
+algal references.  Similarly, only 0.6 and 0.9\% of reads mapped to the 
+respective ciliate genomes. 
+Generally, spliced mapping like this can be improved 
+
+
+
+Supplying GTF annotations for the genomes
+being mapped
+
+
+
+Addition of GTF annotations
+
+
+
+
+
+As mapping to even divergent (up to 15\%) genomes can generate transcriptomes of higher-quality
+than de novo \citep{Vijay2013}
+
+
+
+
+
+Referenced assembly was a fruitless task with only 0.4\% of reads
+without gtf and 0.5\% with it 
+
+
+
+
+
+
+
 
 %There are \(4^{100}\) possible \(100bp\) reads
 %therefore if we randomly sampled from this
@@ -962,6 +1016,12 @@ Bulk                           & 52.4M                                   & 52.4M
 
 
 \subsubsection{Saturation}
+Trinity assemblies have been found to include more low-abundance k-mers than oases, many different isoforms
+but doesn't recover many more unique genes just more isoforms \citep{Lowe2014} 
+k-mer spectrum can be used to evaluate reocvoeery of low-abundance transcrtipts \citep{Pop2009}
+
+
+
 
 \subsection{Binning}
 
