@@ -63,7 +63,20 @@ derived from 1 to a few cells (reviewed \citep{Macaulay2014,Liang2014,Wu2014a}).
 (covered in \ref{chap:methods}) e.g. Quartzseq \citep{Sasagawa2013}, Tang's method \citep{Tang2009} and SMARTSEQ \citep{Goetz2012,Picelli2014},
 however we used the poly-A reverse transcription multiple displacement amplification (MDA) based method \citep{Korfhage2015}.  
 This method was selected as its based method (MDA) has already been widely applied and characterised in single cell genomics (e.g. \citep{Spits2006}),
-and it is relatively simple and reliable.  \textbf{Need to add more to this <>}  
+and has a relatively simple experimental methodology.  Furthermore, manufacturer's claims (Qiagen) indicate that their MDA-based kit (Repli-G WTA) 
+is more successful at recovering transcripts across a wider range of abundance levels i.e. recovers many lowly expressed transcripts\footnote{
+\url{https://www.qiagen.com/gb/shop/sample-technologies/rna-sample-technologies/total-rna/repli-g-wta-single-cell-kit/} as of 2015/08/25}.
+Unfortunately, while there has been at least one empirical comparison of single cell transcriptomic methods \citep{Wu2014a}, the performance of
+Qiagen's Repli-G WTA MDA-based kit has yet to be directly assessed relative to other kits and methods. 
+
+Briefly, the MDA method involves cell lysis, removal of genomic DNA, reverse transcription cDNA using random and/or optional oligo-dT 
+primers, ligation of cDNA fragments and then whole transcriptome amplification (WTA) via MDA by a \(\phi29\) DNA polymerase in isothermal conditions \citep{Korfhage2015}
+Normal library preparation and sequencing protocols can then be used on the amplified sampled.  
+The principal behind this is that the 5'-3' exonuclease proofreading activity of the \(\phi29\) polymerase sufficiently reduces
+the error-rate of amplification relative to Taq (\(9.5*10^{-6}\) errors per nucleotide \citep{Paez2004} compared with
+\(10^{-4}-10^{-5}\) \citep{Tindall1988,Eckert1990}).  This makes the necessary level of amplification
+for single cell analysis feasible.
+
 
 %Although not exlcusive to MDA based sc-RNAseq, this method
 %can improve 3' resolution of transcripts.  It was observed in preliminary bulk assemblies that both C- and N- terminal coverage 
@@ -95,7 +108,7 @@ the raw reads to:
     \item Just use SCT for transcript quantification i.e. map the SCT reads to a bulk derived \textit{de novo} assembly to generate counts (and is there a severe bias induced 
         by the MDA amplification \citep{Liang2014}?)
     \item Use the bulk transcriptome assembly as a reference for assembly of the SCT reads (and \textit{de novo} assemble SCT reads which don't map to the bulk reference).
-\end{itemize} 
+\end{itemize}  <>++
 On top of this, we need to determine the optimal assembly parameters and processing of the SCT libraries.   While some work
 has been done invesigating the optimal processing of bulk RNAseq datasets (e.g. \citep{Macmanes2013,Macmanes2015}) the effect of
 different trims and error correction on sc-RNAseq has not been characterised.
@@ -218,8 +231,15 @@ it would speed up assembly considerably and thus allow more iterations to optimi
 assembly paramters.
 
 \begin{figure}
-    \includegraphics[width=\textwidth]{gccountexample.png}
-    \caption{Example plot of the Light1\_9 showing the characteristic bimodal GC distribution of these libraries}
+    \includegraphics[width=\textwidth]{lib_gc_prop.pdf}
+    \caption{Kernel Density Estimate \citep{Rosenblatt1956,Parzen1962} plots of the mean GC proportion per read within each single cell transcriptome library.
+             Plots used a gaussian kernel and a bandwidth determined by ``Scott's normal reference rule'' \citep{Scott1979}.  Lines in each subplot represents a KDE
+             of an individual sequencing library and they are displayed in subplots corresponding to their originating condition (``Light 1'', ``Dark 1'' 
+             and ``Dark 2'') i.e. from the lit and dark libraries from the first sequencing run and the extra dark libraries generated in the second sequencing run.
+             Shared colours between distinct subplots do not imply any common library identities. 
+             The exception to this is the final plot which shows the GC proportion KDE of all single cell libraries combined.
+             The bimodal probability distribution shown in all plots (and especially prevalent in the dark libraries and the combined KDE) is indicative 
+             of the GC biases of \textit{P. bursaria} and \textit{M. reisseri} and the relative proportion of reads originating from these organisms in each library.
     \label{fig:gc}
 \end{figure}
 
@@ -271,6 +291,18 @@ whether the resultant topology was congruent with the BLAST based binning i.e. a
 transcripts branching principally with archaeplastida taxa.  
 However, due to the slow largely manual nature of this phylogeny assessment process it would be infeasible
 to repeat this for all transcripts generated from a single assembly, let alone investigating several. 
+
+
+Therefore, a machine learning approach was utilised with the manually verified set of 10,000 phylogeny
+classifications forming the training data set. Briefly, these phylogenies 
+
+
+
+(for a general overview of machine learning see
+\ref{chap:methods}).
+
+
+
 
 Therefore, this became a fundamental classification problem with the 10,000 manually verified phylogenies
 forming a handy training dataset for supervised learning.   To determine the best performing
@@ -573,7 +605,7 @@ ones.
 %After assembly transcripts shorter than 200bp were removed and CD-HIT was sued to elimiate small 
 %transcripts with 99\% idendity to longer transcripts  ``cd-hit-est -i TREANSCRIT -c 0.99 -o Ol:UTPU''
 
-\subsection{Binning}
+\subsection{Transcript Binning}
 
 \subsubsection{Initial bins}
 
@@ -614,7 +646,8 @@ charomyces or any sequence not fitting into the above categories.
 \end{itemize}
 
 
-\subsubsection{Dendrogenous}
+
+\subsubsection{Automated Phylogeny Generation Pipeline - Dendrogenous}
 
 To rapidly generate phylogenies an established lab tree generation pipeline, known as ``Darren's Orchard'' 
 \citep{Richards2009g} was modified and converted to python3.  This new pipeline ``Dendrogenous'' 
@@ -707,7 +740,8 @@ For example, do host binned sequences predominantly branch with other ciliate se
 Do endosymbiont binned sequences mainly branch with archaeplastida sequences. 
 
 
-\subsubsection{Arboretum}
+
+\subsubsection{Automated Phylogenetic Transcript Binning - Arboretum}
 
 Using these 10,000 manually verified phylogenetic bins as a training dataset a supervised classification
 script ``Arboretum'' was created.  The cardinalities of this training set are relatively balanced, all within
