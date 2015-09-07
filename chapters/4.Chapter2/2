@@ -5,55 +5,52 @@
 \qauthor{- David Hume: \textit{A Treastie of Human Nature, 1738}}
 \end{savequote}
 
-% what about negative samples - profile them
+% what about negative samples 
 
 \chapter{Transcriptomic analysis of the \textit{Paramecium bursaria} and \textit{Micractinium reisseri} endosymbiosis}
 
 \section{Introduction}
 
-The \textit{Paramecium bursaria}-\textit{Micractinium reisseri} (PbMr) endosymbiosis 
-conveys phototrophy \citep{Karakashian1963}, numerous photobiological traits (e.g. \citep{Berk1991,Saji1974,Nakajima1989,Niess1982a,Iwatsuki1988,Summerer2009}, 
-partially reviewed in \citep{Sommaruga2009}) and its establishment and maintenance 
-is dependent on photosynthetic activity and enigmatic light-induced factors \citep{Karakashian1963,Hosoya1995a,Kodama2007,Kodama2014c}.
-Therefore, a relatively unbiased global metatranscriptomic profile of host and endosymbiont in both lit and dark conditions 
-would potentially identify key transcripts which play a role in the establishment, maintenance, and characteristics 
-of this endosymbiosis. 
-
-Transcriptomics targeting a small number of defined organisms
-have proven effective in several studies investigating host-chloroplast interactions \citep{Nowack2011,Jiggins2013,Xiang2015},
-and host-pathogen systems \citep{Tieryney2012,Kawahara2012,Jones2014,Hayden2014}.
-To differentiate these types of analyses from metatranscriptomics in environmental samples of unknown composition 
-common in microbial ecology \citep{Poretsky2005,AliagaGoltsman2014} or the classic RNAseq of large axenic cultures, 
-they have been referred to as ``dual-RNAseq'' \citep{Westermann2012}.  
-
+Transcriptomics, and specifically RNAseq, is a powerful method by which the \textit{Paramecium bursaria}-\textit{Micractinium reisseri} (PbMr)
+endosymbiosis can be investigated. This endosymbiosis conveys phototrophy \citep{Karakashian1963} as well as 
+numerous photobiological behavioural and biochemical traits (e.g. \citep{Berk1991,Saji1974,Nakajima1989,Niess1982a,Iwatsuki1988,Summerer2009}, 
+partially reviewed in \citep{Sommaruga2009}).  Photosynthesis and unidentified light-induced factors have been identified as key to the establishment
+and maintenance of this endosymbiosis (and prevention of algal digestion by the host) \citep{Karakashian1963,Hosoya1995a,Kodama2007,Kodama2014c}.
+Therefore, a (relatively) unbiased global metatranscriptomic profile of host and endosymbiont in both lit and dark conditions can be used to 
+identify key transcripts playing a role in the establishment, maintenance, and photobiological traits of this endosymbiosis. 
 %constitutively expressed photosynthetic components
 %This profile will allow metabolic reconstruction of host and endosymbiont in both photosynthetically active and inactive
 %states as well as offering a means to identify significantly differentially expressed transcripts between these states.
 
-\textit{Paramecium bursaria} and its green algal endosymbionts as a system
-has features that make it well-posed for ``dual-RNAseq''.  Specifically, there is a plethora 
-of literature on the physiology and behaviour of host and endosymbiont, both together and individually.
-(e.g. \citep{Iwatsuki1988}, see \citep{Kato2009a} and \ref{chap:introduction} for more details) offering
-a important resource by which results can be contextualised.
-Additionally, transcriptomic analysis has proven feasible in both reasonably close relatives of host and endosymbiont 
-(for example, \citep{Guarnieri2011,Rowe2014,Bashan2015} and \citep{Arnaiz2010,Kolisko2014}) and
-for the host transcriptome with and without a \textit{Chlorella} endosymbiont \citep{Kodama2014}.
 
-However, this system also presents difficulties in its transcriptomic tractability.
-Foremost, the system is highly genomically and transcriptomically complex with \textit{P. bursaria}'s ciliate nuclear
-dimorphism and polyploidy \citep{Raikov1995}, sexual reproduction in both host \citep{Jennings1939} and endosymbiont species \citep{Blanc2010},
-presence of partially digested bacterial prey of the host \citep{Dolan1992}, wide range of GC biases \citep{Kodama2014}, and numerous
-associated bacteria \citep{Gortz2009,Fokin2009,Schrallhammer2009} and viruses \citep{VanEtten1983}.
-There are also no available reference genomes for either \textit{Paramecium bursaria} or \textit{Micractinium reisseri} 
-but individually \textit{Paramecium bursaria} \citep{Kodama2014}, another \textit{Paramecium} species \citep{Kolisko2014}, 
-and \textit{Chlorella vulgaris} \citep{Guarnieri2011} transcriptomes have all been successfully recapitulated \textit{de novo} (without a reference genome).
-Additionally, sequenced genomes for other divergent ciliates (i.e. \textit{Tetrahymena thermophila} \citep{Eisen2006}, \textit{Paramecium tetraurelia} \citep{Aury2006} and \textit{Paramecium caudatum}
+The effectiveness of this type of approach is evidenced by several studies investigating
+host-chloroplast interactions \citep{Nowack2011,Jiggins2013,Xiang2015}. 
+Studies of the interaction between a small number of defined organisms e.g. host-endosymbiont, host-pathogen etc.
+fall between the full large scale environmental transcriptomics of microbial ecology \citep{Poretsky2005,AliagaGoltsman2014} 
+and the large axenic cultures of traditional transcriptomics.  This type of study has been dubbed
+as ``dual-RNAseq'' \citep{Westermann2012}, particularly in the area of host-pathogen interactions \citep{Tieryney2012}.
+
+
+\textit{Paramecium bursaria} and its green algal endosymbionts are particularly well suited for investigation
+using a ``dual-RNAseq'' approach.  This is due to the plethora of 
+of literature on the physiology and behaviour of host and endosymbiont, both together and individually.
+(e.g. \citep{Iwatsuki1988}, see \citep{Kato2009a} and \ref{chap:introduction} for more details).
+On top of this, transcriptomic analysis has proven feasible in reasonably close relatives of both organisms 
+(for example, \citep{Guarnieri2011,Rowe2014,Bashan2015} and \citep{Arnaiz2010,Kolisko2014}), as well as
+one published analysis of host transcriptome with and without a \textit{Chlorella} endosymbiont \citep{Kodama2014}.
+Unfortunately, this system is also genomically complex, with \textit{P. bursaria}'s classical ciliate nuclear
+dimorphism, sexual reproduction, partially digested bacterial prey foodstock, and range of associated
+bacterial and viral organisms.  There are also no available reference genomes for either \textit{Paramecium bursaria} or \textit{Micractinium reisseri}.
+However, sequenced genomes for other divergent ciliates (i.e. \textit{Tetrahymena thermophila} \citep{Eisen2006}, \textit{Paramecium tetraurelia} \citep{Aury2006} and \textit{Paramecium caudatum}
 \citep{McGrath2014}) and for fairly closely related algae \textit{Chlorella variabilis} NC64A \citep{Blanc2010} and \textit{Coccomyxa subellipsoidea} C-169 \citep{Blanc2012}
 (see \ref{fig:paramecium_genomes} in \ref{chap:introduction} and \ref{fig:chlorella_genomes} in \ref{chap:endo_diversity} for respective phylogenetic context of these genomes), 
-do exist which could potentially aid transcriptome assembly.  
+which could potentially aid transcriptome assembly.  
+It should be noted that  
+\textit{Paramecium bursaria} \citep{Kodama2014}, another \textit{Paramecium} species \citep{Kolisko2014}, and \textit{Chlorella vulgaris} \citep{Guarnieri2011} transcriptomes have all
+been successfully recapitulated \textit{de novo} (without a reference genome).
 
 
-To this end, a bulk RNAseq libraries from cultured PbMr was sequenced using 76bp paired-end reads and the Illumina Gene Analyzer II platform.
+Towards this end we conducted a bulk RNAseq sequencing of cultured PbMr using 76bp paired-end reads and the Illumina Gene Analyzer II platform.
 Unfortunately, due to limitations in the maintainable culture density of the \textit{Paramecium bursaria} CCAP 1660/12 and thus the quantity of extractable
 mRNA it was necessary to pool all day and night replicates into a single pair of day and night libraries. 
 While this provided sufficient material for sequencing it precluded accurate inference of significant differential expression between day or night
@@ -61,46 +58,24 @@ as it masked all biological replicates \citep{Auer2010}.  We, therefore, also se
 biological replicates using single-cell RNAseq (sc-RNAseq) methods. 
 
 
+sc-RNAseq are a relatively new set of technologies which facilitate transcriptome sequencing with starting material on the range of picograms
+derived from 1 to a few cells (reviewed \citep{Macaulay2014,Liang2014,Wu2014a}).  There are a range of sc-RNAseq methodologies 
+(covered in \ref{chap:methods}) e.g. Quartzseq \citep{Sasagawa2013}, Tang's method \citep{Tang2009} and SMARTSEQ \citep{Goetz2012,Picelli2014},
+however we used the poly-A reverse transcription multiple displacement amplification (MDA) based method \citep{Korfhage2015}.  
+This method was selected as its based method (MDA) has already been widely applied and characterised in single cell genomics (e.g. \citep{Spits2006}),
+and has a relatively simple experimental methodology.  Furthermore, manufacturer's claims (Qiagen) indicate that their MDA-based kit (Repli-G WTA) 
+is more successful at recovering transcripts across a wider range of abundance levels i.e. recovers many lowly expressed transcripts\footnote{
+\url{https://www.qiagen.com/gb/shop/sample-technologies/rna-sample-technologies/total-rna/repli-g-wta-single-cell-kit/} as of 2015/08/25}.
+Unfortunately, while there has been at least one empirical comparison of single cell transcriptomic methods \citep{Wu2014a}, the performance of
+Qiagen's Repli-G WTA MDA-based kit has yet to be directly assessed relative to other kits and methods. 
 
-While reasonably nascent, sc-RNAseq has shown a lot of promise in well characterised systems such as human cell cultures \citep{Bengtsson2005,Shalek2013}
-and \textit{Saccharomyces cerevisiae} \citep{Lipson2009}.  
-There are high expectations of their utility addressing difficult outstanding issues in ``dual-RNASeq'' \citep{Westermann2012} and transcriptomics 
-in general. Specifically, addressing the problems of analysing unculturable or poorly culturable
-organisms \citep{Murray2012} and cell-cell heterogeneity in expression patterns \citep{Raj2008,Shalek2013}).  
-Uninvestigated, this heterogeneity (either from biological and/or genomic variance or just the stochasticity of gene expression),
-can lead to a Yule-Simpson effect \citep{Yule1903a,Simpson1951}, where the false amalgamatation of distinct expression patterns
-in previously cryptic but distinct cellular subpopulations could generate a spurious expression pattern contrary to either subpopulation.
-
-
-
-Additionally, sc-RNAseq 
-
-
-
-
-%sc-RNAseq are a relatively new set of technologies which facilitate transcriptome sequencing with starting material on the range of picograms
-%derived from 1 to a few cells (reviewed \citep{Macaulay2014,Liang2014,Wu2014a}).  There are a range of sc-RNAseq methodologies 
-%(covered in \ref{chap:methods}) e.g. Quartzseq \citep{Sasagawa2013}, Tang's method \citep{Tang2009} and SMARTSEQ \citep{Goetz2012,Picelli2014},
-%however we used the poly-A reverse transcription multiple displacement amplification (MDA) based method \citep{Korfhage2015}.  
-%This method was selected as its base method (MDA) has already been widely applied and characterised in single cell genomics (e.g. \citep{Spits2006}),
-%and has a relatively simple experimental methodology.  Furthermore, manufacturer's claims (Qiagen) indicate that their MDA-based kit (Repli-G WTA) 
-%is more successful at recovering transcripts across a wider range of abundance levels i.e. recovers many lowly expressed transcripts\footnote{
-%\url{https://www.qiagen.com/gb/shop/sample-technologies/rna-sample-technologies/total-rna/repli-g-wta-single-cell-kit/} as of 2015/08/25}.
-%Unfortunately, while there has been at least one empirical comparison of single cell transcriptomic methods \citep{Wu2014a}, the performance of
-%Qiagen's Repli-G WTA MDA-based kit has yet to be directly assessed relative to other kits and methods. 
-
-
-
-
-
-
-%Briefly, the MDA method involves cell lysis, removal of genomic DNA, reverse transcription cDNA using random and/or optional oligo-dT 
-%primers, ligation of cDNA fragments and then whole transcriptome amplification (WTA) via MDA by a \(\phi29\) DNA polymerase in isothermal conditions \citep{Korfhage2015}
-%Normal library preparation and sequencing protocols can then be used on the amplified sampled.  
-%The principal behind this is that the 5'-3' exonuclease proofreading activity of the \(\phi29\) polymerase sufficiently reduces
-%the error-rate of amplification relative to Taq (\(9.5*10^{-6}\) errors per nucleotide \citep{Paez2004} compared with
-%\(10^{-4}-10^{-5}\) \citep{Tindall1988,Eckert1990}).  This makes the necessary level of amplification
-%for single cell analysis feasible.
+Briefly, the MDA method involves cell lysis, removal of genomic DNA, reverse transcription cDNA using random and/or optional oligo-dT 
+primers, ligation of cDNA fragments and then whole transcriptome amplification (WTA) via MDA by a \(\phi29\) DNA polymerase in isothermal conditions \citep{Korfhage2015}
+Normal library preparation and sequencing protocols can then be used on the amplified sampled.  
+The principal behind this is that the 5'-3' exonuclease proofreading activity of the \(\phi29\) polymerase sufficiently reduces
+the error-rate of amplification relative to Taq (\(9.5*10^{-6}\) errors per nucleotide \citep{Paez2004} compared with
+\(10^{-4}-10^{-5}\) \citep{Tindall1988,Eckert1990}).  This makes the necessary level of amplification
+for single cell analysis feasible.
 
 
 %Although not exlcusive to MDA based sc-RNAseq, this method
@@ -109,15 +84,20 @@ Additionally, sc-RNAseq
 %Terminal coverage tends can be limited in bulk analyses due to 
 
 
+While reasonably nascent, sc-RNAseq has shown a lot of promise in well characterised systems such as human cell cultures \citep{Bengtsson2005,Shalek2013}
+and \textit{Saccharomyces cerevisiae} \citep{Lipson2009}.  
+There are high expectations of their utility addressing difficult outstanding issues in ``dual-RNASeq'' \citep{Westermann2012} and transcriptomics 
+in general. Specifically, single cell transcriptomes (SCTs) address the problems of analysing unculturable or poorly culturable
+organisms \citep{Murray2012} and cell-cell heterogeneity in expression patterns \citep{Raj2008,Shalek2013}).  
+Uninvestigated, this heterogeneity (either from biological and/or genomic variance or just the stochasticity of gene expression),
+can lead to a Yule-Simpson effect \citep{Yule1903a,Simpson1951}, where the false amalgamatation of distinct expression patterns
+in previously cryptic but distinct cellular subpopulations could generate a spurious expression pattern contrary to either subpopulation.
 
 Unfortunately, despite their utility SCTs generate a set of problems of their own.  First and foremost, there has only been a single
 published use of sc-RNAseq, to my knowledge, in non-model unicellular eukaryotes.   This study by \citep{Kolisko2014}, 
 briefly addressed the issues of bias, contamination and gene discovery effectiveness in a set of model and non-model eukaryotes and
 demonstrated a proof-of-concept.  However, it also used a different sc-RNAseq approach (SMART), focussed on single organisms, 
 and didn't address in-depth the optimal way to process, assemble and utilise single cell datasets.
-
-
-
 
 These samples therefore, present an opportunity to investigate the most effective way MDA-based sc-RNAseq can be used
 to investigate a complex eukaryotic multimember (``dual-RNAseq'') relationship and means in which these forms of data
@@ -129,11 +109,9 @@ the raw reads to:
         by the MDA amplification \citep{Liang2014}?)
     \item Use the bulk transcriptome assembly as a reference for assembly of the SCT reads (and \textit{de novo} assemble SCT reads which don't map to the bulk reference).
 \end{itemize}  <>++
-
 On top of this, we need to determine the optimal assembly parameters and processing of the SCT libraries.   While some work
 has been done invesigating the optimal processing of bulk RNAseq datasets (e.g. \citep{Macmanes2013,Macmanes2015}) the effect of
 different trims and error correction on sc-RNAseq has not been characterised.
-
 
 
 Another unaddressed problem in a ``dual-RNAseq'' analysis of the PbMr systems is that of attribution of recovered transcripts
@@ -170,9 +148,8 @@ that cryptic bacterial contamination can be problematic \citep{Kolisko2014}.
 
 %First achieved in \citep{Lao2009}
 
-\subsection{Aims}
 
-This chapter addresses resolving the key difficulties of accurate recapitulation of 
+Therefore, this chapter addresses methods of resolving the key difficulties of accurate recapitulation of 
 transcripts from the PbMr system and the accurate binning of those transcripts into putative originating
 species.  We investigate the optimal way in which 2nd generation bulk and sc-RNAseq libraries
 may be integrated in a complex reference-free system.  The screening of RNAseq libraries for contamination
@@ -181,27 +158,15 @@ parameters were also invesigated, as well the potential utility of highly diverg
 in assembly.
 
 
-
-
-\begin{itemize}
-        \item Screen libraries for contamination
-        \item Optimise read processing and assembly
-        \item Annotate and bin cessing
-
-
-
-
+\textbf{Not sure whether the following sections belong in chapter introduction or discussion}
 \subsection{Assembly}
 
 \subsubsection{Pre-processing}
 Much as library contamination is one of the key issues with single cell genomics \citep{Blainey2013,Lusk2014}, it highly
 important in SCT.  Single cell methods are particularly prone to contamination issues
 from reagents, laboratory environment and enigmatic nucleic acids within the biological samples themselves.
-This is due to the low-input concentration and high amplification necessary in these approaches \citep{Blainey2013} 
-leading to enrichment of non-target sequences.
-
-
-
+This is likely due to the low-input concentration and high amplification necessary in these approaches \citep{Blainey2013} leading
+to spurious amplification of non-target sequences. 
 
 Furthermore, when utilising single cell libraries in a \textit{de novo} assembly instead of just referenced mapping assemblies
 it is doubly important to discard libraries that are likely to be contaminated as they will severely complicate
@@ -328,15 +293,8 @@ However, due to the slow largely manual nature of this phylogeny assessment proc
 to repeat this for all transcripts generated from a single assembly, let alone investigating several. 
 
 
-Therefore, a machine learning approach was utilised with the manually verified set of 10,000 phylogeny
-classifications forming the training data set. Briefly, these phylogenies 
+Therefore, a machine learning approach manually verified set of 10,000 phylogeny classifications
 
-
-
-(for a general overview of machine learning see
-\ref{chap:methods}).
-
-%anja Woke on single cell genomics challenges: contamination (sample, reagents), no universal lysis proc, chimerism, MDA bias
 
 
 Therefore, this became a fundamental classification problem with the 10,000 manually verified phylogenies
@@ -366,7 +324,7 @@ using bayesian optimisation.  This was then converted to a binning script named 
 \subsection{Sample Preparation and Sequencing}
 
 \subsubsection{Bulk transcriptomic RNA preparation}
-or bulk transcriptomic analyses CCAP 1660/12 cells were harvested in a way to minimise the 
+For bulk transcriptomic analyses CCAP 1660/12 cells were harvested in a way to minimise the 
 number of bacterial prey species from the culture, \textasciitilde \(10^{6}\) 
 cell aliquots were strained through \(40\mu m\) sieves, filtered on 
 \(10 \mu m\) nylon filters, 
