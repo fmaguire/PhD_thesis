@@ -10,7 +10,9 @@ What does it need?
 
 What is it secreting? (control against NC64A chlorella signal peptides - are we missing anything obvious in transcriptome endosymbiont bin)
 
-DUE DATE: END OF JUNE
+
+
+
 
 
 UBLAST and cut-off for KO annotation, IPATH2.0 for maps  \citep{Wisecaver2014}
@@ -51,5 +53,43 @@ http://www.nature.com/nmeth/journal/v10/n11/extref/nmeth.2645-S2.pdf
 mycosporina amino acids - shikimate pathway - protect agains UVR \citep{Sommaruga2009} (Shick and dunlap 2002)
 chlorella made MAA found in cilliates sonntag2007 
 Negative in p bursaria chlorella thoufgh summerer2009
+
+
+PSI-BLAST is more sensitive to distance evolutionary relationships that standard blast
+
+biocyc and kegg 
+
+\section{Methods}
+
+\subsection{Transporter identification}
+
+Transporter proteins were specifically investigated using the same pipeline in
+host and endosymbiont binned transcripts (from \ref{chap:sct}), the Chlorella NC64A
+genome \citep{Blanc2010}, the Coccomyxa sp C-169 \citep{Blanc2012}, 
+and transcripts from a re-assembly of \citet{Kodama2014c} \textit{P. bursaria} 
+- \textit{Chlorella sp.} transcriptome.  It should be reiterated that
+\citet{Kodama2014c} filtered algal transcripts from their assembly and analysis
+as their focus was on the expression profile of the host with and without 
+the endosymbiont.
+
+This pipeline operated as follows:
+
+Transporter Classification Database (TCDB) \citep{Saier2006,Saier2009,Saier2014}
+
+
+
+\begin{enumerate} 
+    \item TCDB fasta sequences are downloaded (12,911 sequences as of 2015/9/2) and queried using each set PSI-BLAST 
+    \item All sequences with more than 4 TM domains as determined by TMHMM
+
+
+\end{enumerate}
+
+orthagog - reimplemntation of orthmocl in C
+e=1e-5 
+i=1.5
+
+
+https://code.google.com/p/orthagogue/
 
 

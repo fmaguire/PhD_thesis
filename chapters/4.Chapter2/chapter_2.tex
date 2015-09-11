@@ -561,53 +561,84 @@ Model performance was evaluated using a weighted average of all against one f1-s
 
 
 
-\section{Results and Discussion} 
+\section{Results} 
 
 \subsection{Library screening}
 % negatives ??
-Using ``DueyDrop'' the taxonomic profile of each library was determined (see \ref{tab:sct_duey}).
-Profiling raw vs trimmed reads made a fraction of a percent of difference in terms of the resultant taxonomic profile. Therefore, all 
+Using ``DueyDrop'' the taxonomic profile of each library was determined (see \ref{tab:sct_duey} and \ref{tab:bulk_duey}).
+As preliminary analyses showed that trimming made minimal impact on the average library taxonomic profile all
 shown data is derived from raw profiles (with the exception of the bulk profiles).
 
 \begin{table}[h]
      \begin{tabular}{|l|l|l|l|l|l|l|l|}
          \cmidrule(r){1-6} \cmidrule(l){8-8}
-         \textbf{SCT Library} & \textit{\textbf{PE}} & \textbf{Eukaryote} & \textbf{Bacteria} & \textbf{Alveolate} & \textbf{Viridiplantae} &  & \textbf{Total Hits} \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
-         \textit{Light1-9}    & \textit{R1}          & 51.89 +/- 0.45     & 9.37 +/- 0.26     & 25.15 +/-  0.71    & 7.45 +/- 0.33          &  & 69.49 +/- 0.37      \\ \cmidrule(lr){2-2}
-                              & \textit{R2}          & 51.75 +/- 0.25     & 8.82 +/- 0.24     & 24.85 +/- 0.56     & 7.49 +/- 0.21          &  & 68.75 +/- 0.29      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
-         \textit{Light1-10}   & \textit{R1}          & 46.35 +/- 0.56     & 15.72 +/- 0.46    & 22.96 +/- 0.24     & 6.94 +/- 0.26          &  & 68.73 +/- 0.30      \\ \cmidrule(lr){2-2}
-                              & \textit{R2}          & 46.12 +/- 0.83     & 15.14 +/- 0.48    & 23.13 +/- 0.38     & 6.99 +/- 0.37          &  & 68.73 +/- 0.30      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
-         \textit{Light1-11}   & \textit{R1}          & 58.28 +/- 0.47     & 3.62 +/- 0.12     & 28.68 +/- 0.43     & 8.20 +/- 0.40          &  & 71.38 +/- 0.49      \\ \cmidrule(lr){2-2}
-                              & \textit{R2}          & 57.74 +/- 0.27     & 3.50 +/- 0.10     & 28.23 +/- 0.36     & 8.41 +/- 0.31          &  & 70.42 +/- 0.20      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
-         \textit{Dark1-2}     & \textit{R1}          & 28.64 +/- 0.51     & 22.88 +/- 0.61    & 12.23 +/- 0.28     & 4.93 +/- 0.19          &  & 60.31 +/- 0.49      \\ \cmidrule(lr){2-2}
-                              & \textit{R2}          & 28.29 +/- 0.24     & 21.06 +/- 0.21    & 12.13 +/- 0.28     & 4.87 +/- 0.34          &  & 57.65 +/- 0.35      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
+         \textbf{SCT Library} & \textit{\textbf{PE}}          & \textbf{Eukaryote} & \textbf{Bacteria} & \textbf{Alveolate} & \textbf{Viridiplantae} &  & \textbf{Total Hits} \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
+         \textit{Light1-9}    & \textit{R1}                   & 51.89 +/- 0.45     & 9.37 +/- 0.26     & 25.15 +/-  0.71    & 7.45 +/- 0.33          &  & 69.49 +/- 0.37      \\ \cmidrule(lr){2-2}
+                              & \textit{R2}                   & 51.75 +/- 0.25     & 8.82 +/- 0.24     & 24.85 +/- 0.56     & 7.49 +/- 0.21          &  & 68.75 +/- 0.29      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
+         \textit{Light1-10}   & \textit{R1}                   & 46.35 +/- 0.56     & 15.72 +/- 0.46    & 22.96 +/- 0.24     & 6.94 +/- 0.26          &  & 68.73 +/- 0.30      \\ \cmidrule(lr){2-2}
+                              & \textit{R2}                   & 46.12 +/- 0.83     & 15.14 +/- 0.48    & 23.13 +/- 0.38     & 6.99 +/- 0.37          &  & 68.73 +/- 0.30      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
+         \textit{Light1-11}   & \textit{R1}                   & 58.28 +/- 0.47     & 3.62 +/- 0.12     & 28.68 +/- 0.43     & 8.20 +/- 0.40          &  & 71.38 +/- 0.49      \\ \cmidrule(lr){2-2}
+                              & \textit{R2}                   & 57.74 +/- 0.27     & 3.50 +/- 0.10     & 28.23 +/- 0.36     & 8.41 +/- 0.31          &  & 70.42 +/- 0.20      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
+         \textit{Dark1-2}     & \textit{R1}                   & 28.64 +/- 0.51     & 22.88 +/- 0.61    & 12.23 +/- 0.28     & 4.93 +/- 0.19          &  & 60.31 +/- 0.49      \\ \cmidrule(lr){2-2}
+                              & \textit{R2}                   & 28.29 +/- 0.24     & 21.06 +/- 0.21    & 12.13 +/- 0.28     & 4.87 +/- 0.34          &  & 57.65 +/- 0.35      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
          \textbf{\textit{Dark1-3}}     & \textit{R1}          & 9.48 +/- 0.43      & 25.07 +/- 0.42    & 2.15 +/- 0.13      & 2.60 +/- 0.27          &  & 41.43 +/- 0.68      \\ \cmidrule(lr){2-2}
-                              & \textit{R2}          & 8.89 +/- 0.19      & 23.11 +/- 0.52    & 2.13 +/- 0.16      & 2.45 +/- 0.18          &  & 38.50 +/- 0.46      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
+                              & \textit{R2}                   & 8.89 +/- 0.19      & 23.11 +/- 0.52    & 2.13 +/- 0.16      & 2.45 +/- 0.18          &  & 38.50 +/- 0.46      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
          \textbf{\textit{Dark1-5}}     & \textit{R1}          & 5.56 +/- 0.19      & 23.99 +/- 0.44    & 1.07 +/- 0.07      & 2.89 +/- 0.11          &  & 36.72 +/- 0.33      \\ \cmidrule(lr){2-2}
-                              & \textit{R2}          & 4.94 +/- 0.21      & 21.75 +/- 0.53    & 1.02 +/- 0.11      & 2.33 +/- 0.17          &  & 33.06 +/- 0.52      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
+                              & \textit{R2}                   & 4.94 +/- 0.21      & 21.75 +/- 0.53    & 1.02 +/- 0.11      & 2.33 +/- 0.17          &  & 33.06 +/- 0.52      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
          \textbf{\textit{Dark2-2}}     & \textit{R1}          & 12.32 +/- 0.25     & 9.81 +/- 0.19     & 3.73 +/- 0.16      & 4.33 +/- 0.17          &  & 27.65 +/- 0.47      \\ \cmidrule(lr){2-2}
-                              & \textit{R2}          & 11.53 +/- 0.15     & 9.00 +/- 0.17     & 3.67 +/- 0.22      & 3.74 +/- 0.12          &  & 25.71 +/- 0.39      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
-         \textit{Dark2-3}     & \textit{R1}          & 32.07 +/- 0.31     & 7.43 +/- 0.15     & 12.81 +/- 0.21     & 4.71 +/- 0.21          &  & 48.42 +/- 0.53      \\ \cmidrule(lr){2-2}
-                              & \textit{R2}          & 32.47 +/- 0.24     & 6.68 +/- 0.21     & 13.11 +/- 0.43     & 4.58 +/- 0.12          &  & 47.92 +/- 0.28      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
-         \textit{Dark2-6}     & \textit{R1}          & 24.11 +/- 0.28     & 8.55 +/- 0.11     & 9.04 +/- 0.35      & 5.27 +/- 0.15          &  & 41.69 +/- 0.45      \\ \cmidrule(lr){2-2}
-                              & \textit{R2}          & 22.89 +/- 0.55     & 7.44 +/- 0.17     & 8.74 +/- 0.49      & 4.36 +/- 0.24          &  & 38.85 +/- 0.58      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
+                              & \textit{R2}                   & 11.53 +/- 0.15     & 9.00 +/- 0.17     & 3.67 +/- 0.22      & 3.74 +/- 0.12          &  & 25.71 +/- 0.39      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
+         \textit{Dark2-3}     & \textit{R1}                   & 32.07 +/- 0.31     & 7.43 +/- 0.15     & 12.81 +/- 0.21     & 4.71 +/- 0.21          &  & 48.42 +/- 0.53      \\ \cmidrule(lr){2-2}
+                              & \textit{R2}                   & 32.47 +/- 0.24     & 6.68 +/- 0.21     & 13.11 +/- 0.43     & 4.58 +/- 0.12          &  & 47.92 +/- 0.28      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
+         \textit{Dark2-6}     & \textit{R1}                   & 24.11 +/- 0.28     & 8.55 +/- 0.11     & 9.04 +/- 0.35      & 5.27 +/- 0.15          &  & 41.69 +/- 0.45      \\ \cmidrule(lr){2-2}
+                              & \textit{R2}                   & 22.89 +/- 0.55     & 7.44 +/- 0.17     & 8.74 +/- 0.49      & 4.36 +/- 0.24          &  & 38.85 +/- 0.58      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
          \textbf{\textit{Dark2-7}}     & \textit{R1}          & 9.96 +/- 0.24      & 16.89 +/- 0.27    & 4.22 +/- 0.24      & 2.83 +/- 0.17          &  & 37.06 +/- 0.40      \\ \cmidrule(lr){2-2}
-                              & \textit{R2}          & 8.77 +/- 0.18      & 15.00 +/- 0.43    & 3.94 +/- 0.14      & 2.16 +/- 0.11          &  & 32.86 +/- 0.29      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
-         \textit{Dark2-8}     & \textit{R1}          & 28.24 +/- 0.48     & 4.45 +/- 0.13     & 12.00 +/- 0.32     & 4.69 +/- 0.06          &  & 40.50 +/- 0.37      \\ \cmidrule(lr){2-2}
-                              & \textit{R2}          & 28.22 +/- 0.47     & 4.30 +/- 0.22     & 11.98 +/- 0.37     & 4.32 +/- 0.24          &  & 40.05 +/- 0.22      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
+                              & \textit{R2}                   & 8.77 +/- 0.18      & 15.00 +/- 0.43    & 3.94 +/- 0.14      & 2.16 +/- 0.11          &  & 32.86 +/- 0.29      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
+         \textit{Dark2-8}     & \textit{R1}                   & 28.24 +/- 0.48     & 4.45 +/- 0.13     & 12.00 +/- 0.32     & 4.69 +/- 0.06          &  & 40.50 +/- 0.37      \\ \cmidrule(lr){2-2}
+                              & \textit{R2}                   & 28.22 +/- 0.47     & 4.30 +/- 0.22     & 11.98 +/- 0.37     & 4.32 +/- 0.24          &  & 40.05 +/- 0.22      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
      \end{tabular}
      \caption{Taxonomic profiles of raw single cell libraries generated using ``DueyDrop''. All values are percentage of reads mapping to that category +/- the standard deviation between sample replicates.  Libraries
      highlighted in bold were excluded from subsequent analysis.}
  \label{tab:sct_duey}
 \end{table}
 
-Using this approach we identified and discarded Dark1-3 Dark1-5 Dark2-2, and Dark 2-7 as likely contaminated, particularly noteworth is the incredibly
-low proportion of sampled reads mapping to known alveolate (or even eukaryotic) sequences from these libraries.   
+Forward and reverse reads from the same pair in all SCT libraries displayed the same or very similar taxonomic profiles.
+
+
+Using this approach we identified and discarded the sc-RNAseq libraries Dark1-3 Dark1-5 Dark2-2, and Dark 2-7 as likely contaminated 
+due to the aberrantly low number of reads aligning to known alveolate (or even eukaryote reads).  
+
+It is also noteable that 
+
+
+
+\begin{table}[h]
+     \begin{tabular}{@{}|l|l|l|l|l|l|l|l|@{}}
+         \cmidrule(r){1-6} \cmidrule(l){8-8}
+         \textbf{Bulk Library} & \textit{\textbf{PE}} & \textbf{Eukaryote} & \textbf{Bacteria} & \textbf{Alveolate} & \textbf{Viridiplantae} &  & \textbf{Total Hits} \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
+         \textit{Light}    & \textit{R1}              &  9.66 +/- 1.55     & 0.18 +/- 0.13     &  6.28 +/- 1.41     &  0.86 +/- 0.3          &  &  10.10 +/- 1.48       \\ \cmidrule(lr){2-2}
+                              & \textit{R2}           &  9.62 +/- 0.81     & 0.26 +/- 0.09    &  6.58 +/- 0.36     &  1.04 +/- 0.41         &  &  10.16 +/- 0.95      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
+         \textit{Dark}   & \textit{R1}                &  4.90 +/- 0.78     & 0.36 +/- 0.11    &  3.14 +/- 0.58     &  0.50 +/- 0.16        &  &  5.40 +/- 0.93      \\ \cmidrule(lr){2-2}
+                              & \textit{R2}           &  5.50 +/- 1.25     & 0.22 +/- 0.19   &  3.82 +/- 0.81     &  0.50 +/- 0.12         &  &  6.02 +/- 1.22      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
+    \end{tabular}
+    \caption{Taxonomic profile of the bulk transcriptome samples generated using ``DueyDrop''.}
+    \label{tab:bulk_duey}
+\end{table}
+
+
+
+
+\section{Discussion}
+
+\subsection{Library screening is a key stage in sc-RNAseq}
+
+
 Interestingly, these samples didn't appear to be uniformly especially enriched for likely bacteria derived reads or obvious contaminants
 such as \citep{Homo sapiens}.  Therefore, it is unclear whether they represent lower quality 
 libraries or a true sub-population of PbMr cells that has lower transcriptional activity.
 Removal of these libraries halved the number of recovered transcripts in Trinity \textit{de novo} assemblies as can be seen in the the assembly
 summaries below.
+
+
 
 Despite evidence that nanoscale methods can greatly reduce levels of contamination \citep{Blainey2011}, the taxonomic profiling conducted here
 indicates a high level of bacterial (and viral) contamination in the scRNA-Seq.  Intriguingly, similar taxonomic profiling of the bulk
@@ -616,10 +647,11 @@ sc-RNAseq libraries.  While this finding is concerning it is likely to be an art
 These paired reads were sequenced via the GAII and were half the length of the HiSeq2500 reads used for the SCTs.  Shorter reads and a relatively higher
 technical error rate on this platform may have played a role in this marked decline in recognisable reads. 
 Despite this the relative proportion of bacterial reads to eukaryote reads among the recognisable reads is much lower for bulk libraries than SCT.
-
 This supports the findings of \citep{Kolisko2014}, in which enigmatic, bacterial contamination was a problem in single cell eukaryotic
 transcriptomes.   One possible reason for this is that due to the high levels of amplification required, the poly-A selection step
 in library prepartion is less effective at removing non-eukaryote mRNA transcripts.
+
+
 
 
 Another, feature of the profiles of interest is the systematically low 
@@ -635,19 +667,6 @@ of the extracted material in the dark that leads to problematic sequencing.
 %One potential explanation for this last scenario could be 
 %an aggravated AT bias leading to high sequencing error due to a relatively greater proportion of AT-rich host derived reads 
 
-\begin{table}[h]
-     \begin{tabular}{@{}|l|l|l|l|l|l|l|l|@{}}
-         \cmidrule(r){1-6} \cmidrule(l){8-8}
-         \textbf{Bulk Library} & \textit{\textbf{PE}} & \textbf{Eukaryote} & \textbf{Bacteria} & \textbf{Alveolate} & \textbf{Viridiplantae} &  & \textbf{Total Hits} \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
-         \textit{Light}    & \textit{R1}              &  9.66 +/- 1.55     & 0.18 +/- 0.13     &  6.28 +/- 1.41     &  0.86 +/- 0.3          &  &  10.10 +/- 1.48       \\ \cmidrule(lr){2-2}
-                              & \textit{R2}           &  9.62 +/- 0.81     & 0.26 +/- 0.09    &  6.58 +/- 0.36     &  1.04 +/- 0.41         &  &  10.16 +/- 0.95      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
-         \textit{Dark}   & \textit{R1}                &  4.90 +/- 0.78     & 0.36 +/- 0.11    &  3.14 +/- 0.58     &  0.50 +/- 0.16        &  &  5.40 +/- 0.93      \\ \cmidrule(lr){2-2}
-                              & \textit{R2}           &  5.50 +/- 1.25     & 0.22 +/- 0.19   &  3.82 +/- 0.81     &  0.50 +/- 0.12         &  &  6.02 +/- 1.22      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
-    \end{tabular}
-    \caption{Taxonomic profile of the bulk transcriptome samples generated using ``DueyDrop''.}
-    \label{tab:bulk_duey}
-\end{table}
-
 ``DueyDrop'' could potentially be improved in such a way that an entire library can be screened instead of just subsamples.
 Briefly, this would involve quantifying exact k-mer matches between library reads and a pre-generated database of known taxa
 using efficient probabilstic hashing datastructures such as a bloom filter, or more likely count-min sketch and an efficient
@@ -656,7 +675,7 @@ and would thus allow entire libraries to be checked in reasonable time.  However
 k-mers shared between multiple taxa in the database, translation of reads and/or database sequences into a matching sense and form (e.g. protein),
 and use of a locality-sensitive hash function to handle scenarios where there is no exact k-mer match. This latter issue is particularly
 problematic for libraries consisting of transcripts from poorly sampled reaches of the tree of life where exact matches would become
-commensuately rarer as sampling sparsity increases.  
+commensurately rarer as sampling sparsity increases.  
 While still affected by this problem, the BLASTX/Diamond approach implemented in the ``DueyDrop'' scripts are relatively more robust to these
 problems due the explicit probabilistic modelling of sequence divergence built into the BLAST alignment algorithm (e.g. E-values).
 
@@ -678,15 +697,16 @@ from free-living eukaryotes \citep{Kolisko2014}, however it is not capable of re
 While these latter steps could be achieved with individual tools (such as Skewer \citep{Jiang2014}, 
 TagDust \citep{Lassmann2009} and Scythe \citep{Buffalo}) this increases the number of ``moving parts'' 
 , highly complicates the optimisation process, and increases the number of possible points of failure.  
-Furthermore, Sickle has particularly poor documentation and requires study of the option parsing code to 
+Furthermore, Sickle is relatively poorly documented and requires study of the option parsing code to 
 even determine all available options.
 As for other trimming tools, both cutadapt and FASTX (along with PRINSEQ \citep{Schmieder2011}), 
 have been found to largely perform equivalently across multiple RNA-Seq and DNA-Seq datasets and applications 
 (see File S2 \citep{DelFabbro2013}).
 
 Therefore, as cutadapt was recently used by Kodama \textit{et. al.} (with a threshold of 30 and a minimum length of 50bp) 
-in their bulk \textit{P. bursaria} transcriptome analysis \citep{Kodama2014} I compared the optimised performance 
-cutadapt with the optimised performance of Trimmomatic.
+in their bulk \textit{P. bursaria} transcriptome analysis \citep{Kodama2014} I compared the performance
+of cutadapt with that of Trimmomatic.
+
 %of cutadapt to Trimmomatic using as similar parameters as possible. Specifically, Trimmomatic
 %was run using the full ILLUMINACLIP option with the adapter fasta file from the Exeter 
 %Sequencing Service (and 2:30:15 for mismatches, palindrome clip and simple clip quality threshold respectively)
@@ -700,7 +720,11 @@ more advanced and sensitive adapter trimming implemented in Trimmomatic's ILLUMI
 adapters and subsequently discarding more reads.  Having said this, both tools generate largely similar
 mapping statistics and display similar qualitative patterns in the individual libraries. 
 At the very least, the difference is well within the range of results achievable with different
-Trimmomatic parameters.  Unfortunately, unlike Trimmomatic, cutadapt requires either manual repair of 
+Trimmomatic parameters.  
+
+
+
+Unfortunately, unlike Trimmomatic, cutadapt requires either manual repair of 
 paired read correspondence or discards all reads that are unpaired after trimming. It also requires
 use of ancillary shell scripting to input all desired adapter sequences from a sequencing service
 provided adapter fasta file.  Similarly, neither PRINSEQ or FASTX are competent to trim paired-end datasets natively requiring
@@ -945,7 +969,6 @@ Dishearteningly, this is not massively more accurate than the crude BLAST based 
 
 
 
-
 \subsection{Assembly}
 
 \subsubsection{Pre-processing}
@@ -954,8 +977,6 @@ important in SCT.  Single cell methods are particularly prone to contamination i
 from reagents, laboratory environment and enigmatic nucleic acids within the biological samples themselves.
 This is due to the low-input concentration and high amplification necessary in these approaches \citep{Blainey2013} 
 leading to enrichment of non-target sequences.
-
-
 
 
 Furthermore, when utilising single cell libraries in a \textit{de novo} assembly instead of just referenced mapping assemblies
