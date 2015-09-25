@@ -118,3 +118,6 @@ sympy-plots-for-*.tex/
 *.bib
 !bibliography/PhD_thesis.bib
 
+## fasta and txt
+*.fasta
+*.txt

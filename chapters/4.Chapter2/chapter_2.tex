@@ -5,12 +5,6 @@
 \qauthor{- David Hume: \textit{A Treastie of Human Nature, 1738}}
 \end{savequote}
 
-% what about negative samples - profile them
-
-%constitutively expressed photosynthetic components
-%This profile will allow metabolic reconstruction of host and endosymbiont in both photosynthetically active and inactive
-%states as well as offering a means to identify significantly differentially expressed transcripts between these states.
-
 %map my reads to kodama 
 
 %heterogeneity of sct samples that passed filter
@@ -263,9 +257,11 @@ Sequenced libraries were initially screened using the standard
 metrics implemented in the FastQC to check for standard seqencing issues
 such as flowcell defects, library degaradation, and adapter read-through \citep{fastqc}.
 
+
 To further investigate potential contamination, a taxonomic
-profile was generated for each library.
-This was conducted using a custom tool dubbed ``DueyDrop'' which functions as follows.
+profile and GC\% probability density was determined for each library.
+
+The former was conducted using a custom tool dubbed ``DueyDrop'' which functions as follows.
 Briefly, for each library 5 batches of 10,000 PE reads were sampled 
 using the reservoir sampler \citep{Vitter1985} implemented in Heng Li's seqtk library \citep{SeqtkGitHub}.
 Despite 5 batches of 10,000 reads theoretically being equivalent to 50,000 random samples by splitting
@@ -283,48 +279,56 @@ abberrant.
 Scripts used to conduct this are available in the following github repository:
 \url{https://github.com/fmaguire/dueydrop}
 
+Each library's GC\% probability density was estimated from per-read GC proportions
+(calculated using awk \citep{Aho1987}) via Kernel Density Estimation (KDE) \citep{Rosenblatt1956,Parzen1962} 
+(implemented in the seaborn package \citep{michael_waskom_2015_19108}).
+This involved a standard gaussian kernel and a bandwith determined by ``Scott's normal reference rule'' \citep{Scott1979}.  
+
+
+
 \subsection{Optimising read pre-processing}
 
 \subsubsection{Trimming}
 
-To investigate optimal trimming for single cell libraries a naive grid search across trimming parameters was used.
+To investigate the optimal trimming parameters for single cell libraries, 
+random subsamples were trimmed using a range minimum quality thresholds and then the effects investigated
+by mapping against 3 draft \textit{de novo} transcriptomes.
+
+
 Specifically, 5000 PE reads were randomly sampled without replacement from each of the raw FASTQ libraries 
 using the streaming reservoir sampling \citep{Vitter1985} algorithm implemented in Heng Li's 
 seqtk C library (\citep{SeqtkGitHub}).
 To guarantee that pairing was maintained the same random seed was used for the left and right read
 of each library and incremented between libraries.
 
-These random samples were subsequently trimmed using a range of quality score thresholds and scoring schemes 
-(sliding window and absolute), and minimum length parameters.  A range of trimming tools were also 
-considered specifically Trimmomatic \citep{Bolger2014a}, Sickle \citep{JoshiGitHub}, FASTX-toolkit \citep{gordon2010fastx}
-and cutadapt \citep{martin2011cutadapt}.
-This will be discussed and explained further in the results/discussion section, however Trimmomatic \citep{Bolger2014a}
-was chosen for targeted trimming parameter optimisation.
-
-To that end a gridsearch was conducted over a sliding window trim of size 5, 10 
-with mininum quality score of 5, 10, 20, 25, and 30 in Trimmomatic.  Additionally, 
-a head and tail crop of 5 was used, and adapters trimming parameters
-ranged from seed mismatch of 2, 4, palindrome clip thresholds of 20 and 30, 
-and a simple clip threshold of 10, 15 and 20 in Trimmomatic's ILLUMINACLIP setting.
+Trimmomatic \citep{Bolger2014a} was run on these samples with adapter clipping (ILLUMINACLIP)
+using sequencing service provided fasta file of adapters, a maximum mismatch count of 2,
+a palindromic clip threshold of Q35 and a simple clip threshold of Q15, a sliding window
+quality trim of size 4 and average window quality thresholds of Q0, Q2, Q5, Q10, Q15, Q20, Q25, Q30, Q35, and Q40.
+Finally, a minimum length trimmed read length critera of 40bp was used.  
 
 
-The trimmed samples were then mapped to the ``baseline'' bulk RNASeq transcriptome reference dataset using bowtie2
+The trimmed samples were then mapped to 3 different \textit{de novo} draft transcriptome assemblies using bowtie2
 \citep{Langmead2012} with maximum and minimum insert sizes of 37bp and 1161bp (derived from library preparation
 fragment size distribution and histrogram of mapped insert sizes for untrimmed reads against bulk reference).
-This ``baseline'' bulk RNAseq consisted of a Trinity \citep{Haas2013} assembly of the light and dark
-bulk libraries preprocessed to remove low quality bases (<Q20) and adapters using Fastq-MCF \citep{Aronesty2013} 
 
-For each set of trimming parameters the following bowtie2 mapping statistics were recorded: 
-\begin{itemize}
-    \item number of paired reads which mapped uniquely to the bulk assembly in a concordant manner (i.e.
-        the forward and reverse read mapped within the range of the insert sizes from one another)
-    \item number of paired reads which uniquely mapped but in a discordant manner (i.e. both forward and reverse
-        reads mapped but were further than the maximum insert size from one another) 
-    \item the total number of reads which survived trimming.
-\end{itemize}
+These 3 draft assemblies were a ``baseline'' bulk RNASeq transcriptome reference consisting of a Trinity \citep{Haas2013} assembly of the light and dark
+bulk libraries preprocessed to remove low quality bases (<Q20) and adapters using Fastq-MCF \citep{Aronesty2013};
+and two Trinity assemblies of the taxonomically filtered sc-RNASeq libraries previously trimmed 
+    at an average window quality threshold of Q5 and Q30 respectively.
 
-These values were tallied relative to the statistics from a ``null mapping'' i.e. 
-the mapping statistics for the same sampled reads but without any trimming.
+
+For each library and set of quality thresholds the total number of concordantly
+mapping (i.e. forward and reverse PE reads mapped to transcripts within the range of the insert sizes used)
+reads was recorded.  This heuristic measure was chosen because the number of concordantly mapping reads generally correlates
+with the assembly quality \citep{Macmanes2014}. The proportion of surviving reads which mapped 
+was not used as a metric because this could be spuriously inflated in cases where a particular
+set of trimming parameters has caused the majority of reads to be discarded.
+
+The number of concordantly mapping reads were tallied and plotted in seaborn 
+for each library, reference transcriptome and set of trimming parameters.
+The shape of this line was then used to determine the optimal quality 
+threshold to use for further assembly.
 
 Scripts used to conduct this are available in my thesis scripts github repository:
 \url{https://github.com/fmaguire/thesis_scripts/tree/master/chapter_2_assembly_and_binning/trimming_optimisation}
@@ -364,6 +368,7 @@ This approach was attempted using a range of expected clusters from 2 to 5.
 
 Scripts used to conduct this are available in a github repository:
 \url{https://github.com/fmaguire/parKour}
+
 
 
 \subsection{Assembly}
@@ -538,8 +543,8 @@ Do endosymbiont binned sequences mainly branch with archaeplastida sequences.
 \subsubsection{Automated Phylogenetic Transcript Binning - Arboretum}
 
 Using these 10,000 manually verified phylogenetic bins as a training dataset a supervised classification
-script ``Arboretum'' was created.  The cardinalities of this training set are relatively balanced, all within
-the same order of magnitude 1975 endosymbiont phylogenies, 2600 host, 3456 food, and 1969
+script ``Arboretum'' was created.  The cardinalities of each label in training set was relatively balanced (all within
+the same order of magnitude) 1975 endosymbiont phylogenies, 2600 host, 3456 food, and 1969
 unknown. 
 
 ``Arboretum'' parses phylogenies and identifies the k (default of 10) nearest branches to the seed transcript
@@ -561,18 +566,25 @@ Model performance was evaluated using a weighted average of all against one f1-s
 
 
 
+
+
 \section{Results} 
 
 \subsection{Library screening}
-% negatives ??
-Using ``DueyDrop'' the taxonomic profile of each library was determined (see \ref{tab:sct_duey} and \ref{tab:bulk_duey}).
-As preliminary analyses showed that trimming made minimal impact on the average library taxonomic profile all
-shown data is derived from raw profiles (with the exception of the bulk profiles).
+
+Libraries were screened for inclusion in assemblies by inspection of their taxonomic
+profiles (see \ref{tab:sct_duey} and \ref{tab:bulk_duey}) as determined by DueyDrop 
+and their GC\% probability densities (via KDE).
+As preliminary analyses (see \ref{appendix:trimmingscreening}) showed 
+that trimming made minimal impact on the overall
+taxonomic or GC profile of a given library all shown data is derived from raw profiles 
+(with the exception of the bulk profiles which were trimmed to Q20 using
+FASTX as described above).
 
 \begin{table}[h]
      \begin{tabular}{|l|l|l|l|l|l|l|l|}
          \cmidrule(r){1-6} \cmidrule(l){8-8}
-         \textbf{SCT Library} & \textit{\textbf{PE}}          & \textbf{Eukaryote} & \textbf{Bacteria} & \textbf{Alveolate} & \textbf{Viridiplantae} &  & \textbf{Total Hits} \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
+         \textbf{SCT Library} & \textit{\textbf{Paired End Read}}          & \textbf{Eukaryote} & \textbf{Bacteria} & \textbf{Alveolate} & \textbf{Viridiplantae} &  & \textbf{Total Hits} \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
          \textit{Light1-9}    & \textit{R1}                   & 51.89 +/- 0.45     & 9.37 +/- 0.26     & 25.15 +/-  0.71    & 7.45 +/- 0.33          &  & 69.49 +/- 0.37      \\ \cmidrule(lr){2-2}
                               & \textit{R2}                   & 51.75 +/- 0.25     & 8.82 +/- 0.24     & 24.85 +/- 0.56     & 7.49 +/- 0.21          &  & 68.75 +/- 0.29      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
          \textit{Light1-10}   & \textit{R1}                   & 46.35 +/- 0.56     & 15.72 +/- 0.46    & 22.96 +/- 0.24     & 6.94 +/- 0.26          &  & 68.73 +/- 0.30      \\ \cmidrule(lr){2-2}
@@ -597,18 +609,24 @@ shown data is derived from raw profiles (with the exception of the bulk profiles
                               & \textit{R2}                   & 28.22 +/- 0.47     & 4.30 +/- 0.22     & 11.98 +/- 0.37     & 4.32 +/- 0.24          &  & 40.05 +/- 0.22      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
      \end{tabular}
      \caption{Taxonomic profiles of raw single cell libraries generated using ``DueyDrop''. All values are percentage of reads mapping to that category +/- the standard deviation between sample replicates.  Libraries
-     highlighted in bold were excluded from subsequent analysis.}
+     highlighted in bold were those excluded from subsequent analysis on the basis of their very low numbers of reads identifiable as 
+ eukaryote (or specifically alveolate or archaeplastida). All forward and reverse read pairs display similar profiles to one another suggesting
+ the problem of ``MDA chimeras'' may be minor.}
  \label{tab:sct_duey}
 \end{table}
-
-Forward and reverse reads from the same pair in all SCT libraries displayed the same or very similar taxonomic profiles.
-
 
 Using this approach we identified and discarded the sc-RNAseq libraries Dark1-3 Dark1-5 Dark2-2, and Dark 2-7 as likely contaminated 
 due to the aberrantly low number of reads aligning to known alveolate (or even eukaryote reads).  
 
+
+
+
+
+
 It is also noteable that 
 
+
+GCPropr
 
 
 \begin{table}[h]
@@ -623,6 +641,20 @@ It is also noteable that
     \caption{Taxonomic profile of the bulk transcriptome samples generated using ``DueyDrop''.}
     \label{tab:bulk_duey}
 \end{table}
+
+
+\subsection{Assembly Preprocessing} 
+
+\subsubsection{Trimming Optimisation}
+
+\subsubsection{GC Partitioning} 
+
+\subsubsection{Error Correction}
+
+\subsubsection{Digital Normalisation} 
+
+
+
 
 
 
@@ -682,91 +714,53 @@ problems due the explicit probabilistic modelling of sequence divergence built i
 Regardless, taxonomic profiling and contamination screening had great utility identifying potential problems in library preparation (e.g. chitin lysis despite
 additional bead disruption and freeze-thaw steps taken) as well as offer a powerful means of removing problematic libraries from assembly.
 
+
+
+
+
 \subsection{Assembly optimisation}
 
 \subsubsection{Trimming}
-While, there are many available tools for read-trimming (as discussed in \ref{ch:methods}) , 
-Trimmomatic was my preferred tool as it maintains read-pair correspondence, is optimised for Illumina datasets and, allows user-defined ordering of trimming operations and can do adapter trimming \citep{Bolger2014a}.  
-Furthermore, it has adequate (if not perfect) performance and is well documented.
-However, other tools were also considered specifically Sickle \citep{JoshiGitHub}, FASTX-toolkit \citep{gordon2010fastx}, 
-and cutadapt \citep{martin2011cutadapt}.
-
-Sickle is an adaptive quality trimmer that has previously been used in single-cell transcriptome datasets 
-from free-living eukaryotes \citep{Kolisko2014}, however it is not capable of removing 
- 5' or 3' contaminants such as sequencing adapters and/or multiplexing tags.  
-While these latter steps could be achieved with individual tools (such as Skewer \citep{Jiang2014}, 
-TagDust \citep{Lassmann2009} and Scythe \citep{Buffalo}) this increases the number of ``moving parts'' 
-, highly complicates the optimisation process, and increases the number of possible points of failure.  
-Furthermore, Sickle is relatively poorly documented and requires study of the option parsing code to 
-even determine all available options.
-As for other trimming tools, both cutadapt and FASTX (along with PRINSEQ \citep{Schmieder2011}), 
-have been found to largely perform equivalently across multiple RNA-Seq and DNA-Seq datasets and applications 
-(see File S2 \citep{DelFabbro2013}).
-
-Therefore, as cutadapt was recently used by Kodama \textit{et. al.} (with a threshold of 30 and a minimum length of 50bp) 
-in their bulk \textit{P. bursaria} transcriptome analysis \citep{Kodama2014} I compared the performance
-of cutadapt with that of Trimmomatic.
-
-%of cutadapt to Trimmomatic using as similar parameters as possible. Specifically, Trimmomatic
-%was run using the full ILLUMINACLIP option with the adapter fasta file from the Exeter 
-%Sequencing Service (and 2:30:15 for mismatches, palindrome clip and simple clip quality threshold respectively)
-%and a SLIDINGWINDOW quality trim with a window size of 10 and a minimum quality threshold of 30 and length of 60.
-%Similarly, cutadapt was run on each random sample in paired end mode with all the adapter sequences using
-%an error rate of 0.03 (approximately equivalent to the trimmomatic adapter simple threshold of Q15 
-%via the relationship \(P=10^{\frac{Q}{10}}\)) and a minimum length of 60.
-As we can see in \ref{fig:cutadapt_vs_trimmomatic} cutadapt appears to have been slightly more permissive
-and subsequently has very slightly more reads mapping to the reference.  This may be due to the slightly
-more advanced and sensitive adapter trimming implemented in Trimmomatic's ILLUMINACLIP detecing more 
-adapters and subsequently discarding more reads.  Having said this, both tools generate largely similar
-mapping statistics and display similar qualitative patterns in the individual libraries. 
-At the very least, the difference is well within the range of results achievable with different
-Trimmomatic parameters.  
 
 
 
-Unfortunately, unlike Trimmomatic, cutadapt requires either manual repair of 
+There are many available tools for read-trimming (as discussed in \ref{ch:methods}),
+and a range of trimming tools were initially
+considered: specifically Trimmomatic \citep{Bolger2014a}, Sickle \citep{JoshiGitHub}, FASTX-toolkit \citep{gordon2010fastx},
+PRINSEQ \citep{Schmieder2011} and cutadapt \citep{martin2011cutadapt}. 
+
+Despite Sickle, an adaptive quality trimmer, having previously been used in single-cell transcriptome datasets 
+from free-living eukaryotes \citep{Kolisko2014}, it proved suboptimal as it was
+not capable of removing 5' or 3' contaminants such as sequencing adapters and/or multiplexing tags by itself.  
+These stages could be achieved with individual tools (such as Skewer \citep{Jiang2014}, 
+TagDust \citep{Lassmann2009} and Scythe \citep{Buffalo}) but this was rejected as it was
+deemed a needless complication.  Furthermore, Sickle proved to be relatively poorly documented
+as a tool.   As for other trimming tools, they mostly have  
+been found to largely perform equivalently across multiple RNA-Seq and DNA-Seq datasets and applications 
+(see File S2 \citep{DelFabbro2013}).  Additionally, cutadapt requires either manual repair of 
 paired read correspondence or discards all reads that are unpaired after trimming. It also requires
 use of ancillary shell scripting to input all desired adapter sequences from a sequencing service
-provided adapter fasta file.  Similarly, neither PRINSEQ or FASTX are competent to trim paired-end datasets natively requiring
-irksome work-arounds to retain pairing fidelity and are also likely to produce the same trimming 
-results as cutadapt \citep{DelFabbro2013}. 
+provided adapter fasta file.  Similarly, neither PRINSEQ or FASTX are competent to trim paired-end datasets 
+natively requiring work-arounds to retain pairing fidelity.
+
+Therefore, due to its advantages of maintaing read-pair correspondence during trimming, 
+optimisation for Illumina datasets, adapter trimming functionality and thorough documentation
+Trimmomatic \citep{Bolger2014a} was the preferred trimming tool.
+
+
+
+
+
+The quality of an assembly is generally correlated with the number of reads mapping concordantly
+\citep{Macmanes2014} 
+
+
 
 Therefore, due to this and the tool design advantages listed above Trimmomatic was used exclusively for 
 in-depth trimming parameter optimisation via grid-search.
 
 
-\begin{figure}[h]
-    \includegraphics[width=\textwidth]{nullmapping.pdf}
-    %plot of parameters random sampling and how they map 
-    %null_mapping.svg
-    %cutadapt vs trimmomatic plot
-    \caption{Null mapping of 5000 randomly sampled PE reads from each SCT library 
-                against a reference bulk transcriptome using bowtie2.
-                %Of particular interest is the abnormal mapping of Light1\_9 library,
-       %     where almost all reads map incongruently with their pair, despite bioanalyser
-       %     traces showing fragment size selection with a clear peak at 360-385bp similarly
-       % to the other libraries}
-            }
-    \label{fig:nullmapping}
-\end{figure}
 
-
-\begin{figure}[h]
-    \includegraphics[width=\textwidth]{trimmomaticvscutadapt.pdf}
-    %plot of parameters random sampling and how they map 
-    %null_mapping.svg
-    %cutadapt vs trimmomatic plot
-    \caption{Comparison of Trimmomatic and Cutadapt using approximately identical settings,
-        specifically minimum length of 60, the entire contents of the Exeter Sequencing Service
-        adapter file with respective error rate of 0.03 and Q15 for a simple match and an overall
-        error threshold of Q30.
-        Interestingly, cutadapt relatively increases the number of PE congruently mapping ends
-        relative to untrimmed reads, whereas Trimmomatic generally leads to more PE reads mapping incongruently
-        However, overall Trimmomatic with these settings has very slightly more paired reads mapping 
-        181 vs 180.  
-        The other advantages of Trimmomatic outweigh this slight performance deficit}
-    \label{fig:cvt}
-\end{figure}
 
 %\begin{figure}[h]
 %    %\includegraphics[width=\textwidth]{light_vs_harsh_trim.pdf}
@@ -1138,13 +1132,34 @@ using bayesian optimisation.  This was then converted to a binning script named 
 %- Error correction: Spades error correction
 %- GC clustering parKour
 
+
+
+What is particularly interesting is the combination of the GC KDE plots 
+with the taxonomic distribution plots.
+All libraries that were found to be composed of a relatively high GC peak around 50\% 
+and a lower or nearly non-existent peak around 65-70\% (light libraries, dark1\_2,
+and 3,6,8 from dark2) were also all the libraries that exhibited a much higher
+proportion of reads which mapped to known eukaryote sequences.
+This can't be attributed to a higher amount of reads derived from endosymbiont
+transcripts as every one of these libraries had more than twice the proportion of
+alveolate mapping reads.
+
+
+
+On the basis that the high 
+
+
+
 \section{Conclusion}
 
-In conclusion,
+In conclusion,.
 Library filtering is important with single cell possibly due to the increased inefficiency of poly-A selection
 GC partitioning doesn't work - splits up contigs
 Trimming and error correction makes little difference on unsaturated complex single cell 
 Arboretum offers a useful way to accurately classify transcripts into likely origins 
+
+
+
 
 
 
