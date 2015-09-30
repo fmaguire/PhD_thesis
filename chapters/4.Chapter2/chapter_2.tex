@@ -622,13 +622,6 @@ due to the aberrantly low number of reads aligning to known alveolate (or even e
 
 
 
-
-It is also noteable that 
-
-
-GCPropr
-
-
 \begin{table}[h]
      \begin{tabular}{@{}|l|l|l|l|l|l|l|l|@{}}
          \cmidrule(r){1-6} \cmidrule(l){8-8}
@@ -643,11 +636,132 @@ GCPropr
 \end{table}
 
 
+
+\begin{figure}[h]
+    \includegraphics[width=\textwidth]{lib_gc_prop.svg}
+    \caption{Probability densities of per-read GC proportions for the raw data (apart from pretrimmed bulk explained previously)
+        from each sequenced library 
+        Densities were derived using Kernel Density Estimation implemented in Seaborn. 
+        The bulk and single cell light libraries demonstrate similar shaped distributions
+        although the bulk has a greater proportion of low GC\% reads potentially representing
+        more \textit{Paramecium} derived data. All single cell dark libraries 
+        demonstrate a bimodal density with up to the majority of reads deriving 
+        from an unknown high 70\% GC population. The dark single cell libraries
+        exhibiting a relatively larger peak at 70\% GC than at 40-50\%GC (i.e.
+        Dark1-3, Dark1-5, Dark2-2, Dark2-7) were
+        the same libraries which were identified as potentially contaminated
+        in taxonomic screening (see \ref{tab;sct_duey}).
+    }
+    \label{fig;gc_prop_raw}
+\end{figure}
+
+
+\begin{figure}[h]
+    \includegraphics[width=\textwidth]{lib_gc_prop_q30_trimmed.svg}
+    \caption{Probability densities of per-read GC proportions for trimmed reads.
+             To ensure probability densities estimated in \ref{fig;gc_prop_raw}
+         weren't biased by low quality ambiguous reads the same analysis was
+     repeated using reads trimmed using a sliding window approach with a stringent average
+ quality threshold of Q30.  In all cases the densities produced appear near identical to
+ the analysis of the raw data}
+    \label{fig;gc_prop_q30}
+\end{figure}
+
+
+\begin{figure}[h]
+    \includegraphics[width=\textwidth]{kodama_gc_prop.svg}
+    \caption{Probability density of the per-read GC proportion for raw data derived from
+    \citep{Kodama2014} transcriptome analysis of a different \textit{P. bursaria} species
+with and without its endosymbiont. This dataset displays densities relatively similar
+to the bulk RNAseq conducted in this project 
+
+
+In comparison to the bulk sequencing conducted in this
+thesis Kodama's data displays a similar density  }
+    \label{fig;gc_prop_kodama}
+\end{figure}
+
+
+
+
 \subsection{Assembly Preprocessing} 
 
 \subsubsection{Trimming Optimisation}
 
+\begin{figure}
+    \includegraphics[width=\textwidth]{trimmingopt.svg}
+    \caption{Assessment of the optimal minimum average quality threshold
+             in Trimmomatic's sliding window (size 4) trim 
+             
+             
+             via number of
+             concordantly mapping paired reads }
+\end{figure}
+
 \subsubsection{GC Partitioning} 
+
+GC partitioning was conducted on Q30 trimmed reads 
+using K-means clustering as implemented in the parKour tool described above.
+For the 2 different clustering schemes attempted: 2 and 3 target clusters.
+Additionally, both clustering schemes were also run with an initial overclustering factor of 3
+i.e. parKour originally found 6 and 12 clusters and then merged them to produce the target 2 and 3 
+clusters respectively. 
+
+\begin{table}
+    \begin{tabular}{ccr}
+        \toprule
+        Clustering Scheme & Centroids & Number of Reads Assigned \\
+        \midrule
+        \midrule
+        2                    & (0.6674, 0.6177) & 57.3M \\
+                             & (0.4557, 0.4393) & 81.6M \\
+        \midrule
+        2 (overclustering)   & (0.6672, 0.6168) & 57.7M \\
+                             & (0.4555, 0.4392) & 81.2M \\
+        \midrule
+        3                    & (0.5363, 0.5092) & 44.0M \\
+                             & (0.6924, 0.6394) & 43.3M \\
+                             & (0.4231, 0.4096) & 51.6M \\
+        \midrule
+        3 (overclustering)   & (0.5365, 0.5090) & 43.9M \\
+                             & (0.6921, 0.6396) & 43.6M \\
+                             & (0.4235, 0.4098) & 51.7M \\
+        \bottomrule
+    \end{tabular} 
+    \caption{Final cluster centroids and number of reads assigned
+    to each cluster in parKour using various run settings.  Overclustering
+made a minimal impact on cluster location}
+    \label{tab:centroids} 
+\end{table} 
+
+2 and 3 target clusters with and without an initial 
+overclustering factor of 3 (i.e. initially finding 6 and 12 clusters originally before merging to
+produce final 2 and 3 cluster targets). 
+
+\begin{figure}
+    \includegraphics[width=\textwidth]{parKour.pdf}
+    \caption{Visualisation of GC-based paired read K-means clustering on a small random subset of all single cell transcriptome
+    reads. 2 initial centroids were specified without an overclustering factor and approximate final centroids (0.6674, 06177) and (0.4557, 0.4393) are indicated by highlighted areas.  57.3M and 81.7M were assigned to each respective cluster. Comparison to other clustering regimes can be found in \ref{tab:centroids}} 
+        \label{fig:parkour} 
+\end{figure}
+
+
+Unfortunately, as might have been forseen, the resultant assemblies from individual
+read clusters displayed high levels of fragmentation regardless of the clustering
+regime used.  For example, in the case of the 2 cluster (without overclustering) 
+and subsequent individual Trinity-based assemblies resulted in 268,806 transcripts
+of marginally shorter average length than the equivalent unprepartioned assembly
+(99,784 transcripts).
+
+The same pattern, consistent with assembly fragmentation, 
+was observed when only dark single cell libraries were clustered using 
+2 or 3 clusters. 
+
+Therefore, GC-based pre-assembly read partitioning proved incapable of improving
+the assembly of this highly heterogeneous RNAseq dataset.
+
+
+
 
 \subsubsection{Error Correction}
 
