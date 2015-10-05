@@ -257,7 +257,6 @@ Sequenced libraries were initially screened using the standard
 metrics implemented in the FastQC to check for standard seqencing issues
 such as flowcell defects, library degaradation, and adapter read-through \citep{fastqc}.
 
-
 To further investigate potential contamination, a taxonomic
 profile and GC\% probability density was determined for each library.
 
@@ -284,6 +283,18 @@ Each library's GC\% probability density was estimated from per-read GC proportio
 (implemented in the seaborn package \citep{michael_waskom_2015_19108}).
 This involved a standard gaussian kernel and a bandwith determined by ``Scott's normal reference rule'' \citep{Scott1979}.  
 
+
+
+The performance of DueyDrop was compared to a fullscale taxonomic analysis of all libraries.
+This fullscale analysis was comprised of a similar DIAMOND BLASTX search against the full
+protein NR database but for every forward from all sc-RNAseq libraries and the bulk libraries.
+Libraries used in this analysis were trimmed at a sliding window minimum quality of 30 (relative to
+the untrimmed libraries used in the ``DueyDrop'' subsample analysis). Similarly, no restriction
+was placed on the number of hits to retain.  Multiple hits for a given read were collapsed 
+into a single lowest common ancestor (LCA) using the LCA algorithm \citep{Gabow1985} implemented in MEGAN (via the ``mtools''
+package) \citep{Huson2007,el2013improved}.  LCA were then summarised and tabulated using
+a script in the CGAT collections (``lca2table.py'') \citep{Sims2014} and visualised 
+using Krona \citep{Ondov2011}.
 
 
 \subsection{Optimising read pre-processing}
@@ -346,6 +357,24 @@ The impact of each of these error correction algorithms at the read level was as
 as their subsequent impact on downstream assembly metrics, particularly RSEM-EVAL likelihood score
 as will be expounded upon below.
 
+
+\subsection{Kmer normalisation and trimming}
+
+Taxonomically screened sc-RNAseq libraries trimmed at a minimum sliding window quality
+threshold of Q30 and bulk libraries were Kmer normalised and trimmed using the Khmer package \citep{Crusoe2015}
+
+Specifically, reads were digitally normalised using diginorm \citep{Brown2012}
+with a kmer size and coverage cut-off of 20.  Low abundance and likely erroneous
+kmers were then filtered \citep{Zhang2015,Zhang2014}.  
+
+Filtered data was then assembled using Trinity (with minimum kmer coverage of 2) 
+and the subsequent assembly partitioned into transcript families in Khmer \citep{Pell2012}.
+
+The final assemblies were then compared to un-normalised and k-mer trimmed assemblies 
+(see \ref{sec:assembly_assessment} for details.
+
+Separately, the in-built digital normalisation implemented as part of the Trinity package
+was used and its effects on assembly compared to assembly runs without this normalisation.
 
 \subsection{GC Partitioning of Reads}
 
