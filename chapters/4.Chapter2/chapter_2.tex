@@ -363,7 +363,7 @@ as will be expounded upon below.
 Taxonomically screened sc-RNAseq libraries trimmed at a minimum sliding window quality
 threshold of Q30 and bulk libraries were Kmer normalised and trimmed using the Khmer package \citep{Crusoe2015}
 
-Specifically, reads were digitally normalised using diginorm \citep{Brown2012}
+Specifically, reads were interleaved \citep{Doring2008} and then digitally normalised using diginorm \citep{Brown2012}
 with a kmer size and coverage cut-off of 20.  Low abundance and likely erroneous
 kmers were then filtered \citep{Zhang2015,Zhang2014}.  
 
