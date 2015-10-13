@@ -5,10 +5,6 @@
 \qauthor{- David Hume: \textit{A Treastie of Human Nature, 1738}}
 \end{savequote}
 
-%map my reads to kodama 
-
-%heterogeneity of sct samples that passed filter
-
 %compare average transcript terminal coverage
 
 
@@ -30,46 +26,71 @@ It has proven an effective method in several studies investigating host-chloropl
 and host-pathogen systems \citep{Tieryney2012,Kawahara2012,Jones2014,Hayden2014}.
 It differentiates itself from both standard metatranscriptomics, such as those common in microbial ecology \citep{Poretsky2005,AliagaGoltsman2014},
 by being conducted on samples of known, or mostly known composition, and from classical transcriptomics
-by not requiring axenic samples. 
+by not depending on axenic samples. 
 
 
 \textit{Paramecium bursaria} and its green algal endosymbionts form a system well-posed
 for ``dual-RNAseq'' analysis.  Firstly, there is a plethora 
-of literature on the physiology and behaviour of host and endosymbiont, both together and individually.
-(e.g. \citep{Iwatsuki1988}, see \citep{Kato2009a} and \ref{chap:introduction} for more details) presenting 
+of literature on the physiology and behaviour of host and endosymbiont, both together and individually
+(e.g. \citep{Iwatsuki1988}, see \citep{Kato2009a} and \ref{chap:introduction} for more details), presenting 
 a key resource by which results can be contextualised.
-Additionally, transcriptomic analysis has proven feasible in reasonably close relatives of both host and endosymbiont 
-(for example, \citep{Guarnieri2011,Rowe2014,Bashan2015} and \citep{Arnaiz2010,Kolisko2014}) and
-for the host transcriptome alone (in the presence of and without a \textit{Chlorella} endosymbiont) \citep{Kodama2014}.
-
-However, this system does also present some hindrances to its transcriptomic tractability.
-The system is highly genomically and transcriptomically complex with \textit{P. bursaria}'s ciliate nuclear
-dimorphism and polyploidy \citep{Raikov1995}, sexual reproduction in both host \citep{Jennings1939} and endosymbiont species \citep{Blanc2010},
-the presence of partially digested bacterial prey of the mixotrophic host \citep{Dolan1992}, a wide range of GC biases \citep{Kodama2014}, and numerous
-associated bacteria \citep{Gortz2009,Fokin2009,Schrallhammer2009} and viruses \citep{VanEtten1983}.
-These present difficulties in seqencing, assembly, and contamination which all must be carefully addressed.
-Additionally, it is key that a method is determined to effectively sort assembled transcripts into
-bins (i.e. ``host'', ``food'' or ``endosymbiont'' derived) in order to filter out 
-transcripts originating from the non-host and algal endosymbiont sources and simplify downstream analysis.
-This binning is also important to handle general contamination arising during the library preparation and sequencing
-process due to experimental error and reagent contamination.  
+Additionally, transcriptomic analysis has proven feasible in reasonably close relatives of both host \citep{Arnaiz2010,Kolisko2014} and endosymbiont \citep{Guarnieri2011,Rowe2014,Bashan2015}.  
+Even more promisingly, there has been an analysis of the host-endosymbiont
+system (although in a different strain: Yad1g1N) \citep{Kodama2014}. 
+Unfortunately, this study focussed only on the expression pattern of the host
+alone with and without its endosymbiont and discarded endosymbiont derived data
+during analysis.
 
 
-These difficulties are compounded by the lack of available reference genomes for either \textit{Paramecium bursaria} or \textit{Micractinium reisseri}.
-However, sequenced genomes for other divergent ciliates (i.e. \textit{Tetrahymena thermophila} \citep{Eisen2006}, \textit{Paramecium tetraurelia} \citep{Aury2006} and \textit{Paramecium caudatum}
-\citep{McGrath2014}) and for fairly closely related algae \textit{Chlorella variabilis} NC64A \citep{Blanc2010} and \textit{Coccomyxa subellipsoidea} C-169 \citep{Blanc2012}
-(see \ref{fig:paramecium_genomes} in \ref{chap:introduction} and \ref{fig:chlorella_genomes} in \ref{chap:endo_diversity} for respective phylogenetic context of these genomes), 
-do exist which could potentially aid transcriptome assembly. It should also be noted that, \textit{Paramecium bursaria} \citep{Kodama2014}, 
-a related \textit{Paramecium} species \citep{Kolisko2014}, and \textit{Chlorella vulgaris} \citep{Guarnieri2011} transcriptomes 
-have all individually been successfully recapitulated \textit{de novo} (without a reference genome).
+However this said, the PbMr system does also present some severe difficulties in terms of its transcriptomic tractability.
+Specifically, the system is highly genomically and transcriptomically complex with \textit{P. bursaria}'s ciliate nuclear
+dimorphism and high order polyploidy \citep{Raikov1995}, 
+the presence of sexual reproduction in both host \citep{Jennings1939} and endosymbiont species \citep{Blanc2010},
+and a large range of GC biases \citep{Kodama2014}. Therefore, care must be taken to optimise sequencing,
+and assembly methods to mitigate these complications.
 
 
-To this end, bulk RNAseq libraries from cultured PbMr was sequenced using 76bp paired-end reads and the Illumina Gene Analyzer II platform.
-Unfortunately, due to limitations in the maintainable culture density of the \textit{Paramecium bursaria} CCAP 1660/12 and thus the quantity of extractable
+These difficulties are compounded by the lack of available reference genomes for either \textit{Paramecium bursaria} or \textit{Micractinium reisseri} and thus necessitating \textit{de novo} transcriptome assembly.
+However, the utility of sequenced genomes from divergent ciliate species 
+(i.e. \textit{Tetrahymena thermophila} \citep{Eisen2006}, \textit{Paramecium tetraurelia} \citep{Aury2006} and \textit{Paramecium caudatum}
+\citep{McGrath2014}) and green algae \textit{Chlorella variabilis} NC64A \citep{Blanc2010} and \textit{Coccomyxa subellipsoidea} C-169 \citep{Blanc2012}
+(see \ref{fig:paramecium_genomes} in \ref{chap:introduction} and \ref{fig:chlorella_genomes} in \ref{chap:endo_diversity} for respective phylogenetic context of these genomes) as references for assembly was investigated.
+It should also be noted that the existing \textit{Paramecium bursaria} \citep{Kodama2014}, 
+\textit{Paramecium duboscqui} \citep{Kolisko2014} and
+\textit{Chlorella vulgaris} \citep{Guarnieri2011} transcriptomes mentioned above were
+successfully recapitulated \textit{de novo} (without a reference genome).
+
+
+On top of this, the mixotrophic nature of the host \textit{Paramecium} \citep{Dolan1992} means there 
+are partially digested bacterial prey species, as well as numerous 
+associated bacteria \citep{Gortz2009,Fokin2009,Schrallhammer2009} and viruses \citep{VanEtten1983} which
+all present potentially obfuscating sources of contamination in the analysis of host-endosymbiont
+interaction.  
+
+
+Therefore, it is key to effective analysis of this system to develop methods
+to minimise the effects of contamination at all stages of analysis.  To address this,
+we investigated methods to reduce contamination during library preparation such as washing steps, cell picking
+and single cell sequencing techniques; methods to screen and/or filter sequenced libraries
+for contaminants before inclusion in assembly and methods to effectively sort
+assembled transcripts into bins relating to their likely originating organisms
+(i.e. ``host'', ``food'' or ``endosymbiont'' derived).
+
+
+
+To this end, bulk RNAseq libraries from cultured PbMr was sequenced using 76bp paired-end reads and the Illumina Gene Analyzer II platform 
+taking care to mininmise contamination by filtering and washing cultures and carefully
+assessing culture health to maximise the number of healthy PbMr sequenced. 
+Unfortunately, due to limitations in the maintainable culture density of the 
+\textit{Paramecium bursaria} CCAP 1660/12 and thus the quantity of extractable
 mRNA it was necessary to pool all day and night replicates into a single pair of day and night libraries. 
-While this provided sufficient material for sequencing it precludes accurate inference of differential expression between day or night
-by masking the biological replicates \citep{Auer2010}.  We, therefore, also sequenced a set of 3 (followed later by an additional 5) dark and 3 light
-biological replicates using single-cell RNAseq (sc-RNAseq) methods. 
+
+While this provided sufficient material for sequencing it precluded accurate inference of differential expression between day or night
+by masking the biological replicates \citep{Auer2010}.
+We, therefore, also sequenced a set of 3 (followed later by an additional 5) dark and 3 light
+biological replicates using single-cell RNAseq (sc-RNAseq) methods.
+This also allowed a finer-grain control over cell selection and potentially
+a method to reduce culture based contamination.
 
 
 While reasonably nascent, sc-RNAseq has shown a lot of promise in well characterised systems such as human cell cultures \citep{Bengtsson2005,Shalek2013}
@@ -84,12 +105,13 @@ in previously cryptic but distinct cellular subpopulations could generate a spur
 
 There are a range of possible sc-RNAseq methods (whose advantages and disadvantages are covered in \ref{chap:methods}).
 We used Qiagen's Repli-G Whole Transcriptome Amplification (WTA) MDA-based kit as MDA 
-is well established and characterised in single cell genomics (e.g. \citep{Spits2006}), it has a simple methodology not requiring additional equipment, and it may be more successful 
-recovering transcripts from a wider range of abundance levels i.e. recovers many lowly expressed transcripts\footnote{
+is well established and characterised in single cell genomics (e.g. \citep{Spits2006}), 
+has a simple methodology not requiring additional equipment, and is potentially more successful at
+recovering transcripts from a wide range of abundance levels than other methods i.e. recovers many lowly expressed transcripts\footnote{
 \url{https://www.qiagen.com/gb/shop/sample-technologies/rna-sample-technologies/total-rna/repli-g-wta-single-cell-kit/} as of 2015/08/25}.
-Unfortunately, while there has been at least one empirical comparison of single cell transcriptomic methods \citep{Wu2014a}, the performance of
-Qiagen's Repli-G WTA MDA-based kit has yet to be directly assessed relative to other kits and methods. 
-
+Unfortunately, despite the publication of empirical comparisons of single cell transcriptomic methods \citep{Wu2014a}, 
+Qiagen's Repli-G WTA MDA-based kit has yet to be directly assessed relative to other approaches and thus its performance has not
+been independently verified. 
 Briefly, this method involves the ligation of reverse transcribed cDNAs using oligo-dT primers (after lysis and 
 removal of gDNA) before MDA by a \(\phi29\) DNA polymerase with a 5'-3' exonuclease proofreading activity 
 (reducing error-rate of amplification to \(9.5*10^{-6}\) errors per nucleotide \citep{Paez2004} compared with
@@ -97,49 +119,33 @@ removal of gDNA) before MDA by a \(\phi29\) DNA polymerase with a 5'-3' exonucle
 
 
 
-Unfortunately, despite their utility sc-RNAseq generates a new set of difficulties.
+Unfortunately, despite its utility sc-RNAseq generates a new set of difficulties.
 First and foremost, there has only been a single published use of sc-RNAseq, to my knowledge, in non-model unicellular eukaryotes.   
 This study by \citep{Kolisko2014}, briefly addressed the issues of bias, contamination and gene discovery effectiveness in a set of model and non-model eukaryotes and
-constitutes an important proof-of-concept.  However, it also used a different sc-RNAseq approach (SMART), focussed on single organisms, 
+constitutes an important proof-of-concept.  
+However, it also used a different sc-RNAseq approach (SMART), focussed on single organisms, 
 and didn't address, in-depth, the optimal way to process, assemble and utilise single cell datasets from protists.
-While some work has been done invesigating the optimal processing of bulk RNAseq datasets (e.g. \citep{Macmanes2013,Macmanes2015}) the effect of
-different trims and error correction on sc-RNAseq has yet to be characterised.  
+While some work has been done invesigating the optimal pre-processing of bulk RNAseq datasets (e.g. \citep{Macmanes2013,Macmanes2015}) 
+the effect of different trims and error correction on sc-RNAseq has yet to be characterised.  
 There are also some early indications of problems of cryptic bacterial contamination
-from samples and/or reagents in sc-RNAseq \citep{Kolisko2014}. This increases the importance
-of library screening and post-assembly transcript binning.
+from samples and/or reagents in sc-RNAseq is particularly problematic \citep{Kolisko2014}. 
+This increases the importance of library screening and post-assembly transcript binning.
+
 
 
 Therefore, this chapter will investigate the optimal use of 2nd generation bulk and sc-RNAseq libraries
-in a characterising a complex reference-free system.  Specifically it will look at the screening of RNAseq libraries for contamination
+in a characterising a complex reference-free system.  Specifically, it will look at the screening of RNAseq libraries for contamination
 before assembly, the optimal preprocessing (partitioning, trimming, digital normalisation and error correction), assembler and assembly
 parameters (including the utility of divergent reference genomes from related species) in recapitulation of host and endosymbiont transcripts.
 Finally, I will address the problem of the attribution of recovered transcripts into their appropriate likely originating organism.  
-
-
-%    \item Just use SCT for transcript quantification i.e. map the SCT reads to a bulk derived \textit{de novo} assembly to generate counts (and is there a severe bias induced 
-%        by the MDA amplification \citep{Liang2014}?)
-%\end{itemize}  <>++
-%However, MDA is prone to a degree of amplification bias \citep{Liang2014} which may be problematic in accurate inference of differential expression
-%therefore, the suitability of MDA-based scRNA-Seq in particular will also need to be assessed.
-%The only other published analysis of \textit{Paramecium bursaria} and its green algal endosymbionts by \citep{Kodama2014} largely
-%side-stepped this issue by focussing on the analysis of host transcripts with and without the endosymbiont by filtering
-%likely endosymbiont derived contigs from analysis using a crude MEGABLAST \(e^{-40}\) approach.
-%Studies in related ciliates have demonstrated a high prevalence of alternative splicing events (5.2\% of genes in \textit{Tetrahymena
-%    thermophila} for a single celled eukaryote \citep{Xiong2012}
-%This paper also demonstrated the huge dynamic range of expression (and thus necessity of RNA-Seq over microarray approaches) in \textit{T. thermophila})
-%with approximately 6 order of magnitude range \citep{Xiong2012}
-%However, as both target species - host and endosymbiont are eukaryotes the complication of mRNA enrichment 
-%is simplified due to the sufficiency of poly-A selection for this task (instead of rRNA depletion methods)
-%Determining the necessary sequencing depth is also difficult.
-%First achieved in \citep{Lao2009}
 
 \section{Methods} 
 
 \subsection{Sample Preparation and Sequencing}
 
 \subsubsection{Bulk transcriptome RNA preparation}
-or bulk transcriptomic analyses CCAP 1660/12 cells were harvested in a way to minimise the 
-number of bacterial prey species from the culture, \textasciitilde \(10^{6}\) 
+For bulk transcriptomic analyses CCAP 1660/12 cells were harvested in a way to minimise the 
+number of bacterial prey species from the culture, \(\sim 10^{6}\) 
 cell aliquots were strained through \(40\mu m\) sieves, filtered on 
 \(10 \mu m\) nylon filters, 
 before finally being filtered on \(8 \mu m\) TETP polycarbonate filters using a 
@@ -165,22 +171,22 @@ In order to lyse collected samples, cells were washed from the filter or the
 pellet was resuspended in 1ml TriReagent (Sigma) heated to \(60\)\celsius. 
 Cells were vortexed with sterile \(300\mu m\) glass-beads for 15s, incubated at 
 room temperature for 10 minute, vortexed for 15s, quick-frozen in liquid 
-nitrogen and stored at \(-20^{o}C\) before further processing.  
+nitrogen and stored at \(-20\)\celsius before further processing.  
 Samples were defrosted, vortexed for 15s, placed in a heat-block set 
-to \(60^{o}C\) for 10 minutes while continuing to be vortexed, removed from 
+to \(60\)\celsius for 10 minutes while continuing to be vortexed, removed from 
 heating and vortexed again for 15s.  
 RNA was extracted by adding 0.2ml of Chloroform to the glass-bead-trizol-sample 
 solution, shaking for 15s, incubating for 5 minutes at room temperature and 
-centrifuging at 12,000g for 15 minutes at $4^{o}$C.  
+centrifuging at 12,000g for 15 minutes at 4\celsius.  
 The upper-phase was then transferred to an RNAse-free 1.5ml tube and an 
-equal volume (\textasciitilde$0.5$ml) of isopropanol was added before shaking for 15s.  
-The isolated RNA was then incubated at $-20^{o}$C for 10 minutes 
+equal volume (\(\sim0.5ml\)) of isopropanol was added before shaking for 15s.  
+The isolated RNA was then incubated at \(-20\)\celsius for 10 minutes 
 (up to several hours) before being collected as a pellet using a centrifuge at 
-10,000g for 10 minutes at $4^{o}$C (supernatant was discarded). 
+10,000g for 10 minutes at 4\celsius (supernatant was discarded). 
 The RNA pellet was then washed with 1ml of 75\% ethanol and centrifuged 
-twice at 10,000g for 10 minutes at $4^{o}$C with the supernatant being 
+twice at 10,000g for 10 minutes at 4\celsius with the supernatant being 
 discarded after each centrifugation.  
-Pellet was dried before being resuspended in 100$\mu l$ of RNAse-free water.  
+Pellet was dried before being resuspended in \(100\mu l\) of RNAse-free water.  
 The RNA was then cleaned further using the Qiagen RNeasy clean-up kit 
 before being assessed for quality using ND-1000 (NanoDrop) and BioAnalyzer (Agilent).
 
@@ -192,7 +198,9 @@ before being picked using an orally aspirated drawn-glass Pasteur pipette \citep
 In order to mininmise contamination from food bacteria present in the media these picked cells
 were washed 3 times by serial transfer to \(10\mu l\) droplets of sterile NCL media.
 The washed cell was then transferred to a \(10\mu l\) droplet of sterile water.
-3 cells were picked 5 hours into both the lit and dark phase of the 12:12 hour day-night cycle.
+Cells were picked 5 hours into both the lit and dark phase of the 12:12 hour day-night cycle.
+
+
 
 cDNA was generated and amplified using the MDA-based Qiagen REPLI-g WTA Single Cell Kit \citep{Korfhage2015}
 with additional cell disruption steps. 
@@ -202,11 +210,21 @@ Due to the robust chitin cell walls of \textit{M. reisseri} \citep{Kapaun1995} i
 ensure thorough cell lysis. Therefore, samples underwent mechanical disruption by bead beating (Sigma, \(425-600\mu m\), acid-washed)
 followed by freeze-thaw by submersion in liquid nitrogen for 5 seconds.  The samples were
 then vortexed for 1 minute before undergoing a gDNA removal step.
+In order to compare disruption methods, extractions and amplifications
+were also conducted using just lysis buffer, bead beating and vortexing (i.e. without freeze-thaw), 
+and just the lysis buffer.  Samples were then quantified using a ND-1000 (NanoDrop)
+and as extraction methods produced near identical DNA concentrations 
+the maximal disruptive method of freeze-thaw, beat beating, vortexting and lysis buffer
+described above was used for further purification and library preparation.
 
-It has become increasingly established methodology in RNAseq to aid quantification
-and normalisation. Unforunately, there are no established methods for synthetic RNA spike-ins
+
+
+It has become an increasingly established methodology to add RNA of known concentrations
+to extractions before library preparation to aid quantification
+and normalisation in downstream analysis. 
+Unforunately, there are no established methods for synthetic RNA spike-ins
 of known concentrations (e.g. ERCC RNA standards \citep{Jiang2011}) with MDA
-sc-RNAseq therefore no spike-ins were added.
+sc-RNAseq therefore no such spike-ins were added.
 
 mRNA was selectively amplified and reverse transcribed to cDNA using poly-A selection (i.e. oligo-dT) primers
 to prevent amplifying ribosomal sequences. Prior to MDA by a \(\phi29\) DNA polymerase
@@ -220,8 +238,25 @@ This kit operates by binding the DNA to a QIAmp membrane in a spin column follow
 to remove impurities such as remaining proteins and cations. 
 
 
+
+
+As the initial 3 dark single-cell samples proved to be of poor quality 
+
+
+
+
 This process was repeated at a later point for a further 5 dark samples due to poor library quality in
 the initial sc-RNAseq dark libraries. 
+
+
+12 light extracs - 3 bead+freeze (used),    beads+vortex, just lysis buffer, 
+
+all actually single cell - tried 5 cell no difference
+
+dark2 bug22 cDNA check and pick those with
+
+5 coccomyxa extracts that weren't pursued further, negative positive (bug22 rnai l44 vector)
+
 
 \subsubsection{Illumina library preparation}
 
@@ -1294,6 +1329,25 @@ On the basis that the high
 
 
 \section{Conclusion}
+
+
+%    \item Just use SCT for transcript quantification i.e. map the SCT reads to a bulk derived \textit{de novo} assembly to generate counts (and is there a severe bias induced 
+%        by the MDA amplification \citep{Liang2014}?)
+%\end{itemize}  <>++
+%However, MDA is prone to a degree of amplification bias \citep{Liang2014} which may be problematic in accurate inference of differential expression
+%therefore, the suitability of MDA-based scRNA-Seq in particular will also need to be assessed.
+%The only other published analysis of \textit{Paramecium bursaria} and its green algal endosymbionts by \citep{Kodama2014} largely
+%side-stepped this issue by focussing on the analysis of host transcripts with and without the endosymbiont by filtering
+%likely endosymbiont derived contigs from analysis using a crude MEGABLAST \(e^{-40}\) approach.
+%Studies in related ciliates have demonstrated a high prevalence of alternative splicing events (5.2\% of genes in \textit{Tetrahymena
+%    thermophila} for a single celled eukaryote \citep{Xiong2012}
+%This paper also demonstrated the huge dynamic range of expression (and thus necessity of RNA-Seq over microarray approaches) in \textit{T. thermophila})
+%with approximately 6 order of magnitude range \citep{Xiong2012}
+%However, as both target species - host and endosymbiont are eukaryotes the complication of mRNA enrichment 
+%is simplified due to the sufficiency of poly-A selection for this task (instead of rRNA depletion methods)
+%Determining the necessary sequencing depth is also difficult.
+%First achieved in \citep{Lao2009}
+
 
 In conclusion,.
 Library filtering is important with single cell possibly due to the increased inefficiency of poly-A selection
