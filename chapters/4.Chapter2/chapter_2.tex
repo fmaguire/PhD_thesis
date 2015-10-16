@@ -131,7 +131,7 @@ There are also some early indications of problems of cryptic bacterial contamina
 from samples and/or reagents in sc-RNAseq is particularly problematic \citep{Kolisko2014}. 
 This increases the importance of library screening and post-assembly transcript binning.
 
-
+\section{Aims}
 
 Therefore, this chapter will investigate the optimal use of 2nd generation bulk and sc-RNAseq libraries
 in a characterising a complex reference-free system.  Specifically, it will look at the screening of RNAseq libraries for contamination
@@ -144,8 +144,8 @@ Finally, I will address the problem of the attribution of recovered transcripts 
 \subsection{Sample Preparation and Sequencing}
 
 \subsubsection{Bulk transcriptome RNA preparation}
-For bulk transcriptomic analyses CCAP 1660/12 cells were harvested in a way to minimise the 
-number of bacterial prey species from the culture, \(\sim 10^{6}\) 
+For bulk transcriptomic analyses CCAP 1660/12 cells were harvested in a way to minimise 
+contamination from bacterial prey species in the culture. \(\sim 10^{6}\) 
 cell aliquots were strained through \(40\mu m\) sieves, filtered on 
 \(10 \mu m\) nylon filters, 
 before finally being filtered on \(8 \mu m\) TETP polycarbonate filters using a 
@@ -158,7 +158,7 @@ when no photosynthesis is taking place) samples were extracted 5 hours into
 the light and dark phase of the 12:12 hour day-night cycle.
 
 To ensure extracted RNA was representative of healthy and interacting host 
-and endosymbionts care was taken to minimise the number of dead/dying cells 
+and endosymbionts care was taken to the number of dead/dying cells 
 from which RNA was extracted.  In order to do this, a subsample was taken 
 from each culture during the process of harvesting and scored for dead/dying cells.  
 Cell assays were formed by taking 1-2ml of each harvest cell pellet and 
@@ -186,10 +186,9 @@ The isolated RNA was then incubated at \(-20\)\celsius for 10 minutes
 The RNA pellet was then washed with 1ml of 75\% ethanol and centrifuged 
 twice at 10,000g for 10 minutes at 4\celsius with the supernatant being 
 discarded after each centrifugation.  
-Pellet was dried before being resuspended in \(100\mu l\) of RNAse-free water.  
-The RNA was then cleaned further using the Qiagen RNeasy clean-up kit 
+The pellet was then dried before being resuspended in \(100\mu l\) of RNAse-free water.  
+The RNA was cleaned further using the Qiagen RNeasy clean-up kit 
 before being assessed for quality using ND-1000 (NanoDrop) and BioAnalyzer (Agilent).
-
 
 \subsubsection{Single cell RNA preparation}
 For single cell transcriptomics, a ``cell-picking'' approach was used in which
@@ -198,9 +197,11 @@ before being picked using an orally aspirated drawn-glass Pasteur pipette \citep
 In order to mininmise contamination from food bacteria present in the media these picked cells
 were washed 3 times by serial transfer to \(10\mu l\) droplets of sterile NCL media.
 The washed cell was then transferred to a \(10\mu l\) droplet of sterile water.
-Cells were picked 5 hours into both the lit and dark phase of the 12:12 hour day-night cycle.
-
-
+Cells were picked 5 hours into both the lit and dark phase of the 12:12 hour day-night cycle 
+identically to the bulk analyses.
+As cells were picked individually, health status could be exhaustively assessed
+during picking and therefore the subsampling and scoring method used to
+check the status of cells in bulk preparations was unnecessary.
 
 cDNA was generated and amplified using the MDA-based Qiagen REPLI-g WTA Single Cell Kit \citep{Korfhage2015}
 with additional cell disruption steps. 
@@ -208,54 +209,37 @@ Specifically, cells were transferred from their respective \(10\mu l\) droplets 
 a PCR tube containing \(6\mu l\) water and \(4\mu l \) lysis buffer. 
 Due to the robust chitin cell walls of \textit{M. reisseri} \citep{Kapaun1995} it was important to
 ensure thorough cell lysis. Therefore, samples underwent mechanical disruption by bead beating (Sigma, \(425-600\mu m\), acid-washed)
-followed by freeze-thaw by submersion in liquid nitrogen for 5 seconds.  The samples were
-then vortexed for 1 minute before undergoing a gDNA removal step.
+followed by freeze-thaw via submersion in liquid nitrogen for 5 seconds.
 In order to compare disruption methods, extractions and amplifications
 were also conducted using just lysis buffer, bead beating and vortexing (i.e. without freeze-thaw), 
 and just the lysis buffer.  Samples were then quantified using a ND-1000 (NanoDrop)
 and as extraction methods produced near identical DNA concentrations 
 the maximal disruptive method of freeze-thaw, beat beating, vortexting and lysis buffer
 described above was used for further purification and library preparation.
-
-
-
-It has become an increasingly established methodology to add RNA of known concentrations
-to extractions before library preparation to aid quantification
-and normalisation in downstream analysis. 
-Unforunately, there are no established methods for synthetic RNA spike-ins
-of known concentrations (e.g. ERCC RNA standards \citep{Jiang2011}) with MDA
-sc-RNAseq therefore no such spike-ins were added.
+The samples were then vortexed for 1 minute before a gDNA removal step.
 
 mRNA was selectively amplified and reverse transcribed to cDNA using poly-A selection (i.e. oligo-dT) primers
 to prevent amplifying ribosomal sequences. Prior to MDA by a \(\phi29\) DNA polymerase
-cDNA are ligated into long fragments due to lower MDA efficiency for short fragments \citep{Korfhage2015}.
+cDNA were ligated into long fragments due to lower MDA efficiency for short fragments \citep{Korfhage2015}.
 This reduces size-dependent amplification bias but could potentially lead to the creation
 of chimeric transcripts in which paired-reads cross boundaries of adjacently ligated
 cDNA transcripts.  Analysis of this is discussed below.
 
 The amplified cDNA was then purified using a QIAamp DNA mini kit and eluted in \(100\mu l\) elution buffer.
 This kit operates by binding the DNA to a QIAmp membrane in a spin column followed by successive washing steps
-to remove impurities such as remaining proteins and cations. 
+to remove impurities such as remaining proteins and cations. To create 3 dark cDNA 
+samples (Dark1-2, Dark1-3, Dark1-5) and 3 light samples (Light1-9, Light1-10, Light1-11).
 
 
-
-
-As the initial 3 dark single-cell samples proved to be of poor quality 
-
-
-
-
-This process was repeated at a later point for a further 5 dark samples due to poor library quality in
-the initial sc-RNAseq dark libraries. 
-
-
-12 light extracs - 3 bead+freeze (used),    beads+vortex, just lysis buffer, 
-
-all actually single cell - tried 5 cell no difference
-
-dark2 bug22 cDNA check and pick those with
-
-5 coccomyxa extracts that weren't pursued further, negative positive (bug22 rnai l44 vector)
+Due to low quantities of eukaryote identifiable reads in the initial 3 sequenced single cell
+dark libraries a set of additional single cell extractions were conducted. 
+These followed the same protocol as above but also featured an additional
+final PCR-based screening of synthesised cDNA using primers specific for \textit{Paramecium}
+Bug22 sequence. Bug22 is a highly conserved ciliary protein found in a large number of organisms
+including the ciliates \citep{Smith2005,Laligne2010}, green algae \citep{Keller2005,Laligne2010,Meng2014}, higher plants \citep{Hodges2011}, and animals \citep{MendesMaia2014} we used as a marker for \textit{Paramecium} derived cDNA.
+Primers used were Bug22BFWD "GCATTCTAGACCAATCTGGCTTTCTGTCAA" and Bug22BREV "GCATTTCGAATTTGAGGCTCTAAATCTTCTTCTCA",
+under standard PCR conditions.  5 (Dark2-2, Dark2-3, Dark2-6, Dark2-7, Dark2-8) samples with 
+bands of appropriate size were then taken forward for library preparation and sequencing.
 
 
 \subsubsection{Illumina library preparation}
@@ -279,15 +263,17 @@ A final bioanalyzer step was conducted with individual library concentrations ra
 
 The bulk day and night library were paired-end (PE) \(76bp\) sequenced using an Illumina Genome
 Analyzer II by the Exeter University Sequencing Service.  The two libraries were sequenced
-on separate flowcells.
+on separate flowcells (Bulk-Light, Bulk-Dark).
 
 Single cell libraries were paired-end \(150bp\) using an Illumina HiSeq 2500 by Exeter
-Sequencing Service. 3 dark and 3 light samples were multiplexed sequenced on a single 
-flowcell lane.  The 5 additional dark samples were later sequenced multiplexed on a single
-flowcell lane.
+Sequencing Service. 3 dark (Dark1-2, Dark1-3, Dark1-5) and 3 light (Light1-9, Light1-10, Light1-11)
+samples were multiplexed sequenced on a single flowcell lane.  The 5 additional 
+dark samples (Dark2-2, Dark2-3, Dark2-6, Dark2-7, Dark2-8) were multiplexed and sequenced on a single
+flowcell lane in a separate sequencing run.
 
-\subsection{Library screening}
+\subsection{Library contamination screening}
 
+\subsubsection{Taxonomic analysis}
 Sequenced libraries were initially screened using the standard
 metrics implemented in the FastQC to check for standard seqencing issues
 such as flowcell defects, library degaradation, and adapter read-through \citep{fastqc}.
@@ -308,29 +294,39 @@ local copy of the NCBI taxonomy database \citep{Federhen2012} to recover a hit t
 read that aligned to a sequence within NR database. These lineages were then interactively tallied 
 at several different taxonomic levels (e.g. domain level - eukaryote vs bacteria, or lower level - viridiplantae vs ciliate) and variances
 calculated.  Results were then tabulated and libraries compared to assess whether any libraries appeared
-abberrant.
+abberrant.  This whole analysis was repeated for both untrimmed reads and reads quality trimmed
+to a high quality threshold of an average Q30 over a sliding window of size 4 using
+Trimmomatic \citep{Bolger2014a} to assess the impact trimming has on this profiling.
+Taxonomic profiles were additionally visualised in Krona \citep{Ondov2011} using
+the tabular BLAST hit import functionality.
 
 Scripts used to conduct this are available in the following github repository:
 \url{https://github.com/fmaguire/dueydrop}
 
-Each library's GC\% probability density was estimated from per-read GC proportions
-(calculated using awk \citep{Aho1987}) via Kernel Density Estimation (KDE) \citep{Rosenblatt1956,Parzen1962} 
-(implemented in the seaborn package \citep{michael_waskom_2015_19108}).
-This involved a standard gaussian kernel and a bandwith determined by ``Scott's normal reference rule'' \citep{Scott1979}.  
-
-
-
-The performance of DueyDrop was compared to a fullscale taxonomic analysis of all libraries.
-This fullscale analysis was comprised of a similar DIAMOND BLASTX search against the full
-protein NR database but for every forward from all sc-RNAseq libraries and the bulk libraries.
-Libraries used in this analysis were trimmed at a sliding window minimum quality of 30 (relative to
-the untrimmed libraries used in the ``DueyDrop'' subsample analysis). Similarly, no restriction
-was placed on the number of hits to retain.  Multiple hits for a given read were collapsed 
+To determine how representative profiles created using small subsamples 
+consisting of <1\% of reads are to profiles of entire libraries a similar analysis
+was done using full libraries. All libraries were pre-trimmed at the harsh
+threshold of the Q30 sliding window discussed above. 
+The forward read from each trimmed library was used 
+used in a similar DIAMOND based BLASTX search however all hits were retained.
+Multiple hits for a given read were collapsed 
 into a single lowest common ancestor (LCA) using the LCA algorithm \citep{Gabow1985} implemented in MEGAN (via the ``mtools''
 package) \citep{Huson2007,el2013improved}.  LCA were then summarised and tabulated using
 a script in the CGAT collections (``lca2table.py'') \citep{Sims2014} and visualised 
 using Krona \citep{Ondov2011}.
 
+On the basis of the resultant taxonomic profiles libraries were excluded or included
+from downstream preprocessing and assembly (see \ref{Results} for details of excluded
+libraries). The libraries selected for inclusion during these analyses 
+are referred to as the ``taxonomically filtered'' single cell libraries.
+
+\subsubsection{GC density estimates}
+
+Each library's GC\% probability density was estimated from per-read GC proportions
+(calculated using awk \citep{Aho1987}) via Kernel Density Estimation (KDE) \citep{Rosenblatt1956,Parzen1962} 
+(implemented in the seaborn package \citep{michael_waskom_2015_19108}).
+This involved a standard gaussian kernel and a bandwith determined by ``Scott's normal reference rule'' \citep{Scott1979}.  
+Again this analysis was repeated with both untrimmed and Q30 trimmed reads. 
 
 \subsection{Optimising read pre-processing}
 
@@ -339,7 +335,6 @@ using Krona \citep{Ondov2011}.
 To investigate the optimal trimming parameters for single cell libraries, 
 random subsamples were trimmed using a range minimum quality thresholds and then the effects investigated
 by mapping against 3 draft \textit{de novo} transcriptomes.
-
 
 Specifically, 5000 PE reads were randomly sampled without replacement from each of the raw FASTQ libraries 
 using the streaming reservoir sampling \citep{Vitter1985} algorithm implemented in Heng Li's 
@@ -356,12 +351,12 @@ Finally, a minimum length trimmed read length critera of 40bp was used.
 
 The trimmed samples were then mapped to 3 different \textit{de novo} draft transcriptome assemblies using bowtie2
 \citep{Langmead2012} with maximum and minimum insert sizes of 37bp and 1161bp (derived from library preparation
-fragment size distribution and histrogram of mapped insert sizes for untrimmed reads against bulk reference).
+fragment size distribution and histrograms of mapped insert sizes for untrimmed reads against bulk reference).
 
-These 3 draft assemblies were a ``baseline'' bulk RNASeq transcriptome reference consisting of a Trinity \citep{Haas2013} assembly of the light and dark
-bulk libraries preprocessed to remove low quality bases (<Q20) and adapters using Fastq-MCF \citep{Aronesty2013};
+These 3 draft assemblies were a ``baseline'' bulk RNASeq transcriptome reference consisting of a Trinity \citep{Haas2013} 
+assembly of the light and dark bulk libraries preprocessed to remove low quality bases (<Q20) and adapters using Fastq-MCF \citep{Aronesty2013};
 and two Trinity assemblies of the taxonomically filtered sc-RNASeq libraries previously trimmed 
-    at an average window quality threshold of Q5 and Q30 respectively.
+at an average window quality threshold of Q5 and Q30 respectively.
 
 
 For each library and set of quality thresholds the total number of concordantly
@@ -379,7 +374,6 @@ threshold to use for further assembly.
 Scripts used to conduct this are available in my thesis scripts github repository:
 \url{https://github.com/fmaguire/thesis_scripts/tree/master/chapter_2_assembly_and_binning/trimming_optimisation}
 
-
 \subsection{Error correction}
 
 The effect of error correction on assemblies involving single cell libraries was assessed 
@@ -390,8 +384,7 @@ and ``SEECER'' \citep{Le2013} which is optimised for RNAseq (but not necessarily
 data). 
 The impact of each of these error correction algorithms at the read level was assessed as well 
 as their subsequent impact on downstream assembly metrics, particularly RSEM-EVAL likelihood score
-as will be expounded upon below.
-
+as will be expanded upon below in the description of assembly assessment.
 
 \subsection{Kmer normalisation and trimming}
 
@@ -434,7 +427,6 @@ Scripts used to conduct this are available in a github repository:
 \url{https://github.com/fmaguire/parKour}
 
 
-
 \subsection{Assembly}
 
 Referenced and \textit{de novo assemblies} were attempted using a range of assemblers
@@ -450,8 +442,25 @@ GTF files were generated from best avaiable gene annotations in the form of GFF 
 cufflinks).
 Cufflinks \citep{Trapnell2011} was then used to extract isoforms from the spliced alignments.
 
-For \textit{de novo} assembly, assemblies were conducted using Trinity \citep{Grabherr2011}, 
-SOAPdenovo-Trans \citep{Xie2014}, TransAbyss \citep{Robertson2010} and Velvet/Oases \citep{Schulz2012}.
+For \textit{de novo} assembly, assemblies were conducted using following 
+assemblers with default settings unless specified otherwise:
+\begin{itemize}
+    \item Trinity v2.0.6 \citep{Grabherr2011} with and without a minimum kmer coverage of 2
+    \item SOAPdenovo-Trans v1.03 \citep{Xie2014} with kmer sizes of 20, 32, 64, and 80   
+    \item TransAbyss v1.5.3 \citep{Robertson2010} with kmer sizes 20, 32, and 64 
+    \item Velvet v1.2.10 \citep{Zerbino2008} and Oases v0.2.08 \citep{Schulz2012} with kmer size of 
+        21, a minimum kmer coverage of 2 and a minimum transcript length
+        of 100.
+    \item Iterative de Bruijn Graph Assembler (IDBA)-tran \citep{Peng2010, } 
+    \item Bridger \citep{Chang2015}
+\end{itemize}
+
+
+
+
+
+
+
 However, as Trinity overwhelming generated the best assemblies i.e. recovered the same trancripts
 but generally longer and more accurately collapsed into different isoforms, Trinity was 
 used for all further downstream optimisation.
@@ -461,12 +470,13 @@ combinations of libraries (i.e. bulk and screened sc-RNAseq libraries) and also
 sequencing data from Kodama's previously published \textit{P. bursaria} bulk
 RNAseq analysis \citep{Kodama2014c}.
 
+\subsubsection{Assembly assessment}
+
 Resultant assemblies were then compared using standard assembly statistics 
 (e.g. contigs number and size, GC\%, isoform data) as implemented in a perl script supplied with 
 Trinity \citep{Haas2013}.  We also used the reference
 free probabilistic assembly assessment RSEM-EVAL package (part of DETONATE) \citep{Li2014} to
 produce likelihood scores for various completed assemblies.
-
 
 \subsubsection{ORF calling}
 
@@ -1358,5 +1368,18 @@ Arboretum offers a useful way to accurately classify transcripts into likely ori
 
 
 
+Titrating ERCC spike-ins to level of single cell 
 
 
+It has become an increasingly established methodology to add RNA of known concentrations
+to extractions before library preparation to aid quantification
+and normalisation in downstream analysis. 
+Unforunately, there are no established methods for synthetic RNA spike-ins
+of known RNA concentrations (e.g. ERCC RNA standards \citep{Jiang2011}) with MDA
+sc-RNAseq. Specifically, standards would need to be carefully titrated to appropriate
+concentrations for single cell methods or they would overwhelm sequencing 
+
+
+therefore no such spike-ins were added. 
+
+chimera analysis
