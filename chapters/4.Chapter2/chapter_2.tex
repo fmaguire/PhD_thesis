@@ -451,44 +451,39 @@ assemblers with default settings unless specified otherwise:
     \item Velvet v1.2.10 \citep{Zerbino2008} and Oases v0.2.08 \citep{Schulz2012} with kmer size of 
         21, a minimum kmer coverage of 2 and a minimum transcript length
         of 100.
-    \item Iterative de Bruijn Graph Assembler (IDBA)-tran \citep{Peng2010, } 
-    \item Bridger \citep{Chang2015}
+    \item Iterative de Bruijn Graph Assembler (IDBA)-tran \citep{Peng2010,Peng2012,Peng2013} 
+    \item IDBA-MTP \citep{Leung2014}, IDBA-UD \citep{Peng2012}, IDBA-MT \citep{Leung2013} workflow.
+    \item Bridger \citep{Chang2015}.
 \end{itemize}
 
-
-
-
-
-
-
-However, as Trinity overwhelming generated the best assemblies i.e. recovered the same trancripts
-but generally longer and more accurately collapsed into different isoforms, Trinity was 
-used for all further downstream optimisation.
-
+Trinity was used for all further downstream assembly optimisation due to its performance
+and consistency.
 Specifically, a minimum kmer coverage of 1-3 were attempted as well as various
 combinations of libraries (i.e. bulk and screened sc-RNAseq libraries) and also
 sequencing data from Kodama's previously published \textit{P. bursaria} bulk
 RNAseq analysis \citep{Kodama2014c}.
 
+Best assemblies from Bridger, Trinity, SOAPdenovo-Trans, Transabyss and IDBA-tran 
+(as assessed below) were combined using the EvidentialGene tr2aacds pipeline \citep{Gilbert2013}
+as discussed in \citep{Nakasugi2014}.
+
 \subsubsection{Assembly assessment}
 
-Resultant assemblies were then compared using standard assembly statistics 
+Resultant assemblies were compared using standard assembly statistics 
 (e.g. contigs number and size, GC\%, isoform data) as implemented in a perl script supplied with 
-Trinity \citep{Haas2013}.  We also used the reference
-free probabilistic assembly assessment RSEM-EVAL package (part of DETONATE) \citep{Li2014} to
+Trinity \citep{Haas2013} and TransRate \citep{Smith-unna2015}. 
+Additionally, reference free probabilistic assembly assessment RSEM-EVAL package (part of DETONATE) \citep{Li2014} to
 produce likelihood scores for various completed assemblies.
 
 \subsubsection{ORF calling}
 
 ORFs were called from assembled transcripts using transdecoder \citep{Haas2013} with 
-a minimum protein size of 100aa.  \textit{Paramecium} uses an alternative
+a minimum protein size of 30aa.  \textit{Paramecium} uses an alternative
 genetic code in which two universal stop codons (UAA, UAG) are reassigned to glutamine.
 Due to this all ORFs were initially called using this alternative encoding for initial binning
 purposes as spuriously extended transcripts were considered favourable to falsely truncated
-ones. 
-
-%CD-HIT \citep{Li2006} was then used to cluster ORFs at a 95\% identity level to reduce
-%redundancy in the set of called ORF
+ones.  CD-HIT \citep{Li2006} was then used to cluster ORFs at a 95\% identity level to reduce
+redundancy in the set of called ORFS.
 
 \subsection{Transcript Binning}
 
@@ -637,10 +632,6 @@ were evaluated for performance manually and best performing classification algor
 Additionally, an autoML method in which all available models are considered as hyperparameters in an efficient
 bayesian optimisation approach was also attempted \citep{Komer2014}. 
 Model performance was evaluated using a weighted average of all against one f1-scores.
-
-
-
-
 
 \section{Results} 
 
