@@ -480,58 +480,76 @@ produce likelihood scores for various completed assemblies.
 ORFs were called from assembled transcripts using transdecoder \citep{Haas2013} with 
 a minimum protein size of 30aa.  \textit{Paramecium} uses an alternative
 genetic code in which two universal stop codons (UAA, UAG) are reassigned to glutamine.
-Due to this all ORFs were initially called using this alternative encoding for initial binning
-purposes as spuriously extended transcripts were considered favourable to falsely truncated
-ones.  CD-HIT \citep{Li2006} was then used to cluster ORFs at a 95\% identity level to reduce
-redundancy in the set of called ORFS.
+For the purposes of initial BLAST based binning ORFs were called and translated
+using both universal encoding and this alternative code. However, for 
+the later BLAST-based bin accuracy verification purposes and subsequent
+automated phylogeny based binning all ORFs were initially only called using 
+the alternative ciliate encoding. The ciliate encoding was used
+instead of universal because it was spuriously extended transcripts
+were considered favourable to falsely truncated ones.
+This greatly reduced redundancy in the later binning analyses.
+
+Additionally, CD-HIT \citep{Li2006} was used on all sets of called ORFs (regardless of encoding) 
+at a 95\% identity level to reduce redundancy in the set of called ORFS.
+This was particular important for datasets from assemblies generated from
+meta-assemblies and assemblers that aren't explicitly splice-aware in their output
+(e.g. Oases, TransAbyss)
 
 \subsection{Transcript Binning}
 
-\subsubsection{Initial bins}
+\subsubsection{Initial BLAST based bins}
 
-Initially, 10,000 randomly chosen transcripts were binned into their predicted source - 
+Initially, 10,000 randomly chosen translated transcripts were binned into their predicted source - 
 Host (H), Unknown but likely Host (U(H)), Endosymbiont (E), Unknown but likely Endosymbiont (U(E)), Food (F), Unknown but likely Food (U(F)), and
-Unknown (U). 
-Each of the assembled transcripts were BLASTed against a database consisting of the following predicted proteomes: 
+Unknown (U) via BLASTP. 
+
+Each of the assembled transcripts were BLASTP-ed against a database consisting of the following predicted proteomes: 
 \textit{Chlorella} NC64A, \textit{Chlamydomonas reinhardtii}, \textit{Coccomyxa} C169,
 \textit{Paramecium tetraurelia}, \textit{Tetrahymena thermophila}, \textit{Arabidopsis thaliana}, \textit{Homo sapiens} (help-
     ing to identify contamination), \textit{Saccharomyces cerevisiae}, \textit{Schizosaccharomyces pombe}, \textit{Bacillus
 cereus} ATCC 14579, \textit{Escherichia coli} 536, \textit{Escherichia coli} O157 H-7, \textit{Salmonella typhimurium}
 LT2 and \textit{Escherichia coli} K-12 (the last 5 genome datasets helping to identify food bacterial
-genes). Then initial bins were classified as follows:
+genes). Then initial bins were determined as follows:
 \begin{itemize}
-    \item Endosymbiont (E): Transcript’s highest scoring BLAST hit at \(-50E\) was to Coccomyxa,
-        Chlamydomonas or Chlorella. Or transcript’s highest scoring hit at \(-20E\) was one of those
+    \item Endosymbiont (E): Transcript’s highest scoring BLAST hit at an expectation of \(\leq e^{-50}\) was to \textit{Coccomyxa},
+        \textit{Chlamydomonas} or \textit{Chlorella}. Or transcript’s highest scoring hit at \(e^{-20}\) was one of those
 species and the longest likely coding region in the transcript was using the universal codon
 table.
-\item Unknown but likely Endosymbiont (U(E)): \(-10E\) hit to Coccomyxa, Chlamydomonas or
-Chlorella and longest likely coding region was using the universal codon table. Or tran
-script’s highest hits at \(-10E\) and \(-20E\) were to one of those genomes regardless of coding
+\item Unknown but likely Endosymbiont (U(E)): \(e^{-10}\) hit to \textit{Coccomyxa}, \textit{Chlamydomonas} or
+    \textit{Chlorella} and longest likely coding region was using the universal codon table. Or transcript’s 
+    highest hits at \(e^{-10}\) and \(e^{-20}\) expectation thresholds were to one of those genomes regardless of coding
 region presence.
-\item Host (H): Transcript’s highest hits at \(-50E\) were to Paramecium tetraurelia or Tetrahymena
-    thermophila. Or highest hit at \(-20E\) was one of those species and longest likely coding
-region was using the Tetrahymena codon table.
-\item Unknown but likely Host (U(H)): \(-10E\) hit to Paramecium tetraurelia or Tetrahymena
-thermophila and longest likely coding region was was using the Tetrahymena codon table.
-Or transcript’s highest hits at \(-10E\) and \(-20E\) were to one of those genomes regardless of
+\item Host (H): Transcript’s highest hits at \(\leq e^{-50}\) were to \textit{Paramecium tetraurelia} or \textit{Tetrahymena
+        thermophila}. Or highest hit at \(e^{-20}\) was one of those species and longest likely coding
+    region was using the \textit{Tetrahymena} codon table.
+\item Unknown but likely Host (U(H)): \(e^{-10}\) hit to \textit{Paramecium tetraurelia} or \textit{Tetrahymena
+    thermophila} and longest likely coding region was was using the \textit{Tetrahymena} codon table.
+    Or transcript’s highest hits at \(e^{-10}\) and \(e^{-20}\) were to one of those genomes regardless of
 coding region presence.
-\item Food (F): Transcript’s highest scoring BLAST hit at \(-50E\) was to one of the E. coli species
-    or Salmonella. Or transcript’s highest scoring hit at \(-20E\) was one of those species and
+\item Food (F): Transcript’s highest scoring BLAST hit at an expectation of \(\leq e^{-50}\) was to one of the \textit{E. coli} species
+    or \textit{Salmonella}. Or transcript’s highest scoring hit at \(e^{-20}\) was one of those species and
 the longest likely coding region in the transcript was using the universal codon table.
-\item Unknown but likely Food (U(F)): \(-10E\) hit to one of the E. coli species or Salmonella and
+\item Unknown but likely Food (U(F)): expectation \(e^{-10}\) hit to one of the \textit{E. coli} species or \textit{Salmonella} and
 longest likely coding region was using the universal codon table. Or transcript’s highest
-hits at \(-10E\) and \(-20E\) were to one of those genomes regardless of coding region presence.
-\item Unknown (U): highest scoring hits to Arabidopsis, Homo sapiens, Saccharomyces or Schizosac-
-charomyces or any sequence not fitting into the above categories.
+hits at \(e^{-10}\) and \(e^{-20}\) expectation thresholds were to one of those genomes regardless of coding region presence.
+\item Unknown (U): highest scoring hits to \textit{Arabidopsis}, \textit{Homo sapiens}, \textit{Saccharomyces} or \textit{Schizosacharomyces} 
+    or any sequence not fitting into the above categories.
 \end{itemize}
 
+The accuracy of the BLAST based binning was then determined by generating phylogenies
+using the method described below. Resultant phylogenies were then manually
+parsed and assessed for phylogenetic congruence with their bin.
+For example, do host binned sequences predominantly branch with other ciliate sequences?
+Do endosymbiont binned sequences mainly branch with archaeplastida sequences. 
+
 \subsubsection{Automated Phylogeny Generation Pipeline - Dendrogenous}
+
 To rapidly generate phylogenies an established lab tree generation pipeline, known as ``Darren's Orchard'' 
-\citep{Richards2009g} was modified and converted to python3.  This new pipeline ``Dendrogenous'' 
+\citep{Richards2009g} was modified and ported to python3 from perl5.  This new pipeline ``Dendrogenous'' 
 takes in a multi-fasta set of inputs and a set of genomes to search against.
 For each input sequence:
 \begin{enumerate} 
-    \item The specified genome database is queried using BLASTP
+    \item The user specified genome database is queried using BLASTP
     \item The results are parsed and a fasta file of putative homologues is created, with inputs that have fewer than a specified 
         number of hits (default of 5) ejected.
     \item A multiple sequence alignment (MSA) is created from this fasta using Kalign (chosen for its speed) \citep{Lassmann2009}
@@ -604,15 +622,13 @@ were selected for this phylogenetic generation.
 \textit{Methanococcus maripaludis S2},
 \textit{Cenarchaeum symbiosum A}.
 
-10,000 transcripts from the initial BLAST based bins were used to generate phylogenies 
-and were manually parsed and assessed for phylogenetic congruence with their bin.
-For example, do host binned sequences predominantly branch with other ciliate sequences?
-Do endosymbiont binned sequences mainly branch with archaeplastida sequences. 
-
 \subsubsection{Automated Phylogenetic Transcript Binning - Arboretum}
+In order to automate phylogeny based transcript binning the 10,000
+manually verified phylogenetic bins from the initial BLAST based binning
+and analysis were used as a training dataset for supervised classification.
 
-Using these 10,000 manually verified phylogenetic bins as a training dataset a supervised classification
-script ``Arboretum'' was created.  The cardinalities of each label in training set was relatively balanced (all within
+The supervised classification was implemented in a script called ``Arboretum''
+The cardinalities of each label in training set was relatively balanced (all within
 the same order of magnitude) 1975 endosymbiont phylogenies, 2600 host, 3456 food, and 1969
 unknown. 
 
@@ -631,20 +647,89 @@ Support vector machines, random forest and logistic regression algorithms as imp
 were evaluated for performance manually and best performing classification algorithm was selected.
 Additionally, an autoML method in which all available models are considered as hyperparameters in an efficient
 bayesian optimisation approach was also attempted \citep{Komer2014}. 
-Model performance was evaluated using a weighted average of all against one f1-scores.
+Model performance was evaluated using a weighted average of all against one f1-scores as implemented 
+in scikit-learn.
+
+Input data was plotted using t-distributed stochastic neighbour embedding implemented in scikit-learn.
 
 \section{Results} 
 
-\subsection{Library screening}
+\subsection{Library contamination screening}
 
 Libraries were screened for inclusion in assemblies by inspection of their taxonomic
 profiles (see \ref{tab:sct_duey} and \ref{tab:bulk_duey}) as determined by DueyDrop 
 and their GC\% probability densities (via KDE).
-As preliminary analyses (see \ref{appendix:trimmingscreening}) showed 
-that trimming made minimal impact on the overall
-taxonomic or GC profile of a given library all shown data is derived from raw profiles 
-(with the exception of the bulk profiles which were trimmed to Q20 using
-FASTX as described above).
+
+The GC density estimates of the single cell libraries show a clear bimodal GC density
+with a high 70GC\% peak (\ref{fig:gc_prop_raw}) in all dark single cell libraries. 
+With the exception of Dark1-2 and Dark2-3 this high GC peak is a greater density
+than the expected peak 30-50GC\% (from known GC\% found in genomes
+of sequenced relatives of both host and endosymbiont).
+
+\begin{figure}[h]
+    \includegraphics[width=\textwidth]{lib_gc_prop.svg}
+    \caption{Probability densities of per-read GC proportions for the raw data (apart from pretrimmed bulk explained previously)
+        from each sequenced library 
+        Densities were derived using Kernel Density Estimation implemented in Seaborn. 
+        The bulk and single cell light libraries demonstrate similar shaped distributions
+        although the bulk has a greater proportion of low GC\% reads potentially representing
+        more \textit{Paramecium} derived data. All single cell dark libraries 
+        demonstrate a bimodal density with up to the majority of reads deriving 
+        from an unknown high 70\% GC population. The dark single cell libraries
+        exhibiting a relatively larger peak at 70\% GC than at 40-50\%GC (i.e.
+        Dark1-3, Dark1-5, Dark2-2, Dark2-7) were
+        the same libraries which were identified as potentially contaminated
+        in taxonomic screening (see \ref{tab;sct_duey}).
+    }
+    \label{fig:gc_prop_raw}
+\end{figure}
+
+When these KDE are compared to the densities estimated from the Q20 trimmed
+bulk reads (bottom right pane in \ref{fig:gc_prop_raw}) and 
+raw bulk RNAseq reads from \citep{Kodama2014} (see \ref{fig:gc_prop_kodama}) 
+it is apparent that this high GC\% peak is likely originating from
+a high GC\% bacterial contaminant in the Dark single cell libraries.  
+
+One other observation when comparing the bulk RNAseq analyses to the single cell
+libraries is that the main GC peak is slightly lower in the bulk (and Kodama dataset), 
+around 30GC\% versus 45-50GC\%.
+This possibly indicates a greater proportion of reads deriving from the low
+GC\% \textit{Paramecium bursaria} host and fewer from the 50GC\% endosymbiont
+in bulk libraries relative to single cell libraries.  
+
+\begin{figure}[h]
+    \includegraphics[width=\textwidth]{kodama_gc_prop.svg}
+    \caption{Probability density of the per-read GC proportion for raw data derived from
+    \citep{Kodama2014} transcriptome analysis of a different \textit{P. bursaria} species
+with and without its endosymbiont. This dataset displays densities relatively similar
+to the bulk RNAseq conducted in this project - "Trimmed Bulk Libraries in \ref{fig:gc_prop_raw}}
+    \label{fig:gc_prop_kodama}
+\end{figure}
+
+By comparing the results of the KDE GC analysis with and without read trimming it
+is apparent that trimming of reads makes nearly no difference in the density estimates.
+The KDE of Q30 sliding window trimmed single cell reads in \ref{gc_prop_q30} is nearly
+identical to that of the raw reads \ref{fig:gc_prop_raw}.
+
+\begin{figure}[h]
+    \includegraphics[width=\textwidth]{lib_gc_prop_q30_trimmed.svg}
+    \caption{Probability densities of per-read GC proportions for trimmed reads.
+             To ensure probability densities estimated in \ref{fig;gc_prop_raw}
+         weren't biased by low quality ambiguous reads the same analysis was
+     repeated using reads trimmed using a sliding window approach with a stringent average
+ quality threshold of Q30.  In all cases the densities produced appear near identical to
+ the analysis of the raw data}
+    \label{fig:gc_prop_q30}
+\end{figure}
+
+The taxonomic profiles of single cell (\ref{tab:sct_duey}) and bulk libraries (\ref{tab:sct_bulk}) 
+generated by DueyDrop are summarised in the tables below.  It is readily apparent 
+that Dark1-3, Dark1-5, Dark2-2, and Dark2-7 display an aberrantly low number of reads
+aligning to known alveolate (or even eukaryote) sequences. 
+Forward and reverse reads within a library display similar profiles with a slightly
+lower proportion of hits in the reverse reads. This can likely be attributed to
+the lower read quality found in reverse reads relative to forward reads 
+in paired-end Illumina sequencing. 
 
 \begin{table}[h]
      \begin{tabular}{|l|l|l|l|l|l|l|l|}
@@ -680,12 +765,13 @@ FASTX as described above).
  \label{tab:sct_duey}
 \end{table}
 
-Using this approach we identified and discarded the sc-RNAseq libraries Dark1-3 Dark1-5 Dark2-2, and Dark 2-7 as likely contaminated 
-due to the aberrantly low number of reads aligning to known alveolate (or even eukaryote reads).  
-
-
-
-
+The bulk libraries demonstrate a very low level of hits compared to single cell libraries (see \ref{tab:bulk_duey}), 
+to the point where if they were single cell libraries they would be taxonomically excluded. 
+However, it should be noted that the bulk libraries were sequenced on a Gene Analyzer II and are on average
+half the length of single cell reads (76bp vs 150bp). Due to the difficulty aligning short reads
+to references the difference between libraries may be attributable to this alone. 
+Additionally, the vast majority of the lower number of hits do align to eukaryote (and alveolate) 
+taxa consistent with an non-contaminated library. 
 
 \begin{table}[h]
      \begin{tabular}{@{}|l|l|l|l|l|l|l|l|@{}}
@@ -700,50 +786,54 @@ due to the aberrantly low number of reads aligning to known alveolate (or even e
     \label{tab:bulk_duey}
 \end{table}
 
+To attempt to identify the likely source of the high GC\% contamination 
+and to assess how representative the taxonomic profiling of small random
+subsamples of reads \(\leq1\%\) to full scale analyses Krona was used to 
+create interactive hierarchial plots of the taxonomic profiles. 
 
+Rhizobia species are the most prevalent high GC\% species found in the libraries
+shown to have the high 70GC\% peak in the KDE plots. 
 
 \begin{figure}[h]
-    \includegraphics[width=\textwidth]{lib_gc_prop.svg}
-    \caption{Probability densities of per-read GC proportions for the raw data (apart from pretrimmed bulk explained previously)
-        from each sequenced library 
-        Densities were derived using Kernel Density Estimation implemented in Seaborn. 
-        The bulk and single cell light libraries demonstrate similar shaped distributions
-        although the bulk has a greater proportion of low GC\% reads potentially representing
-        more \textit{Paramecium} derived data. All single cell dark libraries 
-        demonstrate a bimodal density with up to the majority of reads deriving 
-        from an unknown high 70\% GC population. The dark single cell libraries
-        exhibiting a relatively larger peak at 70\% GC than at 40-50\%GC (i.e.
-        Dark1-3, Dark1-5, Dark2-2, Dark2-7) were
-        the same libraries which were identified as potentially contaminated
-        in taxonomic screening (see \ref{tab;sct_duey}).
+    \includegraphics[width=\textwidth]{krona_excluded_raw.pdf}
+    \caption{Krona visualisation of taxonomic profiles of representative
+    single cell libraries that were excluded from further analysis due 
+    to aberrant profiles (typically large proportion of reads being assigned
+    to Bacteria than Eukaryota).  
+    \label{fig:krona_excluded}
+\end{figure}
+
+\begin{figure}[h]
+    \includegraphics[width=\textwidth]{krona_included_raw.pdf}
+    \caption{
+    Krona visualisation of taxonomic profiles of representative
+    single cell libraries that were excluded from further analysis due 
+    to aberrant profiles (typically large proportion of reads being assigned
+    to Bacteria than Eukaryota).  
     }
-    \label{fig;gc_prop_raw}
+    \label{fig:krona_included}
 \end{figure}
 
 
 \begin{figure}[h]
-    \includegraphics[width=\textwidth]{lib_gc_prop_q30_trimmed.svg}
-    \caption{Probability densities of per-read GC proportions for trimmed reads.
-             To ensure probability densities estimated in \ref{fig;gc_prop_raw}
-         weren't biased by low quality ambiguous reads the same analysis was
-     repeated using reads trimmed using a sliding window approach with a stringent average
- quality threshold of Q30.  In all cases the densities produced appear near identical to
- the analysis of the raw data}
-    \label{fig;gc_prop_q30}
-\end{figure}
-
-
-\begin{figure}[h]
-    \includegraphics[width=\textwidth]{kodama_gc_prop.svg}
-    \caption{Probability density of the per-read GC proportion for raw data derived from
-    \citep{Kodama2014} transcriptome analysis of a different \textit{P. bursaria} species
-with and without its endosymbiont. This dataset displays densities relatively similar
-to the bulk RNAseq conducted in this project 
-
-
-In comparison to the bulk sequencing conducted in this
-thesis Kodama's data displays a similar density  }
-    \label{fig;gc_prop_kodama}
+    \includegraphics[width=\textwidth]{krona_all_vs_sample.pdf}
+    \caption{Comparison of taxonomic profiles derived from small \(\leq1\%\)
+        random subsamples of libraries compared to profiles generated using the
+        full library.  Light1-11 and Dark2-5 are used as representative examples
+        as they display the trends common for all single cell libraries. 
+        All subsamples demonstrated taxonomic profiles with relatively similar
+        proportions to full analyses.  For example, in the Light1-11 subsample
+        of reads with hits the proportion of eukaryote to Bacteria was 87:4 
+        \% vs 85:4\% of the root for the full analysis. Similarly the ratios
+        for Dark2-7 shown eukaryote to bacteria are 26:54 for full analysis
+        and 28:46 for subsample. 
+        The key difference is the assignment of a greater proportion of reads to 
+        intermediate taxonomic levels in the full analyses due to the difference in 
+        resolution of multiple hits per read.  Principally, the full library analyses
+        retain all hits and assign level based on a lowest common ancestor algorithm
+        whereas the subsample analysis just uses the top hit.
+    }
+    \label{fig:krona_sample_vs_full}
 \end{figure}
 
 
@@ -752,6 +842,8 @@ thesis Kodama's data displays a similar density  }
 \subsection{Assembly Preprocessing} 
 
 \subsubsection{Trimming Optimisation}
+
+
 
 \begin{figure}
     \includegraphics[width=\textwidth]{trimmingopt.svg}
@@ -762,6 +854,9 @@ thesis Kodama's data displays a similar density  }
              via number of
              concordantly mapping paired reads }
 \end{figure}
+
+
+
 
 \subsubsection{GC Partitioning} 
 
@@ -841,6 +936,22 @@ the assembly of this highly heterogeneous RNAseq dataset.
 \section{Discussion}
 
 \subsection{Library screening is a key stage in sc-RNAseq}
+
+
+Key, 
+
+GC KDE can be informative in the case of contamination with GC diverse
+species.
+
+Trimming makes little difference.
+
+Subsamples are representative of full samples.
+
+Don't just take top hit, take all hits and use LCA.
+
+
+
+
 
 
 Interestingly, these samples didn't appear to be uniformly especially enriched for likely bacteria derived reads or obvious contaminants
@@ -1332,6 +1443,8 @@ On the basis that the high
 \section{Conclusion}
 
 
+
+
 %    \item Just use SCT for transcript quantification i.e. map the SCT reads to a bulk derived \textit{de novo} assembly to generate counts (and is there a severe bias induced 
 %        by the MDA amplification \citep{Liang2014}?)
 %\end{itemize}  <>++
@@ -1355,6 +1468,9 @@ Library filtering is important with single cell possibly due to the increased in
 GC partitioning doesn't work - splits up contigs
 Trimming and error correction makes little difference on unsaturated complex single cell 
 Arboretum offers a useful way to accurately classify transcripts into likely origins 
+
+
+
 
 
 
