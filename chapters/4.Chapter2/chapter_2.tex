@@ -374,6 +374,28 @@ threshold to use for further assembly.
 Scripts used to conduct this are available in my thesis scripts github repository:
 \url{https://github.com/fmaguire/thesis_scripts/tree/master/chapter_2_assembly_and_binning/trimming_optimisation}
 
+\subsection{GC Partitioning of Reads}
+
+To assess the utility of pre-assembly read partitioning an unsupervised clustering tool was created:
+Paired Arrangement of Reads via K-means On Unlabelled Reads (parKour).
+This C++ tool implements a fast and efficient K-means clustering of reads based on the dual features
+of GC\% in forward and reverse paired reads and designed to exploit the wildly differing GC
+biases of \textit{P. bursaria} and \textit{M. reisseri}.
+
+ParKour operates as follows:
+\begin{enumerate}
+    \item Parse user input of paired FASTQ files corresponding to Forward and Reverse Paired-End reads, and desired number of clusters
+    \item Simultaneously iterate over the pair of FASTQ files calculating the GC\% for each loading results into an Armadillo \(2xN\) matrix \citep{Sanderson2010} where \(N\) is the total number of PE reads
+    \item Bradley-Fayyad K-means \citep{Bradley1998} clustering as implemented in the MLPACK library \citep{mlpack2013}
+    \item Re-read the two input FASTQs assigning them to output files based on the assigned cluster of the pair
+\end{enumerate}
+
+GNUplot \citep{Gnuplot_4.4} was used to visualise classification and cluster assignment.
+This approach was attempted using a range of expected clusters from 2 to 5.
+
+Scripts used to conduct this are available in a github repository:
+\url{https://github.com/fmaguire/parKour}
+
 \subsection{Error correction}
 
 The effect of error correction on assemblies involving single cell libraries was assessed 
@@ -403,28 +425,6 @@ The final assemblies were then compared to un-normalised and k-mer trimmed assem
 
 Separately, the in-built digital normalisation implemented as part of the Trinity package
 was used and its effects on assembly compared to assembly runs without this normalisation.
-
-\subsection{GC Partitioning of Reads}
-
-To assess the utility of pre-assembly read partitioning an unsupervised clustering tool was created:
-Paired Arrangement of Reads via K-means On Unlabelled Reads (parKour).
-This C++ tool implements a fast and efficient K-means clustering of reads based on the dual features
-of GC\% in forward and reverse paired reads and designed to exploit the wildly differing GC
-biases of \textit{P. bursaria} and \textit{M. reisseri}.
-
-ParKour operates as follows:
-\begin{enumerate}
-    \item Parse user input of paired FASTQ files corresponding to Forward and Reverse Paired-End reads, and desired number of clusters
-    \item Simultaneously iterate over the pair of FASTQ files calculating the GC\% for each loading results into an Armadillo \(2xN\) matrix \citep{Sanderson2010} where \(N\) is the total number of PE reads
-    \item Bradley-Fayyad K-means \citep{Bradley1998} clustering as implemented in the MLPACK library \citep{mlpack2013}
-    \item Re-read the two input FASTQs assigning them to output files based on the assigned cluster of the pair
-\end{enumerate}
-
-GNUplot \citep{Gnuplot_4.4} was used to visualise classification and cluster assignment.
-This approach was attempted using a range of expected clusters from 2 to 5.
-
-Scripts used to conduct this are available in a github repository:
-\url{https://github.com/fmaguire/parKour}
 
 
 \subsection{Assembly}
@@ -837,32 +837,62 @@ shown to have the high 70GC\% peak in the KDE plots.
 \end{figure}
 
 
-
-
 \subsection{Assembly Preprocessing} 
 
 \subsubsection{Trimming Optimisation}
 
-
+Based on the rapid decrease in the number of mapping reads above Q30
+as shown in the case of all 3 reference assemblies (\ref{fig:trimmingopt}). 
+The optimal trimming threshold used for most assemblies was Q30. 
 
 \begin{figure}
     \includegraphics[width=\textwidth]{trimmingopt.svg}
     \caption{Assessment of the optimal minimum average quality threshold
-             in Trimmomatic's sliding window (size 4) trim 
-             
-             
-             via number of
-             concordantly mapping paired reads }
+             in Trimmomatic's sliding window (size 4) trim.  Plots
+             display the number of concordantly mapping reads (forward
+                 and reverse read map to assembly within their insert
+             distance of one another) at a range of different trimming
+             thresholds.  5000 randomly sampled PE reads 
+             from each single cell library are mapped against 3 different 
+             reference assemblies. 
+             The key finding is above a threshold of Q30 there is a huge
+         decrease in the number of mapping reads.}
+         \label{fig:trimmingopt}
 \end{figure}
 
+Additionally, naive assemblies in Trinity of taxonomically screened single cell libraries
+at different sliding window quality threshold trims of Q5, Q20, and Q30 (\ref{tab:trim_assembly})
+were created. 
+These show that more permissive trims (Q5 and Q20) lead to a greater number of assembled bases and transcripts 
+however the likelihood of these assemblies are also greatly lower than that generated using the 
+more conservative Q30 trim. 
+However, the difference in the number and size of assembled transcripts at different thresholds 
+was less than was found using different assemblers and assembly parameters.
+Due to this combined with the greater likelihood of the Q30 assembly and the minimal affect this had on the 
+mapping statistics Q30 trims were used throughout the rest of the assembly optimisation process. 
 
+\begin{table}[h]
+     \begin{tabular}{@{}|l||l|l|l|@{}}
+         \cmidrule(r){1-6} \cmidrule(l){8-8}
+         \textbf{Trim Threshold} & \textbf{Number of Transcripts} & \textbf{Bases Assembled} & \textbf{RSEM Assembly Likelihood} \\
+         \cmidrule{}
+         Q5 &  112,182 & 52,511,552 & 31,677,853,481.24 \\
+         Q20 & 107,955 & 50,809,686 & 30,148,381,571.78 \\
+         Q30 & 99,784 & 47,313,963 &  28,320,650,482.83 \\ 
+    \end{tabular}
+    \caption{Assembly comparison at different trimming thresholds
+    }
+    \label{tab:trim_assembly}
+\end{table}
 
 
 \subsubsection{GC Partitioning} 
 
 GC partitioning was conducted on Q30 trimmed reads 
-using K-means clustering as implemented in the parKour tool described above.
-For the 2 different clustering schemes attempted: 2 and 3 target clusters.
+using K-means clustering as implemented in the parKour tool described above 
+to attempt to remove GC\% rich contamination from single cell libraries.
+
+The 2 different clustering schemes attempted using 2 and 3 target clusters.
 Additionally, both clustering schemes were also run with an initial overclustering factor of 3
 i.e. parKour originally found 6 and 12 clusters and then merged them to produce the target 2 and 3 
 clusters respectively. 
@@ -898,13 +928,14 @@ made a minimal impact on cluster location}
 overclustering factor of 3 (i.e. initially finding 6 and 12 clusters originally before merging to
 produce final 2 and 3 cluster targets). 
 
+Therefore, as can be seen overclustering made a minimal effect on cluster centroids and read assignment.
+
 \begin{figure}
     \includegraphics[width=\textwidth]{parKour.pdf}
     \caption{Visualisation of GC-based paired read K-means clustering on a small random subset of all single cell transcriptome
     reads. 2 initial centroids were specified without an overclustering factor and approximate final centroids (0.6674, 06177) and (0.4557, 0.4393) are indicated by highlighted areas.  57.3M and 81.7M were assigned to each respective cluster. Comparison to other clustering regimes can be found in \ref{tab:centroids}} 
         \label{fig:parkour} 
 \end{figure}
-
 
 Unfortunately, as might have been forseen, the resultant assemblies from individual
 read clusters displayed high levels of fragmentation regardless of the clustering
@@ -916,16 +947,89 @@ of marginally shorter average length than the equivalent unprepartioned assembly
 The same pattern, consistent with assembly fragmentation, 
 was observed when only dark single cell libraries were clustered using 
 2 or 3 clusters. 
-
 Therefore, GC-based pre-assembly read partitioning proved incapable of improving
 the assembly of this highly heterogeneous RNAseq dataset.
 
 
-
-
 \subsubsection{Error Correction}
 
+Bayeshammer, as implemented in the Spades genome assembler, even on permissively trimmed
+(\(Q>5\)) corrected only a maximum \(0.0007\%\) of reads in the 7 taxonomically selected SCT libraries.
+As this affected on the order of 10s of reads it was not considered worth pursuing further.
+
+``SEECER'', an RNA-Seq specific error correction tool corrected 
+``SEECER'' was used to correct lightly trimmed (Q5) SCT reads.  
+Approximately, \(0.5\%\) of reads per library were corrected.
+
+Trinity assemblies of just taxonomically selected single cell libraries were
+then compared with and without ``SEECER'' error correction.
+\begin{table}[h]
+     \begin{tabular}{@{}|l||l|l|l|@{}}
+         \cmidrule(r){1-6} \cmidrule(l){8-8}
+         \textbf{Trim Threshold} & \textbf{Number of Transcripts} & \textbf{Bases Assembled} & \textbf{RSEM Assembly Likelihood} \\
+         \cmidrule{}
+         Q5 &  112,182 & 52,511,552 & \(-3.168 * 10^{10}\) \\
+         Q5 SEECER Corrected & 111,853 &  51,847,128 & \(-3.147*10^{10}\) \\
+         Q30 & 99,784 & 47,313,963 &   \\ 
+    \end{tabular}
+    \caption{Naive Trinity assembly summaries with and without SEECER error corrected
+        of Q5 trimmed reads. 
+    }
+    \label{tab:trim_assembly}
+\end{table}
+
+As can be observed, error correction of SCT reads made minimal effect in the overall likelihood
+or assembly for this dataset.  Therefore, error correction was not utilised
+in downstream assembly.
+
 \subsubsection{Digital Normalisation} 
+
+Digital normalisation and removal of likely erroneous k-mers (i.e. low abundance) 
+reduced the total input reads from the Q30 trimmed taxonomically
+filtered SCT and bulk libraries from 
+\(2.912*10^{8}\) to \(8.473*10^6\) paired reads.
+
+This was an impressive reduction in quantity of input data and was capable of
+improving assembly run times and memory efficiency.
+
+
+
+
+
+103,506 
+127,508
+83264944
+
+-28,320,650,482
+
+\(-2.832*10^{10}\) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+As this did not significantly improve the assembly and due to the desire
+to recover 
+
+
+\subsection{Assembers}
+
+\subsection{Binning}
+
+\subsubsection{ORF Calling}
+
+\subsubsection{Performance of BLAST binning alone}
+
+\subsubsection{Phylogeny based bins}
 
 
 
@@ -1008,17 +1112,15 @@ additional bead disruption and freeze-thaw steps taken) as well as offer a power
 
 
 
+
 \subsection{Assembly optimisation}
 
 \subsubsection{Trimming}
-
-
 
 There are many available tools for read-trimming (as discussed in \ref{ch:methods}),
 and a range of trimming tools were initially
 considered: specifically Trimmomatic \citep{Bolger2014a}, Sickle \citep{JoshiGitHub}, FASTX-toolkit \citep{gordon2010fastx},
 PRINSEQ \citep{Schmieder2011} and cutadapt \citep{martin2011cutadapt}. 
-
 Despite Sickle, an adaptive quality trimmer, having previously been used in single-cell transcriptome datasets 
 from free-living eukaryotes \citep{Kolisko2014}, it proved suboptimal as it was
 not capable of removing 5' or 3' contaminants such as sequencing adapters and/or multiplexing tags by itself.  
@@ -1035,57 +1137,87 @@ natively requiring work-arounds to retain pairing fidelity.
 
 Therefore, due to its advantages of maintaing read-pair correspondence during trimming, 
 optimisation for Illumina datasets, adapter trimming functionality and thorough documentation
-Trimmomatic \citep{Bolger2014a} was the preferred trimming tool.
+Trimmomatic \citep{Bolger2014a} proved the preferred trimming tool for this analysis.
+
+
+In terms of optimal minimum average quality thresholds  
 
 
 
+Despite earlier findings of very low trimming thresholds being optimal in \textit{de novo}
+transcriptome assembly.   
 
 
-The quality of an assembly is generally correlated with the number of reads mapping concordantly
+As the quality of an assembly is generally correlated with the number of reads mapping concordantly
 \citep{Macmanes2014} 
 
 
 
-Therefore, due to this and the tool design advantages listed above Trimmomatic was used exclusively for 
-in-depth trimming parameter optimisation via grid-search.
+
+
+
+\subsubsection{GC partitioning}
+
+The developed GC partitioning package proved very effective at rapidly and relatively computationally 
+efficient clustering of PE RNAseq data. ParKour generated clusters with centroids
+reasonably where they may be expected from inspection of per read GC probability densities (see \ref{fig:gc})
+i.e. partitioning out the GC rich potentially contaminant reads likely from \textit{Rhizobia}
+bacterial species.  Unfortunately, in the case of this dataset clustering proved ineffective
+at improving assembly accuracy and removing groups of contaminant reads with large GC skews. 
+The likely explanation for this is that even 150bp paired end reads are too short to consistently
+statistically demonstrate the GC-AT bias of the originating organism. This means any partitioning
+is likely to remove a significant number of reads necessary to complete transcripts due to local
+variation in AT bias.  The high number of shorter contigs is indicative of the kind of assembly
+fragmentation that would be expected in this situation.
+
+
+However, the relative efficiency of this type of clustering indicates there may be
+some potential to utilising a similar but less naive approach in future work.  Specifically,
+the incorporation of other sequence characteristics such as base composition and 
+tetramer frequencies as well as GC\% into the input matrix could potentially 
+improve resolution and decrease this observed contig fragmentation effect. 
+In this further work, other clustering algorithms may be considered
+such as k-medoids \citep{Kaufman1987} with more robust outlier stability or large scale
+database clustering algorithms such as DBSCAN \citep{Ester1996} or BIRCH \citep{Zhang1996} (allowing non-convex
+clusters).
+The demonstrated effectiveness of simple K-means likely renders this unnecessary.
+Despite this, there are some major improvements that could be developed for this process.
+Silhouette coefficients and analysis\footnote{
+    \(s = \frac{b -a}{max(a,b}\) where \(s\) is Silhouette coefficient, \(a\) is the mean distance
+        between a sample and all other points in the same class and \(b\) is the mean distance
+    between a sample and all other points in the next nearest cluster \citep{scikit-learn}.  Therefore,
+\(s\) is a measure of cluster definition.}
+
+}\citep{Rousseeuw1987} can be incorporated to aid determination of the expected number of clusters when it cannot be determined
+\textit{a priori} from inspecting the data as well as validation of generated clusters.
+Other validation and analysis systems are somewhat limited due to the lack of ground truth labelling 
+available.  Finally, memory efficiency can be improved by use of streaming clustering algorithms (e.g. those discussed in
+\citep{OCallaghan2002})
+in which all data does not require to be loaded into a matrix at a given time and be clustered
+as they are parsed.  
+
+\subsubsection{Error correction and Kmer normalisation}
+
+These were a Bayeshammer \citep{Nikolenko2013} implemented as part of the Spades 
+genome assembler \citep{Bankevich2012} and optimised for MDA-based single cell genomic data, 
+and ``SEECER'' \citep{Le2013} which is optimised for RNAseq (but not necessarily sc-RNAseq
+data). 
 
 
 
 
-%\begin{figure}[h]
-%    %\includegraphics[width=\textwidth]{light_vs_harsh_trim.pdf}
-%    %plot of parameters random sampling and how they map 
-%    %null_mapping.svg
-%    %cutadapt vs trimmomatic plot
-%    \caption{Comparison of the effects of Trimmomatic light (Q<5) and harsh (Q<30) trims on 
-%    mapping metrics. }
-%    \label{fig:cvt}
-%\end{figure}
-%
-%
-%\begin{figure}[h]
-%    %\includegraphics[width=\textwidth]{trim_bar_graph.pdf}
-%    %plot of parameters random sampling and how they map 
-%    %null_mapping.svg
-%    %cutadapt vs trimmomatic plot
-%    \caption{Bar graph of mapping metrics across the Trimmomatic parameter gridsearch}
-%    \label{fig:cvt}
-%\end{figure}
-
-
-
-
-
-\subsubsection{Error correction}
 
 Despite numerous indications that error correction is important for improving the accuracy
 of genomic and transcriptomic assemblies using Illumina reads (e.g. \citep{Molnar2014,Macmanes2015}).
 In the case of this dataset error correction appeared to be have a minimal effect with few
-reads being corrected and downstream assemblies being largely equivalent (if slightly improved).
+reads being corrected and downstream assemblies being largely equivalent to those
+without error correction.   This was found for both read data that had been
+trimmed at the high minimum quality threshold of Q30 and the highly permissive
+threshold of Q5. Similarly, the same trend was demonstrated with both the 
+RNAseq specific SEECER error corrector and MDA-data specific Bayeshammer correction.
 
-Specifically, Bayeshammer as implemented in the Spades genome assembler, even on lightly trimmed
-(\(Q>5\)) correcting only a maximum \(0.0007\%\) of reads in the 7 selected SCT libraries.
-As this affected on the order of 10s of reads it was not considered worth pursuing further.
+Diginorm and kmer based data normalisation 
+
 However, while Bayeshammer is designed for single cell genomic reads and 
 thus expects uneven coverage as might be found in a transcriptome it should be noted that it is not specifically designed for RNA-Seq datasets.
 
@@ -1097,34 +1229,29 @@ actively developing area compared to the more established MDA-based single cell 
 While, there are several available Illumina RNA-Seq error correction tools available 
 ``SEECER'' was chosen in accordance to the recommendations based on dataset and hardware
 heuristics (\(>50M\) reads and the availablility of a high memory system) \citep{Macmanes2015}.
-``SEECER'' was used to correct bulk and lightly trimmed (Q<5) SCT reads.  Trinity assemblies, with and without
-error correction were then compared.
 
 
-\subsubsection{GC partitioning}
-While the GC partitioning algorithm itself proved very effective at rapidly and efficiently clustering 
-trimmed SCT and bulk PE reads attempts to assemble the read partitions individually proved fruitless.
 
-With 2 specified starting clusters, reads were partitioned with 2 centroids \(0.4556, 0.4393\) and
-\(0.6674, 0.6177\) comprising 57,306,382 and 81,660,597 reads respectively. Furthermore, this 
-was achieved in approximately 11 hours using a single processor thread and maximum memory residence
-of 4.3GB.  Attempts to use 3 clusters lead to a splitting of the AT-rich cluster into two closely 
-located centroids \(0.5327, 0.5012\) and \(0.4215, 0.4150\).  Unfortunately, when 
-any of these partitions were assembled individually the resultant assembly would 
-contain an order of magnitude more contigs which were an order of magnitude shorter than any other
-assembly (453,052 and 145,129 contigs).
+Digital normalisation and abundance filtering of k-mers functions on the logic 
+that low abundancy k-mers are more likely to originate from technical error
+than genuine biological variation.
 
-\begin{figure}
-    \includegraphics[width=\textwidth]{parKour.pdf}
-    \caption{Plot of a random subsample of reads with their approximate cluster centroids overlaid as determined by parKour}
-\end{figure}
 
-The likely explanation for this is that even 150bp paired end reads are too short to consistently
-statistically demonstrate the GC-AT bias of the originating organism. This means any partitioning
-is likely to remove a significant number of reads necessary to complete transcripts due to local
-variation in AT bias.  The high number of shorter contigs is indicative of the kind of assembly
-fragmentation that would be expected in this situation.
-    
+
+However, much in the same way as error correction itself because this was found to
+have a minimal effect on improving the assembly.
+In fact making it somewhat worse. 
+Discarded - could potentially be throwing away true variation that is merely undersampled
+in our libraries due to the level of contamination.
+
+
+
+
+
+
+
+
+
 \subsubsection{Assembly}
 
 Referenced assembly using the divergent \textit{Chlorella NC64A},
@@ -1160,7 +1287,6 @@ are too divergent in the case of the PbMr to be of any utility.
 
 \textit{de novo} assembly 
 
-\textbf{TOM: I am struggling how to best organise and present the mountain of assembly data and asssessment that has built up}
 
 \begin{table}[h]
 \begin{tabular}{|l|rrrrrrrl}
@@ -1249,7 +1375,6 @@ Dishearteningly, this is not massively more accurate than the crude BLAST based 
 \section{Methods}
 
 
-\subsection{Library preparation}
 
 
 
