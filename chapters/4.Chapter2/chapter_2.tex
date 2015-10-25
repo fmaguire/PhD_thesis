@@ -4,9 +4,7 @@
 "even after the observation of the frequent or constant conjunction of objects, we have no reason to draw any inference concerning any object beyond those of which we have had experience;"
 \qauthor{- David Hume: \textit{A Treastie of Human Nature, 1738}}
 \end{savequote}
-
 %compare average transcript terminal coverage
-
 
 \chapter{Transcriptomic analysis of the \textit{Paramecium bursaria} and \textit{Micractinium reisseri} endosymbiosis}
 
@@ -415,7 +413,8 @@ threshold of Q30 and bulk libraries were Kmer normalised and trimmed using the K
 
 Specifically, reads were interleaved \citep{Doring2008} and then digitally normalised using diginorm \citep{Brown2012}
 with a kmer size and coverage cut-off of 20.  Low abundance and likely erroneous
-kmers were then filtered \citep{Zhang2015,Zhang2014}.  
+kmers were then filtered relative to the read coverage i.e. low abundance k-mers were removed
+from high coverage reads but would be more likely to be retained for low coverage reads \citep{Zhang2015,Zhang2014}.  
 
 Filtered data was then assembled using Trinity (with minimum kmer coverage of 2) 
 and the subsequent assembly partitioned into transcript families in Khmer \citep{Pell2012}.
@@ -463,14 +462,18 @@ combinations of libraries (i.e. bulk and screened sc-RNAseq libraries) and also
 sequencing data from Kodama's previously published \textit{P. bursaria} bulk
 RNAseq analysis \citep{Kodama2014c}.
 
-Best assemblies from Bridger, Trinity, SOAPdenovo-Trans, Transabyss and IDBA-tran 
-(as assessed below) were combined using the EvidentialGene tr2aacds pipeline \citep{Gilbert2013}
-as discussed in \citep{Nakasugi2014}.
+
+To asssess the utility of combining assemblies as discused in \citep{Nakasugi2014}, 
+the best assemblies from Bridger and Trinity
+(as assessed below) were combined using the EvidentialGene tr2aacds pipeline \citep{Gilbert2013}.
+Additionally, the best assemblies from all assemblers that ran to completion i.e.
+Bridger, Trinity, SOAPdenovo-Trans, Transabyss and IDBA-tran were also combined and 
+assessed. 
 
 \subsubsection{Assembly assessment}
 
 Resultant assemblies were compared using standard assembly statistics 
-(e.g. contigs number and size, GC\%, isoform data) as implemented in a perl script supplied with 
+(e.g. contigs number and size, bases assembled) as implemented in a perl script supplied with 
 Trinity \citep{Haas2013} and TransRate \citep{Smith-unna2015}. 
 Additionally, reference free probabilistic assembly assessment RSEM-EVAL package (part of DETONATE) \citep{Li2014} to
 produce likelihood scores for various completed assemblies.
@@ -790,9 +793,9 @@ To attempt to identify the likely source of the high GC\% contamination
 and to assess how representative the taxonomic profiling of small random
 subsamples of reads \(\leq1\%\) to full scale analyses Krona was used to 
 create interactive hierarchial plots of the taxonomic profiles. 
-
-Rhizobia species are the most prevalent high GC\% species found in the libraries
-shown to have the high 70GC\% peak in the KDE plots. 
+From this, Rhizobia species are the most prevalent high GC\% species found in the libraries
+with this high 70GC\% peak in the KDE plots and therefore are the most likely source
+of this particular aspect of contamination. 
 
 \begin{figure}[h]
     \includegraphics[width=\textwidth]{krona_excluded_raw.pdf}
@@ -841,7 +844,17 @@ shown to have the high 70GC\% peak in the KDE plots.
 
 \subsubsection{Trimming Optimisation}
 
-Based on the rapid decrease in the number of mapping reads above Q30
+The optimal trimming threshold was determined by a combination
+of read mapping statistics against 3 preliminary reference assemblies
+as well as the impact on resultant \textit{de novo} assemblies at 
+that threshold.
+
+
+A rapid decrease in the number of concordantly mapping PE reads (i.e.
+within insert distance of one another) was observed above a Q30 quality threshold.
+This proves true regardless of the reference assembly being mapped to
+(see \ref{fig:trimmingopt}) 
+
 as shown in the case of all 3 reference assemblies (\ref{fig:trimmingopt}). 
 The optimal trimming threshold used for most assemblies was Q30. 
 
@@ -876,11 +889,16 @@ mapping statistics Q30 trims were used throughout the rest of the assembly optim
          \cmidrule(r){1-6} \cmidrule(l){8-8}
          \textbf{Trim Threshold} & \textbf{Number of Transcripts} & \textbf{Bases Assembled} & \textbf{RSEM Assembly Likelihood} \\
          \cmidrule{}
-         Q5 &  112,182 & 52,511,552 & 31,677,853,481.24 \\
-         Q20 & 107,955 & 50,809,686 & 30,148,381,571.78 \\
-         Q30 & 99,784 & 47,313,963 &  28,320,650,482.83 \\ 
+         Q5 &  112,182 & 52,511,552 & \(-3.168*10^{10}\) \\
+         Q20 & 107,955 & 50,809,686 & \(-3.015*10^{10}\) \\
+         Q30 & 99,784 & 47,313,963 &  \(-2.832*10^{10}\) \\ 
     \end{tabular}
-    \caption{Assembly comparison at different trimming thresholds
+    \caption{Comparison of Trinity assemblies of taxonomically screened
+        single cells reads (no bulk reads) at 3 different sliding window
+        minimum average quality trimming thresholds.  Trimming largely
+        does not cause a major difference between assemblies in terms of number
+        of contigs recovered or overall likelihood with harsher trims resulting
+        is slightly smaller but slightly more likely assemblies.
     }
     \label{tab:trim_assembly}
 \end{table}
@@ -970,11 +988,10 @@ then compared with and without ``SEECER'' error correction.
          \cmidrule{}
          Q5 &  112,182 & 52,511,552 & \(-3.168 * 10^{10}\) \\
          Q5 SEECER Corrected & 111,853 &  51,847,128 & \(-3.147*10^{10}\) \\
-         Q30 & 99,784 & 47,313,963 &   \\ 
+         Q30 & 99,784 & 47,313,963 & \(-2.912*10^{10}\)  \\ 
     \end{tabular}
-    \caption{Naive Trinity assembly summaries with and without SEECER error corrected
-        of Q5 trimmed reads. 
-    }
+    \caption{Naive Trinity assembly of Q5 trimmed taxonomically selected single cell libraries
+        with and without SEECER error correction.}
     \label{tab:trim_assembly}
 \end{table}
 
@@ -989,22 +1006,125 @@ reduced the total input reads from the Q30 trimmed taxonomically
 filtered SCT and bulk libraries from 
 \(2.912*10^{8}\) to \(8.473*10^6\) paired reads.
 
-This was an impressive reduction in quantity of input data and was capable of
-improving assembly run times and memory efficiency.
+Of those, \(6,231*10^{6}\) derive from the bulk and \(2.253*10^6\) 
+from single cell libraries. 
+Therefore, as Q30 trimmed single cell libraries comprised
+\(9.318*10^{6}\) paired end reads and bulk libraries 
+consisted of \(52.377*10^6\) reads digital normalisation
+and abundance filtering resulted in a retention of 
+\(2.418\%\) of single cell PE reads and \(11.891\%\) of
+bulk PE reads.
+
+This had a very positive effect on assembly in Trinity improving the assembly likelihood
+by an order of magnitude while assembly more transcripts of near equal length (based on
+median contig length).  In fact, the khmer processed assembly marginally increased
+median contig length at the expense of a lower N50. 
+
+%%%%%%%%%%%%<++> NOTE THIS IS Q30 with KHMER PROCESSING BUT NOT MINKMERCOV2 in TRINITY
+\begin{table}[h]
+     \begin{tabular}{@{}|l||l|l|l|l|l|@{}}
+         \cmidrule(r){1-6} \cmidrule(l){8-8}
+         \textbf{Preprocessing} & \textbf{Number of Transcripts} & \textbf{Bases Assembled} & \textbf{Contig N50} & \textbf{Median Contig Size} & \textbf{RSEM Assembly Likelihood} \\
+         \cmidrule{}
+         Q30 and Bulk &  127,508 & 83,264,944 & 851 & 411 & \(-2.832 * 10^{10}\) \\
+         Q30 and Bulk with Khmer processing & 176,097 &  111,367,366  & 777 & 427 & \(-1.214*10^{9}\) \\  
+    \end{tabular}
+    \caption{Trinity assemblies of taxonomically selected single cell libraries
+        and bulk libraries with and without digital normalisation and k-mer
+        abundance filtering
+    }
+    \label{tab:diginorm_assembly}
+\end{table}
+
+As this both significantly improved assembly run time as well as the overall
+assembly quality in Trinity digitally normalised and K-mer abundance filtered 
+bulk and taxonomically selected Q30 trimmed single cell libraries were determined
+to be the optimal pre-processing.
+
+\subsection{Assembly}
+
+\subsubsection{Referenced}
+
+Referenced assembly using the divergent \textit{Chlorella NC64A},
+\textit{Coccomyxa subellipsoidea} C-169, \textit{Tetrahymena thermophila},
+\textit{Paramecium caudatum} genomes as references was largely ineffectual.
+Of all bulk and SCT reads only 0.3 and 0.4\% mapped to the 
+algal references.  Similarly, only 0.6 and 0.9\% of reads mapped to the 
+respective ciliate genomes.   This level of mapping is on the order
+of random chance.  The high proportion of reads which mapped, mapped non-uniquely
+suggesting mapping was occurring in low complexity reasons and is a statistical
+artefact for the most part instead of biological significant.
+
+The addition of gene junction annotation files for the reference genomes to improve
+spliced mapping only improved the percentage of reads mapping by 0.05-0.3 percentage points.  
+With so few reads mapping, any attempt to 
+class transcripts from this using cufflinks resulted in 10s of transcripts.
+
+Therefore, referenced assembly using divergent related genomes proved impossible
+for this dataset.
+
+\subsubsection{\textit{de novo} assembly} 
+
+
+\begin{table}[h]
+    \begin{tabular}{|l|r r r r r r l}
+        \textbf{Assembler} & \textbf{Parameters} & \textbf{Contigs} & \textbf{Bases Assembled} & \textbf{RSEM-Eval Score}\\
+        SOAPdenovo-Trans & K23 & 374,325 & \(7.64*10^{7}\) & - \\
+                         & *K64 & - & - & - \\  
+                         & *K80 & - & - & - \\ 
+        TransAbyss & K20 & 3,272,137 & \(1.722*10^{8}\)   & -  \\
+                   & K32 & 853,079   & \( 1.321*10^{8}\)  & -  \\
+                   & K64 & 376,280   & \( 9.755*10^{7}\)  & -  \\
+                   & Merged & 3,055,851 & \(2.71*10^{8}\) &   \\
+        Oases*     & - & - & - & - \\
+        IDBA-tran      &  & 54,113 & \(2.7*10^{7}\) & \(-4.589*10^{10}\)\\
+        IDBA-MTP/UD/MT* & - & - & - & \\
+        Trinity & - & 127,508 &  \( 8.326*10^{7}\) & \(-2.832*10^{10}\) \\
+        Bridger & K25 & 114,582 & \( 9.707*10^{7}\)  & \(-2.587*10^{10}\)\\ 
+    \end{tabular}
+    \caption{* indicates programs that failed to run  
+        All non-diginormed sct+bulk}
+\end{table}
+
+Critically, Oases, the IDA-MTP/UD/MT pipeline and SOAPdenovo-Trans at higher K-mer values
+all failed to run to completion correctly with the dataset.
+However, Trinity and Bridger were the clear stand-out assemblers in terms of likelihood.
+
+
+\begin{table}[h]
+    \begin{tabular}{|l|r r r r r r l}
+        \textbf{Assembler} & \textbf{Parameters} & \textbf{Contigs} & \textbf{Bases Assembled} \\
+        Diginorm Bridger & K19 & 102,686 & \(8,209*10^{7}\)  & \(-1.729*10^{9}\) \\
+        Diginorm Bridger & K25 & 113,106 & \(9.866*10^{7}\)  & \(-1,183*10^{9} \) \\ 
+        Diginorm Bridger & K31 & 112,391 & \(8.941*10^{7}\)  & \(-1.143*10^9\) \\ 
+        Diginorm Trinity & min_kmer_cov 1 & 176,097 &  \(1.113*10^{8}\)& \(-1.214*10^{9}\) \\  
+        Diginorm Trinity & min_kmer_cov 2 & 147,902 & \(9.239*10^{7}\) & \(-1.238*10^9\) \\  
+    \end{tabular}
+    \caption{* indicates programs that failed to run}
+\end{table}
 
 
 
 
 
-103,506 
-127,508
-83264944
 
--28,320,650,482
-
-\(-2.832*10^{10}\) 
+\subsubsection{Assembly combination}
 
 
+\(-1.823*10^9\)
+
+\begin{table}[h]
+\begin{tabular}{|l|rrrrrrrl}
+\hline
+\multicolumn{1}{|c|}{Assembly} & \multicolumn{1}{c|}{Raw Reads (paired)} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Trimmed Reads \\ (assuming all paired)\end{tabular}} & \multicolumn{1}{c|}{Assembled Contigs} & \multicolumn{1}{c|}{Assembled "Genes"} & \multicolumn{1}{c|}{"Gene" N50} & \multicolumn{1}{c|}{"Gene" Mean Length} & \multicolumn{1}{c|}{"Gene" Total Assembled Bases} & \multicolumn{1}{c|}{GC\%} \\ \hline
+Kodama Trinity                 & 232.3M                                  & 218.5M                                                                                              & 68,175                                 & 40,805                                 & 904                             & 1,832                                   & 36.9M                                             & \multicolumn{1}{c}{?}     \\ \cline{1-1}
+SCT Q30                        & 126.9M                                  & 93.2M                                                                                               & 99,784                                 & 88,573                                 & 475                             & 451                                     & 40.0M                                             & 48.67                     \\ \cline{1-1}
+SCT Q30 + Bulk                 & 179.4M                                  & 145.6M                                                                                              & 127,508                                & 103,506                                & 646                             & 564                                     & 58.2M                                             & 40.30                     \\ \cline{1-1}
+SCT Q5                         & 126.9M                                  & 108.2M                                                                                              & 112,182                                & 99,441                                 & 465                             & 447                                     & 44.5M                                             & 49.42                     \\ \cline{1-1}
+SCT Q5 + Bulk                  & 179.4M                                  & 160.6M                                                                                              & 139,226                                & 113,685                                & 615                             & 549                                     & 62.5M                                             & 41.28                     \\ \cline{1-1}
+Bulk                           & 52.4M                                   & 52.4M                                                                                               & 43,261                                 & 30,706                                 & 1264                            & 861                                     & 26.5M                                             & 29.61                     \\ \cline{1-1}
+\end{tabular}
+\end{table}
 
 
 
@@ -1012,16 +1132,6 @@ improving assembly run times and memory efficiency.
 
 
 
-
-
-
-
-
-As this did not significantly improve the assembly and due to the desire
-to recover 
-
-
-\subsection{Assembers}
 
 \subsection{Binning}
 
@@ -1040,6 +1150,42 @@ to recover
 \section{Discussion}
 
 \subsection{Library screening is a key stage in sc-RNAseq}
+
+Much as library contamination is one of the key issues with single cell genomics \citep{Blainey2013,Lusk2014}, it highly
+important in SCT.  Single cell methods are particularly prone to contamination issues
+from reagents, laboratory environment and enigmatic nucleic acids within the biological samples themselves.
+This is due to the low-input concentration and high amplification necessary in these approaches \citep{Blainey2013} 
+leading to enrichment of non-target sequences.
+
+Furthermore, when utilising single cell libraries in a \textit{de novo} assembly instead of just referenced mapping assemblies
+it is doubly important to discard libraries that are likely to be contaminated as they will severely complicate
+the assembly graph. This increases both the hardware requirements to resolve transcripts from the de-Bruijn graph, as well
+as reducing the accuracy of those recovered transcripts.  The importance of library screening was further emphasised
+in the context of this projects by the observation that the inclusion of certain (SCT) libraries would increase
+assembly run-time and lead to the generation of fragmented transcripts relative to assemblies without those
+libraries.  While, contamination screening approaches such as multi-genome alignments and mapping to likely contamination
+species have been developed (e.g. \citep{Hadfield2014}), they were largely insufficient as they tended to rely upon 
+A) the contamination species being characterised and specified a-priori and B) the existence of reference genomes.
+One interesting exception is that of the commercial \url{http://onecodex.com} platform which provides
+rapid taxonomic screening of libraries as a cloud service.  While the emergence of commercial platforms
+is additional evidence as to the utility of this form of screening, even onecodex is largely optimised
+on common human pathogens.
+
+Therefore, to this end a set of scripts, known as ``DueyDrop'', were developed to allow rapid taxonomic profiling of a
+representative subset of each library against the entire non-redundant protein database.  
+These profiles could then be manually analysed or grouped using unsupervised learning methods to investigate the existence of 
+outlier libraries likely to be the product of contamination or sequencing failure.   Libraries can then,
+based on the heuristics of the dataset, by discarded and retained for downstream assembly and analysis.
+
+In order to discover whether trimming was necessary prior to screening, taxonomic profiles generated from raw untrimmed 
+were compared to profiles from trimmed libraries. If trimming is not necessary prior to contamination screening
+it saves a potentially computationally intensive step being run on libraries set for discarding.
+
+
+
+
+
+
 
 
 Key, 
@@ -1114,304 +1260,6 @@ additional bead disruption and freeze-thaw steps taken) as well as offer a power
 
 
 \subsection{Assembly optimisation}
-
-\subsubsection{Trimming}
-
-There are many available tools for read-trimming (as discussed in \ref{ch:methods}),
-and a range of trimming tools were initially
-considered: specifically Trimmomatic \citep{Bolger2014a}, Sickle \citep{JoshiGitHub}, FASTX-toolkit \citep{gordon2010fastx},
-PRINSEQ \citep{Schmieder2011} and cutadapt \citep{martin2011cutadapt}. 
-Despite Sickle, an adaptive quality trimmer, having previously been used in single-cell transcriptome datasets 
-from free-living eukaryotes \citep{Kolisko2014}, it proved suboptimal as it was
-not capable of removing 5' or 3' contaminants such as sequencing adapters and/or multiplexing tags by itself.  
-These stages could be achieved with individual tools (such as Skewer \citep{Jiang2014}, 
-TagDust \citep{Lassmann2009} and Scythe \citep{Buffalo}) but this was rejected as it was
-deemed a needless complication.  Furthermore, Sickle proved to be relatively poorly documented
-as a tool.   As for other trimming tools, they mostly have  
-been found to largely perform equivalently across multiple RNA-Seq and DNA-Seq datasets and applications 
-(see File S2 \citep{DelFabbro2013}).  Additionally, cutadapt requires either manual repair of 
-paired read correspondence or discards all reads that are unpaired after trimming. It also requires
-use of ancillary shell scripting to input all desired adapter sequences from a sequencing service
-provided adapter fasta file.  Similarly, neither PRINSEQ or FASTX are competent to trim paired-end datasets 
-natively requiring work-arounds to retain pairing fidelity.
-
-Therefore, due to its advantages of maintaing read-pair correspondence during trimming, 
-optimisation for Illumina datasets, adapter trimming functionality and thorough documentation
-Trimmomatic \citep{Bolger2014a} proved the preferred trimming tool for this analysis.
-
-
-In terms of optimal minimum average quality thresholds  
-
-
-
-Despite earlier findings of very low trimming thresholds being optimal in \textit{de novo}
-transcriptome assembly.   
-
-
-As the quality of an assembly is generally correlated with the number of reads mapping concordantly
-\citep{Macmanes2014} 
-
-
-
-
-
-
-\subsubsection{GC partitioning}
-
-The developed GC partitioning package proved very effective at rapidly and relatively computationally 
-efficient clustering of PE RNAseq data. ParKour generated clusters with centroids
-reasonably where they may be expected from inspection of per read GC probability densities (see \ref{fig:gc})
-i.e. partitioning out the GC rich potentially contaminant reads likely from \textit{Rhizobia}
-bacterial species.  Unfortunately, in the case of this dataset clustering proved ineffective
-at improving assembly accuracy and removing groups of contaminant reads with large GC skews. 
-The likely explanation for this is that even 150bp paired end reads are too short to consistently
-statistically demonstrate the GC-AT bias of the originating organism. This means any partitioning
-is likely to remove a significant number of reads necessary to complete transcripts due to local
-variation in AT bias.  The high number of shorter contigs is indicative of the kind of assembly
-fragmentation that would be expected in this situation.
-
-
-However, the relative efficiency of this type of clustering indicates there may be
-some potential to utilising a similar but less naive approach in future work.  Specifically,
-the incorporation of other sequence characteristics such as base composition and 
-tetramer frequencies as well as GC\% into the input matrix could potentially 
-improve resolution and decrease this observed contig fragmentation effect. 
-In this further work, other clustering algorithms may be considered
-such as k-medoids \citep{Kaufman1987} with more robust outlier stability or large scale
-database clustering algorithms such as DBSCAN \citep{Ester1996} or BIRCH \citep{Zhang1996} (allowing non-convex
-clusters).
-The demonstrated effectiveness of simple K-means likely renders this unnecessary.
-Despite this, there are some major improvements that could be developed for this process.
-Silhouette coefficients and analysis\footnote{
-    \(s = \frac{b -a}{max(a,b}\) where \(s\) is Silhouette coefficient, \(a\) is the mean distance
-        between a sample and all other points in the same class and \(b\) is the mean distance
-    between a sample and all other points in the next nearest cluster \citep{scikit-learn}.  Therefore,
-\(s\) is a measure of cluster definition.}
-
-}\citep{Rousseeuw1987} can be incorporated to aid determination of the expected number of clusters when it cannot be determined
-\textit{a priori} from inspecting the data as well as validation of generated clusters.
-Other validation and analysis systems are somewhat limited due to the lack of ground truth labelling 
-available.  Finally, memory efficiency can be improved by use of streaming clustering algorithms (e.g. those discussed in
-\citep{OCallaghan2002})
-in which all data does not require to be loaded into a matrix at a given time and be clustered
-as they are parsed.  
-
-\subsubsection{Error correction and Kmer normalisation}
-
-These were a Bayeshammer \citep{Nikolenko2013} implemented as part of the Spades 
-genome assembler \citep{Bankevich2012} and optimised for MDA-based single cell genomic data, 
-and ``SEECER'' \citep{Le2013} which is optimised for RNAseq (but not necessarily sc-RNAseq
-data). 
-
-
-
-
-
-Despite numerous indications that error correction is important for improving the accuracy
-of genomic and transcriptomic assemblies using Illumina reads (e.g. \citep{Molnar2014,Macmanes2015}).
-In the case of this dataset error correction appeared to be have a minimal effect with few
-reads being corrected and downstream assemblies being largely equivalent to those
-without error correction.   This was found for both read data that had been
-trimmed at the high minimum quality threshold of Q30 and the highly permissive
-threshold of Q5. Similarly, the same trend was demonstrated with both the 
-RNAseq specific SEECER error corrector and MDA-data specific Bayeshammer correction.
-
-Diginorm and kmer based data normalisation 
-
-However, while Bayeshammer is designed for single cell genomic reads and 
-thus expects uneven coverage as might be found in a transcriptome it should be noted that it is not specifically designed for RNA-Seq datasets.
-
-
-Unfortunately, there are still not error correction algorithms directly optimised for scRNA-Seq 
-data.  This is potentially due to the relative level of methodological flux still in this 
-actively developing area compared to the more established MDA-based single cell genomics methods.
-
-While, there are several available Illumina RNA-Seq error correction tools available 
-``SEECER'' was chosen in accordance to the recommendations based on dataset and hardware
-heuristics (\(>50M\) reads and the availablility of a high memory system) \citep{Macmanes2015}.
-
-
-
-Digital normalisation and abundance filtering of k-mers functions on the logic 
-that low abundancy k-mers are more likely to originate from technical error
-than genuine biological variation.
-
-
-
-However, much in the same way as error correction itself because this was found to
-have a minimal effect on improving the assembly.
-In fact making it somewhat worse. 
-Discarded - could potentially be throwing away true variation that is merely undersampled
-in our libraries due to the level of contamination.
-
-
-
-
-
-
-
-
-
-\subsubsection{Assembly}
-
-Referenced assembly using the divergent \textit{Chlorella NC64A},
-\textit{Coccomyxa subellipsoidea} C-169, \textit{Tetrahymena thermophila},
-\textit{Paramecium caudatum} genomes as references was largely fruitess.
-Of all bulk and SCT reads only 0.3 and 0.4\% mapped to the 
-algal references.  Similarly, only 0.6 and 0.9\% of reads mapped to the 
-respective ciliate genomes.   This level of mapping is on the order
-of random chance.  The high proportion of reads which mapped, mapped non-uniquely
-suggesting mapping was occurring in low complexity reasons and is a statistical
-artefact for the most part instead of biological significant.
-
-Generally, spliced mapping like this can be improved by supplying 
-gene junction annotation files for the genomes being mapped.
-However, addition of GTF data only improved the percentage of reads mapping
-by 0.05-0.3 percentage points.  With so few reads mapping, any attempt to 
-class transcripts from this using cufflinks resulted in 10s of transcripts.
-
-It is safe to conclude that despite other findings that even divergent 
-(up to 15\%) genomes can generate transcriptomes of higher-quality
-than \textit{de novo} \citep{Vijay2013}, the potential references
-are too divergent in the case of the PbMr to be of any utility.
-
-
-%We can calculate the probability of matches given
-%random reads and a random 46.82Mb of host genome
-%as a generalisation of the birthday 
-%problem which asymptotically states
-%\( p\equivalent 1 - exp(-n\frac{n-1}{2d})\)
-%where \(d = 4^{100}\) i.e. the number of possible
-%\(100bp\) 4-character reads and \(n =\) 
-%
-
-\textit{de novo} assembly 
-
-
-\begin{table}[h]
-\begin{tabular}{|l|rrrrrrrl}
-\hline
-\multicolumn{1}{|c|}{Assembly} & \multicolumn{1}{c|}{Raw Reads (paired)} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Trimmed Reads \\ (assuming all paired)\end{tabular}} & \multicolumn{1}{c|}{Assembled Contigs} & \multicolumn{1}{c|}{Assembled "Genes"} & \multicolumn{1}{c|}{"Gene" N50} & \multicolumn{1}{c|}{"Gene" Mean Length} & \multicolumn{1}{c|}{"Gene" Total Assembled Bases} & \multicolumn{1}{c|}{GC\%} \\ \hline
-Kodama Trinity                 & 232.3M                                  & 218.5M                                                                                              & 68,175                                 & 40,805                                 & 904                             & 1,832                                   & 36.9M                                             & \multicolumn{1}{c}{?}     \\ \cline{1-1}
-SCT Q30                        & 126.9M                                  & 93.2M                                                                                               & 99,784                                 & 88,573                                 & 475                             & 451                                     & 40.0M                                             & 48.67                     \\ \cline{1-1}
-SCT Q30 + Bulk                 & 179.4M                                  & 145.6M                                                                                              & 127,508                                & 103,506                                & 646                             & 564                                     & 58.2M                                             & 40.30                     \\ \cline{1-1}
-SCT Q5                         & 126.9M                                  & 108.2M                                                                                              & 112,182                                & 99,441                                 & 465                             & 447                                     & 44.5M                                             & 49.42                     \\ \cline{1-1}
-SCT Q5 + Bulk                  & 179.4M                                  & 160.6M                                                                                              & 139,226                                & 113,685                                & 615                             & 549                                     & 62.5M                                             & 41.28                     \\ \cline{1-1}
-Bulk                           & 52.4M                                   & 52.4M                                                                                               & 43,261                                 & 30,706                                 & 1264                            & 861                                     & 26.5M                                             & 29.61                     \\ \cline{1-1}
-\end{tabular}
-\end{table}
-
-
-
-%\subsubsection{Saturation}
-%Trinity assemblies have been found to include more low-abundance k-mers than oases, many different isoforms
-%but doesn't recover many more unique genes just more isoforms \citep{Lowe2014} 
-%k-mer spectrum can be used to evaluate reocvoeery of low-abundance transcrtipts \citep{Pop2009}
-
-
-
-To this end, the error corrected combined \textit{de novo} SCT light Q<5 trim and bulk assembly were selected for further analysis.
-39,095 CDS sequences over 100aa in length were called from the 139,226 contigs using \textit{Tetrahymena} encoding.
-%THIS IS NOT RIGHT
-
-\subsection{Binning}
-
-
-
-%Fortunately, to this end, the only other published 2nd generation sequencing analysis of \textit{P. bursaria} and a green algal,
-%endosymbiont: Kodama \textit{et. al.} 2014 \citep{Kodama2014} partially addressed this issue.  This analysis investigated 
-%the differential global metatranscriptome profile of \textit{P. bursaria} Yad1g strain with and without its \textit{Chlorella variabilis} 1N endosymbiont 
-%\citep{Kodama2014}.   While, this is a different strain of both host and endosymbiont to the CCAP1660/12 strains (\textit{P. bursaria} and \textit{Micractinium reisseri}) 
-%used in this thesis it offers a potential avenue to investigate these other components.
-%An attempt was made to replicate this work using the CCAP1660/12 strains, unfortunately, elimination of the endosymbionts without death of the host
-%didn't prove possible in these strains.  Despite using 
-%
-%(despite earlier publications to the contrary) by either maintaining the culture in the dark \citep{Siegel1960} (although some studies have thrown doubt on
-%        how effective this method is at completely elimiating the photobiont \citep{Tanaka2002}) or treatment with various titrations of herbicides 
-%            (e.g. paraquat \citep{Hosoya1995a}) or the protein synthesis inhibitor cyclohexamide \citep{weis1984effect}).\footnote{
-%        There are naturally aposymbiotic strains of \textit{Paramecium bursaria} \citep{Tonooka2002a}}
-
-From these, 39,095 contigs 18,111 were generated using ``Dendrogenous''.  Unfortunately, nearly half had too few hits in the 40 genomes used 
-to generate phylogenies.  \footnote{However, in speed testing ``Dendrogenous'' did prove very efficient at rapidly generating phylogenies with its
-fully parallelised mode capable of generating 100 phylogenies randomly selected transcripts against 41 genomes in an average 2:22.50 minutes.
-The same pipeline run serially took an average of 23:41.39 minutes and the stage-wise parallel was very marginally faster at 
-an average of 21:45.02 minutes.}
-
-
-
-The initial identification and binning of recovered transcripts into host and endosymbiont categories was 
-tested using this phylogenetic approach. The results of this analysis is plotted 
-below. This demonstrates that the initial bin identifications were accurate for
-endosymbiont (~92\%) and food ( ~94\%) derived transcripts. 
-\textbf{This needs recalculated}
-%Of the bins that were too large to
-%be comprehensively phylogenetically tested (‘Host Bin’ and ‘Food Bin’) we screened a subset
-%of 2000 transcripts using a phylogenomic approach. There were almost no detected endosym-
-%biont sequences in 2000 randomly selected ‘Food Bin’ transcripts therefore the ‘Host Bin’ was
-%the only cause for concern in containing misidentified endosymbiont transcripts. ~2\% of the
-%2000 randomly sampled ‘Host Bin’ transcripts were found to be wrongly identified endosym-
-%biont sequences, assuming this random sample is representative of the ‘Host Bin’ in general
-%this suggests 500 endosymbiont transcripts are misidentified as host sequences.
-
-\begin{figure}
-    \includegraphics[width=\textwidth]{change_in_binning_after_phylogenetic_confirmation.pdf}
-\end{figure}
-
-For automated classification, the random forest test score showed a 93\% accuracy and automl approach ensemble test scored at 87.3\% accuracy.
-Dishearteningly, this is not massively more accurate than the crude BLAST based binning approach.
-     
-
-\subsection{MDA as a method}
-
-%How good is diff-eq - MDA amplification bias
-
-%This kit also allowed the use of random hexamers in the priming of cDNA generation,
-%this reduces the 3' coverage bias caused by the oligo-dT priming used in the initial bulk
-%RNAseq \citep{Hansen2010a}.  This is important as we hypothesise secreted proteins
-%will play an important role in the PbMr endosymbiosis and their identification hinges
-%upon accurate resolution of 5' secretion signals.
-
-
-\section{Methods}
-
-
-
-
-
-\subsection{Assembly}
-
-\subsubsection{Pre-processing}
-Much as library contamination is one of the key issues with single cell genomics \citep{Blainey2013,Lusk2014}, it highly
-important in SCT.  Single cell methods are particularly prone to contamination issues
-from reagents, laboratory environment and enigmatic nucleic acids within the biological samples themselves.
-This is due to the low-input concentration and high amplification necessary in these approaches \citep{Blainey2013} 
-leading to enrichment of non-target sequences.
-
-
-Furthermore, when utilising single cell libraries in a \textit{de novo} assembly instead of just referenced mapping assemblies
-it is doubly important to discard libraries that are likely to be contaminated as they will severely complicate
-the assembly graph. This increases both the hardware requirements to resolve transcripts from the de-Bruijn graph, as well
-as reducing the accuracy of those recovered transcripts.  The importance of library screening was further emphasised
-in the context of this projects by the observation that the inclusion of certain (SCT) libraries would increase
-assembly run-time and lead to the generation of fragmented transcripts relative to assemblies without those
-libraries.  While, contamination screening approaches such as multi-genome alignments and mapping to likely contamination
-species have been developed (e.g. \citep{Hadfield2014}), they were largely insufficient as they tended to rely upon 
-A) the contamination species being characterised and specified a-priori and B) the existence of reference genomes.
-One interesting exception is that of the commercial \url{http://onecodex.com} platform which provides
-rapid taxonomic screening of libraries as a cloud service.  While the emergence of commercial platforms
-is additional evidence as to the utility of this form of screening, even onecodex is largely optimised
-on common human pathogens.
-
-
-Therefore, to this end a set of scripts, known as ``DueyDrop'', were developed to allow rapid taxonomic profiling of a
-representative subset of each library against the entire non-redundant protein database.  
-These profiles could then be manually analysed or grouped using unsupervised learning methods to investigate the existence of 
-outlier libraries likely to be the product of contamination or sequencing failure.   Libraries can then,
-based on the heuristics of the dataset, by discarded and retained for downstream assembly and analysis.
-
-In order to discover whether trimming was necessary prior to screening, taxonomic profiles generated from raw untrimmed 
-were compared to profiles from trimmed libraries. If trimming is not necessary prior to contamination screening
-it saves a potentially computationally intensive step being run on libraries set for discarding.
 
 
 Following contamination screening the next two key preprocessing steps are that of read trimming and error correction.
@@ -1494,6 +1342,211 @@ assembly assessments.  Therefore, a model-based reference-free assembly scoring 
     along with standard (if imperfect) metrics, used to evaluate different assemblies. 
 
 
+
+
+
+
+
+\subsubsection{Trimming}
+
+There are many available tools for read-trimming (as discussed in \ref{ch:methods}),
+and a range of trimming tools were initially
+considered: specifically Trimmomatic \citep{Bolger2014a}, Sickle \citep{JoshiGitHub}, FASTX-toolkit \citep{gordon2010fastx},
+PRINSEQ \citep{Schmieder2011} and cutadapt \citep{martin2011cutadapt}. 
+Despite Sickle, an adaptive quality trimmer, having previously been used in single-cell transcriptome datasets 
+from free-living eukaryotes \citep{Kolisko2014}, it proved suboptimal as it was
+not capable of removing 5' or 3' contaminants such as sequencing adapters and/or multiplexing tags by itself.  
+These stages could be achieved with individual tools (such as Skewer \citep{Jiang2014}, 
+TagDust \citep{Lassmann2009} and Scythe \citep{Buffalo}) but this was rejected as it was
+deemed a needless complication.  Furthermore, Sickle proved to be relatively poorly documented
+as a tool.   As for other trimming tools, they mostly have  
+been found to largely perform equivalently across multiple RNA-Seq and DNA-Seq datasets and applications 
+(see File S2 \citep{DelFabbro2013}).  Additionally, cutadapt requires either manual repair of 
+paired read correspondence or discards all reads that are unpaired after trimming. It also requires
+use of ancillary shell scripting to input all desired adapter sequences from a sequencing service
+provided adapter fasta file.  Similarly, neither PRINSEQ or FASTX are competent to trim paired-end datasets 
+natively requiring work-arounds to retain pairing fidelity.
+Therefore, due to its advantages of maintaing read-pair correspondence during trimming, 
+optimisation for Illumina datasets, adapter trimming functionality and thorough documentation
+Trimmomatic \citep{Bolger2014a} proved the preferred trimming tool for this analysis.
+
+In terms of determing the optimal average quality threshold to use 
+
+
+Most likely to maintain 
+
+
+In terms of optimal minimum average quality thresholds  
+
+
+
+Despite earlier findings of very low trimming thresholds being optimal in \textit{de novo}
+transcriptome assembly.   
+
+
+As the quality of an assembly is generally correlated with the number of reads mapping concordantly
+\citep{Macmanes2014} 
+
+
+
+
+
+
+\subsubsection{GC partitioning}
+
+The developed GC partitioning package proved very effective at rapidly and relatively computationally 
+efficient clustering of PE RNAseq data. ParKour generated clusters with centroids
+reasonably where they may be expected from inspection of per read GC probability densities (see \ref{fig:gc})
+i.e. partitioning out the GC rich potentially contaminant reads likely from \textit{Rhizobia}
+bacterial species.  Unfortunately, in the case of this dataset clustering proved ineffective
+at improving assembly accuracy and removing groups of contaminant reads with large GC skews. 
+The likely explanation for this is that even 150bp paired end reads are too short to consistently
+statistically demonstrate the GC-AT bias of the originating organism. This means any partitioning
+is likely to remove a significant number of reads necessary to complete transcripts due to local
+variation in AT bias.  The high number of shorter contigs is indicative of the kind of assembly
+fragmentation that would be expected in this situation.
+
+However, the relative efficiency of this type of clustering indicates there may be
+some potential to utilising a similar but less naive approach in future work.  Specifically,
+the incorporation of other sequence characteristics such as base composition and 
+tetramer frequencies as well as GC\% into the input matrix could potentially 
+improve resolution and decrease this observed contig fragmentation effect. 
+In this further work, other clustering algorithms may be considered
+such as k-medoids \citep{Kaufman1987} with more robust outlier stability or large scale
+database clustering algorithms such as DBSCAN \citep{Ester1996} or BIRCH \citep{Zhang1996} (allowing non-convex
+clusters).
+The demonstrated effectiveness of simple K-means likely renders this unnecessary.
+Despite this, there are some major improvements that could be developed for this process.
+Silhouette coefficients and analysis\footnote{
+    \(s = \frac{b -a}{max(a,b}\) where \(s\) is Silhouette coefficient, \(a\) is the mean distance
+        between a sample and all other points in the same class and \(b\) is the mean distance
+    between a sample and all other points in the next nearest cluster \citep{scikit-learn}.  Therefore,
+\(s\) is a measure of cluster definition.}
+
+}\citep{Rousseeuw1987} can be incorporated to aid determination of the expected number of clusters when it cannot be determined
+\textit{a priori} from inspecting the data as well as validation of generated clusters.
+Other validation and analysis systems are somewhat limited due to the lack of ground truth labelling 
+available.  Finally, memory efficiency can be improved by use of streaming clustering algorithms (e.g. those discussed in
+\citep{OCallaghan2002})
+in which all data does not require to be loaded into a matrix at a given time and be clustered
+as they are parsed.  
+
+\subsubsection{Error correction }
+
+Despite numerous indications that error correction is important for improving the accuracy
+of genomic and transcriptomic assemblies using Illumina reads (e.g. \citep{Molnar2014,Macmanes2015}) 
+in the case of this dataset error correction appeared to be have a minimal effect with few
+reads being corrected and downstream assemblies being largely equivalent to those
+without error correction.   This was found for both read data that had been
+trimmed at the high minimum quality threshold of Q30 and the highly permissive
+threshold of Q5. Similarly, the same trend was demonstrated with both the 
+RNAseq specific SEECER error corrector and MDA-data specific Bayeshammer correction.
+
+It should be noted that SEECER, while an RNAseq specific error correction tool is not
+optimised for single cell MDA-based datasets, and Bayeshammer is not optimised
+for transcriptomic data.  Therefore, the poor performance of error correction
+in this dataset might be a consequence of the lack of error correction tools
+designed for MDA-based sc-RNAseq datasets. It will likely prove beneficial, as 
+datasets of this type become more prevalent, to develop tools for this specific
+use case. 
+
+
+Unfortunately, there are still not error correction algorithms directly optimised for scRNA-Seq 
+data.  This is potentially due to the relative level of methodological flux still in this 
+actively developing area compared to the more established MDA-based single cell genomics methods.
+
+`SEECER'' was slight 
+
+While, there are several available Illumina RNA-Seq error correction tools available 
+``SEECER'' was chosen in accordance to the recommendations based on dataset and hardware
+heuristics (\(>50M\) reads and the availablility of a high memory system) \citep{Macmanes2015}.
+
+
+
+
+\subsubsection{Digital normalisation and K-mer abundance filtering}
+normalisation
+Basically dumps all sct reads
+
+
+bulk assembly by itself 
+rsem-eval = \(-2.319*10^9\) 43,261
+
+
+
+
+Diginorm and kmer based data normalisation 
+
+Digital normalisation and abundance filtering of k-mers functions on the logic 
+that low abundancy k-mers are more likely to originate from technical error
+than genuine biological variation.
+
+could potentially be throwing away true variation that is merely undersampled
+in our libraries due to the level of contamination.
+
+relative abundance filtering reduces this by not perfectly.
+
+Did improve relative to bulk alone
+
+Woth looking into individual library diginorm removal
+
+
+
+\subsection{Assembly}
+
+Trinity assemblies have been found to include more low-abundance k-mers than oases, many different isoforms
+but doesn't necessarily recover many more unique genes just more isoforms \citep{Lowe2014} 
+k-mer spectrum can be used to evaluate recovery of low-abundance transcrtipts \citep{Pop2009}
+
+
+
+\subsection{Binning}
+
+
+From these, 39,095 contigs 18,111 were generated using ``Dendrogenous''.  Unfortunately, nearly half had too few hits in the 40 genomes used 
+to generate phylogenies.  \footnote{However, in speed testing ``Dendrogenous'' did prove very efficient at rapidly generating phylogenies with its
+fully parallelised mode capable of generating 100 phylogenies randomly selected transcripts against 41 genomes in an average 2:22.50 minutes.
+The same pipeline run serially took an average of 23:41.39 minutes and the stage-wise parallel was very marginally faster at 
+an average of 21:45.02 minutes.}
+
+
+
+The initial identification and binning of recovered transcripts into host and endosymbiont categories was 
+tested using this phylogenetic approach. The results of this analysis is plotted 
+below. This demonstrates that the initial bin identifications were accurate for
+endosymbiont (~92\%) and food ( ~94\%) derived transcripts. 
+\textbf{This needs recalculated}
+%Of the bins that were too large to
+%be comprehensively phylogenetically tested (‘Host Bin’ and ‘Food Bin’) we screened a subset
+%of 2000 transcripts using a phylogenomic approach. There were almost no detected endosym-
+%biont sequences in 2000 randomly selected ‘Food Bin’ transcripts therefore the ‘Host Bin’ was
+%the only cause for concern in containing misidentified endosymbiont transcripts. ~2\% of the
+%2000 randomly sampled ‘Host Bin’ transcripts were found to be wrongly identified endosym-
+%biont sequences, assuming this random sample is representative of the ‘Host Bin’ in general
+%this suggests 500 endosymbiont transcripts are misidentified as host sequences.
+
+\begin{figure}
+    \includegraphics[width=\textwidth]{change_in_binning_after_phylogenetic_confirmation.pdf}
+\end{figure}
+
+For automated classification, the random forest test score showed a 93\% accuracy and automl approach ensemble test scored at 87.3\% accuracy.
+Dishearteningly, this is not massively more accurate than the crude BLAST based binning approach.
+     
+
+\subsection{MDA as a method}
+
+%How good is diff-eq - MDA amplification bias
+
+%This kit also allowed the use of random hexamers in the priming of cDNA generation,
+%this reduces the 3' coverage bias caused by the oligo-dT priming used in the initial bulk
+%RNAseq \citep{Hansen2010a}.  This is important as we hypothesise secreted proteins
+%will play an important role in the PbMr endosymbiosis and their identification hinges
+%upon accurate resolution of 5' secretion signals.
+
+
+\subsection{Assembly}
+
+\subsubsection{Pre-processing}
 \subsection{Binning}
 
 However, even once a good assembly has been generated it is still necessary to identify the likely
@@ -1565,7 +1618,56 @@ On the basis that the high
 
 
 
-\section{Conclusion}
+
+\subsection{Preprocessing}
+
+Screening is key but partitioning is difficult and ineffective
+Low trim and error correction ineffectual
+Diginorm and erroneous k-mer removal was useful and improved assembly
+
+
+\subsection{Assemblers}
+
+
+
+It is safe to conclude that despite other findings that even divergent 
+(up to 15\%) genomes can generate transcriptomes of higher-quality
+than \textit{de novo} \citep{Vijay2013}, the potential references
+are too divergent in the case of the PbMr to be of any utility.
+
+
+
+Combining worked poorly for some reason
+
+Oases is not fit for purpose, IDBA is a bit of a mess - confusing mess of 
+associated assemblers 
+
+Trinity and Bridger were far superior 
+
+Bridger is fairly bug ridden it was necessary to manually fix several aspects
+of code not to mention - K-mer selection is important (aspect of bridger doing well)
+Segfaulting if reads are shorter than K
+Poorly documented code - source not in VCS (sourceforge) thus can't contribute
+corrections easily 
+
+
+\subsection{Assembly assessment is still a difficult task}
+
+RSEM-Eval is imperfect as a measure, comparison of assemblies is generally a good idea.
+
+
+Titrating ERCC spike-ins to level of single cell 
+It has become an increasingly established methodology to add RNA of known concentrations
+to extractions before library preparation to aid quantification
+and normalisation in downstream analysis. 
+Unforunately, there are no established methods for synthetic RNA spike-ins
+of known RNA concentrations (e.g. ERCC RNA standards \citep{Jiang2011}) with MDA
+sc-RNAseq. Specifically, standards would need to be carefully titrated to appropriate
+concentrations for single cell methods or they would overwhelm sequencing 
+
+
+therefore no such spike-ins were added. 
+
 
 
 
@@ -1588,30 +1690,51 @@ On the basis that the high
 %First achieved in \citep{Lao2009}
 
 
-In conclusion,.
-Library filtering is important with single cell possibly due to the increased inefficiency of poly-A selection
-GC partitioning doesn't work - splits up contigs
-Trimming and error correction makes little difference on unsaturated complex single cell 
-Arboretum offers a useful way to accurately classify transcripts into likely origins 
 
 
-
-
-
-
-
-Titrating ERCC spike-ins to level of single cell 
-
-
-It has become an increasingly established methodology to add RNA of known concentrations
-to extractions before library preparation to aid quantification
-and normalisation in downstream analysis. 
-Unforunately, there are no established methods for synthetic RNA spike-ins
-of known RNA concentrations (e.g. ERCC RNA standards \citep{Jiang2011}) with MDA
-sc-RNAseq. Specifically, standards would need to be carefully titrated to appropriate
-concentrations for single cell methods or they would overwhelm sequencing 
-
-
-therefore no such spike-ins were added. 
 
 chimera analysis
+
+
+
+
+MDA has amplification bias with GC content - problem for PbMr \citep{Macaulay2014}
+
+\section{Conclusion}
+
+In conclusion, for this dataset the optimal preprocessing of reads for assembly
+consisted of harsh trimming with a minimum size 4 sliding window quality threshold 
+of Q30.  This was effectively determined by identifying the threshold at which
+the number of reads which concordantly mapped to several preliminary assemblies. 
+Contrary to previous studies a permissive trim followed by error correction proved
+ineffective for this mixed single cell and bulk eukaryotic transcriptome dataset.
+
+
+Comprehensive taxonomic screening of single cell libraries is key to accurate recapitulation 
+of assemblies and removal of contamination.
+
+Read partitioning is ineffective. 
+
+
+Digital normalisation followed by removal of, likely to be erroneous, low abundance
+k-mers is an effective way to significantly improve both assembly likelihood, remove
+redundancy in dataset, and reduce the computational requirements of assembly. 
+
+
+Trinity and Bridger are by a considerable margin the most effective \textit{de novo}
+transcriptome assemblers for datasets of this type.  
+
+
+
+
+High throughput phylogeny generation, parsing and supervised classification is 
+a more sensitive and powerful way in which to bin transcripts into their likely originating
+organisms provided a reasonable level of \textit{a priori} knowledge of the system at hand.
+
+
+These were a Bayeshammer \citep{Nikolenko2013} implemented as part of the Spades 
+genome assembler \citep{Bankevich2012} and optimised for MDA-based single cell genomic data, 
+and ``SEECER'' \citep{Le2013} which is optimised for RNAseq (but not necessarily sc-RNAseq
+data). 
+
+
