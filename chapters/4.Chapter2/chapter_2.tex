@@ -849,14 +849,11 @@ of read mapping statistics against 3 preliminary reference assemblies
 as well as the impact on resultant \textit{de novo} assemblies at 
 that threshold.
 
-
 A rapid decrease in the number of concordantly mapping PE reads (i.e.
 within insert distance of one another) was observed above a Q30 quality threshold.
 This proves true regardless of the reference assembly being mapped to
-(see \ref{fig:trimmingopt}) 
-
-as shown in the case of all 3 reference assemblies (\ref{fig:trimmingopt}). 
-The optimal trimming threshold used for most assemblies was Q30. 
+(see \ref{fig:trimmingopt}).  Q30 relative to Q20 appears to induce a 
+slight decrease in total number of mapping reads but not drastically slow 
 
 \begin{figure}
     \includegraphics[width=\textwidth]{trimmingopt.svg}
@@ -877,12 +874,10 @@ Additionally, naive assemblies in Trinity of taxonomically screened single cell 
 at different sliding window quality threshold trims of Q5, Q20, and Q30 (\ref{tab:trim_assembly})
 were created. 
 These show that more permissive trims (Q5 and Q20) lead to a greater number of assembled bases and transcripts 
-however the likelihood of these assemblies are also greatly lower than that generated using the 
+however the likelihood of these assemblies are also lower than that generated using the 
 more conservative Q30 trim. 
-However, the difference in the number and size of assembled transcripts at different thresholds 
+However, it should be noted that the difference in the number and size of assembled transcripts at different thresholds 
 was less than was found using different assemblers and assembly parameters.
-Due to this combined with the greater likelihood of the Q30 assembly and the minimal affect this had on the 
-mapping statistics Q30 trims were used throughout the rest of the assembly optimisation process. 
 
 \begin{table}[h]
      \begin{tabular}{@{}|l||l|l|l|@{}}
@@ -903,6 +898,26 @@ mapping statistics Q30 trims were used throughout the rest of the assembly optim
     \label{tab:trim_assembly}
 \end{table}
 
+Therefore, due to increasing the assembly likelihood while only very marginally
+marginally decreasing the number of contigs and mapping reads relative to
+more permissive trims Q30 was determined to be the optimal trimming threshold.
+It can be considered from this data that Q30 forms a maximum feasible stringency for trimming. 
+
+\begin{table}
+    \begin{tabular}
+        \textbf{Library} & \textbf{Number of raw PE Reads} & \textbf{Number of Q30 trimmed PE Reads} \\
+        \cmidrule{}
+        Dark1-2 &  \(6.460*10^{7}\) &  \(3.355*10^{6}\)\\ 
+        Dark2-3 & \(2.243*10^7\)&  \(1.478*10^7\)\\
+        Dark2-6 & \(2.431*10^7\) & \(1.443*10^7\) \\
+        Dark2-8 & \(2.761*10^7\) &  \(1.866*10^7\) \\
+        Light1-9 & \(1.524*10^7\) & \(1.382*10^7\) \\
+        Light1-10 & \(1.614*10^7\) & \(1.478*10^7\) \\
+        Light1-11 & \(1.474*10^7\) & \(1.334*10^7\) \\
+        Bulk1 & - & \(2.458*10^{7}\) \\
+        Bulk2 & - & \(2.779*10^{7}\) \\
+    \end{tabular}
+\end{table}
 
 \subsubsection{GC Partitioning} 
 
@@ -972,7 +987,7 @@ the assembly of this highly heterogeneous RNAseq dataset.
 \subsubsection{Error Correction}
 
 Bayeshammer, as implemented in the Spades genome assembler, even on permissively trimmed
-(\(Q>5\)) corrected only a maximum \(0.0007\%\) of reads in the 7 taxonomically selected SCT libraries.
+(\(Q>5\)) reads corrected only a maximum \(0.0007\%\) of reads in the 7 taxonomically selected SCT libraries.
 As this affected on the order of 10s of reads it was not considered worth pursuing further.
 
 ``SEECER'', an RNA-Seq specific error correction tool corrected 
@@ -996,8 +1011,9 @@ then compared with and without ``SEECER'' error correction.
 \end{table}
 
 As can be observed, error correction of SCT reads made minimal effect in the overall likelihood
-or assembly for this dataset.  Therefore, error correction was not utilised
-in downstream assembly.
+or assembly for this dataset even with lightly trimmed reads. As this marginally
+performed worse than the more stringent Q30 trim error correction was considered
+ineffective on this dataset and was not used for further analysis.
 
 \subsubsection{Digital Normalisation} 
 
@@ -1065,79 +1081,118 @@ for this dataset.
 
 \subsubsection{\textit{de novo} assembly} 
 
-
 \begin{table}[h]
     \begin{tabular}{|l|r r r r r r l}
-        \textbf{Assembler} & \textbf{Parameters} & \textbf{Contigs} & \textbf{Bases Assembled} & \textbf{RSEM-Eval Score}\\
-        SOAPdenovo-Trans & K23 & 374,325 & \(7.64*10^{7}\) & - \\
+        \textbf{Assembler} & \textbf{Parameters} & \textbf{Number of Contigs} & \textbf{Total Bases Assembled} & \textbf{Assembly Likelihood}\\
+        SOAPdenovo-Trans & K23 & 374,325 & \(7.64*10^{7}\) & \(3.778*10^{10}\) \\
                          & *K64 & - & - & - \\  
                          & *K80 & - & - & - \\ 
         TransAbyss & K20 & 3,272,137 & \(1.722*10^{8}\)   & -  \\
                    & K32 & 853,079   & \( 1.321*10^{8}\)  & -  \\
                    & K64 & 376,280   & \( 9.755*10^{7}\)  & -  \\
-                   & Merged & 3,055,851 & \(2.71*10^{8}\) &   \\
+                   & Merged & 3,055,851 & \(2.71*10^{8}\) & \(-3.113*10^{10}\)  \\
         Oases*     & - & - & - & - \\
-        IDBA-tran      &  & 54,113 & \(2.7*10^{7}\) & \(-4.589*10^{10}\)\\
-        IDBA-MTP/UD/MT* & - & - & - & \\
-        Trinity & - & 127,508 &  \( 8.326*10^{7}\) & \(-2.832*10^{10}\) \\
+        IDBA-tran      & - & 54,113 & \(2.7*10^{7}\) & \(-4.589*10^{10}\)\\
+        IDBA-MTP/UD/MT** & - & - & - & \\
+        Trinity & Minimum K-mer Coverage 2 & 127,508 &  \( 8.326*10^{7}\) & \(-2.832*10^{10}\) \\
         Bridger & K25 & 114,582 & \( 9.707*10^{7}\)  & \(-2.587*10^{10}\)\\ 
     \end{tabular}
-    \caption{* indicates programs that failed to run  
+    \caption{\textit{De novo} assemblies of Q30 trimmed taxonomically
+        selected single cell libraries and bulk libraries (but not digitally normalised or k-mer abundance
+            filtered) with a range of assemblers and parameters.  K-mer size used
+            for assemblers with that option are indicated in the Parameters column 
+            e.g. K23 indicates a 23-mers. Bridger and Trinity outperformed 
+            other assemblers in terms of assembly likelihood and rational
+            contig numbers and sizes.
+        * indicates assemblies programs that failed to run to completion due to 
+        insufficient computational resources (despite using a server with 500GB 
+        of memory)
+        ** indicates assemblies which failed due to coding errors in the application.
         All non-diginormed sct+bulk}
+        \label{tab:assemblies}
 \end{table}
 
 Critically, Oases, the IDA-MTP/UD/MT pipeline and SOAPdenovo-Trans at higher K-mer values
-all failed to run to completion correctly with the dataset.
-However, Trinity and Bridger were the clear stand-out assemblers in terms of likelihood.
+all failed to run to completion correctly with the dataset.  In the case of Oases
+and SOAPdenovo-Trans at higher K-mer values this was due to exhaustion
+of system memory and in the case of IDBA-MTP/UD/MT workflow an unresolved coding error 
+resulting in repeated segmentation faults.
 
+However, Trinity and Bridger both consistently generated assemblies of approximately
+equal size (100-130,000 contigs of rational sizes: N50s of 700-850
+    and mean and median contig sizes of 600-660 and 410-470) across a variety 
+    of assembly parameters (not shown).  Furthermore, they both consistently
+    generated the assemblies with the greatest likelihoods (from RSEM-Eval), 
+    and ran most computationally efficiently. 
+
+
+Trinity and Bridger assemblies using digitally normalised and K-mer abundance 
+filtered, taxonomically selected, Q30 trimmed, single cell and bulk libraries performed 
+even better in terms of assembly likelihood and read incorporation.
 
 \begin{table}[h]
-    \begin{tabular}{|l|r r r r r r l}
-        \textbf{Assembler} & \textbf{Parameters} & \textbf{Contigs} & \textbf{Bases Assembled} \\
-        Diginorm Bridger & K19 & 102,686 & \(8,209*10^{7}\)  & \(-1.729*10^{9}\) \\
-        Diginorm Bridger & K25 & 113,106 & \(9.866*10^{7}\)  & \(-1,183*10^{9} \) \\ 
-        Diginorm Bridger & K31 & 112,391 & \(8.941*10^{7}\)  & \(-1.143*10^9\) \\ 
-        Diginorm Trinity & min_kmer_cov 1 & 176,097 &  \(1.113*10^{8}\)& \(-1.214*10^{9}\) \\  
-        Diginorm Trinity & min_kmer_cov 2 & 147,902 & \(9.239*10^{7}\) & \(-1.238*10^9\) \\  
+    \begin{tabular}{|l|r r r r}
+        \textbf{Assembler} & \textbf{Parameters} & \textbf{Contigs} & \textbf{Bases Assembled} & \textbf{Assembly Likelihood} \\
+        Bridger & K19 & 102,686 & \(8,209*10^{7}\)  & \(-1.729*10^{9}\) \\
+                & K25 & 113,106 & \(9.866*10^{7}\)  & \(-1.183*10^{9} \) \\ 
+                & K31 & 112,391 & \(8.941*10^{7}\)  & \(-1.143*10^9\) \\ 
+        Trinity & Minimum K-mer Coverage of 1 & 176,097 &  \(1.113*10^{8}\)& \(-1.214*10^{9}\) \\  
+                & Minimum K-mer Coverage of 2 & 147,902 & \(9.239*10^{7}\) & \(-1.238*10^9\) \\  
     \end{tabular}
-    \caption{* indicates programs that failed to run}
+    \caption{Asssembly summaries of Q30 trimmmed taxonomically selected SCT and bulk reads 
+    after digital normalisation and K-mer abundance filtering. Parameters used in the assembly
+indicates any special parameter settings used in the assembly i.e. K19 indicates a K-mer size of 19 was used.
+}
+    \label{tab:digassemby}
 \end{table}
 
-
-
-
-
+Smaller K-mer values (19-mer) performed worse in the case of the Bridger assembly
+with the optimal assembly in terms of contig number and size was the K-mer size 
+of 25.  This was slightly lower in terms of likelihood than the 31-mer Bridger
+assembly. The digitally normalised and filtered Trinity assemblies 
+generated much larger assemblies overall but still produced good likelihoods.
 
 \subsubsection{Assembly combination}
 
+Two assemblies were combined using the tr2aacds.pl script in EvidentialGene 
+and a minimum CDS size of 100. The first consisted of all successfully completed
+assemblies of non-normalised/filtered reads i.e. SOAPdenovo-Trans, TransAbyss (multiple K-mer
+assembly merged using built-in tool),
+IDBA-tran, Trinity and Bridger in \ref{tab:assemblies}.  The second, 
+of the 3 Bridger digitally normalised assemblies and two Trinity assemblies 
+described in \ref{tab:digassemby}.
 
-\(-1.823*10^9\)
-
-\begin{table}[h]
-\begin{tabular}{|l|rrrrrrrl}
-\hline
-\multicolumn{1}{|c|}{Assembly} & \multicolumn{1}{c|}{Raw Reads (paired)} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Trimmed Reads \\ (assuming all paired)\end{tabular}} & \multicolumn{1}{c|}{Assembled Contigs} & \multicolumn{1}{c|}{Assembled "Genes"} & \multicolumn{1}{c|}{"Gene" N50} & \multicolumn{1}{c|}{"Gene" Mean Length} & \multicolumn{1}{c|}{"Gene" Total Assembled Bases} & \multicolumn{1}{c|}{GC\%} \\ \hline
-Kodama Trinity                 & 232.3M                                  & 218.5M                                                                                              & 68,175                                 & 40,805                                 & 904                             & 1,832                                   & 36.9M                                             & \multicolumn{1}{c}{?}     \\ \cline{1-1}
-SCT Q30                        & 126.9M                                  & 93.2M                                                                                               & 99,784                                 & 88,573                                 & 475                             & 451                                     & 40.0M                                             & 48.67                     \\ \cline{1-1}
-SCT Q30 + Bulk                 & 179.4M                                  & 145.6M                                                                                              & 127,508                                & 103,506                                & 646                             & 564                                     & 58.2M                                             & 40.30                     \\ \cline{1-1}
-SCT Q5                         & 126.9M                                  & 108.2M                                                                                              & 112,182                                & 99,441                                 & 465                             & 447                                     & 44.5M                                             & 49.42                     \\ \cline{1-1}
-SCT Q5 + Bulk                  & 179.4M                                  & 160.6M                                                                                              & 139,226                                & 113,685                                & 615                             & 549                                     & 62.5M                                             & 41.28                     \\ \cline{1-1}
-Bulk                           & 52.4M                                   & 52.4M                                                                                               & 43,261                                 & 30,706                                 & 1264                            & 861                                     & 26.5M                                             & 29.61                     \\ \cline{1-1}
-\end{tabular}
+\begin{table}[h}
+    \begin{tabular}
+        \textbf{Assembly} & \textbf{Input Contigs} & \textbf{Collapsed Contigs} & \textbf{Assembly Likelihood}\\ 
+        Non-normalised    & 3,726,379 & 46,063  & \(-4.347*10^{10}\) \\
+        Normalised        & 652,182 & 53,628 & \(-1.823*10^{9}\)\\
+    \end{tabular}
+    \caption{Summary of merged multi-assemblies.  Collapsed contigs is the number of contigs
+    found in the merged set by the EvidentialGene pipeline. The level of assembly
+reduction and redundancy removal is very high and impressively consistent despite
+the differences in the starting assemblies.  However, the likelihoods are lower than
+any of the individual assemblies used in the combinations.}
+    \label{tab:comb_assemb}
 \end{table}
 
+The combination of all non-normalised assemblies produced a suprisingly small
+set of contigs, however, also both assemblies also had lower likelihoods than 
+any of their constituent assemblies. It is of interest that despite both
+generating similar numbers of contigs there was next to no overlap between 
+the two combinations as assessed by clustering using CD-HIT at a similarity of \(90\%\).
 
-
-
-
-
-
-
+Therefore, the assembly selected for downstream binning and analysis was Bridger 
+assembly of normalised reads with a K-mer size of 31.
 \subsection{Binning}
+<>
 
 \subsubsection{ORF Calling}
 
+
+
 \subsubsection{Performance of BLAST binning alone}
+
 
 \subsubsection{Phylogeny based bins}
 
@@ -1489,6 +1544,13 @@ relative abundance filtering reduces this by not perfectly.
 Did improve relative to bulk alone
 
 Woth looking into individual library diginorm removal
+
+
+
+Despite "throwing away" most of the data it should be noted
+that the digitally normalised and K-mer abundance filtered assemblies also
+incorporated more bases overall than the equivalent assembly using the full
+libraries. 
 
 
 
