@@ -8,9 +8,54 @@
 
 \section{Methods}
 
-\subsection{Database download}
+\subsection{Data Acquisition}
 
-Kodama Trinity Assembly 
+Sets of algal predicted proteins were acquired as follows:
+
+\subsubsection{\textit{Chlorella variabilis} NC64A and \textit{Coccomyxa subellipsoidea} C-169} 
+ 
+\textit{Coccomyxa subellipsoidea} C-169 genome project \citep{Blanc2012} version 2.0 
+JGI annotated proteins (created 12-01-2014) were downloaded from JGI's
+Phyotozome v10.3.1 \citep{Goodstein2012}. 
+Similarly, the ``best'' annotated proteins from
+version 1 of the \textit{Chlorella variabilis} NC64A genome project \citep{Blanc2010}
+were downloaded from JGI's genome portal \citep{Grigoriev2011,Nordberg2014}
+
+\subsubsection{\textit{Micractinium reisseri}}
+
+Sequences were derived from endosymbiont binned
+transcripts and annotations as described in \ref{chap:transcriptomics}.
+
+\subsubsection{\textit{Chlorella variabilis 1 N}}
+
+\(232.3M\) 100bp paired-end reads from \citep{Kodama2014}'s 
+bulk RNAseq transcriptome of \textit{Paramecium bursaria} Yad1g (syngen
+3, mating type 1) bearing \textit{Chlorella variabilis} 1N endosymbionts
+were downloaded from the DNA Data Bank of Japan (DDBJ) \citep{Tateno2002,Kaminuma2011}
+in Sequence Read Archive (SRA) format \citep{Leinonen2011,KodamaNRA2012b}. 
+
+These reads were then converted to fastq using ``fastq-dump'' using the SRA Toolkit
+\citep{NationalCenterforBiotechnologyInformation2011}.  Reads were then trimmed
+for sequencing adapters using ILLUMINACLIP and SLIDINGWINDOW with a window size
+of 4 and a minimum average quality of 30.
+
+
+
+
+
+
+
+
+
+
+
+
+
+sequencing
+
+
+DDBJ Sequence Read Archive (DRA) (accession number DRA000907, http://trace.ddbj.nig.ac.jp/DRASearch/submission?acc=DRA000907
+
 
 
 \subsection{Transporter Identification}
@@ -19,7 +64,12 @@ Kodama Trinity Assembly
 
 
 \section{Results}
+
+
 \subsection{Kodama Assembly}
+
+
+
 \subsubsection{Assembly}
 
 

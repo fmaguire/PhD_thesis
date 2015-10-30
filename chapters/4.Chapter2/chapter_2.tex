@@ -492,12 +492,6 @@ instead of universal because it was spuriously extended transcripts
 were considered favourable to falsely truncated ones.
 This greatly reduced redundancy in the later binning analyses.
 
-Additionally, CD-HIT \citep{Li2006} was used on all sets of called ORFs (regardless of encoding) 
-at a 95\% identity level to reduce redundancy in the set of called ORFS.
-This was particular important for datasets from assemblies generated from
-meta-assemblies and assemblers that aren't explicitly splice-aware in their output
-(e.g. Oases, TransAbyss)
-
 \subsection{Transcript Binning}
 
 \subsubsection{Initial BLAST based bins}
@@ -1162,7 +1156,7 @@ IDBA-tran, Trinity and Bridger in \ref{tab:assemblies}.  The second,
 of the 3 Bridger digitally normalised assemblies and two Trinity assemblies 
 described in \ref{tab:digassemby}.
 
-\begin{table}[h}
+\begin{table}[h]
     \begin{tabular}
         \textbf{Assembly} & \textbf{Input Contigs} & \textbf{Collapsed Contigs} & \textbf{Assembly Likelihood}\\ 
         Non-normalised    & 3,726,379 & 46,063  & \(-4.347*10^{10}\) \\
@@ -1183,21 +1177,56 @@ generating similar numbers of contigs there was next to no overlap between
 the two combinations as assessed by clustering using CD-HIT at a similarity of \(90\%\).
 
 Therefore, the assembly selected for downstream binning and analysis was Bridger 
-assembly of normalised reads with a K-mer size of 31.
+assembly of bulk and library screened single cell normalised and k-mer
+abundancy filtered reads with a K-mer size of 31.
+
 \subsection{Binning}
-<>
 
 \subsubsection{ORF Calling}
 
-
+From the 112,391 contigs in the final selected assembly - 1,005,370 ORFs
+longer than 30 amino acids were identified using a ``Tetrahymena'' encoding.
+Using the 500 longest of these ORFs to train a Markov Model and removing
+shorter ORFs that lay entirely within a longer ORF resulted in a final set
+of 70,605 transcripts.
 
 \subsubsection{Performance of BLAST binning alone}
+
+10,000 of these transcripts were translated to peptide sequences 
+
+The initial identification and binning of recovered transcripts into host and endosymbiont categories was 
+tested using this phylogenetic approach. The results of this analysis is plotted 
+below. This demonstrates that the initial bin identifications were accurate for
+endosymbiont (~92\%) and food ( ~94\%) derived transcripts. 
+
+
+\begin{figure}
+    \includegraphics[width=\textwidth]{change_in_binning_after_phylogenetic_confirmation.pdf}
+\end{figure}
 
 
 \subsubsection{Phylogeny based bins}
 
+\textbf{This needs recalculated}
+%Of the bins that were too large to
+%be comprehensively phylogenetically tested (‘Host Bin’ and ‘Food Bin’) we screened a subset
+%of 2000 transcripts using a phylogenomic approach. There were almost no detected endosym-
+%biont sequences in 2000 randomly selected ‘Food Bin’ transcripts therefore the ‘Host Bin’ was
+%the only cause for concern in containing misidentified endosymbiont transcripts. ~2\% of the
+%2000 randomly sampled ‘Host Bin’ transcripts were found to be wrongly identified endosym-
+%biont sequences, assuming this random sample is representative of the ‘Host Bin’ in general
+%this suggests 500 endosymbiont transcripts are misidentified as host sequences.
 
 
+For automated classification, the random forest test score showed a 93\% accuracy and automl approach ensemble test scored at 87.3\% accuracy.
+Dishearteningly, this is not massively more accurate than the crude BLAST based binning approach.
+ 
+
+From these, 39,095 contigs 18,111 were generated using ``Dendrogenous''.  Unfortunately, nearly half had too few hits in the 40 genomes used 
+to generate phylogenies.  \footnote{However, in speed testing ``Dendrogenous'' did prove very efficient at rapidly generating phylogenies with its
+fully parallelised mode capable of generating 100 phylogenies randomly selected transcripts against 41 genomes in an average 2:22.50 minutes.
+The same pipeline run serially took an average of 23:41.39 minutes and the stage-wise parallel was very marginally faster at 
+an average of 21:45.02 minutes.}
 
 
 
@@ -1561,39 +1590,7 @@ but doesn't necessarily recover many more unique genes just more isoforms \citep
 k-mer spectrum can be used to evaluate recovery of low-abundance transcrtipts \citep{Pop2009}
 
 
-
-\subsection{Binning}
-
-
-From these, 39,095 contigs 18,111 were generated using ``Dendrogenous''.  Unfortunately, nearly half had too few hits in the 40 genomes used 
-to generate phylogenies.  \footnote{However, in speed testing ``Dendrogenous'' did prove very efficient at rapidly generating phylogenies with its
-fully parallelised mode capable of generating 100 phylogenies randomly selected transcripts against 41 genomes in an average 2:22.50 minutes.
-The same pipeline run serially took an average of 23:41.39 minutes and the stage-wise parallel was very marginally faster at 
-an average of 21:45.02 minutes.}
-
-
-
-The initial identification and binning of recovered transcripts into host and endosymbiont categories was 
-tested using this phylogenetic approach. The results of this analysis is plotted 
-below. This demonstrates that the initial bin identifications were accurate for
-endosymbiont (~92\%) and food ( ~94\%) derived transcripts. 
-\textbf{This needs recalculated}
-%Of the bins that were too large to
-%be comprehensively phylogenetically tested (‘Host Bin’ and ‘Food Bin’) we screened a subset
-%of 2000 transcripts using a phylogenomic approach. There were almost no detected endosym-
-%biont sequences in 2000 randomly selected ‘Food Bin’ transcripts therefore the ‘Host Bin’ was
-%the only cause for concern in containing misidentified endosymbiont transcripts. ~2\% of the
-%2000 randomly sampled ‘Host Bin’ transcripts were found to be wrongly identified endosym-
-%biont sequences, assuming this random sample is representative of the ‘Host Bin’ in general
-%this suggests 500 endosymbiont transcripts are misidentified as host sequences.
-
-\begin{figure}
-    \includegraphics[width=\textwidth]{change_in_binning_after_phylogenetic_confirmation.pdf}
-\end{figure}
-
-For automated classification, the random forest test score showed a 93\% accuracy and automl approach ensemble test scored at 87.3\% accuracy.
-Dishearteningly, this is not massively more accurate than the crude BLAST based binning approach.
-     
+    
 
 \subsection{MDA as a method}
 
@@ -1753,7 +1750,7 @@ therefore no such spike-ins were added.
 
 
 
-
+SPIKEINS - needed to control statistical noise Kim2015
 
 chimera analysis
 
@@ -1799,4 +1796,14 @@ genome assembler \citep{Bankevich2012} and optimised for MDA-based single cell g
 and ``SEECER'' \citep{Le2013} which is optimised for RNAseq (but not necessarily sc-RNAseq
 data). 
 
+
+
+
+
+Fitlering is superiro to clustering
+Additionally, CD-HIT \citep{Li2006} was used on all sets of called ORFs (regardless of encoding) 
+at a 95\% identity level to reduce redundancy in the set of called ORFS.
+This was particular important for datasets from assemblies generated from
+meta-assemblies and assemblers that aren't explicitly splice-aware in their output
+(e.g. Oases, TransAbyss)
 
