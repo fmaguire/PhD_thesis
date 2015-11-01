@@ -483,6 +483,7 @@ taxonomic distribution of \textit{Paramecium} green algal endosymbionts (see \re
 %\subsection{Assessing Assemblies}
 %
 %RSEM-eval, mappings, NG50, L50, N50
+%    
 %
 %Assemblathon 1 \citep{Earl2011}
 %GAGE \citep{Schatz2012}
@@ -848,9 +849,26 @@ taxonomic distribution of \textit{Paramecium} green algal endosymbionts (see \re
 %This is true for both bulk and SC RNA-Seq \citep{Stegle2015}.
 %
 %
-%
-%
+% \subsubsection{Transcriptome Assembly Assessment}
+% who could http://www.ccforum.com/1471-2164/14/465 \citep{Neil2013c}
+
+% Reference-free assessment is more difficult. 
+%   How does RSEM-Eval work \citep{Li2014}
+% RSEM-EVAL for an assembly \(A\) and set of reads \(D\)
+% \(Score(A) = log P(A, D)\) 
+% log P(A,D) = log \int 
 %Mapping reads to 
+
+
+RSEM-EVAL uses the concept of a latent true assembly for a given set of 
+reads.  Li et. al. define this as 
+
+For each read r, transcript(r) is the transcript, left(r) and right(r) are the 5' and 3' prime
+positoon of the transcript 
+
+a transcript is true if 
+
+
 
 \section{Machine Learning and Statistical Pattern Recognition}
 
