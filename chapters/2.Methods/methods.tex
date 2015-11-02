@@ -472,6 +472,26 @@ taxonomic distribution of \textit{Paramecium} green algal endosymbionts (see \re
 % Under 50M reads bfc is best, more than 50M seecer is better and if research is sensitive to erroneous correction Lighter is best \citep{Macmanes2015}
 % Seecer developed explicitly for RNA-Seq
 
+%There are many available tools for read-trimming (as discussed in the Methods Chapter),
+%and a range of trimming tools were initially
+%considered: specifically Trimmomatic \citep{Bolger2014a}, Sickle \citep{JoshiGitHub}, FASTX-toolkit \citep{gordon2010fastx},
+%PRINSEQ \citep{Schmieder2011} and cutadapt \citep{martin2011cutadapt}. 
+%Despite Sickle, an adaptive quality trimmer, having previously been used in single-cell transcriptome datasets 
+%from free-living eukaryotes \citep{Kolisko2014}, it proved suboptimal as it was
+%not capable of removing 5' or 3' contaminants such as sequencing adapters and/or multiplexing tags by itself.  
+%These stages could be achieved with individual tools (such as Skewer \citep{Jiang2014}, 
+%TagDust \citep{Lassmann2009} and Scythe \citep{Buffalo}) but this was rejected as it was
+%deemed a needless complication.  Furthermore, Sickle proved to be relatively poorly documented
+%as a tool.   As for other trimming tools, they mostly have  
+%been found to largely perform equivalently across multiple RNA-Seq and DNA-Seq datasets and applications 
+%(see File S2 \citep{DelFabbro2013}).  Additionally, cutadapt requires either manual repair of 
+%paired read correspondence or discards all reads that are unpaired after trimming. It also requires
+%use of ancillary shell scripting to input all desired adapter sequences from a sequencing service
+%provided adapter fasta file.  Similarly, neither PRINSEQ or FASTX are competent to trim paired-end datasets 
+%natively requiring work-arounds to retain pairing fidelity.
+%Therefore, due to its advantages of maintaing read-pair correspondence during trimming, 
+%optimisation for Illumina datasets, adapter trimming functionality and thorough documentation
+%Trimmomatic \citep{Bolger2014a} proved the preferred trimming tool for this analysis.
 
 % Cluster kmers - then mininmise size of kmers clusters: kmer-spectra, suffic array, MSA, and HMM
 % Methods reviewed here \citep{Molnar2014}

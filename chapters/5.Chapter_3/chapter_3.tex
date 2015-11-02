@@ -103,7 +103,55 @@ and Coccoymxa C-169 predicted proteomes the following process was used:
         \item Those hits were parsed for those which shared a PFAM domain with TCDB proteins
 \end{enumerate}
 
+\subsection{Quantification}
+
+
+
 \section{Discussion}
+
+\subsection{Quantification in MDA}
+\\
+
+
+%Titrating ERCC spike-ins to level of single cell 
+%It has become an increasingly established methodology to add RNA of known concentrations
+%to extractions before library preparation to aid quantification
+%and normalisation in downstream analysis. 
+%Unforunately, there are no established methods for synthetic RNA spike-ins
+%of known RNA concentrations (e.g. ERCC RNA standards \citep{Jiang2011}) with MDA
+%sc-RNAseq. Specifically, standards would need to be carefully titrated to appropriate
+%concentrations for single cell methods or they would overwhelm sequencing 
+
+
+%therefore no such spike-ins were added. 
+
+%    \item Just use SCT for transcript quantification i.e. map the SCT reads to a bulk derived \textit{de novo} assembly to generate counts (and is there a severe bias induced 
+%        by the MDA amplification \citep{Liang2014}?)
+%\end{itemize}  <>++
+%However, MDA is prone to a degree of amplification bias \citep{Liang2014} which may be problematic in accurate inference of differential expression
+%therefore, the suitability of MDA-based scRNA-Seq in particular will also need to be assessed.
+%The only other published analysis of \textit{Paramecium bursaria} and its green algal endosymbionts by \citep{Kodama2014} largely
+%side-stepped this issue by focussing on the analysis of host transcripts with and without the endosymbiont by filtering
+%likely endosymbiont derived contigs from analysis using a crude MEGABLAST \(e^{-40}\) approach.
+%Studies in related ciliates have demonstrated a high prevalence of alternative splicing events (5.2\% of genes in \textit{Tetrahymena
+%    thermophila} for a single celled eukaryote \citep{Xiong2012}
+%This paper also demonstrated the huge dynamic range of expression (and thus necessity of RNA-Seq over microarray approaches) in \textit{T. thermophila})
+%with approximately 6 order of magnitude range \citep{Xiong2012}
+%However, as both target species - host and endosymbiont are eukaryotes the complication of mRNA enrichment 
+%is simplified due to the sufficiency of poly-A selection for this task (instead of rRNA depletion methods)
+%Determining the necessary sequencing depth is also difficult.
+%First achieved in \citep{Lao2009}
+
+
+
+SPIKEINS - needed to control statistical noise Kim2015
+
+chimera analysis
+
+
+MDA has amplification bias with GC content - problem for PbMr \citep{Macaulay2014}
+
+
 
 \section{Conclusion}
 
