@@ -14,7 +14,7 @@ of the green algae and in particular the Chlorellacea
 
 
 \begin{figure}[h]
-    \includegraphics[width=\textwidth]{its2_schematic.pdf}
+    \includegraphics[width=\textwidth]{ITS_schematic.pdf}
     \caption{Structure of Eukaryotic nuclear ribosomal DNA.
         rRNA genes exist in tandem repeats separated by nontranscribed spacers (NTS).
         pre-rRNA contain 
@@ -216,11 +216,46 @@ Assemblies were compared using QUAST.
 
 
 
-Metagenomic contigs were then clustered by coverage
-and composition using the single cell metagenomic binner CONCOCT.
 
 
-Map reads from individual assemblies back
+Contigs were subsequently cut into 10kb fragments for consistency
+in binning and taxonomic assignment.
+Reads were mapped back onto the final assembly using Bowtie2 
+\citep{Langmead2012} 
+
+Using the metagenomic binning tool, CONCOCT \citep{Alneberg2014}
+contigs were binned into clusters based on sequence composition
+and coverage features (derived from mapping data).
+Coverage features were derived from a coverage and linkage table
+generated via CONCOCT scripts built around BEDTools \citep{Quinlan2010,Quinlan2014}, Picard \url{http://broadinstitute.github.io/picard/} 
+and Samtools \citep{Li2009} 
+based parsing
+of the bowtie2 alignment files.
+
+Clustering was conducted using a Gaussian Mixture Model (GMM) \citep{Bishop2006}
+and the number of clusters determined through variational Bayesian inference \citep{Corduneanu2001}.
+
+All CONCOCT analyses were completed using a provided pre-configured 
+Docker Image \citep{Merkel2014}, a form of lightweight 
+distributable process isolation container.
+This was downloaded from DockerHub \url{https://hub.docker.com/r/binpro/concoct/}
+on 2015-10-25.
+
+
+
+Additionally, the cut contigs were taxonomically assigned 
+using TAXAssign \url{https://github.com/umerijaz/TAXAassign} against the NCBI nt database. 
+
+The BLAST database was downloaded using update\_blastdb.pl script \url{http://www.ncbi.nlm.nih.gov/blast/docs/update_blastdb.pl}
+and TAXAssign was run in parallel (using GNU parallel \citep{Tange2011a})
+with a maximum of 10 reference matches
+per contig a minimum percentage identity for assignment
+to a given taxonomic level of 60, 70, 80, 95, 95, and 97
+for Phylum, Class, Order, Family, Genus and Species respectively. 
+
+
+CONCOCT clusters were then evaluated using the taxonomic assignments from TAXAssign
+using the provided ``validate.pl'' script.
 
 
 
@@ -248,11 +283,116 @@ All assembled contigs from final transcriptome assembly (see \ref{chap:})
 
 
 \subsection{Assembly}
-\subsubsection{Comparisons}
+
+\subsubsection{Binning}
+
+CONCOCT
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{CONCOCT_clusters.pdf}
+	\caption{A low dimensional Principal Component representation of genomic contig
+		cluster assignments.  Clusters are assigned via a Gaussian Mixture Model (GMM) 
+		based on sequence compositional and coverage features as implemented in CONCOCT.
+		Unfortunately, as can be observed clusters are both poorly distinguished even
+		in the dimensions of the 2 principal components (PCA1 and PCA2) and are numerous (34). 
+	\label{fig:concoct_clusters}
+\end{figure}
+
+
+TAXAssign assigned 3,037 labels to the 11,757 contigs. 
+\begin{table}
+	\begin{tabular}{r | l c |}
+\textbf{Source Group} & \textbf{Number of Contigs} & \textbf{Phylum-Level Breakdown} \\
+\hline
+\textbf{Host} & 13 & Intramacronucleata\\
+- & 2  & Apicomplexa\\
+- & 1  & Colponemidia \\
+\hline 
+\textbf{Endosymbiont} & 12 & Chlorophyta\\
+- &  12 & Streptophyta\\
+- &  1 & Cyanobacteria\\
+\hline
+\textbf{Bacterial Contamination} & 16230 & Proteobacteria \\
+- & 468 & Firmicutes\\
+- & 329 & Actinobacteria\\
+- & 128 & Bacteroidetes/Chlorobi group\\
+- & 1 & Deinococcus-Thermus\\
+\hline
+\textbf{Eukaryotic Contamination} & 605 & Ascomycota \\
+ - & 380 & Chordata\\
+ - & 74 & Arthropoda \\
+ - & 12 & Basidiomycota\\
+- & 7  & Nematoda \\
+- & 1 & Platyhelminthes\\
+- & 1 & Cnidaria\\
+\hline
+\textbf{Unknown} & 540 & Unclassified \\
+\hline
+	\end{tabular}
+	\caption{Summary of taxonomic assignments via TAXAassign grouped into putative ``source groups'' reflecting
+		the most probable source of 10kb chunked contigs of that specific taxonomic provenance.  Of note, is the disproportionate
+		number of contigs from contaminating sources. Specifically, }
+	\label{}
+\end{table}
+
+
+    
+
+Clusters were additionally validated by comparison to taxonomically BLASTN
+assigned contig labels.    
+
+
+
+11,757 contigs with 3,3037 were clustered into 34 unique clusters.
+When these clusters were compared with a ``ground-truth'' from
+the taxonomic assignment of clusters 
+
+\begin{table}
+	\begin{tabular}{| c || c | c |}
+		 - & Positive & Negative \\
+		 \hline
+		 \hline
+		True  &  Contigs with same taxonomic assignment are assigned to the same cluster  & Contigs with different taxonomic assignments are assigned to different clusters\\
+		False &  Contigs with different taxonomic assignments are assigned to the same cluster  & Contigs with the same taxonomic assignment are assigned to different clusters \\
+	\end{tabular}
+	\caption{A contextual explanation of True and False Positive and Negatives in the context of contig binning/clustering.  Top left indicates what a
+		True Positive (TP) means in this context, bottom left a False Positive (FP).  Similarly Top Right explains a True Negative (TN) and Bottom Right a
+		False Negative (FN)}
+	\label{tab:cluster_outcome_explanation}
+\end{table}
+
+
+Recall that Precision and Recall can be defined as follows:
+\[Precision = \frac{TP){TP+FP}
+Recall=\frac{TP}{TP+FN}\] 
+where \(TP\) are True Positives and \(FP\) and \(FN\) are False Positives
+and Negatives respectively (see \cref{tab:cluster_outcome_explanation} for an 
+explanation of what these terms mean in the context of clustering).
+
+CONCOCT assigned clusters were relatively precise \(0.912608\) 
+therefore there were relatively few \(FP\) i.e. the majority of clusters 
+contained contigs with the same taxonomic assignments. 
+
+However, recall was relatively poor \(0.542250\) suggesting a
+fair number of FN i.e. contigs with the same taxonomic assignments
+were not confined to a single cluster and were spread over main clusters.
+
+The \(F_1\)\footnote{\(F_1 = 2 * \frac{precision * recall)}{[precision + recall]}\)} score for CONCOCT 
+clustering was therefore \(0.680389\) under the, slightly flawed, assumption that 
+TAXAssign represents the ground-truth.
+
+It is also worth noting that the 34 clusters had a relatively high level of mutual information
+(Normalised Mutual Information of \(0.332022\) and a Rand Index of \(0.499741\)) suggesting
+many small but highly similar clusters were created.  This level of similarity combined
+with the poor recall suggests a greater number of clusters were necessarily present in the
+ground-truth.
+
 \subsection{Elimination}
 \subsubsection{Paraquat}
 \subsubsection{Cyclohexamide}
 \subsubsection{Darkness}
+
+
 
 
 

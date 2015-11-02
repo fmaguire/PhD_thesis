@@ -35,7 +35,7 @@
 % Typesetting
 \RequirePackage{url}
 \RequirePackage{hyperref}
-\RequirePackage{cleverref}
+\RequirePackage{cleveref}
 \hypersetup{
 	linktocpage,
     colorlinks,
