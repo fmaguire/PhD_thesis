@@ -491,7 +491,8 @@ This greatly reduced redundancy in the later binning analyses.
 
 \subsubsection{Initial BLAST based bins}
 
-Initially, 10,000 randomly chosen, translated transcripts were binned into their predicted source - 
+Initially, 10,000 randomly chosen, translated transcripts from an earlier iteration
+of the assembly process were binned into their predicted source - 
 Host (H), Endosymbiont (E), Food (F) and Unknown (U).  
 
 %Unknown but likely Host (U(H)), Endosymbiont (E), Unknown but likely Endosymbiont (U(E)), Food (F), Unknown but likely Food (U(F)), and
@@ -638,8 +639,8 @@ Specifically, if \(\gamma(x,y)\) is the phylogenetic distance between the termin
 represents the look-up filters and returns the label of the terminal node \(x\) e.g. ``host''.
 and \(\delta_{ij}\) is the Kronecker delta\footnote{
 	\(\delta_ij = \begin{cases}
-	1 & if i = j\\
-	0 & if \neq j 
+	1, &  i = j\\
+	0, & i \neq j 
 	\end{cases} \)}, then for a phylogeny \(A\):
 \begin{center}
 	\[
@@ -1663,7 +1664,7 @@ low-level sequencing error.
 
 It should be noted that the digitally normalised and K-mer abundance filtered assemblies also
 incorporated more bases overall than the equivalent assembly using the full
-libraries therefore resultant assemblies were just high confidence (and likelihood)
+libraries therefore resultant assemblies were just high confidence (and li elihood)
 subsets of the initial input data.
 
 One factor that has not been adequately analysed in the context of this work
@@ -1756,19 +1757,23 @@ High throughput phylogeny generation, parsing and supervised classification is
 a more sensitive and powerful way in which to bin transcripts into their likely originating
 organisms provided a reasonable level of \textit{a priori} knowledge of the system at hand.
 This demonstrably operates better than established although simpler approaches such as
-TAXAssign or top BLAST hit.
+TAXAssign or top BLAST hit.  While, classification accuracy (and F-1) is sub-optimal 
+for ``Food'' and ``Unknown'' bins it (\cref{tab:classification_report}) a decent level of 
+precision and recall for the target bins of ``Host'' and ``Endosymbiont''.
 
 However, this classification
 is still a work in progress and could potentially be improved by the 
 addition of anomaly detection in place of the catch-all (and subsequently poorly classified)
-``Unknown'' classes.
-Furthermore, careful application of unsupervised clustering pre-training could potentially
+``Unknown'' classes.  Furthermore, there are several potential possible improvements
+in the classification itself that could be made.
+Specifically, unsupervised clustering pre-training could potentially
 forgo the need for laborious manual generation of the training dataset and minimise 
 the difficulties in handling these aberrant phylogenies.
-Additional improvements worth of further consideration include attempting an
-AutoML bagging estimator such as one of those implemented in the AutoML project. 
-Similarly, a variational autoencoder pre-processing following by a deep neural network classifier
-or a Gaussian process based system could also potentially improve classification.
+An AutoML bagging estimator such as one of those implemented in the AutoML project \citep{Eggensperger2013}, a variational autoencoder pre-processing following by a deep neural network classifier or using a phylogeny specific kernel function \citep{Vert2002} in a Gaussian process or
+SVM system all offer potential algorithmic improvements.
+Finally, incorporation of additional sequence related features such as
+K-mer coverage and composition into each samples may help greatly improve
+the fidelity of classification.
 
 \section{Conclusion}
 In conclusion, for this dataset the optimal pre-processing

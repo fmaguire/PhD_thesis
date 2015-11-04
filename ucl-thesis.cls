@@ -62,7 +62,7 @@
 
 \onehalfspacing
 
-% Font
+% Font\documentclass{a4}
 \RequirePackage{microtype}
 \RequirePackage[LY1,T1,EU1]{fontenc}
 \RequirePackage{fontspec,xltxtra,xunicode}
