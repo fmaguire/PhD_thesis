@@ -4,9 +4,11 @@
 "even after the observation of the frequent or constant conjunction of objects, we have no reason to draw any inference concerning any object beyond those of which we have had experience;"
 \qauthor{- David Hume: \textit{A Treastie of Human Nature, 1738}}
 \end{savequote}
-%compare average transcript terminal coverage
 
 \chapter{Transcriptomic analysis of the \textit{Paramecium bursaria} and \textit{Micractinium reisseri} endosymbiosis}
+
+%%%% INCORPORATE UPDATED CLEANED ML SHIT (REMOVING SHITTY TRAINING)
+%%%% REDO BINNING ON HMMSCAN AND PFAM ANALYSIS WITH RECALLED ORFS - REMOVING 
 
 \section{Introduction}
 
@@ -475,8 +477,35 @@ produce likelihood scores for various completed assemblies.
 
 \subsubsection{ORF calling}
 
-ORFs were called from assembled transcripts using transdecoder \citep{Haas2013} with 
-a minimum protein size of 30aa.  \textit{Paramecium} uses an alternative
+ORFs were called from assembled transcripts using TransDecoder \citep{Haas2013} with 
+a minimum protein size of 100aa.  
+
+
+TransDecoder operates as follows
+\begin{enumerate}
+    \item All ORFs are found in transcripts by identification of sequences
+        between a start codon and an in-frame stop codon. Partial ORFs are also
+        identified as sequences between the 5' transcript terminus and a stop codon
+        or a start codon and the 3' transcript terminus.
+    \item The top 500 longest of these ORFs was selected and used to train a 
+        reading-frame specific 5th-order Markov model.
+
+
+    \item All of the ORFs were then scored for each reading frame
+        as a sum of the per-base log odd scores
+        (log probability of a given base and reading frame given its preceding
+        5 bases normalised by the relative frequency of that nucleotide
+        across all transcripts).
+    \item The highest scoring reading frame is retained as a candidate
+        
+     \item Any of the initial ORFs with homology to proteins in PFAM and Swissprot (as determined by HMMR
+        and BLASTP (minimum e-value of \(1e^{-5}\))) are also retained.
+\end{enumerate}
+
+
+
+
+\textit{Paramecium} uses an alternative
 genetic code in which two universal stop codons (UAA, UAG) are reassigned to glutamine.
 For the purposes of initial BLAST based binning ORFs were called and translated
 using both universal encoding and this alternative code. However, for 

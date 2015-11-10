@@ -2,9 +2,20 @@
 
 \chapter{Transporters}
 
+http://hallam.microbiology.ubc.ca/MetaPathways/
+
 \section{Introduction}
 
 \section{Aims}
+
+The principal aim of this chapter is to identify
+transporter proteins present in the host and endosymbiont
+binned transcripts from the CCAP1660/12 RNA-Seq analysis,
+a re-assembly of the \citep{Kodama2014c} dataset.
+
+Finally, this will be compared with the 
+endosymbiont 
+
 
 \section{Methods}
 
@@ -26,6 +37,9 @@ were downloaded from JGI's genome portal \citep{Grigoriev2011,Nordberg2014}
 Sequences were derived from endosymbiont binned
 transcripts and annotations as described in \ref{chap:transcriptomics}.
 
+
+
+
 \subsubsection{\textit{Chlorella variabilis 1 N}}
 
 \(232.3M\) 100bp paired-end reads from \citep{Kodama2014}'s 
@@ -38,6 +52,7 @@ These reads were then converted to fastq using ``fastq-dump'' using the SRA Tool
 \citep{NationalCenterforBiotechnologyInformation2011}.  Reads were then trimmed
 for sequencing adapters using ILLUMINACLIP and SLIDINGWINDOW with a window size
 of 4 and a minimum average quality of 30.
+
 
 
 
@@ -69,6 +84,9 @@ DDBJ Sequence Read Archive (DRA) (accession number DRA000907, http://trace.ddbj.
 \subsection{Kodama Assembly}
 
 
+SUMMARY OF KODAMA ASSEMBLY PARAMETERS
+AND BINNING SIZES
+
 
 \subsubsection{Assembly}
 
@@ -84,6 +102,10 @@ Mapping to assembly
 	\label{fig:bridger_bulk_heatmap}
 \end{figure}
 
+
+
+
+\subsection{Kallisto quantification analysis}
 
 
 
