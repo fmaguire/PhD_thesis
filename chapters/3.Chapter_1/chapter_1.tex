@@ -196,34 +196,38 @@ Finally, I will discuss the attempts to remove the endosymbiont in the
 at \(18\celsius\) with 12:12 hour light/dark cycle.  In order to mitigate
 the risk of sequencing free-living algae in the CCAP 1660/13 culture, ITS2
 sequences were acquired from both pure culture samples and carefully purified samples.
-Purification involved successive washing steps of isolated cells in sterile NCL media. 
+Purification involved successive filtering and washing steps of isolated cells in sterile NCL media. 
+Specifically, filtration using a \(10\mu m\) filter, washing off, resuspension and 3 serial subcultures
+in sterile NCL media. 
 
-ITS2 sequences were amplified using ITS2-S2F primer (\(ATGCGATACTTGGTGTGAAT\))
-binding to conserved 5.8S sequences from \citep{Chen2010} and the CHspeHLR1R 
-reverse primer specific to chlorophyte 28S \citep{Hoshina2005} (see \cref{fig:its2_primers})
-
+ITS2 sequences were amplified using 2 pairs of primers: ITS2-S2F primer (\(ATGCGATACTTGGTGTGAAT\))
+binding to conserved 5.8S sequences from \citep{Chen2010} with the CHspeHLR1R (\(CACTAGACTACAATTCGCCAGCC\))
+reverse primer specific to chlorophyte 28S \citep{Hoshina2005} and the ITS4 primer (\(TCCTCCGCTTATTGATATGC\))
+\citep{white1990amplification} (see \cref{fig:its2_primers}).  The reason for the dual primer
+approach was that it was observed in the smaller biological samples created during the cleaning
+process that the ITS2-S2F - CHspeHLR1R primer pair wasn't amplifying ITS2 very efficiently
+therefore the alternate primer pair was used. 
 
 \begin{figure}
     \includegraphics[width=\textwidth]{its2_primers.pdf}
     \caption{Schematic diagram showing the location of the forward (ITS2-S2F) and reverse
-    primer (CHspeHLR1R) used for the amplification of ITS2 sequences in this study}
+    primers (CHspeHLR1R, ITS4-R) used for the amplification of ITS2 sequences in this study.
+    CHspeHLR1R binds within the 28S whereas ITS4-R binds closer to the 5' end of the 28S.  Both
+primer sets recover the full ITS2 sequence.}
     \label{fig:its2_primers}
 \end{figure}
 
-
-PCR conditions used were 94\celsius for 5 minutes followed by
-40 cycles of 30 seconds at \94\celsius, 30 seconds at 56\celsius,
-and 45 seconds at 72\celsius. This was followed by a final
-elongation step of 10 minutes at 72\celsius.
+PCR conditions used were \(94\celsius\) for 5 minutes followed by
+40 cycles of 30 seconds at \(94\celsius\), 30 seconds at \(56\celsius\),
+and 45 seconds at \(72\celsius\). This was followed by a final
+elongation step of 10 minutes at \(72\celsius\).
 
 PCR products were then cleaned up, cloned, sequenced
 and processed using the same protocol as \citep{Maguire2014a}.
 Briefly, the successfully amplified PCR products were gel-purified 
 (Wizard SV Gel and PCR Clean-Up kit, Promega).
 These products were then TA-cloned 
-using Agilent's PCR StrataClone Cloning Kit in a PSC-A-amp/kan
-vector.
-Successful clones were blue-white screened and 5 clones
+using Agilent's PCR StrataClone Cl e-white screened and 5 clones
 selected for each PCR product.  
 Clones were then externally Sanger sequenced using the M13Rev primer
 at MWG Eurofins. 
@@ -233,9 +237,10 @@ using Sequencher \citep{Sequencher}.
 
 From the 3 \textit{Paramecium bursaria} CCAP 1660/12 biological replicates
 14, 9, and 11 ITS2 sequences were obtained respectively.
-Similarly, from the \textit{Paramecium bursaria} CCAP 1660/13 biological replicates
-8 were obtained from sequences obtained from the culture directly, and 10 
-from the purified, washed samples. 
+Similarly, from the 2 \textit{Paramecium bursaria} CCAP 1660/13 biological replicates
+8 were obtained from sequences obtained from the culture directly, and 10
+from the purified, washed samples (7 using ITS2-S2F-ITS4 primers and 3 using
+ITS2-CHspe). 
 
 In order to mitigate the risk of sequencing error masquerading
 as true sequence divergene any sequences found in later phylogenetic
@@ -244,9 +249,6 @@ of its clade placement was resequenced at MWG Eurofins in reverse
 using M13Uni.  Specifically, these were ITS-B18,
 ITS-2, ITS-19, ITS-B6, ITS-B3, ITS-A7, ITS-6, ITS-B15,
 ITS-10, ITS-9, ITS-15, and ITS-1.
-If the reverse sequencing didn't demonstrate the same polymorphism as
-the original forward sequencing it was considered to be a likely 
-sequencing error artefact and the divergent sequence was removed. 
 
 %\subsubsection{18S Sequence determination}
 %
@@ -329,7 +331,8 @@ of data:
 The following assemblers were used:
 \begin{itemize}
     \item SPAdes assembler \citep{Bankevich2012,Nurk2013}
-    \item SPades assembler with autocoverage thresholding 
+    \item SPades assembler with ``careful'' thresholding (runs MismatchCorrector and minimises the risk 
+        of indels)
     \item MEGAHIT \citep{Li2015a}
     \item Platanus \citep{Kajitani2014}
 %    \item SOAPdenovo2 \citep{Luo2012}
@@ -433,7 +436,35 @@ form clonal populations.}
 \end{figure}
 
 There are a variety of SNPs but never more than a single SNP difference from the basal \textit{M. reisseri}
-polytomy. 
+polytomy.  These SNPs were grouped into 3 categories: 4 different SNPs that were not found in the
+reverse complement and therefore represent likely sequencing error (1660-13-purified-K4, K8, K6 and K7),
+3 different SNPs that were found in both forward and reverse sequencing (1660-12-B6, 1660-12-19 and 1660-12-18) and therefore
+represent either true diversity or PCR error and finally 1 SNP that was found in 
+forward and reverse sequencing and in two separate PCR reactions from different biological replicates (1660-12-A7 and 1660-12-6).
+This featured a single base change from A to G (see \cref{fig:its2_snp}) at position 126 in the full masked alignment. 
+
+\begin{figure}
+    \includegraphics[width=\textwidth]{its_snp.pdf}
+    \caption{Alignment showing the sole SNP (at pos 126 in masked ITS2 alignment)
+        that is likely to represent true diversity.  This indicates that the endosymbiont
+    population is largely clonal with a small marginally divergent sub-population that has possibly
+arisen during the endosymbiosis itself.}
+    \label{fig:its2_snp}
+\end{figure}
+
+With the exception of these SNPs these sequences were identical to 3 from previously sequenced \textit{M. reisseri} endosymbionts, 
+specifically CCAP 211/83 culture with \textit{P. bursaria} Pbi host (AB206547.1), the SW1-ZK symbiont from a \textit{P. bursaria} PB-SW1 host (AB506070.1),
+and TP-2008b from the SAG241.80 culture (FM205851.1) (see \cref{fig:its2_phylo}).
+
+This polytomy as the sister clade to other \textit{Micractinium pusillum} 
+taxa was highly supported in both ML and Bayesian phylogenies (91.3\% of 
+bootstraps and with a posterior probability of 1.00).
+There was similarly high support for the separate branching of these sequences
+from the clade containing the \textit{C. variabilis} and \textit{C. vulgaris} 
+endosymbionts (\(87.3\%/1.00\)) and the existence of a clade comprising these 3
+endosymbionts to the exclusion of any \textit{Coccomyxa} sequences was well supported
+(\(89.3\%/0.95\). 
+
 
 \subsection{Single Cell Genomes}
 
@@ -463,66 +494,100 @@ libraries comprised \(1.538\cdot10^{8}\) reads.
 
 \subsubsection{Assembly}
 
-%Spades Q5 assembly
-%
-%\begin{table}
-%\begin{tabular}{|l*{4}{|r}|}
-%\hline
-%Assembly & scaffolds broken & scaffolds & contigs broken & contigs \\ \hline
-%\# contigs ($\geq$ 0 bp) & 93950 & {\bf 92720} & 94384 & 94384 \\ \hline
-%\# contigs ($\geq$ 1000 bp) & 12293 & {\bf 11913} & 12614 & 12614 \\ \hline
-%Total length ($\geq$ 0 bp) & 81560052 & {\bf 81653830} & 81478234 & 81478234 \\ \hline
-%Total length ($\geq$ 1000 bp) & 58290298 & {\bf 58754139} & 58162565 & 58162565 \\ \hline
-%\# contigs & 23762 & {\bf 23105} & 24109 & 24109 \\ \hline
-%Largest contig & 209873 & 209873 & 209873 & 209873 \\ \hline
-%Total length & 66173340 & {\bf 66443935} & 66064486 & 66064486 \\ \hline
-%GC (\%) & 39.26 & 39.27 & 39.27 & 39.27 \\ \hline
-%N50 & 6638 & {\bf 7117} & 6334 & 6334 \\ \hline
-%N75 & 2232 & {\bf 2411} & 2188 & 2188 \\ \hline
-%L50 & 2090 & {\bf 1983} & 2241 & 2241 \\ \hline
-%L75 & 6426 & {\bf 6047} & 6716 & 6716 \\ \hline
-%\# N's per 100 kbp & 0.93 & 141.64 & {\bf 0.00} & {\bf 0.00} \\ \hline
-%\end{tabular}
-%\caption{Spades Q5 assembly 
-%All statistics are based on contigs of size $\geq$ 501 bp, unless otherwise noted (e.g., "\# contigs ($\geq$ 0 bp)" and "Total length ($\geq$ 0 bp)" include all contigs).}
-%\end{table}
-%
-%
-%Q30
-%\begin{table}[ht]
-%\begin{center}
-%\caption{All statistics are based on contigs of size $\geq$ 500 bp, unless otherwise noted (e.g., "\# contigs ($\geq$ 0 bp)" and "Total length ($\geq$ 0 bp)" include all contigs).}
-%\begin{tabular}{|l*{4}{|r}|}
-%\hline
-%Assembly & scaffolds broken & scaffolds & contigs broken & contigs \\ \hline
-%\# contigs ($\geq$ 0 bp) & 63564 & {\bf 62206} & 63988 & 63988 \\ \hline
-%\# contigs ($\geq$ 1000 bp) & 10586 & {\bf 10248} & 10904 & 10904 \\ \hline
-%Total length ($\geq$ 0 bp) & 71270129 & {\bf 71368673} & 71140856 & 71140856 \\ \hline
-%Total length ($\geq$ 1000 bp) & 52808893 & {\bf 53313949} & 52634874 & 52634874 \\ \hline
-%\# contigs & 20742 & {\bf 20156} & 21090 & 21090 \\ \hline
-%Largest contig & 207157 & 207157 & 207157 & 207157 \\ \hline
-%Total length & 59773468 & {\bf 60110566} & 59620558 & 59620558 \\ \hline
-%GC (\%) & 37.85 & 37.89 & 37.85 & 37.85 \\ \hline
-%N50 & 7562 & {\bf 7995} & 7163 & 7163 \\ \hline
-%N75 & 2351 & {\bf 2560} & 2277 & 2277 \\ \hline
-%L50 & 1606 & {\bf 1520} & 1765 & 1765 \\ \hline
-%L75 & 5266 & {\bf 4936} & 5552 & 5552 \\ \hline
-%\# N's per 100 kbp & 1.03 & 163.99 & {\bf 0.00} & {\bf 0.00} \\ \hline
-%\end{tabular}
-%\end{center}
-%\end{table}
-%
+Assemblies were compared using generated contigs and QUAST.
+Assembly statistics were tabulated to allow comparison (\cref{tab:genome_ass_comparison}).
+As we are interested in recapitulating as much genomic sequence as possible
+from this complex metagenome but not necessarily to generate ``clean''
+polished closed genome assemblies, the fact that the Q30-SPAdes assembly
+generated both the longest total assembly (over twice the size of the nearest
+assembly even when considering only contigs over 1kbp) as well
+as the highest N50 and within 2kbp of the longest contig of all assemblies (generated
+by Q5-SPAdes) was compelling. 
 
+Generally, the SPAdes assemblers out-performed Platanus and MegaHit, likely due to 
+being specifically designed for MDA based data.  Note, that all assemblies 
+were completed with BayesHammer corrected reads so the difference in perfomance
+cannot be attributed to this aspect of the assembly pipeline.
 
+\begin{table}
+\begin{tabular}{|l*{5}{|r}|}
+\hline
+Assembly & Q30-MegaHit & Q30-Platanus & Q30-SPAdes-Careful & Q30-SPAdes & Q5-SPAdes \\ \hline
+\# contigs ($\geq$ 0 bp) & 131057 & {\bf 25789} & 73698 & 127976 & 94384 \\ \hline
+\# contigs ($\geq$ 1000 bp) & 14960 & {\bf 486} & 13301 & 21808 & 12614 \\ \hline
+Total length ($\geq$ 0 bp) & 73350696 & 6289036 & 73691706 & {\bf 142281712} & 81478234 \\ \hline
+Total length ($\geq$ 1000 bp) & 28064499 & 2191750 & 52704642 & {\bf 105269748} & 58162565 \\ \hline
+\# contigs & 41221 & {\bf 776} & 24923 & 42180 & 24109 \\ \hline
+Largest contig & 13847 & 78624 & 207156 & 207157 & {\bf 209873} \\ \hline
+Total length & 46095605 & 2398106 & 60731204 & {\bf 119241116} & 66064486 \\ \hline
+GC (\%) & 38.81 & 33.68 & 37.78 & 37.85 & 39.27 \\ \hline
+N50 & 1246 & 6386 & 4949 & {\bf 7163} & 6334 \\ \hline
+N75 & 769 & {\bf 2875} & 1845 & 2277 & 2188 \\ \hline
+L50 & 10444 & {\bf 112} & 2937 & 3530 & 2241 \\ \hline
+L75 & 22405 & {\bf 249} & 7974 & 11103 & 6716 \\ \hline
 
+\end{tabular}
+\caption{Assembly statistics generated by an analysis of contigs using QUAST. Best values are highlighted in bold.
+All statistics are based on contigs of size $\geq$ 500 bp, unless otherwise noted (e.g., "\# contigs ($\geq$ 0 bp)" and "Total length ($\geq$ 0 bp)" include all contigs).
+N50 and N75 are the minimum contig length at which all contigs of that length are larger comprise 50\% and 75\% of the total assembly size. Similarly, L50 and L75 
+are the number of contigs that are summed for a given N50 and N75 (i.e. lower is better). 
+This table shows that Q30 Platanus assembly generated the fewest and longest contigs overall, however the Q30-SPAdes assembly generated the longest
+assembly by a considerable margin with the highest N50.  The Q5 SPAdes assembly generated the longest single contig.
+}
+\label{tab:genome_ass_comparison}
+\end{table}
 
+Plots of assembly GC (\cref{fig:assemb_gc}), cumulative length (\cref{fig:assemb_len})
+further support Q30-SPAdes as both the longest assembly
+but an assembly with similar GC profile to the other assemblies and contig length distribution.
+Finally, the plot of Xs indicates that Q30-SPAdes isn't merely a highly gapped
+assembly (\cref{fig:assemb_nx}).
+
+\begin{figure}
+    \includegraphics[width=\textwidth]{assemb_gc.pdf}
+    \caption{GC densities of the compared genome assemblies.  As expected
+        all display a clear peak around \(30\%\) representing that the majority
+    of the assemblies by length contigs are likely to be derived from the GC rich.
+The height of the Q30-SPAdes peak reflects the relative size of this assembly.
+Peaks around \(50\%\) GC may reflect endosymbiont contigs and possibly
+bacterial contamination.}
+    \label{fig:assemb_gc}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[width=\textwidth]{assemb_cum_len.pdf}
+    \caption{The cumulative length of contigs as a function of
+        contig number.  Again, this plot reflects
+        that Q30-SPades generated the largest assembly
+        by a considerable margin and while generating
+        clean consistent contigs Platanus failed to recover
+    many contigs found in other assemblies.}
+    \label{fig:assemb_len}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[width=\textwidth]{assemb_nx.pdf}
+    \caption{The number of X (i.e. gap) in the assembled contigs as a function of their
+        length.  This demonstrated that generally few Xs were assembled - however, it should 
+        be noted that these are contigs and not assembly scaffolds and thus fewer Xs
+    would be expected.}
+    \label{fig:assemb_nx}
+\end{figure}
+
+Therefore, Q30-SPAdes assembly was selected for further analysis
+and size filtered to exclude all contigs shorter than 500bp 
+to give 21,090 contigs. 
 
 \subsubsection{Binning}
 
-TAXAssign assigned 3,037 labels to the 11,757 contigs (see \cref{tab:genome_taxassign}). 
+From the selected Q30-SPAdes assembly, the 21,090 contigs
+were cut to 10kb fragments for decomposition to generate 64,852 contigs. 
+18,277 of these 64,852 contigs were successfully given a
+phylum level assignment, \cref{tab:genome_taxassign}.
 
 \begin{table}
-	\begin{tabular}{r | l c |}
+	\begin{tabular}{| r | l c |}
+\hline
 \textbf{Source Group} & \textbf{Number of Contigs} & \textbf{Phylum-Level Breakdown} \\
 \hline
 \textbf{Host} & 13 & Intramacronucleata\\
@@ -557,8 +622,10 @@ TAXAssign assigned 3,037 labels to the 11,757 contigs (see \cref{tab:genome_taxa
 	\label{tab:genome_taxassign}
 \end{table}
 
-Clusters were additionally validated by comparison to taxonomically BLASTN
-assigned contig labels.    
+Contigs were clustered into 34 unique clusters by Concoct.
+These taxonomic assignments were then used to validate the 34 contig cluters 
+generated in Concoct (visualised in \cref{fig:concoct_clusters}) by considering them
+as the ``ground-truth''.
 
 \begin{figure}
 	\includegraphics[width=\textwidth]{CONCOCT_clusters.pdf}
@@ -566,23 +633,24 @@ assigned contig labels.
 		cluster assignments.  Clusters are assigned via a Gaussian Mixture Model (GMM) 
 		based on sequence compositional and coverage features as implemented in CONCOCT.
 		Unfortunately, as can be observed clusters are both poorly distinguished even
-		in the dimensions of the 2 principal components (PCA1 and PCA2) and are numerous (34)..
+		in the dimensions of the 2 principal components (PCA1 and PCA2) and are numerous (34).
     This figure highlights how poorly resolved and noisy the decompositon of this single cell
     metagenome.}
 	\label{fig:concoct_clusters}
 \end{figure}
 
-11,757 contigs with 3,3037 were clustered into 34 unique clusters.
-When these clusters were compared with a ``ground-truth'' from
-the taxonomic assignment of clusters 
-
 \begin{table}
-    \begin{tabular}{| c || p{3cm} | p{3cm} |}
+    \begin{tabular}{| c || c | c |}
+    	\hline
 		 - & Positive & Negative \\
 		 \hline
 		 \hline
-		True  &  Contigs with same taxonomic assignment are assigned to the same cluster  & Contigs with different taxonomic assignments are assigned to different clusters\\
-		False &  Contigs with different taxonomic assignments are assigned to the same cluster  & Contigs with the same taxonomic assignment are assigned to different clusters \\
+		True  &  Contigs with \textbf{same} taxonomic assignment   & Contigs with \textbf{different} taxonomic assignments \\
+		& are assigned to the \textbf{same} cluster & are assigned to \textbf{different} clusters \\
+		\hline
+		False &  Contigs with \textbf{different} taxonomic assignments  & Contigs with the \textbf{same} taxonomic assignment \\
+		& are assigned to the \textbf{same} cluster & are assigned to \textbf{different} clusters  \\
+		\hline
 	\end{tabular}
 	\caption{A contextual explanation of True and False Positive and Negatives in the context of contig binning/clustering.  Top left indicates what a
 		True Positive (TP) means in this context, bottom left a False Positive (FP).  Similarly Top Right explains a True Negative (TN) and Bottom Right a
@@ -611,8 +679,11 @@ TAXAssign represents the ground-truth.
 It is also worth noting that the 34 clusters had a relatively high level of mutual information
 (Normalised Mutual Information of \(0.332022\) and a Rand Index of \(0.499741\)) suggesting
 many small but highly similar clusters were created.  This level of similarity combined
-with the poor recall suggests a greater number of clusters were necessarily present in the
-ground-truth.
+with the poor recall suggests a greater number of clusters were inferred than was
+present in the taxonomic assignment ground-truth. 
+
+
+
 
 \subsection{Elimination}
 
@@ -636,79 +707,131 @@ However, after 10 weeks the cultures ended up dead.
 
 \section{Discussion}
 
-\subsection{Reliability of Culture Collection}
-
-The clear result is that despite the \textit{Paramecium bursaria} CCAP 1660/13
-supposedly containing a \textit{Coccomyxa} endosymbiont 
-all ITS2 sequences from this culture differeed from the published
-\textit{Coccomyxa} sequence (accession \(AB260896.1\) \citep{Hoshina2008}) and were identical
-to those sequences from the \textit{Paramecium bursaria} CCAP 1660/12 \textit{Micractinium
-reisseri} endosymbiont (see \cref{fig:its2_phylo}). 
-
-Unfortunately, on communication with CCAP it emerged that 
-the CCAP 1660/11 and 1660/12 strains in their collection are no longer available
-and that CCAP 1660/13 had apparently become overgrown by free-living \textit{Coccomyxa}. 
-Therefore it is likely that the previous finding of \textit{Coccomyxa} ``endosymbionts'' in
-CCAP 1660/13 \citep{Hoshina2008} represents accidental contamination and sequencing 
-of the free-living \textit{Coccomyxa} also present in the culture. 
-As CCAP 1660/12 and CCAP 1660/13 cultures
-were isolated from the same
-pond (Cambridge, UK) by CCAP it is perhaps not surprising that they both 
-seem to contain the same \textit{Micractinium
-reisseri} endosymbionts.
-
-This demonstrates the necessity of not taking culture collection labels and taxonomic
-assignments on faith. It is critical to thoroughly determine that all received
-cultures actually contain the organism 
 
 
-The majority of ITS2 based studies make use of the secondary structure (predicted
+\subsection{CCAP 1660/12 and CCAP 1660/13 contain largely clonal \textit{M. reisseri} symbionts}
+
+Phylogenetic analysis demonstrates that the endosymbiont present in the CCAP 1660/12
+and CCAP 1660/13 is \textit{M. reisseri}.  The ITS2 sequences derived from these
+2 cultures across 5 different biological replicates (using both primer sets and with or without 
+extra purification steps to minimise contamination from any algae present in the media) 
+were all identical (with the exception of individual SNPs) 
+to 3 separate previously published \textit{M. reisseri} ITS2 sequences. That this formed
+a well supported clade with other \textit{Micractinium} sequences and was clearly a distinct
+grouping from the other \textit{P. bursaria} endosymbiotic green algal species 
+further supports the identity of the 1660/12 and 1660/13 endosymbionts as \textit{M. reisseri}.
+
+While 8 different SNPs were identified in the ITS2 sequences, these never occurred in the same
+sequence and half are easily attributable to sequencing error as they couldn't be recapitulated
+in reverse sequencing of the same clone.  Of the remaining 4 SNPs that were validated
+as not being sequencing error, only 1 was discovered in separate PCR reactions and biological replicates
+and thus can putatively be attributed to genuine biological diversity and not merely PCR error
+(ITS2-6 and ITS2-A7, A to G transition). Therefore, on the basis of ITS2 sequences
+we cannot say the endosymbionts in CCAP 1660/12 and 1660/13 form a clonal population.
+However, a single SNP in the hypervariable ITS2 region represent very recent and minor
+divergence.  The most likely explanation is that this represents the emergence of a slightly modified
+line of endosymbionts within the clonal endosymbiont population of the CCAP 1660/12 culture.  
+Due to the uniformity of the ITS2 sequences there is no evidence of multi-strain photobiont co-habitation as 
+described by \citep{Hoshina2012}.
+
+It should be noted that the majority of ITS2 based studies make use of the secondary structure (predicted
 using tools such as RNAstructure \citep{Mathews2004}) in inference \citep{Schultz2009}. 
 This increases reliability of phylogenetic inference \citep{Keller2008} allows ITS2 to be used
 to distinguish higher taxonomic levels \citep{Coleman2003}, and plays a role
 in resolving the thorny problem of species determination \citep{Muller2007}. 
 However, as the endosymbiont species ITS2 secondary structures have already been extensively
-investigated (e.g. \citep{Hoshina2008,Hoshina2010}) it was proved an unneccessary 
+investigated (e.g. \citep{Hoshina2008,Hoshina2010}) it was proved as unneccessary 
 in this analysis as at the taxonomic level of the inquiry. 
 
-Finally, the low level of diversity within the ITS2 sequences 
+\subsection{Reliability of Culture Collection}
 
+One clear result and point worth raising is that contrary to previous studies 
+(accession \(AB260896.1\) \citep{Hoshina2008}) and CCAPs culture description 
+CCAP 1660/13 does not contain a \textit{Coccomyxa} endosymbiont and contains 
+an identical \textit{M. reisseri} endosymbiont to the CCAP 1660/12 culture. 
+Unfortunately, on communication with CCAP it emerged that 
+the 1660/12 strains in their collection are no longer available
+and that CCAP 1660/13 had apparently become overgrown by free-living \textit{Coccomyxa}. 
+Therefore it is likely that the previous finding of \textit{Coccomyxa} ``endosymbionts'' in
+CCAP 1660/13 \citep{Hoshina2008} represents accidental contamination and sequencing 
+of the free-living \textit{Coccomyxa} also present in the culture. 
+
+The identical nature of the CCAP 1660/12 and CCAP 1660/13 endosymbioses is perhaps not surprising
+when it is emphasised that these cultures were isolated from the same
+pond (Cambridge, UK) by CCAP. 
+
+This demonstrates the necessity of not taking culture collection labels and taxonomic
+assignments on faith. It is critical to thoroughly determine that all received
+cultures actually contain the organism 
 
 \subsection{MDA metagenomes are non-trivial}
 
-%The evidence shown in the assembly and binning analysis are that
-%assemblies 
-%
-%
-%
-%The biases induced by MDA in single cell genomes are known to be 
-%formation of chimeric sequences and the amplification
-%of undesired contaminant sequences \citep{Binga2008}.
-%Additionally, despite a theoretical basis that
-%the amplification coverage bias should be random \citep{Hosono2003}
-%there is evidence disputing this in practice \citep{Ellegaard2013}.
-%The magnitude of this bias is related to the starting
-%quantity of DNA \citep{Ellegaard2013a}.
-%Fortunately, there does not appear to be any bias
-%related to GC \citep{Ellegaard2013a}.
-%
-%
-%An increase in the number of starting cells to the range of
-%a few hundred to a few thousand bacterial cells
-%improves amplifciation considerably \citep{Ellegaard2013a}
-%
-%
+The biases induced by MDA in single cell genomes are known to be 
+formation of chimeric sequences and the amplification
+of undesired contaminant sequences \citep{Binga2008}.
+Additionally, despite a theoretical basis that
+the amplification coverage bias should be random \citep{Hosono2003}
+there is evidence disputing this in practice \citep{Ellegaard2013}.
+The magnitude of this bias is related to the starting
+quantity of DNA \citep{Ellegaard2013a}.
+Fortunately, there does not appear to be any bias
+related to GC \citep{Ellegaard2013a}.
+An increase in the number of starting cells to the range of
+a few hundred to a few thousand bacterial cells
+improves amplifciation considerably \citep{Ellegaard2013a}. 
+Unfortunately, increasing the number of cells in the case
+of CCAP 1660/12 \textit{P. bursaria} - \textit{M. reisseri} system
+would likely compound issue with bacterial contamination due 
+to both a greater sample volume leading to greater inclusion
+of food bacteria living in the media and an increase in the
+number of partially digested bacterial (and viral) symbionts
+associated with the host. 
 
-%The majority of tools focussing on the analysis
-%and assembly of single cell genomes are fixated
-%on bacterial systems near exclusively. Take for example,
-%automation tools such as SmashCell 
-%The majority of tools focussing on the analysis
-%and assembly of single cell genomes are fixated
-%on bacterial systems near exclusively. Take for example,
-%automation tools such as Son{Diversity of traits in endosymbionts}
+SPAdes, by far, generates the best assemblies of complex
+MDA-based metagenomes of the assembly tools trialled. 
+This cannot be attributed to the effective read error correction
+implemented as part of SPAdes via BayesHammer as all assemblies
+were completed on BayesHammer error corrected reads. The performance
+of SPAdes is likely attributable to 2 factors: it is specifically
+designed to handle MDA-based single cell assemblies and thus is 
+highly tolerant of the coverage variability observed and secondly
+it is the lone genome assembly that effectively utilised
+paired-end data during assembly.  The vast majority of assemblers
+will only utilise this data in ad-hoc post-assembly heuristic operations
+to improve contigs and scaffold the dataset.  On the other hand,
+SPAdes generates the assembly de-Bruijn using siamese retangular
+graphs that incorporate both forward and reverse reads and their 
+respective insert. 
+In future, it may be worth re-analysing this data using
+other MDA-specific tools such as HyDA to assess their performance. 
+
+The relative performance of Q30-SPAdes with and without the ``careful''
+setting is interesting. This setting minimises the risk of mismatch and indels
+found in the assembly.  This led to assembly with statistics relatively similar
+to that of the Q5-SPAdes assembly.   However, on correspondance with the developers
+of SPAdes it emerged that there was a bug in this setting in the version
+of the assembler used within this study leading it to be highly conservative
+and discard many assembled contigs that were unlikely to be mismatches. 
 
 
+Finally, the poor performance of CONCOCT suggests that coverage and composition
+are not effective metrics by which to decompose an MDA-based metagenome
+into constituent ``bins''.  The poor recall and high similarity indices between
+the clusters suggests that a greater number of clusters were inferred than was present
+in the ground truth of the taxonomic assignments.  This likely represents the effect of
+biased amplification in MDA (therefore heterogeneous variable coverage) on
+the variational inference of the number of clusters and the utility of the coverage 
+feature in general.  This means, therefore, in MDA-based metagenomes standard metagenomic
+binning pipelines that are reliant on coverage metrics (even partially as in the case
+of CONCOCT) are not effective. 
+
+This problem is somewhat symptomatic of the current state of the tool ecosystem
+for MDA-based eukaryotic metagenomes. The few MDA-orientated analysis
+tools focus on the assembly of bacterial systems whereas the majority of the metagenomic
+tools are based on features and metrics such as coverage that are only
+consistent in convential non-MDA bulk genomic studies. 
+Ideally, future research will improve the ease of analysis and assembly
+of datasets such as this.
 
 \subsection{Metabolic co-dependence in the CCAP 1660/12 system}
 
@@ -764,7 +887,6 @@ to the free-living \textit{Coccomyxa} sp. that overgrew the culture shortly afte
 was published) then the \textit{M. reisseri} endosymbiont is capable of living without
 the host and is not an obligate endosymbiont despite \textit{P. bursaria} being an obligate host.  
 
-
 \section{Conclusions}
 
 Therefore, on the basis of ITS2 sequencing the CCAP 1660/12 culture endosymbiont is
@@ -776,7 +898,8 @@ the genomes and ITS2 data seem to indicate that this endosymbiont
 forms a clonal or near clonal population within the CCAP 1660/12
 endosymbiont.  At a minimum, a single strain of \textit{M. reisseri} 
 comprises the sole green algal endosymbiont in the CCAP 1660/12
-and 1660/13 cultures. 
+and 1660/13 cultures although it may be actively evolving as evidenced
+by a small divergent sub-population. 
 
 Finally, the \textit{Micractinium reissieri} endosymbiont in cultures CCAP 1660/12 
 CCAP 1660/13 has potentially become metabolically co-dependent with the host.
