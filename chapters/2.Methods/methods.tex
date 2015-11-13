@@ -4,10 +4,9 @@
 % Methods commonly used throughout maybe leaving chapter specific methods to that chapter
 \graphicspath{{chapters/2.Methods/figures/}}
 
-
 \begin{savequote}[75mm]
     Science is what we understand well enough to explain to a computer. Art is everything else we do.
-    \qauthor{- Donald Knuth: foreword to \(A=B\) by Petvosek, Wilf and Zeilberger}
+    \qauthor{- Donald Knuth: \textit{foreword to \(A=B\) by Petvosek, Wilf and Zeilberger}}
 \end{savequote}
 
 \chapter{Methods}
@@ -67,8 +66,8 @@ different subsets of these biomolecules e.g. epigenomics (epigenetic modificatio
 and histone binding), gylcomics (characterisation of cellular saccharides).
 ``Meta-\ldots-omics'' is the application of specific ``omic'' method to a biological sample 
 containing multiple organisms. For example, ``metagenomics'' has been used to investigate
-the cellular community composition of marine micro-eukaryotes \citep{}<++> (BIOMARKS PAPER WHEN PUBLISHED) %BIOMARKS PAPER WHEN PUBLISHED
-or the metatranscriptome of the microbes present in the gut of metazoa \citep{}.
+the cellular community composition of marine micro-eukaryotes \citep{Cuvelier2010}
+and ``metatranscriptomics'' has been used to analyse the transcriptomes of the microbes present in the gut of metazoa \citep{Perez-Cobas2013}.
 
 
 The utility of ``-omic'' approaches is they allow a researcher to characterise a high proportion 
@@ -116,9 +115,9 @@ Specifically, the systems approach should be used to generate novel and interest
 hypotheses which can then be tested in isolation using reductionist methods \citep{Casadevall2008}.  
 For example, ``omics'' methods could be used to create a model of inter-organism host-endosymbiont
 metabolism and targeted approaches such as RNAi could then be used to test hypotheses generated
-by this model i.e. testing that a particular transporter proteinprotein protein protein protein protein protein protein protein  is responsible
+by this model i.e. testing that a particular transporter protein is responsible
 for the transfer of metabolites by knocking out that transporter and observing the resultant phenotype: 
-is the relationship perturbed predictably?
+is the relationship perturbed in a predictable manner.
 
 
 
@@ -276,12 +275,11 @@ is the relationship perturbed predictably?
 
 \subsubsection{DNA sequencing}
 
-In the majority of cases today genomics and transcriptomics are both synonymous with
-the sequencing nucleic acids.  The alternative approaches, based upon the
-hybridisation of DNA and/or RNA to arrays of short probes with known sequences indicated
-using a fluorescent marker e.g. genomic single-nucleotide polymorphism (SNP) tiling arrays 
-and the transcriptomic microarrays, have more limited use.  
-Relative to sequencing-based approaches these methods
+In the majority of cases, genomics and transcriptomics are both synonymous with
+the sequencing nucleic acids. Earlier approaches, based upon the fluorescent
+marking of the hybridisation of DNA and/or RNA to arrays of short complementary probes 
+e.g. genomic tiling arrays and the transcriptome microarrays \citep{Mockler2005}, are of more
+limited utility.   Relative to sequencing-based approaches these methods
 require relatively more prior knowledge of the organism and require a custom array to be
 designed for any novel system. Additionally, while microarrays can determine relative expression levels
 of transcripts by the comparison of the fluorescence intensity at given complementary probe(s)
@@ -296,18 +294,20 @@ diagnostics.
 
 While it is possible to directly sequence RNA transcripts \citep{Ozsolak2009} most approaches first utilise a reverse transcription (RT)
 step to convert transcripts to cDNA. As ribosomal RNA makes up a sizable proportion of RNA in the cell
-it is often necessary to enrich the RNA fraction of choice in order to minimise wasted effort when
-sequencing.  For eukaryotic mRNA enrichment this can be easily achieved by
+it is often necessary to enrich or select the RNA fraction of choice in order to minimise wasted effort when
+sequencing \citep{Wilhelm2009}.  For eukaryotic mRNA enrichment this can be easily achieved by
 using poly-T primers during RT which selectively bind to the poly-adenylated tail of these messenger 
 transcripts.  However, for bacterial/archael work and transcriptomic analyses focussing on non-poly-adenylated
-transcripts such as ncRNAs/siRNAs/miRNAs etc. ribosomal depletion is used.  This is a process by which 
+transcripts such as ncRNAs/siRNAs/miRNAs etc. ribosomal depletion is used \citep{ONeil2013}.  This is a process by which 
 ribosomal probes are attached to magnetic beads. Ribosomal RNAs bind to these probes and the magnetic
-beads can be used to partition the majority of ribosomal sequences away from the other RNA.
+beads can be used to partition the majority of ribosomal sequences away from the other RNA \citep{ONeil2013}.
 This means that transcripts can be sequenced using the same methods and platforms as any other DNA sample with analysis only diverging against post-sequencing.
 It should be noted that there are potential disadvantages to this reverse transcription step and it
 can potentially generate artefacts and biases in the analysis (as well as placing limitations on the quality
 and quantity of input RNA) \citep{Ozsolak2011} however, the advantages of the more developed DNA sequencing technology outweighs these
 disadvantages.
+
+% "as such replication is important" tom note??
 
 
 These DNA sequencing technologies can largely be divided into 3 technological eras with today (2015) 
@@ -327,19 +327,13 @@ This technique was used to sequence the first DNA genome (bacteriophage \(\phi X
 The methodology was subsequently improved by use of fluorescently labelled ddNTPs by Leroy Hood,
 massively simplifying automation of the process \citep{Smith1985,Smith1986}.
 Further improvements followed throughout the 1990s and early 2000s such as capillary electrophoresis
-and other general throughput and length enhancements.  One of the most successful commercial 
-Sanger sequencing platforms is that of highly automated 96-reaction Applied Biosystem's 3730XL capillary sequencer \citep{Bonetta2006}.
+and other general throughput and length enhancements \citep{Bonetta2006}.
 Transcriptomic analysis was possible using Sanger sequencing by generating clone libraries from partial or complete cDNA and randomly sequencing
 clones \citep{Adams1991,Gerhard2004}.  However, while this did allow resolution of different isoforms and could be used to aid annotation \citep{Adams1991}
 it was not possible to investigate relative expression levels beyond a broad identification of highly expressed transcripts based on the 
 proportion of the cDNA/EST library they made up.
-Additionally, scaling 1st generation methods to whole eukaryotic genomes or transcriptomes 
-rapidly became infeasible for most research projects. The scale necessary in the human genome project \citep{Lander2001,Venter2001} is testament to that 
-(20 public centers in 6 countries \citep{Collins2003} and \(\$70m\) \citep{Pettersson2009}).  
-Regardless, Sanger sequencing remains the gold standard for cheap, rapid, high quality \(300-1000bp\) sequencing and 
-is widely used to determine or confirm the sequence of specific DNA fragments such as vectors or PCR products \citep{Bonetta2006,Tsiatis2010}.  
-Higly accurate 99.999\% 
-
+Sanger sequencing's main utility lies in high quality short fragment (\(300-1000bp\)) sequencing to determine or confirm the sequence 
+of specific DNA fragments such as vectors or PCR products \citep{Bonetta2006,Tsiatis2010}.  
 
 
 2nd generation sequencing emerged commercially in 2005 with the work
@@ -396,13 +390,10 @@ in the same reaction (e.g. flowcell lane for Illumina platforms) by adding an in
 preparation.  These tags can then be used to partition the reads back to their original separate samples
 after sequencing. 
 
-
-The currently dominant 2nd generation technology is that of Illumina's platforms \citep{Regalado2014}, the less cumbersome bridge amplification \citep{Shendure2008} 
-has allowed Illumina to capitalise on outstripping competition in terms of throughput.
-The HiSeq2500 is by far the highest throughput individual platform (not counting the multi-machine HiSeqX's) and is capable of generating up to 
-400M 125bp reads per run (1TBase of data) \citep{Nederbragt2013}.
-Illumina's platforms are estimated to generate 90\% of all sequenced DNA data as of 2014 \citep{Regalado2014}.
-The typical error rate of the Illumina platform is between 1-3\% \citep{Wang2012}
+The current \textit{de facto} standard in 2nd generation sequencing is that of the bridge amplification
+based \citep{Shendure2008} Illumina platforms \citep{Regalado2014} due to relatively low error rate (\(\leq0.1\%\) \citep{Glenn2011}),
+very high throughput (e.g. HiSeq2500 generates up to 400M 125bp reads per run (1TBase of data) \citep{Nederbragt2013})
+and the lowest cost per Mb (\(\leq$0.04\) \citep{Glenn2011}).
 
 
 Finally, 3rd generation technologies are generally known as single-molecule sequencing.
@@ -410,12 +401,12 @@ These platforms sequence individual DNA (or RNA molecules \citep{Ozsolak2009}) w
 bias and error-prone amplification. 
 The first 3rd generation platform was that of the now defunct Helicos Bioscience's Helicoscope \citep{Harris2008}
 based on breakthroughs in the resolution of fluoresence visualiation using paired FRET methods \citep{Braslavsky2003}.
-There is only one mature commercial platform currently operating: Pacific Biosciences PacBio RS platform. PacBio operates on a similar principal
+There is only one publically available platform: Pacific Biosciences (PacBio) RS platform. PacBio operates on a similar principal
 of sequencing-by-synthesis as the 2nd generation platforms but uses fixed polymerases at the base
 of specially wave-guide structures allowing the detection of fluorescence from a single reaction
 instead of many parallel reactions in a clonal cluster.  This produces few (compared to 2nd generation 
 platforms) long (20kb and longer) reads but has a high cost and high error rate (14\%) \citep{Jaszczyszyn2014}
-Another platform, currently in public testing, Oxford Nanopore's MinIon, reads individual strands of DNA through an array of 
+Another platform, currently in testing, Oxford Nanopore's MinIon, reads individual strands of DNA through an array of 
 pore proteins and determines the sequence at each pore based on the physical
 properties (impedance) of a particular set of bases.
 
@@ -427,7 +418,7 @@ properties (impedance) of a particular set of bases.
 Unfortunately, partly as an element of their relatively nascent state and partly due to the
 poorer signal:noise of single molecule approaches compared to analysing large 
 batches of identical DNA sequences, 3rd generation technologies have a relatively high error rate.
-Thus, currently at least, are generally inadequate for most eukaryotic assembly tasks in and of themselves.
+Thus are generally inadequate for most eukaryotic assembly tasks in and of themselves.
 Where they have shown great utility is in conjunction with 2nd generation datasets
 as a scaffolding tool i.e. producing long noisy reads upon which more accurate but shorter
 reads can be assembled.
@@ -906,7 +897,7 @@ a transcript is true if
 
 \section{Machine Learning and Statistical Pattern Recognition}
 
-Machine learning (ML) is a field of computer science 
+Machine learning is a field of computer science 
 devoted to the challenge of developing and applying algorithms capable of 
 automatically inferring and utilising patterns in data \citep{Murphy2012}.
 A commonly used formal definition of machine learning:
@@ -921,17 +912,18 @@ which are capable of beating human-performance on complex image classification t
 (e.g. IMAGENET \citep{Berg2014,He2015}).
 
 Typically, we seek to set the parameters (\theta) of a function in such a way
-that another property is minimised.  For example, in linear regression we try to find 
+that another property is minimised.  For example, in linear regression the aim is to find 
 parameters of a straight line \(h_{theta}(x) = \theta_{0} + \theta_{1} * x_{1}\) which minimise the distance
 between the line and the data (for example, the sum of squares distance).
-This distance/error is calculated using something known as the cost function e.g. \(J(\theta) = \frac{1}{2} \sum^{m}_{i=1} (h_{\theta}(x_{i}) - y_{i})^2\) (where \(m\) is the number of \(x, y\) pairs in the dataset for linear regression.  
+This distance/error is calculated using something known as the cost function e.g. \(J(\theta) = \frac{1}{2} \sum^{m}_{i=1} (h_{\theta}(x_{i}) - y_{i})^2\) 
+(where \(m\) is the number of \(x, y\) pairs in the dataset for linear regression).
 Most algorithms will seek to minimise the value of this cost function \(J(\theta)\) with respect to 
 the parameters of the original function \(h_{theta}(x)\).  Typically, this is achieved using a variety of algorithmic optimisation techniques.
 The most prevalent of these are gradient descent based methods in which the value of \theta is modified 
 in the direction of the gradient of the cost function (determined using the partial derivative of \(J\) with respect to \theta: \(\frac{\partial J_{\theta}}{\partial\theta}\)).  
 
 
-In an ideal world, the best ML model trained using our data will generalise well for novel data generated from the same underlying process
+In an ideal world, the best machine learning model trained using our data will generalise well for novel data generated from the same underlying process
 which generated the training data.  This is known as generalisability and it plays into the concept of `fit'.  A model that minimises 
 its particular cost function on the training dataset has been fit to that dataset, however, it is possible to for the model to fit the training
 data in such a way that it has low error on the training data but performs incredibly poorly when applied to new data from the same process.
@@ -940,12 +932,12 @@ high degree polynomial.  This polynomial will perfectly pass through all the poi
 of some new data than a much simpler model that while it fits the original training data, may not fit quite as well.  Likewise, a model that is misspecified
 or cannot fit the training data well e.g. the training data follows a non-linear distribution but the model is linear, is known as underfitted.
 Underfitted models will perform poorly on both the training and test data.  However, it isn't particularly useful to only discover
-how useful your model is likely to be on the test data therefore almost all ML analyses will use the principal of cross-validation.
+how useful your model is likely to be on the test data therefore almost all machine learning analyses will use the principal of cross-validation.
 Cross-validation is the partitioning of the training dataset to create a validation dataset which can be used as a proxy test set.
 
 Unfortunately, no single model will perform best for all tasks (to paraphrase and simplify Wolpert and McCreedy's ``No Free Lunch Theorem'' \citep{Wolpert1996}),
 there are no shortcuts in machine learning (and many other areas) or optimisation.  Therefore, testing different models (and hyperparameter values) using
-cross-validation is key to generating a useful ML model.  Another important way to prevent overfitting is to introduce regularisation in the cost function, in other
+cross-validation is key to generating a useful model.  Another important way to prevent overfitting is to introduce regularisation in the cost function, in other
 words a term which penalises model complexity.
 
 %Generally, our functional approximation is probablistic - it will return the most
@@ -1000,7 +992,7 @@ In supervised (also referred to as predictive) learning the principal aim is
 to learn a mapping between inputs/features \(x\) and outputs/response \(y\) from a set of 
 inputs and their corresponding expected output.  This is known as the training set 
 i.e. \(\mathcal{D} = {(x_{i}, y_{i}) \forall i \in N}\) where \(N\) is 
-the cardinality of the training set \citep{Murphy2012}.  
+the cardinality (size) of the training set \citep{Murphy2012}.  
 A supervised learning algorithm thus seeks to approximate \(y=f(x)\) where \(f\) is an unknown 
 function. This estimated function \(\hat{y} = \hat{f}(x)\) (see \ref{eq:sup}) would then generally
 be applied to new data known as the test data for which the expected outputs are not known (i.e. 
@@ -1071,7 +1063,7 @@ by the defeat of SVMs by the LeNet on the MNIST digit recognition dataset \citep
 The goal of SVMs is to learn a hyperplane which separates two sets of labels in the dataset. Note, for multiclass classification a series of one-vs-all
 classifiers are typically trained (that is for \(K\) classes, \(K\) SVMs are trained each classifying between a label \(k\) and all other labels).
 However, not all possible hyperplanes that could separate the labels will necessarily generalise well to novel data (and this generalisation
-is the ultimate goal of supervised ML).  Therefore, it is necessary to determine a way to select the hyperplane which should generalise best and to do
+is the ultimate goal of supervised learning).  Therefore, it is necessary to determine a way to select the hyperplane which should generalise best and to do
 this in a manner that will be relatively efficient especially with high dimension datasets.  This optimal hyperplane for separable classes can be demonstrated to be
 the hyperplane which maximise the margin between the two classes \citep{vapnik1982estimation} in other words, the optimal boundary is the one that has the largest
 possible distance from each class (while still separating them).  Conceptually, the positioning of this boundary is only dependent
@@ -1275,8 +1267,14 @@ with different initialisations.
 
 \begin{figure}[h]
     \includegraphics[width=\textwidth]{knn.pdf}
-    \caption{Demonstration of the KNN algorithm applying 3 rounds of Expectation-Maximisation (labelled
-    1a,2a,3a, and 1b,2b,3b respectively) }
+    \caption{Demonstration of the K-means algorithm applying 3 rounds of Expectation-Maximisation to cluster
+        a group of 2 dimensional samples.  The 3 cluster centroids (represented by coloured rectangles) 
+        are randomly initialised in 0 before undergoing 3 rounds of EM.  
+        This involves the successive assignment of samples to their nearest centroids (1a, 2a, 3a) 
+and then the movement of the centroids to the center of the points currently assigned to that centroid (1b, 2b, 3b).
+Assignment of a given sample to a centroid is indicated by a shared colouring and centroid relocation by
+an arrow with a faded version showing the initial location.
+}
     \label{fig:knn}
 \end{figure}
 
@@ -1308,7 +1306,8 @@ with different initialisations.
 
 %Molecular phylogenetics brought a degree of statistical objectivity to philosophical principles of Willi Hennig's cladistics \citep{Felsenstein2001}
 
-Phylogenetics is an effective tool to investigate the evolutionary ancestry of biological sequence data.
+Phylogenetics is an effective tool (if there is sufficient signal/resolution) 
+to investigate the evolutionary ancestry of biological sequence data.
 It can be used to identify how closely related a given pair of sequences are, as
 well as indicate what the sequence most likely looked like in a shared common
 ancestor (ancestral node reconstruction). Phylogenetic methods also allow estimation
@@ -1321,12 +1320,12 @@ potential horizontal gene transfer events between host and endosymbiont by searc
 gene/transcript phylogenies that have an incongruent branching pattern
 compared to established species trees.  Finally, it can be used to aid identification of the putative function 
 of novel transcripts by comparison to other transcripts of known function 
-from databases such as genbank.
+from databases such as genbank. 
 
 
 Phylogenetics can be defined as a means of arranging a set of character sequences into an optimal hierarchial
 branching tree structure reflecting some measure of relatedness 
-between the sequences (and occasionally other criteria). Usually, these trees will have variable
+between the sequences. Usually, these trees will have variable
 branch lengths that are product of a measure of divergence between the connected nodes.
 
 Typically, these sequences take the form of protein or DNA sequences\footnote{
@@ -1348,7 +1347,7 @@ However, the key stages in a phylogenetic analysis are that of sequence sampling
 sequences for inclusion in the analysis),  alignment (in which homologous sites in the sampled sequences are aligned with one another),
  masking (in which sites which are evolutionarily informative – can be determined to be homologous 
      but also non-invariant are selected), model selection (in which the best fitting
- evolutionary model is selected) and finally, phylogenetic reconstruction (in which the tree
+ evolutionary model is selected or calculated) and finally, phylogenetic reconstruction (in which the tree
  is generated that minimises some measure e.g. most likely tree for probabilistic models or 
  least distance).
 
@@ -1516,7 +1515,7 @@ a target sequence database with our query sequence.
 %Best approach is supermatrix with a model that incoprotates rate heterogeneity \citep{Ren2009}
 %
 
-\subsection{Multiple Sequence Alignment}
+\subsection{Multiple Sequence Alignment (MSA)}
 
 The goal of MSA is to align sets sequences such that 
 evolutionarily homologous residues occupy the same column. In other words,
@@ -1529,8 +1528,8 @@ This is a non-trivial computational problem which has been proven to have an NP-
 \footnote{A decision problem for which an answer can be verified in polynomial time 
     by a non-deterministic turing machine and to and from which any NP-hard problem
     can be translated \citep{Karp1972}.} computational complexity \citep{Wang1994}.
-Specifically, the optimal alignment of N sequences has a complexity of \( O(L^{N}) \)
-for \( N\) sequences of length \( L \)\citep{Sievers2011}.
+Specifically, the optimal alignment of N sequences has a complexity of \(O(L^{N})\)
+for \(N\) sequences of length \( L \)\citep{Sievers2011}.
 
 Due to this complexity, the majority of MSA algorithms implement heuristic approaches
 in order to get, if not the optimal solution, but a sufficiently good one in a reasonable
@@ -1565,7 +1564,7 @@ each pair of sequences. From this matrix a ``guide-tree'' is generated using sim
 neighbour-joining methods (in which a tree is built by recursively clustering
 the least dissimilar sequences \citep{Saitou1987}).  Sequences are then progressively
 aligned using their branching order within this guide-tree \citep{Thompson1994}..
-This drastically reduces the \[O(L^{N})\] complexity to approximately \[O(N^{2})\]
+This drastically reduces the \(O(L^{N})\) complexity to approximately \(O(N^{2})\)
 \citep{Sievers2011}. While there have been various improvements and alternative approaches
 created such as merging both local and global alignment \citep{Notredame2000}, 
 rapid identification of homologous regions using Fast Fourier Transforms \citep{Katoh2002},
@@ -1584,7 +1583,17 @@ i.e. BALI-phy \citep{Suchard2006}, however, it is still far too
 slow a process to infer phylogenies in this manner on large or even moderate datasets.
 Therefore, for now, independent MSA estimation is here to stay, at least until
 computational resources and algorithmic development has continued until these more
-theoretically satisfying approaches become feasible.
+theoretically satisfying approaches become feasible.  
+
+Therefore, throughout this thesis, two progressive/iterative alignment tools will be used:
+Kalign2 \citep{Lassmann2005,Lassmann2009} for high-throughput analyses and iteratively refined 
+MAFFT7 \citep{Katoh2002,Katoh2005,Katoh2013} for individual accuracy critical phylogenetic analyses. 
+Kalign is a very high-speed and relatively accurate \citep{Thompson2011} progessive alignment tool that uses
+an efficient and fast Wu-Manber approximate string-matching algorithm to calculate sequence distances
+\citep{Lassmann2005}.  MAFFT, with iterative refinement, is a relatively slow but highly accurate
+MSA alignment method \citep{Thompson2011} that incorporates all pairwise alignment information when refining
+instead of using heuristics to approximate pairwise sequence differences like most approaches.
+
 
 
 %\begin{figure}
@@ -1609,8 +1618,14 @@ that column to be found in multiple different MSAs.
 These criteria can then be used to mask out certain columns based on certain
 thresholds and trade-offs between the length of the alignment and inclusion
 of low-scoring columns.  
-Trimal is an example of a tool that automates the masking process
-using this sort of methodology \citep{Capella-Gutierrez2009}
+TrimAL is an example of a tool that automates the masking process
+using this sort of methodology \citep{Capella-Gutierrez2009}.  
+
+Similarly to MSA, for high-throughput analyses I will use TrimAL 
+whereas for individual accuracy critical analyses masking will be done
+manually using the graphical tool Seaview \citep{Gouy2010}.
+
+
 
 
 \subsection{Substitution model selection}
@@ -1689,7 +1704,10 @@ a narrow distribution for datasets with low rate heterogeneity \citep{Yang1993}.
 For reasons of computational efficiency \(\Gamma\) is typically approximated as a discrete distribution of 4 to 8 
 categories of equal probability \citep{Yang1994a}. 
 A more limited version of this is the invariant sites model in which sites are divided into 2 classes, one considered invariable while the 
-other has normal substitution rates applied \citep{Hasegawa1985}.
+other has normal substitution rates applied\footnote{
+    This can also be used with \(\Gamma\) and is approximately equivalent
+to the addition of another discrete \(\Gamma\) category}\citep{Hasegawa1985}.
+
 
 
 Unfortunately, these models still assume other model parameters namely the equilibrium frequencies and relative rates are the same across
@@ -1721,16 +1739,29 @@ is determined at each site \citep{Zhou2010}
 
 Generally, simpler models such as the ``null'' parsimony model or basic models
 that don't account for complex evolutionary phenomena are more susceptible to
-artefacts such as LBA \citep{Yang1996}.  However, in the grand tradition of
+artefacts such as long-branch attraction (LBA)\footnote{
+    LBA is a distorting effect in which long branches (rapidly diverging)
+    are incorrectly placed close to one another regardless of actual shared
+    homology.  This is due to the increased chance of rapidly diverging sequences
+to share independently acquired residues \citep{Bergsten2005}}
+\citep{Yang1996}.
+
+However, in the grand tradition of
 ``no-free lunch'', there is no universally best model for all datasets.
 Therefore, it is necessary to test multiple competing models using a provided
 MSA.  Typically, these models are then compared for their fit to the observed
-data using information criterion such as Akaike's (AIC) which assess
-fit while penalising model complexity in a standard regularisation trade-off.
-These model selection processes have been automated in tools such as ProtTest  
-\citep{Abascal2005}
-%Review of model selection \citep{Sullivan2005}
+data using information criterion \citep{Sullivan2005} such as Akaike's (AIC) which assess
+fit while penalising model complexity in a standard regularisation trade-off 
+(\(AIC=2k-2ln(L)\) where \(k\) is the number of parameters and \(L\) the 
+model likelihood \citep{Akaike1974}).  Other criteria include corrected AIC \citep{sugiura1978further},
+Bayesian Information Criteria \citep{Schwarz1978} and Decision Theoretic criteria \citep{Minin2003} 
+based approaches \citep{Sullivan2005}.
 
+Throughout this thesis, I will use 2 tools which incorporate these various criteria
+to infer the best fitting model depending on the input data. 
+ProtTest3 \citep{Abascal2005,Darriba2011a} will used for analyses 
+involving protein sequences and jModelTest2 \citep{Posada2008,Darriba2012} for
+phylogenetic inference of DNA datasets.
 
 \subsection{Phylogenetic inference}
 
@@ -1775,23 +1806,21 @@ informative for generation of a parsimony tree.
 It has no explicit assumptions relative to other methods however, this means it is difficult to build in 
 prior knowledge of sequence evolution when generating a tree.
 It also fails when multiple substitutions have occurred at the same site or with parallel changes in two long branches 
-and therefore is especially prone to long-branch attraction.
-\citep{Felsenstein1978}
+and therefore is especially prone to long-branch attraction
+\citep{Felsenstein1978}.
 Prestige of parsimony methods declined with discoveries that they can produce statistically inconsistent
 phylogenies \citep{Felsenstein2001}
 
-
-In order to get an estimate for the robustness of a particular phylogenetic
-inference, the masked alignment can be repeatedly resampled with replacement
-and phylogenies regenerated.  This generates a variance estimate for the 
-phylogenetic inference error \citep{Felsenstein1985}.
 A majority consensus tree will typically be presented with each node
 annotated with the number of bootstrapped trees that supported its existence.
 
 \subsubsection{Maximum likelihood}
 
-Maximum likelihood methods seek to discover the maximum-likelihood estimates (MLEs) of the tree parameters (topology, branch length and usually substitution model parameters)
-for the data. These MLEs are estimated numerically using standard iterative optimisation algorithms.
+Maximum likelihood (ML) methods seek to discover the maximum-likelihood estimates (MLEs) of the tree parameters 
+(topology \(\tau\), branch length \(\theta_l\) and usually substitution model parameters \(\theta_\mu\))
+for the data i.e. MLE of \(L(\tau, \theta_l, \theta_\mu)\). 
+
+These MLEs are estimated numerically using standard iterative optimisation algorithms.
 They were developed relatively early in molecular phylogenetics using relatively
 simple models \citep{neyman1971molecular} but more efficient implementations e.g. \citep{Felsenstein1981}
 and increased computational power has made them one of the more popular means
@@ -1815,29 +1844,59 @@ for many pathological data features (heterotachy, state and rate heterogeneity w
 %LRTs can examine fit for evolutionary models: \(2ln(\frac{L_{1}}{L_{0}})\) \citep{Goldman1987}
 Unfortunately, ML inference is also relatively slow to calculate especially in comparison to distance methods.
 
+In order to get an estimate for the robustness of a particular phylogenetic ML
+inference, the masked alignment can be repeatedly resampled (boostrap samples)
+with replacement and phylogenies regenerated.  Each node can then be scored
+based on the proportion of these boostrap samples in which it is recapitulated \citep{Felsenstein1985}. 
+A similar approach, known as jackknifing,
+uses random subsets of the alignment instead of samples \citep{Miller1974,Lapointe1994}.
+Finally, approximate likelihood-ratio tests (aLRT) can be used on branches
+to give support values by comparing the likelihood of existence of a given
+branch compared to its non-existences \citep{Anisimova2006}.
+There is considerable literature evaluating the pros and cons
+ of different support schemes. However, bootstrap supports are the 
+ \textit{de facto} method of inferring a variance of 
+phylogenetic error \citep{Stamatakis2008} as they are both simple and conservative (but are 
+computationally expensive) \citep{Anisimova2006}.  
+It should be noted that all of the above methods of determining phylogenetic robustness
+can be applied to distance and parsimony methods as well.
+
+In this work, for high-throughput analyses FastTree2 was due to its considerable 
+greater speed relative to ML inference tools \citep{Price2009,Price2010}.  For individual
+phylogenetic analyses ML trees were inferred using RAxML8 \citep{Stamatakis2014} and non-rapid
+bootstrap supports.
 
 \subsubsection{Bayesian}
 
 Bayesian inference is, as the name suggests, based on the Baye's theorem.
-\(p(\theta | D) = \frac{p(\theta)p(D|\theta)}{p(D)}\)
-with \(p(\theta)\) being the prior probability for model parameters (topology, branch length, substitution model)
-\(p(D|\theta)\) being the likelihood of the data given a certain set of parameters with \(p(D)\) as the marginal 
+\(p(\tau, \theta_l, \theta_\mu)| D) = \frac{p(\tau, \theta_l, \theta_\mu)p(D|\tau, \theta_l, \theta_\mu)}{p(D)}\)
+with \(p(\tau, \theta_l, \theta_\mu)\)
+being the prior probability for model parameters (topology \(\tau\), branch length \(\theta_l\), substitution model \(\theta_\mu\))
+\(p(D|\tau, \theta_l, \theta_\mu)\)
+being the likelihood of the data given a certain set of parameters with \(p(D)\) as the marginal 
 probability.
 
 Due to the computational difficulty directly calculating the marginal likelihood 
 (integrated over all possible parameter values in all dimensions) phylogenetic inference uses 
-a process known as Monte-Carlo Markov-Chains to sequentially randomly sample
+a process known as Monte-Carlo Markov-Chains (MCMC) to sequentially randomly sample
 the posterior probability distribution.  Conceptually, these can be considered
 as random walkers on the probability distribution that are more likely to accept
 new movements that increase likelihood than decrease.
 
-An advantage of Bayesian inference is that the posterior probability of a given
+An advantage of Bayesian inference is that the posterior probability (PP) of a given
 node means ``support'' values are built-in to the inference and additional
 bootstrapping is unnecessary.  Unfortunately, posterior probabilities are
-sensitive to model violations and have been found to not be very conservative estimators.
+sensitive to model violations and have been found to not be very conservative estimators
+\citep{Simmons2003} (although again there has been considerable work comparing
+Bootstraps to PP \citep{Anisimova2006}).
 Additionally, the prior distribution in Bayesian Inference allows information
 that is already known about the dataset to effectively built-in to the inference
 potentially improving phylogenetic accuracy.
+
+All in-depth individual phylogenetic analyses presented in this thesis
+were inferred using both Bayesian (via MrBayes3 \citep{Huelsenbeck2001,Ronquist2003a,Ronquist2012})
+and ML methods.  Phylogenies are then presented with both PP and bootstrap
+support values on each node inferred using both methodologies. 
 
 
 \section{Informatics languages and hardware}
