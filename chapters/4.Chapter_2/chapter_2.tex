@@ -53,7 +53,7 @@ and assembly methods to mitigate these complications.
 These difficulties are compounded by the lack of available reference genomes for either \textit{Paramecium bursaria} or \textit{Micractinium reisseri} and thus necessitating \textit{de novo} transcriptome assembly.
 However, the utility of sequenced genomes from divergent ciliate species 
 (i.e. \textit{Tetrahymena thermophila} \citep{Eisen2006}, \textit{Paramecium tetraurelia} \citep{Aury2006} and \textit{Paramecium caudatum}
-\citep{McGrath2014}) and green algae \textit{Chlorella variabilis} NC64A \citep{Blanc2010} and \textit{Coccomyxa subellipsoidea} C-169 \citep{Blanc2012}
+\citep{McGrath2014}) and endosymbiotic green algae \textit{Chlorella variabilis} NC64A \citep{Blanc2010} and \textit{Coccomyxa subellipsoidea} C-169 \citep{Blanc2012}
 (see \cref{fig:paramecium_genomes} in the Introductory Chapter and \cref{fig:chlorella_genomes} in Chapter 1 for respective phylogenetic context of these genomes) as references for assembly was investigated.
 It should also be noted that the existing \textit{Paramecium bursaria} \citep{Kodama2014}, 
 \textit{Paramecium duboscqui} \citep{Kolisko2014} and
@@ -112,7 +112,7 @@ been independently verified.
 Briefly, this method involves the ligation of reverse transcribed cDNAs using oligo-dT primers (after lysis and 
 removal of gDNA) before MDA by a \(\phi29\) DNA polymerase with a 5'-3' exonuclease proofreading activity 
 (reducing error-rate of amplification to \(9.5\cdot10^{-6}\) errors per nucleotide \citep{Paez2004} compared with
-\(10^{-4}-10^{-5}\) for Taq \citep{Tindall1988,Eckert1990}) \citep{Korfhage2015}.
+\(10^{-4}\) to \(10^{-5}\) for Taq \citep{Tindall1988,Eckert1990}) \citep{Korfhage2015}.
 
 
 
@@ -166,9 +166,11 @@ In order to lyse collected samples, cells were washed from the filter or the
 pellet was resuspended in 1ml TriReagent (Sigma) heated to \(60\)\celsius. 
 Cells were vortexed with sterile \(300\mu m\) glass-beads for 15s, incubated at 
 room temperature for 10 minute, vortexed for 15s, quick-frozen in liquid 
-nitrogen and stored at \(-20\)\celsius before further processing.  
+nitrogen and stored at \(-20\celsius\)
+before further processing.  
 Samples were defrosted, vortexed for 15s, placed in a heat-block set 
-to \(60\)\celsius for 10 minutes while continuing to be vortexed, removed from 
+to \(60\celsius\) 
+for 10 minutes while continuing to be vortexed, removed from 
 heating and vortexed again for 15s.  
 RNA was extracted by adding 0.2ml of Chloroform to the glass-bead-trizol-sample 
 solution, shaking for 15s, incubating for 5 minutes at room temperature and 
@@ -177,7 +179,8 @@ The upper-phase was then transferred to an RNAse-free 1.5ml tube and an
 equal volume (\(\sim0.5ml\)) of isopropanol was added before shaking for 15s.  
 The isolated RNA was then incubated at \(-20\)\celsius for 10 minutes 
 (up to several hours) before being collected as a pellet using a centrifuge at 
-10,000g for 10 minutes at 4\celsius (supernatant was discarded). 
+10,000g for 10 minutes at \(4\celsius\)
+(supernatant was discarded). 
 The RNA pellet was then washed with 1ml of 75\% ethanol and centrifuged 
 twice at 10,000g for 10 minutes at 4\celsius with the supernatant being 
 discarded after each centrifugation.  
@@ -295,7 +298,7 @@ Trimmomatic \citep{Bolger2014a} to assess the impact trimming has on this profil
 Taxonomic profiles were additionally visualised in Krona \citep{Ondov2011} using
 the tabular BLAST hit import functionality.
 
-Scripts used to conduct this are available in the following github repository:\\
+Scripts used to conduct this analysis are available in the following github repository:\\
 \url{https://github.com/fmaguire/dueydrop}
 
 To determine how representative profiles created using small subsamples 
@@ -429,7 +432,7 @@ and assembly parameters.
 
 Firstly, trimmed bulk and taxonomically filtered single cell libraries
 were mapped to \textit{Chlorella} NC64A, \textit{Coccomyxa C169}, 
-\textit{Tetrahymena thermophila} and \textit{Paramecium caudatum} MAC genomes.
+\textit{Tetrahymena thermophila} and \textit{Paramecium caudatum} macronuclear (MAC) genomes.
 The former pair being the closest available genomes to the endosymbiont and the latter to the host.
 Mapping was done using the TopHat2 spliced aligner \citep{Kim2013} against
 the genomes and was supplemented with and without annotated ORF information (in the form of gtf).
@@ -652,7 +655,7 @@ manually verified phylogenetic bins from the initial BLAST based binning
 and analysis were used as a training dataset for supervised classification.
 
 The supervised classification was implemented in a script called ``Arboretum''
-The cardinalities of each label in training set was relatively balanced (all within
+The cardinalities of each label in training set was relatively balanced (i.e. all within
 the same order of magnitude) 1975 endosymbiont phylogenies, 2600 host, 3456 food, and 1969
 unknown. 
 
@@ -667,7 +670,7 @@ of the nearest branches that have been identified as being indicative of a certa
 Specifically, if \(\gamma(x,y)\) is the phylogenetic distance between the terminal nodes \(x\) and \(y\), \(\psi(x)\) 
 represents the look-up filters and returns the label of the terminal node \(x\) e.g. ``host''.
 and \(\delta_{ij}\) is the Kronecker delta\footnote{
-	\(\delta_ij = \begin{cases}
+    \(\delta_{ij}= \begin{cases}
 	1, &  i = j\\
 	0, & i \neq j 
 	\end{cases} \)}, then for a phylogeny \(A\):
@@ -738,8 +741,13 @@ of sequenced relatives of both host and endosymbiont).
 \begin{figure}[h]
     \includegraphics[width=\textwidth]{raw_lib_gc_prop.pdf}
     \caption{Probability densities of per-read GC proportions for the raw data (apart from pre-trimmed bulk explained previously)
-        from each sequenced library 
+        from each sequenced library.
         Densities were derived using Kernel Density Estimation implemented in Seaborn. 
+        Dark 1 (Dark1-2, Dark1-3, and Dark1-5) and Light 1 (Light1-9, Light1-10, Light1-11) 
+        were sc-RNAseq from the first round of SCTs sampled during the mid-dark and light 
+        culture phases.  Similarly, Dark 2 (Dark2-2, Dark2-3, Dark2-6, Dark2-7, Dark2-8)
+        were the libraries sampled in the dark from the second round of SCT.  Bulk1 and Bulk2
+        are the bulk RNAseq libraries sequenced under lit and dark conditions. 
         The bulk and single cell light libraries demonstrate similar shaped distributions
         although the bulk has a greater proportion of low GC\% reads potentially representing
         more \textit{Paramecium} derived data. All single cell dark libraries 
@@ -769,10 +777,12 @@ in bulk libraries relative to single cell libraries.
 \begin{figure}[h]
 	\centering
     \includegraphics{kodama_gc_prop.pdf}
-    \caption{Probability density of the per-read GC proportion for raw data derived from
-    \citep{Kodama2014} transcriptome analysis of a different \textit{P. bursaria} species
-with and without its endosymbiont. This dataset displays densities relatively similar
-to the bulk RNAseq conducted in this project - "Trimmed Bulk Libraries in \cref{fig:gc_prop_raw}}
+    \caption{Probability density of the per-read GC proportion for 6 raw libraries derived from
+        \citep{Kodama2014} transcriptome analysis of a different \textit{P. bursaria} species (Yad1g)
+        with and without its \textit{Chlorella variabilis} 1N endosymbiont. Individual libraries are indicated 
+        in the key using their DDBJ accession.        
+        This dataset displays densities relatively similar
+to the bulk RNAseq conducted in this project - ``Trimmed Bulk Libraries'' in \cref{fig:gc_prop_raw}.}
     \label{fig:gc_prop_kodama}
 \end{figure}
 
@@ -787,8 +797,9 @@ identical to that of the raw reads \cref{fig:gc_prop_raw}.
              To ensure probability densities estimated in \cref{fig:gc_prop_raw}
          weren't biased by low quality ambiguous reads the same analysis was
      repeated using reads trimmed using a sliding window approach with a stringent average
- quality threshold of Q30.  In all cases the densities produced appear near identical to
- the analysis of the raw data}
+ quality threshold of Q30.  
+ In all cases the densities produced appear near identical to
+ the analysis of the raw data.}
     \label{fig:gc_prop_q30}
 \end{figure}
 
@@ -804,35 +815,36 @@ in paired-end Illumina sequencing.
 \begin{table}[h]
      \begin{tabularx}{\textwidth}{|l||l|l|l|l|l|l|l|}
          \hline
-         \textbf{SCT Library} & \textit{\textbf{PE}}          & \textbf{Eukaryote} & \textbf{Bacteria} & \textbf{Alveolate} & \textbf{Viridiplantae} &  & \textbf{Total Hits} \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
+         \textbf{SCT Library} & \textit{\textbf{PE}}          & \textbf{Eukaryote} & \textbf{Bacteria} & \textbf{Alveolate} & \textbf{Viridiplantae} &  & \textbf{Total Hits} \\ 
          \hline
-         \textit{Light1-9}    & \textit{R1}                   & 51.89 +/- 0.45     & 9.37 +/- 0.26     & 25.15 +/-  0.71    & 7.45 +/- 0.33          &  & 69.49 +/- 0.37      \\ \cmidrule(lr){2-2}
-                              & \textit{R2}                   & 51.75 +/- 0.25     & 8.82 +/- 0.24     & 24.85 +/- 0.56     & 7.49 +/- 0.21          &  & 68.75 +/- 0.29      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
-         \textit{Light1-10}   & \textit{R1}                   & 46.35 +/- 0.56     & 15.72 +/- 0.46    & 22.96 +/- 0.24     & 6.94 +/- 0.26          &  & 68.73 +/- 0.30      \\ \cmidrule(lr){2-2}
-                              & \textit{R2}                   & 46.12 +/- 0.83     & 15.14 +/- 0.48    & 23.13 +/- 0.38     & 6.99 +/- 0.37          &  & 68.73 +/- 0.30      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
-         \textit{Light1-11}   & \textit{R1}                   & 58.28 +/- 0.47     & 3.62 +/- 0.12     & 28.68 +/- 0.43     & 8.20 +/- 0.40          &  & 71.38 +/- 0.49      \\ \cmidrule(lr){2-2}
-                              & \textit{R2}                   & 57.74 +/- 0.27     & 3.50 +/- 0.10     & 28.23 +/- 0.36     & 8.41 +/- 0.31          &  & 70.42 +/- 0.20      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
-         \textit{Dark1-2}     & \textit{R1}                   & 28.64 +/- 0.51     & 22.88 +/- 0.61    & 12.23 +/- 0.28     & 4.93 +/- 0.19          &  & 60.31 +/- 0.49      \\ \cmidrule(lr){2-2}
-                              & \textit{R2}                   & 28.29 +/- 0.24     & 21.06 +/- 0.21    & 12.13 +/- 0.28     & 4.87 +/- 0.34          &  & 57.65 +/- 0.35      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
-         \textbf{\textit{Dark1-3}}     & \textit{R1}          & 9.48 +/- 0.43      & 25.07 +/- 0.42    & 2.15 +/- 0.13      & 2.60 +/- 0.27          &  & 41.43 +/- 0.68      \\ \cmidrule(lr){2-2}
-                              & \textit{R2}                   & 8.89 +/- 0.19      & 23.11 +/- 0.52    & 2.13 +/- 0.16      & 2.45 +/- 0.18          &  & 38.50 +/- 0.46      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
-         \textbf{\textit{Dark1-5}}     & \textit{R1}          & 5.56 +/- 0.19      & 23.99 +/- 0.44    & 1.07 +/- 0.07      & 2.89 +/- 0.11          &  & 36.72 +/- 0.33      \\ \cmidrule(lr){2-2}
-                              & \textit{R2}                   & 4.94 +/- 0.21      & 21.75 +/- 0.53    & 1.02 +/- 0.11      & 2.33 +/- 0.17          &  & 33.06 +/- 0.52      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
-         \textbf{\textit{Dark2-2}}     & \textit{R1}          & 12.32 +/- 0.25     & 9.81 +/- 0.19     & 3.73 +/- 0.16      & 4.33 +/- 0.17          &  & 27.65 +/- 0.47      \\ \cmidrule(lr){2-2}
-                              & \textit{R2}                   & 11.53 +/- 0.15     & 9.00 +/- 0.17     & 3.67 +/- 0.22      & 3.74 +/- 0.12          &  & 25.71 +/- 0.39      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
-         \textit{Dark2-3}     & \textit{R1}                   & 32.07 +/- 0.31     & 7.43 +/- 0.15     & 12.81 +/- 0.21     & 4.71 +/- 0.21          &  & 48.42 +/- 0.53      \\ \cmidrule(lr){2-2}
-                              & \textit{R2}                   & 32.47 +/- 0.24     & 6.68 +/- 0.21     & 13.11 +/- 0.43     & 4.58 +/- 0.12          &  & 47.92 +/- 0.28      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
-         \textit{Dark2-6}     & \textit{R1}                   & 24.11 +/- 0.28     & 8.55 +/- 0.11     & 9.04 +/- 0.35      & 5.27 +/- 0.15          &  & 41.69 +/- 0.45      \\ \cmidrule(lr){2-2}
-                              & \textit{R2}                   & 22.89 +/- 0.55     & 7.44 +/- 0.17     & 8.74 +/- 0.49      & 4.36 +/- 0.24          &  & 38.85 +/- 0.58      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
-         \textbf{\textit{Dark2-7}}     & \textit{R1}          & 9.96 +/- 0.24      & 16.89 +/- 0.27    & 4.22 +/- 0.24      & 2.83 +/- 0.17          &  & 37.06 +/- 0.40      \\ \cmidrule(lr){2-2}
-                              & \textit{R2}                   & 8.77 +/- 0.18      & 15.00 +/- 0.43    & 3.94 +/- 0.14      & 2.16 +/- 0.11          &  & 32.86 +/- 0.29      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
-         \textit{Dark2-8}     & \textit{R1}                   & 28.24 +/- 0.48     & 4.45 +/- 0.13     & 12.00 +/- 0.32     & 4.69 +/- 0.06          &  & 40.50 +/- 0.37      \\ \cmidrule(lr){2-2}
-                              & \textit{R2}                   & 28.22 +/- 0.47     & 4.30 +/- 0.22     & 11.98 +/- 0.37     & 4.32 +/- 0.24          &  & 40.05 +/- 0.22      \\ \cmidrule(r){1-6} \cmidrule(l){8-8} 
+         \textit{Light1-9}    & \textit{R1}                   & 51.89 +/- 0.45     & 9.37 +/- 0.26     & 25.15 +/-  0.71    & 7.45 +/- 0.33          &  & 69.49 +/- 0.37      \\ 
+                              & \textit{R2}                   & 51.75 +/- 0.25     & 8.82 +/- 0.24     & 24.85 +/- 0.56     & 7.49 +/- 0.21          &  & 68.75 +/- 0.29      \\ 
+         \textit{Light1-10}   & \textit{R1}                   & 46.35 +/- 0.56     & 15.72 +/- 0.46    & 22.96 +/- 0.24     & 6.94 +/- 0.26          &  & 68.73 +/- 0.30      \\ 
+                              & \textit{R2}                   & 46.12 +/- 0.83     & 15.14 +/- 0.48    & 23.13 +/- 0.38     & 6.99 +/- 0.37          &  & 68.73 +/- 0.30      \\
+         \textit{Light1-11}   & \textit{R1}                   & 58.28 +/- 0.47     & 3.62 +/- 0.12     & 28.68 +/- 0.43     & 8.20 +/- 0.40          &  & 71.38 +/- 0.49      \\ 
+                              & \textit{R2}                   & 57.74 +/- 0.27     & 3.50 +/- 0.10     & 28.23 +/- 0.36     & 8.41 +/- 0.31          &  & 70.42 +/- 0.20      \\
+         \textit{Dark1-2}     & \textit{R1}                   & 28.64 +/- 0.51     & 22.88 +/- 0.61    & 12.23 +/- 0.28     & 4.93 +/- 0.19          &  & 60.31 +/- 0.49      \\ 
+                              & \textit{R2}                   & 28.29 +/- 0.24     & 21.06 +/- 0.21    & 12.13 +/- 0.28     & 4.87 +/- 0.34          &  & 57.65 +/- 0.35      \\
+         \textbf{\textit{Dark1-3}}     & \textit{R1}          & 9.48 +/- 0.43      & 25.07 +/- 0.42    & 2.15 +/- 0.13      & 2.60 +/- 0.27          &  & 41.43 +/- 0.68      \\ 
+                              & \textit{R2}                   & 8.89 +/- 0.19      & 23.11 +/- 0.52    & 2.13 +/- 0.16      & 2.45 +/- 0.18          &  & 38.50 +/- 0.46      \\
+         \textbf{\textit{Dark1-5}}     & \textit{R1}          & 5.56 +/- 0.19      & 23.99 +/- 0.44    & 1.07 +/- 0.07      & 2.89 +/- 0.11          &  & 36.72 +/- 0.33      \\ 
+                              & \textit{R2}                   & 4.94 +/- 0.21      & 21.75 +/- 0.53    & 1.02 +/- 0.11      & 2.33 +/- 0.17          &  & 33.06 +/- 0.52      \\
+         \textbf{\textit{Dark2-2}}     & \textit{R1}          & 12.32 +/- 0.25     & 9.81 +/- 0.19     & 3.73 +/- 0.16      & 4.33 +/- 0.17          &  & 27.65 +/- 0.47      \\ 
+                              & \textit{R2}                   & 11.53 +/- 0.15     & 9.00 +/- 0.17     & 3.67 +/- 0.22      & 3.74 +/- 0.12          &  & 25.71 +/- 0.39      \\
+         \textit{Dark2-3}     & \textit{R1}                   & 32.07 +/- 0.31     & 7.43 +/- 0.15     & 12.81 +/- 0.21     & 4.71 +/- 0.21          &  & 48.42 +/- 0.53      \\ 
+                              & \textit{R2}                   & 32.47 +/- 0.24     & 6.68 +/- 0.21     & 13.11 +/- 0.43     & 4.58 +/- 0.12          &  & 47.92 +/- 0.28      \\
+         \textit{Dark2-6}     & \textit{R1}                   & 24.11 +/- 0.28     & 8.55 +/- 0.11     & 9.04 +/- 0.35      & 5.27 +/- 0.15          &  & 41.69 +/- 0.45      \\ 
+                              & \textit{R2}                   & 22.89 +/- 0.55     & 7.44 +/- 0.17     & 8.74 +/- 0.49      & 4.36 +/- 0.24          &  & 38.85 +/- 0.58      \\
+         \textbf{\textit{Dark2-7}}     & \textit{R1}          & 9.96 +/- 0.24      & 16.89 +/- 0.27    & 4.22 +/- 0.24      & 2.83 +/- 0.17          &  & 37.06 +/- 0.40      \\ 
+                              & \textit{R2}                   & 8.77 +/- 0.18      & 15.00 +/- 0.43    & 3.94 +/- 0.14      & 2.16 +/- 0.11          &  & 32.86 +/- 0.29      \\
+         \textit{Dark2-8}     & \textit{R1}                   & 28.24 +/- 0.48     & 4.45 +/- 0.13     & 12.00 +/- 0.32     & 4.69 +/- 0.06          &  & 40.50 +/- 0.37      \\ 
+                              & \textit{R2}                   & 28.22 +/- 0.47     & 4.30 +/- 0.22     & 11.98 +/- 0.37     & 4.32 +/- 0.24          &  & 40.05 +/- 0.22      \\
          \hline
      \end{tabularx}
-     \caption{Taxonomic profiles of raw single cell libraries generated using ``DueyDrop''. All values are percentage of reads mapping to that category +/- the standard deviation between sample replicates.  Libraries
-     highlighted in bold were those excluded from subsequent analysis on the basis of their very low numbers of reads identifiable as 
- eukaryote (or specifically alveolate or archaeplastida). All forward and reverse read pairs display similar profiles to one another suggesting
+     \caption{Taxonomic profiles of raw single cell libraries generated using ``DueyDrop''. All values are percentage of reads mapping to that category +/- the standard deviation between sample replicates.  
+         The analysis was conducted for both forward and reverse reads from each library (indicated as R1 and R2 in the paired-end (PE) column).
+         Libraries highlighted in bold were those excluded from subsequent analysis on the basis of their very low numbers of reads identifiable as 
+ eukaryotic (or specifically alveolate or archaeplastida). All forward and reverse read pairs display similar profiles to one another suggesting
  the problem of ``MDA chimeras'' may be minor.}
  \label{tab:sct_duey}
 \end{table}
@@ -850,41 +862,46 @@ taxa consistent with an non-contaminated library.
 \hline
          \textbf{Bulk Library} & \textit{\textbf{PE}} & \textbf{Eukaryote} & \textbf{Bacteria} & \textbf{Alveolate} & \textbf{Viridiplantae} &  \textbf{Total Hits} \\ 
          \hline
-         \textit{Light}    & \textit{R1}              &  9.66 +/- 1.55     & 0.18 +/- 0.13     &  6.28 +/- 1.41     &  0.86 +/- 0.3          & 10.10 +/- 1.48       \\ \cmidrule(lr){2-2}
+         \textit{Light}    & \textit{R1}              &  9.66 +/- 1.55     & 0.18 +/- 0.13     &  6.28 +/- 1.41     &  0.86 +/- 0.3          & 10.10 +/- 1.48       \\
                               & \textit{R2}           &  9.62 +/- 0.81     & 0.26 +/- 0.09    &  6.58 +/- 0.36     &  1.04 +/- 0.41         &   10.16 +/- 0.95      \\ 
                               \hline 
-         \textit{Dark}   & \textit{R1}                &  4.90 +/- 0.78     & 0.36 +/- 0.11    &  3.14 +/- 0.58     &  0.50 +/- 0.16        &   5.40 +/- 0.93      \\ \cmidrule(lr){2-2}
+         \textit{Dark}   & \textit{R1}                &  4.90 +/- 0.78     & 0.36 +/- 0.11    &  3.14 +/- 0.58     &  0.50 +/- 0.16        &   5.40 +/- 0.93      \\ 
                               & \textit{R2}           &  5.50 +/- 1.25     & 0.22 +/- 0.19   &  3.82 +/- 0.81     &  0.50 +/- 0.12         &  6.02 +/- 1.22      \\ 
                               \hline
     \end{tabular}
-    \caption{Taxonomic profile of the bulk transcriptome samples generated using ``DueyDrop''.}
+    \caption{Taxonomic profile of the two trimmed (Q20) bulk transcriptome libraries generated using ``DueyDrop''.
+All values are the percentage of reads mapping to that taxonomic category +/- the standard deviation between sampling replicates.  
+The analysis was conducted for both forward and reverse reads from each library (indicated as R1 and R2 in the paired-end (PE) column).
+Overall only a very small number of bulk reads could be assigned to any taxonomic class by ``DueyDrop''.}
     \label{tab:bulk_duey}
 \end{table}
 
 To identify the likely source of the high GC\% contamination 
 and to assess how representative the taxonomic profiling of small random
 subsamples of reads \(\leq1\%\) to full scale analyses Krona was used to 
-create interactive hierarchial plots of the taxonomic profiles. 
+create interactive hierarchial plots of the taxonomic profiles\footnote{
+Accessible at \url{http://finlaymagui.re/dueydrop_analysis}} 
 From this, Rhizobia species are the most prevalent high GC\% species found in the libraries
 with this high 70GC\% peak in the KDE plots and therefore are the most likely source
 of this particular aspect of contamination. 
 
 \begin{figure}[h]
     \includegraphics[width=\textwidth]{krona_excluded_raw.pdf}
-    \caption{Krona visualisation of taxonomic profiles of representative
-    single cell libraries that were excluded from further analysis due 
+    \caption{Krona visualisation of taxonomic profiles of two representative
+        single cell libraries (Dark1-2, Dark2-2) that were excluded from further analysis due 
     to aberrant profiles (typically large proportion of reads being assigned
-to Bacteria than Eukaryota).}
+    to Bacteria than Eukaryota). Note that nearly \(50\%\) of each library is identified as bacterial.}
     \label{fig:krona_excluded}
 \end{figure}
 
 \begin{figure}[h]
     \includegraphics[width=\textwidth]{krona_included_raw.pdf}
     \caption{
-    Krona visualisation of taxonomic profiles of representative
-    single cell libraries that were excluded from further analysis due 
-    to aberrant profiles (typically large proportion of reads being assigned
-    to Bacteria than Eukaryota).  
+    Krona visualisation of the taxonomic profiles of representative 
+    RNAseq libraries (Bulk1, Dark2-3, and Light1-9) that were retained 
+    in the analysis after taxonomic screening.  The key thing this figure
+    shows is that in retained libraries the vast majority of reads were 
+    identified as eukaryotic in origin.
     }
     \label{fig:krona_included}
 \end{figure}
@@ -935,9 +952,10 @@ very slight decrease in total number of mapping reads but not drastically so.
     \includegraphics[width=0.9\textwidth]{trimmingopt.pdf}
     \caption{Assessment of the optimal minimum average quality threshold
              in Trimmomatic's sliding window (size 4) trim.  Plots
-             display the number of concordantly mapping reads (forward
-                 and reverse read map to assembly within their insert
-             distance of one another) at a range of different trimming
+             display the number of concordantly mapping reads (i.e. the forward
+                 and reverse read map to assembly at a distance of approximately
+                 their insert)
+             at a range of different trimming
              thresholds.  5000 randomly sampled PE reads 
              from each single cell library are mapped against 3 different 
              reference assemblies. 
@@ -977,7 +995,7 @@ was less than was found using different assemblers and assembly parameters.
 \end{table}
 
 Therefore, due to increasing the assembly likelihood while only very marginally
-marginally decreasing the number of contigs and mapping reads relative to
+decreasing the number of contigs and mapping reads relative to
 more permissive trims Q30 was determined to be the optimal trimming threshold.
 It can be considered from this data that Q30 forms a maximum feasible stringency for trimming. 
 
@@ -1036,8 +1054,12 @@ clusters respectively.
         \hline
     \end{tabular} 
     \caption{Final cluster centroids and number of reads assigned
-    to each cluster in parKour using various run settings.  Overclustering
-made a minimal impact on cluster location}
+    to each cluster in parKour using various run settings.  Centroids
+    are the mid-point of each cluster, therefore in the 2 cluster scheme
+    ``parKour'' identified one cluster of reads centered around  
+    \(66.74\%\) GC for the forward read and \(61.77\%\) for the reverse read.
+    Note that 
+    overclustering made a minimal impact on cluster location.}
     \label{tab:centroids} 
 \end{table} 
 
@@ -1051,7 +1073,8 @@ Therefore, over-clustering made a minimal effect on cluster centroids and read a
 	\centering
     \includegraphics[width=0.9\textwidth]{parKour.pdf}
     \caption{Visualisation of GC-based paired read K-means clustering on a small random subset of all single cell transcriptome
-    reads. 2 initial centroids were specified without an overclustering factor and approximate final centroids (0.6674, 06177) and (0.4557, 0.4393) are indicated by highlighted areas.  57.3M and 81.7M were assigned to each respective cluster. Comparison to other clustering regimes can be found in \cref{tab:centroids}} 
+        reads. 2 initial centroids were specified without an overclustering factor and approximate final centroids (0.6674, 06177) and (0.4557, 0.4393) are indicated by highlighted areas.  57.3M and 81.7M were assigned to each respective cluster. Comparison to other clustering regimes can be found in \cref{tab:centroids}.  This supports the finding of the \cref{fig:gc_prop_raw}that there is a clear and identifiable cluster of high GC\% reads present in the sample and it is possible to identify and group these reads using unsupervised learning. 
+} 
         \label{fig:parkour} 
 \end{figure}
 
@@ -1147,12 +1170,14 @@ median contig length at the expense of a lower N50.
 \begin{table}[h]
      \begin{tabularx}{\textwidth}{|l||r|r|r|r|X|}
      	\hline
-         \textbf{Preprocessing} & \textbf{No. Transcripts} & \textbf{Bases Assembled} & \textbf{Contig N50} & \textbf{Median Contig} & \textbf{Assembly Likelihood (\(-\log\))} \\
+        \textbf{Preprocessing} & \textbf{Number of} & \textbf{Bases} & \textbf{Contig} & \textbf{Median} & \textbf{Assembly} \\
+                                & \textbf{Transcripts} & \textbf{Assembled} & \textbf{N50} & \textbf{Contig} & \textbf{Likelihood (\(-\log\))} \\
          \hline
          Q30 and Bulk &  127,508 & 83,264,944 & 851 & 411 & \(-2.832 \cdot 10^{10}\) \\
          \hline
          Q30 and Bulk  & 147,902 & 92,395,841 & 789 & 423 & \(-1.224 \cdot 10^{9}\) \\  
-    with Khmer processing & 	 & 			 &      & 	  & 	\\
+    with Khmer & 	 & 			 &      & 	  & 	\\
+    processing & 	 & 			 &      & 	  & 	\\
     \hline
     \end{tabularx}
     \caption{Trinity assemblies (with --min-kmer-cov 2) 
@@ -1182,7 +1207,7 @@ algal references respectively.  Similarly, only \(0.6\) and \(0.9\%\) of reads m
 to the related ciliate genomes.   This level of mapping is on the order
 of random chance. Of the read which mapped, a high proportion (\(73-82\%\))
 mapped non-uniquely. 
-This suggests mapping was occurring in low complexity reasons and is a statistical
+This suggests mapping was occurring in low complexity regions and is a statistical
 artefact for the most part instead of biological significance.
 
 The addition of gene junction annotation files for the reference genomes to improve
@@ -1238,8 +1263,7 @@ Dark1-2, Dark2-3, Dark2-6, Dark2-8) and bulk libraries are shown in
         * indicates assemblies programs that failed to run to completion due to 
         insufficient computational resources (despite using a server with 500GB 
         of memory)
-        ** indicates assemblies which failed due to coding errors in the application.
-        All non-diginormed sct+bulk}
+        ** indicates assemblies which failed due to coding errors in the application.}
         \label{tab:assemblies}
 \end{table}
 
@@ -1303,13 +1327,18 @@ described in \cref{tab:digassemby}.
         \hline
         Non-normalised Assemblies   & 3,726,379 & 46,063  & \(-4.347*10^{10}\) \\
         Normalised Assemblies       & 652,182 & 53,628 & \(-1.823*10^{9}\)\\
-    \hline
+        \hline 
+        \textbf{CD-HIT \(90\%\) meta-clustering} & 99,691 & 94,628 & \(-5.133*10^{10}\)\\
+        \hline
     \end{tabular}
     \caption{Summary of merged multi-assemblies.  Collapsed contigs is the number of contigs
     found in the merged set by the EvidentialGene pipeline. The level of assembly
-reduction and redundancy removal is very high and impressively consistent despite
-the differences in the starting assemblies.  However, the likelihoods are lower than
-any of the individual assemblies used in the combinations.}
+reduction and redundancy removal is high and, at first appearance, is impressively consistent 
+between meta-assemblies despite differences in preprocessing. 
+  However, CD-HIT metaclustering
+at 90\% identity shown at the bottom demonstrated that there was very little overlap between
+these two minimised assemblies.  Even the merged normalised assemblies generated
+a meta-assembly of lower overall likelihood than the best individual constituent assemblies.}
     \label{tab:comb_assemb}
 \end{table}
 
@@ -1321,7 +1350,9 @@ the two combinations as assessed by clustering using CD-HIT at a similarity of \
 
 Therefore, the assembly selected for downstream binning and analysis was Bridger 
 assembly of bulk and library screened single cell normalised and K-mer
-abundancy filtered reads with a K-mer size of 31.
+abundancy filtered reads with a K-mer size of 31 as it displayed the best likelihood
+while maintaining assembly statistics within expected ranges. 
+
 
 \subsection{Binning}
 
@@ -1435,19 +1466,20 @@ poorly classified ``Unknown'' samples but largely performed well (\(0.89-0.9\) f
 		\hline
 		\textbf{Label} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} & \textbf{Support} \\
 		\hline
-		``Unknown'' & 0.66 & 0.49 & 0.56 & 156 \\
-		``Food'' & 0.96 & 0.95 & 0.95 & 426 \\
-		``Host'' & 0.92 & 0.96 & 0.94 & 787 \\
-		``Endosymbiont'' &  0.88 & 0.90 & 0.89 & 359 \\
+		``Unknown'' & 0.87 & 0.83 & 0.84 & 156 \\
+		``Food'' & 1.00 & 0.99 & 1.00 & 426 \\
+		``Host'' & 0.98 & 0.98 & 0.98 & 787 \\
+		``Endosymbiont'' &  0.89 & 0.90 & 0.89 & 359 \\
 		\hline
-		average / total & 0.90 & 0.90 & 0.90 & 1728 \\
+		average / total & 0.94 & 0.96 & 0.90 & 1728 \\
 		\hline 
 	\end{tabular}
 \caption{Classification report of a trained and optimised 
 	K-Neighbours Classifier using a leaf size of 30, minkowski
 	distance metric and 50 neighbours.  Note the poor performance
 	on ``Unknown'' samples but generally good (\(\geq90\%\)) on
-	other labels}
+	other labels. This can likely be explained by the ``miscellaenous''
+nature of this label and the diverse phylogenies that comprise it. }
 \label{tab:classification_report}
 \end{table} 
 
@@ -1467,6 +1499,7 @@ of transcripts.  Of 70,605 CDS sequences only
 
 Of these top level assignments:
 \begin{table}
+    \centering
 	\begin{tabular}{| c | c | c |}
 \hline
 \textbf{Class} & \textbf{Phylum} & \textbf{Sequences Assigned} \\
@@ -1485,12 +1518,15 @@ Of these top level assignments:
 			& Arthropoda & 7 \\
 			\hline 
 	\end{tabular}
-	\caption{Phylum level TAXAssign assignments for (\(2,043/70,605\)) CDS.}
+	\caption{Phylum level TAXAssign assignments for (\(2,043/70,605\)) CDS called from the Bridger 31-mer assembly.
+            Only \(2.893\%\) were assigned using this method relative to  \(39.72\%\) for 
+        the phylogenetic supervised learning (Dendrogenous-Arboretum) method.  Therefore, this demonstrates the
+        the how well this method works relative to conventional binning approaches like TAXAssign.}
 	\label{tab:taxassign}
 \end{table}
 
 This can be contrasted with the 29649/70605 or \(41.99\%\) classified 
-using the phylogeny and supervised classification system.
+using the phylogeny and supervised classification system..
 
 \section{Discussion}
 
@@ -1520,8 +1556,12 @@ Taxonomic profiling also reveals other features of the dataset that wouldn't nec
 obvious otherwise.  For instance, our profiles revealed systematically low 
 low levels of Viridiplantae related reads across both bulk and sc-RNAseq libraries and in both lit and dark conditions.  
 Despite care being taken to ensure thorough lysis of the chitinous \textit{Micractinium} cells during 
-RNA extraction this may be related to lytic inefficiences \citep{Korfhage2015} or potentially
+RNA extraction and a ratio of \(\sim 300:1\) endosymbiont to host cell ratio this may be related to lytic inefficiences \citep{Korfhage2015} or potentially
 just relatively fewer endosymbiont transcriptomic activity relative to host and associated bacteria species.
+Finally, it is possible that due to the endosymbiont being largely provisioned by the host it may be relatively
+transcriptionally inactive and thus relatively fewer transcripts can be recovered. 
+
+
 
 Intriguingly, taxonomic profiling of the bulk libraries showed a very low percentage of reads 
 mapping to any sequence in the nr protein database.  This was significantly lower than the
@@ -1552,7 +1592,7 @@ by \url{https://www.onecodex.com/}, although this focuses specifically on screen
 However, it would require laborious workarounds to handle
 K-mers shared between multiple taxa in the database, translation of reads and/or database sequences into a matching sense and form (e.g. protein),
 and use of a locality-sensitive hash function to handle scenarios where there is no exact k-mer match. This latter issue is particularly
-problematic for libraries consisting of transcripts from poorly sampled reaches of the tree of life where exact matches would become
+problematic for libraries consisting of transcripts from poorly sampled sections of the tree of life where exact matches would become
 commensurately rarer as sampling sparsity increases.  
 While still affected by this problem, the BLASTX/Diamond approach implemented in the ``DueyDrop'' scripts are relatively more robust to these
 problems due the explicit probabilistic modelling of sequence divergence built into the BLAST alignment algorithm (e.g. E-values).
@@ -1609,8 +1649,9 @@ do not behave in a qualitively similar way to bulk RNA-seq in terms of
 pre-processing and assembly parameters.  
 This means care must be taken incorporating advice and heuristics
 derived from studies based on analysis bulk RNA-seq datasets (e.g. \citep{Macmanes2013,Macmanes2014,Macmanes2015,Nakasugi2014}).
-As further studies using MDA SCTs are completed (e.g. \citep{Kolisko2014}) I expect
-this corpus of knowledge to be gradually redefined to made specific for data of this type.
+As further studies using MDA SCTs are completed (e.g. \citep{Kolisko2014}) 
+a greater understanding of the optimal analysis of this type of 
+dataset will emerge.
 
 \subsection{Pre-assembly read partitioning is non-trivial}
 
@@ -1620,7 +1661,7 @@ and a very GC-rich organism, \textit{Micractinium}, (\textit{Chlorella variabili
 found in a sequenced eukaryote genome (in 2010) \citep{Blanc2010}), the utility of pre-assembly read partitioning was assessed.
 This GC pattern was supported by the clear bimodal GC distribution that can be observed in \cref{fig:gc_prop_raw}.
 However, under careful observation it was apparent that the bimodal GC distribution was more attributable to 
-the presence of a GC rich organism.  Therefore, in practice pre-read partitioning was mainly attempted to 
+the presence of a GC-rich contaminant such as Rhizobiales \citep{Peralta2011}.  Therefore, in practice pre-read partitioning was mainly attempted to 
 try to remove these contaminant reads from screened libraries.
 Theoretically, accurate pre-assembly read partitioning could transform a complex assembly graph into two relatively simpler
 assembly tasks.  As well as simplifying path resolution accuracy, if this method could
@@ -1649,10 +1690,10 @@ and compositional characteristics such as GC\% and tetramer frequencies.
 This could improve resolution of clusters and decrease the observed contig fragmentation
 effect while performing accurate taxonomic screening. 
 
-Other improvements could include the consideration of altenrative clustering algorithms 
+Other improvements could include the consideration of alternative clustering algorithms 
 such as k-medoids \citep{Kaufman1987} with more robust outlier stability or large scale
 database clustering algorithms such as DBSCAN \citep{Ester1996} or BIRCH \citep{Zhang1996} (allowing non-convex
-clusters).Silhouette coefficients and analysis\footnote{
+clusters). Silhouette coefficients and analysis\footnote{
 	\(s = \frac{b -a}{max(a,b}\) where \(s\) is Silhouette coefficient, \(a\) is the mean distance
 	between a sample and all other points in the same class and \(b\) is the mean distance
 	between a sample and all other points in the next nearest cluster \citep{scikit-learn}.  Therefore,
@@ -1742,12 +1783,13 @@ read data demonstrated the clear superiority of both ``Bridger'' and ``Trininty'
 Trinity comes with the advantages of being a generally better developed tool that interlocks effectively via several plugins and utility
 scripts with other tools and analysis pipelines.  
 
-However, despite being relatively newer and less polished Bridger proved to be
+However, despite being relatively newer and consisting of
+a less mature and tested codebase, Bridger proved to be
 a slightly more effective assembly tool overall. Unfortunately,
 coding problems and a lack of public active development means 
 it is non-trivial to successful use this tool.  In the process of 
 implementing the above analyses it was necessary to fix several
-bugs in the code-base. These upgrades were merged into
+bugs present in the assembler. These upgrades were merged into
 the code and are available on GitHub \url{https://github.com/fmaguire/Bridger_Assembler}.
 Hopefully, by rehosting this code on a public development and collaboration
 platform (as well as adding continuous integration) will 
@@ -1757,7 +1799,8 @@ spur further development of this promising tool.
 Interestingly, despite strong evidence supporting the need to combine assemblies due to the 
 size of the disjoint sets of transcripts recoverable from different algorithms and parameter
 choices \citep{Lowe2014} assembly merging systematically led to worse overall assemblies
-with this dataset.
+with this dataset (as assessed by RSEM-EVAL likelihood scores).  The likelihood of the merged
+assemblies were worse than the best individual constituent assemblies.
 
 
 \subsection{Binning}
@@ -1829,3 +1872,20 @@ can potentially improve the quality of such binning.  Further work
 in the implementation of unsupervised clustering of generated phylogenies
 could conceivably forgo the laborious process of manually generating
 a training dataset.
+
+\begin{table}
+\centering
+\begin{tabular}
+    \end{tabular}
+    \caption{Summary of transcriptome assembly and binned sequences}
+    \label{tab:bin_assem_summary}
+\end{table}
+
+Points arising in this analysis:
+\begin{itemize}
+    \item It is possible to generate a functional working transcriptome combining bulk and MDA based RNAseq (see \cref{tab:bin_assem_summary})
+    \item sc-RNAseq libraries generated from dark samples are problematic.
+    \item Binning methodologies may prevent easy finding of novel genes due to a lack of homology. 
+\end{itemize}
+
+

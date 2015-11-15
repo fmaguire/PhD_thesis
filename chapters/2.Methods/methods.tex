@@ -43,7 +43,6 @@ Cultures were sub-cultured approximately every 2 weeks using fresh NCL media and
 No bacteria was added to cultures used for ``omic'' analyses but otherwise the medium was bacterised with
 \textit{Klebsiella pneumoniae} SMC (strain donated by the Meyer Lab, Ecole Normale Supérieure, Paris, France) the day before use. 
 
-
 \section{Omics}
 ``-omic'' technologies are those aimed at globally characterising a class of biomolecules 
 within a specific biological sample (characterising the ``-ome''). The major areas of this
@@ -68,7 +67,6 @@ and histone binding), gylcomics (characterisation of cellular saccharides).
 containing multiple organisms. For example, ``metagenomics'' has been used to investigate
 the cellular community composition of marine micro-eukaryotes \citep{Cuvelier2010}
 and ``metatranscriptomics'' has been used to analyse the transcriptomes of the microbes present in the gut of metazoa \citep{Perez-Cobas2013}.
-
 
 The utility of ``-omic'' approaches is they allow a researcher to characterise a high proportion 
 of a biological system's function in a way that is faster, cheaper and requires less \textit{a priori} 
@@ -119,13 +117,6 @@ by this model i.e. testing that a particular transporter protein is responsible
 for the transfer of metabolites by knocking out that transporter and observing the resultant phenotype: 
 is the relationship perturbed in a predictable manner.
 
-
-
-% remove if we don't use this - metabolomics vs proteomics MS MALDI-TOF
-% \subsection{Mass spectrometry}
-% \subsubsection{Metabolomics}
-
-
 \subsection{Genomics and Transcriptomics}
 
 %\subsubsection{Extracting Nucleic Acids}
@@ -137,25 +128,14 @@ is the relationship perturbed in a predictable manner.
 %or flow cytometry or more typically (and with all the biases it involves) establishing
 %a culture of the organisms of interest (if possible) and growing that up to sufficient biomass.
 %
-%
-%
-%
 %For bulk analyses we used a trizol based extraction
 %
-%
 %For single cell gDNA CTAB \citep{}
-%
-%
-%
-%
-%
 %
 %material either from a large
 %environmental sample or by culturing 
 %
 %SPADES PAPER HAS GOOD CITES
-%
-%
 %While the quality of the output of earlier sequencing techniques
 %was highly reliant on both the quantity and quality of the input DNA (or cDNA) (not to mention
 %characteristics such as GC\%) precluding many systems from easy analysis.  This is especially
@@ -176,7 +156,6 @@ is the relationship perturbed in a predictable manner.
 %
 %Likewise, single-cell transcriptomic (SCT) sequencing has been demonstrated to be an effective tool to investigate
 %
-%
 %Bulk transcriptomic methods involve analysis of an ensemble of transcripts therefore expression 
 %inferences are an average across all cells \citep{Stegle2015}
 %
@@ -190,36 +169,20 @@ is the relationship perturbed in a predictable manner.
 %While single cell level analyses have been possible for a while they have largely been restricted
 %to low-throughput methods e.g. reporter constructs, FISH etc.
 %
-%
 %Cell isolation, FACS, microfluidics, cell picking
-%
 %
 %SCT has relatively high levels of technical noise specifically sampling noise for low-level
 %expression and sample-specific variability in sequencing efficiency for highly-expressed 
 %transcripts for one SCT method \citep{Grun2014}.
 %
 %
-%
-%
-%
-%
-%
-%
-%
-%
-%
 %mRNA was selected using a poly-A selection method before being fragmented, cleaned-up using ethanol and then 
 %reverse transcribed into single-stranded cDNA using random hexamer primers.
-%
-%
-%
 %
 %Currently, single cell genomics still requires whole genome amplification (WGA) even with 
 %3rd generation sequencing platforms due to the relatively inefficient library preparation
 %from a single cell (on the range of nanograms). \citep{Blainey2013} %%find support quote for transcriptomics needing WGA too
 % 
-%
-%
 %Multiple-displacement amplification \citep{Dean2001} is the main method for
 %single-cell sequencing.
 %REASONS IT IS GREAT
@@ -230,7 +193,6 @@ is the relationship perturbed in a predictable manner.
 %
 %This complicates assembly RODRIQUE PAPER MENTIONED IN SPADES 
 %
-
 %E+VSCV paper chisatz 
 %
 %However, such a different type of data that a new algorithm was needed not just modificaitons \citep{Bankevich2012}
@@ -247,10 +209,6 @@ is the relationship perturbed in a predictable manner.
 %everything else special case
 %
 %
-%
-%
-%
-%
 %Single cell methods use multiple-displacement amplification to increase the concentraion of
 %nucleic acids 
 %
@@ -260,9 +218,6 @@ is the relationship perturbed in a predictable manner.
 %Transcripts are reverse transcribed and then ligated into larger fragments.  MDA
 %is then undergone on the larger fragments before the usual library preparation process.
 %
-%MORE DETAILS ABOUT THE METHOD
-%
-%
 %One interesting consideration for single cell transcriptomics is the possible generation
 %of chimeric reads that will cross the boundary between two randomly ligated transcripts.
 %
@@ -270,8 +225,6 @@ is the relationship perturbed in a predictable manner.
 %size for paired end sequencing.
 %
 %5'-3' - 5'-3'  - sequencing primers are unlikely to rpim
-%
-%
 
 \subsubsection{DNA sequencing}
 
@@ -342,8 +295,6 @@ reduced individual reaction volumes, greater parallelisation (and so higher thro
 cell-free preparation without the need for time-consuming cloning of DNA fragments into bacterial vectors to generate
 clonal templates for sequencing, and direct sequencing detection obviating the need
 for size fractionation \citep{Jaszczyszyn2014}.
-%which reduced necessary volume for 
-%step-wise ``pyrosequencing'' \citep{Ronaghi1996} reations possible \citep{Schuster2008}. 
 These technologies generate huge amounts (on the order of \(10^{6}-10^{9}\) of relatively short (on the order of \(10^{1}-10^{3}bp\)) DNA sequences 
     (reads) randomly sampled from the input (c)DNA. 
 
@@ -409,11 +360,6 @@ platforms) long (20kb and longer) reads but has a high cost and high error rate 
 Another platform, currently in testing, Oxford Nanopore's MinIon, reads individual strands of DNA through an array of 
 pore proteins and determines the sequence at each pore based on the physical
 properties (impedance) of a particular set of bases.
-
-%operates by using nanostructures known as zero-point waveguides with DNA polyermases fixed
-%jat the bootom of to increase resolution for detecting
-%fluorescent signals for incorporation of bases while reducing incidental noise ``leaking'' between 
-%cells.  The platform-specific disadvantage of the PacBio RS is the price and size of the platform.
 
 Unfortunately, partly as an element of their relatively nascent state and partly due to the
 poorer signal:noise of single molecule approaches compared to analysing large 
@@ -940,13 +886,6 @@ there are no shortcuts in machine learning (and many other areas) or optimisatio
 cross-validation is key to generating a useful model.  Another important way to prevent overfitting is to introduce regularisation in the cost function, in other
 words a term which penalises model complexity.
 
-%Generally, our functional approximation is probablistic - it will return the most
-%probable class label \(\( \hat{f}(x) = \argmax{C} p(y = c|x,\mathcal{D}) = \hat{y}\) 
-%where \(p(y|x,\mathcal{D})\) represents the probability distribution over possible labels 
-%with a specific input vector \(x\) and training set \(\mathcal{D}\).
-%probablistic classifiers 
-
-
 \begin{figure}[h]
     \includegraphics[width=\textwidth]{fitting.pdf}
     \caption{Plot showing a high bias (underfit) model in yellow and a high variance (overfit) model in yellow.
@@ -1263,8 +1202,6 @@ Additionally, it is not guaranteed
 to discover the global optimal clusters (can converge to local optima).  This can be amortised by running multiple times 
 with different initialisations.
 
-%Ways of specifying numbers of clusters \(k \equiv \sqrt{\frac{N}{2}}\) or information criteroin
-
 \begin{figure}[h]
     \includegraphics[width=\textwidth]{knn.pdf}
     \caption{Demonstration of the K-means algorithm applying 3 rounds of Expectation-Maximisation to cluster
@@ -1278,33 +1215,7 @@ an arrow with a faded version showing the initial location.
     \label{fig:knn}
 \end{figure}
 
-%\subsubsection{t-Distributed Stochastic Neighbour Embedding (t-SNE)}
-%t-SNE is recently developed unsupervised visualisation/dimensionality reduction algorithm 
-%created by Hinton and van der Maaten \citep{Maaten2008}
-%
-%t-SNE converts the high-dimensional input data \mathcal{D} into a set of probabilities that represents
-%how similar each pair of points are to one another.  Specifically, a student's t-distribution
-%is centered on each data point with a specified variance  
-%
-%Specifically, \[
-%    \text{similarity of point} \(x_{i}\) \text{to} \(x_{j}\) = p_{j|i}
-%    p_{j|i} = \frac{\exp{\frac{-x ||x_{i} - x_{j} ||^{2}}{2\sigma^{2}_{i}}}}{
-% 
-%
-%
-%
-%Data that forms distinct groups in t-SNE but overlap in PCA indicates datasets that are not
-%linearly separable but may be amenable to non-linear methods.
-
-
-
-
-
-
-
 \section{Phylogenetics}
-
-%Molecular phylogenetics brought a degree of statistical objectivity to philosophical principles of Willi Hennig's cladistics \citep{Felsenstein2001}
 
 Phylogenetics is an effective tool (if there is sufficient signal/resolution) 
 to investigate the evolutionary ancestry of biological sequence data.
@@ -1954,5 +1865,3 @@ Or on two workstations both running continuously updated versions of Arch Linux 
     \item Apple MacPro with 2 x Intel Xeon CPU \(E5520 @ 2.27GHz, 16GB\) RAM
     \item Dell Precision T7500 with 2 x Intel Xeon \(E5620 @ 2.4GHz, 48GB\) RAM
 \end{itemize}
-
-
