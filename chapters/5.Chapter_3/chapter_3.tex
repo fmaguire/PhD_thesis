@@ -46,42 +46,76 @@ transcripts and annotations as described in \ref{chap:transcriptomics}.
 bulk RNAseq transcriptome of \textit{Paramecium bursaria} Yad1g (syngen
 3, mating type 1) bearing \textit{Chlorella variabilis} 1N endosymbionts
 were downloaded from the DNA Data Bank of Japan (DDBJ) \citep{Tateno2002,Kaminuma2011}
-in Sequence Read Archive (SRA) format \citep{Leinonen2011,KodamaNRA2012b}. 
+in Sequence Read Archive (SRA) format \citep{Leinonen2011,KodamaNRA2012b} (accession DRA000907 \citep{Kodama2014}).
 
 These reads were then converted to fastq using ``fastq-dump'' using the SRA Toolkit
 \citep{NationalCenterforBiotechnologyInformation2011}.  Reads were then trimmed
 for sequencing adapters using ILLUMINACLIP and SLIDINGWINDOW with a window size
-of 4 and a minimum average quality of 30.
+of 4 and a minimum average quality of 5 in Trimmomatic \citep{Bolger2014a}.
 
+Reads were then error-corrected using ``SEECER'' with a k-mer size of 25 and 
+default settings otherwise (entropy of 0.6 and a cluster log-likelihood
+of -1) \citep{Le2013}.  Error-corrected reads were digitally normalised
+using a K-mer size of 25 and a coverage of 20 \citep{Brown2012} and 
+low abundance K-mers in high coverage reads were filtered \citep{Zhang2014,Zhang2015}
+using the Khmer software package \citep{Doring2008,Crusoe2015}.
 
+Assemblies were completed in a modified/fixed version of 
+Bridger 2014-12-01 \citep{Chang2015} (available at
+\url{https://github.com/fmaguire/Bridger_Assembler}) and 
+Trinity v2.0.6 \citep{Grabherr2011,Haas2013} both with K-mer
+sizes of 25.
 
+An alternative Trinity assembly was also completed using
+SLIDINGWINDOW Q30 trimmed reads without normalisation or 
+error correction.
 
+Assemblies were then compared using RSEM-EVAL \citep{Li2014} and the best
+overall assembly selected on the basis of likelihood.
 
-
-
-
-
-
-
-
-
-
-sequencing
-
-
-DDBJ Sequence Read Archive (DRA) (accession number DRA000907, http://trace.ddbj.nig.ac.jp/DRASearch/submission?acc=DRA000907
-
-
+ORFs were called from the best assembly using universal and tetrahymena encodings 
+via TransDecoder \citep{Haas2013} retaining the best scoring sequences and those
+with HMMR hits to PFAM and BLASTP hits to the swissprot database. 
 
 \subsection{Transporter Identification}
-
-\subsection{qPCR}
-
 
 \section{Results}
 
 
 \subsection{Kodama Assembly}
+
+\begin{table}
+    \begin{tabular}
+        \hline
+        \textbf{Preprocessing} & \textbf{PE Reads} \\
+        \hline
+        \textbf{Raw Reads}  & \(2.323\cdot10^{8}\)\\
+        \textbf{Q30 Trimmed} & \(1.75\cdot10^{8}\)\\
+        \textbf{Q5 Trimmed}  & \(2.127\cdot10^{8} \) \\&
+        \textbf{Q5 Error Corrected}  & \(2.224\cdot10^{8} \)\\
+        \textbf{Digital Normalistion} & \(1.09 \cdot10^{7}\)\\ 
+        \textbf{K-mer abundance filtering} & \(1.055\cdot10^{7}\)\\
+        \hline
+    \end{tabular}
+    \caption{Summary of read pre-processing in the Kodama library}
+    \label{tab:kodama_preproc}
+\end{table}
+
+
+\begin{table}
+    \begin{tabular}
+        \hline
+        \textbf{Assembly} & \textbf{Contigs} & \textbf{Likelihood (\(-log\))\\
+        \hline
+        \textbf{Trinity Q5 Normalised}  & 101,957 & \(1.216\cdot10^9\)\\
+        \textbf{Bridger Q5 Normalised} & 62,504 & \(1.285\cdot10^9\)\\
+        \textbf{Trinity Q30} & 53,938  & \(5.619\cdot10^{9} \) \\
+        \hline
+    \end{tabular}
+    \caption{Summary of Kodama assembliesj}
+    \label{tab:kodama_assembly}
+\end{table}
+
 
 
 SUMMARY OF KODAMA ASSEMBLY PARAMETERS
@@ -131,9 +165,9 @@ and Coccoymxa C-169 predicted proteomes the following process was used:
 
 \section{Discussion}
 
-\subsection{Quantification in MDA}
-\\
+SEECER and K-mer abundance filtering may be mutually exclusive
 
+\subsection{Quantification in MDA}
 
 %Titrating ERCC spike-ins to level of single cell 
 %It has become an increasingly established methodology to add RNA of known concentrations

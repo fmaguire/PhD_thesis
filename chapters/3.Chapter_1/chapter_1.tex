@@ -2,7 +2,6 @@
 % 
 \graphicspath{{chapters/3.Chapter_1/figures/}}
 
-
 \begin{savequote}[75mm]
 "even after the observation of the frequent or constant conjunction of objects, we have no reason to draw any inference concerning any object beyond those of which we have had experience;"
 \qauthor{- David Hume: \textit{A Treastie of Human Nature, 1738}}
@@ -382,6 +381,18 @@ for Phylum, Class, Order, Family, Genus and Species respectively.
 CONCOCT clusters were then evaluated using the taxonomic assignments from TAXAssign
 using the provided ``validate.pl'' script.
 
+
+Finally, another attempt at taxonomic assignment was attempted:
+\begin{itemize}
+    \item ORFs with a minimum size of 300 were called using Tetrahymena and Universal encodings from contigs over 500bp 
+    \item ORFs were then clustered at 90\% identity using CD-HIT
+    \item Diamond BLASTP searches were then done against the NR protein database
+    \item Taxonomic assignments were given to the top hits via script
+    \item 
+\end{itemize}
+
+
+
 %\subsubsection{Assembly annotation}
 %Orphelia \citep{Hoff2009}
 %MetaGUN \citep{Liu2013}
@@ -585,34 +596,35 @@ were cut to 10kb fragments for decomposition to generate 64,852 contigs.
 18,277 of these 64,852 contigs were successfully given a
 phylum level assignment, \cref{tab:genome_taxassign}.
 
+
 \begin{table}
-	\begin{tabular}{| r | l c |}
+	\begin{tabular}{| r | r r c |}
 \hline
-\textbf{Source Group} & \textbf{Number of Contigs} & \textbf{Phylum-Level Breakdown} \\
+\textbf{Source Group} & \textbf{Number of Contigs} & \textbf{Total Length} & \textbf{Phylum-Level Breakdown} \\
 \hline
-\textbf{Host} & 13 & Intramacronucleata\\
-- & 2  & Apicomplexa\\
-- & 1  & Colponemidia \\
+\textbf{Host} & 13 & 38,209 & Intramacronucleata\\
+- & 2 & 140 & Apicomplexa\\
+- & 1 & 163 & Colponemidia \\
 \hline 
-\textbf{Endosymbiont} & 12 & Chlorophyta\\
-- &  12 & Streptophyta\\
-- &  1 & Cyanobacteria\\
+\textbf{Endosymbiont} & 12 & 2,758 & Chlorophyta\\
+- &  12 & 3,987 & Streptophyta\\
+- &  1 & 1,674  & Cyanobacteria\\
 \hline
-\textbf{Bacterial Contamination} & 16230 & Proteobacteria \\
-- & 468 & Firmicutes\\
-- & 329 & Actinobacteria\\
-- & 128 & Bacteroidetes/Chlorobi group\\
-- & 1 & Deinococcus-Thermus\\
+\textbf{Bacterial Contamination} & 16,230 & 13,435,718 & Proteobacteria \\
+- & 468 & 669,751 & Firmicutes\\
+- & 329 & 135,928 & Actinobacteria\\
+- & 128 & 68,337 & Bacteroidetes/Chlorobi group\\
+- & 1 & 241 & Deinococcus-Thermus\\
 \hline
-\textbf{Eukaryotic Contamination} & 605 & Ascomycota \\
- - & 380 & Chordata\\
- - & 74 & Arthropoda \\
- - & 12 & Basidiomycota\\
-- & 7  & Nematoda \\
-- & 1 & Platyhelminthes\\
-- & 1 & Cnidaria\\
+\textbf{Eukaryotic Contamination} & 605 & 640,915 & Ascomycota \\
+- & 380 & 206,354 & Chordata\\
+- & 74 & 38,529  & Arthropoda \\
+- & 12 & 3,623 &  Basidiomycota\\
+- & 7  & 2,150 & Nematoda \\
+- & 1 & 61 & Platyhelminthes\\
+- & 1 & 102 & Cnidaria\\
 \hline
-\textbf{Unknown} & 540 & Unclassified \\
+\textbf{Unknown} & 540 & 345,834 & Unclassified \\
 \hline
 	\end{tabular}
 	\caption{Summary of taxonomic assignments via TAXAassign grouped into putative ``source groups'' reflecting
