@@ -1447,9 +1447,9 @@ poorly classified ``Unknown'' samples but largely performed well (\(0.89-0.9\) f
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{kn_confusion_matrix.pdf}
-	\caption{Confusion Matrix for K-Neighbours.  These plots highlight
+	\caption{Normalised Confusion Matrix for K-Neighbours.  These plots highlight
 		the problematic classes in the cross-validation dataset. 
-		 The heatmap corresponds to the number of samples classified
+		 The heatmap corresponds to the proporiton of samples classified
 		 with a given predicted label compared with their true labels.
 		``Host'' samples are accurately classified however a small number are erroneously
 		classified as ``Unknown''.  Similarly, ``Unknown'' samples are relatively poorly
@@ -1463,12 +1463,12 @@ poorly classified ``Unknown'' samples but largely performed well (\(0.89-0.9\) f
 		\hline
 		\textbf{Label} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} & \textbf{Support} \\
 		\hline
-		``Unknown'' & 0.87 & 0.83 & 0.84 & 156 \\
-		``Food'' & 1.00 & 0.99 & 1.00 & 426 \\
-		``Host'' & 0.98 & 0.98 & 0.98 & 787 \\
-		``Endosymbiont'' &  0.89 & 0.90 & 0.89 & 359 \\
+		``Unknown'' & 0.96 & 0.84 & 0.90 & 156 \\
+		``Food'' & 0.98 & 0.99 & 0.99 & 426 \\
+		``Host'' & 0.90 & 0.99 & 0.98 & 787 \\
+		``Endosymbiont'' &  0.97 & 0.99 & 0.89 & 359 \\
 		\hline
-		average / total & 0.94 & 0.96 & 0.90 & 1728 \\
+		average / total & 0.95 & 0.96 & 0.95 & 1728 \\
 		\hline 
 	\end{tabular}
 \caption{Classification report of a trained and optimised 
