@@ -56,203 +56,203 @@ section{Appendix 1}
 	\label{tab:appen_genomes}
 \end{table}
 
-\subsection{Optimised Classifier Test Data Reports}
-\begin{table}
-\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
-\hline
-\multicolumn{5}{c}{KNeighborsClassifier (algorithm='auto', leaf\_size=30, metric='minkowski', metric\_params=None, n\_neighbors=50, p=2, weights='uniform')} \\
-\hline
-\textbf{class}		& \textbf{precision}  &  \textbf{recall}  & \textbf{f1-score}  &  \textbf{support} \\
-unknown   	&    0.66 	 &   0.49   &    0.56   &   156   \\
-food      	&    0.96 	 &   0.95   &    0.95   &   426   \\
-host      	&    0.92    &   0.96   &    0.94   &   787   \\
-endosymbiont&    0.88    &   0.90   &    0.89   &   359   \\
-\hline
-avg / total &    0.90    &   0.90   &    0.90   &   1728  \\
-\hline
-\end{tabularx}
-\end{table}
-
-\begin{table}
-	\begin{tabular}{|r|c|c|c|c|}
-		\hline
-		\multicolumn{5}{c}{LinearSVC(C=1.0, class\_weight=None, dual=True, fit\_intercept=True,
-			intercept\_scaling=1, loss='squared\_hinge', max\_iter=1000,
-			multi\_class='ovr', penalty='l2', tol=0.0001)}\\
-		\hline
-		\textbf{class}		& \textbf{precision}  &  \textbf{recall}  & \textbf{f1-score}  &  \textbf{support} \\
-		unknown   	&     0.61 	 &    0.23  &     0.33   &   156   \\
-		food      	&    0.96 	 &   0.94   &    0.95   &   426   \\
-		host      	&    0.92    &   0.97   &    0.92   &   787   \\
-		endosymbiont&    0.87    &   0.90   &    0.90   &   359   \\
-		\hline
-		avg / total &   0.87    &   0.88   &    0.88   &   1728  \\
-		\hline
-	\end{tabular}
-\end{table}
-
-
-\begin{table}
-	\begin{tabular}{|r|c|c|c|c|}
-		\hline
-		\multicolumn{5}{c}{SVC(C=1.0, cache\_size=200, class\_weight=None, coef0=0.0, degree=3, gamma=0.3,
-			kernel='rbf', max\_iter=-1, probability=False,
-			shrinking=True, tol=0.001))}\\
-		\hline
-		\textbf{class}		& \textbf{precision}  &  \textbf{recall}  & \textbf{f1-score}  &  \textbf{support} \\
-		unknown   	&    0.51 	 &   0.37   &    0.43   &   156   \\
-		food      	&    0.67 	 &   0.30   &    0.42   &   426   \\
-		host      	&    0.67    &   0.97   &    0.79   &   787   \\
-		endosymbiont&    0.90    &   0.90   &    0.73   &   359   \\
-		\hline
-		avg / total &    0.71    &   0.70   &    0.67   &   1728  \\
-		\hline
-	\end{tabular}
-\end{table}
-
-
-\begin{table}
-	\begin{tabular}{|r|c|c|c|c|}
-		\hline
-		\multicolumn{5}{c}{DecisionTreeClassifier(class\_weight=None, criterion='gini', max\_depth=None,
-			max\_features=None, max\_leaf\_nodes=None, min\_samples\_leaf=1,
-			min\_samples\_split=2, min\_weight\_fraction\_leaf=0.0,
-			random\_state=None, splitter='best')}\\
-		\hline
-		\textbf{class}		& \textbf{precision}  &  \textbf{recall}  & \textbf{f1-score}  &  \textbf{support} \\
-		unknown   	&    0.45 	 &   0.35   &    0.39   &   156   \\
-		food      	&    0.91 	 &   0.93   &    0.92   &   426   \\
-		host      	&    0.88    &   0.92   &    0.90   &   787   \\
-		endosymbiont&    0.82    &   0.81   &    0.81   &   359   \\
-		\hline
-		avg / total &    0.84    &   0.85   &    0.84   &   1728  \\
-		\hline
-	\end{tabular}
-\end{table}
-
-
-
-\begin{table}
-	\begin{tabular}{|r|c|c|c|c|}
-		\hline
-		\multicolumn{5}{c}{ExtraTreeClassifier(class\_weight=None, criterion='gini', max\_depth=None,
-			max\_features='auto', max\_leaf\_nodes=None, min\_samples\_leaf=1,
-			min\_samples\_split=2, min\_weight\_fraction\_leaf=0.0, splitter='random')}\\
-		\hline
-		\textbf{class}		& \textbf{precision}  &  \textbf{recall}  & \textbf{f1-score}  &  \textbf{support} \\
-		unknown   	&    0.43 	 &   0.37   &    0.39   &   156   \\
-		food      	&    0.90 	 &   0.93   &    0.92   &   426   \\
-		host      	&    0.89    &   0.90   &    0.89   &   787   \\
-		endosymbiont&    0.82    &   0.81   &    0.82   &   359   \\
-		\hline
-		avg / total &    0.84    &   0.84   &    0.84   &   1728  \\
-		\hline
-	\end{tabular}
-\end{table}
-
-
-
-\begin{table}
-	\begin{tabular}{|r|c|c|c|c|}
-		\hline
-		\multicolumn{5}{c}{RandomForestClassifier(bootstrap=True, class\_weight=None, criterion='gini', max\_depth=None, max\_features='auto', max\_leaf\_nodes=None, min\_samples\_leaf=1, min\_samples\_split=2, min\_weight\_fraction\_leaf=0.0, n\_estimators=50, n\_jobs=1, oob\_score=False, warm\_start=False)}\\
-		\hline
-		\textbf{class}		& \textbf{precision}  &  \textbf{recall}  & \textbf{f1-score}  &  \textbf{support} \\
-		unknown   	&    0.43 	 &   0.33   &    0.38   &   156   \\
-		food      	&    0.92 	 &   0.95   &    0.94   &   426   \\
-		host      	&    0.89    &   0.93   &    0.91   &   787   \\
-		endosymbiont&    0.84    &   0.81   &    0.82   &   359   \\
-		\hline
-		avg / total &    0.84    &   0.85   &    0.84   &   1728  \\
-		\hline
-	\end{tabular}
-\end{table}
-
-
-
-
-\begin{table}
-	\begin{tabular}{|r|c|c|c|c|}
-		\hline
-		\multicolumn{5}{c}{AdaBoostClassifier(algorithm='SAMME.R', base\_estimator=None, learning\_rate=1.0, n\_estimators=50)}\\
-		\hline
-		\textbf{class}		& \textbf{precision}  &  \textbf{recall}  & \textbf{f1-score}  &  \textbf{support} \\
-		unknown   	&    0.60 	 &   0.39   &    0.47   &   156   \\
-		food      	&    0.96 	 &   0.95   &    0.95   &   426   \\
-		host      	&    0.90    &   0.96   &    0.93   &   787   \\
-		endosymbiont&    0.88    &   0.89   &    0.88   &   359   \\
-		\hline
-		avg / total &    0.88    &   0.89   &    0.88   &   1728  \\
-		\hline
-	\end{tabular}
-\end{table}
-
-
-
-\begin{table}
-	\begin{tabular}{|r|c|c|c|c|}
-		\hline
-		\multicolumn{5}{c}{LDA()}\\
-		\hline
-		\textbf{class}		& \textbf{precision}  &  \textbf{recall}  & \textbf{f1-score}  &  \textbf{support} \\
-		unknown   	&    0.00 	 &   0.39   &    0.00   &   156   \\
-		food      	&    0.97 	 &   0.72  &    0.83   &   426   \\
-		host      	&    0.56    &   1.00   &    0.72   &   787   \\
-		endosymbiont&    0.00    &   0.00   &    0.00   &   359   \\
-		\hline
-		avg / total &    0.49    &   0.63   &    0.53   &   1728  \\
-		\hline
-	\end{tabular}
-\end{table}
-
-\begin{table}
-	\begin{tabular}{|r|c|c|c|c|}
-		\hline
-		\multicolumn{5}{c}{QDA()}\\
-		\hline
-		\textbf{class}		& \textbf{precision}  &  \textbf{recall}  & \textbf{f1-score}  &  \textbf{support} \\
-		unknown   	&    0.10 	 &   0.97   &    0.18   &   156   \\
-		food      	&    0.96 	 &   0.36   &    0.52   &   426   \\
-		host      	&    1.00    &   0.03   &    0.06   &   787   \\
-		endosymbiont&    0.67    &   0.01   &    0.01   &   359   \\
-		\hline
-		avg / total &    0.84    &   0.19   &    0.17   &   1728  \\
-		\hline
-	\end{tabular}
-\end{table}
-
-
-
-\begin{table}
-	\begin{tabular}{|r|c|c|c|c|}
-		\hline
-		\multicolumn{5}{c}{GaussianNB()}\\
-		\hline
-		\textbf{class}		& \textbf{precision}  &  \textbf{recall}  & \textbf{f1-score}  &  \textbf{support} \\
-		unknown   	&    0.10 	 &   0.97   &    0.18   &   156   \\
-		food      	&    0.96 	 &   0.36   &    0.52   &   426   \\
-		host      	&    1.00    &   0.03   &    0.06   &   787   \\
-		endosymbiont&    0.67    &   0.01   &    0.01   &   359   \\
-		\hline
-		avg / total &    0.84    &   0.19   &    0.17   &   1728  \\
-		\hline
-	\end{tabular}
-\end{table}
-
-
-
-\begin{table}
-	\begin{tabular}{|r|c|c|c|c|}
-		\hline
-		\multicolumn{5}{c}{LogisticRegression(C=1.0, class\_weight=None, dual=False, fit\_intercept=True)}\\
-		\hline
-		\textbf{class}		& \textbf{precision}  &  \textbf{recall}  & \textbf{f1-score}  &  \textbf{support} \\
-		unknown   	&    0.00 	 &   0.00   &    0.00   &   156   \\
-		food      	&    0.78 	 &   0.96   &    0.86   &   426   \\
-		host      	&    1.91    &   0.96   &    0.94   &   787   \\
-		endosymbiont&    0.88    &   0.90   &    0.89   &   359   \\
-		\hline
-		avg / total &    0.79    &   0.86   &    0.82   &   1728  \\
-		\hline
-	\end{tabular}
-\end{table}
+%\subsection{Optimised Classifier Test Data Reports}
+%\begin{table}
+%\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+%\hline
+%\multicolumn{5}{c}{KNeighborsClassifier (algorithm='auto', leaf\_size=30, metric='minkowski', metric\_params=None, n\_neighbors=50, p=2, weights='uniform')} \\
+%\hline
+%\textbf{class}		& \textbf{precision}  &  \textbf{recall}  & \textbf{f1-score}  &  \textbf{support} \\
+%unknown   	&    0.66 	 &   0.49   &    0.56   &   156   \\
+%food      	&    0.96 	 &   0.95   &    0.95   &   426   \\
+%host      	&    0.92    &   0.96   &    0.94   &   787   \\
+%endosymbiont&    0.88    &   0.90   &    0.89   &   359   \\
+%\hline
+%avg / total &    0.90    &   0.90   &    0.90   &   1728  \\
+%\hline
+%\end{tabularx}
+%\end{table}
+%
+%\begin{table}
+%	\begin{tabular}{|r|c|c|c|c|}
+%		\hline
+%		\multicolumn{5}{c}{LinearSVC(C=1.0, class\_weight=None, dual=True, fit\_intercept=True,
+%			intercept\_scaling=1, loss='squared\_hinge', max\_iter=1000,
+%			multi\_class='ovr', penalty='l2', tol=0.0001)}\\
+%		\hline
+%		\textbf{class}		& \textbf{precision}  &  \textbf{recall}  & \textbf{f1-score}  &  \textbf{support} \\
+%		unknown   	&     0.61 	 &    0.23  &     0.33   &   156   \\
+%		food      	&    0.96 	 &   0.94   &    0.95   &   426   \\
+%		host      	&    0.92    &   0.97   &    0.92   &   787   \\
+%		endosymbiont&    0.87    &   0.90   &    0.90   &   359   \\
+%		\hline
+%		avg / total &   0.87    &   0.88   &    0.88   &   1728  \\
+%		\hline
+%	\end{tabular}
+%\end{table}
+%
+%
+%\begin{table}
+%	\begin{tabular}{|r|c|c|c|c|}
+%		\hline
+%		\multicolumn{5}{c}{SVC(C=1.0, cache\_size=200, class\_weight=None, coef0=0.0, degree=3, gamma=0.3,
+%			kernel='rbf', max\_iter=-1, probability=False,
+%			shrinking=True, tol=0.001))}\\
+%		\hline
+%		\textbf{class}		& \textbf{precision}  &  \textbf{recall}  & \textbf{f1-score}  &  \textbf{support} \\
+%		unknown   	&    0.51 	 &   0.37   &    0.43   &   156   \\
+%		food      	&    0.67 	 &   0.30   &    0.42   &   426   \\
+%		host      	&    0.67    &   0.97   &    0.79   &   787   \\
+%		endosymbiont&    0.90    &   0.90   &    0.73   &   359   \\
+%		\hline
+%		avg / total &    0.71    &   0.70   &    0.67   &   1728  \\
+%		\hline
+%	\end{tabular}
+%\end{table}
+%
+%
+%\begin{table}
+%	\begin{tabular}{|r|c|c|c|c|}
+%		\hline
+%		\multicolumn{5}{c}{DecisionTreeClassifier(class\_weight=None, criterion='gini', max\_depth=None,
+%			max\_features=None, max\_leaf\_nodes=None, min\_samples\_leaf=1,
+%			min\_samples\_split=2, min\_weight\_fraction\_leaf=0.0,
+%			random\_state=None, splitter='best')}\\
+%		\hline
+%		\textbf{class}		& \textbf{precision}  &  \textbf{recall}  & \textbf{f1-score}  &  \textbf{support} \\
+%		unknown   	&    0.45 	 &   0.35   &    0.39   &   156   \\
+%		food      	&    0.91 	 &   0.93   &    0.92   &   426   \\
+%		host      	&    0.88    &   0.92   &    0.90   &   787   \\
+%		endosymbiont&    0.82    &   0.81   &    0.81   &   359   \\
+%		\hline
+%		avg / total &    0.84    &   0.85   &    0.84   &   1728  \\
+%		\hline
+%	\end{tabular}
+%\end{table}
+%
+%
+%
+%\begin{table}
+%	\begin{tabular}{|r|c|c|c|c|}
+%		\hline
+%		\multicolumn{5}{c}{ExtraTreeClassifier(class\_weight=None, criterion='gini', max\_depth=None,
+%			max\_features='auto', max\_leaf\_nodes=None, min\_samples\_leaf=1,
+%			min\_samples\_split=2, min\_weight\_fraction\_leaf=0.0, splitter='random')}\\
+%		\hline
+%		\textbf{class}		& \textbf{precision}  &  \textbf{recall}  & \textbf{f1-score}  &  \textbf{support} \\
+%		unknown   	&    0.43 	 &   0.37   &    0.39   &   156   \\
+%		food      	&    0.90 	 &   0.93   &    0.92   &   426   \\
+%		host      	&    0.89    &   0.90   &    0.89   &   787   \\
+%		endosymbiont&    0.82    &   0.81   &    0.82   &   359   \\
+%		\hline
+%		avg / total &    0.84    &   0.84   &    0.84   &   1728  \\
+%		\hline
+%	\end{tabular}
+%\end{table}
+%
+%
+%
+%\begin{table}
+%	\begin{tabular}{|r|c|c|c|c|}
+%		\hline
+%		\multicolumn{5}{c}{RandomForestClassifier(bootstrap=True, class\_weight=None, criterion='gini', max\_depth=None, max\_features='auto', max\_leaf\_nodes=None, min\_samples\_leaf=1, min\_samples\_split=2, min\_weight\_fraction\_leaf=0.0, n\_estimators=50, n\_jobs=1, oob\_score=False, warm\_start=False)}\\
+%		\hline
+%		\textbf{class}		& \textbf{precision}  &  \textbf{recall}  & \textbf{f1-score}  &  \textbf{support} \\
+%		unknown   	&    0.43 	 &   0.33   &    0.38   &   156   \\
+%		food      	&    0.92 	 &   0.95   &    0.94   &   426   \\
+%		host      	&    0.89    &   0.93   &    0.91   &   787   \\
+%		endosymbiont&    0.84    &   0.81   &    0.82   &   359   \\
+%		\hline
+%		avg / total &    0.84    &   0.85   &    0.84   &   1728  \\
+%		\hline
+%	\end{tabular}
+%\end{table}
+%
+%
+%
+%
+%\begin{table}
+%	\begin{tabular}{|r|c|c|c|c|}
+%		\hline
+%		\multicolumn{5}{c}{AdaBoostClassifier(algorithm='SAMME.R', base\_estimator=None, learning\_rate=1.0, n\_estimators=50)}\\
+%		\hline
+%		\textbf{class}		& \textbf{precision}  &  \textbf{recall}  & \textbf{f1-score}  &  \textbf{support} \\
+%		unknown   	&    0.60 	 &   0.39   &    0.47   &   156   \\
+%		food      	&    0.96 	 &   0.95   &    0.95   &   426   \\
+%		host      	&    0.90    &   0.96   &    0.93   &   787   \\
+%		endosymbiont&    0.88    &   0.89   &    0.88   &   359   \\
+%		\hline
+%		avg / total &    0.88    &   0.89   &    0.88   &   1728  \\
+%		\hline
+%	\end{tabular}
+%\end{table}
+%
+%
+%
+%\begin{table}
+%	\begin{tabular}{|r|c|c|c|c|}
+%		\hline
+%		\multicolumn{5}{c}{LDA()}\\
+%		\hline
+%		\textbf{class}		& \textbf{precision}  &  \textbf{recall}  & \textbf{f1-score}  &  \textbf{support} \\
+%		unknown   	&    0.00 	 &   0.39   &    0.00   &   156   \\
+%		food      	&    0.97 	 &   0.72  &    0.83   &   426   \\
+%		host      	&    0.56    &   1.00   &    0.72   &   787   \\
+%		endosymbiont&    0.00    &   0.00   &    0.00   &   359   \\
+%		\hline
+%		avg / total &    0.49    &   0.63   &    0.53   &   1728  \\
+%		\hline
+%	\end{tabular}
+%\end{table}
+%
+%\begin{table}
+%	\begin{tabular}{|r|c|c|c|c|}
+%		\hline
+%		\multicolumn{5}{c}{QDA()}\\
+%		\hline
+%		\textbf{class}		& \textbf{precision}  &  \textbf{recall}  & \textbf{f1-score}  &  \textbf{support} \\
+%		unknown   	&    0.10 	 &   0.97   &    0.18   &   156   \\
+%		food      	&    0.96 	 &   0.36   &    0.52   &   426   \\
+%		host      	&    1.00    &   0.03   &    0.06   &   787   \\
+%		endosymbiont&    0.67    &   0.01   &    0.01   &   359   \\
+%		\hline
+%		avg / total &    0.84    &   0.19   &    0.17   &   1728  \\
+%		\hline
+%	\end{tabular}
+%\end{table}
+%
+%
+%
+%\begin{table}
+%	\begin{tabular}{|r|c|c|c|c|}
+%		\hline
+%		\multicolumn{5}{c}{GaussianNB()}\\
+%		\hline
+%		\textbf{class}		& \textbf{precision}  &  \textbf{recall}  & \textbf{f1-score}  &  \textbf{support} \\
+%		unknown   	&    0.10 	 &   0.97   &    0.18   &   156   \\
+%		food      	&    0.96 	 &   0.36   &    0.52   &   426   \\
+%		host      	&    1.00    &   0.03   &    0.06   &   787   \\
+%		endosymbiont&    0.67    &   0.01   &    0.01   &   359   \\
+%		\hline
+%		avg / total &    0.84    &   0.19   &    0.17   &   1728  \\
+%		\hline
+%	\end{tabular}
+%\end{table}
+%
+%
+%
+%\begin{table}
+%	\begin{tabular}{|r|c|c|c|c|}
+%		\hline
+%		\multicolumn{5}{c}{LogisticRegression(C=1.0, class\_weight=None, dual=False, fit\_intercept=True)}\\
+%		\hline
+%		\textbf{class}		& \textbf{precision}  &  \textbf{recall}  & \textbf{f1-score}  &  \textbf{support} \\
+%		unknown   	&    0.00 	 &   0.00   &    0.00   &   156   \\
+%		food      	&    0.78 	 &   0.96   &    0.86   &   426   \\
+%		host      	&    1.91    &   0.96   &    0.94   &   787   \\
+%		endosymbiont&    0.88    &   0.90   &    0.89   &   359   \\
+%		\hline
+%		avg / total &    0.79    &   0.86   &    0.82   &   1728  \\
+%		\hline
+%	\end{tabular}
+%\end{table}

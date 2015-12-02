@@ -98,7 +98,7 @@
 % Definitions
 \def\degreeyear#1{\gdef\@degreeyear{#1}}
 \def\degreemonth#1{\gdef\@degreemonth{#1}}
-\def\degree#1{\gdef\@degree{#1}}
+\def\degreename#1{\gdef\@degreename{#1}}
 \def\advisor#1{\gdef\@advisor{#1}}
 \def\department#1{\gdef\@department{#1}}
 \def\field#1{\gdef\@field{#1}}
@@ -116,7 +116,7 @@
 	\theauthor\\ to\\ The \@department\\ 
 	\vspace{12pt}
 	in partial fulfillment of the requirements\\ 
-	for the degree of\\ \@degree\\ 
+	for the degree of\\ \@degreename\\ 
 	\vspace*{\fill}
     \includegraphics{front_material/NavyBlueu}\\
 	\vspace{12pt}
