@@ -306,7 +306,7 @@ HiSeq, MiSeq and older Gene Analyzer II \citep{Nederbragt2012}.
 \begin{figure}
     \includegraphics[width=\textwidth]{illumina_lib_prep.pdf}
     \label{fig:libprep}
-    \caption{A brief overview of library preparation for Illumina modified from \citep{Mardis2008} and Illumina TruSeq kit documentation} 
+    \caption[Illumina Library Preparation]{A brief overview of library preparation for Illumina modified from \citep{Mardis2008} and Illumina TruSeq kit documentation} 
 \end{figure}
 
 Although these platforms use a range of different implementations and tend to exhibit various different trade-offs (mainly in terms
@@ -329,7 +329,7 @@ has made both genomic and RNA-Seq analysis and annotation easier and more effect
 \begin{figure}
     \includegraphics[width=\textwidth]{illumina_PE_sequencing.pdf}
     \label{fig:libseq}
-    \caption{A brief overview of paired end sequencing in an Illumina flowcell after library preparation, derived
+    \caption[Paired-end Sequencing]{A brief overview of paired end sequencing in an Illumina flowcell after library preparation, derived
     from \citep{Mardis2008} and Illumina}
 \end{figure}
 
@@ -344,7 +344,7 @@ after sequencing.
 The current \textit{de facto} standard in 2nd generation sequencing is that of the bridge amplification
 based \citep{Shendure2008} Illumina platforms \citep{Regalado2014} due to relatively low error rate (\(\leq0.1\%\) \citep{Glenn2011}),
 very high throughput (e.g. HiSeq2500 generates up to 400M 125bp reads per run (1TBase of data) \citep{Nederbragt2013})
-and the lowest cost per Mb (\(\leq$0.04\) \citep{Glenn2011}).
+and the lowest cost per Mb (\(\leq\$0.04\) \citep{Glenn2011}).
 
 
 Finally, 3rd generation technologies are generally known as single-molecule sequencing.
@@ -950,7 +950,7 @@ analyses involve the chromatographic separation of samples using either liquid (
 
 \begin{figure}
     \includegraphics[width=\textwidth]{mass_spec.pdf}
-    \label{Visualisation of Mass Spectrometry data when coupled with chromatographic techniques.
+    \caption[Mass Spectrometry Data]{Visualisation of Mass Spectrometry data when coupled with chromatographic techniques.
         The X axis represents the \(m/z\) ratio of an ion, the Y axis the retention time within the chromatographic
     separation method (GC, HPLC etc.) and Z the intensity detected at a given m/z}
     \label{fig:mass_spec}
@@ -1062,7 +1062,7 @@ words a term which penalises model complexity.
 
 \begin{figure}[h]
     \includegraphics[width=\textwidth]{fitting.pdf}
-    \caption{Plot showing a high bias (underfit) model in yellow and a high variance (overfit) model in yellow.
+    \caption[Explanation of Learning Curves and Fitting]{Plot showing a high bias (underfit) model in yellow and a high variance (overfit) model in yellow.
         Below are learning curves corresponding to each of these respectively.
         Learning curves show the effect of different training set sizes on the training and test error of misspecified models.
         Overfitted models show a large gap between test and training errors, they fit to the training data well but don't generalise
@@ -1186,7 +1186,7 @@ their cost function in a more efficient constrained way.
 
 \begin{figure}[h]
     \includegraphics[width=\textwidth]{margin.pdf}
-    \caption{A: Demonstration of 3 valid decision boundaries in a 2D classification problem, B: The optimal boundary (H2) is that which maximises
+    \caption[SVM Decision Boundaries]{A: Demonstration of 3 valid decision boundaries in a 2D classification problem, B: The optimal boundary (H2) is that which maximises
         the separation of different classes.  This optimal boundary can be defined in terms of support vectors.  The bias/intercept has been 
     folded into \(\theta\) directly.}
     \label{fig:margin}
@@ -1212,7 +1212,7 @@ This can improve robustness to outlier data and generally improve generalisabili
 
 \begin{figure}[h]
     \includegraphics[width=\textwidth]{boundary.pdf}
-    \caption{Demonstration of the utility of a soft-decision boundary to improve the overall
+    \caption[Soft-Margin Classifiers]{Demonstration of the utility of a soft-decision boundary to improve the overall
     fit of a decision boundary by allowing a degree of misclassification during training}
     \label{fig:boundary}
 \end{figure}
@@ -1234,7 +1234,7 @@ referred to as sparse kernel methods.
 
 \begin{figure}[h]
     \includegraphics[width=\textwidth]{kernel.pdf}
-    \caption{A kernel transform can allow SVM to produce non-linear classification boundaries by mapping
+    \caption[Kernel Trick]{A kernel transform can allow SVM to produce non-linear classification boundaries by mapping
         the data to a higher dimensional space in which they are linearly separable. This is known as the kernel
         trick and the key to its efficiency in SVM is that it is only evaluated for those sets of points near the 
     decision boundary}
@@ -1378,7 +1378,7 @@ with different initialisations.
 
 \begin{figure}[h]
     \includegraphics[width=\textwidth]{knn.pdf}
-    \caption{Demonstration of the K-means algorithm applying 3 rounds of Expectation-Maximisation to cluster
+    \caption[K-means Clustering]{Demonstration of the K-means algorithm applying 3 rounds of Expectation-Maximisation to cluster
         a group of 2 dimensional samples.  The 3 cluster centroids (represented by coloured rectangles) 
         are randomly initialised in 0 before undergoing 3 rounds of EM.  
         This involves the successive assignment of samples to their nearest centroids (1a, 2a, 3a) 
@@ -1679,11 +1679,6 @@ an efficient and fast Wu-Manber approximate string-matching algorithm to calcula
 MSA alignment method \citep{Thompson2011} that incorporates all pairwise alignment information when refining
 instead of using heuristics to approximate pairwise sequence differences like most approaches.
 
-
-
-%\begin{figure}
-%    \caption{Redrawn from a slide by Derrick Zwickl}
-%\end{figure}
 
 \subsection{Masking}
 
