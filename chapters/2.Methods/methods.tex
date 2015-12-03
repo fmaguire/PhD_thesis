@@ -947,7 +947,7 @@ analyses involve the chromatographic separation of samples using either liquid (
 
 
 
-
+%gc: Alina dislikes this figure, hard to read
 \begin{figure}
     \includegraphics[width=\textwidth]{mass_spec.pdf}
     \caption[Mass Spectrometry Data]{Visualisation of Mass Spectrometry data when coupled with chromatographic techniques.
@@ -1023,42 +1023,42 @@ automatically inferring and utilising patterns in data \citep{Murphy2012}.
 A commonly used formal definition of machine learning:
 ``A computer is said to learn from experience E with respect to some class of tasks 
 T and performance measure P, if its performance at tasks T, as measured by P, improves 
-with experience E.'' \citep{Mitchell1997}
+with experience E.'' \citep{Mitchell1997} %gc: full stop after citation?
 ML encompasses techniques and methods from various areas including statistics,
-pattern recognition, optimisation/control engineering, neuroscience and artificial intelligence.
-Applications range in complexity from simple linear regression to deep convoluted neural networks 
+pattern recognition, optimisation/control engineering, neuroscience and artificial intelligence. %gc: is pattern recognition an area?
+Applications range in complexity from simple linear regression to deep convoluted neural networks %gc: convoluted -> convolutional
 with millions of free parameters running on dedicated super-computers \citep{Wu2014} 
 which are capable of beating human-performance on complex image classification tasks 
 (e.g. IMAGENET \citep{Berg2014,He2015}).
 
 Typically, we seek to set the parameters (\theta) of a function in such a way
 that another property is minimised.  For example, in linear regression the aim is to find 
-parameters of a straight line \(h_{theta}(x) = \theta_{0} + \theta_{1} * x_{1}\) which minimise the distance
+parameters of a straight line \(h_{theta}(x) = \theta_{0} + \theta_{1} * x_{1}\) which minimise the distance %gc: Linear regression usually expressed in arbitrary dimensions only includes \theta_{0} as an implied part of the design matrix; see Murphy's derivation
 between the line and the data (for example, the sum of squares distance).
 This distance/error is calculated using something known as the cost function e.g. \(J(\theta) = \frac{1}{2} \sum^{m}_{i=1} (h_{\theta}(x_{i}) - y_{i})^2\) 
 (where \(m\) is the number of \(x, y\) pairs in the dataset for linear regression).
 Most algorithms will seek to minimise the value of this cost function \(J(\theta)\) with respect to 
-the parameters of the original function \(h_{theta}(x)\).  Typically, this is achieved using a variety of algorithmic optimisation techniques.
-The most prevalent of these are gradient descent based methods in which the value of \theta is modified 
-in the direction of the gradient of the cost function (determined using the partial derivative of \(J\) with respect to \theta: \(\frac{\partial J_{\theta}}{\partial\theta}\)).  
+the parameters of the original function \(h_{theta}(x)\).  Typically, this is achieved using a variety of algorithmic optimisation techniques. %gc: theta -> \theta
+The most prevalent of these are gradient descent based methods in which the value of \theta is modified %gc: should have \( \)
+in the direction of the gradient of the cost function (determined using the partial derivative of \(J\) with respect to \theta: \(\frac{\partial J_{\theta}}{\partial\theta}\)). %gc: don't know if that's necessarily true, linear regression is your most recent example and it has a closed form minimisation
 
 
 In an ideal world, the best machine learning model trained using our data will generalise well for novel data generated from the same underlying process
-which generated the training data.  This is known as generalisability and it plays into the concept of `fit'.  A model that minimises 
+which generated the training data.  This is known as generalisability and it plays into the concept of `fit'.  A model that minimises %gc: is generalisability really a word?
 its particular cost function on the training dataset has been fit to that dataset, however, it is possible to for the model to fit the training
 data in such a way that it has low error on the training data but performs incredibly poorly when applied to new data from the same process.
-This is typically the case when a model has overfit the data.  The classic example of this is fitting a line to a set of points using a
-high degree polynomial.  This polynomial will perfectly pass through all the points but is likely to be a worse predictor for the value 
+This is typically the case when a model has overfit the data.  The classic example of this is fitting a line to a set of points using a %gc: more that the situation where this happens is called overfitting. For reference, overfitting is performing worse on the test set than the training set, and underfitting is performing less than perfect on the training set.
+high degree polynomial.  This polynomial will perfectly pass through all the points but is likely to be a worse predictor for the value %gc: why are you describing this example with words, just reference figure 1.3.1?
 of some new data than a much simpler model that while it fits the original training data, may not fit quite as well.  Likewise, a model that is misspecified
 or cannot fit the training data well e.g. the training data follows a non-linear distribution but the model is linear, is known as underfitted.
 Underfitted models will perform poorly on both the training and test data.  However, it isn't particularly useful to only discover
-how useful your model is likely to be on the test data therefore almost all machine learning analyses will use the principal of cross-validation.
+how useful your model is likely to be on the test data therefore almost all machine learning analyses will use the principal of cross-validation. %gc: will use or just use?
 Cross-validation is the partitioning of the training dataset to create a validation dataset which can be used as a proxy test set.
 
 Unfortunately, no single model will perform best for all tasks (to paraphrase and simplify Wolpert and McCreedy's ``No Free Lunch Theorem'' \citep{Wolpert1996}),
 there are no shortcuts in machine learning (and many other areas) or optimisation.  Therefore, testing different models (and hyperparameter values) using
 cross-validation is key to generating a useful model.  Another important way to prevent overfitting is to introduce regularisation in the cost function, in other
-words a term which penalises model complexity.
+words a term which penalises model complexity. %gc: Occam's razor? But then you'll have to discuss probabilistic models.
 
 \begin{figure}[h]
     \includegraphics[width=\textwidth]{fitting.pdf}
@@ -1148,37 +1148,37 @@ discriminative.
 Probabilistic functions will return a probability distribution associated with possible class labels or
 regression values whereas non-probabilistic approaches will only return the most likely class label or value.
 Continuing 
-Generative algorithms, such as Naive Bayes, seek to model the process by which the output data was generated 
-from the input i.e. learn the joint probability \(p(x,y)\) and make predictions on that basis via Baye's Theorem (see \ref{eq:bayes}) 
+Generative algorithms, such as Naive Bayes, seek to model the process by which the output data was generated %gc: I thought Naive Bayes isn't a good example of a generative model, but Michael Jordan disagrees so there you go (restricted Boltzmann machines would be more fun)
+from the input i.e. learn the joint probability \(p(x,y)\) and make predictions on that basis via Baye's Theorem (see \ref{eq:bayes}) %gc: full stop
 
 \[
-    p(x,y) = p(x|y)p(x) = p(y|x)p(y)
-    p(y|x) = \frac{p(x,y)}{p(y)}
+    p(x,y) = p(x|y)p(x) = p(y|x)p(y) %gc: should be p(x|y)p(y) and p(y|x)p(y), see https://en.wikipedia.org/wiki/Chain_rule_(probability)
+    p(y|x) = \frac{p(x,y)}{p(y)} %gc: I think you meant to split this into multiple equations, it's not all equal
     p(y|x) = \frac{p(x|y)p(y)}{p(x)}
     \label{eq:bayes}
 \]
 
 Whereas, discriminative classifiers, such as logistic regression/linear classifiers,
-model the posterior probability \(p(y|x)\) directly or just learn mappings in the case of non-probabilistic approaches.
+model the posterior probability \(p(y|x)\) directly or just learn mappings in the case of non-probabilistic approaches. %gc: this is usually called the likelihood rather than the posterior, because it would have parameters in the bayesian case, so posterior would be p(w|Y,X) (where Y and X are the whole dataset) and posterior predictive would be p(y*|x*,Y,X) after marginalising w
 In other words, for classification problems a generative model would determine the statistical distribution of 
 individual classes whereas discriminative models would just determine the boundaries between them.
 Generative models often perform better on small training sets by preventing overfitting with discriminative
-classifiers performing better as the training set grows \citep{Ng2002}.
+classifiers performing better as the training set grows \citep{Ng2002}. %gc: not going to argue with Ng and Jordan
 
 \subsubsection{Support Vector Machines}
 
 Support Vector Machines (SVMs) are a type of sparse kernel maximum-margin supervised classification algorithm.
 With the innovation of the kernel trick in 1992 \citep{Boser1992} and soft-margins in 1993 (not published until \citep{Cortes1995}) SVMs have been 
 among the most successfully applied classification algorithms \citep{Fernandez-Delgado2014}.
-Only relatively recently have they begun to lose ground to the deep-learning methods such as deep-convolutional neural networks (e.g. LeNet \citep{LeCunn1998}) exemplified 
-by the defeat of SVMs by the LeNet on the MNIST digit recognition dataset \citep{Hinton2006,Bengio2007} \citep{Bengio2013}
+Only relatively recently have they begun to lose ground to the deep-learning methods such as deep-convolutional neural networks (e.g. LeNet \citep{LeCunn1998}) exemplified %gc: no dash in deep convolutional or deep learning. Dunno about referencing LeNet as recent, it's old. Recent innovations made it competitive I guess?
+by the defeat of SVMs by the LeNet on the MNIST digit recognition dataset \citep{Hinton2006,Bengio2007} \citep{Bengio2013} %gc: full stop
 
 The goal of SVMs is to learn a hyperplane which separates two sets of labels in the dataset. Note, for multiclass classification a series of one-vs-all
 classifiers are typically trained (that is for \(K\) classes, \(K\) SVMs are trained each classifying between a label \(k\) and all other labels).
 However, not all possible hyperplanes that could separate the labels will necessarily generalise well to novel data (and this generalisation
 is the ultimate goal of supervised learning).  Therefore, it is necessary to determine a way to select the hyperplane which should generalise best and to do
 this in a manner that will be relatively efficient especially with high dimension datasets.  This optimal hyperplane for separable classes can be demonstrated to be
-the hyperplane which maximise the margin between the two classes \citep{vapnik1982estimation} in other words, the optimal boundary is the one that has the largest
+the hyperplane which maximise the margin between the two classes \citep{vapnik1982estimation} in other words, the optimal boundary is the one that has the largest %gc: maximise -> maximises, full stop then "In other words..."
 possible distance from each class (while still separating them).  Conceptually, the positioning of this boundary is only dependent
 on the relatively small subset of the training data \(\mathcal{D}\) that is near the boundary and it would be inefficient to consider all points when
 placing the decision boundary.  For this reason, SVMs can define the decision boundary in terms of the namesake support vectors and can reformulate
@@ -1206,7 +1206,7 @@ The 2nd major enhancement of SVMs is that of soft-margins \citep{Cortes1995}. So
 if doing so would increase the size of the margin that can be generated.  Specifically, a user defined penalty constant \(C\) is specified and 
 added to the cost function penalising the degree of misclassification \(\xi\), e.g.:
 
-\[argmin_{theta} J(\theta) = \frac{1}{2} ||\theta||^{2}  + C \sum^{n}_{i=1} \xi_{i} s.t. y_{i}(\theta x_{i}) \geq 1 - \xi_{i} \forall i\]
+\[argmin_{theta} J(\theta) = \frac{1}{2} ||\theta||^{2}  + C \sum^{n}_{i=1} \xi_{i} s.t. y_{i}(\theta x_{i}) \geq 1 - \xi_{i} \forall i\] %gc: theta -> \theta
 
 This can improve robustness to outlier data and generally improve generalisability by keeping the margin as large as possible.
 
@@ -1218,7 +1218,7 @@ This can improve robustness to outlier data and generally improve generalisabili
 \end{figure}
 
 Finally, the 3rd major advantage of SVMs is that despite nominally being linear classifiers they can effectively classify data which 
-is not linearly separable in the input dimensions using the kernel trick.  Conceptually, a kernel function is used to transform
+is not linearly separable in the input dimensions using the kernel trick.  Conceptually, a kernel function is used to transform %gc: No citation for the kernel trick?
 which transforms data from the input dimensions to a higher dimensional space in which the data is linearly separable.
 These transformed feature spaces can have incredibly high number of dimensions (in the case of popular kernels like radial basis
 function, an infinite number of dimensions).  Explicitly transforming data in this way would be computationally intensive
@@ -1244,12 +1244,13 @@ referred to as sparse kernel methods.
 
 
 The advantages of SVM is that they are somewhat resistant to the curse of dimensionality i.e. they are effective with large numbers of features
-even if the number of features is greater than the size of the training set.  By using support vectors, the kernel trick, and Lagrange bound optimisation 
+even if the number of features is greater than the size of the training set.%gc: you should probably back this up, or don't make the claim
+By using support vectors, the kernel trick, and Lagrange bound optimisation 
 they are relatively fast and memory efficient to train and as classification only depends on the location of the decision boundary very fast to test.
-Additionally, in simple form finding the hyperplane of an SVM is a true convex optimisation therefore is guaranteed to always find the global optimum (this
+Additionally, in simple form finding the hyperplane of an SVM is a true convex optimisation therefore is guaranteed to always find the global optimum (this %gc: an SVM -> a SVM, true convex optimisation *problem*
 guarantee does break with more complex kernels and soft-margins).  
 The major disadvantage is not natively generating probabilistic output (i.e. attaching a probability to a certain classification).  However, this can be achieved
-using methods like Platt Scaling or the related Relevance Vector Machine algorithm.   The other disadvantage is that hyper-parameters such as the misclassification
+using methods like Platt Scaling or the related Relevance Vector Machine algorithm.   The other disadvantage is that hyper-parameters such as the misclassification %gc: citations for those methods? Also, there is a probabilistic derivation of support vector machines on p.505 of Murphy's textbook, section 14.5.5
 penalty for soft-margins (\(C\)) and kernel choice (and its parameters) need chosen, typically this is solved by training using a grid-search of permutations
 of these parameter settings and selecting the best model via cross-validation.
 
@@ -1290,7 +1291,7 @@ using Gaussian distributions.
 These probabilities are then translated into positions in the map \(\mathcal{Y}\) and similarities re-calculated
 using Student's t-distributions.  The position and variance of these points and distributions respectively
 is then optimised by minimising the difference between the similarity probabilities in the input space
-and on the map \citep{Maaten2008}.
+and on the map \citep{Maaten2008}. %gc: this is probably right, but my understanding of t-sne isn't great
 
 \subsubsection{K-means}
 
@@ -1299,7 +1300,7 @@ method in which we seek to partition data points in multidimensional space into
 K clusters. It is often used to initialise Gaussian mixture models.
 
 Specifically, given a set of \(N\) observations \(X = {x_{1},...,x_{N}}\) 
-of \(\mathcal{D}\) dimensions partition each point \((x_{n})\) into K clusters
+of \(\mathcal{D}\) dimensions partition each point \((x_{n})\) into K clusters %gc: unfinished?
 
 A cluster can be intuitively considered as a group of observations/points which are 
 ``closer'' to one another than to other observations and the k-th cluster can 
@@ -1315,7 +1316,7 @@ assigned to cluster \(k\) (with centroid \(\mu_{k}\)) and 0 otherwise then we ca
 that represents the sum of squares distances of each data point \(x_{n}\) from its assigned cluster centroid \(\mu_{k}\).
 
 \[ 
-    J = \sum_{n=1}^{N}\sum_{k=1}^{K} = r_{nk} \|x_{n} - \mu_{k}\|^{2}
+    J = \sum_{n=1}^{N}\sum_{k=1}^{K} = r_{nk} \|x_{n} - \mu_{k}\|^{2} %gc: why is there an equals sign in here?
     \label{eq:kmeans_cost}
 \]
 
@@ -1346,7 +1347,7 @@ assigning each point to the cluster represented by the nearest centroid or forma
 Step 2 roughly corresponds to the maximisation step in EM is can be determined by taking the partial derivative of \(J\) w.r.t 
 \(\mu_{k}\) setting it to 0 and solving for \(\mu_{k}\):
 \[
-    \frac{\partial J}{\partial \mu_{k}} = 2 \sum_{n=1}^{N} r_{nk} (x_{n} - \mu_{k})
+    \frac{\partial J}{\partial \mu_{k}} = 2 \sum_{n=1}^{N} r_{nk} (x_{n} - \mu_{k}) %gc: this should be split over multiple lines?
     0 = 2 \sum_{n=1}^{N} r_{nk} (x_{n} - \mu_{k})
     \mu_{k} = \frac{\sum_{n} r_{nk}x_{n}}{\sum_{n} r_{nk}}
 \]
@@ -1356,7 +1357,7 @@ In other words set \(\mu_{k}\) to the mean of all data points \(x_{n}\) assigned
 These two steps are repeated until a specified maximum number of iterations are reached or no points change cluster assignment during
 step 1.
 
-\(J\) \ref{eq:kmeans_cost} will converge but is liable to get stuck in a local rather than global minimum.
+\(J\) \ref{eq:kmeans_cost} will converge but is liable to get stuck in a local rather than global minimum. %gc: J in eq. 1.3.2?
 
 K-means has many modifications and improvements such as refining the initialisation of the clusters by 
 the Bradley-Fayyad method (clustering random samples of the dataset and then k-means clustering the resulting clusters) \citep{Bradley1998} 
@@ -1371,7 +1372,7 @@ This is achieved by creating upper and lower bound distance filters using the tr
 An efficient implementation of the k-means algorithm is available in the MLPACK C++ Machine Learning library \citep{mlpack2013}.
 While very efficient and effective, k-means has some limitations, it requires a user specified number of clusters
 and therefore diagnostics to check for obvious misspecification in the number clusters.  Information criterion
-can be used to determine the optimal number of clusters.
+can be used to determine the optimal number of clusters. %gc: criteria, maybe? I don't know, you read the sentence. I guess this is important because you used it?
 Additionally, it is not guaranteed
 to discover the global optimal clusters (can converge to local optima).  This can be amortised by running multiple times 
 with different initialisations.
