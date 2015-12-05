@@ -248,8 +248,6 @@ k
 
 
 
-
-
  Respiration of the host plays a role in the gas exchange of \(CO_2\) and \(O_2\) 
  to the endosymbiont, with the algae displaying higher levels of photosynthetic
  activity while in association with the host due to the increase host related 
@@ -604,39 +602,70 @@ LC-QQQ to quantitatively assess
 
 
 \subsubsection{Untargeted LC-QTOF Profiling}
-GC-QTOF and LC-QTOF (with positive and negative polarity).
 
+Sample preparation for mass spectrometry followed standard protocols.
+Briefly, 5 biological replicates were sampled from \textit{P. bursaria} CCAP 1660/12 
+cultures at the midpoint of both the day and night cycles. 
+Samples were then dried, flash-frozen in liquid nitrogen, and homogenised
+using a cell disruptor. 
 
-Theoretically, GC-QTOF would ideally be used to identify profiles of polar
-saccharides. 
+For each sample, \(10mg\) was dissolved in \(400\mu l\)
+of a solution of \(80\%\) MeOH containing \(7.2mg ml^{-1}\) of
+an umbellifrone internal standard.  This solution was kept on ice
+and vortexed for 30s every 10 minutes for 30 minutes.
+Samples were sonictated in ice cold water for 15 minutes and then centrifuged
+at 13k rpm for 10 minutes.  Retaining the supernatant in a separate tube, the pellet
+was resuspended in \(400\mu l 80\%\) MeOH and vortexing, sonication and centrifugation
+steps repeated.  The two supernatants were combined and filtered through 
+a \(0.2\mu m\) syringe filter (Chromacol).  Samples were sub-divided into two 
+a \(5\mu l\) of each was loaded into an Agilent 1200 Series HPLC with
+a \(3.5\mu m\), \(2.1\times 150mm\) Eclipse Plus C18 Agilent column.
+One sample was then analyses using a positive electron spray ionisation
+and the other a negative ionisation on an Agilent 6520 accurate mass
+quadrupole time of flight (Q-TOF) mass spectrometer. Data was captured
+using the standard Agilent data acquisition software and converted
+from ``.d'' format to the open mzXML format \citep{Pedrioli2004}.
+The same process was repeated for 7 blank samples under both ionisation conditions
+as well as an apigenin QC standard.
 
+Samples were analysed primarily using the XCMS R package \citep{Smith2006,Tautenhahn2012}.
+Peak features were detected in each samples using the centWave algorithm with a 30ppm tolerated m/z deviation,
+minimum peak width of 10 and maximum peak width of 60 \citep{Tautenhahn2008}. 
+Peaks were aligned with a 0.025 m/z width overlap, and a maximum bandwidth 5 retention time
+deviation. Using the aligned peaks, the retention time deviation between samples were
+calculated.  The samples were then realigned correcting for retention time deviation and
+integrated using fillPeaks. 
 
+In order to determine differential presence of globally detected metabolites
+unpaired Welch's \textit{t}-tests were conducted comparing the 5 day samples to the 5
+night samples. Welch's tests were used as they don't assume equal sample sizes or variances
+between the two groups\citep{Welch1947}\footnote{
+    \(t' = \frac{\mu_1 - \mu_2}{\sqrt{\frac{s^2_1}{n_1} + {s^2_2}{n_2}}}\)
+    with degrees of freedom determined via the Welch-Satterwaite-equation:
+    \(df = \frac{(\frac{s^2_1}{n_1} + \frac{s^2_2}{n_2})^2}{\frac{(\frac{s^2_1}{n_1})^2}{n_1 - 1} + \frac{(\frac{s^2_2}{n_2})^2}{n_2 - 1}}\)
+    \citep{Ruxton2006}
+}
 
-%Agilent 6520 accurate mass quadrupole time of flight (Q-TOF) 
-%with Agilent 1200 series HPLC stack
-%
-%Agilent data acquisition software was used to parse the raw data
-%before conversion to the open mzXML format. 
-%
-%Peaks were identified in each sample individually using XCMS xmcsSet
-%function and a matched filter with a step size of 0.01, a signal:noise threshold
-%of 10 and 2 steps 
-%
-%extracted ion base peak chromatograms
-%%what is this?  
-%
-%
-%Identified peaks are then grouped across samples based on the m/z ratios
-%alignment
-%smoothed peak distribtuions 
-%samples only detected in some replicate of given class i.e. day or night 
-%are rejected at this stage.
-%
-%
-%Aligned and matched peaks were then used to evaluate changes in retention time during
-%chromatography between samples.  Calculated drift correlations were then used to
-%improve the alignment and grouping of peaks.
-%
+P-values from this were corrected 
+for multiple comparisons using false discovery rates (FDR).  FDR is a
+less conservative correction than, the classic family-wise error rate correction,
+Bonferroni adjustment\footnote{
+    P-value threshold \(\alpha\) is adjusted relative to the number of comparisons (n). 
+Specfically, significance is determined as a P-value \(\leq \frac{\alpha}{n}\).} but
+allow maintenance of a greater proportion of statistical power with a 
+slightly evelated risk of Type-I errors. 
+
+Features were then annotated using the METLIN metabolite database \citep{Smith2005a,Sana2008,Tautenhahn2012a}.
+Extracted ion base peak chromatograms were manually inspected for each significantly expressed feature
+and any that weren't clear distinct peaks were discarded. Any sample without
+an annotation against METLIN was similarly discarded. Finally, annotations
+were manually parsed and samples with impossible annotations (e.g. 
+chemotherapeutic drugs) discarded.  
+
+\subsubsection{Untargeted GC-QTOF Profiling}
+
+%heoretically, GC-QTOF would ideally be used to identify profiles of polar
+%saccharides. 
 
 %Pseudospectrum approach instead of peak alignments etc due to the difficulties
 %aligning data of this type relative to LCMS.
@@ -664,34 +693,40 @@ saccharides.
 %using a negative polarity and the other positive. 
 %
 %\(3.5\mu m\), \(2.1 \times 150mm\) Eclipse Plus C18 (Agilent) 
-%
 
-
-In order to determine differential presence of globally detected metabolites
-unpaired Welch's \textit{t}-tests were conducted comparing the 5 day samples to the 5
-night samples. Welch's tests were used as they don't assume equal sample sizes or variances
-between the two groups\citep{Welch1947}\footnote{
-    \(t' = \frac{\mu_1 - \mu_2}{\sqrt{\frac{s^2_1}{n_1} + {s^2_2}{n_2}}}\)
-    with degrees of freedom determined via the Welch-Satterwaite-equation:
-    \(df = \frac{(\frac{s^2_1}{n_1} + \frac{s^2_2}{n_2})^2}{\frac{(\frac{s^2_1}{n_1})^2}{n_1 - 1} + \frac{(\frac{s^2_2}{n_2})^2}{n_2 - 1}}\)
-    \citep{Ruxton2006}
-}
-
-P-values from this were corrected 
-for multiple comparisons using false discovery rates (FDR).  FDR is a
-less conservative correction than, the classic family-wise error rate correction,
-Bonferroni adjustment\footnote{
-    P-value threshold \(\alpha\) is adjusted relative to the number of comparisons (n). 
-Specfically, significance is determined as a P-value \(\leq \frac{\alpha}{n}\).} but
-allow maintenance of a greater proportion of statistical power with a 
-slightly evelated risk of Type-I errors. 
-%
-%\subsubsection{Qualitative MS}
-%
-
-%
-%
 \subsubsection{Targeted Amino Acids Quantitative Analysis}
+
+5 Day and 5 Night samples were prepared for liquid chromatography
+using the same approach as the untargeted LC-QTOF analysis.
+In addition to this, the Day1 and Night1 samples were analysed at both
+\(2x\) and \(0.5x\) titrations.  3 blank samples were run 
+as well as standards consisting of a complete amino acid
+mix from Sigma at \(0.5\mu M\) and 4 samples consisting of Asparagine-Glycine-Tryptamine
+and Leucine-Glutamine-Lysine respectively.
+
+After chromatography samples were ionised using electronspray ionisation
+and analysed using multiple reaction monitoring optimised
+for amino acids with an Agilent Technology
+6410B enhanced sensitivity triple quadrupole mass spectrometer (QQQ).
+
+Results were analysed using the Agilent Quantiative Analysis software package
+with peaks normalised in respect to the umbelliferone standard.  Results for any 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Agilent 6410 enhanced sensitivity triple quadrupole (QQQ) 
 with Agilent 1200 series HPLC stack
@@ -808,20 +843,23 @@ belonging to the CCAP 1660/12 endosymbiont from the SCT transcriptomes.
 
 
 \begin{figure}
-    \includegraphics[width=\textwidth]{endosymbiont_bin_annotation.pdf}
+    \centering
+    \includegraphics{endosymbiont_bin_annotation.pdf}
     \caption{More stringent} 
 \end{figure}
 
 
 
 \begin{figure}
-    \includegraphics[width=\textwidth]{endo_distribution_of_top_BLAST_hits.pdf}
+    \centering
+    \includegraphics{endo_distribution_of_top_BLAST_hits.pdf}
     \caption[Endostymbiont Bin Top BLAST Hits]{asdasd}
 \end{figure}
 
 
 \begin{figure}
-    \includegraphics[width=\textwidth]{endosymbiont_bin_size_dist.pdf}
+    \centering
+    \includegraphics{endosymbiont_bin_size_dist.pdf}
     \caption{asdasd}
 \end{figure}
 
@@ -1017,6 +1055,7 @@ Malate-Fumarate fumarate hydratase not present in other algae
 
 
 \begin{figure}
+    \centering
     \includegraphics[width=\textwidth]{gcms_cloud_plots.pdf}
     \caption[GCQTOF Cloud Plot]{Cloud point showing for the GCQTOF analysis. 
     The radius of a given point reflected its fold change.
@@ -1028,7 +1067,8 @@ depth of colour)}
 
 
 \begin{figure}
-    \includegraphics{GCMS_metabolites.svg}
+    \centering
+    \includegraphics{GCMS_metabolites.pdf}
     \caption[Plot of Identifiable GC-QTOF Metabolites]{Plot showing the
         fold change of the 23 putatively identifiable significantly
         differently present metabolites from GC-QTOF. 5 peaks
@@ -1045,6 +1085,7 @@ was identified with no significantly different expression.
 
 
 \begin{figure}
+    \centering
     \includegraphics[width=\textwidth]{lcms_cloud_plots.pdf}
     \caption[LCQTOF Cloud Plots]{A: Positive 254,  B: 43}
     \label{fig:lcms_clouds}
@@ -1052,15 +1093,28 @@ was identified with no significantly different expression.
 
 
 \begin{figure}
-    \includegraphics{lcqtof_metabolites.pdf}
+    \centering
+    \includegraphics{LCMS_pos_down_metabolites.pdf}
     \caption{Of the 254 positive significantly different present metabolites,
         19 were removed after manual inspection of peaks, 95 were removed due
     to having no METLIN hits}
-    \label{fig:poslcqtof}
+    \label{fig:posqtofdown}
 \end{figure}
 
+
 \begin{figure}
-    \includegraphics{lcqtof_metabolites_negative.pdf}
+    \centering
+    \includegraphics{LCMS_pos_up_metabolites.pdf}
+    \caption{Of the 254 positive significantly different present metabolites,
+        19 were removed after manual inspection of peaks, 95 were removed due
+    to having no METLIN hits}
+    \label{fig:posqtofup}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \includegraphics{LCMS_neg_metabolites.pdf}
     \caption{Of the 43 positive significantly different present metabolites,
         3 were removed after manual inspection of peaks, 17 were removed due
     to having no METLIN hits}
@@ -1249,6 +1303,59 @@ Unfortunately, much as incorrect
 
 \subsection{Metabolomics shows promise}
 
+The pilot application of metabolomics demonstrated mixed results.
+There was poor performance of mass
+
+GC/MS failed for comprehensive profiling of carbohydrates.
+Possibly due to miscalibration of the GC parameters or the capture 
+paramters on the initial quadrupole.
+
+
+All globally profiled metabolites required comprehensive validation
+with a secondary mass spectrometry. 
+
+
+The failure of accurate quantification in the second round
+of MRM LC-QQQ spectrometry for the majority of amino acids 
+is problematic.  However, this targeted approach still revealed
+useful information regarding the relative abundance of amino.
+
+
+
+Particularly, both the high concentration of arginine as well
+as its significantly differential abundance between day and night
+indicates that this amino acid may well form a major component of 
+host provided nitrogen for \textit{M. reisseri}. This is in
+concordance with previous findings suggesting 
+the importance of this amino acid in the \textit{C. variabilis}
+endosymbiosis \citep{Kato2006}.
+
+Despite not have been implicated in previous analyses
+as one of the key amino acid nitrogen sources, the identification
+of both high quantities and differential abundant 
+threonine and phenylalanine suggests that these
+amino acids may play a role in the host-endosymbiont
+barter system of \textit{P. busaria}-\textit{M. reisseri}.
+
+
+
+
+This alternative behaviour suggests that the feeding experiment
+results by \citep{Kato2006} and \citep{Kato2009} need 
+to be re-evaluated for \textit{M. reisseri}. This also
+adds further support to the diversity of endosymbiotic
+relationships between \textit{P. bursaria} and its
+various algal endosymbionts. 
+
+
+Unfortunately, a failure to accurately quantify and calibrate
+for several amino acids means this targeted metabolomic analysis
+is incomplete.  Of particular interest, is the remaining 5 amino acids
+implicated in \textit{C. variabilis} F36-ZK's endosymbiosis.
+
+
+
+
 
 
 
@@ -1349,6 +1456,17 @@ has lead to some promising results.
 Namely, discovering quantitative data supporting the mechanism by which
 the host likely provides a nitrogen source to the endosymbiont. 
 Specifically, 
+
+
+
+
+
+Ultimately, the key finding from this analysis
+is that \textit{M. reisseri} much like various strains of \textit{C. variabilis}
+exhibit a range of adaptations to endosymbiosis and a given
+host displays different behaviours. 
+
+
 
 
 
