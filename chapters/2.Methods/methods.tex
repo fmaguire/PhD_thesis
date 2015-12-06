@@ -1503,7 +1503,7 @@ Phylogenetic accuracy is usually considered in terms of consistency (as data inc
 occur), and robustness (how sensitive is the phylogeny to violation of assumptions in reconstruction) \citep{Nabhan2012}
 Typically, sequence sampling will be conducted from the basis of a single
 seed sequence which will be used to query existing databases using alignment 
-tools such as BLAST and HMMs (explained in \ref{nextsection}) to attempt to discover
+tools such as BLAST and HMMs (explained in \ref{nextsection}) to attempt to discover %gc: broken cross-ref?
 potentially homologous sequences from different organisms.  
 
 
@@ -1512,36 +1512,38 @@ of conflicting phylogenetic signals, inadequate rate of evolution to resolve rel
 of interest, and violations of assumptions e.g. expectation of a uniform distribution of traits \citep{Nabhan2012}.
 
 
-Generally, increased taxon sampling has a strong positive effect on phylogenetic accuracy \citep{Zwickl2002}
-however, it can also lead to a situation where there are too many sequences to efficiently
-reconstruct a phylogeny.
-However, care care must also be taken not to unintentionally bias datasets by removing 
-any sequences that are considered ``problematic'' especially when conflicting phylogenetic signal
-or model violations can be biologically informative.  Therefore, it is usually necessary to include
-borderline error-generating sequences within a phylogeny initially and to iteratively remove them
-and repeat the phylogenetic inference.  Unfortunately, the reduction of the input sequences
-to a representative subset by heuristics and/or naive clustering can generate
-biases of their own.  However, tools exist that utilise taxonomic database 
-information to automatically a subset of specified cardinality of sequences 
-that display the maximium possible taxonomic diversity for that subset size \citep{Zhou2014}.
+Generally, increased taxon sampling has a strong positive effect on
+phylogenetic accuracy \citep{Zwickl2002} %gc: full stop and new sentence?
+however, it can also lead to a situation where there are too many sequences to
+efficiently reconstruct a phylogeny.  However, care care must also be taken not
+to unintentionally bias datasets by removing any sequences that are considered
+``problematic'' especially when conflicting phylogenetic signal or model
+violations can be biologically informative.  Therefore, it is usually necessary
+to include borderline error-generating sequences within a phylogeny initially
+and to iteratively remove them and repeat the phylogenetic inference. %gc: two ands in one sentence
+Unfortunately, the reduction of the input sequences to a representative subset
+by heuristics and/or naive clustering can generate biases of their own. %gc: biases of their own -> new biases
+However, tools exist that utilise taxonomic database information to
+automatically a subset of specified cardinality of sequences that display the %gc: automatically a subset?
+maximium possible taxonomic diversity for that subset size \citep{Zhou2014}.
 
+Another source of bias in sequence sampling is the usually heuristic choice of
+outgroup taxa. Most contemporary models of phylogenetic inference only infer
+unrooted trees.  Therefore, it is common practice to ``root a tree'' by
+selecting a set of sequences from known evolutionarily distance organisms to
+form an outgroup. If this outgroup is correctly recovered (monophyletically) %gc: comma?
+the root can be placed between it and the other sequences in the phylogeny
+\citep{Yang2012}.  However, choice of outgroup can change implications which
+may be drawn from a phylogeny regardless of methodology used to infer it
+\citep{Milinkovitch1996}.  and care must be taken to ensure the selected %gc: new sentence capitalisation and comma after the and
+outgroup doesn't actively distort the accuracy of inference of the rest of the
+phylogeny regardless of the issue of root placement \citep{Milinkovitch1998}.
 
-Another source of bias in sequence sampling is the usually heuristic choice
-of outgroup taxa. Most contemporary models of phylogenetic inference only infer unrooted trees. 
-Therefore, it is common practice to ``root a tree'' by selecting a set of sequences from known evolutionarily distance
-organisms to form an outgroup. If this outgroup is correctly recovered (monophyletically) the root can be placed between
-it and the other sequences in the phylogeny \citep{Yang2012}.  
-However, choice of outgroup can change implications which may be drawn from
-a phylogeny regardless of methodology used to infer it \citep{Milinkovitch1996}.
-and care must be taken to ensure the selected outgroup doesn't actively
-distort the accuracy of inference of the rest of the phylogeny regardless
-of the issue of root placement \citep{Milinkovitch1998}.
-
-The two principal ways in which putatively homologous sequences are identified in
-sequence databases are those based upon Basic Local Alignment Search Tool (BLAST) and
-its variants and Hidden-Markov Model based approaches (HMM).
-We seek a way of identifying and aligning homologous sequences in 
-a target sequence database with our query sequence.
+The two principal ways in which putatively homologous sequences are identified
+in sequence databases are those based upon Basic Local Alignment Search Tool
+(BLAST) and its variants and Hidden-Markov Model based approaches (HMM).  We
+seek a way of identifying and aligning homologous sequences in a target
+sequence database with our query sequence. %gc: what? does this make sense?
 
 %
 %\subsubsection{BLAST}
@@ -1611,130 +1613,130 @@ a target sequence database with our query sequence.
 
 \subsection{Multiple Sequence Alignment (MSA)}
 
-The goal of MSA is to align sets sequences such that 
-evolutionarily homologous residues occupy the same column. In other words,
-any given column in the alignment theoretically should contain amino acid or nucleotide residues
-that derive from the same common ancestor and have evolved in each sequence lineage.
-It is also possible that insertion or deletion events have taken place
-and a particular residue is absent in the ancestral node or a sequence lineage.
+The goal of MSA is to align sets sequences such that evolutionarily homologous
+residues occupy the same column. In other words, any given column in the
+alignment theoretically should contain amino acid or nucleotide residues that
+derive from the same common ancestor and have evolved in each sequence lineage.
+It is also possible that insertion or deletion events have taken place and a %gc: does this make sense? surely if instead of and
+particular residue is absent in the ancestral node or a sequence lineage.
 
-This is a non-trivial computational problem which has been proven to have an NP-complete
-\footnote{A decision problem for which an answer can be verified in polynomial time 
-    by a non-deterministic turing machine and to and from which any NP-hard problem
-    can be translated \citep{Karp1972}.} computational complexity \citep{Wang1994}.
-Specifically, the optimal alignment of N sequences has a complexity of \(O(L^{N})\)
-for \(N\) sequences of length \( L \)\citep{Sievers2011}.
+This is a non-trivial computational problem which has been proven to have an
+NP-complete \footnote{A decision problem for which an answer can be verified in
+polynomial time by a non-deterministic turing machine and to and from which %gc: capitalise Turing
+any NP-hard problem can be translated \citep{Karp1972}.}
+computational complexity \citep{Wang1994}.  Specifically, the optimal alignment
+of N sequences has a complexity of \(O(L^{N})\) for \(N\) sequences of length
+\( L \)\citep{Sievers2011}.
 
-Due to this complexity, the majority of MSA algorithms implement heuristic approaches
-in order to get, if not the optimal solution, but a sufficiently good one in a reasonable
-amount of time. 
+Due to this complexity, the majority of MSA algorithms implement heuristic
+approaches in order to get, if not the optimal solution, but a sufficiently %gc: then instead of but?
+good one in a reasonable amount of time. 
 
-Typically, MSA algorithms start by generating the sets of all pairwise alignments
-using established pairwise alignment algorithms.
-Pairwise alignment algorithms are almost all based upon a
-pair of ``Ur-algorithms'' with different goals: 
-Needleman-Wunsch, a global alignment algorithms (which attempt to maximise 
-alignment quality over entire sequence lengths) \citep{Needleman1970} and Smith-Waterman, 
-a local alignment algorithms (which are optimised towards producing high quality alignments
-in sub-strings) \citep{Smith1981}.  While early, MSA algorithms were typically
-largely derived from Needleman-Wunsch most modern algorithms seek to combine 
-optimisation of local and global alignments.  The distances used in these
-pairwise alignments will typically be ``scored'' based upon which matches or 
-alignments are more frequent substituions (e.g. Leucine and its isomer Isoleucine 
-or Adenine to its fellow purine base Guanine (transition)) 
-are positively scored and gaps (extension of a gap is typically
-less penalised than creating a gap) or unlikely changes (e.g. the transversion
-of Adenine to Cytosine or Glutamine to Cysteine) penalised.
-This will generally be codified in a substitution matrix e.g. the PAM \citep{Dayhoff1978}, 
-BLOSUM \citep{Henikoff1992} amino acid matrices and their numerous subsequent
-derivations and improvements. 
+Typically, MSA algorithms start by generating the sets of all pairwise
+alignments using established pairwise alignment algorithms.  Pairwise alignment
+algorithms are almost all based upon a pair of ``Ur-algorithms'' with different
+goals: Needleman-Wunsch, a global alignment algorithms (which attempt to %gc: attempts
+maximise alignment quality over entire sequence lengths) \citep{Needleman1970}
+and Smith-Waterman, a local alignment algorithms (which are optimised towards %gc: algorithm, which is
+producing high quality alignments in sub-strings) \citep{Smith1981}.  While
+early, MSA algorithms were typically largely derived from Needleman-Wunsch most %gc: new sentence?
+modern algorithms seek to combine optimisation of local and global alignments.
+The distances used in these pairwise alignments will typically be ``scored''
+based upon which matches or alignments are more frequent substituions (e.g.
+Leucine and its isomer Isoleucine or Adenine to its fellow purine base Guanine
+(transition)) are positively scored and gaps (extension of a gap is typically
+less penalised than creating a gap) or unlikely changes (e.g. the transversion %gc: this sentence is hard to read
+of Adenine to Cytosine or Glutamine to Cysteine) penalised.  This will 
+generally be codified in a substitution matrix e.g. the PAM
+\citep{Dayhoff1978}, BLOSUM \citep{Henikoff1992} amino acid matrices and their
+numerous subsequent derivations and improvements. 
 
+The mostly widely heuristic used to go from these series of pair-wise
+alignments to a useful MSA is that of progressive-alignment \citep{Feng1987}
+(implemented in tools such as CLUSTAL W \citep{Thompson1994}) in which the %gc: comma or semicolon
+pairwise alignment scores are built into a distance matrix summarising the
+relative divergence of each pair of sequences. From this matrix a
+``guide-tree'' is generated using simple neighbour-joining methods (in which a
+tree is built by recursively clustering the least dissimilar sequences
+\citep{Saitou1987}).  Sequences are then progressively aligned using their
+branching order within this guide-tree \citep{Thompson1994}..  This drastically
+reduces the \(O(L^{N})\) complexity to approximately \(O(N^{2})\)
+\citep{Sievers2011}. While there have been various improvements and alternative
+approaches created such as merging both local and global alignment
+\citep{Notredame2000}, rapid identification of homologous regions using Fast
+Fourier Transforms \citep{Katoh2002}, iterative refinement of alignments
+\citep{Edgar2004a} and use of Hidden-Markov Models \citep{Eddy1995} %gc: full stop
 
-The mostly widely heuristic used to go from these series of pair-wise alignments to
-a useful MSA is that of progressive-alignment \citep{Feng1987} (implemented in 
-tools such as CLUSTAL W \citep{Thompson1994}) in which the pairwise alignment
-scores are built into a distance matrix summarising the relative divergence of 
-each pair of sequences. From this matrix a ``guide-tree'' is generated using simple
-neighbour-joining methods (in which a tree is built by recursively clustering
-the least dissimilar sequences \citep{Saitou1987}).  Sequences are then progressively
-aligned using their branching order within this guide-tree \citep{Thompson1994}..
-This drastically reduces the \(O(L^{N})\) complexity to approximately \(O(N^{2})\)
-\citep{Sievers2011}. While there have been various improvements and alternative approaches
-created such as merging both local and global alignment \citep{Notredame2000}, 
-rapid identification of homologous regions using Fast Fourier Transforms \citep{Katoh2002},
-iterative refinement of alignments \citep{Edgar2004a} and use of Hidden-Markov Models \citep{Eddy1995}
+There have been compelling arguments as early as 1991 that MSA in isolation
+from phylogenetic inference is inherently flawed as the consideration of
+evolutionary processes (only really done during phylogenetic inference) is key
+in the objective weighting and assessment of potential alignments
+\citep{Thorne1991}. Therefore, the phylogeny and MSA should be jointly
+inferred \citep{Thorne1991,Redelings2005,Bouchard-Cote2013} This approach also %gc: full stop
+minimises the risk of conscious or subconscious researcher bias towards
+alignments and subsequent phylogenies that support their pre-conceived ideas.
+This approach has been attempted using interesting probabilistic programming
+approaches i.e. BALI-phy \citep{Suchard2006}, however, it is still far too slow %gc: another comma before i.e. could new sentence after
+a process to infer phylogenies in this manner on large or even moderate
+datasets.  Therefore, for now, independent MSA estimation is here to stay, at
+least until computational resources and algorithmic development has continued
+until these more theoretically satisfying approaches become feasible.  
 
-
-There have been compelling arguments as early as 1991 that MSA in isolation from
-phylogenetic inference is inherently flawed as the consideration of 
-evolutionary processes (only really done during phylogenetic inference) 
-is key in the objective weighting and assessment of potential alignments \citep{Thorne1991}.
-Therefore, the phylogeny and MSA should be jointly inferred \citep{Thorne1991,Redelings2005,Bouchard-Cote2013}
-This approach also minimises the risk of conscious or subconscious researcher bias 
-towards alignments and subsequent phylogenies that support their pre-conceived ideas.
-This approach has been attempted using interesting probabilistic programming approaches
-i.e. BALI-phy \citep{Suchard2006}, however, it is still far too
-slow a process to infer phylogenies in this manner on large or even moderate datasets.
-Therefore, for now, independent MSA estimation is here to stay, at least until
-computational resources and algorithmic development has continued until these more
-theoretically satisfying approaches become feasible.  
-
-Therefore, throughout this thesis, two progressive/iterative alignment tools will be used:
-Kalign2 \citep{Lassmann2005,Lassmann2009} for high-throughput analyses and iteratively refined 
-MAFFT7 \citep{Katoh2002,Katoh2005,Katoh2013} for individual accuracy critical phylogenetic analyses. 
-Kalign is a very high-speed and relatively accurate \citep{Thompson2011} progessive alignment tool that uses
-an efficient and fast Wu-Manber approximate string-matching algorithm to calculate sequence distances
-\citep{Lassmann2005}.  MAFFT, with iterative refinement, is a relatively slow but highly accurate
-MSA alignment method \citep{Thompson2011} that incorporates all pairwise alignment information when refining
-instead of using heuristics to approximate pairwise sequence differences like most approaches.
-
+Therefore, throughout this thesis, two progressive/iterative alignment tools
+will be used: Kalign2 \citep{Lassmann2005,Lassmann2009} for high-throughput
+analyses and iteratively refined MAFFT7 \citep{Katoh2002,Katoh2005,Katoh2013}
+for individual accuracy critical phylogenetic analyses.  Kalign is a very
+high-speed and relatively accurate \citep{Thompson2011} progessive alignment
+tool that uses an efficient and fast Wu-Manber approximate string-matching
+algorithm to calculate sequence distances \citep{Lassmann2005}.  MAFFT, with
+iterative refinement, is a relatively slow but highly accurate MSA alignment
+method \citep{Thompson2011} that incorporates all pairwise alignment
+information when refining instead of using heuristics to approximate pairwise
+sequence differences like most approaches.
 
 \subsection{Masking}
 
-Unfortunately, MSA is far from perfect, especially with the faster algorithms 
-necessary for larger datasets and higher throughput.  Therefore,
-it is often necessary to trim alignments to manually fix any obviously 
-misaligned residues, and remove any ambiguously aligned or absent sites.
-This has been demonstrated to improve phylogenetic accuracy \citep{Talavera2007}.
-
+Unfortunately, MSA is far from perfect, especially with the faster algorithms
+necessary for larger datasets and higher throughput.  Therefore, it is often
+necessary to trim alignments to manually fix any obviously misaligned residues,
+and remove any ambiguously aligned or absent sites.  This has been demonstrated
+to improve phylogenetic accuracy \citep{Talavera2007}.
 
 However, manual masking can also be a major source of researcher-bias as well
-as a painstaking process.  For this reason, there are tools that attempt to 
-automate this process.   They typically score each column independently with
+as a painstaking process. For this reason, there are tools that attempt to
+automate this process. They typically score each column independently with
 criteria including number of absent character states, how similar/variable the
-character is and if there are multiple putative alignments - how likely is
-that column to be found in multiple different MSAs.
-These criteria can then be used to mask out certain columns based on certain
-thresholds and trade-offs between the length of the alignment and inclusion
-of low-scoring columns.  
-TrimAL is an example of a tool that automates the masking process
-using this sort of methodology \citep{Capella-Gutierrez2009}.  
+character is and if there are multiple putative alignments - how likely is that
+column to be found in multiple different MSAs. These criteria can then be used
+to mask out certain columns based on certain thresholds and trade-offs between
+the length of the alignment and inclusion of low-scoring columns. TrimAL is an
+example of a tool that automates the masking process using this sort of
+methodology \citep{Capella-Gutierrez2009}.  
 
-Similarly to MSA, for high-throughput analyses I will use TrimAL 
-whereas for individual accuracy critical analyses masking will be done
-manually using the graphical tool Seaview \citep{Gouy2010}.
-
-
-
+Similarly to MSA, for high-throughput analyses I will use TrimAL whereas for
+individual accuracy critical analyses masking will be done manually using the
+graphical tool Seaview \citep{Gouy2010}.
 
 \subsection{Substitution model selection}
 
-While the simplest means of phylogenetic inference - parsimony i.e. finding
-the tree that requires the fewest sequence changes does not require any explicit
-model of sequence evolution, all other means of phylogenetic inference do \citep{Le2008}.
-
+While the simplest means of phylogenetic inference - parsimony i.e. finding the
+tree that requires the fewest sequence changes does not require any explicit %gc: another dash after changes, if you're doing dash parentheses (you are)
+model of sequence evolution, all other means of phylogenetic inference do
+\citep{Le2008}.
 
 A substitution model is in its simplest sense the same as the PAM and BLOSUM
-matrices used in pairwise and MSA.  They are a means of scoring and weighting
-the significance of different character changes, is an A to a G a more evolutionarily
-rare state change than an A to a T for example.
+matrices used in pairwise and MSA. They are a means of scoring and weighting
+the significance of different character changes, is an A to a G a more %gc: is it? maybe just say it is?
+evolutionarily rare state change than an A to a T for example.
 
 Substitution models typically assume neutrality, independence and finite sites.
-With the probability of substitution rates having an independently identical distribution (i.i.d) \citep{Hasegawa1985}
-This measure of distance can be naive models where rates of change between character
-states and the frequency of each state is equal (e.g. \(p(x \rightarrow y) \forall x \forall y \in {G,C,T,A} \text{where} x\neq y\)
-\citep{jukes1969evolution}) to models fully parameterised in terms of character frequency and rates of change by the masked alignment 
-(e.g. the generalised time-reversible (GTR) model \citep{Tavare1986})
+With the probability of substitution rates having an independently identical %gc: subsitution rates assuming a distribution that is independent and identically distributed (and remember a full stop after)
+distribution (i.i.d) \citep{Hasegawa1985} This measure of distance can be naive
+models where rates of change between character states and the frequency of each
+state is equal (e.g. \(p(x \rightarrow y) \forall x \forall y \in {G,C,T,A}
+\text{where} x\neq y\) \citep{jukes1969evolution}) to models fully
+parameterised in terms of character frequency and rates of change by the masked
+alignment (e.g. the generalised time-reversible (GTR) model \citep{Tavare1986}) %gc: full stop
 %
 %\begin{figure}
 %    \[
@@ -1771,99 +1773,104 @@ states and the frequency of each state is equal (e.g. \(p(x \rightarrow y) \fora
 %\end{figure}
 %
 While models like GTR can feasibly be fully parameterised with DNA sequence
-data due to DNA's relatively few character states it is usually necessary
-to use empirically-defined models for amino acid datasets.  These are substitution
-matrices that have been determined using the empirically observed
-substitution rates for various amino acids changes in many large MSAs \citep{Le2008}.
+data due to DNA's relatively few character states it is usually necessary to 
+use empirically-defined models for amino acid datasets.  These are substitution
+matrices that have been determined using the empirically observed substitution
+rates for various amino acids changes in many large MSAs \citep{Le2008}.
 
 
 Unfortunately, a single substitution model will rarely hold true over an entire
-alignment with the rate of evolution varying both across and within sites (heterogeneity
-and heterotachy). The frequency of character states also frequently changes
-across a phylogeny.  It is important to control for these phenomena, because, 
-as mentioned earlier, violation of model assumptions can decrease phylogenetic
-accuracy.
+alignment with the rate of evolution varying both across and within sites
+(heterogeneity and heterotachy). The frequency of character states also
+frequently changes across a phylogeny.  It is important to control for these
+phenomena, because, as mentioned earlier, violation of model assumptions can
+decrease phylogenetic accuracy.
 
 
-The most frequent violation that is controlled for is allowing the rate of substitution to vary across
-sites by using a \(\Gamma\) distribution \(Var = \frac{\alpha}{\beta^{2}}, \mu = \frac{\alpha}{\beta}\) with a given shape \(\alpha\) and 
-trivial scale factor \(\beta\) depending on the dataset to scale rates at each site.
-For datasets that have a high degree of rate heterogeneity a low valued \(\alpha\) produces a broad distribution of rates, whereas a high value will generate 
-a narrow distribution for datasets with low rate heterogeneity \citep{Yang1993}.
-For reasons of computational efficiency \(\Gamma\) is typically approximated as a discrete distribution of 4 to 8 
-categories of equal probability \citep{Yang1994a}. 
-A more limited version of this is the invariant sites model in which sites are divided into 2 classes, one considered invariable while the 
-other has normal substitution rates applied\footnote{
-    This can also be used with \(\Gamma\) and is approximately equivalent
-to the addition of another discrete \(\Gamma\) category}\citep{Hasegawa1985}.
+The most frequent violation that is controlled for is allowing the rate of
+substitution to vary across sites by using a \(\Gamma\) distribution \(Var =
+\frac{\alpha}{\beta^{2}}, \mu = \frac{\alpha}{\beta}\) with a given shape
+\(\alpha\) and trivial scale factor \(\beta\) depending on the dataset to scale
+rates at each site.  For datasets that have a high degree of rate heterogeneity
+a low valued \(\alpha\) produces a broad distribution of rates, whereas a high
+value will generate a narrow distribution for datasets with low rate
+heterogeneity \citep{Yang1993}.  For reasons of computational efficiency
+\(\Gamma\) is typically approximated as a discrete distribution of 4 to 8
+categories of equal probability \citep{Yang1994a}.  A more limited version of
+this is the invariant sites model in which sites are divided into 2 classes,
+one considered invariable while the other has normal substitution rates
+applied\footnote{ This can also be used with \(\Gamma\) and is approximately
+equivalent to the addition of another discrete \(\Gamma\)
+category}\citep{Hasegawa1985}.  %gc: need a full stop in the footnote as well
 
 
 
-Unfortunately, these models still assume other model parameters namely the equilibrium frequencies and relative rates are the same across
-sites (but just scaled).  
-However, some models have been proposed with multiple rate matrices \citep{Lartillot2004} and 
-state frequency can be defined at each site \citep{Bruno1996} but needs lots of taxa \citep{Lartillot2004}
-An alternative to this is the CAT model which a mixture model mixture model with 
-K classes each containing a different state frequency.  If \(K=N\) then this is
-the same as Bruno's model however, generally \(K < N\).  A 
- probabilistic process known as a Dirichlet Process Prior is used to assign
- columns to various state frequency classes and simultaneously
- determines the optimal value of \(K\) during this process \citep{Lartillot2004}.
-An alternative to this approach is explicitly partitioning a masked alignment
-and generating a model and state frequencies for each partition, 
-some consider this equivalent to a CAT model depending akin to preferences
-for fixed-effects vs random-effects models \citep{Yang2012}.  However, personally,
-automated partitioning using a Dirichlet process has the advantage of not
-requiring arbitrary user-defined partitions, which could be a source of bias.
+Unfortunately, these models still assume other model parameters namely the
+equilibrium frequencies and relative rates are the same across sites (but just
+scaled).  However, some models have been proposed with multiple rate matrices
+\citep{Lartillot2004} and state frequency can be defined at each site %gc: state frequencies?
+\citep{Bruno1996} but needs lots of taxa \citep{Lartillot2004} An alternative %gc: full stop
+to this is the CAT model which a mixture model mixture model with K classes
+each containing a different state frequency.  If \(K=N\) then this is the same
+as Bruno's model however, generally \(K < N\).  A probabilistic process known
+as a Dirichlet Process Prior is used to assign columns to various state
+frequency classes and simultaneously determines the optimal value of \(K\)
+during this process \citep{Lartillot2004}.  An alternative to this approach is
+explicitly partitioning a masked alignment and generating a model and state
+frequencies for each partition, some consider this equivalent to a CAT model
+depending akin to preferences for fixed-effects vs random-effects models
+\citep{Yang2012}.  However, personally, automated partitioning using a
+Dirichlet process has the advantage of not requiring arbitrary user-defined
+partitions, which could be a source of bias.
 
 
-Finally, the rate of evolution can vary even with a site itself (a process 
-known as heterotachy) especially when large numbers of divergent taxa are included
-in a masked alignment.  One model modification which attempts to control 
-for this is that of the covarion model.  It allows sites to switch between
-on and off using an infinite mixture model.  The proportion of on and off sites
-is determined at each site \citep{Zhou2010} 
-
+Finally, the rate of evolution can vary even with a site itself (a process
+known as heterotachy) especially when large numbers of divergent taxa are
+included in a masked alignment.  One model modification which attempts to
+control for this is that of the covarion model.  It allows sites to switch
+between on and off using an infinite mixture model.  The proportion of on and
+off sites is determined at each site \citep{Zhou2010}  %gc: full stop
 
 
 Generally, simpler models such as the ``null'' parsimony model or basic models
 that don't account for complex evolutionary phenomena are more susceptible to
-artefacts such as long-branch attraction (LBA)\footnote{
-    LBA is a distorting effect in which long branches (rapidly diverging)
-    are incorrectly placed close to one another regardless of actual shared
-    homology.  This is due to the increased chance of rapidly diverging sequences
-to share independently acquired residues \citep{Bergsten2005}}
-\citep{Yang1996}.
+artefacts such as long-branch attraction (LBA)\footnote{ LBA is a distorting
+    effect in which long branches (rapidly diverging) are incorrectly placed
+close to one another regardless of actual shared homology.  This is due to the
+increased chance of rapidly diverging sequences to share independently acquired
+residues \citep{Bergsten2005}} \citep{Yang1996}. %gc: full stop in footnote
 
-However, in the grand tradition of
-``no-free lunch'', there is no universally best model for all datasets.
-Therefore, it is necessary to test multiple competing models using a provided
-MSA.  Typically, these models are then compared for their fit to the observed
-data using information criterion \citep{Sullivan2005} such as Akaike's (AIC) which assess
-fit while penalising model complexity in a standard regularisation trade-off 
-(\(AIC=2k-2ln(L)\) where \(k\) is the number of parameters and \(L\) the 
-model likelihood \citep{Akaike1974}).  Other criteria include corrected AIC \citep{sugiura1978further},
-Bayesian Information Criteria \citep{Schwarz1978} and Decision Theoretic criteria \citep{Minin2003} 
-based approaches \citep{Sullivan2005}.
+However, in the grand tradition of ``no-free lunch'', there is no universally
+best model for all datasets.  Therefore, it is necessary to test multiple
+competing models using a provided MSA.  Typically, these models are then
+compared for their fit to the observed data using information criterion
+\citep{Sullivan2005} such as Akaike's (AIC) which assess fit while penalising
+model complexity in a standard regularisation trade-off (\(AIC=2k-2ln(L)\)
+where \(k\) is the number of parameters and \(L\) the model likelihood
+\citep{Akaike1974}).  Other criteria include corrected AIC
+\citep{sugiura1978further}, Bayesian Information Criteria \citep{Schwarz1978}
+and Decision Theoretic criteria \citep{Minin2003} based approaches
+\citep{Sullivan2005}.
 
-Throughout this thesis, I will use 2 tools which incorporate these various criteria
-to infer the best fitting model depending on the input data. 
-ProtTest3 \citep{Abascal2005,Darriba2011a} will used for analyses 
-involving protein sequences and jModelTest2 \citep{Posada2008,Darriba2012} for
+Throughout this thesis, I will use 2 tools which incorporate these various
+criteria to infer the best fitting model depending on the input data.
+ProtTest3 \citep{Abascal2005,Darriba2011a} will used for analyses involving
+protein sequences and jModelTest2 \citep{Posada2008,Darriba2012} for
 phylogenetic inference of DNA datasets.
 
 \subsection{Phylogenetic inference}
 
-The simplest phylogenetic inferences are that of distance matrix methods.
-Distance matrix methods \citep{Fitch1967} work on the basis of generating 
-a matrix representing the pairwise distances of each sequence using the selected
+The simplest phylogenetic inferences are that of distance matrix methods. %gc: that of -> those of
+Distance matrix methods \citep{Fitch1967} work on the basis of generating a
+matrix representing the pairwise distances of each sequence using the selected
 substitution model and inferring a phylogeny from this.  The simplest case
-would be searching tree space for the optimal tree using a standard least-squares
-criteria between actual and expected branch lengths (i.e. distances) \citep{Fitch1967,Cavalli-Sforza1967}.
+would be searching tree space for the optimal tree using a standard
+least-squares criteria between actual and expected branch lengths (i.e.
+distances) \citep{Fitch1967,Cavalli-Sforza1967}.
 
-However, the most common is that of neighbour-joining which begins with the distance matrix and a 
-star topology tree in which all leaf node branches are connected to a single shared central node.
-Then:
+However, the most common is that of neighbour-joining which begins with the
+distance matrix and a star topology tree in which all leaf node branches are
+connected to a single shared central node.  Then:
 \begin{enumerate}
     \item Find the closest two branches in the distance matrix 
     \item Join the closest pair into a single branch with a new internal node connected to central node
@@ -1873,129 +1880,145 @@ Then:
     \item Repeat the process with the new matrix \citep{Nei1987}
 \end{enumerate}
 
-It works on the assumption that the true tree has the smallest expected length (minimum evolution) and a short tree that has similar topology can be achieved using the 
-fast simple agglomerative algorithm.  NJ is one of the best distance methods and 
-is more reliable than maximum-parsimony which can be asymptotically inconsistent
-While already efficient (possibly efficient as possible) NJ can be made more efficient 
-using effective heuristics to search tree space \citep{Kumar1996}
-As well as improvements where variance is minimised instead of pure distance improving performance in datasets with high
-substitution rates e.g. BIONJ \citep{Gascuel1997}
+It works on the assumption that the true tree has the smallest expected length
+(minimum evolution) and a short tree that has similar topology can be achieved
+using the fast simple agglomerative algorithm.  NJ is one of the best distance
+methods and is more reliable than maximum-parsimony which can be asymptotically
+inconsistent While already efficient (possibly efficient as possible) NJ can be
+made more efficient using effective heuristics to search tree space
+\citep{Kumar1996} As well as improvements where variance is minimised instead %gc: full stop
+of pure distance improving performance in datasets with high substitution rates
+e.g. BIONJ \citep{Gascuel1997} %gc: full stop
 
-Distance methods are very fast but can perform
-very poorly for divergent sequences with large sampling errors as they don't generally account for variance in 
-distance estimates \citep{Yang2012} (BIONJ partially adds this).  They are also
-particularly sensitive to gaps in the alignment.
+Distance methods are very fast but can perform very poorly for divergent
+sequences with large sampling errors as they don't generally account for
+variance in distance estimates \citep{Yang2012} (BIONJ partially adds this).
+They are also particularly sensitive to gaps in the alignment.
 
 
 
-Parsimony approaches \citep{Camin1965} on molecular sequences \citep{Eck1966} seek to infer the maximum parsimony (MP) tree.
-That is the tree which requires the smallest number of character changes (has the best tree score).  Where the tree score is the sum of 
-all character lengths (the minimum number of changes for each site in the alignment).  Any site that is invariable is not
-informative for generation of a parsimony tree.
-It has no explicit assumptions relative to other methods however, this means it is difficult to build in 
-prior knowledge of sequence evolution when generating a tree.
-It also fails when multiple substitutions have occurred at the same site or with parallel changes in two long branches 
-and therefore is especially prone to long-branch attraction
-\citep{Felsenstein1978}.
-Prestige of parsimony methods declined with discoveries that they can produce statistically inconsistent
-phylogenies \citep{Felsenstein2001}
+Parsimony approaches \citep{Camin1965} on molecular sequences \citep{Eck1966}
+seek to infer the maximum parsimony (MP) tree.  That is the tree which requires
+the smallest number of character changes (has the best tree score).  Where the
+tree score is the sum of all character lengths (the minimum number of changes
+for each site in the alignment).  Any site that is invariable is not
+informative for generation of a parsimony tree.  It has no explicit assumptions
+relative to other methods however, this means it is difficult to build in prior
+knowledge of sequence evolution when generating a tree.  It also fails when
+multiple substitutions have occurred at the same site or with parallel changes
+in two long branches and therefore is especially prone to long-branch
+attraction \citep{Felsenstein1978}.  Prestige of parsimony methods declined
+with discoveries that they can produce statistically inconsistent phylogenies
+\citep{Felsenstein2001} %gc: full stop
 
-A majority consensus tree will typically be presented with each node
-annotated with the number of bootstrapped trees that supported its existence.
+A majority consensus tree will typically be presented with each node annotated
+with the number of bootstrapped trees that supported its existence.
 
 \subsubsection{Maximum likelihood}
 
-Maximum likelihood (ML) methods seek to discover the maximum-likelihood estimates (MLEs) of the tree parameters 
-(topology \(\tau\), branch length \(\theta_l\) and usually substitution model parameters \(\theta_\mu\))
-for the data i.e. MLE of \(L(\tau, \theta_l, \theta_\mu)\). 
+Maximum likelihood (ML) methods seek to discover the maximum-likelihood
+estimates (MLEs) of the tree parameters (topology \(\tau\), branch length
+\(\theta_l\) and usually substitution model parameters \(\theta_\mu\)) for the
+data i.e. MLE of \(L(\tau, \theta_l, \theta_\mu)\). 
 
-These MLEs are estimated numerically using standard iterative optimisation algorithms.
-They were developed relatively early in molecular phylogenetics using relatively
-simple models \citep{neyman1971molecular} but more efficient implementations e.g. \citep{Felsenstein1981}
-and increased computational power has made them one of the more popular means
-for phylogenetic inference.
+These MLEs are estimated numerically using standard iterative optimisation
+algorithms.  They were developed relatively early in molecular phylogenetics
+using relatively simple models \citep{neyman1971molecular} but more efficient
+implementations e.g. \citep{Felsenstein1981} and increased computational power %gc: commas around the e.g.
+has made them one of the more popular means for phylogenetic inference.
 %Additionally, MLE are proven consistent \citep{Wald1949} but the due to the complexity of phylogenetic inference
 %this proof does not apply \citep{Yang2012}.
 
-Generally, an ML approach will sequentially perturb a starting tree topology (often BIONJ or simple ML tree itself) 
-using branch swapping operations such as Nearest-Neighbour Interchanges (NNI)
-or Subtree-Prune-and-Regraph (SPR) where whole subtrees are removed and reattached to a different part of tree. 
-SPR is slower but less prone to get caught in local optima than NNI and thus will
-lead to higher likelihood phylogenies overall \citep{Criscuolo2011}
-Expectation-maximisation can then be used to find the MLE for branch length and model parameter.
-For example, PhyML uses an initial BIONJ and standard hill-climbing which perturbs topology and branch lengths simultaneously 
+Generally, an ML approach will sequentially perturb a starting tree topology
+(often BIONJ or simple ML tree itself) using branch swapping operations such as
+Nearest-Neighbour Interchanges (NNI) or Subtree-Prune-and-Regraph (SPR) where
+whole subtrees are removed and reattached to a different part of tree.  SPR is
+slower but less prone to get caught in local optima than NNI and thus will lead
+to higher likelihood phylogenies overall \citep{Criscuolo2011} %gc: full stop
+Expectation-maximisation can then be used to find the MLE for branch length and
+model parameter.  For example, PhyML uses an initial BIONJ and standard %gc: model parameters
+hill-climbing which perturbs topology and branch lengths simultaneously 
 
 
-The advantage of ML approaches is that they have explicit model assumptions (which can therefore be tested), are relatively robust to model
-misspecification, are relatively efficient in a phylogenetic sense, and can make use of sophisticated evolutionary models and thus compensate
-for many pathological data features (heterotachy, state and rate heterogeneity within and across sites).
-\citep{Yang2012}. Almost all published phylogenies are Bayesian or ML (or ideally both) for this reason.
-%LRTs can examine fit for evolutionary models: \(2ln(\frac{L_{1}}{L_{0}})\) \citep{Goldman1987}
-Unfortunately, ML inference is also relatively slow to calculate especially in comparison to distance methods.
+The advantage of ML approaches is that they have explicit model assumptions
+(which can therefore be tested), are relatively robust to model
+misspecification, are relatively efficient in a phylogenetic sense, and can make
+use of sophisticated evolutionary models and thus compensate for many %gc: two ands
+pathological data features (heterotachy, state and rate heterogeneity within and
+across sites).  \citep{Yang2012}. Almost all published phylogenies are Bayesian %gc: too many full stops this time
+or ML (or ideally both) for this reason.
+%LRTs can examine fit for evolutionary models: \(2ln(\frac{L_{1}}{L_{0}})\)
+%\citep{Goldman1987}
+Unfortunately, ML inference is also relatively slow to calculate especially in
+comparison to distance methods.
 
 In order to get an estimate for the robustness of a particular phylogenetic ML
 inference, the masked alignment can be repeatedly resampled (boostrap samples)
 with replacement and phylogenies regenerated.  Each node can then be scored
-based on the proportion of these boostrap samples in which it is recapitulated \citep{Felsenstein1985}. 
-A similar approach, known as jackknifing,
-uses random subsets of the alignment instead of samples \citep{Miller1974,Lapointe1994}.
-Finally, approximate likelihood-ratio tests (aLRT) can be used on branches
-to give support values by comparing the likelihood of existence of a given
-branch compared to its non-existences \citep{Anisimova2006}.
-There is considerable literature evaluating the pros and cons
- of different support schemes. However, bootstrap supports are the 
- \textit{de facto} method of inferring a variance of 
-phylogenetic error \citep{Stamatakis2008} as they are both simple and conservative (but are 
-computationally expensive) \citep{Anisimova2006}.  
-It should be noted that all of the above methods of determining phylogenetic robustness
-can be applied to distance and parsimony methods as well.
+based on the proportion of these boostrap samples in which it is recapitulated %gc: you mispelled bootstrap twice, is your checker broken?
+\citep{Felsenstein1985}.  A similar approach, known as jackknifing, uses random
+subsets of the alignment instead of samples \citep{Miller1974,Lapointe1994}.
+Finally, approximate likelihood-ratio tests (aLRT) can be used on branches to
+give support values by comparing the likelihood of existence of a given branch
+compared to its non-existences \citep{Anisimova2006}.  There is considerable
+literature evaluating the pros and cons of different support schemes. However,
+bootstrap supports are the \textit{de facto} method of inferring a variance of
+phylogenetic error \citep{Stamatakis2008} as they are both simple and
+conservative (but are computationally expensive) \citep{Anisimova2006}.  It
+should be noted that all of the above methods of determining phylogenetic
+robustness can be applied to distance and parsimony methods as well.
 
-In this work, for high-throughput analyses FastTree2 was due to its considerable 
-greater speed relative to ML inference tools \citep{Price2009,Price2010}.  For individual
-phylogenetic analyses ML trees were inferred using RAxML8 \citep{Stamatakis2014} and non-rapid
+In this work, for high-throughput analyses FastTree2 was due to its
+considerable greater speed relative to ML inference tools
+\citep{Price2009,Price2010}.  For individual phylogenetic analyses ML trees
+were inferred using RAxML8 \citep{Stamatakis2014} and non-rapid
 bootstrap supports.
 
 \subsubsection{Bayesian}
 
 Bayesian inference is, as the name suggests, based on the Baye's theorem.
-\(p(\tau, \theta_l, \theta_\mu)| D) = \frac{p(\tau, \theta_l, \theta_\mu)p(D|\tau, \theta_l, \theta_\mu)}{p(D)}\)
-with \(p(\tau, \theta_l, \theta_\mu)\)
-being the prior probability for model parameters (topology \(\tau\), branch length \(\theta_l\), substitution model \(\theta_\mu\))
-\(p(D|\tau, \theta_l, \theta_\mu)\)
-being the likelihood of the data given a certain set of parameters with \(p(D)\) as the marginal 
-probability.
+\(p(\tau, \theta_l, \theta_\mu)| D) = \frac{p(\tau, \theta_l,
+\theta_\mu)p(D|\tau, \theta_l, \theta_\mu)}{p(D)}\) with \(p(\tau, \theta_l,
+\theta_\mu)\) being the prior probability for model parameters (topology
+\(\tau\), branch length \(\theta_l\), substitution model \(\theta_\mu\))
+\(p(D|\tau, \theta_l, \theta_\mu)\) being the likelihood of the data given a
+certain set of parameters with \(p(D)\) as the marginal probability.
 
-Due to the computational difficulty directly calculating the marginal likelihood 
-(integrated over all possible parameter values in all dimensions) phylogenetic inference uses 
-a process known as Monte-Carlo Markov-Chains (MCMC) to sequentially randomly sample
-the posterior probability distribution.  Conceptually, these can be considered
-as random walkers on the probability distribution that are more likely to accept
-new movements that increase likelihood than decrease.
+Due to the computational difficulty directly calculating the marginal
+likelihood (integrated over all possible parameter values in all dimensions)
+phylogenetic inference uses a process known as Monte-Carlo Markov-Chains (MCMC)
+to sequentially randomly sample the posterior probability distribution.
+Conceptually, these can be considered as random walkers on the probability
+distribution that are more likely to accept new movements that increase
+likelihood than decrease. 
 
-An advantage of Bayesian inference is that the posterior probability (PP) of a given
-node means ``support'' values are built-in to the inference and additional
-bootstrapping is unnecessary.  Unfortunately, posterior probabilities are
-sensitive to model violations and have been found to not be very conservative estimators
-\citep{Simmons2003} (although again there has been considerable work comparing
-Bootstraps to PP \citep{Anisimova2006}).
+An advantage of Bayesian inference is that the posterior probability (PP) of a
+given node means ``support'' values are built-in to the inference and
+additional bootstrapping is unnecessary.  Unfortunately, posterior
+probabilities are sensitive to model violations and have been found to not be
+very conservative estimators \citep{Simmons2003} (although again there has been
+considerable work comparing Bootstraps to PP \citep{Anisimova2006}).
 Additionally, the prior distribution in Bayesian Inference allows information
-that is already known about the dataset to effectively built-in to the inference
-potentially improving phylogenetic accuracy.
+that is already known about the dataset to effectively built-in to the %gc: missed word?
+inference potentially improving phylogenetic accuracy.
 
-All in-depth individual phylogenetic analyses presented in this thesis
-were inferred using both Bayesian (via MrBayes3 \citep{Huelsenbeck2001,Ronquist2003a,Ronquist2012})
-and ML methods.  Phylogenies are then presented with both PP and bootstrap
-support values on each node inferred using both methodologies. 
+All in-depth individual phylogenetic analyses presented in this thesis were
+inferred using both Bayesian (via MrBayes3
+\citep{Huelsenbeck2001,Ronquist2003a,Ronquist2012}) and ML methods.
+Phylogenies are then presented with both PP and bootstrap support values on
+each node inferred using both methodologies. 
 
 
 \section{Informatics languages and hardware}
 
-\subsection{Languages and Libraries} 
-Several programming languages and a range of libraries were used throughout this PhD depending
-on the suitability of a particular tool for a task.
-The full details of the specific tools used for the main analyses are outlined during the description
-of these analyses, however, the tools used for prototyping as well as those used for smaller tasks not covered
-in detail are omitted elsewhere. 
+\subsection{Languages and Libraries} %gc: isn't it better to leave a gap after these?
+
+Several programming languages and a range of libraries were used throughout
+this PhD depending on the suitability of a particular tool for a task.  The
+full details of the specific tools used for the main analyses are outlined
+during the description of these analyses, however, the tools used for
+prototyping as well as those used for smaller tasks not covered in detail are
+omitted elsewhere. 
 
 Languages and libraries were chosen depending on their best fit for a particular task.
 Performance sensitive code such as those dealing with large datasets (e.g. high-throughput sequencing 
