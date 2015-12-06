@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="133.17084mm"
+   height="83.109108mm"
+   viewBox="0 0 471.86517 294.48109"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="separation_method.svg">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Lend"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path4500"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-1.1,0,0,-1.1,-1.1,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="242.19109"
+     inkscape:cy="259.75504"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1680"
+     inkscape:window-height="1050"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-133.02243,-40.387177)">
+    <g
+       id="g4471"
+       transform="matrix(0.96119081,0,0,0.96119081,14.318844,7.2816788)">
+      <ellipse
+         ry="109.72552"
+         rx="148.6541"
+         cy="180.14577"
+         cx="282.14285"
+         id="path4314"
+         style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:0.50199998;fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke:#0f0000;stroke-width:0.93265408;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate" />
+      <ellipse
+         ry="109.72552"
+         rx="148.6541"
+         cy="180.14577"
+         cx="455.76715"
+         id="path4314-2"
+         style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:0.50199998;fill:#0092ff;fill-opacity:1;fill-rule:nonzero;stroke:#0f0000;stroke-width:0.93265408;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate" />
+    </g>
+    <g
+       id="g4391"
+       transform="matrix(0.96119081,0,0,0.96119081,14.318844,17.962122)">
+      <g
+         id="g4427">
+        <text
+           sodipodi:linespacing="125%"
+           id="text4300"
+           y="136.54933"
+           x="487.85205"
+           style="font-style:normal;font-weight:normal;font-size:11px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             style="text-align:center;text-anchor:middle"
+             y="136.54933"
+             x="487.85205"
+             id="tspan4302"
+             sodipodi:role="line">Organic Acids</tspan><tspan
+             style="text-align:center;text-anchor:middle"
+             id="tspan4304"
+             y="150.29933"
+             x="487.85205"
+             sodipodi:role="line">Organic Amines</tspan><tspan
+             style="text-align:center;text-anchor:middle"
+             id="tspan4306"
+             y="164.04933"
+             x="487.85205"
+             sodipodi:role="line">Nucleosides</tspan><tspan
+             style="text-align:center;text-anchor:middle"
+             id="tspan4308"
+             y="177.79933"
+             x="487.85205"
+             sodipodi:role="line">Ionic Species</tspan><tspan
+             style="text-align:center;text-anchor:middle"
+             id="tspan4310"
+             y="191.54933"
+             x="487.85205"
+             sodipodi:role="line">Nucleotides</tspan><tspan
+             style="text-align:center;text-anchor:middle"
+             id="tspan4312"
+             y="205.29933"
+             x="487.85205"
+             sodipodi:role="line">Polyamines</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:11px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="370.67474"
+           y="116.96095"
+           id="text4240"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan4242"
+             x="370.67474"
+             y="116.96095"
+             style="text-align:center;text-anchor:middle">Alcohols</tspan><tspan
+             sodipodi:role="line"
+             x="370.67474"
+             y="130.71095"
+             id="tspan4244"
+             style="text-align:center;text-anchor:middle">Alkaloids</tspan><tspan
+             sodipodi:role="line"
+             x="370.67474"
+             y="144.46095"
+             id="tspan4246"
+             style="text-align:center;text-anchor:middle">Amino acids</tspan><tspan
+             sodipodi:role="line"
+             x="370.67474"
+             y="158.21095"
+             id="tspan4248"
+             style="text-align:center;text-anchor:middle">Catecholamines</tspan><tspan
+             sodipodi:role="line"
+             x="370.67474"
+             y="171.96095"
+             id="tspan4250"
+             style="text-align:center;text-anchor:middle">Fatty acids</tspan><tspan
+             sodipodi:role="line"
+             x="370.67474"
+             y="185.71095"
+             id="tspan4252"
+             style="text-align:center;text-anchor:middle">Phenolics</tspan><tspan
+             sodipodi:role="line"
+             x="370.67474"
+             y="199.46095"
+             id="tspan4254"
+             style="text-align:center;text-anchor:middle">Polar organics</tspan><tspan
+             sodipodi:role="line"
+             x="370.67474"
+             y="213.21095"
+             id="tspan4256"
+             style="text-align:center;text-anchor:middle">Prostaglandins</tspan><tspan
+             sodipodi:role="line"
+             x="370.67474"
+             y="226.96095"
+             id="tspan4258"
+             style="text-align:center;text-anchor:middle">Steroids</tspan></text>
+      </g>
+      <text
+         sodipodi:linespacing="125%"
+         id="text4136"
+         y="102.17432"
+         x="238.09351"
+         style="font-style:normal;font-weight:normal;font-size:11px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="text-align:center;text-anchor:middle"
+           y="102.17432"
+           x="238.09351"
+           id="tspan4138"
+           sodipodi:role="line">Alkylsilyl derivatives</tspan><tspan
+           style="text-align:center;text-anchor:middle"
+           id="tspan4140"
+           y="115.92432"
+           x="238.09351"
+           sodipodi:role="line">Eicosanoids</tspan><tspan
+           style="text-align:center;text-anchor:middle"
+           id="tspan4142"
+           y="129.67432"
+           x="238.09351"
+           sodipodi:role="line">Essential oils</tspan><tspan
+           style="text-align:center;text-anchor:middle"
+           id="tspan4144"
+           y="143.42432"
+           x="238.09351"
+           sodipodi:role="line">Esters</tspan><tspan
+           style="text-align:center;text-anchor:middle"
+           id="tspan4146"
+           y="157.17432"
+           x="238.09351"
+           sodipodi:role="line">Perfumes</tspan><tspan
+           style="text-align:center;text-anchor:middle"
+           id="tspan4148"
+           y="170.92432"
+           x="238.09351"
+           sodipodi:role="line">Terpenes</tspan><tspan
+           style="text-align:center;text-anchor:middle"
+           id="tspan4150"
+           y="184.67432"
+           x="238.09351"
+           sodipodi:role="line">Waxes</tspan><tspan
+           style="text-align:center;text-anchor:middle"
+           id="tspan4152"
+           y="198.42432"
+           x="238.09351"
+           sodipodi:role="line">Volatiles</tspan><tspan
+           style="text-align:center;text-anchor:middle"
+           id="tspan4154"
+           y="212.17432"
+           x="238.09351"
+           sodipodi:role="line">Caratenoids</tspan><tspan
+           style="text-align:center;text-anchor:middle"
+           id="tspan4156"
+           y="225.92432"
+           x="238.09351"
+           sodipodi:role="line">Flavenoids</tspan><tspan
+           style="text-align:center;text-anchor:middle"
+           id="tspan4158"
+           y="239.67432"
+           x="238.09351"
+           sodipodi:role="line">Lipids</tspan><tspan
+           style="text-align:center;text-anchor:middle"
+           id="tspan4190"
+           y="253.42432"
+           x="238.09351"
+           sodipodi:role="line" /><tspan
+           style="text-align:center;text-anchor:middle"
+           id="tspan4192"
+           y="267.17432"
+           x="238.09351"
+           sodipodi:role="line" /><tspan
+           style="text-align:center;text-anchor:middle"
+           id="tspan4194"
+           y="280.92432"
+           x="238.09351"
+           sodipodi:role="line" /><tspan
+           style="text-align:center;text-anchor:middle"
+           id="tspan4176"
+           y="294.67432"
+           x="238.09351"
+           sodipodi:role="line" /><tspan
+           style="text-align:center;text-anchor:middle"
+           id="tspan4188"
+           y="308.42432"
+           x="238.09351"
+           sodipodi:role="line" /></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.57309914px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="285.62811"
+       y="54.227467"
+       id="text4364"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4366"
+         x="285.62811"
+         y="54.227467"
+         style="text-align:center;text-anchor:middle;font-weight:bold">Gas Chromatography-</tspan><tspan
+         sodipodi:role="line"
+         x="285.62811"
+         y="67.977463"
+         id="tspan4368"
+         style="text-align:center;text-anchor:middle;font-weight:bold">Mass Spectrometry</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.57309914px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="452.27673"
+       y="54.227467"
+       id="text4364-9"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4366-1"
+         x="452.27673"
+         y="54.227467"
+         style="text-align:center;text-anchor:middle;font-weight:bold">Liquid Chromatography-</tspan><tspan
+         sodipodi:role="line"
+         x="452.27673"
+         y="67.977463"
+         id="tspan4368-8"
+         style="text-align:center;text-anchor:middle;font-weight:bold">Mass Spectrometry</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.96119082px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
+       d="m 208.26289,314.37881 321.38423,0"
+       id="path4465"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.57309914px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="349.48151"
+       y="327.00116"
+       id="text4467"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4469"
+         x="349.48151"
+         y="327.00116">Polarity</tspan></text>
+  </g>
+</svg>

@@ -48,7 +48,7 @@
 \RequirePackage[small, md, sc]{titlesec}
 \RequirePackage{verbatim}
 \RequirePackage[titles]{tocloft}
-\setcounter{tocdepth}{1}
+\setcounter{tocdepth}{3}
 \renewcommand{\cftchapfont}{\normalsize \scshape}
 \RequirePackage{rotating}
 \RequirePackage{lscape}
@@ -60,7 +60,7 @@
 \RequirePackage{titling}
 \RequirePackage{setspace}
 
-\onehalfspacing
+\doublespacing
 
 % Font\documentclass{a4}
 \RequirePackage{microtype}
