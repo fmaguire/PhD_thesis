@@ -22,15 +22,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.1441624"
-     inkscape:cx="268.88804"
-     inkscape:cy="966.37245"
+     inkscape:zoom="3.23618"
+     inkscape:cx="106.95639"
+     inkscape:cy="903.79865"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1440"
-     inkscape:window-height="900"
-     inkscape:window-x="1680"
+     inkscape:window-width="1680"
+     inkscape:window-height="1050"
+     inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0" />
   <defs
@@ -43,7 +43,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -210,14 +210,14 @@
        sodipodi:linespacing="125%"
        id="text7442-1"
        y="112.76642"
-       x="13.741767"
-       style="font-size:6.83166981px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="63.594933"
+       style="font-style:normal;font-weight:normal;font-size:6.83166981px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
          style="font-style:italic"
          y="112.76642"
-         x="13.741767"
+         x="63.594933"
          id="tspan7444-4"
-         sodipodi:role="line">Paramecium bursaria transcriptome</tspan></text>
+         sodipodi:role="line">Paramecium bursaria</tspan></text>
     <text
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
@@ -396,15 +396,15 @@
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"
+       transform="matrix(0.25881905,0.96592583,-0.96592583,0.25881905,0,0)"
        sodipodi:linespacing="125%"
        id="text5895"
-       y="-83.028748"
-       x="212.13121"
-       style="font-size:6.83166981px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       y="-183.3391"
+       x="142.08034"
+       style="font-style:normal;font-weight:normal;font-size:6.83166981px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
-         y="-83.028748"
-         x="212.13121"
+         y="-183.3391"
+         x="142.08034"
          id="tspan5897"
          sodipodi:role="line">Rdr3</tspan></text>
     <path
@@ -502,30 +502,30 @@
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"
+       transform="matrix(0.25881905,0.96592583,-0.96592583,0.25881905,0,0)"
        sodipodi:linespacing="125%"
        id="text6469-0"
-       y="-103.77136"
-       x="233.10732"
-       style="font-size:6.83166981px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       y="-211.74194"
+       x="149.6485"
+       style="font-style:normal;font-weight:normal;font-size:6.83166981px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
-         y="-103.77136"
-         x="233.10732"
+         y="-211.74194"
+         x="149.6485"
          id="tspan6471-7"
          sodipodi:role="line">Rdr2</tspan></text>
-    <path
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
+       id="path5168-99-1-5-1-8-2-8-8-9"
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
        transform="matrix(0.58859795,0,0,0.58859795,-348.07274,82.365712)"
        d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
+       sodipodi:type="arc"
        sodipodi:ry="7.9549513"
        sodipodi:rx="7.9549513"
        sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
-       id="path5168-99-1-5-1-8-2-8-8-9"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
+       sodipodi:cx="1012.4001" />
     <path
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
@@ -608,30 +608,30 @@
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"
+       transform="matrix(0.25881905,0.96592583,-0.96592583,0.25881905,0,0)"
        sodipodi:linespacing="125%"
        id="text4147-4"
-       y="-93.420914"
-       x="213.82365"
-       style="font-size:6.83166981px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       y="-198.18974"
+       x="137.49765"
+       style="font-style:normal;font-weight:normal;font-size:6.83166981px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
-         y="-93.420914"
-         x="213.82365"
+         y="-198.18974"
+         x="137.49765"
          id="tspan4149-4"
          sodipodi:role="line">Ptiwi14</tspan></text>
-    <path
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
+       id="path5168-99-1-5-1-8-2-54-3-7"
+       style="fill:#141414;fill-opacity:0.58823532;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
        transform="matrix(0.58859795,0,0,0.58859795,-362.77419,82.365712)"
        d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
+       sodipodi:type="arc"
        sodipodi:ry="7.9549513"
        sodipodi:rx="7.9549513"
        sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
-       id="path5168-99-1-5-1-8-2-54-3-7"
-       style="fill:#141414;fill-opacity:0.58823532;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
+       sodipodi:cx="1012.4001" />
     <path
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
@@ -983,85 +983,81 @@
        id="path5168-99-1-5-1-8-2-8-9-7-8-5-3-54-4"
        style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
        sodipodi:type="arc" />
-    <g
-       id="g7087"
-       transform="translate(-111.24226,16.068327)">
-      <text
-         xml:space="preserve"
-         style="font-size:6.83166981px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-         x="228.52264"
-         y="-121.07013"
-         id="text5883"
-         sodipodi:linespacing="125%"
-         transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"
-         inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-         inkscape:export-xdpi="660.70001"
-         inkscape:export-ydpi="660.70001"><tspan
-           sodipodi:role="line"
-           id="tspan5885"
-           x="228.52264"
-           y="-121.07013">Cid1</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-size:6.83166981px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-         x="238.02415"
-         y="-131.46565"
-         id="text4147-4-6"
-         sodipodi:linespacing="125%"
-         transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"
-         inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-         inkscape:export-xdpi="660.70001"
-         inkscape:export-ydpi="660.70001"><tspan
-           sodipodi:role="line"
-           id="tspan4149-4-3"
-           x="238.02415"
-           y="-131.46565">Rdr1</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-size:6.83166981px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-         x="248.41965"
-         y="-141.86115"
-         id="text4147-4-6-6"
-         sodipodi:linespacing="125%"
-         transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"
-         inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-         inkscape:export-xdpi="660.70001"
-         inkscape:export-ydpi="660.70001"><tspan
-           sodipodi:role="line"
-           id="tspan4149-4-3-3"
-           x="248.41965"
-           y="-141.86115">Psd1</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-size:6.83166981px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-         x="250.19049"
-         y="-152.21159"
-         id="text4147-4-6-6-9"
-         sodipodi:linespacing="125%"
-         transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"
-         inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-         inkscape:export-xdpi="660.70001"
-         inkscape:export-ydpi="660.70001"><tspan
-           sodipodi:role="line"
-           id="tspan4149-4-3-3-9"
-           x="250.19049"
-           y="-152.21159">Ptiwi12</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-size:6.83166981px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-         x="260.49594"
-         y="-162.70049"
-         id="text4147-4-6-6-9-1"
-         sodipodi:linespacing="125%"
-         transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"
-         inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-         inkscape:export-xdpi="660.70001"
-         inkscape:export-ydpi="660.70001"><tspan
-           sodipodi:role="line"
-           id="tspan4149-4-3-3-9-0"
-           x="260.49594"
-           y="-162.70049">Ptiwi15</tspan></text>
-    </g>
+    <text
+       inkscape:export-ydpi="660.70001"
+       inkscape:export-xdpi="660.70001"
+       inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
+       transform="matrix(0.25881904,0.96592583,-0.96592583,0.25881904,0,0)"
+       sodipodi:linespacing="125%"
+       id="text5883"
+       y="-112.5695"
+       x="123.36474"
+       style="font-style:normal;font-weight:normal;font-size:6.83166981px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       xml:space="preserve"><tspan
+         y="-112.5695"
+         x="123.36474"
+         id="tspan5885"
+         sodipodi:role="line">Cid1</tspan></text>
+    <text
+       inkscape:export-ydpi="660.70001"
+       inkscape:export-xdpi="660.70001"
+       inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
+       transform="matrix(0.25881904,0.96592583,-0.96592583,0.25881904,0,0)"
+       sodipodi:linespacing="125%"
+       id="text4147-4-6"
+       y="-126.83641"
+       x="126.01337"
+       style="font-style:normal;font-weight:normal;font-size:6.83166981px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       xml:space="preserve"><tspan
+         y="-126.83641"
+         x="126.01337"
+         id="tspan4149-4-3"
+         sodipodi:role="line">Rdr1</tspan></text>
+    <text
+       inkscape:export-ydpi="660.70001"
+       inkscape:export-xdpi="660.70001"
+       inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
+       transform="matrix(0.25881904,0.96592583,-0.96592583,0.25881904,0,0)"
+       sodipodi:linespacing="125%"
+       id="text4147-4-6-6"
+       y="-141.02692"
+       x="129.89577"
+       style="font-style:normal;font-weight:normal;font-size:6.83166981px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       xml:space="preserve"><tspan
+         y="-141.02692"
+         x="129.89577"
+         id="tspan4149-4-3-3"
+         sodipodi:role="line">Psd1</tspan></text>
+    <text
+       inkscape:export-ydpi="660.70001"
+       inkscape:export-xdpi="660.70001"
+       inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
+       transform="matrix(0.25881904,0.96592583,-0.96592583,0.25881904,0,0)"
+       sodipodi:linespacing="125%"
+       id="text4147-4-6-6-9"
+       y="-155.78467"
+       x="125.077"
+       style="font-style:normal;font-weight:normal;font-size:6.83166981px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       xml:space="preserve"><tspan
+         y="-155.78467"
+         x="125.077"
+         id="tspan4149-4-3-3-9"
+         sodipodi:role="line">Ptiwi12</tspan></text>
+    <text
+       inkscape:export-ydpi="660.70001"
+       inkscape:export-xdpi="660.70001"
+       inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
+       transform="matrix(0.25881904,0.96592583,-0.96592583,0.25881904,0,0)"
+       sodipodi:linespacing="125%"
+       id="text4147-4-6-6-9-1"
+       y="-170.08858"
+       x="128.92204"
+       style="font-style:normal;font-weight:normal;font-size:6.83166981px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       xml:space="preserve"><tspan
+         y="-170.08858"
+         x="128.92204"
+         id="tspan4149-4-3-3-9-0"
+         sodipodi:role="line">Ptiwi15</tspan></text>
     <path
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
@@ -1176,20 +1172,21 @@
          y="422.39029" /></text>
     <g
        id="g7221"
-       transform="translate(65.765323,-162.12825)">
+       transform="translate(78.87535,-162.12825)">
       <rect
-         style="fill:none;stroke:#00000f;stroke-width:0.88016069;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.94117647;stroke-dasharray:none"
+         style="fill:none;stroke:#00000f;stroke-width:0.97393614;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.94117647"
          id="rect14267"
-         width="179.69176"
-         height="61.713055"
-         x="34.848206"
-         y="371.70102"
+         width="179.59798"
+         height="75.60331"
+         x="48.491367"
+         y="371.74789"
          rx="2.6451786"
          inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
          inkscape:export-xdpi="660.70001"
-         inkscape:export-ydpi="660.70001" />
+         inkscape:export-ydpi="660.70001"
+         ry="2.6451786" />
       <g
-         transform="translate(-5.3699,-10.735996)"
+         transform="translate(8.2263772,-10.735996)"
          id="g7206">
         <circle
            inkscape:export-ydpi="660.70001"
@@ -1198,12 +1195,9 @@
            transform="matrix(0.58859795,0,0,0.58859795,-537.73849,385.25887)"
            id="path5168-99-1-5-1-8-2-8-9-58-3-6-2"
            style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-           sodipodi:type="arc"
-           sodipodi:ry="7.9549513"
-           sodipodi:rx="7.9549513"
-           sodipodi:cy="48.447334"
-           sodipodi:cx="1012.4001"
-           d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 0 1 -7.9549,7.954952 7.9549513,7.9549513 0 0 1 -7.955,-7.954952 7.9549513,7.9549513 0 0 1 7.955,-7.954951 7.9549513,7.9549513 0 0 1 7.9549,7.954951 z" />
+           cx="1012.4001"
+           cy="48.447334"
+           r="7.9549513" />
         <text
            inkscape:export-ydpi="660.70001"
            inkscape:export-xdpi="660.70001"
@@ -1211,7 +1205,7 @@
            id="text14335-2-8"
            y="415.9819"
            x="68.61039"
-           style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+           style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none"
            xml:space="preserve"
            inkscape:transform-center-x="35.355339"><tspan
              style="font-size:8px"
@@ -1221,23 +1215,19 @@
              sodipodi:role="line">Presence of protein</tspan></text>
       </g>
       <circle
-         style="fill:#4ead4c;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
+         style="fill:#4ead4c;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.58859795;stroke-opacity:1"
          id="path5168-99-1-5-1-8-2-0-9-4-0-89-2"
-         transform="matrix(0.58859795,0,0,0.58859795,-543.10839,391.22753)"
          inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/path5440.png"
          inkscape:export-xdpi="660.70001"
          inkscape:export-ydpi="660.70001"
-         sodipodi:type="arc"
-         sodipodi:ry="7.9549513"
-         sodipodi:rx="7.9549513"
-         sodipodi:cy="48.447334"
-         sodipodi:cx="1012.4001"
-         d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 0 1 -7.9549,7.954952 7.9549513,7.9549513 0 0 1 -7.955,-7.954952 7.9549513,7.9549513 0 0 1 7.955,-7.954951 7.9549513,7.9549513 0 0 1 7.9549,7.954951 z" />
+         cx="66.384499"
+         cy="419.74353"
+         r="4.6822681" />
       <text
          inkscape:transform-center-x="35.355339"
          xml:space="preserve"
-         style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-         x="63.24049"
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none"
+         x="76.836769"
          y="421.95056"
          id="text14335-2-8-5-5"
          inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
@@ -1245,78 +1235,98 @@
          inkscape:export-ydpi="660.70001"><tspan
            sodipodi:role="line"
            id="tspan14337-6-85-9-4"
-           x="63.24049"
+           x="76.836769"
            y="421.95056"
-           style="font-size:8px">Potential pre-duplication ortholog</tspan></text>
+           style="font-size:8px">Potential pre-duplication orthologue</tspan></text>
       <text
          inkscape:transform-center-x="35.355339"
          xml:space="preserve"
-         style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-         x="63.963146"
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none"
+         x="77.559425"
          y="386.99048"
          id="text14335-2-8-5"><tspan
            sodipodi:role="line"
            id="tspan14337-6-85-9"
-           x="63.963146"
+           x="77.559425"
            y="386.99048"
            style="font-size:8px">Absence of protein</tspan></text>
       <circle
-         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.58859795;stroke-opacity:1"
          id="path5168-99-1-5-1-8-2-2-61-9-5"
-         transform="matrix(0.58859795,0,0,0.58859795,-543.10839,356.26744)"
          inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/path5440.png"
          inkscape:export-xdpi="660.70001"
          inkscape:export-ydpi="660.70001"
-         sodipodi:type="arc"
-         sodipodi:ry="7.9549513"
-         sodipodi:rx="7.9549513"
-         sodipodi:cy="48.447334"
-         sodipodi:cx="1012.4001"
-         d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 0 1 -7.9549,7.954952 7.9549513,7.9549513 0 0 1 -7.955,-7.954952 7.9549513,7.9549513 0 0 1 7.955,-7.954951 7.9549513,7.9549513 0 0 1 7.9549,7.954951 z" />
+         cx="66.384499"
+         cy="384.78345"
+         r="4.6822681" />
+      <circle
+         r="4.6822681"
+         cy="436.19183"
+         cx="66.384499"
+         style="fill:#131313;fill-opacity:0.58823529;fill-rule:nonzero;stroke:#000000;stroke-width:0.58859795;stroke-opacity:1"
+         id="path5168-99-1-5-1-8-2-0-9-4-0-89-2-5"
+         inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/path5440.png"
+         inkscape:export-xdpi="660.70001"
+         inkscape:export-ydpi="660.70001" />
+      <text
+         inkscape:transform-center-x="35.355339"
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none"
+         x="76.926613"
+         y="438.39886"
+         id="text14335-2-8-5-5-2"
+         inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
+         inkscape:export-xdpi="660.70001"
+         inkscape:export-ydpi="660.70001"><tspan
+           sodipodi:role="line"
+           id="tspan14337-6-85-9-4-9"
+           x="76.926613"
+           y="438.39886"
+           style="font-size:8px">Unresolved orthologues</tspan></text>
     </g>
     <text
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"
+       transform="matrix(0.25881905,0.96592583,-0.96592583,0.25881905,0,0)"
        sodipodi:linespacing="125%"
        id="text9629"
-       y="-135.28711"
-       x="255.3029"
-       style="font-size:6.83166981px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       y="-254.18964"
+       x="152.22255"
+       style="font-style:normal;font-weight:normal;font-size:6.83166981px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
-         y="-135.28711"
-         x="255.3029"
+         y="-254.18964"
+         x="152.22255"
          id="tspan9631"
          sodipodi:role="line">Ptiwi13 </tspan></text>
     <text
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"
+       transform="matrix(0.25881905,0.96592583,-0.96592583,0.25881905,0,0)"
        sodipodi:linespacing="125%"
        id="text9625"
-       y="-124.66144"
-       x="254.01073"
-       style="font-size:6.83166981px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       y="-239.742"
+       x="157.6915"
+       style="font-style:normal;font-weight:normal;font-size:6.83166981px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
-         y="-124.66144"
-         x="254.01073"
+         y="-239.742"
+         x="157.6915"
          id="tspan9627"
          sodipodi:role="line">Dcr1</tspan></text>
-    <path
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
+       id="path5168-99-1-5-1-8-2-8-1-1"
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
        transform="matrix(0.58859795,0,0,0.58859795,-318.5934,82.365712)"
        d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
+       sodipodi:type="arc"
        sodipodi:ry="7.9549513"
        sodipodi:rx="7.9549513"
        sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
-       id="path5168-99-1-5-1-8-2-8-1-1"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
+       sodipodi:cx="1012.4001" />
     <path
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
@@ -1399,30 +1409,30 @@
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"
+       transform="matrix(0.25881905,0.96592583,-0.96592583,0.25881905,0,0)"
        sodipodi:linespacing="125%"
        id="text9621"
-       y="-114.22092"
-       x="244.45085"
-       style="font-size:6.83166981px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       y="-225.94991"
+       x="154.62971"
+       style="font-style:normal;font-weight:normal;font-size:6.83166981px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
-         y="-114.22092"
-         x="244.45085"
+         y="-225.94991"
+         x="154.62971"
          id="tspan9623"
          sodipodi:role="line">Cid2</tspan></text>
-    <path
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
+       id="path5168-99-1-5-1-8-2-0-0"
+       style="fill:#4ead4c;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
        transform="matrix(0.58859795,0,0,0.58859795,-333.29484,82.365712)"
        d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
+       sodipodi:type="arc"
        sodipodi:ry="7.9549513"
        sodipodi:rx="7.9549513"
        sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
-       id="path5168-99-1-5-1-8-2-0-0"
-       style="fill:#4ead4c;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
+       sodipodi:cx="1012.4001" />
     <path
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
@@ -1606,60 +1616,56 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:7.02260923px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       x="93.040894"
-       y="-69.478516"
+       x="90.578163"
+       y="-70.240044"
        id="text7119"
        sodipodi:linespacing="125%"
        transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"><tspan
          sodipodi:role="line"
          id="tspan7121"
-         x="93.040894"
-         y="-69.478516">Exogenous dsRNA factors</tspan></text>
-    <g
-       id="g7180"
-       transform="translate(-111.24226,15.303576)">
-      <path
-         inkscape:connector-curvature="0"
-         id="path7099"
-         d="m 317.38602,65.332451 -66.61453,3e-6"
-         style="fill:none;stroke:#000000;stroke-width:1.00000119px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         sodipodi:nodetypes="cc" />
-      <path
-         inkscape:connector-curvature="0"
-         id="path7099-2-8"
-         d="m 405.73009,65.332451 -50.28583,3e-6"
-         style="fill:none;stroke:#000000;stroke-width:1.00000226px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         sodipodi:nodetypes="cc" />
-      <path
-         inkscape:connector-curvature="0"
-         id="path7099-0"
-         d="m 347.13393,65.33245 -23.23139,5e-6"
-         style="fill:none;stroke:#000000;stroke-width:0.99999851px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         sodipodi:nodetypes="cc" />
-    </g>
+         x="90.578163"
+         y="-70.240044">Exogenous dsRNA factors</tspan></text>
+    <path
+       sodipodi:nodetypes="cc"
+       style="fill:none;stroke:#000000;stroke-width:1.01267731px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 208.4348,77.734123 -68.31407,0"
+       id="path7099"
+       inkscape:connector-curvature="0" />
+    <path
+       sodipodi:nodetypes="cc"
+       style="fill:none;stroke:#000000;stroke-width:1.02891433px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 296.45434,77.734123 -53.23559,0"
+       id="path7099-2-8"
+       inkscape:connector-curvature="0" />
+    <path
+       sodipodi:nodetypes="cc"
+       style="fill:none;stroke:#000000;stroke-width:1.02553725px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 238.09381,77.734118 -24.43315,1e-5"
+       id="path7099-0"
+       inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:7.02260923px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       x="152.68304"
-       y="-101.78528"
+       x="154.77589"
+       y="-107.10858"
        id="text7119-3"
        sodipodi:linespacing="125%"
        transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"><tspan
          sodipodi:role="line"
          id="tspan7121-7"
-         x="152.68304"
-         y="-101.78528">Transgene dsRNA</tspan></text>
+         x="154.77589"
+         y="-107.10858">Transgene dsRNA</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:7.02260923px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       x="188.57825"
-       y="-136.02084"
+       x="188.90599"
+       y="-139.40759"
        id="text7119-3-4"
        sodipodi:linespacing="125%"
        transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"><tspan
          sodipodi:role="line"
          id="tspan7121-7-5"
-         x="188.57825"
-         y="-136.02084">Required by both</tspan></text>
+         x="188.90599"
+         y="-139.40759">Required by both</tspan></text>
   </g>
 </svg>

@@ -22,15 +22,20 @@ major classes of proteins, transporters and secreted proteins.
 Specifically, host and endosymbiont transporters which localise to the
 perialgal vacuole (PV) membrane and the outer-membrane of the endosymbiont,
 and proteins which are secreted by host and endosymbiont into 
-PV.  
-
-These points of contact can then be used to aid interpretation
+PV.  These points of contact can then be used to aid interpretation
 and supplement inferred host and endosymbiont metabolic networks. 
-By identifying these networks via the annotation and analysis of
-assembled host and endosymbiont transcript complements it is putatively
-possible to identify direct pathway integration.  For example,
-the completion of a particular pathway via proteins derived from both
-host and endosymbiont.
+
+Another way to investigate metabolic integration is the annotation and analysis
+of known metabolic pathways in host and endosymbiont from binned transcripome
+sequences.  This allows identification of pathways being expressed while
+in the endosymbiotic relationship and potentially indicates further likely
+sites of integration.
+
+%By identifying these networks via the annotation and analysis of
+%assembled host and endosymbiont transcript complements it is putatively
+%possible to identify direct pathway integration.  For example,
+%the completion of a particular pathway via proteins derived from both
+%host and endosymbiont.
 
 %Furthermore, comparison of networks derived from endosymbiotic
 %species to previously sequenced genomes of 
@@ -41,10 +46,11 @@ host and endosymbiont.
 %and \textit{M. pusilum} NC64A can
 %be used to identify possibly 
 
-Finally, metabolic integration can be investigated by the 
-direct analysis of metabolites.  This has the benefits of not
-relying on abstracted measures such as transcript abundance or gene
-copy to attempt to infer biological activity. By not treating the metabolic
+Finally, a direct analysis of metabolites present in the system shows
+final evidence of metabolic integration.
+This has the benefits of not relying on abstracted measures such as transcript abundance or gene
+copy to attempt to infer biological activity. 
+By not treating the metabolic
 state of the system as a latent variable novel information about the cellular
 dynamics can be revealed.   For example, the existence of cryptic regulatory
 systems that break-down direct mapping from genes to transcripts to protein to 
@@ -53,24 +59,182 @@ spectrometry metabolomics approaches it is possible to survey the combined
 pool of host and endosymbiont both qualitatively and quantitatively. 
 These inferences can then be correlated.
 
-By utilising 3 separate streams of metabolic analysis, comparative transcript annotation
+By utilising 3 separate streams of metabolic analysis: comparative transcript annotation
 and mapping, directed identification and analysis of transporters and secreted
 proteins and metabolomics, we maximise the strength of any inferences and 
 reduce the chance of false negatives preventing the identification of biologically
 important metabolic integration.
 
-\subsection{Transporters}
+First, I will summarise what is currently known about the metabolic
+integration of \textit{P. bursaria} and its green algal endosymbionts, before
+briefly discussing the nature and identification of evidence of further metabolic
+integration.
+
+\subsection{Metabolism of Host and Endosymbiont}
+
+The most obvious point of metabolic integration in any endosymbiosis
+featuring a photosynthetic partner is that of the flow of photosynthates
+from endosymbiont to host.
+
+This is believed to primarily be in the form of carbohydrates such as maltose \citep{Muscatine1967}
+In return, the host facilitates increased rates of photosynthesis in the endosymbiont \citep{Sommaruga2009},
+via supply of \(CO_{2}\) \citep{Parker1926}, one or several forms of nitrogen \citep{Johnson2011},
+and mono- and divalent cations such as \(K^{+}\), \(Mg^{2+}\), and \(Ca^{2+}\). 
+All of which have key roles in photosynthesis \citep{Kato2009a}.
+
+Therefore, I will briefly review the current state of knowledge of
+nitrogen and carbon/carbohydrate metabolic uptake and utilisation in green algal 
+endosymbionts.
+
+\subsubsection{Carbohydrate Metabolism}
+
+%Since their discovery \citep{Cohen1957}, several functional types of transporter proteins have been identified:
+%uniporters which facilitate transfer along the sugar gradient (e.g. hexose
+%transporter (HXT), glucose-transporter (GLUTs), and SWEETs),
+%and cotransporters which couple transport to another gradient. 
+%Co-transporters are further divided into symporters such as sodium-glucose symporters (SGLTs), sucrose-\(H^{+}\) 
+%cotransporter (STP), and SUT which co-transport cations in the same direction and
+%antiporters such as the tonoplast sugar transporter (TST) that uses opposing
+%gradients \citep{Chen2015}.
+
+The transfer of matlose, glucose, fructose and malate from endosymbiont
+to host has been observed using radiolabelling 
+\citep{Brown1974}.  Furthermore, green algae strains competent to
+form endosymbioses were found to inducibly release significantly
+more photosynthate (in the form of \(\sim 95\%\) maltose) than strictly free-living strains
+in the presence of \(NaHCO_3\) on the order of \(5.4-86.7\%\) vs. \(0.4-7.6\%\)
+of total photosynthate \citep{Muscatine1967a}.
+
+In terms of the uptake of saccharides by the endosymbiont, 
+at least one free-living \textit{C. vulgaris} 
+strain has an inducible system for active hexose uptake \citep{Tanner1974}.
+In order of highest to lowest uptake rate the free-living \textit{C. vulgaris} 
+took up sucrose, glucose and maltose but not fructose \citep{Kato2009a}.
+Additionally, studies in \textit{C. variabilis} F36-ZK endosymbiont strains
+indicates an inability to directly utilise sucrose or maltose in free-living culture \citep{Kamako2005}
+as well an inability to import glucose or fructose \citep{Kato2008a}.
+Interestingly, export of photosynthate from the PV to the host cytoplasm may be dependent on a transporter
+derived from the \textit{C. variabilis} 1N in its respective \textit{P. bursaria} endosymbioses \citep{Kodama2008}.
+
+Therefore, this analysis of sugar transporters will feature both general screening
+for transporters as well as targeted homology searches for elements of these
+transporter families.
+
+\subsubsection{Nitrogen Metabolism}
+
+Nitrogen is the most transferred material between host and endosymbiont
+after carbon \citep{Kato2009a}.  There has been considerable research and interest
+in exactly what form this nitrogen exchange takes \citep{Kato2006,Kamako2005,McAuley1986}.
+
+
+\textit{C. variabilis} (both NC64A and the Japanese F36-ZK) have been 
+found to be able to use amino acids effectively as a nitrogen source but
+only minimally effectively utilise ammonium (\(NH_4^{+}\)) and being unable to use
+nitrate (\(NO_3^{-}\)) or nitrite (\(NO_2^{-}\)) \citep{Kamako2005,Kato2009}.
+Similar patterns have been observed in \textit{M. reisseri}, although
+all strains tested could utilise nitrate and 3/4 could use nitrite
+to greater or lesser degrees \citep{Kessler1990}.
+%As for the other two species of green algal \textit{P. bursaria} endosymbionts,
+%\textit{Coccomyxa} sp. and \textit{C. vulgaris}, \textit{Coccomyxa} 
+%can likely utilise nitrate \citep{Sanz-Luque2015}
+On the other hand, free-living species such as \textit{Parachlorella
+kessleri} can effectively utilise all of the nitrogen sources mentioned \citep{Kato2009a} 
+(although amino acid utilisation has to be induced with glucose \citep{Cho1981}).
+
+
+In terms of amino acids as a nitrogen source, there unfortunately, isn't
+a high degree of correlation between the ability to uptake an amino acid
+and its usage.  Even rate of uptake does not indicate 
+utilisation \citep{Kato2009a}.
+For example, while \textit{C. variabilis} F36-ZK can
+uptake all 20 amino acids, only 6 (L-arginine, L-asparagine,
+L-glutamine, L-serine, L-alanine) were found to promote growth \citep{Kato2006}.
+This was despite some these 6 being taken up at lower rates
+than non-utilised amino acids such as L-proline, L-cysteine or L-leucine \citep{Kato2006}.
+
+Similarly, \textit{C. variabilis} NC64A was found to have stimulated growth
+in the presence of L-arginine and L-glutamine, whereas another \textit{C. variabilis}
+strain, 3N813A, used every amino acid apart from L-lysine and L-glutamic acid \citep{McAuley1986,Kato2009a}.
+
+%Glutamine synthetase likely plays a role in the endosymbiotic utilisation
+%of amino acids that can be broken down to generate intracellular ammonium
+%after uptake \citep{Rees1995,Kato2009a}.
+%
+%There is also evidence that the expression of this protein is light-dependent
+%in \textit{C. variabilis} \citep{Kato2006}.
+The free-living \textit{C. vulgaris} NIES-227 on the other hand was found to not utilise
+any amino acid apart from low levels of uptake of L-arginine \citep{Kato2006}.
+Therefore, even within the \textit{C. variabilis} strains there is a range 
+of traits in terms of amino acid uptake and utilisation.
+
+
+Kinetic analyses and competitive assays indicate 3 amino acid transport
+systems in \textit{C. variabilis} F36-ZK, a general amino acid tranporter
+for all amino acids except L-alanine, a basic transporter for L-arginine and L-lysine
+and a specialised L-alanine transporter \citep{Kato2009b,Kato2009a}.
+All of these are constitutively expressed, active, amino-acid symporters \citep{Kato2009b,Kato2009a}.
+
+%Although glucose did increase the rate of amino acid uptake by some partially defined sensing system
+%and resorted uptake in the casoe of calcium ihibtion \citep{Kato2008,Kato2009a}.
+%
+% (although glucose and maltose
+%did stimulate growth \citep{Kamako2005} it was via a mechanism which promoted increased uptake of a nitrogen source
+%\citep{Kato2009a}).
+
+As \textit{P. bursaria} cannot import nitrate \citep{Albers1982} the heterogeneous
+loss of nitrate and nitrite utilisation in several endosymbiotic strains 
+is perhaps not surprising \citep{Kato2009a}.
+As there is no pressure to maintain enzymes necessary for this pathway when an endosymbiont
+this may explain the appearance 
+This reduced selection pressure for nitrate and nitrite utilisation when in the endosymbiot
+milieu may explain the presence of low-activity mutatant Nitrate Reductase (NR) and Nitrite
+Redutase (NiR) \citep{Kato2009a}. 
+%On the other hand in free-living organisms utilisation of the usually rare
+%inorganic sources of nitrogen
+%such as ammonium, nitrate and nitrite often a major limit on growth and productivity 
+%\citep{Giordano2014}.
+
+%Putatively, this reflects an early stage in the genomic streamlining that frequently
+%takes place in endosymbionts. 
+
+%Constitutive expression is another adapation to endosymbiosis and metabolic integration as
+%the free-living \textit{C. vulgaris} strains tested must have induced expression of these
+%transporters \citep{Cho1981}.
+%
+%\(Ca_2^{+}\) and \(Mg_2^{+}\) inhibit affects amino acid uptake \citep{Kato2008} in
+%the general amino acid transporters of \textit{C. vulgaris} and F36-ZK 
+%
+
+%
+% Respiration of the host plays a role in the gas exchange of \(CO_2\) and \(O_2\) 
+% to the endosymbiont, with the algae displaying higher levels of photosynthetic
+% activity while in association with the host due to the increase host related 
+% \(CO_2\) respiration \citep{Reisser1980}.
+%Addition of glucose, which likely increases host respiration rate and thus \(CO_2\)
+%evolution increases the rate of photosynthetic oxygen production commensurately \citep{Reisser1980}
+
+
+%In \textit{Parachlorella kessleri} (previous \textit{Chlorella kessleri} \citep{Krienitz2004,Hoshina2010})
+%
+%Chlorella \(H^{+}\)-monosaccharide (HUP1) co-transporters \citep{Sauer1989}
+%have been identified (via hexose-transport deficient mutant screens \citep{Sauer1986}
+%and localised to the plasma membrane \citep{Stadler1995}
+%Additionally these transporters have been identified in the
+%\textit{Auxenochlorella protothecoides} (formerly \textit{Chlorella protothecoides} \citep{Champenois2014}) genome \citep{Gao2014}.
+
+
+\subsection{Identifying Direct Points of Contact}
+\subsubsection{Transporter Proteins}
 
 The most important group of proteins in the control and evolution
 of metabolic integration is that of host and endosymbiont transporter proteins.
 This is due to their role in facilitating diffusion and active transport
 across the lipid membranes that exist between host and endosymbiont.
-While the role of transporters has been investigated extensively in 
-several symbioses, these typically focus on organellar endosymbionts where
-metabolic co-dependence has become fixed \citep{Yuan1994,Tyra2007,Huang2007,Li2010a} 
-or ecological community interactions 
-\citep{Richards2013,Hirner2006,Bachmann2013,Oldroyd2009}.
-
+%While the role of transporters have been investigated extensively in 
+%several symbioses, these typically focus on organellar endosymbionts where
+%metabolic co-dependence has become fixed \citep{Yuan1994,Tyra2007,Huang2007,Li2010a} 
+%or ecological community interactions 
+%\citep{Richards2013,Hirner2006,Bachmann2013,Oldroyd2009}.
 
 Without transporters many metabolically important 
 large uncharged polar molecules (e.g. carbohydrates, amino acids)
@@ -87,12 +251,11 @@ hydrophobic compounds like benzene and small uncharged polar molecules
 Despite this, transporter proteins have evolved to facilitate
 even more rapid diffusion of some of these metabolites e.g. aquaporins
 \citep{Agre1993}.  
-Finally, transporters are important in that some can provide the ability
+Finally, certain transporters can provide the ability
 to actively transport metabolites against concentration gradients. 
 This involves the expenditure of energy (typically in the form of ATP)
 to directly pump compounds or generate an opposing gradient which can be
 exploited (primary vs secondary active transport). 
-
 
 There are 5 functional groups of transporters \citep{Saier2014}:
 \begin{itemize}
@@ -124,15 +287,15 @@ In the case of \textit{P. bursaria} and its endosymbiont we are
 particularly interested in the host 
 the host perialgal vacuole membrane and the outer membrane of the green
 algal endosymbiont in the case of \textit{P. bursaria}.  
+
 Therefore, the first step to the successful analysis of the metabolic
 integration of host and endosymbiont is accurate identification of
 transporter proteins present in their respective binned transcriptome
 sequences.   By identifying both the identity of these proteins 
 and qualitatively investigating the relative day:night expression
 targets can be generated for further analysis, validation, and 
-proof of localisation to the perialgal vacuole and algal outer
-membrane.  Therefore, it is necessary to filter out 
-transporters related to plastid and mitochondrial function in host and endosymbiont.
+proof of localisation to the PV and algal outer
+membrane.  
 
 %The importance of these systems in metabolic integration is further 
 %evidenced by the the way the evolution of protein import systems 
@@ -141,8 +304,7 @@ transporters related to plastid and mitochondrial function in host and endosymbi
 %to be the main constraint in the establishment of an endosymbiont
 %as an organelle \citep{Pfanner2001.Keeling2008a}.
 
-
-Transporter proteins can be predicted  
+Transporter proteins can be identified
 primarily via annotation and homology searches to previously
 identified transporters \citep{Saier2006,Saier2009,Saier2014} 
 and direct identification of transmembrane (TM) domains motifs. 
@@ -159,165 +321,58 @@ Specifically, we wish to discover sugar transporters which facilitate the
 secretion and uptake of photosynthate and ammonium and/or amino acid transporters
 which facilitate transfer of a nitrogen source between host and endosymbiont.
 
-\subsection{Carbohydrate Metabolism}
-
-%Since their discovery \citep{Cohen1957}, several functional types of transporter proteins have been identified:
-%uniporters which facilitate transfer along the sugar gradient (e.g. hexose
-%transporter (HXT), glucose-transporter (GLUTs), and SWEETs),
-%and cotransporters which couple transport to another gradient. 
-%Co-transporters are further divided into symporters such as sodium-glucose symporters (SGLTs), sucrose-\(H^{+}\) 
-%cotransporter (STP), and SUT which co-transport cations in the same direction and
-%antiporters such as the tonoplast sugar transporter (TST) that uses opposing
-%gradients \citep{Chen2015}.
-
-The transfer of matlose, glucose, fructose and malate from endosymbiont
-to host has been observed using radiolabelling 
-\citep{Brown1974}.  Furthermore, green algae strains competent to
-form endosymbioses were found to inducibly release significantly
-more photosynthate (in the form of \(\sim 95\%\) maltose) than strictly free-living strains
-in the presence of \(NaHCO_3\) on the order of \(5.4-86.7\%\) vs. \(0.4-7.6\%\)
-of total photosynthate \citep{Muscatine1967a}.
-
-In terms of the uptake of saccharides, \textit{C. vulgaris} (the current
-taxonomic state of this strain is unclear) has an inducible system for active hexose uptake \citep{Tanner1974}.
-Additionally, studies in the Japanese \textit{C. variabilis} endosymbiont strains
-indicates some lack the capability to directly utilise sucrose or maltose in free-living culture \citep{Kamako2005}
-as well an inability to import glucose or fructose \citep{Kato2008a} (although glucose and maltose
-did stimulate growth \citep{Kamako2005} it was via a different mechanism \citep{Kato2009}.
-
-There are 3 main groups of eukaryotic sugar transporters in the green algae: 
-major facilitiator superfamily (MFS) transporters including glucose
-transporters (GLUTs), HXTs, STPs and SUTs; the Sodium-Solute Symport Family (SSF) sodium-glucose symporters (SGLTs); 
-and SWEETs \citep{Chen2010a,Chen2015}.
-Additionally, there are a few transporters mainly associated with intracellular transport such as 
-vacuolar glucose transporter I (VGT1), ERD-like transporters and tonoplast monosaccharide transporters.
-
-Therefore, this analysis of sugar transporters will feature both general screening
-for transporters as well as targeted homology searches for elements of these
-transporter families.
-
-\subsection{Nitrogen Metabolism}
-
-Nitrogen is the most transferred material between host and endosymbiont
-after carbon \citep{Kato2009}.  There has been considerable research and interest
-in exactly what form this nitrogen exchange takes place.
-
-
-In terms of nitrogen utilisation in endosymbiotic algae 
-\textit{C. variabilis} both NC64A and F36-ZK demonstrated an ability
-to effectively use amino acid, less effectively use ammonium and not
-use nitrate or nitrite \citep{Kamako2005,Kato2009}.
-European endosymbionts (now mostly renamed to \textit{M. reisseri}) display
-a similar pattern but have 
-shown an ability to use nitrate as well \citep{Kessler1990}.
-This is in contrast to obligately free-living species such as \textit{Parachlorella
-kessleri} which can make use of all the above nitrogen sources \citep{Kato2009}.
-
-
-As \textit{P. bursaria} cannot import nitrate \citep{Albers1982} the heterogeneous
-loss of nitrate and nitrite utilisation in endosymbiotic strains is perhaps not surprising \citep{Kato2009}.
-As there is no pressure to maintain enzymes necessary for this pathway when an endosymbiont
-this may explain the appearance 
-
-This reduced selection pressure for nitrate and nitrite utilisation when in the endosymbiot
-milieu may explain the presence of low-activity mutatant Nitrate Reductase (NR) and Nitrite
-Redutase (NiR) \citep{Kato2009}. 
-Putatively, this reflects an early stage in the genomic streamlining that frequently
-takes place in endosymbionts. 
-
-
-A study of specific amino-acid utilisation identified
-6 amino acids that promited strong growth L-arginine, L-asparagine,
-L-glutamine, L-serine, L-alanine in \textit{C. variabilis} F36-ZK \citep{Kato2006}.
-There was also no growth observed with the dipetptides
-glycylglycine, glycyltyronsine, and arginlyarginine \citep{Kato2006}.
-
-A similar but much earlier study in \textit{C. variabilis} NC64A
-showed use of L-arginine, L-glutamine and L-lysine although L-arginine wasn't
-found to be actually imported \citep{McAuley1986}.  A similar
-
-
-
-
-L-glutamine and L-glutamic acid
-
-k
-
-
-
-
-
-
- Respiration of the host plays a role in the gas exchange of \(CO_2\) and \(O_2\) 
- to the endosymbiont, with the algae displaying higher levels of photosynthetic
- activity while in association with the host due to the increase host related 
- \(CO_2\) respiration \citep{Reisser1980}.
-Addition of glucose, which likely increases host respiration rate and thus \(CO_2\)
-evolution increases the rate of photosynthetic oxygen production commensurately \citep{Reisser1980}
-
-
-
-
-Proton gradient dependent transport of maltose/photosynthate out of the \citep{Schussler1992}
-pH induces release of maltose in many algae \citep{}
-
-%In \textit{Parachlorella kessleri} (previous \textit{Chlorella kessleri} \citep{Krienitz2004,Hoshina2010})
-%
-%Chlorella \(H^{+}\)-monosaccharide (HUP1) co-transporters \citep{Sauer1989}
-%have been identified (via hexose-transport deficient mutant screens \citep{Sauer1986}
-%and localised to the plasma membrane \citep{Stadler1995}
-%Additionally these transporters have been identified in the
-%\textit{Auxenochlorella protothecoides} (formerly \textit{Chlorella protothecoides} \citep{Champenois2014}) genome \citep{Gao2014}.
-
-
-\subsection{Secreted proteins}
+\subsubsection{Secreted Proteins}
 
 The next major class of proteins involved in endosymbiosis
 from the perspective of the endosymbiont as those
 which are secreted.   These proteins are secreted
 into the perialgal vacuole and thus are likely to
 be play some form of role in the maintenance of
-the endosymbiosis.
+the endosymbiosis. For example, the endosymbiont
+derived sugar transporter responsible for the export
+of photosynthate from the PV hypothesies by \citep{Kodama2008}.
 
+%Identification of secreted proteins also offers
+%a chance to further elucidate the function of novel or poorly 
+%characterised transporters that have been identified. 
+%For example, 
 
-Identification of secreted proteins also offers
-a chance to further elucidate the function of novel or poorly 
-characterised transporters that have been identified. 
-For example, 
-
-Secreted proteins can be effectively identified by 
-searching for the presence of N-terminal signal peptides. 
-
-These are short 15-30 amino acid N-terminal sequences cleaved during translocation.
-They aren't conserved sequences but are present across the tree of life.
-
-Feature a biochemical compositional fingerprint 
-of positively charged residues, hydrophobic residues and polar uncharged
-residues with distinctive points before site.l \citep{Emanuelsson2007}
-
-
-
-
-
-Not all have signal peptides either
-
-
-
-
+The identification of secreted proteins relies on the analysis
+of signal peptides and/or a range of standard classification
+algorithms based on sequence and compositional features.   
+Signal peptides are short 15-30 amino acid N-terminal sequences
+that determine targeting of proteins to cellular compartments
+\citep{Schatz1996,Rusch1995}.
 
 SignalP \citep{Nielsen1997} has proven the most effective method of predicting
 the presence of signal peptides \citep{Lee2009a,Petersen2011}.
-
-
 This method uses a standard feed-forward artificial neural network
 with 8-41 hidden units (depending on whether the organism is eukaryotic, 
 gram positive or gram negative) trained with back-propagation.
 
+Subcellular localisation of a given protein can also be inferred
+using tools such as the WoLF PSORT \citep{Horton2007a}.
+This tool implements a standard K-neighbours classifier
+trained on localisation labelled proteins from SwissProt 
+and uses PSORTII \citep{Nakai1992,Nakai1999,Horton1997} and iPSORT \citep{Bannai2002} 
+derived sequence features and automatic inference of weightings \citep{Horton2006}. 
 
-
-
-By analysing the identified signal peptides it is possible
-to 
+In addition to these tools, there are many other systems that have been
+designed to predict protein localisation.  In order to maximise
+the probability of successful identification of secreted proteins I have
+created a consensus ensemble classifier that incorporate several of these
+tools, specifically SignalP, TMHMM, TargetP, ChloroP, and WoLFPSort. 
+%
+%Secreted proteins can be effectively identified by 
+%searching for the presence of N-terminal signal peptides. 
+%
+%These are short 15-30 amino acid N-terminal sequences cleaved during translocation.
+%They aren't conserved sequences but are present across the tree of life.
+%
+%Feature a biochemical compositional fingerprint 
+%of positively charged residues, hydrophobic residues and polar uncharged
+%residues with distinctive points before site.l \citep{Emanuelsson2007}
+%
 
 \subsection{Metabolic mapping}
 
@@ -333,63 +388,36 @@ By comparison of the relatively complete predicted peptides from
 the endosymbiotic algae \textit{C. variabilis} NC64A and \textit{Coccomyxa
 subellipsoidea} C-169 genome projects to the predicted endosymbiont binned peptides
 from the transcriptomes of \textit{M. reisseri} and \textit{C. variabilis} 1N
-it is possible to infer what the endosymbiotic metabolic pathways
-are active during endosymbiosis. 
+it is possible to infer what the endosymbiotic metabolic pathways.
 
 
-
-
-
-
-
-
-
-
-
-
-
-what metabolic pathways are likely
-
-
-
-
-
-
-
-
-
-
-\subsection{Metabolomics}
-
-
-A pilot untargeted global metabolomic profile was generated
-for \textit{P. bursaria}-\textit{M. reissieri} CCAP 1660/12 
-culture to test the feasability of this approach and help optimise
-chromatography and 
-
-Finally, a proof of concept for the targeted metabolomic
-analysis of this system was conducted used HPLC-QQQ
-to determine the relative abundances of amino acids
-in the culture between day and night conditions. 
-
-In the case of \textit{P. bursaria} and its green algal endosymbionts 
-there are
-
-
-
-\subsubsection{Untargeted Global Profiling}
-GCMS, LCMS,
-
-\subsection{Targeted Analysis of Key Classes of Compounds}
-
-Mass spectrometry also offers methods by which a targeted 
-analysis of key classes of compounds can be conducted. 
-
-
-While few
-
-Amino acids 
-
+%\subsection{Metabolomics}
+%
+%A pilot untargeted global metabolomic profile was generated
+%for \textit{P. bursaria}-\textit{M. reissieri} CCAP 1660/12 
+%culture to test the feasability of this approach and help optimise
+%chromatography and 
+%
+%Finally, a proof of concept for the targeted metabolomic
+%analysis of this system was conducted used HPLC-QQQ
+%to determine the relative abundances of amino acids
+%in the culture between day and night conditions. 
+%
+%In the case of \textit{P. bursaria} and its green algal endosymbionts 
+%there are
+%
+%
+%\subsubsection{Untargeted Global Profiling}
+%GCMS, LCMS,
+%
+%\subsubsection{Targeted Analysis of Key Classes of Compounds}
+%
+%Mass spectrometry also offers methods by which a targeted 
+%analysis of key classes of compounds can be conducted. 
+%
+%
+%While few
+%Amino acids 
 
 
 \section{Aims}
@@ -455,27 +483,6 @@ Finally, all proteins annotated to have a GO term associated with ``transport'' 
 ``transport activity'' specifically, GO:0005215, GO:0005478 and GO:0006810 and their child
 terms were extracted.  
 
-\subsubsection{Qualitative expression analysis}
-
-Kallisto \citep{Bray2015} was used to pseudoalign and estimate abundances for 
-all taxonomically screen single cell 
-libraries (4 dark and 3 light) to the called ``endosymbiont''
-binned CDS sequences from the \textit{P. bursaria} CCAP 1660/12
-transcriptome (see Chapter 2).
-
-Kallisto doesn't align reads to references in the same
-manner as conventional short read alignment algorithms
-such as Bowtie2 \citep{Langmead2012}.  Instead of specifically 
-mapping a read to a set of co-ordinates it instead
-determines which transcripts are compatible with the alignment 
-of a given read.  This is achieved via decomposition of transcripts
-in de-Bruijn graphs and fast k-mer hashing to compare reads to transcript
-graph nodes in constant time.  These k-compatability classes are then used with
-boostrapped expectation-maximisation to estimate transcript quantification and
-determine uncertainty \citep{Bray2015}. 
-
-Results were visualised and analysed using ``sleuth'' and the
-seaborn plotting library \citep{michael_waskom_2015_19108}.
 
 \subsection{Secretome prediction}
 
@@ -493,6 +500,28 @@ using the following pipeline:
     \item Finally, for the endosymbiont, secreted protein found to have a Chloroplast
         targeting signal (via ChloroP1.1) were removed.
 \end{enumerate}
+
+\subsection{Qualitative expression analysis}
+
+Kallisto \citep{Bray2015} was used to pseudoalign and estimate abundances for 
+all taxonomically screened single cell 
+libraries (4 dark and 3 light) to the called ``endosymbiont''
+binned CDS sequences from the \textit{P. bursaria} CCAP 1660/12
+transcriptome (see Chapter 2).
+
+Kallisto doesn't align reads to references in the same
+manner as conventional short read alignment algorithms
+such as Bowtie2 \citep{Langmead2012}.  Instead of specifically 
+mapping a read to a set of co-ordinates it instead
+determines which transcripts are compatible with the alignment 
+of a given read.  This is achieved via decomposition of transcripts
+in de-Bruijn graphs and fast k-mer hashing to compare reads to transcript
+graph nodes in constant time.  These k-compatability classes are then used with
+boostrapped expectation-maximisation to estimate transcript quantification and
+determine uncertainty \citep{Bray2015}. 
+
+Results were visualised and analysed using ``sleuth'' and the
+seaborn plotting library \citep{michael_waskom_2015_19108}.
 
 \subsection{Metabolic mapping analysis}
 
@@ -588,18 +617,16 @@ to generate transcript bins.  With the transcripts binned into
 ``host'' and ``endosymbiont'' ORFs were recalled from them using the appropriate
 encodings. 
 
-
-
-
 \subsection{Metabolomics}
 
 3 mass spectrometry analyses were conducted to investigate the presence/absence
 and relative abundances of polar and non-polar metabolites.
+Specifically, GC-QTOF to principally identify metabolites such as carbohydrates,
+LC-QTOF in postive and negative ionisations to profile general metabolites.
 
 Finally, a targeted mass spectrometry analysis was conducted using
-LC-QQQ to quantitatively assess 
-
-
+LC-QQQ to quantitatively assess the concentration of free amino acids
+in the host-endosymbiont system during the day and night.
 
 \subsubsection{Untargeted LC-QTOF Profiling}
 
@@ -664,35 +691,17 @@ chemotherapeutic drugs) discarded.
 
 \subsubsection{Untargeted GC-QTOF Profiling}
 
-%heoretically, GC-QTOF would ideally be used to identify profiles of polar
-%saccharides. 
+Standard sample preparation was conducted 
+with 5 light and 5 dark biological replicates.  
 
-%Pseudospectrum approach instead of peak alignments etc due to the difficulties
-%aligning data of this type relative to LCMS.
-%
-%Peak picking followed by pseudospectra determination.
-%Identification and elemeiaton of artefacts and then annotation
-%against a standards database. 
-%
-%Rather than individual peaks - a pseudospecvtrum is used.
-%This is a set of m/z values with a peak at the same rentetion time.
-%In GC the overalp is smaller than in LC due tot he narrower peaks therefore
-%retention times are harder to match leading to separate mass spectra. 
-%
-%NIST library has fragmentation patterns.
-%
-%Spectra are easier to interepr due to adducts - 
-%
-%Comparison of pseudospectra is done via a weighted dot product
-%
-%Finally unannotated patterns repeatedly occur in different 
-%
-%LC-QTOF was conducted using
-
-%abd were charged using dual electronspray ionisation (ESI), one run
-%using a negative polarity and the other positive. 
-%
-%\(3.5\mu m\), \(2.1 \times 150mm\) Eclipse Plus C18 (Agilent) 
+Agilent ``.d'' proprietary format outputs were converted to mzXML as above.
+The majority of the analysis pipeline was conducted using the metaMS R library
+\citep{Wehrens2014}.  Briefly, this involved standard peak picking using the
+default xcms algorithm \citep{Smith2006} followed by clustering into
+pseudospectra using CAMERA \citep{Kuhl2012}.  Pseudospectra were then annotated
+against the NIST and METLIN databases using a combination of spectral
+and retention time features.  Finally intensity and relative abundances
+were calculated and tested using FDR t-tests.
 
 \subsubsection{Targeted Amino Acids Quantitative Analysis}
 
@@ -710,34 +719,11 @@ for amino acids with an Agilent Technology
 6410B enhanced sensitivity triple quadrupole mass spectrometer (QQQ).
 
 Results were analysed using the Agilent Quantiative Analysis software package
-with peaks normalised in respect to the umbelliferone standard.  Results for any 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Agilent 6410 enhanced sensitivity triple quadrupole (QQQ) 
-with Agilent 1200 series HPLC stack
-
-
-
-
+with peaks normalised in respect to the umbelliferone standard. 
 
 \section{Results}
 
-\subsection{Kodama Assembly}
+\subsection{\textit{P. bursaria}-\textit{C. variabilis} YAG1N assembly}
 
 \begin{table}
     \centering
@@ -753,11 +739,12 @@ with Agilent 1200 series HPLC stack
         \textbf{Q5 K-mer abundance filtering} & \(1.055\cdot10^{7}\)\\
         \hline
     \end{tabular}
-    \caption{Summary of read pre-processing stages for tthe Kodama library demonstrating
-    the massive amount of redundancy that digital normalisation removes from the assembly.
-The low amount number of reads removed during K-mer abundance filtering indicates
-that there were relatively few low abundance 
-}
+    \caption[Results of various types of pre-processing for the YADG1N transcriptome]{
+        Summary of read pre-processing stages for the Kodama library.  This
+        table further emphasises the massive amount of redundancy that digital normalisation 
+        removes from the assembly. The minimal effect of K-mer abundance filtering
+        is likely due to a relative redundancy in this pre-processing from the error
+    correction step.}
     \label{tab:kodama_preproc}
 \end{table}
 
@@ -772,18 +759,29 @@ that there were relatively few low abundance
         \textbf{Trinity Q30} & 53,938  & \(5.619\cdot10^{9} \) \\
         \hline
     \end{tabular}
-    \caption{Summary of Kodama assembliesj}
+    \caption[Summary of YADG1N Transcriptome Assemblies]{Summary of resultant 
+    assemblies of sequencing data derived from \citep{Kodama2014c}.  As the
+Trinity Q5 Normalised assembly had the best likelihood while generating
+the greatest number of contigs it was used for downstream analyses.}
     \label{tab:kodama_assembly}
 \end{table}
 
-Therefore, the optimal assembly chosen for further analysis was the Trinity
-Q5 normalised assembly on the basis of RSEM-EVAL score. 
+A complete \textit{de novo} assembly was conducted of sequencing data
+from \citep{Kodama2014c}.  Based on experiences assembling
+\textit{P. bursaria}-\textit{M. reisseri} CCAP 1660/12 (see \cref{sec:chap4}).
+Briefly, all samples were combined, trimmed to Q5, 
+error corrected, digitally normalised and abundance filtered.  Another dataset
+was prepared just using adapter trimming and a quality threshold of Q30.
+Assemblies conducted with these datasets using both Trinity and Bridger
+\textit{de novo} assemblers were evaluated using RSEM-EVAL and the optimal
+assembly chosen on score. 
 
+Therefore, the optimal assembly chosen for further analysis was the Trinity
+Q5 normalised assembly.
 From the 101,957 transcripts 193,906 ORFS were called using tetrahymena 
 encoding and 20,875 universal.
-
 These were subsequently binned using the same approach as used in 
-Chapter 3. 
+\cref{sec:chap4}. 
 
 \begin{table}
     \centering
@@ -797,15 +795,18 @@ Chapter 3.
         Unknown & 36,162 \\
         \hline
     \end{tabular}
+    \caption[YADG1N Transcript Binning Summary]{Summary of transcript
+        binning for the Q5 Trinity assembly of YADG1N.  
+        A much greater proportion of transcripts were assigned
+        to host and endosymbiont for this assembly than in the single cell
+    based assemblies previously conducted}
 \end{table}
-
 Finally, ``Host'' and ``Endosymbiont'' binned transcripts 
 were re-ORF called using the appropriate encodings to result in a 
 host ORF bin of 61,239 sequences
 and an endosymbiont bin of 5,565 peptides. 
 
 \subsection{Transporter Identification}
-
 To identify transporters present in the translated protein dataset of the 
 endosymbiont bins of the CCAP1660/12 and YADGN1 
 \textit{Paramecium bursaria} transcriptome assemblies, as well as the Chlorella NC64A 
@@ -818,234 +819,310 @@ and Coccoymxa C-169 predicted proteomes the following process was used:
         & \textit{C. variabilis 1N} & \textit{M. reisseri CCAP 1660/12} & \textit{C. vulgaris NC64A} & \textit{C. subellipsoidea C-169} \\
         \hline
         Peptides        & 5,565 & 4,275 & 9,791 & 9,629 \\
-        1+ TM domains   & 695 & 419 & 1,722 & 1,709 \\
-        1+ TM and TCDB  & 251 & 185 & 690 & 697 \\
+        1+ TM domains   &   695 &   419 & 1,722 & 1,709 \\
+        1+ TM and TCDB  &   251 &   185 &   690 &   697 \\
         \hline
     \end{tabular}
 \end{table}
 
 
-
-
-
-
-A set of 233 
-transporter proteins were also identified 
-in the \textit{M. reisseri} binned peptides
-by parsing the results of a 
-BLAST/InterProScan and GO term based annotation pipeline.
-Of, these 77 were redundant to proteins already identified using
-the TM/TCDB pipeline, therefore 156 were novel.
-
-This means a total of 341 transporters were identified 
-belonging to the CCAP 1660/12 endosymbiont from the SCT transcriptomes. 
-
-
-
-
-
+%There are 3 main groups of eukaryotic sugar transporters in the green algae: 
+%major facilitiator superfamily (MFS) transporters including glucose
+%transporters (GLUTs), HXTs, STPs and SUTs; the Sodium-Solute Symport Family (SSF) sodium-glucose symporters (SGLTs); 
+%and SWEETs \citep{Chen2010a,Chen2015}.
+%Additionally, there are a few transporters mainly associated with intracellular transport such as 
+%vacuolar glucose transporter I (VGT1), ERD-like transporters and tonoplast monosaccharide transporters.
 
 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{endosymbiont_bin_annotation.pdf}
-    \caption{More stringent} 
+    \caption[Summary of \textit{M. reisseri} Endosymbiont Bin Annotation]{Summary
+    of Endosymbiont Bin Annotation} 
 \end{figure}
 
 
-
-\begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{endo_distribution_of_top_BLAST_hits.pdf}
-    \caption[Endostymbiont Bin Top BLAST Hits]{asdasd}
-\end{figure}
-
-
-\begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{endosymbiont_bin_size_dist.pdf}
-    \caption{asdasd}
-\end{figure}
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=\textwidth]{endo_distribution_of_top_BLAST_hits.pdf}
+%    \caption[Endostymbiont Bin Top BLAST Hits]{asdasd}
+%\end{figure}
 
 
 
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=\textwidth]{endosymbiont_bin_size_dist.pdf}
+%    \caption{asdasd}
+%\end{figure}
 
 
+From the GO based annotations there were 427 proteins associated
+with the GO term for transmembrane transport (GO:0006810).
+These overlapped with approximately half of the TM/TCDB identification 
+(93/185 proteins).  133 of the 427 GO term annotated transporters
+had at least 1 TM domain (and this 133 contained all 93 shared TM/TCDB and GO 
+based identifications as would be expected). 
+
+On manual inspection, a large number of GO based annotations were partial/subunits
+or could only very tenously be referred to as transporters. 
+Due to this only those with a TM domain were retained and added to the list
+of candidate transporters. 
+
+This resulted in a list of 225 putative transporters 
+for \textit{M. reisseri} CCAP 1660/12.
+
+These were then manually filtered to remove obviously organelle
+related groups, specifically cytochromes/electron transport chain
+proteins and photosystem related proteins leading to a final
+set of 186 putative transporter proteins.
+
+
+In terms of candidate sugar transporters 
+This includes 7 MFS transporters, a hexose sugar transporter, 
+a sugar-phosphate translocator, a sweet1 sugar transporter
+a nucelotide-sugar transporter, a mannose-6-phosphate isomerase,
+and a fucose permease. 
+There were also 2 polyol transporters e.g. a glycerol-3-phosphate transporter
+and an inositol transporter.
+
+Candidate amino acid transporters included 8 amino acid
+permeases.
+%in the \textit{M. reisseri} binned peptides
+%by parsing the results of a 
+%BLAST/InterProScan and GO term based annotation pipeline.
+%Of, these 77 were redundant to proteins already identified using
+%the TM/TCDB pipeline, therefore 156 were novel.
+%
+%This means a total of 341 transporters were identified 
+%belonging to the CCAP 1660/12 endosymbiont from the SCT transcriptomes. 
 
 \subsection{Kallisto quantification analysis}
 
 Using the nucleotide CDS sequence of the called peptides identified as transporters
-from the primary SCT transcriptome. 
-
+reads from each of the 7 taxonomically screened single cell libraries were pseudo-mapped
+to them using Kallisto. 
 Due to the compositional/coverage biases of MDA-based single cell transcriptomics 
 Kallisto statistical inference was likely to be spurious and relate to the 
-well-documented coverage biases of MDA. Therefore, a simple presence/absence
+well-documented coverage biases of MDA (see \cref{fig:jsd}). Therefore, a simple presence/absence
 filter was implemented for the single cell libraries where an estimated
 Transcripts per million (TPM) was above 0 for at least 1 biological replicate
 in each condition. 
-TPM is an estimate of the 
 
 \begin{figure}
-	\includegraphics[width=\textwidth]{bjsvg.pdf}
-    \caption[Jasper-Shannon Divergence of Single Cell Libararies]{Comparison of single cell libraries}
+    \centering
+	\includegraphics{bjsvg.pdf}
+    \caption[Jasper-Shannon Divergence of Single Cell Libararies]{Comparison of similarity of 
+    taxonomically screened single cell libraries.  This shows how relatively divergent
+each library is and demonstrates the high level of noise.  The dark and light groups
+are only very faintly visible.  This further supports the use of read-mapping inferences
+as qualitative rather than quantitative data for MDA-based SCT.}
 \label{fig:jsd}
 \end{figure}
 
+ \begin{figure}
+     \centering
+     \includegraphics{transport_exp.pdf}
+     \caption{A binary filter heatmap that displays the 4 groups of transporter
+         proteins identified in the \textit{P. bursaria}-\textit{M. reisseri} 
+         transcriptome.  Specifically, it shows the 34 transporters expressed only
+         in dark single cell libraries, 48 expressed only in light libraries, the 64
+         expressed in both and the 14 only recovered in the bulk libraries.}
+     \label{fig:binary_expression_heatmap}
+ \end{figure}
 
-% \begin{figure}
-%     \includegraphics[width=\textwidth]{transporter_expression_heatmap.pdf}
-%     \caption{A binary filter heatmap that displays the 4 groups of transporter
-%         proteins identified in the \textit{P. bursaria}-\textit{M. reisseri} 
-%         transcriptome.  Specifically, it shows 33 transporters expressed only
-%         in the dark single cell libraries, 54 expressed only in the light,
-%     84 expressed in both libraries and 13 only recovered in the bulk transcriptomes}
-%     \label{fig:binary_expression_heatmap}
-% \end{figure}
-
-
-Of these only 2 were expressed in all 4 bulk libraries 34 in all 3 light libraries, 14 in all taxonomicall screened SCT libraries.
 
 \begin{table}
-    \begin{tabular}{|c|c|c|c|}
+    \centering
+    \begin{tabular}{|c|c|}
         \hline
-        \textbf{State} & \textbf{Name} & \textbf{TCDB Identity} & \textbf{TCDB Annotation}\\
+        \textbf{Name} & \textbf{Description/Annotation} \\
         \hline
-        All Dark Libraries  & comp11781\_seq0|m.10145 & PF00448.18 & General Secretory Pathway \\
-                            & comp20734\_seq0|m.20988 & PF00122.16 & P-type ATPase \\
-        \hline
-        All Light Libraries & comp34406\_seq1|m.34111 & PF02705.12 & K+ potassium transporter/Drug-Metabolite Transpoter/K+ uptake permease\\
-                            & comp55761\_seq0|m.51120 & PF07690.12 & Major Facilitator Superfamily \\  % GPH:cation symporter ATP:ADP antiporter family -MFS CAN DO SUGAR
-                            & comp26454\_seq0|m.27109 & PF03239.10 & Iron permease FTR1 family  \\
-                            & comp12997\_seq0|m.11462 & PF02653.12 & Brnached-chain amino acid transport system/permease/ATP-binding cassette\\
-                            & comp2196\_seq0|m.2436   & PF00361.16 & Proton-conducting membrane transporter, H+/Na+ translocating NADH dehydrogenase family, monovalent cation (K+/Na+): Proton antiporter-3 \\
-                            & comp30376\_seq0|m.30648 & PF01490.14 & Transmembrane amino acid transporter, MFS/Amino acid/auxin permease\\
-                            & comp8796\_seq0|m.7077   & PF01241.14 & Plant Photosystem 1 Supercomplex (psaG/psaK) \\
-                            & comp16529\_seq0|m.15912 & PF00032.13, PF00033.15 & Cytochrome b (PRC) \\
-                            & comp39264\_seq0|m.37815 & PF01970.12 & Tripartite tricarboxylate transporter (TctA) \\
-                            & comp12686\_seq0|m.11025 & PF01970.12 & TctA family  \\
-                            & comp18033\_seq0|m.17793 & PF03401.10 & TctC family \\
-                            & comp16603\_seq1|m.16010 & PF00860.16 & Permease (CDF) \\
-                            & comp1093\_seq1|m.1645   & PF00860.16 & Permease (CDF) \\
-                            & comp8621\_seq0|m.6954   & PF00033.15 & Cytochrome b (PRC) \\
-                            & comp23923\_seq0|m.24587 & PF00032.13 & PRC, Proton-translocation Quinol:Cytochrome c Reductase\\
-                            & comp23290\_seq0|m.23888 & PF00115.16 & COX1 Cytochrome C and Quinol oxidase polypeptide I \\
-                            & comp19868\_seq0|m.19974 & PF00115.16 & COX1 \\
-                            & comp47698\_seq0|m.44756 & PF01061.20 & ABC-2 type transporter \\
-                            & comp27137\_seq0|m.27822 & PF06472.11 & ABC-2 \\
-                            & comp33855\_seq0|m.33598 & PF00528.18 & Binding-protein dependent transporter system inner membrane (ABC)\\
-                            & comp38129\_seq0|m.36919 & PF00528.18 & Binding-protein dependent transporter system inner membrane (ABC)\\ 
-                            & comp29161\_seq0|m.29630 & PF00528.18 & Binding-protein dependent transporter system inner membrane (ABC)\\
-                            & comp30550\_seq0|m.30821 & PF02417.11 & Chromate ion transporter \\
-                            & comp36383\_seq0|m.35530 & PF02487.13 & Equilibrative Nucleoside Transporter (ENT)\\
-                            & comp2716\_seq1|m.2811   & PF01490.14 & Transmembrane amino acid transporter \\
-                            & comp31515\_seq0|m.31652 & PF00146.17 & NADH dehydrogenase \\
-                            & comp15817\_seq0|m.15012 & PF02990.12 & Endomembrane protein-70 \\
-                            & comp23811\_seq0|m.24460 & PF03030.12 & \(H^{+}\)-\(Na^{+}\) translocating Pyrophosphatase Family \\
-                            & comp12244\_seq0|m.10668 & PF03030.12 & \(H^{+}\)-\(Na^{+}\) translocating Pyrophosphatase Family \\
-                            & comp17395\_seq0|m.16982 &  & ABC transporter \\ 
-                            & comp38285\_seq0|m.37041 & & Leucine-Isoleucin valine transpoter \\
-                            & comp61444\_seq0|m.55210 & & ABC transpoter \\
-                            & comp12398\_seq0|m.10763 & & Cytochrome b6f \\
-        \hline
-        All SCT libraries   & comp23196\_seq0|m.23818 & PF00223.15 & PSI psaA/psaB \\
-                            &  comp16798\_seq0|m.16234 & PF00223.15 & PSI psaA/psaB \\
-                            &  comp13220\_seq1|m.11682 & PF00223.15 & PSI psaA/psaB \\
-                            &  comp13220\_seq0|m.11681 & PF00223.15 & PSI psaA/psaB \\ 
-                            &  comp1772\_seq0|m.2188  & PF00421.15 & PSII \\
-                            &  comp1772\_seq1|m.2192 & PF00421.15 & PSII \\
-                            &  comp2799\_seq0|m.2876  & PF00361.16, PF06455.7, PF00662.16 & Proton-conducting membrane transporter\\ %NADH + NADH-Ubiquonin oxioreductase
-                            &  comp2799\_seq0|m.2878 & PF00361.16, PF06455.7, PF00662.16 & Proton-conducting membrane transporter\\ %NADH + NADH-Ubiquonin oxioreductase
-                            &  comp2682\_seq0|m.2777& PF03911.12 & Sec61-beta \\
-                            &  comp2682\_seq2|m.2790& PF03911.12 & Sec61-beta \\
-                            &  comp6740\_seq0|m.5524& PF00119.16 & ATP synthase A \\
-                            &  comp16837\_seq0|m.16280& PF00510.14 & COX3 \\
-                            &  comp428\_seq0|m.891& PF01333.15 & QCR superfamily \\
-                            &  comp15996\_seq1|m.15230 & & ABC Transporter \\
+comp1093\_seq1|m.1645&uric acid-xanthine permease\\
+comp34246\_seq0|m.33953&uric acid-xanthine permease	\\
+comp11781\_seq0|m.10145&signal recognition particle protein 3\\
+comp35891\_seq0|m.35196&sensory protein\\
+comp13652\_seq0|m.12349&phagocytic receptor 1b\\
+comp12191\_seq1|m.10601&inorganic phosphate transporter\\
+comp23811\_seq0|m.24460&inorganic pyrophosphatase \\
+comp34406\_seq1|m.34111&potassium transporter 2-like \\
+comp25846\_seq0|m.26580&protein trigalactosyldiacylglycerol chloroplastic\\
+comp14064\_seq0|m.12814&sugar transport protein 10-like\\
+comp15360\_seq0|m.14352&drug metabolite transporter superfamily\\
+comp16603\_seq1|m.16010&adenine guanine permease\\
+comp17473\_seq0|m.17096&gpr1 fun34 family protein\\
+comp18033\_seq0|m.17793&hypothetical upf0065 protein\\
+comp21389\_seq0|m.21756&proton phosphate symporter\\
+comp22779\_seq0|m.23394&na+ solute transporter\\
+comp22990\_seq0|m.23626&inositol transporter 4-like\\
+comp23135\_seq0|m.23792&mfs transporter\\
+comp26434\_seq0|m.27099&atpase p	\\
+comp26454\_seq0|m.27109&plasma membrane iron permease\\
+comp2716\_seq0|m.2808&amino acid permease 6\\			
+comp2716\_seq1|m.2811&amino acid permease 2\\			
+comp2716\_seq2|m.2815&amino acid permease 2\\			
+comp30376\_seq0|m.30648&amino acid permease 2\\
+comp85197\_seq0|m.68822&amino acid permease\\
+comp29655\_seq0|m.30102&abc transporter permease\\	
+comp27137\_seq0|m.27822&abc transporter atp-binding protein\\
+comp13567\_seq0|m.12197&atp-binding cassette transporter\\
+comp32752\_seq0|m.32669&abc transporter?\\
+comp72377\_seq0|m.62224&abc transporter permease			
+comp27304\_seq0|m.27991&peptide abc transporter permease			
+comp15817\_seq0|m.15012&transmembrane 9 superfamily member 3\\
+comp29161\_seq0|m.29630&probable transport protein (TcpE family?)\\
+comp35923\_seq0|m.35211&membrane protein\\
+comp36025\_seq0|m.35298&mfs transporter\\
+comp39178\_seq0|m.37743&transmembrane 9 superfamily member 3-like\\
+comp39264\_seq0|m.37815&TctA transporter	\\
+comp40136\_seq0|m.38461&nadh dehydrogenase subunit 3	\\
+comp40842\_seq0|m.39088&adenine guanine permease azg1\\
+comp43295\_seq0|m.41027&hypothetical protein CHLNCDRAFT_52534\\
+comp43747\_seq0|m.41450&vesicle-associated membrane protein 726\\
+comp44082\_seq0|m.41788&serine threonine protein kinase\\
+comp44147\_seq0|m.41832&calcium-transporting atpase endoplasmic reticulum-type\\
+comp45947\_seq0|m.43343&cyclic nucleotide-binding protein\\			
+comp46264\_seq0|m.43542&v-type proton atpase 16 kda proteolipid subunit\\
+comp46589\_seq0|m.43815&v-type proton atpase subunit a3-like\\
+comp49211\_seq0|m.45885&atp-binding protein\\
+comp49560\_seq0|m.46210&transmembrane 9 superfamily member 4\\
+comp50679\_seq0|m.47029&er lumen protein-retaining receptor\\
+comp51446\_seq0|m.47612&amp-dependent synthetase\\			
+comp51985\_seq0|m.48090&abc permease atp-binding family protein\\
+comp52706\_seq0|m.48773&abc transporter permease\\
+comp58314\_seq0|m.53037&protein transport protein sec61 subunit alpha isoform partial\\
+comp60279\_seq0|m.54339&presenilin-domain-containing partial\\
+comp64356\_seq0|m.57092&zinc transporter\\
+comp64706\_seq0|m.57251&atpase p\\
+comp85939\_seq0|m.69120&glycosyl transferase\\
+comp66975\_seq0|m.58878&fucose permease\\
+comp59167\_seq0|m.53685&mannose-6-phosphate isomerase\\
+comp69839\_seq0|m.60536&iron transporter\\
+comp76549\_seq0|m.64487&iron transporter\\
+comp78298\_seq0|m.65658&upf0014 membrane protein star2\\
+comp80077\_seq0|m.66613&diguanylate cyclase\\
+comp9596\_seq0|m.8023&tricarboxylate transport membrane protein\\
         \hline
     \end{tabular}
-    \caption{A list of CDS identities that were predicted to be expressed in all the single cell
-    libraries of a given type.}
-    \label{tab:consensus_transporters}
+    \caption[List of Transporters Present in Both Light and Dark SCT Libaries]{
+        A complete list of the 64 putative transporters present in both Light and Dark 
+    SCT libraries (at least one of each) with their annotation/description}
 \end{table}
-
-After filtering photosystems and cytochrome related transporters = number left
-
-
-2 homologs of HUP1,2,3 - m.12814 m.17059 (latter in b2go has no TM domain - partial ?)
-
-
-Nitrate Reductase - m.43047  
-NADH-glutatamte reductase dehyodrgenase ?
-gluatmine synthetase ?
-No high e-value hit for Nitrite reducatase
-
-Ammonium transporter m.62060 in b2go not in TM pipe
-
-
-
-
-
 
 \subsection{Secreted proteins}
 
-This resulted in a set of 44 proteins for endosymbiont 
+Using the secretome prediction consensus ensemble classifier in conservative
+and permissive settings resulted in a putative secretome
+of 24 and 249 proteins respectively.  Unforunately, the permissive
+group contained a significant number of transporters so the analysis
+focussed on the conservative consensus secreted proteins.
+
+\begin{table}
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Secreted Protein Name} & \textbf{Annotation/Description} \\
+        \hline
+        comp10940\_seq0|m.9287  &  unknown \\
+        comp11029\_seq0|m.9365  &  unknown\\
+        comp13389\_seq0|m.11956 &  unknown membrane component \\
+        comp13389\_seq1|m.11962 &  unknown membrane component \\
+        comp15590\_seq0|m.14704 &  hypothetical protein CHLNCDRAFT\_137070\\
+        comp19575\_seq0|m.19598 &  soul heme-binding protein\\
+        comp19875\_seq0|m.19979 &  ddb1- and cul4-associated factor 12-like\\
+        comp23584\_seq1|m.24185 &  unknown\\
+        comp24544\_seq0|m.25243 &  peptide abc transporter substrate-binding protein\\
+        comp25746\_seq0|m.26477 &  chloroplast precursor\\
+        comp26585\_seq0|m.27218 &  hypothetical protein CHLNCDRAFT\_58394\\
+        comp30431\_seq0|m.30722 &  predicted protein\\
+        comp31345\_seq0|m.31491 &  outer membrane protein\\
+        comp41497\_seq0|m.39631 &  alpha-l-fucosidase\\
+        comp45018\_seq0|m.42444 &  unknown \\ 
+        comp45978\_seq0|m.43356 &  glycoside hydrolase\\
+        comp48174\_seq0|m.45141 &  recombinase\\
+        comp48206\_seq0|m.45162 &  glutathione peroxidase\\
+        comp50890\_seq0|m.47213 &  type i polyketide synthase\\
+        comp56156\_seq0|m.51365 &  snase-like nuclease\\
+        comp57702\_seq0|m.52483 &  3-oxoacyl-\\
+        comp59306\_seq0|m.53753 &  soma ferritin-like\\
+        comp60645\_seq0|m.54526 &  hypothetical protein CHLNCDRAFT\_56765\\
+        comp6932_seq1|m.5603    & hypothetical protein ACD\_10C00868G0001\\
+        comp65133\_seq0|m.57547    & Alpha amylase catlytic domain family \\
+        \hline
+    \end{tabular}
+\end{table}
 
 
+While many of these have no clearly defined function two of the most interesting
+secreted proteins here relate to carbohydrate metabolism.
+Specifically, comp65133\_seq0|m.57547 which appears to be homologous 
+(expectation of 1.38e-10) to Raffinose synthase, and comp41497\_seq0|m.42444
+which is a fucosidase. 
+
+The secretion of a glutathione peroxidase is also intriguing.  Peroxidases
+protect from oxidative damage therefore, this suggests there may be oxidative
+stress within the PV lumen. 
+
+Finally, the  membrane components could either be a misprediction and 
+proteins integral to the algal outermembrane. Alternatively, they could 
+be some of the hypothetical algal derived factors that integrate into the
+PV membrane \citep{Kodama2009a}.
 
 
-One of the most intriguing of this set is that
-of a putative raffinose synthase
-
-
-comp65133\_seq0|m.57547 Alpha amylase catalytic domain family
-1.38e-10
-homologous to Raffinose synthase or seed imbibition protein Sip1
-
-
-low number of reads mapping in 1 day and 1 night library
-
-Constitutive expression in both bulk samples 
+%Nitrate Reductase - m.43047  
+%NADH-glutatamte reductase dehyodrgenase ?
+%gluatmine synthetase ?
+%No high e-value hit for Nitrite reducatase
+%Ammonium transporter m.62060 in b2go not in TM pipe
 
 \subsection{Metabolic Maps}
 
 
-
-All prok transporters?
-One interesting aspect of comparison between the \textit{M. reisseri}
-endosymbiont and the other endosymbiotic green algae was the unique presence of 3
-additional sub-units of the branched-chain amino acid ABC transporter.
-\textit{M. reisseri} binned sequences contained the LivK, LivG, LivF sub-units
-as well as the LivH and LivM units shared by all the remaining algae. 
-This suggests either. 
-
-There are also putatively RbsB and RbsA subunits of a Ribose/D-Xylose
-ABC transporter not present in 
-and a LptB element of the ABC-2 lipopolysaccharide transporter
-and OppD oligopeptide transporter.
-
-
-Uracil-xanthine transporters
-
-
-
-
-Malate-Fumarate fumarate hydratase not present in other algae
-
-
-
+%All prok transporters?
+%One interesting aspect of comparison between the \textit{M. reisseri}
+%endosymbiont and the other endosymbiotic green algae was the unique presence of 3
+%additional sub-units of the branched-chain amino acid ABC transporter.
+%\textit{M. reisseri} binned sequences contained the LivK, LivG, LivF sub-units
+%as well as the LivH and LivM units shared by all the remaining algae. 
+%This suggests either. 
+%
+%There are also putatively RbsB and RbsA subunits of a Ribose/D-Xylose
+%ABC transporter not present in 
+%and a LptB element of the ABC-2 lipopolysaccharide transporter
+%and OppD oligopeptide transporter.
+%
+%Uracil-xanthine transporters
+%
+%Malate-Fumarate fumarate hydratase not present in other algae
 
 
 \begin{figure}
     \includegraphics[width=\textwidth]{endo_vs_green_algae.pdf}
     \caption[KEGG Maps of Endosymbiont Bin Compared with Other Algae]{
-    KEGG Maps contrasting endo bin with other algae}
+    KEGG Maps contrasting endosymbiont bin with other algae. The bottom map shows
+the aspects of \textit{M. reisseri} putative transcriptome that is unique to it
+even among the other green algae.}
+\label{fig:algae_comp}
 \end{figure}
 
-\begin{figure}
-    \includegraphics[width=\textwidth]{host_vs_other_host.pdf}
-    \caption[KEGG Maps of Host Bin Compared with Other \textit{Paramecium}]{
-    KEGG Maps contrasting host bin with other host}
-\end{figure}
+Comparison of the \textit{M. reisseri} metabolic map against the combined
+maps of the other 3 green algal datasets here (\textit{C. variabilis} 1N, 
+\textit{C. variabilis} NC64A, and \textit{C. subellipsoidea}) reveals
+some unique adaptations in \textit{M. reisseri} that are expressed while 
+an endosymbiont.  
+
+Specifically, aspects of carotenoid biosynthesis, a missing fumarate hydratase
+not present in other algae.  
+
+Additionally, there are numerous aspects of amino acid metabolism and degradation
+only present in \textit{M. reisseri}. For example, lysine degradation pathway components, 
+and glutaminases (necessary for gluatmine, D-glutamate degradation and the metabolism of
+alanine and aspartate). 
+%\begin{figure}
+%    \includegraphics[width=\textwidth]{host_vs_other_host.pdf}
+%    \caption[KEGG Maps of Host Bin Compared with Other \textit{Paramecium}]{
+%    KEGG Maps contrasting host bin with other host}
+%\end{figure}
 
 \subsection{Metabolomics} 
 
@@ -1056,6 +1133,10 @@ Malate-Fumarate fumarate hydratase not present in other algae
 %    \caption{Non-metric Multidimensional scaling of NBMS samples}
 %    \label{fig:metabolome_nmds}
 %\end{figure}
+The global metabolioc profiling had mix results.
+Very few metabolites were identified in the GCQTOF
+analysis and of those very few were the target carbohydrates.
+The only identified carbohydrates included a 
 
 
 \begin{figure}
@@ -1083,15 +1164,10 @@ depth of colour)}
 
 
 
-Only one metabolite putatively with a m/z matching glucose 
-was identified with no significantly different expression.
-
-
-
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{lcms_cloud_plots.pdf}
-    \caption[LCQTOF Cloud Plots]{A: Positive 254,  B: 43}
+    \caption[LCQTOF Cloud Plots]{LCQTOF Cloud Plots}
     \label{fig:lcms_clouds}
 \end{figure}
 
@@ -1126,17 +1202,32 @@ was identified with no significantly different expression.
 \end{figure}
 
 
+%GCMS- down reg of putative 6-Acetly-D-glucose -1.24
+%
+%
+%Again one interesting peak is that of 
+%in negative
+%9.7 0.04846 DOWN with a fold vlaue of 9.7
+%putatively raffinose>? 503.1698  vs actual 503.169
+%
+%
+%inositol transporter comp22990\_seq0|m.23526
+%
+%
+%
+%Xylitol or arabinose likely play a role
+%Arabinose is likely to play a role with the signficant (2.7) fold up-regulation
+%of arabinosyl glucoside in LC-QTOF pos,
+%Arabitol/Xylitol of 1.52 and 2.24 
+%In GCMS Arabionic acid/xylonate 3.1 up 
+%
+%fucose permease comp66975\_seq0|m.58878
+%
 
 
-Again one interesting peak is that of 
-in negative
-9.7 0.04846 DOWN with a fold vlaue of 9.7
-putatively raffinose>? 503.1698  vs actual 503.169
-    
+
 
 \subsubsection{Targeted amino acid analysis}
-
-
 
 \begin{figure}
     \includegraphics[width=\textwidth]{AA_LCMS.pdf}
@@ -1149,57 +1240,23 @@ Significant concentration differences between day and night (as determined via W
     \label{fig:amino_acids}
 \end{figure}
 
-
-
-
-
-
-
+The targeted quantitative analyis of the amino acids in the system
+between day and night also had mixed results.  The majority of amino
+acids were not reliably recovered and calibration curves could not be fitted.
+Therefore, several key amino acids remain unprofiled.
 
 
 \section{Discussion}
 
-SEECER and K-mer abundance filtering may be mutually exclusive
-
-\subsection{Quantification in MDA}
-
-%Titrating ERCC spike-ins to level of single cell 
-%It has become an increasingly established methodology to add RNA of known concentrations
-%to extractions before library preparation to aid quantification
-%and normalisation in downstream analysis. 
-%Unforunately, there are no established methods for synthetic RNA spike-ins
-%of known RNA concentrations (e.g. ERCC RNA standards \citep{Jiang2011}) with MDA
-%sc-RNAseq. Specifically, standards would need to be carefully titrated to appropriate
-%concentrations for single cell methods or they would overwhelm sequencing 
-
-
-%therefore no such spike-ins were added. 
-
-%    \item Just use SCT for transcript quantification i.e. map the SCT reads to a bulk derived \textit{de novo} assembly to generate counts (and is there a severe bias induced 
-%        by the MDA amplification \citep{Liang2014}?)
-%\end{itemize}  <>++
-%However, MDA is prone to a degree of amplification bias \citep{Liang2014} which may be problematic in accurate inference of differential expression
-%therefore, the suitability of MDA-based scRNA-Seq in particular will also need to be assessed.
-%The only other published analysis of \textit{Paramecium bursaria} and its green algal endosymbionts by \citep{Kodama2014} largely
-%side-stepped this issue by focussing on the analysis of host transcripts with and without the endosymbiont by filtering
-%likely endosymbiont derived contigs from analysis using a crude MEGABLAST \(e^{-40}\) approach.
-%Studies in related ciliates have demonstrated a high prevalence of alternative splicing events (5.2\% of genes in \textit{Tetrahymena
-%    thermophila} for a single celled eukaryote \citep{Xiong2012}
-%This paper also demonstrated the huge dynamic range of expression (and thus necessity of RNA-Seq over microarray approaches) in \textit{T. thermophila})
-%with approximately 6 order of magnitude range \citep{Xiong2012}
-%However, as both target species - host and endosymbiont are eukaryotes the complication of mRNA enrichment 
-%is simplified due to the sufficiency of poly-A selection for this task (instead of rRNA depletion methods)
-%Determining the necessary sequencing depth is also difficult.
-%First achieved in \citep{Lao2009}
-
-
-
-
-
-MDA has amplification bias with GC content - problem for PbMr \citep{Macaulay2014}
-
-
 \subsection{All methods have limitations}
+
+Can't identify traits related to acquistion of endosymbionts.
+
+Another possible benefit is to apply similar methods to cultures gaining
+their endosymbiont
+
+
+
 
 All the methods included here have major limitations.
 
@@ -1210,10 +1267,6 @@ of the host and endosymbiont transcriptomes.
 Any transcript missing from these bins either due to failure to assemble, 
 cryptic MDA biases, or erroneous binning into bins other than host or endosymbiont.
 
-This incorporates the issues with false negatives. 
-
-
-
 
 However, there is also the issue of false positives. 
 This is especially important for the transporters where a minimal (as few as
@@ -1221,24 +1274,38 @@ a single amino acid) divergence is sufficient to convert them to non-transportin
 sensor proteins \citep{Lalonde1999,Bianchi2010}.
 
 
-
-
-
-
 Therefore, it is key that the functionally important 
-
 blah has to be tested
 
 
 
+Prediction methods used to identify
+transporter and secreted proteins 
+could be further improved by more careful 
+application of contemporary state-of-the-art classification
+algorithms. 
+Prediction of protein secretion could theoretically be improved
+using contemporary state-of-the-art ML algorithms e.g. recursive
+neural network models such as the long-short term memory networks 
+\citep{Hochreiter1997,Greff2015}.
+These are well suited to arbitrary length sequence data so wouldn't 
+require work-arounds to accomodate variable length signal 
+peptides.  They are also capable of representation learning
+so the identification of sequence features that best
+predict localisation would be unecessary. 
+Alternatively, existing prediction tools could be combined
+in a more sophisticated way than the conservative consensus
+ensemble used in this analysis.  For example,
+the various predictors could be combined using Bayesian
+model combination \citep{Monteith2011}.
+
+
+
+
+
+
+
 \subsection{Limits of metabolomics analysis}
-
-A more intelligent hypothesis testing than corrected unequal variance 't'-test
-could be used such as Kurschke's Bayesian BEST algorithm \citep{Kruschke2013}.
-This also has the advantage of a Bayesian inference which can be 
-made robust to multiple comparisons without need for extensive correction
-procedures by using standard multi-level approaches \citep{Gelman2009}.
-
 
 
 
@@ -1300,31 +1367,152 @@ the PV.  For this reason, analysis of secreted proteins focussed on
 the endosymbiont bin as the secretion signal are generally better conserved
 and established. 
 
-Unfortunately, much as incorrect
-
-
-
 
 \subsection{Metabolomics shows promise}
 
 The pilot application of metabolomics demonstrated mixed results.
 There was poor performance of mass
 
-GC/MS failed for comprehensive profiling of carbohydrates.
-Possibly due to miscalibration of the GC parameters or the capture 
-paramters on the initial quadrupole.
-
+GC/MS failed to comprehensively profile carbohydrates with 
+several compounds strongly implicated in the endosymbiosis
+being undetected e.g. matlose, and glucose.  This was potentially
+due to the miscalibration of gas chromatography leading to poor 
+separation of components. 
 
 All globally profiled metabolites required comprehensive validation
 with a secondary mass spectrometry. 
 
 
+
+
+
+
+In future, metabolomics needs further optimise for 
+the discovery of carbohydrates. 
+
+Additionally, advanced novel techniques such as nanoscale 
+secondary ion mass spectrometry combined with 
+microscopy and isotope labelling could theoretically allow direct analysis 
+of metabolites present in the PV \citep{Kopp2015,Legin2014}.
+
+
+
+A more intelligent hypothesis testing than corrected unequal variance 't'-test
+could be used such as Kurschke's Bayesian BEST algorithm \citep{Kruschke2013}.
+This also has the advantage of a Bayesian inference which can be 
+made robust to multiple comparisons without need for extensive correction
+procedures by using standard multi-level approaches \citep{Gelman2009}.
+
+
+
+
+\subsection{Novel Sugars Implicated in the Endosymbiosis}
+
+Several sugars not previously associated with this endosymbiosis
+have been identified in this analysis as putatively
+playing important roles. 
+
+
+
+Specifically, the significantly upregulated 
+Arabinose/Xylitol
+Arabinose not implicated
+
+Contrary to dinoflagellate coral endosymbioses
+that don't detecet arabinose \citep{Markell1993}.
+
+
+
+
+and significantly down-regulated Raffinose. 
+
+
+
+Interestingly, Raffinose was both detected
+significantly down-regulated in metabolomics 
+and a Raffinose synthase predicted as a secreted protein.
+An uptake transporter for Raffinose was not identified in the endosymbiont.
+
+However, an inositol transporter was identified. 
+
+
+Raffinose synthase function involves the combination
+of galactinol and sucorse to generate inositol and raffinose. 
+
+
+Unfortunately, the GCQTOF analysis failed to successfully
+identify sugars in the 
+
+
+Raffinose has been associated with cold shock in
+\textit{Parachlorella kessleri} (formerly \textit{C. vulgaris}),
+accumulating duing cold exposure and disappearing after return
+Specifically, it has also been directly associated
+with cryoprotection of thykaloid membranes \citep{Lineberger1980}.
+
+Raffinose and another Raffinose Family Oligosaccharide (RFO) 
+stachyose are also generated in gymnopserms during
+the cold season \citep{Kandler1982}.
+Raffinose has also been found to inhibit growth under
+isosomotic conditions in a \textit{C. vulgaris} 
+\citep{Setter1979}.
+
+
+Another sugar not implicated before in this endosymbiosis
+is that of fucose. 
+
+
+\subsection{Alternative Exchanged Amino Acids in CCAP 1660/12}
+
+
+
+
+
+The presence of amino acid transporters.
+
+
+The identification of a partial oligopeptide transporter 
+combined with the high concentrations of various 3- and 4-mer oligopeptides
+suggests that previous studies focussing exclusively on endosymbiont utilisation
+and uptake of individual amino acids (e.g. those reviewed in \citep{Kato2009a}) 
+may have missed on the role of these in host-endosymbiont nitrogen flux.
+
+
+
+
+The difference in amino acids abudances for several of those fitted
+as well as differential numbers of reads mapping to putative amino 
+acids transporters indicates light-dependent amino acid uptake
+in the endosymbiont. 
+
+
+
+One the balance of the evidence of significantly higher concentrations
+of specific amino acids.
+
+There is reason to believe that \textit{M. reisseri} CCAP 1660/12
+endosymbiont displays a similar system to that of the Japanese
+\textit{C. variabilis} F36-ZK strain in terms of amino acid usage. 
+
+Intriguingly, the transcriptome reveals the presence of all sub-units
+of the ABC-type branched amino-acid transporter not present in 
+the other endosymbiotic green algae. However, the non-differential
+abundance of Leucine makes it hard to determine.
+
+
+Due to the huge range of possible 
+
+
+While, NR and NiR are present in the \textit{M. reisseri} transcriptome
+supporting findings that \textit{M. reisseri} can utilise nitrate and nitrite
+it is possible that these are non-functional like the mutants in 
+\textit{C. variabilis} NC64A and F36-ZK.
+
+
 The failure of accurate quantification in the second round
-of MRM LC-QQQ spectrometry for the majority of amino acids 
+of LC-QQQ spectrometry for the majority of amino acids 
 is problematic.  However, this targeted approach still revealed
 useful information regarding the relative abundance of amino.
-
-
 
 Particularly, both the high concentration of arginine as well
 as its significantly differential abundance between day and night
@@ -1356,101 +1544,6 @@ Unfortunately, a failure to accurately quantify and calibrate
 for several amino acids means this targeted metabolomic analysis
 is incomplete.  Of particular interest, is the remaining 5 amino acids
 implicated in \textit{C. variabilis} F36-ZK's endosymbiosis.
-
-
-
-
-
-
-
-
-\subsection{Putatively novel role for Raffinose in endosymbiosis??}
-
-galactinol + sucrose → myo-inositol + raffinos/
-
-
-
-Unfortunately, the GCQTOF analysis failed to successfully
-identify sugars in the 
-
-
-Raffinose has been associated with cold shock in
-\textit{Parachlorella kessleri} (formerly \textit{C. vulgaris}),
-accumulating duing cold exposure and disappearing after return
-to normal culture temperatures 
-
-It is unclear if raffinose is a 
-\citep{Salerno1989}
-
-
-Raffinose and another Raffinose Family Oligosaccharide (RFO) 
-stachyose are generated from sucosrse in gymnopserls during
-the cold season \citep{Kandler1982}.
-
-Raffinose has been found to inhibit growth under
-isosomotic conditions in a \textit{C. vulgaris} 
-\citep{Setter1979}.
-
-Specifically, it has also been directly associated
-with cryoprotection of thykaloid membranes \citep{Lineberger1980}.
-And no chlorop targeting sequence though
-
-But that doens't explain secretion.
-
-
-
-Bacterial raffinose transport system?
-
-
-In archaeplastida RFOs are related to stroage
-and transport of carbon.  
-
-
-
-What about trehalose?
-sucrose?
-
-
-
-
-phylogeny?
-
-
-
-
-
-It does appear that the raffinose synthase is constitutively
-expressed unless both light and dark conditions are exposed to cold stress.
-
-Culture temperature was \(18\celsius\), so this is unlikely. 
-
-Needs confirmed with qPCR. 
-
-
-
-
-
-\subsection{Endosymbiont Nitrogen Metabolism}
-
-One the balance of the evidence of significantly higher concentrations
-of specific amino acids.
-
-There is reason to believe that \textit{M. reisseri} CCAP 1660/12
-endosymbiont displays a similar system to that of the Japanese
-\textit{C. variabilis} F36-ZK strain in terms of amino acid usage. 
-
-Intriguingly, the transcriptome reveals the presence of all sub-units
-of the ABC-type branched amino-acid transporter not present in 
-the other endosymbiotic green algae. 
-
-Due to the huge range of possible 
-
-
-While, NR and NiR are present in the \textit{M. reisseri} transcriptome
-it is possible that these are non-functional like the mutants in 
-NC64A and F36-ZK.
-
-
 
 
 \section{Conclusion}

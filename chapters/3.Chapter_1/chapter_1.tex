@@ -382,24 +382,22 @@ for Phylum, Class, Order, Family, Genus and Species respectively.
 CONCOCT clusters were then evaluated using the taxonomic assignments from TAXAssign
 using the provided ``validate.pl'' script.
 
-
 Finally, another attempt at taxonomic assignment was attempted:
 \begin{itemize}
     \item ORFs with a minimum size of 300 were called using Tetrahymena and Universal encodings from contigs over 500bp 
     \item ORFs were then clustered at 90\% identity using CD-HIT
     \item Diamond BLASTP searches were then done against the NR protein database
-    \item Taxonomic assignments were given to the top hits via script
-    \item 
+    \item Taxonomy was assigned to each contig based on the lowest common ancestor of all its
+        ORFs with hits (via the ``lca\_mapper.sh'' accesory script in MEGAN)
+    \item Contigs were then binned based on the identity of this taxonomic assignment:
+        \begin{itemize}
+            \item Endosymbiont contigs were all those assigned to Archaeplastida or descendent node.
+            \item Host contigs were all those assigned to Aveolata or a descendent node.
+            \item Eukaryote was a super group containing all Eukaryote assigned contigs
+            \item Contaminant contigs were all those assigned as Bacterial
+            \item Viral contigs were all those assigned as Viral sequences. 
+        \end{itemize}
 \end{itemize}
-
-
-
-%\subsubsection{Assembly annotation}
-%Orphelia \citep{Hoff2009}
-%MetaGUN \citep{Liu2013}
-%
-%Final, candidate assemblies were then analysed using 
-%Bencmarking Universal Single-Copy Orthologs (BUSCO) \citep{Simao2015}
 
 \subsection{Endosymbiont elimination}
 
@@ -698,7 +696,23 @@ many small but highly similar clusters were created.  This level of similarity c
 with the poor recall suggests a greater number of clusters were inferred than was
 present in the taxonomic assignment ground-truth. 
 
-
+\begin{table}
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{Bin} & \textbf{Number of Contigs} & \textbf{Total Size (in bp)} \\
+        \hline
+        Endosymbiont & 782 & 1,767,324\\
+        Host & 3,451 &  24,294,611 \\
+        \hline
+        Other Eukaryotic & 1,646 & 7,237,238\\
+        Bacterial and Unknown & 15,211 & 26,342,475 \\
+        \hline
+    \end{tabular}
+    \caption[Custom Taxonomic Binning]{Results of the customised taxonomic binning,
+    note the far less conservative binning compared with TAXAssign. Note this only
+consisted of contigs over 500bp in length}.
+\end{table}
 
 
 \subsection{Elimination}
@@ -722,8 +736,6 @@ However, after 10 weeks the cultures ended up dead.
 
 
 \section{Discussion}
-
-
 
 \subsection{CCAP 1660/12 and CCAP 1660/13 contain largely clonal \textit{M. reisseri} symbionts}
 
