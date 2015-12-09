@@ -1,4 +1,4 @@
-\graphicspath{{chapters/6.Chapter_4/figures/}}
+plate \graphicspath{{chapters/6.Chapter_4/figures/}}
 
 \begin{savequote}[75mm]
 In biology, nothing is clear, everything is too complicated, everything is a mess, 
@@ -73,9 +73,15 @@ and trigger targeted cell-wide RNAi of that transcript.
 Unforunately, there also several problems with RNAi as a general method.
 Many organisms lack active RNAi systems, although such systems can occasionally
 be induced \citep{Alibu2005}.
-
-Off-target effects.
-
+On top of this, RNAi requires exact sequences to design precursors.
+In order to minimise off-target effects, in which a provided sRNA precursor induces RNAi
+in more than just the target transcript, a complete genome and/or transcriptome
+is useful in the design stage as off-target hits can be checked. 
+Off-target effects  can lead to cryptic
+phenotypic outcomes that are then falsely attributed to the initial target.
+Another problem is that RNAi does not necessarily induce total silencing
+of a given transcript and low-levels of transcription may still occur.
+This, conceivably, can be sufficient to maintain the non-knock down phenotype.
 
 \subsection{RNAi in \textit{Paramecium}}
 
@@ -83,56 +89,37 @@ In addition to the scnRNA system mentioned above siRNA
 based pathways have been discovered in the two principal
 ciliate model organisms: \textit{Tetrahymena thermophila} \citep{Collins2006,Yao2005}
 and \textit{Paramecium tetaurelia} \citep{Galvani2001,Galvani2002}. 
-
-
-There are 3 established methods for inducing RNAi in \textit{Paramecium tetaurelia}:
-transformation of the MAC with high-copy transgenes lacking 3' untranslated
-region (UTR) \citep{Galvani2001} and the feeding using dsRNA expressing
-bacteria \citep{Galvani2002}.
+There are 2 established methods for inducing RNAi in \textit{Paramecium tetaurelia}:
+microinject and transformation of the MAC with high-copy transgenes lacking 3' untranslated
+region (UTR) \citep{Galvani2001} and the introduction of dsRNA by either
+microinjection or feeding using transformed dsRNA expressing bacteria 
+\citep{Galvani2002}.
 
 In the transgene pathway, the 3' truncation to the production of aberrant
-sense and antisense transcripts \citep{Galvani2001,Marker2010} and 
-it requires Dicer protein (Dcr1) \citep{Lepere2009}, two Piwi 
-(Ptiwi13 and Ptiwi14) \citep{Bouhouche2011} proteins, a nucleotidyl transferase 
-(Cid1) \citep{Marker2014},
-and two RdRPs (Rdr3 and Rdr2) \citep{Marker2010,Marker2014} (see \cref{tab:marker_components}).
-It is likely that Cid2 and Rdr2 form an RdRP complex (RdRC) \citep{Marker2014}.
+sense and antisense transcripts \citep{Galvani2001,Marker2010,Beisson2010b}.
+Based on the identified required components (see \cref{tab:marker_components}), 
+aberrant transcripts
+are processed by a Dicer protein (Dcr1) \citep{Lepere2009} and
+an putative RdRP complex formed of an RdRP (Rdr2) and a nucleotidyl
+transferase (Cid2) \citep{Marker2014} into 23nt siRNA \citep{Lepere2009}. 
+A putatively non-catytic 
+RdRP (Rdr3) also plays an undefined role in the generation
+of primary (\(1^{\circ}\)) siRNAs from transgene pre-cursors \citep{Marker2010,Marker2014}.
+Finally, two Argonaute Piwi proteins (Ptiwi13 and Ptiwi14) \citep{Bouhouche2011} 
+are involved in targeting post-transcriptional silencing via mRNA
+cleavage \citep{Bouhouche2011,Marker2014}.
 
 
-
-
-On the other hand, the exogenous dsRNA pathway can be induced by either microinjection directly
-into the MAC or by continuous feeding 
-
-This pathway requires Dcr1 \citep{Lepere2009} and two RdRPs (Rdr1 and Rdr2) \citep{Marker2010,Marker2014},
-two nucleotidyl transferases (Cid1, Cid2) \citep{Marker2014}, an enigmatic 
-novel protein that may be related to import from the vacuole (Psd1) \citep{Marker2014,Carradec2015}, and three
-Piwis (Ptiwi12, Ptiwi12 and Ptiwi15) \citep{Bouhouche2011,Marker2014} (see \cref{tab:marker_components}).
-It is likely that Cid2-Rdr2, and Cid1-Rdr1 form RdRCs \citep{Marker2014}.
-
-
-Primary siRNAs complementary to both strands are processed by Dcr1 and Rdr1, Rdr2
-These primary siRNAs then induce the synthesis fo secondary siRNA
-which spread across the entire mRNA.
-siRNA required Rdr2 and are mainly antisense. 
-They are lowly expressed relative to primary siRNA and don't have a major role in
-RNAi function but may function in communicating with the nucleus g\citep{Carradec2015}
-
-
-
-siRNAs are made endogenously from an intergenic lopcus of unknown functions \citep{Marker2010,Marker2014}
-
-
-
-Interestingly, RNAi also processes ssRNA from food bacteria 
-
-
-exogenous ssRNAmay protect against horizontal transfer of ss retroelements \citep{Carradec2015}
-
-
-
-
-
+Alternatively, the exogenous dsRNA pathway can be induced by either microinjection directly
+into the MAC (for a transient 48 hour long silencing) or by continue feeding
+with a bacterially experimentally modified to generate dsRNA.
+Typically, this involves an \textit{E. coli} 
+with an IPTG-inducible T7 polymerase and 
+deficiency for RNAse III containing a plasmid with a T7 promoter and sequence
+homologous to the target transcript
+\citep{Fire1998,Timmons2001,Galvani2002}.
+Interestingly, there is some evidence that this pathway also is activated at low
+levels by ssRNA from normal food bacteria \citep{Carradec2015}.
 
 \begin{table}
     \centering
@@ -160,74 +147,84 @@ exogenous ssRNAmay protect against horizontal transfer of ss retroelements \cite
     \label{tab:marker_components}
 \end{table}
 
+
+Again, based on the components that have been identified as necessary
+for this exogenous dsRNA pathway to function (see \cref{tab:marker_components}).  
+RNA precursors are processed
+by Dcr1 \citep{Lepere2009}, and then two hypothetical RdRC (Cid1-Rdr1, Cid2-Rdr2)
+\citep{Marker2010,Marker2014} are involved in the generation of \(1^{\circ}\) 
+siRNA.  
+The second RdRC (or specifically Rdr2) is also involved in the generation
+of low levels of secondary (\(2^{\circ}\)) siRNA which spread along the full length of
+target mRNA (i.e. 3'-to-5' and 5'-to-3' transitivity) in primarily
+antisense form \citep{Carradec2015}.  These \(2^{\circ}\) siRNAs don't
+appear to play a significant role in silencing themselves (contrary to similar
+systems in \textit{C. elegans} where they form the principal targetter of silencing 
+\citep{Sijen2007,Pak2007}) \citep{Carradec2015}.
+3 Piwis play a role in targeting silencing.  Ptiwi13 hypothetically
+loads the \(1^{\circ}\) siRNA and targets cleavage of cytoplasmic mRNA \citep{Bouhouche2011},
+while Ptiwi12 and Ptiwi15, based on their homology to nuclear Piwi proteins,
+\citep{Marker2014,Carradec2015,Bouhouche2011} may be involved
+in \(2^{\circ}\) siRNA communication with the MAC \citep{Carradec2015}.
+One final protein necessary for the function of feeding based dsRNA-induced
+RNAi is an uncharacterised novel \textit{P. tetaurelia} complex protein (Psd1) \citep{Marker2014}.
+It has been hypothesised that this may play a role in the export of RNA from 
+the food vacuole \citep{Carradec2015}.
+
+
+Many of these components are a product of the 3 whole genome duplication
+events in the evolution of the \textit{Paramecium} clade \citep{McGrath2014}.
 As \textit{P. bursaria} shares only the first \textit{Paramecium} clade whole
 genome duplication event with \textit{P. tetaurelia} it is expected
 it should contain the RNAi components identified as belonging to WGD1 (or have 
-secondarily lost them). 
+secondarily lost them) \citep{McGrath2014}.
 This is believed to include a single RdRP gene, 6 Piwi genes, and 2 Dicer genes \citep{Marker2014}.
 
+%siRNAs are made endogenously from an intergenic lopcus of unknown functions \citep{Marker2010,Marker2014}
+%exogenous ssRNAmay protect against horizontal transfer of ss retroelements \citep{Carradec2015}
 
+%Although the clustered regularly interspaced short palindromic repeat (CRISPR)/Cas
+%system can be used to simplify gene editing or deactivation (CRISPRi).
+%This system is not available in \textit{Paramecium}.
 
+If it is possible to experimentally induce RNAi in \textit{P. bursaria} CCAP 1660/12
+specific hypotheses as to the necessity of hypothetically important
+endosymbiotic components can be tested. For example, what is the effect
+on the endosymbiosis of the inhibition of certain host-derived transporters.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Although the clustered regularly interspaced short palindromic repeat (CRISPR)/Cas
-system can be used to simplify gene editing or deactivation (CRISPRi).
-This system is not available in \textit{Paramecium}.
-
-
-
-
-23nt siRNA from Dcr1 in \textit{P. tetaurelia} \citep{Lepere2009}
-
-
+Similarly, what components of core \textit{P. tetaurelia} RNAi pathways
+can be identified 
+in the \textit{P. bursaria} - \textit{M. reisseri}/\textit{C. variabilis} transcriptomes?
+Are they being expressed during endosymbiosis?  Can they be found in the incomplete
+CCAP 1660/12 MDA genome contigs?
 
 \subsection{``Cross-talk''}
 
+Evidence has emerged of the role of RNAi in numerous host-pathogen 
+\citep{Nowara2010,LaMonte2012,Weiberg2013,Buck2014}
+and host-symbiont \citep{Helber2011,Koch2013} relationships.
+This has led some authors to suggest that sRNA and RNAi mechanism form an import
+mechanism of cross-talk between diverse organisms and even across
+domains \citep{Liang2013,Knip2014,Weiberg2015}.
 
-RNAi as cross-kingdom communication \citep{Weiberg2015}
+The evidence of natural food bacteria ssRNA induced RNAi in \textit{P. tetaurelia}
+\citep{Carradec2015} implicates a potential important role for cross-talk
+in \textit{P. bursaria} regulation. Compounding this with the fact
+that \textit{P. bursaria} in addition to being a serial phagotroph
+it also contains numerous bacterial and green algal endosymbionts.
+Therefore, merely from the perspective of ``attack surface'' there is a plausible
+role for cross-talk occurring in \textit{P. bursaria}.   Therefore, 
+it may be informative to investigate the quantity and targets of
+potential cross-talk between host and endosymbiont in terms of 
+``collisions''  i.e. matching 23nt RNA strings between host and endosymbiont
+transcripts bins.   Contextualising these these values 
+across the diversity of the tree of life is important.
+``Collision'' levels have implications for the regulation and expression of exogenous dsRNA
+RNAi pathways by the host. 
+%While a \textit{Paramecium} virus is yet to be discovered there
+%are evidence of the association of \textit{Paramecium bursaria-Chlorella} Viruses
+%with the system therefore, it is not inconceivable that these may play some role.  
+
 
 \section{Aims}
 
@@ -235,10 +232,10 @@ The goal of this chapter is to investigate both the practical and
 theoretical utility of RNAi systems in \textit{P. bursaria}. 
 Specifically:
 \begin{itemize}
-    \item Is \textit{P. bursaria} capable of transgene
-or feeding based siRNA RNAi
+    \item Is \textit{P. bursaria} capable of microinjection or feeding based
+        exogenous dsRNA siRNAi?
     \item What components, previously identified as necessary, for these pathways
-        are present in \textit{P. bursaria}?
+        are present and expressed in \textit{P. bursaria}? 
     \item Is there any possible explanation for the deactivation of one or other
         of these systems? 
 \end{itemize}
@@ -246,11 +243,20 @@ or feeding based siRNA RNAi
 
 \section{Methods}
 
-\subsection{RNAi feeding experiments}
+\subsection{RNAi constructs}
 
-Methods modified from ParameciumDB 
+All RNAi methods were based on previously published protocols specifically,
+\citep{Galvani2001,Galvani2002,Beisson2010}.
 
-PGM was identified in the genomic contigs (see chapter 1).
+6 different constructs were created featuring a genes whose knock-down
+has previously established phenotypes in \textit{P. tetaurelia} (see \cref{tab:rnai_vecs}).
+All inserts were designed in the same manner, \textit{P. tetaurelia} sequences
+were taken from the \textit{P. tetaurelia} genome. 
+These were then BLASTN against the entire unbinned \textit{P. bursaria}-\textit{M. reissieri}
+CCAP 1660/12 transcriptome and designed based on the \textit{P. bursaria} sequence.
+Each insert was cloned into an L4440 vector featuring two convergent T7 promoters
+featuring an ampicillin resistance marker. 
+
 
 \begin{table}
     \begin{tabular}{|c|c|c|c|c|}
@@ -270,54 +276,152 @@ PGM was identified in the genomic contigs (see chapter 1).
     \label{tab:rnai_vecs}
 \end{table}
 
+\subsubsection{RNAi feeding}
 
-\subsection{RNAi microinjection}
+For feeding experiments the vectors were transformed into \textit{E. coli} HT115-DE3.
+This strain is deficient for RNAse III and features an IPTG inducible T7 polymerase
+under the control of a Plac promoter. Method used was derived from ParameciumDB, 
+published \citep{Beisson2010}.
+
+Bacterial precultures were started using a single colony picked from an LB
+plate containing \(50\mu gml^{-1}\) ampicillin and \(12.5\mu g ml^{-1}\) tetracyline.
+This picked colony was grown overnight in LB medium with the same antibiotics.
+The overnight cultures was then diluted 50 fold and grown with shaking
+at \(37\celsius\) up to an \(OD_{600}\) of 0.4 to 0.6. IPTG
+was then added at a concentration of 0.4mM and shaken for 3 hours
+at \(37\celsius\).  30ml of this culture was centrifuged for 2 minutes (3100 x g),
+then the supernatant removed and the pllete washed twice in \textit{Paramecium}
+growth medium. The pellet was resuspended in \textit{Paramecium} medium with 0.4mM IPTG,
+\(100\mu g ml^{-1}\) ampicillin and adjusted to a final \(OD_{600}\) of 0.1.
+\(1 \mu l\) of beta-sitosterol (at \(4mg ml^{-1}\) in ethanol) was added
+to each 5ml of medium.
+
+For the actual feeding, \(10ml\) \textit{P. bursaria} CCAP 1660/12 culture
+was centrifuged at 800x g for 10 minutes and re-suspended in \(1ml\) of supernatant.
+\(9ml\) of the induced bacterised media was then added.  The sample was
+then incubated in a tissue culture flask at \(27\celsius\).
+Feeding was repeated for each day of analysis. 
+
+\subsubsection{RNAi microinjection}
+
+Microinjection used the same protocol as described in \citep{Beisson2010b} 
+but only tested the PGM construct.
+Briefly, the circular plasmid is linearised using a unique restriction site,
+and purified using phenol:ethanol extraction and a purification column.
+It is then dissolved in \(H_{2}O\) at a mininmum concentration of 
+\(5mg ml^{-1}\).
+Cells were washed twice by picking with a micropippete in Dryl-BSA wells before
+being placed into inidival droplets on a glass coverslip and covered in paraffin oil.
+The coverslip was then placed onto a microscopy stage and a microinjector 
+used under 10X mangification to inject linearised construct directly into the
+macronucleus.
 
 \subsection{Analysis of RNAi pathway}
 
-\subsubsection{Genomic survey for components}
+\subsubsection{Survey for RNAi components in \textit{P. bursaria}}
 
-BLASTP using sequences from Marker against transcriptome
-and genome
+Using the canonical seed sequences identified in \textit{P. tetaurelia}
+by \citep{Marker2014} (see \cref{tab:rnai_seeds}) the entire assembled 
+\textit{P. bursaria}-\textit{M. reisseri} CCAP 1660/12 transcriptome,
+\textit{P. bursaria}-\textit{C. variabilis} YADG1N transcriptome
+and the assembled \textit{P. bursaria}-\textit{M. reisseri} CCAP 1660/12
+genomic contigs over 500bp were searched using tBLASTn
+with a minimum expectation threshold of \(1e^{-5}\).
 
 \begin{table}
     \centering
     \begin{tabular}{|c|c|c|c|}
         \hline
-        \textbf{Gene} & \textbf{\textit{P. tetaurelia} Accession} & \textbf{Length} & \textbf{Role} \\
+        \textbf{Gene} & \textbf{\textit{P. tetaurelia} Accession} & \textbf{Length} \\
         \hline
-        Rdr1 & PTETG8500012001 & 4319 & Exo\\
-        Rdr2 & GSPATG00036857001 & 4162 & Exo and Endo\\
-        Rdr3 & GSPATG00006401001 & 3292 & Endo \\
-        Cid1 & PTETG9100013001 & 1051 & Exo\\
-        Cid2 & PTETG13400003001 & 1083 & Exo and Endo \\
-        PSD1 & PTETG600032001 & 2084 & Exo \\
-        Dcr1 & GSPATG00021751001 & 5394 & Exo and Endo\\
-        Ptiwi12 & GSPATG00001709001 & 2315 & Exo \\
-        Ptiwi13 & PTETG4800007001 & 2483 & Exo and Endo \\
-        Ptiwi14 & PTETG16300003001 & 2428 & Endo \\
-        Ptiwi15 & GSPATG00005370001 & 2315 & Exo \\
+        Rdr1 & PTETG8500012001 & 4319 \\ 
+        Rdr2 & GSPATG00036857001 & 4162 \\
+        Rdr3 & GSPATG00006401001 & 3292 \\
+        Cid1 & PTETG9100013001 & 1051 \\
+        Cid2 & PTETG13400003001 & 1083 \\
+        Psd1 & PTETG600032001 & 2084 \\
+        Dcr1 & GSPATG00021751001 & 5394 \\
+        Ptiwi12 & GSPATG00001709001 & 2315 \\
+        Ptiwi13 & PTETG4800007001 & 2483 \\
+        Ptiwi14 & PTETG16300003001 & 2428 \\
+        Ptiwi15 & GSPATG00005370001 & 2315 \\
         \hline
     \end{tabular}
     \caption[RNAi pathway components from Marker]{\citep{Marker2014}}
+    \label{tab:rnai_seeds}
 \end{table}
 
+Additionally, the other sequenced \textit{Paramecium} genomes 
+were searched using BLASTP via ParamediumDB \citep{Arnaiz2007,Arnaiz2011a}.
+Specifically, \textit{P. caudatum} \citep{McGrath2014}, 
+\textit{P. biaurelia}, \textit{P. primaurelia}, \textit{P. sexaurelia}
+and \textit{P. multimicronucleatum}. Finally,  \textit{T. thermophila} 
+predicted proteins were also searched \citep{Eisen2006}.
 
 
 \subsubsection{Phylogenetic analysis of RNAi pathway}
 
+Hits for each seed in the databases searched were then converted
+to peptides based on the reading frame of the top hit. The ORF containing the
+hit was extracted for genomic hits. 
 
+Peptide sequences were then aligned using MAFFT \citep{Katoh2002} and manually
+masked using Seaview \citep{Gouy2010}.
+An LG+\(\Gamma_8\) sequence evolution model was then selected on the basis
+of AICc in Prottest3 \citep{Darriba2011a}.
+Phylogenies were then generated using RAxML with 1000 non-rapid bootstraps and MrBayes 
+with 2 runs of 4 MCMCMC chains run for 2,000,000 generations or until convergence.
+Aberrant sequences such as long branches or were then removed, the sequences
+re-aligned and phylogenies regenerated.
+
+
+\subsection{Cross-Talk Analysis - ``eDicer''}
+
+In order to investigate the prevalence of ``cross-talk'' between 
+host and endosymbiont a tool to analyses short sequence collisions between two sets
+of transcripts was created.  ``eDicer'' is built upon Jellyfish \citep{Marcais2011}
+and the K-mer Analysis Toolkit (KAT) \citep{ClavijoKAT}.  It allows
+the comparison (and normalisation) of the number of Dicer fragment collisions
+between a set of transcripts and a list of transcript sets from organisms
+of choice.  This outputs 
+
+
+For example. in this this case the number of 23-mer collisions (i.e shared
+23-mers) between endosymbiont and host transcriptomes can be compared. 
+
+
+All k-mer of the appropriate size for the organism of choice, i.e. 23-mers
+for \textit{Paramecium} are extracted from the endosymbiont transcripts 
+
+
+
+
+
+
+and extracts all
+K-mers (e.g. 23-mers for this analysis) 
+
+
+
+In the course of this work improvements made to KAT were submitted and merged
+back into the core KAT development codebase.
 
 
 \section{Results}
 
-\subsection{RNAi feeding experiments}
+\subsection{Induction of RNAi}
 
-Fail
+There was a total failure to induce RNAi related phenotypes
+in either feeding experiments involving each of the 6 vectors. 
+Despite observation for several days and continuous refeeding
+no \textit{P. bursaria} CCAP 1660/12 cultures displayed any
+altered phenotypes as a consequence of feeding experiments. 
 
-\subsection{RNAi microinjection experiment}
+Microinjection was attempted using the PGM and epi2 constructs.
+\textit{P. bursaria} tended to burst after a single injection attempt.
+As a control, GFP was also attempted to be injected into the MAC.
+Unfortunately, despite numerous attempts it was never possible
 
-Fail
 
 \subsection{RNAi required components}
 
@@ -345,6 +449,15 @@ BLASTX
 
 
 
+\subsection{RNAi cross-talk}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{edicer_collisions.pdf}
+    \caption[]{}
+    \label{fig:edicer_collisions}
+\end{figure}
+
 
 \section{Discussion}
 
@@ -356,10 +469,11 @@ Degenerate PCR was attempted using sequences from \textit{P. tetaurelia} and
 the other \textit{aurelia}
 
 
+Feeding doesn't work 
 
+Need to replicate using the \textit{P. bursaria} YADG1N strain
 
-\subsection{Endogenous RNAi is methodologically difficult}
-
+\subsection{Microinjection is methodologically difficult}
 
 While RNAi by microinjection repeatedly failed there is a still a high possibility
 that this is more related to the methodological difficulty of this technique rather than
@@ -395,6 +509,9 @@ Prseumably they exist, however it is possible that the endosymbiont plays a role
 \textit{C. elegans} has a dsRNA transporter (\textit{SID-2}) \citep{Nuez2012}
 
 
+microinjection of fluore
+
+often bursts after 1 injection, trichocysts block needle
 
 
 
@@ -410,6 +527,20 @@ of RNAi in \textit{P. bursaria} CCAP 1660/12.
 
 A regression analysis using a measure of phylogenetic distance would be interesting.
 For example k-mer collisions by 100
+
+
+Only finds exact matches though.
+
+
+
+
+Finally, while this may not have thoroughly resolved the question of matches
+eDicer may form a useful tool in the rapid screening of off-target effects
+in the RNAi analyses in different organisms.   It is considerably
+more efficient than exact matches 
+than cut and alignment based methods. 
+
+
 
 
 
