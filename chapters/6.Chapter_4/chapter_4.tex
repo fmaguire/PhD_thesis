@@ -7,14 +7,215 @@ deeper complications beneath. Nature is anything but simple.
 	\qauthor{- Richard Preston: The Hot Zone}
 \end{savequote}
 
-\chapter{RNAi Analyses}
-
+\chapter{RNAi in \textit{P. bursaria}}
 
 \section{Introduction}
 
-RNAi is a highly useful experimental methodology through which
-many biological hypotheses can be tested.
+\subsection{RNAi}
 
+Post-transcriptional gene silencing (PTGS) is a highly useful experimental technique
+in reverse genetic analysis of a given gene.  
+The most widely used PTGS method is that of RNA-mediated inteference (RNAi)
+of gene expression. 
+RNAi \citep{Fire1998} is a powerful experimental technique which is widely used 
+in the study of model eukaryotic organisms \citep{Morf2013,Batista2011,Matthew2004,Ketting2011,Chang2012}.
+
+RNAi covers a set of evolutionarily conserved mechanisms across the eukaryotes 
+with numerous mechanisms in which the expression of particular transcripts
+is regulated via several classes of transcribed small non-coding RNA (ncRNA)
+such as short-intefering (siRNA), micro (miRNA) and Piwi-interacting (piRNAs) \citep{Carthew2009}.
+
+These systems likely originated as a form of defence against
+viruses and transposons \citep{Waterhouse2001,Buchon2006}
+and were present in some form in the last universal eukaryotic
+ancestor (LECA) \citep{Cerutti2006,Shabalina2008}.  Many eukaryotes
+utilise these small RNA-mediated gene silencing pathways
+in the regulation of their own cell expression patterns \citep{Wu2008}.
+Despite its ancestral nature there has been considerable diversification
+of both this process, its function and mechanism \citep{Ketting2011}.
+Indeed, even with the same organism, different points of the life cycle
+may use different RNAi systems \citep{Flemr2013}.
+
+
+Generally RNAi pathways involve the generation of 21-28nt short RNAs
+from some form of RNA precursor such as dsRNA (or ssRNA)
+via the function of the RNAase III Dicer \citep{Bernstein2001} or related proteins.
+These short RNAs are then bound by Argonaute proteins which act alone or as part
+of a complex to silence the expression of sequences homologous to the siRNA \citep{Ketting2011}.
+This silencing isn't just limited to the post-transcriptional endonucleocytic degradation of 
+mRNA transcripts but can also involve transcriptional inhibiton and
+DNA elimination \citep{Marker2014}.
+The one unifying element of all discovered RNAi pathways is that
+of the central role argonaute (AGO) proteins play \citep{Ketting2011}.
+They are formed of two subclasses: the Ago and Piwi subfamilies \citep{Peters2007}
+with a range of functions and complex-forming behaviours
+\citep{Ender2010}.
+The magnitude of the silencing response is occasionally amplified by the generation
+of more copies of the trigger dsRNA by RNA-dependent RNA polyermases (RdRPs) \citep{Arp2007}.
+On the other hand RdRPs can also sometimes directly generate the siRNAs \citep{Aoki2007,Ketting2011}.
+Interestingly, the last universal eukaryotic ancestor (LECA) likely contained 
+at least one Ago and Piwi family Argonaute protein, a Dicer and an RdRP \citep{Cerutti2006}.
+
+The two main systems are the siRNA and miRNA based systems.  They are differentiated
+by miRNAs being encoded by dedicated genes and displaying partial
+complementarity to their targets whereas siRNAs are generated from exogenous
+dsRNAs (i.e. environmental dsRNA from viral infection or phagocytosed bacteria \citep{Whangbo2008})
+or transgenes and involve full or near full complementarity \citep{Shabalina2008}
+However, there are also piRNA systems involved in germline based transposon silencing \citep{Iwasaki2015}.
+An important ciliate specific system is that of scan RNAs (scnRNAs) which 
+are involved in the elimination of internal eliminated sequences (IESs) during
+macronuclear (MAC) regeneration \citep{Mochizuki2004,Chalker2013}.
+
+
+Experimentally, the existence and function of these systems
+permits a researcher to introduce dsRNA homologous to an RNA transcript of interest
+and trigger targeted cell-wide RNAi of that transcript.
+Unforunately, there also several problems with RNAi as a general method.
+Many organisms lack active RNAi systems, although such systems can occasionally
+be induced \citep{Alibu2005}.
+
+Off-target effects.
+
+
+\subsection{RNAi in \textit{Paramecium}}
+
+In addition to the scnRNA system mentioned above siRNA
+based pathways have been discovered in the two principal
+ciliate model organisms: \textit{Tetrahymena thermophila} \citep{Collins2006,Yao2005}
+and \textit{Paramecium tetaurelia} \citep{Galvani2001,Galvani2002}. 
+
+
+There are 3 established methods for inducing RNAi in \textit{Paramecium tetaurelia}:
+transformation of the MAC with high-copy transgenes lacking 3' untranslated
+region (UTR) \citep{Galvani2001} and the feeding using dsRNA expressing
+bacteria \citep{Galvani2002}.
+
+In the transgene pathway, the 3' truncation to the production of aberrant
+sense and antisense transcripts \citep{Galvani2001,Marker2010} and 
+it requires Dicer protein (Dcr1) \citep{Lepere2009}, two Piwi 
+(Ptiwi13 and Ptiwi14) \citep{Bouhouche2011} proteins, a nucleotidyl transferase 
+(Cid1) \citep{Marker2014},
+and two RdRPs (Rdr3 and Rdr2) \citep{Marker2010,Marker2014} (see \cref{tab:marker_components}).
+It is likely that Cid2 and Rdr2 form an RdRP complex (RdRC) \citep{Marker2014}.
+
+
+
+
+On the other hand, the exogenous dsRNA pathway can be induced by either microinjection directly
+into the MAC or by continuous feeding 
+
+This pathway requires Dcr1 \citep{Lepere2009} and two RdRPs (Rdr1 and Rdr2) \citep{Marker2010,Marker2014},
+two nucleotidyl transferases (Cid1, Cid2) \citep{Marker2014}, an enigmatic 
+novel protein that may be related to import from the vacuole (Psd1) \citep{Marker2014,Carradec2015}, and three
+Piwis (Ptiwi12, Ptiwi12 and Ptiwi15) \citep{Bouhouche2011,Marker2014} (see \cref{tab:marker_components}).
+It is likely that Cid2-Rdr2, and Cid1-Rdr1 form RdRCs \citep{Marker2014}.
+
+
+Primary siRNAs complementary to both strands are processed by Dcr1 and Rdr1, Rdr2
+These primary siRNAs then induce the synthesis fo secondary siRNA
+which spread across the entire mRNA.
+siRNA required Rdr2 and are mainly antisense. 
+They are lowly expressed relative to primary siRNA and don't have a major role in
+RNAi function but may function in communicating with the nucleus g\citep{Carradec2015}
+
+
+
+siRNAs are made endogenously from an intergenic lopcus of unknown functions \citep{Marker2010,Marker2014}
+
+
+
+Interestingly, RNAi also processes ssRNA from food bacteria 
+
+
+exogenous ssRNAmay protect against horizontal transfer of ss retroelements \citep{Carradec2015}
+
+
+
+
+
+
+\begin{table}
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{Pathway} & \textbf{Component} & \textbf{Function} \\
+        \hline
+        transgene-induced siRNA & Rdr3 & RdRP \\
+                                & Ptiwi14 & Piwi \\
+        both pathways           & Rdr2 & RdRP \\
+                                & Dcr1 & Dicer \\
+                                & Ptiwi13 & Piwi \\
+                                & Cid2 & Nucleotidyl transferase \\
+        exogenous dsRNA-induced siRNA & Rdr1 & RdRP \\
+                                      & Cid1 & Nucleotidyl transferase \\
+                                      & Ptiwi12 & Piwi \\
+                                      & Ptiwi15 & Piwi \\
+                                      & Pds1 & Import of dsRNA? \\
+        \hline
+    \end{tabular}
+    \caption[Summary of RNAi pathway components in \textit{P. tetaurelia}]{Summary
+        of the components identified as necessary to the function of both
+        primary siRNA RNAi pathways in \textit{P. tetaurelia} as identified
+        by forward genetic screens in \citep{Marker2014}}
+    \label{tab:marker_components}
+\end{table}
+
+As \textit{P. bursaria} shares only the first \textit{Paramecium} clade whole
+genome duplication event with \textit{P. tetaurelia} it is expected
+it should contain the RNAi components identified as belonging to WGD1 (or have 
+secondarily lost them). 
+This is believed to include a single RdRP gene, 6 Piwi genes, and 2 Dicer genes \citep{Marker2014}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Although the clustered regularly interspaced short palindromic repeat (CRISPR)/Cas
+system can be used to simplify gene editing or deactivation (CRISPRi).
+This system is not available in \textit{Paramecium}.
 
 
 
@@ -23,40 +224,24 @@ many biological hypotheses can be tested.
 
 
 
-\subsection{RNAi pathway in \textit{Paramecium} sp.}
-
-Is there significant cross-talk between endosymbiont and host? - is this why RNAi doesn't seem to work
-
-What of the required RNAi components from Marker are present in genome and transcriptome host bins
-
-What is the phylogeny of these components compared to other Paramecium/ciliate species?
-
-eDicer experiment results - what is the overlap with host orthologs of known yeast lethal genes
-
-rnai as cross-kingdom communication \citep{Weiberg2015}
-
-FIGURE 5. Dating of genome duplication events
+\subsection{``Cross-talk''}
 
 
-
-
-
-%\begin{figure}
-%    \includegraphics[]{}
-%    \caption{Redrawing of known \textit{Paramecium} RNAi components/pathway from the marker paper}
-%    \label{fig:rnai_components}
-%\end{figure}
-
+RNAi as cross-kingdom communication \citep{Weiberg2015}
 
 \section{Aims}
 
-Induce RNAi based knock-down using transformed bacterial vectors.
-
-RNAi via microinjection
-
-Identify required components for endogenous or exogenous RNAi in \textit{P. bursaria} CCAP 1660/12 from transcriptome and genome
-
-Investigate the possiblity of "host" - "endosymbiont" collision as a reason for disabling.
+The goal of this chapter is to investigate both the practical and
+theoretical utility of RNAi systems in \textit{P. bursaria}. 
+Specifically:
+\begin{itemize}
+    \item Is \textit{P. bursaria} capable of transgene
+or feeding based siRNA RNAi
+    \item What components, previously identified as necessary, for these pathways
+        are present in \textit{P. bursaria}?
+    \item Is there any possible explanation for the deactivation of one or other
+        of these systems? 
+\end{itemize}
 
 
 \section{Methods}
@@ -64,7 +249,6 @@ Investigate the possiblity of "host" - "endosymbiont" collision as a reason for 
 \subsection{RNAi feeding experiments}
 
 Methods modified from ParameciumDB 
-
 
 PGM was identified in the genomic contigs (see chapter 1).
 
@@ -194,13 +378,38 @@ necessarily any
 
 
 
+
 \subsection{Endosymbiont ``collision'' hypothesis}
+
+Exogenous RNAi response is not essential for viability in \textit{P. tetaurelia}
+\citep{Marker2014}.
+
+However, the high degree of conservation even in \textit{P. bursaria}
+suggests they play an important role. 
+
+No \textit{Paramecium} viruses have been identified yet. 
+
+Prseumably they exist, however it is possible that the endosymbiont plays a role.
+
+
+\textit{C. elegans} has a dsRNA transporter (\textit{SID-2}) \citep{Nuez2012}
+
+
+
+
+
+
+
+
 
 Hypothetically, one explanation for the deactivation/loss
 of RNAi in \textit{P. bursaria} CCAP 1660/12.
 
-- need to confirm 
 
+
+
+A regression analysis using a measure of phylogenetic distance would be interesting.
+For example k-mer collisions by 100
 
 
 

@@ -378,48 +378,48 @@ has been used when accurate targeted sequencing was called for, such as investig
 taxonomic distribution of \textit{Paramecium} green algal endosymbionts (see \ref{chap1}).
 
 
-\subsubsection{Read pre-processing}
-
-Read pre-processing is a key stage in the assembly of next generation sequencing data regardless of the assembly
-methodology used. 
-
-Typically, this involves 4 key steps:
-\begin{itemize}
-    \item Library quality control and contamination screening
-    \item Trimming sequencing adapters and low probability reads
-    \item Error corrections
-    \item Digital normalisation
-\end{itemize}
-
-
-Arguably, trimming, error correction and normalisation are all aspects of the same process.
-
-
-The specific error correction algorithms are largely based on the assumption that sequencing errors
-are infrequent and randomly distributed 
-
-
-
-
-Trimming
-
-Error correction algorithms 
-
-normalistion
-
-
-
-
-\subsubsection{Assembly}
-
-There are two main approaches to both genome and transcriptomic assembly - referenced and \textit{de novo}.
-A referenced assembly consists of the alignment of processed reads 
-
-\subsubsection{Differential expression}
-
-Comparison of different methods of normalisation \citep{Dillies2013}
-
-
+%\subsubsection{Read pre-processing}
+%
+%Read pre-processing is a key stage in the assembly of next generation sequencing data regardless of the assembly
+%methodology used. 
+%
+%Typically, this involves 4 key steps:
+%\begin{itemize}
+%    \item Library quality control and contamination screening
+%    \item Trimming sequencing adapters and low probability reads
+%    \item Error corrections
+%    \item Digital normalisation
+%\end{itemize}
+%
+%
+%Arguably, trimming, error correction and normalisation are all aspects of the same process.
+%
+%
+%The specific error correction algorithms are largely based on the assumption that sequencing errors
+%are infrequent and randomly distributed 
+%
+%
+%
+%
+%Trimming
+%
+%Error correction algorithms 
+%
+%normalistion
+%
+%
+%
+%
+%\subsubsection{Assembly}
+%
+%There are two main approaches to both genome and transcriptomic assembly - referenced and \textit{de novo}.
+%A referenced assembly consists of the alignment of processed reads 
+%
+%\subsubsection{Differential expression}
+%
+%Comparison of different methods of normalisation \citep{Dillies2013}
+%
+%
 
 
 %\subsubsection{Assembly}
@@ -861,166 +861,167 @@ Comparison of different methods of normalisation \citep{Dillies2013}
 % log P(A,D) = log \int 
 %Mapping reads to 
 
-
-RSEM-EVAL uses the concept of a latent true assembly for a given set of 
-reads.  Li et. al. define this as 
-
-For each read r, transcript(r) is the transcript, left(r) and right(r) are the 5' and 3' prime
-positoon of the transcript 
-
-a transcript is true if 
-
-
-\subsection{Metabolomics}
-
-Metabolomics revolves around the detection and characterisation of cellular metabolites via a range of techniques.
-By qualitatively and/or quantitivately analysing these molecular substrates, cofactors and products of cellular metabolism
-a researcher can determine cellular state or response at the level.
-
-Metabolites are direct signatures of biological activity \citep{}
-
-
-It is the final level in the path that links genotype to cellular phenotype \citep{Fiehn2002}
-
-
-
-Mteabolomics can range from target analysis (focussing on a single metabolite) to 
-metabolic profiling (orientated on the metaboites of a specific pathway or type) to
-full metabolomics (uuntargeted analysis of the entire metabolome) to metabolic fingerprinting
-(high throughput metabolomics of a large number of organisms, also sometimes referred
-metabonomics) \citep{Fiehn2002}.
-
-
-
-
-\begin{figure}
-    \includegraphics{separation_method.pdf}
-    \caption[Compounds by MS Separation Method]{Groups of metabolites by which separation method is best 
-    suited for their analysis. Figure redrawn from \url{https://www.agilent.com/cs/library/selectionguide/Public/5989-6328EN.pdf}}
-\end{figure}
-
-
-Mass spectrometry works on the principle that a charged particle moving through an electromagnetic field
-is subject to the following two laws: the Lorentz force law (\cref{eq:lfl}) and Newton's second law of motion (\cref{eq:nsl})
-
-\[ F = Q(E + v \times B)\]
-\[ F = ma = m\frac{dv}{dt}\]
-where \(F\) is the force applied to the ion, \(m\) is the mass, \(a\) the acceleration, \(Q\) the electric charge,
-\(E\) the electric field and \(v\times B\) the cross product of the ion's velocity and magnetic flux density. 
-
-Therefore, by combining these two identities:
-\[(\frac{m}{Q}) a = E + v \times B\]
-
-
-\(m/z\) denotes dimensionless quantityy from dividing the mass number of the ion by its charge number.
-
-
-Mass spectrometry involves 4 components with numerous options and alternative methods for each
-optimised for different analytes:
-\begin{itemize}
-    \item Sample introduction
-    \item Ion source
-    \item Mass analyser
-    \item Mass detector 
-\end{itemize}
-
-As mass analysers are only capable of analysing charged ions in a gaseous phase it is necessary to volatilise 
-and charge analytes during sample introduction and ionisation respectively. 
-
-While samples can be directly introducted and vaporised using heat or similar, typically most metabolomic
-analyses involve the chromatographic separation of samples using either liquid (LC) or gas (GC) chromatography.
-
-
-
-
-
-
-
-
-\subsubsection{Targeted metabolomics}
-
-There are both targeted and untargeted metabolic analyses that focus on a known set of metabolites such as
-amino acids or a global metabolic profile respectively. 
-
-
-
-
-
-\subsubsection{Untargeted metabolomics}
-
-
-
-
-
-
-
-
-
-\begin{figure}
-    \includegraphics[width=\textwidth]{mass_spec.pdf}
-    \caption[Mass Spectrometry Data]{Visualisation of Mass Spectrometry data when coupled with chromatographic techniques.
-        The X axis represents the \(m/z\) ratio of an ion, the Y axis the retention time within the chromatographic
-    separation method (GC, HPLC etc.) and Z the intensity detected at a given m/z}
-    \label{fig:mass_spec}
-\end{figure}
-
-
-
-
-
-
-These are nuclear magnetic resonance (NMR) spectroscopy, mass spectrometry (MS), 
-light (usually infrared (IR) or ultraviolet (UV)) spectroscopy \citep{Kafsack2010}.
-
-
-
-
-
-
-
-There are 3 key techniques used
-
-
-
-
-Evaluating the global metabolic profile (i.e. the presence and absence of 
-substrates, products and cofactors) 
-
-
-
-It is possible to directly analyse samples using 
-
-
-
-
-
-By either qualtitatively characterising the presence and absence of various
-metabolites under varyin
-
-
-
-
-
-First commercially available platform was the Vickers ``MS-2'' in 1948
-
-
-
-
-
-One of the key issues with ``-omic'' platforms is the number of biological replicates 
-tends to be far smaller than the number of parameters/metabolites/transcripts being
-studied. 
-
-
-Experimental design: 
-
-
-
-
-Reporting standards \citep{Goodacre2007}
-
-- experimental design
-
+%
+%RSEM-EVAL uses the concept of a latent true assembly for a given set of 
+%reads.  Li et. al. define this as 
+%
+%For each read r, transcript(r) is the transcript, left(r) and right(r) are the 5' and 3' prime
+%positoon of the transcript 
+%
+%a transcript is true if 
+%
+
+%\subsection{Metabolomics}
+%
+%Metabolomics revolves around the detection and characterisation of cellular metabolites via a range of techniques.
+%By qualitatively and/or quantitivately analysing these molecular substrates, cofactors and products of cellular metabolism
+%a researcher can determine cellular state or response at the level.
+%
+%Metabolites are direct signatures of biological activity \citep{}
+%
+%
+%It is the final level in the path that links genotype to cellular phenotype \citep{Fiehn2002}
+%
+%
+%
+%Mteabolomics can range from target analysis (focussing on a single metabolite) to 
+%metabolic profiling (orientated on the metaboites of a specific pathway or type) to
+%full metabolomics (uuntargeted analysis of the entire metabolome) to metabolic fingerprinting
+%(high throughput metabolomics of a large number of organisms, also sometimes referred
+%metabonomics) \citep{Fiehn2002}.
+%
+%
+%
+%
+%\begin{figure}
+%    \centering
+%    \includegraphics{separation_method.pdf}
+%    \caption[Compounds by MS Separation Method]{Groups of metabolites by which separation method is best 
+%    suited for their analysis. Figure redrawn from \url{https://www.agilent.com/cs/library/selectionguide/Public/5989-6328EN.pdf}}
+%\end{figure}
+%
+%
+%Mass spectrometry works on the principle that a charged particle moving through an electromagnetic field
+%is subject to the following two laws: the Lorentz force law (\cref{eq:lfl}) and Newton's second law of motion (\cref{eq:nsl})
+%
+%\[ F = Q(E + v \times B)\]
+%\[ F = ma = m\frac{dv}{dt}\]
+%where \(F\) is the force applied to the ion, \(m\) is the mass, \(a\) the acceleration, \(Q\) the electric charge,
+%\(E\) the electric field and \(v\times B\) the cross product of the ion's velocity and magnetic flux density. 
+%
+%Therefore, by combining these two identities:
+%\[(\frac{m}{Q}) a = E + v \times B\]
+%
+%
+%\(m/z\) denotes dimensionless quantityy from dividing the mass number of the ion by its charge number.
+%
+%
+%Mass spectrometry involves 4 components with numerous options and alternative methods for each
+%optimised for different analytes:
+%\begin{itemize}
+%    \item Sample introduction
+%    \item Ion source
+%    \item Mass analyser
+%    \item Mass detector 
+%\end{itemize}
+%
+%As mass analysers are only capable of analysing charged ions in a gaseous phase it is necessary to volatilise 
+%and charge analytes during sample introduction and ionisation respectively. 
+%
+%While samples can be directly introducted and vaporised using heat or similar, typically most metabolomic
+%analyses involve the chromatographic separation of samples using either liquid (LC) or gas (GC) chromatography.
+%
+%
+%
+%
+%
+%
+%
+%
+%\subsubsection{Targeted metabolomics}
+%
+%There are both targeted and untargeted metabolic analyses that focus on a known set of metabolites such as
+%amino acids or a global metabolic profile respectively. 
+%
+%
+%
+%
+%
+%\subsubsection{Untargeted metabolomics}
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%\begin{figure}
+%    \includegraphics[width=\textwidth]{mass_spec.pdf}
+%    \caption[Mass Spectrometry Data]{Visualisation of Mass Spectrometry data when coupled with chromatographic techniques.
+%        The X axis represents the \(m/z\) ratio of an ion, the Y axis the retention time within the chromatographic
+%    separation method (GC, HPLC etc.) and Z the intensity detected at a given m/z}
+%    \label{fig:mass_spec}
+%\end{figure}
+%
+%
+%
+%
+%
+%
+%These are nuclear magnetic resonance (NMR) spectroscopy, mass spectrometry (MS), 
+%light (usually infrared (IR) or ultraviolet (UV)) spectroscopy \citep{Kafsack2010}.
+%
+%
+%
+%
+%
+%
+%
+%There are 3 key techniques used
+%
+%
+%
+%
+%Evaluating the global metabolic profile (i.e. the presence and absence of 
+%substrates, products and cofactors) 
+%
+%
+%
+%It is possible to directly analyse samples using 
+%
+%
+%
+%
+%
+%By either qualtitatively characterising the presence and absence of various
+%metabolites under varyin
+%
+%
+%
+%
+%
+%First commercially available platform was the Vickers ``MS-2'' in 1948
+%
+%
+%
+%
+%
+%One of the key issues with ``-omic'' platforms is the number of biological replicates 
+%tends to be far smaller than the number of parameters/metabolites/transcripts being
+%studied. 
+%
+%
+%Experimental design: 
+%
+%
+%
+%
+%Reporting standards \citep{Goodacre2007}
+%
+%- experimental design
+%
 
 
 \section{Machine Learning and Statistical Pattern Recognition}
