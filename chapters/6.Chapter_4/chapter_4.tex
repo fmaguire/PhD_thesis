@@ -492,8 +492,8 @@ Additionally, 130 bacterial CDS:
 \textit{Chthonomonas calidirosea} T49,
 \textit{Fimbriimonas ginsengisoli} Gsoil 348,
 \textit{Armatimonadetes bacterium} CSP1-3,
-\textit{Bacteroides fragilis} 3_1_12,
-\textit{Flavobacterium psychrophilum} JIP02_86,
+\textit{Bacteroides fragilis} 3\_1\_12,
+\textit{Flavobacterium psychrophilum} JIP02\_86,
 \textit{Salinibacter ruber} DSM 13855,
 \textit{Chlorobium tepidum} TLS,
 \textit{Chlorobium luteolum} DSM 273,
@@ -538,12 +538,12 @@ Additionally, 130 bacterial CDS:
 \textit{Lactobacillus acidophilus} NCFM,
 \textit{Streptococcus suis} BM407,
 \textit{Halanaerobium praevalens} DSM 2228,
-\textit{Coprobacillus} sp. 3_3_56FAA,
+\textit{Coprobacillus} sp. 3\_3\_56FAA,
 \textit{Mitsuokella multacida} DSM 20544,
 \textit{Anaerococcus hydrogenalis} ACS-025-V-Sch4,
 \textit{Thermoanaerobacter ethanolicus} JW 200,
 \textit{Cetobacterium} sp. ZOR0034,
-\textit{Fusobacterium nucleatum} 13_3C,
+\textit{Fusobacterium nucleatum} 13\_3C,
 \textit{Ilyobacter polytropus} DSM 2926,
 \textit{Leptotrichia wadei} F0279,
 \textit{Sebaldella termitidis} ATCC 33386,
@@ -552,7 +552,7 @@ Additionally, 130 bacterial CDS:
 \textit{Leptospirillum} sp. Group I,
 \textit{Caulobacter crescentus} CB15,
 \textit{Agrobacterium tumefaciens} WRT31,
-\textit{Hyphomonas} sp. 25B14_1,
+\textit{Hyphomonas} sp. 25B14\_1,
 \textit{Parvularcula bermudensis} HTCC2503,
 \textit{Wolbachia pipientis} wAlbB,
 \textit{Sphingobium} sp. AP49,
@@ -584,7 +584,7 @@ Additionally, 130 bacterial CDS:
 \textit{Borrelia burgdorferi} B31,
 \textit{Spirochaeta thermophila} DSM 6578,
 \textit{Treponema denticola} ATCC 33520,
-\textit{Synergistes} sp. 3_1_syn1,
+\textit{Synergistes} sp. 3\_1\_syn1,
 \textit{Aminomonas paucivorans} DSM 12260,
 \textit{Dethiosulfovibrio peptidovorans} DSM 11002,
 \textit{Anaerobaculum mobile} DSM 13181,
@@ -712,114 +712,250 @@ Unfortunately, despite numerous attempts it was never possible
 
 \subsection{RNAi required components}
 
-BLASTX
+\subsubsection{Dcr1}
 
-%Cid1 NODE525 - 17.6kb e-30/-50 40/50% id    356-943, 86-123
-%Cid2 NODE525 - 17.6kb e-45 35-54% id    281-1009, 51-284
-%Cid3 NODE525 - 17.6kb e-25 30-45% id    150-1179, 150-303
-%PSD1 no real hits
-%DCR1 Node3133, Node1758, e-140, e-100
-%Rdr1 Node2867, NODE374, 0, e-77, 3046-326, (Rdr1 in ptet node2867 top hit reciprocal)
-%Rdr2 Node2867, -134 3046, 967
-%Rdr3 No hit
+\begin{figure}
+    \includegraphics[width=\textwidth]{Dcr1.pdf}
+    \caption[RAxMl 1000 bootstraps MrBayes PP]{}
+    \label{fig:dcr1}
+\end{figure}
+
 
 \subsubsection{Pds1}
 
-There were no hits for Pds1 in any of the 3 \textit{P. bursaria} datasets via
-tBLASTn using 
-
-
+There were no hits for Pds1 in any of the 3 \textit{P. bursaria} datasets 
+(both transcriptomes and the genome).  
 There were homologues in each of the other \textit{Paramecium} species
 i.e. \textit{P. sexaurelia}, \textit{P. biaurelia}, \textit{P. primaurelia},
-\textit{P. multimicronucleatum} and \textit{P. caudatum}. 
-
+\textit{P. multimicronucleatum} and \textit{P. caudatum} but not
+\textit{T. thermophila} or \textit{O. trifallax}.
 \begin{figure}
-    \includegraphics[width=\textwidth]{Pds1_tree.pdf}
+    \includegraphics[width=\textwidth]{Psd1_tree.pdf}
     \caption[Phylogeny of Pds1 Sequences]{RAxML phylogeny with 1000 non-rapid
         bootstraps annotated with MrBayes (2,000,000 generations, PROTLGGAMMA) PP. LG This shows that Pds1 homologues
 in the \textit{Paramecium} clade largely recapitulates the etablished
 \textit{Paramecium} phylogeny.  \textit{P. caudatum}-\textit{P. multimicronucleatum}}
-\label{fig:psd1}
+\label{fig:pds1}
 \end{figure}
 
-
-To try 
+The structure of Pds1 was predicted from the \textit{P. tetaurelia}
+sequence via RaptorX (\cref{fig:pds1_struct}).  
+Unfortunately, there were no likely predicted functions
+from this structure. No structural hits were found aginst known enzyme active sites, ligand-binding
+sites or DNA-binding templates in ProcFun.
 
 \begin{figure}
-    \includegraphics{pds1_struct.png}
+    \includegraphics{psd1_struct.png}
     \caption[Predicted Structure of Pds1]{RaptorX Predicted Structure of \textit{P. tetaurelia}
-    Pds1 protein (PTETP600032001) }
-    \label{}
+    Pds1 protein (PTETP600032001). No functional annotations could be made using this structure}
+    \label{fig:pds1_struct}
 \end{figure}
-
 
 \subsubsection{Cid}
 
+There was a single Cid homologue present in each transcriptome
+and a single gene identifiable in the genome. 
+Upon alignment the \textit{P. bursaria} SW-1 copies
+proved near identical with clear intronic sequences.
+
+Phylogenetic analysis (\cref{fig:cid_phylo}) demonstrated
+the existence of a pre-duplication homologue to the Cid1 and Cid2
+paralogues present in the rest of the \textit{Paramecium} clade.
+
 \begin{figure}
     \includegraphics[width=\textwidth]{Cid.pdf}
-    \caption[Phylogeny of Cid Sequences]{Bayesian
-    and Likelihood phylogeny of CID components}
+    \caption[Phylogeny of Cid Sequences]{RAxML phylogeny annotated
+    with MrBayes PP showing the existence of a single homologue
+of the Cid1 and Cid2 proteins in \textit{P. bursaria}}
     \label{fig:cid_phlyo}
 \end{figure}
-
 
 \subsubsection{Rdr}
 
+\begin{figure}
+    \includegraphics[width=\textwidth]{Rdr1_2.pdf}
+    \caption[Phylogeny of Cid Sequences]{RAxML
+        phylogeny 
+    and Likelihood phylogeny of CID components.}
+
+    \label{fig:rdr_phylo}
+\end{figure}
+
 
 \begin{figure}
-    \includegraphics[width=\textwidth]{Cid.pdf}
-    \caption[Phylogeny of Cid Sequences]{Bayesian
+    \includegraphics[width=\textwidth]{Rdr3.pdf}
+    \caption[Phylogeny of Cid Sequences]{RAxML
+        phylogeny 
     and Likelihood phylogeny of CID components}
-    \label{fig:cid_phlyo}
+    \label{fig:rdr_phylo}
 \end{figure}
+
+
 
 \subsubsection{Piwi}
 
+There were a large number of Piwi detected homologues across
+the datasets. Specifically, 16 Piwi in the \textit{P. bursaria} SW-1
+transcriptome and 5 in the partial genome, and 17 in the \textit{P. 
+bursaria} Yad1g transcriptome.
+Due to the large size of this family, large number of paralogues
+and relatively short sequences phylogenetic inference
+of these sequences proved largely intractable. There are Piwi
+homologues present in \textit{P. bursaria} although their exact
+relation and function is unknown.
 
 
 \subsection{RNAi cross-talk}
 
+The total number of unique collisions between the endosymbionts and 
+the various classes of subject predicted transcriptomes were plotted
+(\cref{fig:unique_collisions}).  This showed that there 
+were next to collisions with Archaea and the endosymbionts but were
+low levels of collision with Bacteria.  Eukaryotes in general
+lead to much higher levels of collision.  Green algae
+had the most collisions as might be expected from their close
+relationship with the green algal endosymbiont. Interestingly,
+the 3 ciliate species had a low number of collisions but there
+was moderate to high levels of collision against the two
+\textit{P. bursaria} host transcriptomes.
+
+\begin{figure}
+    \includegraphics[width=\textwidth]{unique_collisions.pdf}
+    \caption[Unique eDicer Collisions by Subject Class]{The number of unique 23-mer
+        between transcripts from the \textit{C. variabilis} 1N
+    and \textit{M. reisseri} SW1-ZK endosymbionts and different
+classes of subject transcripts.  The only sequences with more than 6000
+unique collisions were \textit{Coccomyxa variabilis} NC64A and \textit{Chlorella subellipsoidea} C-169
+, \textit{Arabidopsis thaliana}, \textit{Chlamydomonas reinhardtii} and transcripts
+from the two host bins \textit{P. bursaria} SW1 and \textit{P. bursaria} Yad1g.  
+This suggests RNAi-cross talk could be occurring between the host and endosymbiont}
+\label{fig:unique_collisions}
+\end{figure}
+
+In order to test to what degree the number of collisions was related
+to the length of the subject query linear regression was conducted
+using all points (\cref{fig:edicer_collisions_by_length}).  This
+demonstrates there is at least a partial linear dependence between the 
+length of the query and the number of collisions.
+
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{edicer_collisions.pdf}
-    \caption[]{}
-    \label{fig:edicer_collisions}
+    \includegraphics[width=\textwidth]{length_collisions_regs.pdf}
+    \caption[Regression of eDicer Collisions by Query Length]{Linear Regressions
+    of the relationship between the number of collisions as query length
+increases. Features points from collisions with both \textit{C. variabilis} 1N
+and \textit{M. reissier} SW1-ZK.  Dark blue cloud indicates \(95\%\) confidence
+intervals.  
+The top plot shows total collisions against
+total length whereas the bottom analysis only looks at unique collisions
+against unique length so theoretically ameliorates the effect of repetitative 
+transcripts/many isoforms.  Both show a clear linear relationship and thus
+indicate the importance of normalising by query length in an analysis of 
+collisions.}
+    \label{fig:edicer_collisions_by_length}
+\end{figure}
+
+
+Normalising the unique number of collisions by the unique length of
+the subject predicted transcriptome led to some interesting results (\cref{fig:edicer_uniq_norm})
+Collisions with Eukaryotes largely were reduced to being on-pair
+with collisions with Bacteria. 
+Despite collisions against the Ciliates relatively disappearing,
+there was still considerable levels of collision against
+the host transcriptomes and green algae.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{unique_norm_collisions.pdf}
+    \caption[Normalised Unique eDicer Collisions]{The number of collisions
+        between transcripts from the \textit{C. variabilis} 1N
+    and \textit{M. reisseri} SW1-ZK endosymbionts and different
+classes of subject transcripts normalised by the unique length of those
+subjects.}
+    \label{fig:edicer_unique_norm}
 \end{figure}
 
 
 \section{Discussion}
 
-\subsection{Exogenous RNAi is non-functional in \textit{P. bursaria} CCAP 1660/12}
 
-PSD1 is totally absent. 
+\subsection{No dsRNA RNAi inducible phenotypes in \textit{P. bursaria} SW1}
 
-Degenerate PCR was attempted using sequences from \textit{P. tetaurelia} and 
-the other \textit{aurelia}
+Despite numerous attempts all feeding experiments failed to induce
+any of the RNAi knockout phenotypes.  RT-PCR tests with the Bug22
+and BBS7 constructs demonstrated
+that the \textit{E. coli} were expressing the dsRNA.  
+This indicates that dsRNA is either incapable of escaping the digestive vacuole
+or the host does not have an active pathway for exogenous dsRNA incuded
+RNAi.  The the fact that microinjection of dsRNA directly into the MAC
+also failed to elicit RNAi phenotypes would support the absence
+of an active dsRNA induced RNAi pathway. 
 
-
-Feeding doesn't work 
-
-Need to replicate using the \textit{P. bursaria} YADG1N strain
-
-\subsection{Microinjection is methodologically difficult}
-
-While RNAi by microinjection repeatedly failed there is a still a high possibility
-that this is more related to the methodological difficulty of this technique rather than
-necessarily any 
-\cref{fig:microinjection_nucleus}
+However, the high methodological difficulty involved in identifying and injecting
+the MAC without lysing the cell (\cref{fig:microinjection_nucleus}) 
+means microinjection may have only failed to induce RNAi due to failure
+to correctly microinject \textit{P. bursaria}.   \textit{P. bursaria}
+was particularly prone to lysis relative to \textit{P. tetaurelia} and
+there were greater issues with trichocysts blocking the microinjector. 
+Attempts made to inject GFP into the MAC to observe whether microinjection
+was taking place also failed supporting a technical failure of this
+approach rather than necessarily a biological reason.
 
 \begin{figure}
     \includegraphics[width=\textwidth]{microinjection_hard.pdf}
-    \caption{}
+    \caption[DAPI Stained \textit{P. bursaria} MAC]{DAPI stained \textit{P. bursaria}
+        MAC to demonstrating how difficult it is to accurately identify the limits
+    of the MAC for microinjection}
     \label{fig:microinjection_nucleus}
 \end{figure}
 
+Unfortunately, microinjection is also a necessary stage in the transgene
+induced RNAi methodology.  Therefore, even if this alternative pathway
+is present and active it may still not be possible to reliably 
+induce RNAi in \textit{P. bursaria}.
 
-\subsection{Deactivation requires confirmation}
+
+\subsection{Missing components of RNAi pathway in \textit{P. bursaria}}
+
+There are several components missing that are required for the function
+of the exogenous dsRNA RNAi pathway in \textit{P. tetaurelia}.
+
+Pds1 is totally absent outside of the \textit{Paramecium} clade post the divergence
+of \textit{P. bursaria} and \textit{P. caudatum}.  A phylogenetic
+analysis of Pds1 sequences (\cref{fig:pds1}) recapitulated the established 
+\textit{Paramecium} taxonomy (\cref{fig:paramecium_genomes}).
+This suggests that Pds1 was either acquired after the divergence of \textit{P. bursaria}
+and \textit{P. caudatum} or was lost in \textit{P. bursaria}.
+The pattern of paralogues would more likely support the former scenario.
+The lack of paralogues (with the exception of a terminally duplicated \textit{P. multimicronucleatum}
+copy) in the \textit{P. aurelia} complex species is interesting.  As the presence
+of Pds1 in \textit{P. caudatum} indicates that this should have undergone
+duplication during the 2 subsequent WGD events.  Potentially, this represents
+serial losses in these species.
+
+It is possible that Pds1 is present and just hasn't been recovered 
+in the partial transcriptomes because it is not being transcribed (or is 
+transcribed at a very low level) during endosymbiosis.  It is also
+possible it is missing in the partial genome due to the incompleteness
+of this data.  However, the combination of being missing in all 3 datasets
+as well as any non-\textit{Paramecium} ciliates indicates that
+it is likely not present in \textit{P. bursaria}.
+
+However, a single copy of the Cid protein was present in \textit{P. bursaria}.
+The fact that there are two copies in \textit{P. caudatum} (which 
+shares the ancient WGD with \textit{P. bursaria}) indicates the possiblity
+of the loss of Cid2 in \textit{P. bursaria}.
+The putative Cid1 in \textit{P. bursaria} may be functional in the common
+RNAi pathway.
+
+The unresolved Piwis 
 
 
-
-
+Ultimately, based on the missing components of the RNAi pathways
+identified in \textit{P. tetaurelia} this indicates that the exogenous dsRNA
+pathway is likely to not be active.  Unless Cid2 is functional in the shared
+RNAi pathway then it is possible that the both pathways identified in \textit{P. tetaurelia}
+are not active in \textit{P. bursaria}.  
 
 \subsection{Endosymbiont ``collision'' hypothesis}
 
@@ -845,12 +981,8 @@ often bursts after 1 injection, trichocysts block needle
 
 
 
-
-
 Hypothetically, one explanation for the deactivation/loss
 of RNAi in \textit{P. bursaria} CCAP 1660/12.
-
-
 
 
 A regression analysis using a measure of phylogenetic distance would be interesting.
@@ -858,8 +990,6 @@ For example k-mer collisions by 100
 
 
 Only finds exact matches though.
-
-
 
 
 Finally, while this may not have thoroughly resolved the question of matches

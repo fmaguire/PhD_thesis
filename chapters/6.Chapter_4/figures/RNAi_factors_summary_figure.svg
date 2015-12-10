@@ -22,17 +22,18 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.23618"
-     inkscape:cx="106.95639"
-     inkscape:cy="903.79865"
+     inkscape:zoom="1.61809"
+     inkscape:cx="184.50271"
+     inkscape:cy="922.33902"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1680"
-     inkscape:window-height="1050"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0" />
+     inkscape:window-width="1436"
+     inkscape:window-height="843"
+     inkscape:window-x="1680"
+     inkscape:window-y="36"
+     inkscape:window-maximized="0"
+     showguides="false" />
   <defs
      id="defs28307" />
   <metadata
@@ -312,7 +313,7 @@
        sodipodi:cy="48.447334"
        sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-51"
-       style="fill:#4ead4c;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
        sodipodi:type="arc" />
     <path
        inkscape:export-ydpi="660.70001"
@@ -1174,12 +1175,12 @@
        id="g7221"
        transform="translate(78.87535,-162.12825)">
       <rect
-         style="fill:none;stroke:#00000f;stroke-width:0.97393614;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.94117647"
+         style="fill:none;stroke:#00000f;stroke-width:0.85511047;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.94117647"
          id="rect14267"
-         width="179.59798"
-         height="75.60331"
-         x="48.491367"
-         y="371.74789"
+         width="179.7168"
+         height="58.2421"
+         x="48.431953"
+         y="371.68848"
          rx="2.6451786"
          inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
          inkscape:export-xdpi="660.70001"
@@ -1214,30 +1215,6 @@
              id="tspan14337-6-85"
              sodipodi:role="line">Presence of protein</tspan></text>
       </g>
-      <circle
-         style="fill:#4ead4c;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.58859795;stroke-opacity:1"
-         id="path5168-99-1-5-1-8-2-0-9-4-0-89-2"
-         inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/path5440.png"
-         inkscape:export-xdpi="660.70001"
-         inkscape:export-ydpi="660.70001"
-         cx="66.384499"
-         cy="419.74353"
-         r="4.6822681" />
-      <text
-         inkscape:transform-center-x="35.355339"
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none"
-         x="76.836769"
-         y="421.95056"
-         id="text14335-2-8-5-5"
-         inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-         inkscape:export-xdpi="660.70001"
-         inkscape:export-ydpi="660.70001"><tspan
-           sodipodi:role="line"
-           id="tspan14337-6-85-9-4"
-           x="76.836769"
-           y="421.95056"
-           style="font-size:8px">Potential pre-duplication orthologue</tspan></text>
       <text
          inkscape:transform-center-x="35.355339"
          xml:space="preserve"
@@ -1261,7 +1238,7 @@
          r="4.6822681" />
       <circle
          r="4.6822681"
-         cy="436.19183"
+         cy="419.58578"
          cx="66.384499"
          style="fill:#131313;fill-opacity:0.58823529;fill-rule:nonzero;stroke:#000000;stroke-width:0.58859795;stroke-opacity:1"
          id="path5168-99-1-5-1-8-2-0-9-4-0-89-2-5"
@@ -1273,7 +1250,7 @@
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none"
          x="76.926613"
-         y="438.39886"
+         y="421.79282"
          id="text14335-2-8-5-5-2"
          inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
          inkscape:export-xdpi="660.70001"
@@ -1281,7 +1258,7 @@
            sodipodi:role="line"
            id="tspan14337-6-85-9-4-9"
            x="76.926613"
-           y="438.39886"
+           y="421.79282"
            style="font-size:8px">Unresolved orthologues</tspan></text>
     </g>
     <text
@@ -1425,7 +1402,7 @@
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
        id="path5168-99-1-5-1-8-2-0-0"
-       style="fill:#4ead4c;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
        transform="matrix(0.58859795,0,0,0.58859795,-333.29484,82.365712)"
        d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
        sodipodi:type="arc"
