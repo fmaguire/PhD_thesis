@@ -1263,16 +1263,16 @@ and arabinose 2.7 fold during lit conditions.
         of amino acid abundances. Normalised Peak Areas 
         Calibration was conducted using Day1 and Night1 samples at two titrations, as well as Asn-Gln-Tryptamine and Sigma AA mixes
     Calibration and quantitative analysis failed for the following amino acids: 
-Glutamic Acid, Tryptamine, Asparagine, Tryptophan, Isoleucine, Methionine, Valine, Serine, Glutamate, Glutamine, Aspartic acid, Cysteine or Lysine.
-Significant concentration differences between day and night (as determined via Welch's `\textit{t}' are indicated by an asterisk.}
+Glutamic Acid, Tryptamine, Asparagine, Tryptophan, Isoleucine, Methionine, Valine, Serine, Glutamate, Glutamine, Aspartic acid, Cystein or Lysine.
+Significant concentration differences between day and night (as determined via Welch's `\textit{t}' are indicated by an astrerisk.}
     \label{fig:amino_acids}
 \end{figure}
 
-The targeted quantitative analysis of the amino acids in the system
+The targeted quantitative analyis of the amino acids in the system
 between day and night also had mixed results.  The majority of amino
 acids were not reliably recovered and calibration curves could not be fitted.
 Therefore, several key amino acids remain unprofiled.
-The relatively massive Arginine concentration as well as significant
+The relatively massive Arginine concentration as well as signficant
 day-night differences suggests that this may be an important nitrogen
 source in the endosymbiosis.
 
@@ -1309,7 +1309,7 @@ It seems clear that raffinose plays some significant role in the endosymbiosis
 especially as it is apparently being synthesised within the PV lumen itself.
 Raffinose has been associated with cold shock in
 \textit{Parachlorella kessleri} (formerly \textit{C. vulgaris}),
-accumulating during cold exposure and disappearing after return
+accumulating duing cold exposure and disappearing after return
 Specifically, it has also been directly associated
 with cryoprotection of thykaloid membranes \citep{Lineberger1980}.
 Raffinose and another Raffinose Family Oligosaccharide (RFO) 
@@ -1354,14 +1354,14 @@ as one of the key amino acid nitrogen sources, the identification
 of both high quantities and differential abundant 
 threonine and phenylalanine suggests that these
 amino acids may play a role in the host-endosymbiont
-barter system of \textit{P. bursaria}-\textit{M. reisseri}.
+barter system of \textit{P. busaria}-\textit{M. reisseri}.
 
-Additionally, the unique presence of lysine, glutamine and D-glutamate 
+Additionally, the unique presence of lysine, glutamine and D-glutamte 
 degradation pathways in \textit{M. reisseri} relative to other green algae
 suggests that these amino acids also comprise an element of the host-derived
 nitrogen supply.
 
-The difference in amino acids abundances for several of those fitted
+The difference in amino acids abudances for several of those fitted
 as well as differential numbers of reads mapping to putative amino 
 acids transporters indicates light-dependent amino acid uptake
 in the endosymbiont. 
@@ -1382,7 +1382,7 @@ implicated in \textit{C. variabilis} F36-ZK's endosymbiosis.
 One other observation is the potential supply of oligopeptides to the endosymbiont.
 The presence of a partial oligopeptide transporter 
 combined with the high concentrations of various 3- and 4-mer oligopeptides
-suggests that previous studies focusing exclusively on endosymbiont utilisation
+suggests that previous studies focussing exclusively on endosymbiont utilisation
 and uptake of individual amino acids (e.g. those reviewed in \citep{Kato2009a}) 
 may have missed on the role of these in host-endosymbiont nitrogen flux.
 
@@ -1427,7 +1427,7 @@ One set of proteins in which erroneous binning may be particularly
 problematic is that of proteins which have recently undergone endosymbiotic
 gene transfer (EGT) between endosymbiont and host or that have been horizontally
 acquired from other sources.  In the case of the former case,
-this is well observed phenomenon that has resulted in the eventual loss
+this is well observed phenomenom that has resulted in the eventual loss
 of the endosymbiotic in the majority of algal secondary endosymbiotic organelles
 as genes are transferred to the host nucleus
 \citep{Keeling2008a,Archibald2005,Keeling2004a}.
@@ -1438,7 +1438,7 @@ present a barrier to such transfers.
 As some \textit{M. reisseri} and \textit{Chlorella} endosymbionts 
 have been demonstrated as capable of free-living and metabolic
 co-dependence has putatively not become fixed it is 
-unlikely that EGT has occurred between host and endosymbiont as extensively
+unlikely that EGT has occurred between host and endosymbbiont as extensively
 as that observed in established photosynthetic organelles. 
 Fortunately, the binning method used means that while some peptides
 may have been falsely assigned to wrong bin all ``host'' and
@@ -1471,7 +1471,7 @@ the scope of this analysis.
 Finally, there are 2 additional difficulties specific to transporter and secretome prediction.
 In terms of secreted proteins, without knowledge of \textit{P. bursaria}'s intracellular trafficking
 system it is not possible to easily infer which host peptides are secreted into
-the PV.  For this reason, analysis of secreted proteins focused on 
+the PV.  For this reason, analysis of secreted proteins focussed on 
 the endosymbiont bin as the secretion signal are generally better conserved
 and established. 
 
@@ -1495,10 +1495,10 @@ using contemporary state-of-the-art ML algorithms e.g. recursive
 neural network models such as the long-short term memory networks 
 \citep{Hochreiter1997,Greff2015}.
 These are well suited to arbitrary length sequence data so wouldn't 
-require work-arounds to accommodate variable length signal 
+require work-arounds to accomodate variable length signal 
 peptides.  They are also capable of representation learning
 so the identification of sequence features that best
-predict localisation would be unnecessary. 
+predict localisation would be unecessary. 
 Alternatively, existing prediction tools could be combined
 in a more sophisticated way than the conservative consensus
 ensemble used in this analysis.  For example,
@@ -1510,7 +1510,7 @@ However, even with these improved predictions, it is still
 best to consider all analyses
 of these transcriptomes as proof of presence but not proof of absence
 of any component. Furthermore, any identified protein should be validated
-individually using localisation and (q)PCR based analyses.
+individually using localisation and (q)PCR based anaylses.
 
 
 \subsection{Metabolomics shows promise}
@@ -1519,7 +1519,7 @@ The pilot application of metabolomics demonstrated mixed results.
 There was poor performance of GC/MS with a failure to
 comprehensively profile carbohydrates. Several 
 compounds strongly implicated in the endosymbiosis
-being undetected e.g. maltose, and glucose.  This was potentially
+being undetected e.g. matlose, and glucose.  This was potentially
 due to the miscalibration of gas chromatography leading to poor 
 separation of components. 
 

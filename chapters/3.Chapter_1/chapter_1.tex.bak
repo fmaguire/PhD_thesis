@@ -768,7 +768,7 @@ This increases reliability of phylogenetic inference \citep{Keller2008} allows I
 to distinguish higher taxonomic levels \citep{Coleman2003}, and plays a role
 in resolving the thorny problem of species determination \citep{Muller2007}. 
 However, as the endosymbiont species ITS2 secondary structures have already been extensively
-investigated (e.g. \citep{Hoshina2008,Hoshina2010}) it was proved as unnecessary 
+investigated (e.g. \citep{Hoshina2008,Hoshina2010}) it was proved as unneccessary 
 in this analysis as at the taxonomic level of the inquiry. 
 
 \subsection{Reliability of Culture Collection}
@@ -806,7 +806,7 @@ Fortunately, there does not appear to be any bias
 related to GC \citep{Ellegaard2013a}.
 An increase in the number of starting cells to the range of
 a few hundred to a few thousand bacterial cells
-improves amplification considerably \citep{Ellegaard2013a}. 
+improves amplifciation considerably \citep{Ellegaard2013a}. 
 Unfortunately, increasing the number of cells in the case
 of CCAP 1660/12 \textit{P. bursaria} - \textit{M. reisseri} system
 would likely compound issue with bacterial contamination due 
@@ -827,7 +827,7 @@ it is the lone genome assembly that effectively utilised
 paired-end data during assembly.  The vast majority of assemblers
 will only utilise this data in ad-hoc post-assembly heuristic operations
 to improve contigs and scaffold the dataset.  On the other hand,
-SPAdes generates the assembly de-Bruijn using siamese rectangular
+SPAdes generates the assembly de-Bruijn using siamese retangular
 graphs that incorporate both forward and reverse reads and their 
 respective insert. 
 In future, it may be worth re-analysing this data using
@@ -836,7 +836,7 @@ other MDA-specific tools such as HyDA to assess their performance.
 The relative performance of Q30-SPAdes with and without the ``careful''
 setting is interesting. This setting minimises the risk of mismatch and indels
 found in the assembly.  This led to assembly with statistics relatively similar
-to that of the Q5-SPAdes assembly.   However, on correspondence with the developers
+to that of the Q5-SPAdes assembly.   However, on correspondance with the developers
 of SPAdes it emerged that there was a bug in this setting in the version
 of the assembler used within this study leading it to be highly conservative
 and discard many assembled contigs that were unlikely to be mismatches. 
@@ -857,7 +857,7 @@ This problem is somewhat symptomatic of the current state of the tool ecosystem
 for MDA-based eukaryotic metagenomes. The few MDA-orientated analysis
 tools focus on the assembly of bacterial systems whereas the majority of the metagenomic
 tools are based on features and metrics such as coverage that are only
-consistent in conventional non-MDA bulk genomic studies. 
+consistent in convential non-MDA bulk genomic studies. 
 Ideally, future research will improve the ease of analysis and assembly
 of datasets such as this.
 
@@ -893,7 +893,7 @@ have proven unlikely to show different results in either the case of a particula
 This result indicates the presence of key differences between the current state of this
 endosymbiosis and the previously studied \textit{C. variabilis} endosymbiosis
 studied by \citep{Kodama2014c}.  Therefore, a comparative analysis of these systems
-could theoretically shed light on the mechanism by which metabolic co-dependence
+could theoretically shed light on the mechanism by which metabolic co-depedence
 has become fixed in one system. Alternatively, this difference may just reflect the nature of two
 different, independently acquired endosymbioses with different species and strains
 of both host and endosymbiont. 
@@ -929,7 +929,7 @@ comprises the sole green algal endosymbiont in the CCAP 1660/12
 and 1660/13 cultures although it may be actively evolving as evidenced
 by a small divergent sub-population. 
 
-Finally, the \textit{Micractinium reisseri} endosymbiont in cultures CCAP 1660/12 
+Finally, the \textit{Micractinium reissieri} endosymbiont in cultures CCAP 1660/12 
 CCAP 1660/13 has potentially become metabolically co-dependent with the host.
 The host appears incapable of survival without the endosymbiont, therefore,
 it is important to attempt to identify the differences between the demonstrably

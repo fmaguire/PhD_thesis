@@ -21,7 +21,7 @@ would potentially identify key transcripts which play a role in the establishmen
 of this endosymbiosis. 
 
 
-``Dual-RNAseq'' is a form transcriptomics which characterises transcripts in a small number of defined organisms simultaneously \citep{Westermann2012}.
+``Dual-RNAseq'' is a form transcriptomics which characterises transcripts in a small number of defined organisms simultanously \citep{Westermann2012}.
 It has proven an effective method in several studies investigating host-chloroplast interactions \citep{Nowack2011,Jiggins2013,Xiang2015},
 and host-pathogen systems \citep{Tierney2012,Kawahara2012,Jones2014,Hayden2014}.
 It differentiates itself from both standard metatranscriptomics, such as those common in microbial ecology \citep{Poretsky2005,AliagaGoltsman2014},
@@ -37,7 +37,7 @@ a key resource by which results can be contextualised.
 Additionally, transcriptomic analysis has proven feasible in reasonably close relatives of both host \citep{Arnaiz2010,Kolisko2014} and endosymbiont \citep{Guarnieri2011,Rowe2014,Bashan2015}.  
 Even more promisingly, there has been an analysis of the host-endosymbiont
 system (although in a different strain: Yad1g1N) \citep{Kodama2014}. 
-Unfortunately, this study focused only on the expression pattern of the host
+Unfortunately, this study focussed only on the expression pattern of the host
 alone with and without its endosymbiont and discarded endosymbiont derived data
 during analysis.
 
@@ -52,7 +52,7 @@ and assembly methods to mitigate these complications.
 
 These difficulties are compounded by the lack of available reference genomes for either \textit{Paramecium bursaria} or \textit{Micractinium reisseri} and thus necessitating \textit{de novo} transcriptome assembly.
 However, the utility of sequenced genomes from divergent ciliate species 
-(i.e. \textit{Tetrahymena thermophila} \citep{Eisen2006}, \textit{Paramecium tetaurelia} \citep{Aury2006} and \textit{Paramecium caudatum}
+(i.e. \textit{Tetrahymena thermophila} \citep{Eisen2006}, \textit{Paramecium tetraurelia} \citep{Aury2006} and \textit{Paramecium caudatum}
 \citep{McGrath2014}) and endosymbiotic green algae \textit{Chlorella variabilis} NC64A \citep{Blanc2010} and \textit{Coccomyxa subellipsoidea} C-169 \citep{Blanc2012}
 (see \cref{fig:paramecium_genomes} in the Introductory Chapter and \cref{fig:chlorella_genomes} in Chapter 1 for respective phylogenetic context of these genomes) as references for assembly was investigated.
 It should also be noted that the existing \textit{Paramecium bursaria} \citep{Kodama2014}, 
@@ -77,7 +77,7 @@ assembled transcripts into bins relating to their likely originating organisms
 
 
 To this end, bulk RNAseq libraries from cultured PbMr was sequenced using 76bp paired-end reads and the Illumina Gene Analyzer II platform 
-taking care to minimise contamination by filtering and washing cultures and carefully
+taking care to mininmise contamination by filtering and washing cultures and carefully
 assessing culture health to maximise the number of healthy PbMr sequenced. 
 Unfortunately, due to limitations in the maintainable culture density of the 
 \textit{Paramecium bursaria} CCAP 1660/12 and thus the quantity of extractable
@@ -93,11 +93,11 @@ a method to reduce culture based contamination.
 
 While reasonably nascent, sc-RNAseq has shown a lot of promise in well characterised systems such as human cell cultures \citep{Bengtsson2005,Shalek2013}
 and \textit{Saccharomyces cerevisiae} \citep{Lipson2009} and there are high expectations
-of their utility for ``dual-RNASeq'' \citep{Westermann2012}.  sc-RNAseq addresses 
+of their utility for ``dual-RNASeq'' \citep{Westermann2012}.  sc-RNAseq addreses 
 the key difficulties of analysing unculturable or poorly culturable organisms \citep{Murray2012} and investigating
 cell-cell heterogeneity in expression patterns \citep{Raj2008,Shalek2013}).  
 Uninvestigated, this heterogeneity (either from biological and/or genomic variance or just the stochasticity of gene expression),
-can lead to a Yule-Simpson effect \citep{Yule1903a,Simpson1951}, where the false amalgamation of distinct expression patterns
+can lead to a Yule-Simpson effect \citep{Yule1903a,Simpson1951}, where the false amalgamatation of distinct expression patterns
 in previously cryptic but distinct cellular subpopulations could generate a spurious expression pattern contrary to either subpopulation.
 
 
@@ -120,9 +120,9 @@ Unfortunately, despite its utility sc-RNAseq generates a new set of difficulties
 First and foremost, there has only been a single published use of sc-RNAseq, to my knowledge, in non-model unicellular eukaryotes.   
 This study by \citep{Kolisko2014}, briefly addressed the issues of bias, contamination and gene discovery effectiveness in a set of model and non-model eukaryotes and
 constitutes an important proof-of-concept.  
-However, it also used a different sc-RNAseq approach (SMART), focused on single organisms, 
+However, it also used a different sc-RNAseq approach (SMART), focussed on single organisms, 
 and didn't address, in-depth, the optimal way to process, assemble and utilise single cell datasets from protists.
-While some work has been done investigating the optimal pre-processing of bulk RNAseq datasets (e.g. \citep{Macmanes2013,Macmanes2015}) 
+While some work has been done invesigating the optimal pre-processing of bulk RNAseq datasets (e.g. \citep{Macmanes2013,Macmanes2015}) 
 the effect of different trims and error correction on sc-RNAseq has yet to be characterised.  
 There are also some early indications of problems of cryptic bacterial contamination
 from samples and/or reagents in sc-RNAseq is particularly problematic \citep{Kolisko2014}. 
@@ -192,7 +192,7 @@ before being assessed for quality using ND-1000 (NanoDrop) and BioAnalyzer (Agil
 For single cell transcriptomics, a ``cell-picking'' approach was used in which
 \textit{P. bursaria} cells (from the CCAP1660/12 culture) were inspected on an inverted light microscope 
 before being picked using an orally aspirated drawn-glass Pasteur pipette \citep{Garcia-Cuetos2012}.
-In order to minimise contamination from food bacteria present in the media these picked cells
+In order to mininmise contamination from food bacteria present in the media these picked cells
 were washed 3 times by serial transfer to \(10\mu l\) droplets of sterile NCL media.
 The washed cell was then transferred to a \(10\mu l\) droplet of sterile water.
 Cells were picked 5 hours into both the lit and dark phase of the 12:12 hour day-night cycle 
@@ -212,7 +212,7 @@ In order to compare disruption methods, extractions and amplifications
 were also conducted using just lysis buffer, bead beating and vortexing (i.e. without freeze-thaw), 
 and just the lysis buffer.  Samples were then quantified using a ND-1000 (NanoDrop)
 and as extraction methods produced near identical DNA concentrations 
-the maximal disruptive method of freeze-thaw, beat beating, vortexing and lysis buffer
+the maximal disruptive method of freeze-thaw, beat beating, vortexting and lysis buffer
 described above was used for further purification and library preparation.
 The samples were then vortexed for 1 minute before a gDNA removal step.
 
@@ -273,8 +273,8 @@ flowcell lane in a separate sequencing run.
 
 \subsubsection{Taxonomic analysis}
 Sequenced libraries were initially screened using the standard
-metrics implemented in the FastQC to check for standard sequencing issues
-such as flowcell defects, library degradation, and adapter read-through \citep{fastqc2015}.
+metrics implemented in the FastQC to check for standard seqencing issues
+such as flowcell defects, library degaradation, and adapter read-through \citep{fastqc2015}.
 
 To further investigate potential contamination, a taxonomic
 profile and GC\% probability density was determined for each library.
@@ -292,7 +292,7 @@ local copy of the NCBI taxonomy database \citep{Federhen2012} to recover a hit t
 read that aligned to a sequence within NR database. These lineages were then interactively tallied 
 at several different taxonomic levels (e.g. domain level - eukaryote vs bacteria, or lower level - viridiplantae vs ciliate) and variances
 calculated.  Results were then tabulated and libraries compared to assess whether any libraries appeared
-aberrant.  This whole analysis was repeated for both untrimmed reads and reads quality trimmed
+abberrant.  This whole analysis was repeated for both untrimmed reads and reads quality trimmed
 to a high quality threshold of an average Q30 over a sliding window of size 4 using
 Trimmomatic \citep{Bolger2014a} to assess the impact trimming has on this profiling.
 Taxonomic profiles were additionally visualised in Krona \citep{Ondov2011} using
@@ -343,12 +343,12 @@ Trimmomatic \citep{Bolger2014a} was run on these samples with adapter clipping (
 using sequencing service provided fasta file of adapters, a maximum mismatch count of 2,
 a palindromic clip threshold of Q35 and a simple clip threshold of Q15, a sliding window
 quality trim of size 4 and average window quality thresholds of Q0, Q2, Q5, Q10, Q15, Q20, Q25, Q30, Q35, and Q40.
-Finally, a minimum length trimmed read length criteria of 40bp was used.  
+Finally, a minimum length trimmed read length critera of 40bp was used.  
 
 
 The trimmed samples were then mapped to 3 different \textit{de novo} draft transcriptome assemblies using bowtie2
 \citep{Langmead2012} with maximum and minimum insert sizes of 37bp and 1161bp (derived from library preparation
-fragment size distribution and histograms of mapped insert sizes for untrimmed reads against bulk reference).
+fragment size distribution and histrograms of mapped insert sizes for untrimmed reads against bulk reference).
 
 These 3 draft assemblies were a ``baseline'' bulk RNASeq transcriptome reference consisting of a Trinity \citep{Haas2013} 
 assembly of the light and dark bulk libraries preprocessed to remove low quality bases (<Q20) and adapters using Fastq-MCF \citep{Aronesty2013};
@@ -433,7 +433,7 @@ were mapped to \textit{Chlorella} NC64A, \textit{Coccomyxa C169},
 The former pair being the closest available genomes to the endosymbiont and the latter to the host.
 Mapping was done using the TopHat2 spliced aligner \citep{Kim2013} against
 the genomes and was supplemented with and without annotated ORF information (in the form of gtf).
-GTF files were generated from best available gene annotations in the form of GFF files using gffread (part of
+GTF files were generated from best avaiable gene annotations in the form of GFF files using gffread (part of
 cufflinks).
 Cufflinks \citep{Trapnell2011} was then used to extract isoforms from the spliced alignments.
 
@@ -459,7 +459,7 @@ sequencing data from Kodama's previously published \textit{P. bursaria} bulk
 RNAseq analysis \citep{Kodama2014c}.
 
 
-To assess the utility of combining assemblies as discussed in \citep{Nakasugi2014}, 
+To assess the utility of combining assemblies as discused in \citep{Nakasugi2014}, 
 the best assemblies from Bridger and Trinity
 (as assessed below) were combined using the EvidentialGene tr2aacds pipeline \citep{Gilbert2013}.
 Additionally, the best assemblies from all assemblers that ran to completion i.e.
@@ -529,7 +529,8 @@ Host (H), Endosymbiont (E), Food (F) and Unknown (U).
 
 Each of the assembled transcripts were BLASTP-ed against a database consisting of the following predicted proteomes: 
 \textit{Chlorella} NC64A, \textit{Chlamydomonas reinhardtii}, \textit{Coccomyxa} C169,
-\textit{Paramecium tetaurelia}, \textit{Tetrahymena thermophila}, \textit{Arabidopsis thaliana}, \textit{Homo sapiens} (helping to identify contamination), \textit{Saccharomyces cerevisiae}, \textit{Schizosaccharomyces pombe}, \textit{Bacillus
+\textit{Paramecium tetraurelia}, \textit{Tetrahymena thermophila}, \textit{Arabidopsis thaliana}, \textit{Homo sapiens} (help-
+    ing to identify contamination), \textit{Saccharomyces cerevisiae}, \textit{Schizosaccharomyces pombe}, \textit{Bacillus
 cereus} ATCC 14579, \textit{Escherichia coli} 536, \textit{Escherichia coli} O157 H-7, \textit{Salmonella typhimurium}
 LT2 and \textit{Escherichia coli} K-12 (the last 5 genome datasets helping to identify food bacterial
 genes). Then initial bins were determined as follows:
@@ -542,7 +543,7 @@ table.
 %    \textit{Chlorella} and longest likely coding region was using the universal codon table. Or transcript’s 
 %    highest hits at \(e^{-10}\) and \(e^{-20}\) expectation thresholds were to one of those genomes regardless of coding
 %region presence.
-\item Host (H): Transcript’s highest hits at \(\leq e^{-50}\) were to \textit{Paramecium tetaurelia} or \textit{Tetrahymena
+\item Host (H): Transcript’s highest hits at \(\leq e^{-50}\) were to \textit{Paramecium tetraurelia} or \textit{Tetrahymena
         thermophila}. Or highest hit at \(e^{-20}\) was one of those species and longest likely coding
     region was using the \textit{Tetrahymena} codon table.
 %\item Unknown but likely Host (U(H)): \(e^{-10}\) hit to \textit{Paramecium tetraurelia} or \textit{Tetrahymena
@@ -555,7 +556,7 @@ the longest likely coding region in the transcript was using the universal codon
 %\item Unknown but likely Food (U(F)): expectation \(e^{-10}\) hit to one of the \textit{E. coli} species or \textit{Salmonella} and
 %longest likely coding region was using the universal codon table. Or transcript’s highest
 %hits at \(e^{-10}\) and \(e^{-20}\) expectation thresholds were to one of those genomes regardless of coding region presence.
-\item Unknown (U): highest scoring hits to \textit{Arabidopsis}, \textit{Homo sapiens}, \textit{Saccharomyces} or \textit{Schizosaccharomyces} 
+\item Unknown (U): highest scoring hits to \textit{Arabidopsis}, \textit{Homo sapiens}, \textit{Saccharomyces} or \textit{Schizosacharomyces} 
     or any sequence not fitting into the above categories.
 \end{itemize}
 
@@ -602,7 +603,7 @@ the latest major release version of this toolkit \url{https://github.com/jhcepas
         and masking begins once the last sequence has finished alignment.  The disadvantage of this is a single
         slow stage for one input sequence can hold up the whole pipeline and leave resources idle.  Additionally,
         by running many of the same type of process at the same time, each with similar resource requirements,
-        the risk of hardware bottlenecking is increased compared to a more heterogeneous load.
+        the risk of hardware bottlenecking is increased compared to a more heterogenous load.
         Finally, fully parallel runs each input sequence through the pipeline stage-by-stage separately
     from all other inputs to the pipeline. This prevents blocking and allows efficient using of resources.}
     \label{fig:ddg}
@@ -875,7 +876,7 @@ Overall only a very small number of bulk reads could be assigned to any taxonomi
 To identify the likely source of the high GC\% contamination 
 and to assess how representative the taxonomic profiling of small random
 subsamples of reads \(\leq1\%\) to full scale analyses Krona was used to 
-create interactive hierarchical plots of the taxonomic profiles\footnote{
+create interactive hierarchial plots of the taxonomic profiles\footnote{
 Accessible at \url{http://finlaymagui.re/dueydrop_analysis}} 
 From this, Rhizobia species are the most prevalent high GC\% species found in the libraries
 with this high 70GC\% peak in the KDE plots and therefore are the most likely source
@@ -1053,7 +1054,7 @@ clusters respectively.
     \caption[ParKour Cluster Summaries]{Final cluster centroids and number of reads assigned
     to each cluster in parKour using various run settings.  Centroids
     are the mid-point of each cluster, therefore in the 2 cluster scheme
-    ``parKour'' identified one cluster of reads centred around  
+    ``parKour'' identified one cluster of reads centered around  
     \(66.74\%\) GC for the forward read and \(61.77\%\) for the reverse read.
     Note that 
     overclustering made a minimal impact on cluster location.}
@@ -1294,7 +1295,7 @@ even better in terms of assembly likelihood and read incorporation.
                 & Minimum K-mer Coverage of 2 & 147,902 & \(9.239*10^{7}\) & \(-1.238*10^9\) \\  
                 \hline
     \end{tabular}
-    \caption[Trinity vs. Bridger Assemblies]{Assembly summaries of Q30 trimmed taxonomically selected SCT and bulk reads 
+    \caption[Trinity vs. Bridger Assemblies]{Asssembly summaries of Q30 trimmmed taxonomically selected SCT and bulk reads 
     after digital normalisation and K-mer abundance filtering. Parameters used in the assembly
 indicates any special parameter settings used in the assembly i.e. K19 indicates a K-mer size of 19 was used.
 }
@@ -1449,7 +1450,7 @@ poorly classified ``Unknown'' samples but largely performed well (\(0.89-0.9\) f
 	\includegraphics[width=0.8\textwidth]{kn_confusion_matrix.pdf}
     \caption[Normalised Confusion Matrix]{Normalised Confusion Matrix for K-Neighbours.  These plots highlight
 		the problematic classes in the cross-validation dataset. 
-		 The heatmap corresponds to the proportion of samples classified
+		 The heatmap corresponds to the proporiton of samples classified
 		 with a given predicted label compared with their true labels.
 		``Host'' samples are accurately classified however a small number are erroneously
 		classified as ``Unknown''.  Similarly, ``Unknown'' samples are relatively poorly
@@ -1476,7 +1477,7 @@ poorly classified ``Unknown'' samples but largely performed well (\(0.89-0.9\) f
 	K-Neighbours Classifier using a leaf size of 30, minkowski
 	distance metric and 50 neighbours.  Note the poor performance
 	on ``Unknown'' samples but generally good (\(\geq90\%\)) on
-	other labels. This can likely be explained by the ``miscellaneous''
+	other labels. This can likely be explained by the ``miscellaenous''
 nature of this label and the diverse phylogenies that comprise it. }
 \label{tab:classification_report}
 \end{table} 
@@ -1554,7 +1555,7 @@ Taxonomic profiling also reveals other features of the dataset that wouldn't nec
 obvious otherwise.  For instance, our profiles revealed systematically low 
 low levels of Viridiplantae related reads across both bulk and sc-RNAseq libraries and in both lit and dark conditions.  
 Despite care being taken to ensure thorough lysis of the chitinous \textit{Micractinium} cells during 
-RNA extraction and a ratio of \(\sim 300:1\) endosymbiont to host cell ratio this may be related to lytic inefficiencies \citep{Korfhage2015} or potentially
+RNA extraction and a ratio of \(\sim 300:1\) endosymbiont to host cell ratio this may be related to lytic inefficiences \citep{Korfhage2015} or potentially
 just relatively fewer endosymbiont transcriptomic activity relative to host and associated bacteria species.
 Finally, it is possible that due to the endosymbiont being largely provisioned by the host it may be relatively
 transcriptionally inactive and thus relatively fewer transcripts can be recovered. 
@@ -1583,8 +1584,8 @@ with that of the profile generated from the library as a whole.
  
 ``DueyDrop'' could potentially be improved in such a way that an entire library can be screened quickly instead of just subsamples.
 Briefly, this would involve quantifying exact K-mer matches between library reads and a pre-generated database of known taxa
-using efficient probabilistic hashing data structures such as a bloom filter, or more likely count-min sketch and an efficient
-k-mer counting library such as Jellyfish \citep{Marcais2011}.  This would have a major speed advantage compared to the BLASTX-based method of ``DueyDrop''
+using efficient probabilstic hashing datastructures such as a bloom filter, or more likely count-min sketch and an efficient
+k-mer counting library such as Jellyfish \citep{Marcais2011}.  This would have a major speed advantage compared to the BLASTX-based method of ``dueydrop''
 and would thus allow entire libraries to be checked in reasonable time.  A similar approach to this has been implemented as a service
 by \url{https://www.onecodex.com/}, although this focuses specifically on screening for medically relevant taxa. 
 However, it would require laborious workarounds to handle
@@ -1643,7 +1644,7 @@ best performing individual assembly (Bridger using 31-mers, Q30 trimmed
 taxonomically selected SCT and bulk libraries) was preferred.
 
 These results suggest that MDA-based single cell transcriptomic datasets
-do not behave in a qualitatively similar way to bulk RNA-seq in terms of
+do not behave in a qualitively similar way to bulk RNA-seq in terms of
 pre-processing and assembly parameters.  
 This means care must be taken incorporating advice and heuristics
 derived from studies based on analysis bulk RNA-seq datasets (e.g. \citep{Macmanes2013,Macmanes2014,Macmanes2015,Nakasugi2014}).
@@ -1713,7 +1714,7 @@ Digital normalisation, a method to remove redundant read data from libraries and
 reduce the computational burden of assembly \citep{Brown2012}, was also investigated for this dataset
 and found to be a highly effective strategy in improving assemblies of mixed bulk and MDA SCT data.
 
-Interestingly, some have argued that error correction is special case of general digital normalisation
+Interestingly, some have argued that error correction is special case of general digital normalization
 \citep{Krasileva2013}.  This is supported by the fact that many error correction
 algorithms operate on similar principal of attempting to remove low abundance K-mers
 from input datasets. K-mers with a low abundance
@@ -1732,7 +1733,7 @@ low-level sequencing error.
 
 It should be noted that the digitally normalised and K-mer abundance filtered assemblies also
 incorporated more bases overall than the equivalent assembly using the full
-libraries therefore resultant assemblies were just high confidence (and likelihood)
+libraries therefore resultant assemblies were just high confidence (and li elihood)
 subsets of the initial input data.
 
 One factor that has not been adequately analysed in the context of this work
@@ -1757,7 +1758,7 @@ assembly using a random of assembly parameters and indeed a range of both \texti
 
 Unfortunately, the task of identifying the ``best'' \textit{de novo} transcriptome assembly is also a non-trivial 
 task \citep{Neil2013c}.  Many widely used assembly assessment metrics have been shown to be
-inconsistent measures in simulated sequencing data, especially those metrics related to individual
+inconsistent measures in simulated sequencing data, especially those metrics related to invidual
 contigs (theoretically different transcript splices).  Metrics such as average length and N50
 prove consistent across both simulated sequencing depth and read lengths i.e. they improve 
 towards \citep{Neil2013c}.  Furthermore, the number of possible metrics is greatly reduced
@@ -1810,7 +1811,7 @@ be sensible to confirm bins using downstream analyses that use full length assem
 more potential data than are present in shorter individual PE reads.  Rough, approximate bins were
 generated using a simple "top BLAST hit" approach following ORF calling (using Tetrahymena and Universal
 encodings) against a set of representative predicted proteomes.  In order to assess how accurate these
-bins were likely to be, 10,000 were randomly selected and rapid maximum-likelihood phylogenies were
+bins were likely to be, 10,000 were randomly selected and rapid maximimum-likelihood phylogenies were
 generated using the transcript sequence as a seed to sample the entire RefSeq protein nr database.
 This was accomplished using ``Dendrogenous'', a rewritten and modified version of a pipeline originally known 
 as ``Darren's Orchard'' which first appeared in \citep{Richards2009g}.  Phylogenies were manually assessed to check

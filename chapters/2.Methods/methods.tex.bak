@@ -246,11 +246,11 @@ diagnostics.
 
 
 While it is possible to directly sequence RNA transcripts \citep{Ozsolak2009} most approaches first utilise a reverse transcription (RT)
-step to convert transcripts to cDNA. As ribosomal RNA makes up a sizeable proportion of RNA in the cell
+step to convert transcripts to cDNA. As ribosomal RNA makes up a sizable proportion of RNA in the cell
 it is often necessary to enrich or select the RNA fraction of choice in order to minimise wasted effort when
 sequencing \citep{Wilhelm2009}.  For eukaryotic mRNA enrichment this can be easily achieved by
 using poly-T primers during RT which selectively bind to the poly-adenylated tail of these messenger 
-transcripts.  However, for bacterial/archael work and transcriptomic analyses focusing on non-poly-adenylated
+transcripts.  However, for bacterial/archael work and transcriptomic analyses focussing on non-poly-adenylated
 transcripts such as ncRNAs/siRNAs/miRNAs etc. ribosomal depletion is used \citep{ONeil2013}.  This is a process by which 
 ribosomal probes are attached to magnetic beads. Ribosomal RNAs bind to these probes and the magnetic
 beads can be used to partition the majority of ribosomal sequences away from the other RNA \citep{ONeil2013}.
@@ -1433,7 +1433,7 @@ of novel transcripts by comparison to other transcripts of known function
 from databases such as genbank. 
 
 
-Phylogenetics can be defined as a means of arranging a set of character sequences into an optimal hierarchical
+Phylogenetics can be defined as a means of arranging a set of character sequences into an optimal hierarchial
 branching tree structure reflecting some measure of relatedness 
 between the sequences. Usually, these trees will have variable
 branch lengths that are product of a measure of divergence between the connected nodes.
@@ -1539,7 +1539,7 @@ before repeating the phylogenetic inference.  Unfortunately, the reduction of th
 to a representative subset by heuristics and/or naive clustering can generate
 biases of their own.  However, tools exist that utilise taxonomic database 
 information to automatically find a set of sequences of a specified cardinality 
-which display the maximum possible taxonomic diversity for that set size \citep{Zhou2014}.
+which display the maximium possible taxonomic diversity for that set size \citep{Zhou2014}.
 
 
 Another source of bias in sequence sampling is the usually heuristic choice
@@ -1656,7 +1656,7 @@ in sub-strings) \citep{Smith1981}.  While early MSA algorithms were typically
 largely derived from Needleman-Wunsch most modern algorithms seek to combine 
 optimisation of local and global alignments.  The distances used in these
 pairwise alignments will typically be ``scored'' based upon which matches or 
-alignments are more frequent substitutions (e.g. Leucine and its isomer Isoleucine 
+alignments are more frequent substituions (e.g. Leucine and its isomer Isoleucine 
 or Adenine to its fellow purine base Guanine (transition)) 
 are positively scored.   Alternatively, gaps 
 (extension of a gap is typically less penalised than creating a gap) or unlikely changes (e.g. the transversion
@@ -1749,7 +1749,7 @@ rare state change for a given dataset than an A to a T.
 
 Substitution models typically assume neutrality, independence and finite sites.
 With the probability of substitution rates having an independent and identically
-distributed (i.i.d) \citep{Hasegawa1985}.
+distribued (i.i.d) \citep{Hasegawa1985}.
 This measure of distance can be naive models where rates of change between character
 states and the frequency of each state is equal (e.g. \(p(x \rightarrow y) \forall x \forall y \in {G,C,T,A} \text{where} x\neq y\)
 \citep{jukes1969evolution}) to models fully parameterised in terms of character frequency and rates of change by the masked alignment 
