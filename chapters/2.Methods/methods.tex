@@ -1032,10 +1032,10 @@ automatically inferring and utilising patterns in data \citep{Murphy2012}.
 A commonly used formal definition of machine learning:
 ``A computer is said to learn from experience E with respect to some class of tasks 
 T and performance measure P, if its performance at tasks T, as measured by P, improves 
-with experience E.'' \citep{Mitchell1997}
+with experience E.'' \citep{Mitchell1997}.
 ML encompasses techniques and methods from various areas including statistics,
-pattern recognition, optimisation/control engineering, neuroscience and artificial intelligence.
-Applications range in complexity from simple linear regression to deep convoluted neural networks 
+optimisation/control engineering, neuroscience and artificial intelligence.
+Applications range in complexity from simple linear regression to deep convolutional neural networks 
 with millions of free parameters running on dedicated super-computers \citep{Wu2014} 
 which are capable of beating human-performance on complex image classification tasks 
 (e.g. IMAGENET \citep{Berg2014,He2015}).
@@ -1047,22 +1047,33 @@ between the line and the data (for example, the sum of squares distance).
 This distance/error is calculated using something known as the cost function e.g. \(J(\theta) = \frac{1}{2} \sum^{m}_{i=1} (h_{\theta}(x_{i}) - y_{i})^2\) 
 (where \(m\) is the number of \(x, y\) pairs in the dataset for linear regression).
 Most algorithms will seek to minimise the value of this cost function \(J(\theta)\) with respect to 
-the parameters of the original function \(h_{theta}(x)\).  Typically, this is achieved using a variety of algorithmic optimisation techniques.
-The most prevalent of these are gradient descent based methods in which the value of \theta is modified 
-in the direction of the gradient of the cost function (determined using the partial derivative of \(J\) with respect to \theta: \(\frac{\partial J_{\theta}}{\partial\theta}\)).  
+the parameters of the original function \(h_{\theta}(x)\).  Typically, this is achieved using a variety of algorithmic optimisation techniques.
+The most prevalent of these are gradient descent based methods in which the value of \(\theta\) is modified 
+in the direction of the gradient of the cost function (determined using the 
+partial derivative of \(J\) with respect to \(\theta\): \(\frac{\partial J_{\theta}}{\partial\theta}\)).  
 
 
-In an ideal world, the best machine learning model trained using our data will generalise well for novel data generated from the same underlying process
-which generated the training data.  This is known as generalisability and it plays into the concept of `fit'.  A model that minimises 
-its particular cost function on the training dataset has been fit to that dataset, however, it is possible to for the model to fit the training
-data in such a way that it has low error on the training data but performs incredibly poorly when applied to new data from the same process.
-This is typically the case when a model has overfit the data.  The classic example of this is fitting a line to a set of points using a
-high degree polynomial.  This polynomial will perfectly pass through all the points but is likely to be a worse predictor for the value 
-of some new data than a much simpler model that while it fits the original training data, may not fit quite as well.  Likewise, a model that is misspecified
+In an ideal world, the best machine learning model trained using our data will 
+generalise well for novel data generated from the same underlying process
+which generated the training data.  
+This is known as generalisability and it plays into the concept of `fit'.  
+A model that minimises its particular cost function on the training dataset has 
+been fit to that dataset, however, it is possible for the model to fit the training
+data in such a way that it has low error on the training data but performs 
+incredibly poorly when applied to new data from the same process.
+This is typically the case when a model has overfit the data.  
+
+
+The classic example of this is fitting a line to a set of points using a
+high degree polynomial (see \cref{fig:fitting}) .  This polynomial will perfectly pass through all the points but is likely to be a worse predictor for the value 
+of some new data than a much simpler model that while it fits the original training data, may not fit quite as well.  
+Likewise, a model that is misspecified
 or cannot fit the training data well e.g. the training data follows a non-linear distribution but the model is linear, is known as underfitted.
 Underfitted models will perform poorly on both the training and test data.  However, it isn't particularly useful to only discover
-how useful your model is likely to be on the test data therefore almost all machine learning analyses will use the principal of cross-validation.
+how useful your model is likely to be on the test data therefore almost all machine learning analyses uses the principal of cross-validation.
 Cross-validation is the partitioning of the training dataset to create a validation dataset which can be used as a proxy test set.
+
+%% SORT
 
 Unfortunately, no single model will perform best for all tasks (to paraphrase and simplify Wolpert and McCreedy's ``No Free Lunch Theorem'' \citep{Wolpert1996}),
 there are no shortcuts in machine learning (and many other areas) or optimisation.  Therefore, testing different models (and hyperparameter values) using
@@ -1157,19 +1168,24 @@ discriminative.
 Probabilistic functions will return a probability distribution associated with possible class labels or
 regression values whereas non-probabilistic approaches will only return the most likely class label or value.
 Continuing 
-Generative algorithms, such as Naive Bayes, seek to model the process by which the output data was generated 
-from the input i.e. learn the joint probability \(p(x,y)\) and make predictions on that basis via Baye's Theorem (see \ref{eq:bayes}) 
+Generative algorithms, such as Naive Bayes or restricted Boltzmann machines, 
+seek to model the process by which the output data was generated 
+from the input i.e. learn the joint probability \(p(x,y)\) and make predictions on that basis via Baye's Theorem (see \ref{eq:bayes}).
 
 \[
-    p(x,y) = p(x|y)p(x) = p(y|x)p(y)
-    p(y|x) = \frac{p(x,y)}{p(y)}
-    p(y|x) = \frac{p(x|y)p(y)}{p(x)}
+    p(x,y) = p(y|x)p(x) 
+    p(x,y) = p(x|y)p(y)
+    p(y|x)p(x) = p(x|y)p(y)
+    p(y|x) = \frac({p(x|y)p(y)}{p(x)}
     \label{eq:bayes}
 \]
 
 Whereas, discriminative classifiers, such as logistic regression/linear classifiers,
-model the posterior probability \(p(y|x)\) directly or just learn mappings in the case of non-probabilistic approaches.
-In other words, for classification problems a generative model would determine the statistical distribution of 
+model the posterior probability \(p(y|x)\)\footnote{strictly
+    in cases of bayesian inference this would actually be likelihood
+    as the posterior would be over the parameters i.e. \(p(w|Y,X)\) (where \(Y\) and \(X\) are the whole
+dataset and \(w\) the parameters).}.
+In other words, for classification problems a generative model would determine the statistical distribution of
 individual classes whereas discriminative models would just determine the boundaries between them.
 Generative models often perform better on small training sets by preventing overfitting with discriminative
 classifiers performing better as the training set grows \citep{Ng2002}.
@@ -1179,15 +1195,15 @@ classifiers performing better as the training set grows \citep{Ng2002}.
 Support Vector Machines (SVMs) are a type of sparse kernel maximum-margin supervised classification algorithm.
 With the innovation of the kernel trick in 1992 \citep{Boser1992} and soft-margins in 1993 (not published until \citep{Cortes1995}) SVMs have been 
 among the most successfully applied classification algorithms \citep{Fernandez-Delgado2014}.
-Only relatively recently have they begun to lose ground to the deep-learning methods such as deep-convolutional neural networks (e.g. LeNet \citep{LeCunn1998}) exemplified 
-by the defeat of SVMs by the LeNet on the MNIST digit recognition dataset \citep{Hinton2006,Bengio2007} \citep{Bengio2013}
+Only relatively recently have they begun to lose ground to the deep learning methods such as deep convolutional neural networks (e.g. LeNet \citep{LeCunn1998}) exemplified 
+by the defeat of SVMs by the LeNet on the MNIST digit recognition dataset \citep{Hinton2006,Bengio2007,Bengio2013}.
 
 The goal of SVMs is to learn a hyperplane which separates two sets of labels in the dataset. Note, for multiclass classification a series of one-vs-all
 classifiers are typically trained (that is for \(K\) classes, \(K\) SVMs are trained each classifying between a label \(k\) and all other labels).
 However, not all possible hyperplanes that could separate the labels will necessarily generalise well to novel data (and this generalisation
 is the ultimate goal of supervised learning).  Therefore, it is necessary to determine a way to select the hyperplane which should generalise best and to do
 this in a manner that will be relatively efficient especially with high dimension datasets.  This optimal hyperplane for separable classes can be demonstrated to be
-the hyperplane which maximise the margin between the two classes \citep{vapnik1982estimation} in other words, the optimal boundary is the one that has the largest
+the hyperplane which maximises the margin between the two classes \citep{vapnik1982estimation}. In other words, the optimal boundary is the one that has the largest
 possible distance from each class (while still separating them).  Conceptually, the positioning of this boundary is only dependent
 on the relatively small subset of the training data \(\mathcal{D}\) that is near the boundary and it would be inefficient to consider all points when
 placing the decision boundary.  For this reason, SVMs can define the decision boundary in terms of the namesake support vectors and can reformulate
@@ -1215,7 +1231,7 @@ The 2nd major enhancement of SVMs is that of soft-margins \citep{Cortes1995}. So
 if doing so would increase the size of the margin that can be generated.  Specifically, a user defined penalty constant \(C\) is specified and 
 added to the cost function penalising the degree of misclassification \(\xi\), e.g.:
 
-\[argmin_{theta} J(\theta) = \frac{1}{2} ||\theta||^{2}  + C \sum^{n}_{i=1} \xi_{i} s.t. y_{i}(\theta x_{i}) \geq 1 - \xi_{i} \forall i\]
+\[argmin_{\theta} J(\theta) = \frac{1}{2} ||\theta||^{2}  + C \sum^{n}_{i=1} \xi_{i} s.t. y_{i}(\theta x_{i}) \geq 1 - \xi_{i} \forall i\]
 
 This can improve robustness to outlier data and generally improve generalisability by keeping the margin as large as possible.
 
@@ -1503,7 +1519,7 @@ Phylogenetic accuracy is usually considered in terms of consistency (as data inc
 occur), and robustness (how sensitive is the phylogeny to violation of assumptions in reconstruction) \citep{Nabhan2012}
 Typically, sequence sampling will be conducted from the basis of a single
 seed sequence which will be used to query existing databases using alignment 
-tools such as BLAST and HMMs (explained in \ref{nextsection}) to attempt to discover
+tools such as BLAST and HMMs (explained below) to attempt to discover
 potentially homologous sequences from different organisms.  
 
 
@@ -1512,18 +1528,18 @@ of conflicting phylogenetic signals, inadequate rate of evolution to resolve rel
 of interest, and violations of assumptions e.g. expectation of a uniform distribution of traits \citep{Nabhan2012}.
 
 
-Generally, increased taxon sampling has a strong positive effect on phylogenetic accuracy \citep{Zwickl2002}
-however, it can also lead to a situation where there are too many sequences to efficiently
+Generally, increased taxon sampling has a strong positive effect on phylogenetic accuracy \citep{Zwickl2002}.
+However, it can also lead to a situation where there are too many sequences to efficiently
 reconstruct a phylogeny.
 However, care care must also be taken not to unintentionally bias datasets by removing 
 any sequences that are considered ``problematic'' especially when conflicting phylogenetic signal
 or model violations can be biologically informative.  Therefore, it is usually necessary to include
-borderline error-generating sequences within a phylogeny initially and to iteratively remove them
-and repeat the phylogenetic inference.  Unfortunately, the reduction of the input sequences
+borderline error-generating sequences within a phylogeny initially and to iteratively remove them 
+before repeating the phylogenetic inference.  Unfortunately, the reduction of the input sequences
 to a representative subset by heuristics and/or naive clustering can generate
 biases of their own.  However, tools exist that utilise taxonomic database 
-information to automatically a subset of specified cardinality of sequences 
-that display the maximium possible taxonomic diversity for that subset size \citep{Zhou2014}.
+information to automatically find a set of sequences of a specified cardinality 
+which display the maximium possible taxonomic diversity for that set size \citep{Zhou2014}.
 
 
 Another source of bias in sequence sampling is the usually heuristic choice
@@ -1533,15 +1549,15 @@ organisms to form an outgroup. If this outgroup is correctly recovered (monophyl
 it and the other sequences in the phylogeny \citep{Yang2012}.  
 However, choice of outgroup can change implications which may be drawn from
 a phylogeny regardless of methodology used to infer it \citep{Milinkovitch1996}.
-and care must be taken to ensure the selected outgroup doesn't actively
+Care must be taken to ensure the selected outgroup doesn't actively
 distort the accuracy of inference of the rest of the phylogeny regardless
 of the issue of root placement \citep{Milinkovitch1998}.
 
 The two principal ways in which putatively homologous sequences are identified in
 sequence databases are those based upon Basic Local Alignment Search Tool (BLAST) and
 its variants and Hidden-Markov Model based approaches (HMM).
-We seek a way of identifying and aligning homologous sequences in 
-a target sequence database with our query sequence.
+Essentially these methods identify and aligning homologous sequences in 
+a target sequence database to our query sequence.
 
 %
 %\subsubsection{BLAST}
@@ -1616,35 +1632,35 @@ evolutionarily homologous residues occupy the same column. In other words,
 any given column in the alignment theoretically should contain amino acid or nucleotide residues
 that derive from the same common ancestor and have evolved in each sequence lineage.
 It is also possible that insertion or deletion events have taken place
-and a particular residue is absent in the ancestral node or a sequence lineage.
+and a particular residue is absent in the ancestral node or sequence lineage.
 
 This is a non-trivial computational problem which has been proven to have an NP-complete
 \footnote{A decision problem for which an answer can be verified in polynomial time 
-    by a non-deterministic turing machine and to and from which any NP-hard problem
+    by a non-deterministic Turing machine and to and from which any NP-hard problem
     can be translated \citep{Karp1972}.} computational complexity \citep{Wang1994}.
 Specifically, the optimal alignment of N sequences has a complexity of \(O(L^{N})\)
 for \(N\) sequences of length \( L \)\citep{Sievers2011}.
 
 Due to this complexity, the majority of MSA algorithms implement heuristic approaches
-in order to get, if not the optimal solution, but a sufficiently good one in a reasonable
+in order to get, if not the optimal solution, a sufficiently good one in a reasonable
 amount of time. 
 
 Typically, MSA algorithms start by generating the sets of all pairwise alignments
 using established pairwise alignment algorithms.
 Pairwise alignment algorithms are almost all based upon a
 pair of ``Ur-algorithms'' with different goals: 
-Needleman-Wunsch, a global alignment algorithms (which attempt to maximise 
+Needleman-Wunsch, a global alignment algorithms (which attempts to maximise 
 alignment quality over entire sequence lengths) \citep{Needleman1970} and Smith-Waterman, 
-a local alignment algorithms (which are optimised towards producing high quality alignments
-in sub-strings) \citep{Smith1981}.  While early, MSA algorithms were typically
+a local alignment algorithm (which is optimised towards producing high quality alignments
+in sub-strings) \citep{Smith1981}.  While early MSA algorithms were typically
 largely derived from Needleman-Wunsch most modern algorithms seek to combine 
 optimisation of local and global alignments.  The distances used in these
 pairwise alignments will typically be ``scored'' based upon which matches or 
 alignments are more frequent substituions (e.g. Leucine and its isomer Isoleucine 
 or Adenine to its fellow purine base Guanine (transition)) 
-are positively scored and gaps (extension of a gap is typically
-less penalised than creating a gap) or unlikely changes (e.g. the transversion
-of Adenine to Cytosine or Glutamine to Cysteine) penalised.
+are positively scored.   Alternatively, gaps 
+(extension of a gap is typically less penalised than creating a gap) or unlikely changes (e.g. the transversion
+of Adenine to Cytosine or Glutamine to Cysteine) are penalised.
 This will generally be codified in a substitution matrix e.g. the PAM \citep{Dayhoff1978}, 
 BLOSUM \citep{Henikoff1992} amino acid matrices and their numerous subsequent
 derivations and improvements. 
@@ -1652,8 +1668,9 @@ derivations and improvements.
 
 The mostly widely heuristic used to go from these series of pair-wise alignments to
 a useful MSA is that of progressive-alignment \citep{Feng1987} (implemented in 
-tools such as CLUSTAL W \citep{Thompson1994}) in which the pairwise alignment
-scores are built into a distance matrix summarising the relative divergence of 
+tools such as CLUSTAL W \citep{Thompson1994}).  This involves building the 
+pairwise alignment scores into a distance matrix which summarises 
+the relative divergence of 
 each pair of sequences. From this matrix a ``guide-tree'' is generated using simple
 neighbour-joining methods (in which a tree is built by recursively clustering
 the least dissimilar sequences \citep{Saitou1987}).  Sequences are then progressively
@@ -1662,20 +1679,21 @@ This drastically reduces the \(O(L^{N})\) complexity to approximately \(O(N^{2})
 \citep{Sievers2011}. While there have been various improvements and alternative approaches
 created such as merging both local and global alignment \citep{Notredame2000}, 
 rapid identification of homologous regions using Fast Fourier Transforms \citep{Katoh2002},
-iterative refinement of alignments \citep{Edgar2004a} and use of Hidden-Markov Models \citep{Eddy1995}
+iterative refinement of alignments \citep{Edgar2004a} and use of Hidden-Markov Models \citep{Eddy1995}.
 
 
 There have been compelling arguments as early as 1991 that MSA in isolation from
 phylogenetic inference is inherently flawed as the consideration of 
 evolutionary processes (only really done during phylogenetic inference) 
 is key in the objective weighting and assessment of potential alignments \citep{Thorne1991}.
-Therefore, the phylogeny and MSA should be jointly inferred \citep{Thorne1991,Redelings2005,Bouchard-Cote2013}
+Therefore, the phylogeny and MSA should be jointly inferred \citep{Thorne1991,Redelings2005,Bouchard-Cote2013}.
 This approach also minimises the risk of conscious or subconscious researcher bias 
 towards alignments and subsequent phylogenies that support their pre-conceived ideas.
 This approach has been attempted using interesting probabilistic programming approaches
-i.e. BALI-phy \citep{Suchard2006}, however, it is still far too
-slow a process to infer phylogenies in this manner on large or even moderate datasets.
-Therefore, for now, independent MSA estimation is here to stay, at least until
+i.e. BALI-phy \citep{Suchard2006}. Unfortunately, it is still far too
+slow a process to infer phylogenies in this manner on large or even moderately
+sized datasets.  This means, that for now, independent MSA estimation is here to stay, 
+at least until
 computational resources and algorithmic development has continued until these more
 theoretically satisfying approaches become feasible.  
 
@@ -1720,21 +1738,22 @@ manually using the graphical tool Seaview \citep{Gouy2010}.
 \subsection{Substitution model selection}
 
 While the simplest means of phylogenetic inference - parsimony i.e. finding
-the tree that requires the fewest sequence changes does not require any explicit
+the tree that requires the fewest sequence changes - does not require any explicit
 model of sequence evolution, all other means of phylogenetic inference do \citep{Le2008}.
 
 
-A substitution model is in its simplest sense the same as the PAM and BLOSUM
+A substitution model is, in its simplest sense, the same as the PAM and BLOSUM
 matrices used in pairwise and MSA.  They are a means of scoring and weighting
-the significance of different character changes, is an A to a G a more evolutionarily
-rare state change than an A to a T for example.
+the significance of different character changes e.g. is an A to a G a more evolutionarily
+rare state change for a given dataset than an A to a T.
 
 Substitution models typically assume neutrality, independence and finite sites.
-With the probability of substitution rates having an independently identical distribution (i.i.d) \citep{Hasegawa1985}
+With the probability of substitution rates having an independent and identically
+distribued (i.i.d) \citep{Hasegawa1985}.
 This measure of distance can be naive models where rates of change between character
 states and the frequency of each state is equal (e.g. \(p(x \rightarrow y) \forall x \forall y \in {G,C,T,A} \text{where} x\neq y\)
 \citep{jukes1969evolution}) to models fully parameterised in terms of character frequency and rates of change by the masked alignment 
-(e.g. the generalised time-reversible (GTR) model \citep{Tavare1986})
+(e.g. the generalised time-reversible (GTR) model \citep{Tavare1986}).
 %
 %\begin{figure}
 %    \[
@@ -1795,14 +1814,14 @@ categories of equal probability \citep{Yang1994a}.
 A more limited version of this is the invariant sites model in which sites are divided into 2 classes, one considered invariable while the 
 other has normal substitution rates applied\footnote{
     This can also be used with \(\Gamma\) and is approximately equivalent
-to the addition of another discrete \(\Gamma\) category}\citep{Hasegawa1985}.
+to the addition of another discrete \(\Gamma\) category.}\citep{Hasegawa1985}.
 
 
 
 Unfortunately, these models still assume other model parameters namely the equilibrium frequencies and relative rates are the same across
 sites (but just scaled).  
 However, some models have been proposed with multiple rate matrices \citep{Lartillot2004} and 
-state frequency can be defined at each site \citep{Bruno1996} but needs lots of taxa \citep{Lartillot2004}
+state frequencies can be defined at each site \citep{Bruno1996} but needs lots of taxa \citep{Lartillot2004}.
 An alternative to this is the CAT model which a mixture model mixture model with 
 K classes each containing a different state frequency.  If \(K=N\) then this is
 the same as Bruno's model however, generally \(K < N\).  A 
@@ -1822,7 +1841,7 @@ known as heterotachy) especially when large numbers of divergent taxa are includ
 in a masked alignment.  One model modification which attempts to control 
 for this is that of the covarion model.  It allows sites to switch between
 on and off using an infinite mixture model.  The proportion of on and off sites
-is determined at each site \citep{Zhou2010} 
+is determined at each site \citep{Zhou2010}.
 
 
 
@@ -1832,7 +1851,7 @@ artefacts such as long-branch attraction (LBA)\footnote{
     LBA is a distorting effect in which long branches (rapidly diverging)
     are incorrectly placed close to one another regardless of actual shared
     homology.  This is due to the increased chance of rapidly diverging sequences
-to share independently acquired residues \citep{Bergsten2005}}
+to share independently acquired residues \citep{Bergsten2005}.}
 \citep{Yang1996}.
 
 However, in the grand tradition of
@@ -1854,7 +1873,7 @@ phylogenetic inference of DNA datasets.
 
 \subsection{Phylogenetic inference}
 
-The simplest phylogenetic inferences are that of distance matrix methods.
+The simplest phylogenetic inferences are those of distance matrix methods.
 Distance matrix methods \citep{Fitch1967} work on the basis of generating 
 a matrix representing the pairwise distances of each sequence using the selected
 substitution model and inferring a phylogeny from this.  The simplest case
@@ -1877,9 +1896,9 @@ It works on the assumption that the true tree has the smallest expected length (
 fast simple agglomerative algorithm.  NJ is one of the best distance methods and 
 is more reliable than maximum-parsimony which can be asymptotically inconsistent
 While already efficient (possibly efficient as possible) NJ can be made more efficient 
-using effective heuristics to search tree space \citep{Kumar1996}
+using effective heuristics to search tree space \citep{Kumar1996}.
 As well as improvements where variance is minimised instead of pure distance improving performance in datasets with high
-substitution rates e.g. BIONJ \citep{Gascuel1997}
+substitution rates e.g. BIONJ \citep{Gascuel1997}.
 
 Distance methods are very fast but can perform
 very poorly for divergent sequences with large sampling errors as they don't generally account for variance in 
@@ -1898,7 +1917,7 @@ It also fails when multiple substitutions have occurred at the same site or with
 and therefore is especially prone to long-branch attraction
 \citep{Felsenstein1978}.
 Prestige of parsimony methods declined with discoveries that they can produce statistically inconsistent
-phylogenies \citep{Felsenstein2001}
+phylogenies \citep{Felsenstein2001}.
 
 A majority consensus tree will typically be presented with each node
 annotated with the number of bootstrapped trees that supported its existence.
@@ -1911,7 +1930,7 @@ for the data i.e. MLE of \(L(\tau, \theta_l, \theta_\mu)\).
 
 These MLEs are estimated numerically using standard iterative optimisation algorithms.
 They were developed relatively early in molecular phylogenetics using relatively
-simple models \citep{neyman1971molecular} but more efficient implementations e.g. \citep{Felsenstein1981}
+simple models \citep{neyman1971molecular} but more efficient implementations, e.g. \citep{Felsenstein1981},
 and increased computational power has made them one of the more popular means
 for phylogenetic inference.
 %Additionally, MLE are proven consistent \citep{Wald1949} but the due to the complexity of phylogenetic inference
@@ -1921,22 +1940,23 @@ Generally, an ML approach will sequentially perturb a starting tree topology (of
 using branch swapping operations such as Nearest-Neighbour Interchanges (NNI)
 or Subtree-Prune-and-Regraph (SPR) where whole subtrees are removed and reattached to a different part of tree. 
 SPR is slower but less prone to get caught in local optima than NNI and thus will
-lead to higher likelihood phylogenies overall \citep{Criscuolo2011}
-Expectation-maximisation can then be used to find the MLE for branch length and model parameter.
+lead to higher likelihood phylogenies overall \citep{Criscuolo2011}.
+Expectation-maximisation can then be used to find the MLE for branch length and model parameters.
 For example, PhyML uses an initial BIONJ and standard hill-climbing which perturbs topology and branch lengths simultaneously 
 
 
 The advantage of ML approaches is that they have explicit model assumptions (which can therefore be tested), are relatively robust to model
-misspecification, are relatively efficient in a phylogenetic sense, and can make use of sophisticated evolutionary models and thus compensate
-for many pathological data features (heterotachy, state and rate heterogeneity within and across sites).
+misspecification, are relatively efficient in a phylogenetic sense, and can make use of sophisticated evolutionary models.
+They can thus compensate
+for many pathological data features (heterotachy, state and rate heterogeneity within and across sites)
 \citep{Yang2012}. Almost all published phylogenies are Bayesian or ML (or ideally both) for this reason.
 %LRTs can examine fit for evolutionary models: \(2ln(\frac{L_{1}}{L_{0}})\) \citep{Goldman1987}
 Unfortunately, ML inference is also relatively slow to calculate especially in comparison to distance methods.
 
 In order to get an estimate for the robustness of a particular phylogenetic ML
-inference, the masked alignment can be repeatedly resampled (boostrap samples)
+inference, the masked alignment can be repeatedly resampled (bootstrap samples)
 with replacement and phylogenies regenerated.  Each node can then be scored
-based on the proportion of these boostrap samples in which it is recapitulated \citep{Felsenstein1985}. 
+based on the proportion of these bootstrap samples in which it is recapitulated \citep{Felsenstein1985}. 
 A similar approach, known as jackknifing,
 uses random subsets of the alignment instead of samples \citep{Miller1974,Lapointe1994}.
 Finally, approximate likelihood-ratio tests (aLRT) can be used on branches
@@ -1979,8 +1999,8 @@ sensitive to model violations and have been found to not be very conservative es
 \citep{Simmons2003} (although again there has been considerable work comparing
 Bootstraps to PP \citep{Anisimova2006}).
 Additionally, the prior distribution in Bayesian Inference allows information
-that is already known about the dataset to effectively built-in to the inference
-potentially improving phylogenetic accuracy.
+that is already known about the dataset to effectively be built-in to the inference.
+This potentially improves phylogenetic accuracy.
 
 All in-depth individual phylogenetic analyses presented in this thesis
 were inferred using both Bayesian (via MrBayes3 \citep{Huelsenbeck2001,Ronquist2003a,Ronquist2012})
@@ -1991,6 +2011,7 @@ support values on each node inferred using both methodologies.
 \section{Informatics languages and hardware}
 
 \subsection{Languages and Libraries} 
+
 Several programming languages and a range of libraries were used throughout this PhD depending
 on the suitability of a particular tool for a task.
 The full details of the specific tools used for the main analyses are outlined during the description
