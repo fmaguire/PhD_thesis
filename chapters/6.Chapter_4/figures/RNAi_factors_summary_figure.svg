@@ -9,8 +9,8 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="744.09448819"
-   height="1052.3622047"
+   width="277.66873"
+   height="257.05408"
    id="svg28305"
    version="1.1"
    inkscape:version="0.91 r13725"
@@ -22,18 +22,22 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.61809"
-     inkscape:cx="184.50271"
-     inkscape:cy="922.33902"
+     inkscape:zoom="1.1441624"
+     inkscape:cx="318.26554"
+     inkscape:cy="145.86065"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g7221"
      showgrid="false"
      inkscape:window-width="1436"
      inkscape:window-height="843"
      inkscape:window-x="1680"
      inkscape:window-y="36"
      inkscape:window-maximized="0"
-     showguides="false" />
+     showguides="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
   <defs
      id="defs28307" />
   <metadata
@@ -44,14 +48,15 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      id="layer1"
      inkscape:groupmode="layer"
-     inkscape:label="Layer 1">
+     inkscape:label="Layer 1"
+     transform="translate(-19.312498,-11.175802)">
     <text
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
@@ -60,7 +65,7 @@
        id="text3793"
        y="246.0229"
        x="159.58961"
-       style="font-size:11px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-style:normal;font-weight:normal;font-size:11px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
          y="246.0229"
          x="159.58961"
@@ -70,7 +75,7 @@
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/path5440.png"
-       style="font-size:11px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-style:normal;font-weight:normal;font-size:11px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        id="flowRoot3878"
        xml:space="preserve"
        transform="translate(-41.910396,-9.8392834)"><flowRegion
@@ -88,7 +93,7 @@
        id="text4075"
        y="995.85388"
        x="437.508"
-       style="font-size:11px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-style:normal;font-weight:normal;font-size:11px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
          y="995.85388"
          x="437.508"
@@ -100,13 +105,13 @@
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
        sodipodi:linespacing="125%"
        id="text3845-2"
-       y="186.45921"
-       x="56.536438"
-       style="font-size:6.83166981px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       y="180.94193"
+       x="55.364761"
+       style="font-style:normal;font-weight:normal;font-size:6.61663342px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
          style="font-style:italic"
-         y="186.45921"
-         x="56.536438"
+         y="180.94193"
+         x="55.364761"
          id="tspan3847-1"
          sodipodi:role="line">Paramecium sexaurelia </tspan></text>
     <text
@@ -115,13 +120,13 @@
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
        sodipodi:linespacing="125%"
        id="text3845-2-7-3"
-       y="142.2238"
-       x="62.56752"
-       style="font-size:6.83166981px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       y="138.09888"
+       x="61.206005"
+       style="font-style:normal;font-weight:normal;font-size:6.61663342px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
          style="font-style:italic"
-         y="142.2238"
-         x="62.56752"
+         y="138.09888"
+         x="61.206005"
          id="tspan3847-1-7-1"
          sodipodi:role="line">Paramecium biaurelia</tspan></text>
     <text
@@ -130,13 +135,13 @@
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
        sodipodi:linespacing="125%"
        id="text3821-9-0-0"
-       y="171.72066"
-       x="57.847397"
-       style="font-size:6.83166981px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       y="166.66728"
+       x="56.634457"
+       style="font-style:normal;font-weight:normal;font-size:6.61663342px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
          style="font-style:italic"
-         y="171.72066"
-         x="57.847397"
+         y="166.66728"
+         x="56.634457"
          id="tspan3823-8-7-7"
          sodipodi:role="line">Paramecium caudatum</tspan></text>
     <text
@@ -145,13 +150,13 @@
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
        sodipodi:linespacing="125%"
        id="text6912"
-       y="201.19617"
-       x="19.165724"
-       style="font-size:6.83166981px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       y="195.21501"
+       x="19.170343"
+       style="font-style:normal;font-weight:normal;font-size:6.61663342px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
          style="font-style:italic"
-         y="201.19617"
-         x="19.165724"
+         y="195.21501"
+         x="19.170343"
          id="tspan6914"
          sodipodi:role="line">Paramecium multimicronucleatum</tspan></text>
     <text
@@ -160,13 +165,13 @@
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
        sodipodi:linespacing="125%"
        id="text3845-2-3"
-       y="156.9821"
-       x="53.093918"
-       style="font-size:6.83166981px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       y="152.39264"
+       x="52.030602"
+       style="font-style:normal;font-weight:normal;font-size:6.61663342px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
          style="font-style:italic"
-         y="156.9821"
-         x="53.093918"
+         y="152.39264"
+         x="52.030602"
          id="tspan3847-1-2"
          sodipodi:role="line">Paramecium primaurelia</tspan></text>
     <text
@@ -175,20 +180,20 @@
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
        sodipodi:linespacing="125%"
        id="text7442"
-       y="127.50498"
-       x="59.231735"
-       style="font-size:6.83166981px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       y="123.84335"
+       x="57.97522"
+       style="font-style:normal;font-weight:normal;font-size:6.61663342px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
          style="font-style:italic"
-         y="127.50498"
-         x="59.231735"
+         y="123.84335"
+         x="57.97522"
          id="tspan7444"
          sodipodi:role="line">Paramecium tetaurelia</tspan></text>
     <flowRoot
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/path5440.png"
-       style="font-size:11px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-style:normal;font-weight:normal;font-size:11px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        id="flowRoot7822"
        xml:space="preserve"
        transform="translate(-41.910396,-9.8392834)"><flowRegion
@@ -210,13 +215,13 @@
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
        sodipodi:linespacing="125%"
        id="text7442-1"
-       y="112.76642"
-       x="63.594933"
-       style="font-style:normal;font-weight:normal;font-size:6.83166981px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       y="109.56871"
+       x="62.20108"
+       style="font-style:normal;font-weight:normal;font-size:6.61663342px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
          style="font-style:italic"
-         y="112.76642"
-         x="63.594933"
+         y="109.56871"
+         x="62.20108"
          id="tspan7444-4"
          sodipodi:role="line">Paramecium bursaria</tspan></text>
     <text
@@ -228,7 +233,7 @@
        id="text9621-1"
        y="-249.57545"
        x="258.95718"
-       style="font-size:7.21509981px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-style:normal;font-weight:normal;font-size:7.21509981px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
          y="-249.57545"
          x="258.95718"
@@ -242,7 +247,7 @@
        id="text15804"
        y="-9.9770985"
        x="659.0896"
-       style="font-size:11px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-style:normal;font-weight:normal;font-size:11px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
          y="-9.9770985"
          x="659.0896"
@@ -256,7 +261,7 @@
        id="text15877"
        y="51.772907"
        x="527.3396"
-       style="font-size:11px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-style:normal;font-weight:normal;font-size:11px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
          y="51.772907"
          x="527.3396"
@@ -271,7 +276,7 @@
        id="text9694-8"
        y="-276.01242"
        x="244.88496"
-       style="font-size:6.83166981px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-style:normal;font-weight:normal;font-size:6.83166981px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
          y="-276.01242"
          x="244.88496"
@@ -281,7 +286,7 @@
        id="text10146"
        y="10.022898"
        x="236.08961"
-       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
          y="10.022898"
          x="236.08961"
@@ -296,103 +301,75 @@
        id="text9694"
        y="-256.94501"
        x="309.14084"
-       style="font-size:6.83166981px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-style:normal;font-weight:normal;font-size:6.83166981px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
          y="-256.94501"
          x="309.14084"
          id="tspan9696"
          sodipodi:role="line" /></text>
-    <path
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-450.98288,82.365712)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-51"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="140.96025"
+       cy="107.74333"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-450.98288,97.104266)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-51-1"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="140.96025"
+       cy="122.01797"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-450.98288,111.82113)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-51-7"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="140.96025"
+       cy="136.27159"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-450.98288,126.58139)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-51-3"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="140.96025"
+       cy="150.56726"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-450.98288,141.31995)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-51-5"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="140.96025"
+       cy="164.8419"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-450.98288,156.05851)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-51-1-0"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="140.96025"
+       cy="179.11655"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-450.98288,170.79547)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-51-1-0-8"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="140.96025"
+       cy="193.38963"
+       r="4.5348868" />
     <text
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
@@ -400,105 +377,77 @@
        transform="matrix(0.25881905,0.96592583,-0.96592583,0.25881905,0,0)"
        sodipodi:linespacing="125%"
        id="text5895"
-       y="-183.3391"
-       x="142.08034"
-       style="font-style:normal;font-weight:normal;font-size:6.83166981px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       y="-178.06436"
+       x="138.10529"
+       style="font-style:normal;font-weight:normal;font-size:6.61663342px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
-         y="-183.3391"
-         x="142.08034"
+         y="-178.06436"
+         x="138.10529"
          id="tspan5897"
          sodipodi:role="line">Rdr3</tspan></text>
-    <path
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-377.47563,82.365712)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-2-61"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="212.15376"
+       cy="107.74333"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-377.47563,97.104266)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-2-61-2"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="212.15376"
+       cy="122.01797"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-377.47563,111.82113)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-2-61-9"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="212.15376"
+       cy="136.27159"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-377.47563,126.58139)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-2-61-92"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="212.15376"
+       cy="150.56726"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-377.47563,141.31995)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-2-61-3"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="212.15376"
+       cy="164.8419"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-377.47563,156.05851)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-2-61-2-1"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="212.15376"
+       cy="179.11655"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-377.47563,170.79547)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-2-61-2-1-8"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="212.15376"
+       cy="193.38963"
+       r="4.5348868" />
     <text
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
@@ -506,12 +455,12 @@
        transform="matrix(0.25881905,0.96592583,-0.96592583,0.25881905,0,0)"
        sodipodi:linespacing="125%"
        id="text6469-0"
-       y="-211.74194"
-       x="149.6485"
-       style="font-style:normal;font-weight:normal;font-size:6.83166981px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       y="-205.5732"
+       x="145.43523"
+       style="font-style:normal;font-weight:normal;font-size:6.61663342px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
-         y="-211.74194"
-         x="149.6485"
+         y="-205.5732"
+         x="145.43523"
          id="tspan6471-7"
          sodipodi:role="line">Rdr2</tspan></text>
     <circle
@@ -519,92 +468,64 @@
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
        id="path5168-99-1-5-1-8-2-8-8-9"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       transform="matrix(0.58859795,0,0,0.58859795,-348.07274,82.365712)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:type="arc"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="240.63115"
+       cy="107.74333"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-348.07274,97.104266)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-8-9-8"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="240.63115"
+       cy="122.01797"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-348.07274,111.82113)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-8-9-1"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="240.63115"
+       cy="136.27159"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-348.07274,126.58139)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-8-9-0"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="240.63115"
+       cy="150.56726"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-348.07274,141.31995)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-8-9-3"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="240.63115"
+       cy="164.8419"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-348.07274,156.05851)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-8-9-8-7"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="240.63115"
+       cy="179.11655"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-348.07274,170.79547)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-8-9-8-7-7"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="240.63115"
+       cy="193.38963"
+       r="4.5348868" />
     <text
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
@@ -612,12 +533,12 @@
        transform="matrix(0.25881905,0.96592583,-0.96592583,0.25881905,0,0)"
        sodipodi:linespacing="125%"
        id="text4147-4"
-       y="-198.18974"
-       x="137.49765"
-       style="font-style:normal;font-weight:normal;font-size:6.83166981px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       y="-192.44757"
+       x="133.66684"
+       style="font-style:normal;font-weight:normal;font-size:6.61663342px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
-         y="-198.18974"
-         x="137.49765"
+         y="-192.44757"
+         x="133.66684"
          id="tspan4149-4"
          sodipodi:role="line">Ptiwi14</tspan></text>
     <circle
@@ -625,365 +546,253 @@
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
        id="path5168-99-1-5-1-8-2-54-3-7"
-       style="fill:#141414;fill-opacity:0.58823532;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       transform="matrix(0.58859795,0,0,0.58859795,-362.77419,82.365712)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:type="arc"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001" />
-    <path
+       style="fill:#141414;fill-opacity:0.58823529;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="226.39246"
+       cy="107.74333"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-362.77419,97.104266)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-54-3-7-3"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="226.39246"
+       cy="122.01797"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-362.77419,111.82113)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-54-3-7-1"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="226.39246"
+       cy="136.27159"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-362.77419,126.58139)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-54-3-7-5"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="226.39246"
+       cy="150.56726"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-362.77419,141.31995)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-54-3-7-38"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="226.39246"
+       cy="164.8419"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-362.77419,156.05851)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-54-3-7-3-1"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="226.39246"
+       cy="179.11655"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-362.77419,170.79547)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-54-3-7-3-1-1"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="226.39246"
+       cy="193.38963"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-436.28142,82.365712)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-9-7-5"
-       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="155.19897"
+       cy="107.74333"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-436.28142,97.104266)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-9-7-5-5-3"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="155.19897"
+       cy="122.01797"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-436.28142,126.58139)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-9-7-5-5-9"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="155.19897"
+       cy="150.56726"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-436.28142,111.82113)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-9-7-5-5-9-69"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="155.19897"
+       cy="136.27159"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-436.28142,156.05851)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-9-7-5-5-9-7"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="155.19897"
+       cy="179.11655"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-436.28142,141.31995)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-9-7-5-5-9-3"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="155.19897"
+       cy="164.8419"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-436.28142,170.79547)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-9-7-5-5-9-8-7"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="155.19897"
+       cy="193.38963"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-421.57997,82.365712)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-9-7-94"
-       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="169.43767"
+       cy="107.74333"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-421.57997,97.104266)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-9-7-94-8-03"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="169.43767"
+       cy="122.01797"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-421.57997,126.58139)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-9-7-94-8-5"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="169.43767"
+       cy="150.56726"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-421.57997,111.82113)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-9-7-94-8-5-01"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="169.43767"
+       cy="136.27159"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-421.57997,156.05851)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-9-7-94-8-5-75"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="169.43767"
+       cy="179.11655"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-421.57997,141.31995)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-9-7-94-8-5-2"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="169.43767"
+       cy="164.8419"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-421.57997,170.79547)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-9-7-94-8-5-90-7"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="169.43767"
+       cy="193.38963"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-406.87852,82.365712)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-9-7-8"
-       style="fill:#141414;fill-opacity:0.58823532;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#141414;fill-opacity:0.58823529;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="183.67638"
+       cy="107.74333"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-406.87852,97.104266)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-9-7-8-5-63"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="183.67638"
+       cy="122.01797"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-406.87852,126.58139)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-9-7-8-5-3"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="183.67638"
+       cy="150.56726"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-406.87852,111.82113)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-9-7-8-5-3-4"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="183.67638"
+       cy="136.27159"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-406.87852,156.05851)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-9-7-8-5-3-0"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="183.67638"
+       cy="179.11655"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-406.87852,141.31995)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-9-7-8-5-3-36"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="183.67638"
+       cy="164.8419"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-406.87852,170.79547)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-9-7-8-5-3-54-4"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="183.67638"
+       cy="193.38963"
+       r="4.5348868" />
     <text
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
@@ -991,12 +800,12 @@
        transform="matrix(0.25881904,0.96592583,-0.96592583,0.25881904,0,0)"
        sodipodi:linespacing="125%"
        id="text5883"
-       y="-112.5695"
-       x="123.36474"
-       style="font-style:normal;font-weight:normal;font-size:6.83166981px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       y="-109.52235"
+       x="119.97878"
+       style="font-style:normal;font-weight:normal;font-size:6.61663342px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
-         y="-112.5695"
-         x="123.36474"
+         y="-109.52235"
+         x="119.97878"
          id="tspan5885"
          sodipodi:role="line">Cid1</tspan></text>
     <text
@@ -1006,12 +815,12 @@
        transform="matrix(0.25881904,0.96592583,-0.96592583,0.25881904,0,0)"
        sodipodi:linespacing="125%"
        id="text4147-4-6"
-       y="-126.83641"
-       x="126.01337"
-       style="font-style:normal;font-weight:normal;font-size:6.83166981px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       y="-123.34019"
+       x="122.54404"
+       style="font-style:normal;font-weight:normal;font-size:6.61663342px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
-         y="-126.83641"
-         x="126.01337"
+         y="-123.34019"
+         x="122.54404"
          id="tspan4149-4-3"
          sodipodi:role="line">Rdr1</tspan></text>
     <text
@@ -1021,12 +830,12 @@
        transform="matrix(0.25881904,0.96592583,-0.96592583,0.25881904,0,0)"
        sodipodi:linespacing="125%"
        id="text4147-4-6-6"
-       y="-141.02692"
-       x="129.89577"
-       style="font-style:normal;font-weight:normal;font-size:6.83166981px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       y="-137.08403"
+       x="126.30424"
+       style="font-style:normal;font-weight:normal;font-size:6.61663342px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
-         y="-141.02692"
-         x="129.89577"
+         y="-137.08403"
+         x="126.30424"
          id="tspan4149-4-3-3"
          sodipodi:role="line">Psd1</tspan></text>
     <text
@@ -1036,12 +845,12 @@
        transform="matrix(0.25881904,0.96592583,-0.96592583,0.25881904,0,0)"
        sodipodi:linespacing="125%"
        id="text4147-4-6-6-9"
-       y="-155.78467"
-       x="125.077"
-       style="font-style:normal;font-weight:normal;font-size:6.83166981px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       y="-151.37726"
+       x="121.63715"
+       style="font-style:normal;font-weight:normal;font-size:6.61663342px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
-         y="-155.78467"
-         x="125.077"
+         y="-151.37726"
+         x="121.63715"
          id="tspan4149-4-3-3-9"
          sodipodi:role="line">Ptiwi12</tspan></text>
     <text
@@ -1051,107 +860,79 @@
        transform="matrix(0.25881904,0.96592583,-0.96592583,0.25881904,0,0)"
        sodipodi:linespacing="125%"
        id="text4147-4-6-6-9-1"
-       y="-170.08858"
-       x="128.92204"
-       style="font-style:normal;font-weight:normal;font-size:6.83166981px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       y="-165.23093"
+       x="125.36116"
+       style="font-style:normal;font-weight:normal;font-size:6.61663342px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
-         y="-170.08858"
-         x="128.92204"
+         y="-165.23093"
+         x="125.36116"
          id="tspan4149-4-3-3-9-0"
          sodipodi:role="line">Ptiwi15</tspan></text>
-    <path
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-392.17708,82.365712)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-9-7-89"
-       style="fill:#141414;fill-opacity:0.58823532;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#141414;fill-opacity:0.58823529;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="197.91505"
+       cy="107.74333"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-392.17708,97.104266)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-9-7-89-6-30"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="197.91505"
+       cy="122.01797"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-392.17708,126.58139)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-9-7-89-6-8"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="197.91505"
+       cy="150.56726"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-392.17708,111.82113)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-9-7-89-6-8-59"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="197.91505"
+       cy="136.27159"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-392.17708,156.05851)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-9-7-89-6-8-1"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="197.91505"
+       cy="179.11655"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-392.17708,141.31995)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-9-7-89-6-8-35"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="197.91505"
+       cy="164.8419"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-392.17708,170.79547)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-9-7-89-6-8-72-7"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="197.91505"
+       cy="193.38963"
+       r="4.5348868" />
     <flowRoot
-       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none"
        id="flowRoot14339"
        xml:space="preserve"
        transform="translate(-41.910396,-9.8392834)"><flowRegion
@@ -1163,7 +944,7 @@
            id="rect14343" /></flowRegion><flowPara
          id="flowPara14345" /></flowRoot>    <text
        xml:space="preserve"
-       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none"
        x="581.05066"
        y="422.39029"
        id="text15423"><tspan
@@ -1175,19 +956,19 @@
        id="g7221"
        transform="translate(78.87535,-162.12825)">
       <rect
-         style="fill:none;stroke:#00000f;stroke-width:0.85511047;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.94117647"
+         style="fill:none;stroke:#00000f;stroke-width:0.70623416;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.94117647"
          id="rect14267"
-         width="179.7168"
-         height="58.2421"
-         x="48.431953"
-         y="371.68848"
+         width="126.29714"
+         height="56.530807"
+         x="73.103989"
+         y="365.38306"
          rx="2.6451786"
          inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
          inkscape:export-xdpi="660.70001"
          inkscape:export-ydpi="660.70001"
          ry="2.6451786" />
       <g
-         transform="translate(8.2263772,-10.735996)"
+         transform="matrix(0.96852358,0,0,0.96852358,34.224924,-4.943074)"
          id="g7206">
         <circle
            inkscape:export-ydpi="660.70001"
@@ -1216,50 +997,50 @@
              sodipodi:role="line">Presence of protein</tspan></text>
       </g>
       <text
-         inkscape:transform-center-x="35.355339"
+         inkscape:transform-center-x="34.242479"
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none"
-         x="77.559425"
-         y="386.99048"
+         style="font-style:normal;font-weight:normal;font-size:11.62228298px;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none"
+         x="101.37562"
+         y="380.2644"
          id="text14335-2-8-5"><tspan
            sodipodi:role="line"
            id="tspan14337-6-85-9"
-           x="77.559425"
-           y="386.99048"
-           style="font-size:8px">Absence of protein</tspan></text>
+           x="101.37562"
+           y="380.2644"
+           style="font-size:7.7481885px">Absence of protein</tspan></text>
       <circle
-         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.58859795;stroke-opacity:1"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
          id="path5168-99-1-5-1-8-2-2-61-9-5"
          inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/path5440.png"
          inkscape:export-xdpi="660.70001"
          inkscape:export-ydpi="660.70001"
-         cx="66.384499"
-         cy="384.78345"
-         r="4.6822681" />
+         cx="90.552437"
+         cy="378.12683"
+         r="4.5348873" />
       <circle
-         r="4.6822681"
-         cy="419.58578"
-         cx="66.384499"
-         style="fill:#131313;fill-opacity:0.58823529;fill-rule:nonzero;stroke:#000000;stroke-width:0.58859795;stroke-opacity:1"
+         cy="411.83371"
+         cx="90.552437"
+         style="fill:#131313;fill-opacity:0.58823529;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
          id="path5168-99-1-5-1-8-2-0-9-4-0-89-2-5"
          inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/path5440.png"
          inkscape:export-xdpi="660.70001"
-         inkscape:export-ydpi="660.70001" />
+         inkscape:export-ydpi="660.70001"
+         r="4.5348873" />
       <text
-         inkscape:transform-center-x="35.355339"
+         inkscape:transform-center-x="34.242474"
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none"
-         x="76.926613"
-         y="421.79282"
+         style="font-style:normal;font-weight:normal;font-size:11.62228298px;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none"
+         x="100.76273"
+         y="413.97128"
          id="text14335-2-8-5-5-2"
          inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
          inkscape:export-xdpi="660.70001"
          inkscape:export-ydpi="660.70001"><tspan
            sodipodi:role="line"
            id="tspan14337-6-85-9-4-9"
-           x="76.926613"
-           y="421.79282"
-           style="font-size:8px">Unresolved orthologues</tspan></text>
+           x="100.76273"
+           y="413.97128"
+           style="font-size:7.7481885px">Unresolved orthologues</tspan></text>
     </g>
     <text
        inkscape:export-ydpi="660.70001"
@@ -1268,12 +1049,12 @@
        transform="matrix(0.25881905,0.96592583,-0.96592583,0.25881905,0,0)"
        sodipodi:linespacing="125%"
        id="text9629"
-       y="-254.18964"
-       x="152.22255"
-       style="font-style:normal;font-weight:normal;font-size:6.83166981px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       y="-246.68478"
+       x="147.92825"
+       style="font-style:normal;font-weight:normal;font-size:6.61663342px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
-         y="-254.18964"
-         x="152.22255"
+         y="-246.68478"
+         x="147.92825"
          id="tspan9631"
          sodipodi:role="line">Ptiwi13 </tspan></text>
     <text
@@ -1283,12 +1064,12 @@
        transform="matrix(0.25881905,0.96592583,-0.96592583,0.25881905,0,0)"
        sodipodi:linespacing="125%"
        id="text9625"
-       y="-239.742"
-       x="157.6915"
-       style="font-style:normal;font-weight:normal;font-size:6.83166981px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       y="-232.69191"
+       x="153.22505"
+       style="font-style:normal;font-weight:normal;font-size:6.61663342px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
-         y="-239.742"
-         x="157.6915"
+         y="-232.69191"
+         x="153.22505"
          id="tspan9627"
          sodipodi:role="line">Dcr1</tspan></text>
     <circle
@@ -1296,92 +1077,64 @@
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
        id="path5168-99-1-5-1-8-2-8-1-1"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       transform="matrix(0.58859795,0,0,0.58859795,-318.5934,82.365712)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:type="arc"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="269.18259"
+       cy="107.74333"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-318.5934,97.104266)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-1-1-5"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="269.18259"
+       cy="122.01797"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-318.5934,111.82113)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-1-1-8"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="269.18259"
+       cy="136.27159"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-318.5934,126.58139)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-1-1-4"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="269.18259"
+       cy="150.56726"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-318.5934,141.31995)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-1-1-9"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="269.18259"
+       cy="164.8419"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-318.5934,156.05851)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-1-1-5-4"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="269.18259"
+       cy="179.11655"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-318.5934,170.79547)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-8-1-1-5-4-9"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="269.18259"
+       cy="193.38963"
+       r="4.5348868" />
     <text
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
@@ -1389,12 +1142,12 @@
        transform="matrix(0.25881905,0.96592583,-0.96592583,0.25881905,0,0)"
        sodipodi:linespacing="125%"
        id="text9621"
-       y="-225.94991"
-       x="154.62971"
-       style="font-style:normal;font-weight:normal;font-size:6.83166981px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       y="-219.33394"
+       x="150.25964"
+       style="font-style:normal;font-weight:normal;font-size:6.61663342px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
-         y="-225.94991"
-         x="154.62971"
+         y="-219.33394"
+         x="150.25964"
          id="tspan9623"
          sodipodi:role="line">Cid2</tspan></text>
     <circle
@@ -1402,189 +1155,133 @@
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
        id="path5168-99-1-5-1-8-2-0-0"
-       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       transform="matrix(0.58859795,0,0,0.58859795,-333.29484,82.365712)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:type="arc"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001" />
-    <path
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="254.94389"
+       cy="107.74333"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-333.29484,97.104266)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-0-0-0"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="254.94389"
+       cy="122.01797"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-333.29484,111.82113)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-0-0-7"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="254.94389"
+       cy="136.27159"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-333.29484,126.58139)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-0-0-9"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="254.94389"
+       cy="150.56726"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-333.29484,141.31995)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-0-0-3"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="254.94389"
+       cy="164.8419"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-333.29484,156.05851)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-0-0-0-1"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="254.94389"
+       cy="179.11655"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-333.29484,170.79547)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-0-0-0-1-9"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="254.94389"
+       cy="193.38963"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-303.89195,82.365712)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-9-1"
-       style="fill:#141414;fill-opacity:0.58823532;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#141414;fill-opacity:0.58823529;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="283.4213"
+       cy="107.74333"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-303.89195,97.104266)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-9-1-0"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="283.4213"
+       cy="122.01797"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-303.89195,111.82113)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-9-1-9"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="283.4213"
+       cy="136.27159"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-303.89195,126.58139)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-9-1-92"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="283.4213"
+       cy="150.56726"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-303.89195,141.31995)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-9-1-6"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="283.4213"
+       cy="164.8419"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-303.89195,156.05851)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-9-1-0-0"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
-    <path
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="283.4213"
+       cy="179.11655"
+       r="4.5348868" />
+    <circle
        inkscape:export-ydpi="660.70001"
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-       transform="matrix(0.58859795,0,0,0.58859795,-303.89195,170.79547)"
-       d="m 1020.355,48.447334 a 7.9549513,7.9549513 0 1 1 -15.9099,0 7.9549513,7.9549513 0 1 1 15.9099,0 z"
-       sodipodi:ry="7.9549513"
-       sodipodi:rx="7.9549513"
-       sodipodi:cy="48.447334"
-       sodipodi:cx="1012.4001"
        id="path5168-99-1-5-1-8-2-9-1-0-0-4"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-       sodipodi:type="arc" />
+       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       cx="283.4213"
+       cy="193.38963"
+       r="4.5348868" />
     <text
        sodipodi:linespacing="125%"
        id="text27510"
        y="-58.977097"
        x="681.5896"
-       style="font-size:11px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-style:normal;font-weight:normal;font-size:11px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
          y="-58.977097"
          x="681.5896"
@@ -1592,57 +1289,57 @@
          sodipodi:role="line" /></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:7.02260923px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       x="90.578163"
-       y="-70.240044"
+       style="font-style:normal;font-weight:normal;font-size:6.80156279px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="88.40567"
+       y="-68.210236"
        id="text7119"
        sodipodi:linespacing="125%"
        transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"><tspan
          sodipodi:role="line"
          id="tspan7121"
-         x="90.578163"
-         y="-70.240044">Exogenous dsRNA factors</tspan></text>
+         x="88.40567"
+         y="-68.210236">Exogenous dsRNA factors</tspan></text>
     <path
        sodipodi:nodetypes="cc"
-       style="fill:none;stroke:#000000;stroke-width:1.01267731px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 208.4348,77.734123 -68.31407,0"
+       style="fill:none;stroke:#000000;stroke-width:0.98080188px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 202.48191,75.639105 -66.16379,0"
        id="path7099"
        inkscape:connector-curvature="0" />
     <path
        sodipodi:nodetypes="cc"
-       style="fill:none;stroke:#000000;stroke-width:1.02891433px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 296.45434,77.734123 -53.23559,0"
+       style="fill:none;stroke:#000000;stroke-width:0.99652779px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 287.73091,75.639105 -51.55993,0"
        id="path7099-2-8"
        inkscape:connector-curvature="0" />
     <path
        sodipodi:nodetypes="cc"
-       style="fill:none;stroke:#000000;stroke-width:1.02553725px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 238.09381,77.734118 -24.43315,1e-5"
+       style="fill:none;stroke:#000000;stroke-width:0.99325699px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 231.20736,75.6391 -23.66408,1e-5"
        id="path7099-0"
        inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:7.02260923px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       x="154.77589"
-       y="-107.10858"
+       style="font-style:normal;font-weight:normal;font-size:6.80156279px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="150.58269"
+       y="-103.91829"
        id="text7119-3"
        sodipodi:linespacing="125%"
        transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"><tspan
          sodipodi:role="line"
          id="tspan7121-7"
-         x="154.77589"
-         y="-107.10858">Transgene dsRNA</tspan></text>
+         x="150.58269"
+         y="-103.91829">Transgene dsRNA</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:7.02260923px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       x="188.90599"
-       y="-139.40759"
+       style="font-style:normal;font-weight:normal;font-size:6.80156279px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="183.63849"
+       y="-135.20064"
        id="text7119-3-4"
        sodipodi:linespacing="125%"
        transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"><tspan
          sodipodi:role="line"
          id="tspan7121-7-5"
-         x="188.90599"
-         y="-139.40759">Required by both</tspan></text>
+         x="183.63849"
+         y="-135.20064">Required by both</tspan></text>
   </g>
 </svg>

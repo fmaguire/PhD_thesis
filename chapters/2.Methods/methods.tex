@@ -30,7 +30,7 @@ Specifically:
 Both CCAP cultures (1660/12 and 1660/13) were isolated from the same pond in Cambridge, UK (pers. comm. Undine Achilles-Day CCAP, Oban, Scotland)
 CCAP 1660/12 was the principal culture and all genomic, transcriptomic and metabolomic analyses were conducted using these cultures. 
 Theoretically, these 3 cultures provide us with \textit{Paramecium bursaria} strains harbouring members of 3 of the 4 species of 
-green algal \textit{Paramecium} endosymbiont (see Chapter 1 \ref{chap1} for more details).
+green algal \textit{Paramecium} endosymbiont (see Chapter 1 for more details).
 
 \subsection{Media and Culture conditions}
 All \textit{P. bursaria} and green algae cultures were maintained in 
@@ -301,12 +301,12 @@ These technologies generate huge amounts (on the order of \(10^{6}-10^{9}\) of r
 
 Commercially available 2nd generation platforms include 454's GSLFLX and GSJunior (now Roche),
 Ion Torrent's (now Life Technologies) PGM, Applied Biosystem's (now Life Technologies) SOLiD and Illumina's (formerly Solexa) 
-HiSeq, MiSeq and older Gene Analyzer II \citep{Nederbragt2012}.
+HiSeq, MiSeq and older Gene Analyzer II \citep{Nederbragt2013}.
 
 \begin{figure}
     \includegraphics[width=\textwidth]{illumina_lib_prep.pdf}
-    \label{fig:libprep}
     \caption[Illumina Library Preparation]{A brief overview of library preparation for Illumina modified from \citep{Mardis2008} and Illumina TruSeq kit documentation} 
+    \label{fig:libprep}
 \end{figure}
 
 Although these platforms use a range of different implementations and tend to exhibit various different trade-offs (mainly in terms
@@ -328,9 +328,9 @@ has made both genomic and RNA-Seq analysis and annotation easier and more effect
 
 \begin{figure}
     \includegraphics[width=\textwidth]{illumina_PE_sequencing.pdf}
-    \label{fig:libseq}
     \caption[Paired-end Sequencing]{A brief overview of paired end sequencing in an Illumina flowcell after library preparation, derived
     from \citep{Mardis2008} and Illumina}
+    \label{fig:libseq}
 \end{figure}
 
 While, 2nd generation sequencing has driven down per-base sequencing costs the cost of library preparation 
@@ -375,7 +375,7 @@ Illumina HiSeq platform due to its relative maturity, high-throughput, relativel
 paired-end output making it currently the most amenable platform to effectively
 use \textit{de novo} genomic and transcriptomics approaches.  Additionally, Sanger sequencing
 has been used when accurate targeted sequencing was called for, such as investigating the
-taxonomic distribution of \textit{Paramecium} green algal endosymbionts (see \ref{chap1}).
+taxonomic distribution of \textit{Paramecium} green algal endosymbionts (see Chapter 1).
 
 
 %\subsubsection{Read pre-processing}
@@ -1195,7 +1195,7 @@ classifiers performing better as the training set grows \citep{Ng2002}.
 Support Vector Machines (SVMs) are a type of sparse kernel maximum-margin supervised classification algorithm.
 With the innovation of the kernel trick in 1992 \citep{Boser1992} and soft-margins in 1993 (not published until \citep{Cortes1995}) SVMs have been 
 among the most successfully applied classification algorithms \citep{Fernandez-Delgado2014}.
-Only relatively recently have they begun to lose ground to the deep learning methods such as deep convolutional neural networks (e.g. LeNet \citep{LeCunn1998}) exemplified 
+Only relatively recently have they begun to lose ground to the deep learning methods such as deep convolutional neural networks (e.g. LeNet \citep{LeCun1998}) exemplified 
 by the defeat of SVMs by the LeNet on the MNIST digit recognition dataset \citep{Hinton2006,Bengio2007,Bengio2013}.
 
 The goal of SVMs is to learn a hyperplane which separates two sets of labels in the dataset. Note, for multiclass classification a series of one-vs-all
@@ -1290,7 +1290,7 @@ This is slightly more difficult problem as it lacks an obvious error metric like
 try to discover patterns in datasets.
 
 There are two major groups of unsupervised learning algorithms, the first of which is clustering algorithms
-such as K-means that seeks to partition a dataset into a set of groups (see \ref{fig:kmeans} for more details).
+such as K-means that seeks to partition a dataset into a set of groups (see \cref{fig:kmeans} for more details).
 The other major group of unsupervised algorithms are those used for visualisation and/or
 dimensionality reduction.  Dimensionality reduction is a way of projecting a multidimensional
 dataset into a lower number of dimensions in a way that still corresponds to
@@ -1402,7 +1402,7 @@ to discover the global optimal clusters (can converge to local optima).  This ca
 with different initialisations.
 
 \begin{figure}[h]
-    \includegraphics[width=\textwidth]{knn.pdf}
+    \includegraphics[width=\textwidth]{kmeans.pdf}
     \caption[K-means Clustering]{Demonstration of the K-means algorithm applying 3 rounds of Expectation-Maximisation to cluster
         a group of 2 dimensional samples.  The 3 cluster centroids (represented by coloured rectangles) 
         are randomly initialised in 0 before undergoing 3 rounds of EM.  
@@ -1411,7 +1411,7 @@ and then the movement of the centroids to the center of the points currently ass
 Assignment of a given sample to a centroid is indicated by a shared colouring and centroid relocation by
 an arrow with a faded version showing the initial location.
 }
-    \label{fig:knn}
+    \label{fig:kmeans}
 \end{figure}
 
 \section{Phylogenetics}
@@ -1423,7 +1423,7 @@ well as indicate what the sequence most likely looked like in a shared common
 ancestor (ancestral node reconstruction). Phylogenetic methods also allow estimation
 of evolutionary processes such as selection pressure,
 migration, genome reduction, and horizontal gene transfer.
-In the context of endosymbiosis, phylogenetics can be used to determine evolutionary ancestry of 
+In the contex of endosymbiosis, phylogenetics can be used to determine evolutionary ancestry of 
 the genes recovered in a transcriptome and to aid identification of the likely origin 
 (host, endosymbiont, contaminant) of these transcripts. Additionally, it can pinpoint
 potential horizontal gene transfer events between host and endosymbiont by searching for single 
@@ -1448,7 +1448,7 @@ to more complicated probabilistic estimations based on observed data.
 A character is an element of a sequence such as an individual base or amino acid, homologous 
 characters are those in separate sequences that are descended from a common ancestor.  
 As they were the first molecular sequences easily available much of the early work in molecular phylogenetics
-was conducted using protein sequences e.g. \citep{eck1966atlas,Fitch1967}.
+was conducted using protein sequences e.g. \citep{Eck1966,Fitch1967}.
 
 This phylogenetic estimation can be a non-trivial process (especially with more complex
 measures of relatedness) as the number of
@@ -1821,7 +1821,7 @@ to the addition of another discrete \(\Gamma\) category.}\citep{Hasegawa1985}.
 Unfortunately, these models still assume other model parameters namely the equilibrium frequencies and relative rates are the same across
 sites (but just scaled).  
 However, some models have been proposed with multiple rate matrices \citep{Lartillot2004} and 
-state frequencies can be defined at each site \citep{Bruno1996} but needs lots of taxa \citep{Lartillot2004}.
+state frequencies can be defined at each site \citep{Bruno1996b} but needs lots of taxa \citep{Lartillot2004}.
 An alternative to this is the CAT model which a mixture model mixture model with 
 K classes each containing a different state frequency.  If \(K=N\) then this is
 the same as Bruno's model however, generally \(K < N\).  A 
@@ -1867,7 +1867,7 @@ based approaches \citep{Sullivan2005}.
 
 Throughout this thesis, I will use 2 tools which incorporate these various criteria
 to infer the best fitting model depending on the input data. 
-ProtTest3 \citep{Abascal2005,Darriba2011a} will used for analyses 
+ProtTest3 \citep{Abascal2005,Darriba2011c} will used for analyses 
 involving protein sequences and jModelTest2 \citep{Posada2008,Darriba2012} for
 phylogenetic inference of DNA datasets.
 
@@ -1971,7 +1971,7 @@ It should be noted that all of the above methods of determining phylogenetic rob
 can be applied to distance and parsimony methods as well.
 
 In this work, for high-throughput analyses FastTree2 was due to its considerable 
-greater speed relative to ML inference tools \citep{Price2009,Price2010}.  For individual
+greater speed relative to ML inference tools \citep{Price2010}.  For individual
 phylogenetic analyses ML trees were inferred using RAxML8 \citep{Stamatakis2014} and non-rapid
 bootstrap supports.
 

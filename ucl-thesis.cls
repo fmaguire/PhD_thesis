@@ -1,4 +1,4 @@
-%% -------------------------------------------------------------------
+% -------------------------------------------------------------------
 %  @LaTeX-class-file{
 %     filename        = "ucl-thesis.cls",
 %     version         = "0.5",
@@ -20,7 +20,7 @@
 \RequirePackage{subcaption}
 \RequirePackage{multirow}
 \RequirePackage{booktabs} % for much better looking tables
-\RequirePackage{tabularx}
+\RequirePackage{longtable}
 \RequirePackage[labelfont={sf,bf,small},textfont={sf,small},justification=RaggedRight,margin=0pt, figurewithin=section, tablewithin=section]{caption}
 \RequirePackage{float}
 

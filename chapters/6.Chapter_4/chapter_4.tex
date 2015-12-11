@@ -64,7 +64,7 @@ or transgenes and involve full or near full complementarity \citep{Shabalina2008
 However, there are also piRNA systems involved in germline based transposon silencing \citep{Iwasaki2015}.
 An important ciliate specific system is that of scan RNAs (scnRNAs) which 
 are involved in the elimination of internal eliminated sequences (IESs) during
-macronuclear (MAC) regeneration \citep{Mochizuki2004,Chalker2013}.
+macronuclear (MAC) regeneration \citep{Mochizuki2004,Kiefer2013}.
 
 
 Experimentally, the existence and function of these systems
@@ -257,9 +257,9 @@ CCAP 1660/12 transcriptome and designed based on the \textit{P. bursaria} sequen
 Each insert was cloned into an L4440 vector featuring two convergent T7 promoters
 featuring an ampicillin resistance marker. 
 
-
 \begin{table}
-    \begin{tabular}{|c|c|c|c|c|}
+    \centering
+    \resizebox{\textwidth}{!}{\begin{tabular}{|c|c|c|c|c|}
         \hline
     \textbf{Gene} & \textbf{Function} & \textbf{RNAi phenotype in}      & Vector Design & Reference \\
                   &                   & \textbf{\textit{P. tetaurelia}} &               &           \\
@@ -271,8 +271,8 @@ featuring an ampicillin resistance marker.
         BBS7 & Ciliary ion transport & Fewer, shorter ciliar & 486bp via \textit{Xho}I and \textit{Hind}III & \citep{Valentine2012} \\
         PGM & PGM endonuclease & Post-autogamous cells unable to resume normal growth & 500bp via \textit{Pst}I and \textit{Hind}III & \citep{Baudry2009} \\
         \hline
-    \end{tabular}
-    \caption{Details of RNAi vectors used.  All constructs were cloned into a L4440 vector and used an Ampicillin resistance market}
+\end{tabular}}
+    \caption[Table of RNAi vectors and inserts used]{Details of RNAi vectors used.  All constructs were cloned into a L4440 vector and used an Ampicillin resistance markers.}
     \label{tab:rnai_vecs}
 \end{table}
 
@@ -322,15 +322,19 @@ macronucleus.
 
 Using the canonical seed sequences identified in \textit{P. tetaurelia}
 by \citep{Marker2014} (see \cref{tab:rnai_seeds}) the entire assembled 
-\textit{P. bursaria}-\textit{M. reisseri} CCAP 1660/12 transcriptome,
-\textit{P. bursaria}-\textit{C. variabilis} YADG1N transcriptome
-and the assembled \textit{P. bursaria}-\textit{M. reisseri} CCAP 1660/12
-genomic contigs over 500bp were searched using tBLASTn
-with a minimum expectation threshold of \(1e^{-5}\).
+\textit{P. bursaria}-\textit{M. reisseri} CCAP 1660/12 transcriptome predicted
+ciliate encoding peptides and
+\textit{P. bursaria}-\textit{C. variabilis} Yad1g1N transcriptome predicted 
+ciliate encoding peptides with BLASTP and a minimum expectation
+of \(1e^{-5}\).
+
+Finally, if a component could not be identified it was additionally
+searched in the assembled \textit{P. bursaria}-\textit{M. reisseri} CCAP 1660/12
+using tBLASTx with a minimum expectation \(1e^{-5}\).
 
 \begin{table}
     \centering
-    \begin{tabular}{|c|c|c|c|}
+    \begin{tabular}{|c|c|c|}
         \hline
         \textbf{Gene} & \textbf{\textit{P. tetaurelia} Accession} & \textbf{Length} \\
         \hline
@@ -347,7 +351,10 @@ with a minimum expectation threshold of \(1e^{-5}\).
         Ptiwi15 & GSPATG00005370001 & 2315 \\
         \hline
     \end{tabular}
-    \caption[RNAi pathway components from Marker]{\citep{Marker2014}}
+    \caption[RNAi pathway components from \citep{Marker2014}]{Table of
+    the RNAi pathway components identified by \citep{Marker2014}. 
+    Includes their ``canonical'' accession in the \textit{P. tetaurelia}
+MAC genome.}
     \label{tab:rnai_seeds}
 \end{table}
 
@@ -355,36 +362,46 @@ Additionally, the other sequenced \textit{Paramecium} genomes
 were searched using BLASTP via ParamediumDB \citep{Arnaiz2007,Arnaiz2011a}.
 Specifically, \textit{P. caudatum} \citep{McGrath2014}, 
 \textit{P. biaurelia}, \textit{P. primaurelia}, \textit{P. sexaurelia}
-and \textit{P. multimicronucleatum}. Finally,  \textit{T. thermophila} 
-predicted proteins were also searched \citep{Eisen2006}.
-
+and \textit{P. multimicronucleatum}. Finally,  \textit{T. thermophila} \citep{Eisen2006}
+and \textit{Oxytricha trifallax} \citep{Swart2013}
+predicted proteins were also searched to form outgroups in phylogenetic
+analysis.
 
 \subsubsection{Phylogenetic analysis of RNAi pathway}
 
-Hits for each seed in the databases searched were then converted
-to peptides based on the reading frame of the top hit. The ORF containing the
-hit was extracted for genomic hits. 
-
 Peptide sequences were then aligned using MAFFT \citep{Katoh2002} and manually
 masked using Seaview \citep{Gouy2010}.
-An LG+\(\Gamma_8\) sequence evolution model was then selected on the basis
-of AICc in Prottest3 \citep{Darriba2011a}.
+Sequences that were too divergent to align were removed, or in the case
+of the RdRPs: the alignment of Rdr1 and Rdr2 was split from that of Rdr3 to form
+two separate alignments.  Similarly, sequences that were identical
+to one another were removed at this stage. 
+
+Substitution models were fitted using ProtTest3 on the basis of the Bayesian
+Information Criterion (BIC) \citep{Darriba2011c}.
 Phylogenies were then generated using RAxML with 1000 non-rapid bootstraps and MrBayes 
 with 2 runs of 4 MCMCMC chains run for 2,000,000 generations or until convergence.
-Aberrant sequences such as long branches or were then removed, the sequences
-re-aligned and phylogenies regenerated.
-
+MCMC convergence was checked using Tracer \citep{rambaut2007tracer}.
+Sequences with long branches were removed after inspection of these phylogenies
+and the alignment, masking, model prediction and phylogeny generation steps
+were repeated.
 
 \subsection{Cross-Talk Analysis - ``eDicer''}
 
 In order to investigate the prevalence of ``cross-talk'' between 
-host and endosymbiont a tool to analyses short sequence collisions between two sets
-of transcripts was created.  ``eDicer'' is built upon Jellyfish \citep{Marcais2011}
-and the K-mer Analysis Toolkit (KAT) \citep{ClavijoKAT}.  It allows
-the comparison (and normalisation) of the number of Dicer fragment collisions
-between a set of transcripts and a list of transcript sets from organisms
-of choice for a given dicer fragment size.  
-For each query transcript set in this list the following
+host and endosymbiont a tool to analyse short sequence collisions between two sets
+of transcripts was created.  ``eDicer'' is built around 
+the Jellyfish K-mer counter \citep{Marcais2011} 
+and the K-mer Analysis Toolkit (KAT) \citep{ClavijoKAT}.  Using efficient
+K-mer hashing it allows the identification of shared K-mers between
+two sets of sequences.  As Dcr1 in \textit{P. tetaurelia} generated
+23nt fragments by identifying the number of shared 23-mers between
+two datasets e.g. the set of host and endosymbiont transcripts 
+we can identify the number of potential RNAi ``collisions'' or cross-talks
+between the two species. 
+
+For each comparison between a set of query transcripts and a reference
+set of transcripts (endosymbiont transcripts in this case)
+the following
 values are calculated and tabulated:
 \begin{itemize}
     \item Number of K-mers in the query, in other words the length of the query
@@ -400,25 +417,29 @@ values are calculated and tabulated:
     \item Shared unique K-mers normalised by the subject length in unique K-mers.
 \end{itemize}
 
-In this case, I examined all 23-mer collisions between endosymbiont 
-and host transcriptomes. In order to contextualise these
-values I also compared the endosymbiont transcripts with 
-sets of transcripts (or CDS) from taxa representative of the 
-sequenced diversity of each of the
-following groups: bacteria, archaea, eukaryotes, green algae, ciliates,
-and host transcripts from \textit{P. bursaria} SW1 and \textit{P. bursaria} Yad1g.
+In order to contextualise the number of collisions between the 2
+host and 2 endosymbiont transcript sets
+I analysed the collisions between two sets of endosymbiont transcripts 
+with several other datasets.  
+
+These datasets were composed of predicted or sequenced transcriptomes 
+from the following groups: bacteria, 
+archaea, eukaryotes, green algae, and the ciliates.
+Sequences were selected to sample the breadth of the sequenced
+diversity of each group.
 
 Specifically, 3 ciliate sets were used \textit{Paramecium tetaurelia}, 
 \textit{Tetrahymena thermophila} and \textit{Oxytricha trifallax} along with
 5 green algae \textit{Chlamydomonas reinhardtii}, \textit{Coccomyxa subellipsoidea}
 C-169, \textit{Chlorella variabilis} NC64A, \textit{Micromonas pusilla} RCC299, and
 \textit{Ostreococcus lucimarinus}.
-Additionally, 58 eukaryotes (\cref{tab:edicer_genomes_euks}),
-130 bacterial CDS (\cref{tab:edicer_genome_bacteria}), and 
-89 archaea (\cref{tab:edicer_archaea}). 
+The eukaryote dataset was composed of 58 transcript
+sets (\cref{tab:edicer_genomes_euks}),
+the bacterial 130 (\cref{tab:edicer_genome_bacteria}), and 
+the archaea 89 (\cref{tab:edicer_archaea}).
 
 Tabulated values were then analysed statistically
-using standard python tools outline in the methods chapter.
+using standard python tools outlined in the methods chapter.
 
 In the course of this work improvements made to KAT were submitted and merged
 back into the core KAT development codebase (\url{https://github.com/TGAC/KAT})
@@ -437,15 +458,29 @@ Microinjection was attempted using the PGM and epi2 constructs.
 \textit{P. bursaria} tended to burst after a single injection attempt.
 As a control, GFP was also attempted to be injected into the MAC.
 Unfortunately, despite numerous attempts it was never possible
-
+to observe fluorescence localised to the MAC. This suggests
+microinjection was never successfully achieved. 
 
 \subsection{RNAi required components}
 
 \subsubsection{Dcr1}
 
+A single Dcr1 orthologue was clearly identified in each of
+the two \textit{P. bursaria} host transcriptomes.
+Phylogenetic analysis (\cref{fig:dcr1}) recovered a phylogeny
+matching the established ciliate taxonomy with strong support
+for \textit{P. bursaria} as the the outgroup to the rest of 
+the \textit{Paramecium} clade. 
+
 \begin{figure}
     \includegraphics[width=\textwidth]{Dcr1.pdf}
-    \caption[RAxMl 1000 bootstraps MrBayes PP]{}
+    \caption[Dcr1 Phylogeny]{Dcr1 Phylogeny (1196 sites) inferred using RAxMl with
+        LG+G+F and 1000 non-rapid bootstraps.  Bayesian PP 
+        were inferred using MrBayes with 2 runs of 4 chains run for 2,000,000
+        generations (5\% burnin) and the LG+G model.  \textit{P. bursaria} peptides
+        are highlighted in blue whereas \textit{P. tetaurelia} components
+    identified by \citep{Marker2014} are indicated in red.  Phylogeny
+is largely consistent with established ciliate phylogenies.}
     \label{fig:dcr1}
 \end{figure}
 
@@ -457,70 +492,104 @@ There were no hits for Pds1 in any of the 3 \textit{P. bursaria} datasets
 There were homologues in each of the other \textit{Paramecium} species
 i.e. \textit{P. sexaurelia}, \textit{P. biaurelia}, \textit{P. primaurelia},
 \textit{P. multimicronucleatum} and \textit{P. caudatum} but not
-\textit{T. thermophila} or \textit{O. trifallax}.
+\textit{T. thermophila} or \textit{O. trifallax} (\cref{fig:pds1}).
 \begin{figure}
     \includegraphics[width=\textwidth]{Psd1_tree.pdf}
-    \caption[Phylogeny of Pds1 Sequences]{RAxML phylogeny with 1000 non-rapid
-        bootstraps annotated with MrBayes (2,000,000 generations) PP. LG This shows that Pds1 homologues
-in the \textit{Paramecium} clade largely recapitulates the etablished
-\textit{Paramecium} phylogeny.  \textit{P. caudatum}-\textit{P. multimicronucleatum}}
+    \caption[Pds1 Phylogeny]{Pds1 Phylogeny (424 sites) inferred
+        using RAxML with VT+G+F and 1000 non-rapid bootstraps.  Bayesian
+        PP were inferred with MrBayes (2 runs of 4 chains for 2,000,000 generations, 5\% burn-in) 
+        with VT+G and annotated. This phylogeny is consistent with the general
+    taxonomy of the ciliate clade.}
 \label{fig:pds1}
 \end{figure}
 
-The structure of Pds1 was predicted from the \textit{P. tetaurelia}
-sequence via RaptorX (\cref{fig:pds1_struct}).  
-Unfortunately, there were no likely predicted functions
-from this structure. No structural hits were found aginst known enzyme active sites, ligand-binding
+The structure of Pds1 (\cref{fig:pds1_struct}) was predicted 
+from the \textit{P. tetaurelia}
+sequence via RaptorX \citep{Kallberg2012}.  Unfortunately,
+no function could be assigned to this structure using ProFunc \citep{Laskowski2005},
+CombFunc \citep{Wass2012} or PredictProtein \citep{Rost2004}.
+No structural hits were found aginst known enzyme active sites, ligand-binding
 sites or DNA-binding templates in ProcFun.
 
-
 \begin{figure}
+    \centering
     \includegraphics[width=\textwidth]{psd1_struct.png}
     \caption[Predicted Structure of Pds1]{RaptorX Predicted Structure of \textit{P. tetaurelia}
-    Pds1 protein (PTETP600032001). No functional annotations could be made using this structure}
+    Pds1 protein (PTETP600032001). No functional annotations could be made using this structure.}
     \label{fig:pds1_struct}
 \end{figure}
 
 \subsubsection{Cid}
 
-There was a single Cid homologue present in each transcriptome
-and a single gene identifiable in the genome. 
-Upon alignment the \textit{P. bursaria} SW-1 copies
-proved near identical with clear intronic sequences.
+Two Cid orthologues were identified in each \textit{P. bursaria}
+transcriptome.  Additionally, a closely related Cid3 orthologue
+was identified in the other \textit{Paramecium} sequences.
 
-Phylogenetic analysis (\cref{fig:cid_phylo}) demonstrated
-the existence of a pre-duplication homologue to the Cid1 and Cid2
-paralogues present in the rest of the \textit{Paramecium} clade.
+Phylogenetic analysis (\cref{fig:cidphylo}) showed an unclear
+picture with both the Yad1g Cid peptides and 1 of the SW1 peptides
+branching with moderate support (\(86.7\%\) bootstraps and
+a PP of \(0.69\)) as the the sister to a 
+clade composed of Cid1 and Cid3.  Additionally, the other
+SW1 orthologue branched as the outgroup to all remaining Cid
+with high support. 
+This suggests that the orthologues present in Yad1g and one of
+the orthologues in SW1 may be a pre-duplication version of Cid1
+and Cid3.  Potentially, Cid2 has been lost in \textit{P. bursaria}
+but the provenance of the extra orthologue in SW1 makes this
+unclear.
 
 \begin{figure}
     \includegraphics[width=\textwidth]{Cid.pdf}
-    \caption[Phylogeny of Cid Sequences]{RAxML phylogeny annotated
-    with MrBayes PP showing the existence of a single homologue
-of the Cid1 and Cid2 proteins in \textit{P. bursaria}}
-    \label{fig:cid_phlyo}
+    \caption[Cid Phylogeny]{
+        Phylogeny of Cid1, Cid2, and Cid3 (268 sites) inferred
+        using RAxML with rtREV+G and 1000 non-rapid bootstraps.
+        Bayesian PP were inferred using MrBayes (2,500,000 generations 
+        with 2 runs of 4 chains and a 10\% burn-in).  Phylogeny
+        shows a potential orthologue of Cid1 and Cid3 in \textit{P. bursaria}
+        Yad1g and SW1 and an uncertain Cid orthologue in \textit{P. bursaria}
+        SW1.}
+    \label{fig:cidphlyo}
 \end{figure}
 
 \subsubsection{Rdr}
 
+2 putative sequences were identified by Rdr1 and Rdr2 searches in each
+\textit{P. bursaria}.  Phylogenies of these sequences (\cref{fig:rdr12_phylo})
+indicate that \textit{P. bursaria} has an homologue of
+Rdr2 (strong support of an outgroup to the Rdr2 sequences).
+The other sequences from both transcriptomes branch basally
+to the other \textit{Paramecium} RdRPs with moderate/weak support.
+
 \begin{figure}
     \includegraphics[width=\textwidth]{Rdr1_2.pdf}
-    \caption[Phylogeny of Cid Sequences]{RAxML
-        phylogeny 
-    and Likelihood phylogeny of CID components.}
-
-    \label{fig:rdr_phylo}
+    \caption[Rdr1 and Rdr2 Phylogeny]{Phylogeny of Rdr1 and Rdr2
+        (691 sites) inferred using RAxML with LG+G+F and 1000
+        non-rapid bootstraps.  Bayesian PP were inferred using MrBayes
+        (2,000,000 generations with 2 runs of 4 chains and a 5\% burn-in)
+        and annotated onto the RAxML phylogeny. Phylogeny
+        shows a homologue of Rdr2 in \textit{P. bursaria} as well
+    as a potential ancestral or Rdr1 homologue.}
+    \label{fig:rdr12_phylo}
 \end{figure}
+
+Rdr3 analysis didn't identify any hits in the \textit{T. thermophila}
+or \textit{O. trifallax} outgroups but did find an orthologue
+in both \textit{P. bursaria} transcript sets.  These branched
+as a sister to the other \textit{Paramecium} with strong support
+suggesting that they may be orthologous to the \textit{P. tetaurelia}
+Rdr3. The phylogeny recapitulated the taxonomy of the ciliates (\cref{fig:rdr3_phylo}).
 
 
 \begin{figure}
     \includegraphics[width=\textwidth]{Rdr3.pdf}
-    \caption[Phylogeny of Cid Sequences]{RAxML
-        phylogeny 
-    and Likelihood phylogeny of CID components}
-    \label{fig:rdr_phylo}
+    \caption[Rdr3 Phylogeny]{Phylogeny of Rdr3 (432 sites)
+        inferred using RAxML with JTT+G+F and 1000 non-rapid
+        bootstraps. Bayesian PP were inferred using MrBayes
+        (2,000,000 generations with 2 runs of 4 chains and a 5\% burn-in)
+        and annotated onto the RAxML phylogeny.  Phylogeny
+        shows the presence of a likely Rdr3 in \textit{P. bursaria}.}
+    \label{fig:rdr3_phylo}
 \end{figure}
-
-
 
 \subsubsection{Piwi}
 
@@ -538,13 +607,14 @@ relation and function is unknown.
 \subsection{RNAi cross-talk}
 
 The total number of unique collisions between the endosymbionts and 
-the various classes of subject predicted transcriptomes were plotted
+the various classes of subject transcriptomes were plotted
 (\cref{fig:unique_collisions}).  This showed that there 
-were next to collisions with Archaea and the endosymbionts but were
+were next to no collisions with Archaea and the endosymbionts but were
 low levels of collision with Bacteria.  Eukaryotes in general
-lead to much higher levels of collision.  Green algae
-had the most collisions as might be expected from their close
-relationship with the green algal endosymbiont. Interestingly,
+lead to much higher levels of collision.  As might be expected 
+from their close relationship with the green algal endosymbiont
+some of the most frequent collisions were with the other green algae.
+Interestingly,
 the 3 ciliate species had a low number of collisions but there
 was moderate to high levels of collision against the two
 \textit{P. bursaria} host transcriptomes.
@@ -563,9 +633,9 @@ This suggests RNAi-cross talk could be occurring between the host and endosymbio
 \end{figure}
 
 In order to test to what degree the number of collisions was related
-to the length of the subject query linear regression was conducted
-using all points (\cref{fig:edicer_collisions_by_length}).  This
-demonstrates there is at least a partial linear dependence between the 
+to the length of the subject query, a simple linear regression
+was conducted (\cref{fig:edicer_collisions_by_length}).  
+This demonstrates there is at least a partial linear dependence between the 
 length of the query and the number of collisions.
 
 \begin{figure}
@@ -585,15 +655,6 @@ collisions.}
     \label{fig:edicer_collisions_by_length}
 \end{figure}
 
-
-Normalising the unique number of collisions by the unique length of
-the subject predicted transcriptome led to some interesting results (\cref{fig:edicer_uniq_norm})
-Collisions with Eukaryotes largely were reduced to being on-pair
-with collisions with Bacteria. 
-Despite collisions against the Ciliates relatively disappearing,
-there was still considerable levels of collision against
-the host transcriptomes and green algae.
-
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{unique_norm_collisions.pdf}
@@ -605,31 +666,39 @@ subjects.}
     \label{fig:edicer_unique_norm}
 \end{figure}
 
+Normalising the unique number of collisions by the unique length of
+the subject predicted transcriptome led to some interesting results (\cref{fig:edicer_uniq_norm})
+Collisions with Eukaryotes largely were reduced to being on-pair
+with collisions with Bacteria. 
+Despite collisions against the ciliates relatively disappearing,
+there was still considerable levels of collision against
+the host transcriptomes and green algae.
 
 \section{Discussion}
-
 
 \subsection{No dsRNA RNAi inducible phenotypes in \textit{P. bursaria} SW1}
 
 Despite numerous attempts all feeding experiments failed to induce
-any of the RNAi knockout phenotypes.  RT-PCR tests with the Bug22
+any of the RNAi knockout phenotypes.  RT-PCR tests (not shown) with the Bug22
 and BBS7 constructs demonstrated
 that the \textit{E. coli} were expressing the dsRNA.  
 This indicates that dsRNA is either incapable of escaping the digestive vacuole
 or the host does not have an active pathway for exogenous dsRNA incuded
-RNAi.  The the fact that microinjection of dsRNA directly into the MAC
-also failed to elicit RNAi phenotypes would support the absence
-of an active dsRNA induced RNAi pathway. 
+RNAi.  
 
+The potential failure of microinjection of dsRNA directly into the MAC
+to elicit RNAi phenotypes would support the absence
+of an active dsRNA induced RNAi pathway. 
 However, the high methodological difficulty involved in identifying and injecting
 the MAC without lysing the cell (\cref{fig:microinjection_nucleus}) 
 means microinjection may have only failed to induce RNAi due to failure
 to correctly microinject \textit{P. bursaria}.   \textit{P. bursaria}
 was particularly prone to lysis relative to \textit{P. tetaurelia} and
 there were greater issues with trichocysts blocking the microinjector. 
-Attempts made to inject GFP into the MAC to observe whether microinjection
-was taking place also failed supporting a technical failure of this
-approach rather than necessarily a biological reason.
+Attempts made to inject GFP into the MAC also failed to generate fluorescence
+localised to the MAC.  This indicates that the failure of microinjection is
+primarily technical and cannot be used to make inferences about the state
+of the RNAi pathway in host. 
 
 \begin{figure}
     \includegraphics[width=\textwidth]{microinjection_hard.pdf}
@@ -639,16 +708,18 @@ approach rather than necessarily a biological reason.
     \label{fig:microinjection_nucleus}
 \end{figure}
 
-Unfortunately, microinjection is also a necessary stage in the transgene
-induced RNAi methodology.  Therefore, even if this alternative pathway
-is present and active it may still not be possible to reliably 
-induce RNAi in \textit{P. bursaria}.
-
+Unforunately, the alternative transgene RNAi methodology \citep{Galvani2001} 
+which was not attempted also involves microinjection of the MAC with
+the transgene construct itself.  Therefore, even if the transgene
+pathway is present and active it may still not be possible to reliably
+induced RNAi in \textit{P. bursaria}.
 
 \subsection{Missing components of RNAi pathway in \textit{P. bursaria}}
 
-There are several components missing that are required for the function
-of the exogenous dsRNA RNAi pathway in \textit{P. tetaurelia}.
+An investigation into the RNAi pathway components identified by \citep{Marker2014}
+revealed the absence of one required component for the exogenous dsRNA
+pathway (Psd1) and one potentially absent component of the common pathway (Cid2).
+
 
 Pds1 is totally absent outside of the \textit{Paramecium} clade post the divergence
 of \textit{P. bursaria} and \textit{P. caudatum}.  A phylogenetic
@@ -671,76 +742,6 @@ of this data.  However, the combination of being missing in all 3 datasets
 as well as any non-\textit{Paramecium} ciliates indicates that
 it is likely not present in \textit{P. bursaria}.
 
-However, a single copy of the Cid protein was present in \textit{P. bursaria}.
-The fact that there are two copies in \textit{P. caudatum} (which 
-shares the ancient WGD with \textit{P. bursaria}) indicates the possiblity
-of the loss of Cid2 in \textit{P. bursaria}.
-The putative Cid1 in \textit{P. bursaria} may be functional in the common
-RNAi pathway.
-
-The unresolved Piwis 
-
-
-Ultimately, based on the missing components of the RNAi pathways
-identified in \textit{P. tetaurelia} this indicates that the exogenous dsRNA
-pathway is likely to not be active.  Unless Cid2 is functional in the shared
-RNAi pathway then it is possible that the both pathways identified in \textit{P. tetaurelia}
-are not active in \textit{P. bursaria}.  
-
-\subsection{Endosymbiont ``collision'' hypothesis}
-
-Exogenous RNAi response is not essential for viability in \textit{P. tetaurelia}
-\citep{Marker2014}.
-
-However, the high degree of conservation even in \textit{P. bursaria}
-suggests they play an important role. 
-
-No \textit{Paramecium} viruses have been identified yet. 
-
-Prseumably they exist, however it is possible that the endosymbiont plays a role.
-
-
-\textit{C. elegans} has a dsRNA transporter (\textit{SID-2}) \citep{Nuez2012}
-
-
-microinjection of fluore
-
-often bursts after 1 injection, trichocysts block needle
-
-
-
-
-
-Hypothetically, one explanation for the deactivation/loss
-of RNAi in \textit{P. bursaria} CCAP 1660/12.
-
-
-A regression analysis using a measure of phylogenetic distance would be interesting.
-For example k-mer collisions by 100
-
-
-Only finds exact matches though.
-
-
-Finally, while this may not have thoroughly resolved the question of matches
-eDicer may form a useful tool in the rapid screening of off-target effects
-in the RNAi analyses in different organisms.   It is considerably
-more efficient than exact matches 
-than cut and alignment based methods. 
-
-
-
-
-
-\section{Conclusions}
-
-RNAi induced phenotypes could not be created in \textit{P. bursaria} CCAP1660/12
-by either feeding experiments or direct transgene microinjection. 
-
-Therefore, assembled transcriptomic and genomic data from \textit{P. bursaria}
-CCAP 1660/12 and YADG1N were analysed for factors identified as essential in the function
-of these pathways in \textit{P. tetaurelia} \citep{Marker2014}. 
-
 \begin{figure}
     \includegraphics[width=\textwidth]{RNAi_factors_summary_figure.pdf}
     \caption[Summary of RNAi Factors Presence]{Summary of the discovery
@@ -748,16 +749,97 @@ of these pathways in \textit{P. tetaurelia} \citep{Marker2014}.
     \label{fig:rnai_summary}
 \end{figure}
 
-Two proteins essential for the function of the exogenous dsRNA induced
-RNAi pathway in \textit{P. tetaurelia}, Pds1 and Rdr1, were not found in the partial genome and transcriptome 
-of \textit{P. bursaria} CCAP 1660/12 or the transcriptome of \textit{P. bursaria} YADG1N.
-This suggests that this pathway may not be active/present in \textit{P. bursaria}.
-Either, 
+Cid2 is absent in \textit{P. bursaria} Yad1g but might be present in \textit{P. bursaria}
+SW1 from the CCAP 1660/12 culture. The single copy forms an outgroup to the other
+Cids but its uncertain whether this is Cid2 or an ancestral version of the 
+Cid proteins.  
+If Cid2 is absent and the \textit{P. bursaria} RNAi
+pathways require the same components as \textit{P. tetaurelia} this may
+mean both the transgene and dsRNA pathways are not active. 
+
+The unresolved Piwis also represent potential issues with the RNAi pathway
+but the only way to thoroughly investigate the roles of these proteins would
+be targeted mutagenic screening or a similar approach.
+
+\subsection{Endosymbiont ``collision'' hypothesis}
+
+Hypothetically \textit{Paramecium bursaria}
+may have deactivated/lost feeding induced RNAi as a consequence
+of the greater levels of potentially deleterious cross-talk between
+it and its eukaryotic green algal endosymbionts.  
+As an exogenous RNAi response is not essential 
+for viability in \textit{P. tetaurelia} \citep{Marker2014} loss
+of this system in \textit{P. bursaria} may not have a high fitness cost.
 
 
-However, assuming the likely pre-duplication orthologue of Cid2 and the necessary 
-unresolved Ptiwi's are functional
-in the transgene dsRNA pathway of \textit{P. bursaria}
-then this pathway is theoretically active.  Unfortunately, methodological
-difficulties in microinjection have thus far failed to generate RNAi-induced
-phenotypes.
+On first glance the high levels of collisions between endosymbiont
+transcripts against host and eukaryote classes in general support this
+hypothesis.
+However, the low levels of collisions between endosymbiont transcripts
+and ciliate transcripts indicates that the collision level
+between host and endosymbiont may be due to either
+different behaviour or accidental binning of endosymbiont
+transcripts into the host bin.
+
+
+There is a linear relationship between the unique size of a transcriptome
+in terms of 23-mers and the number of collisions.  This is expected
+as a longer set has a higher probability of a random match by chance.
+When the number of collisions is normalised by the length of the subject
+the level of collisions from eukaryotes is largely on-par with
+those of bacteria.  However, as eukaryotes have larger genomes
+the un-normalised number of collisions is more reflective of biological
+reality.  Indeed, the size and diversity of their transcriptome
+may be the reason why eukaryotic cross-talk is potentially
+more problematic than that of bacterial cross-talk.
+
+
+It might be interesting to test the linear relationship between phylogenetic
+relatedness and the number of K-mer collisions.  For example, phylogentic distances
+between the endosymbiont and various taxa could be derived from an established
+published multi-gene analysis that includes these species and regression
+conducted using this as a feature. 
+
+One down-side of the efficient K-mer hashing based ``eDicer'' design is that
+it only finds exact matches.  RNAi has been found to not always require exact
+sequence matches to induce knock-down \citep{Elbashir2001} therefore,
+this analysis potentially misses a large amount of near-identical collisions.
+Fortunately, it is probably a relatively safe assumption that the number
+of identical collisions correlates strongly with the number of near-identical collisions.
+
+Finally, while this may not have thoroughly resolved the question of matches
+eDicer may form a useful tool in the rapid screening of off-target effects
+in the RNAi analyses in different organisms.   It is considerably
+more efficient than than cutting and alignment based methods such as that
+offered on ParameciumDB \citep{Arnaiz2011}.
+
+\section{Conclusions}
+
+RNAi induced phenotypes could not be created in \textit{P. bursaria} SW1 from CCAP1660/12
+via feeding experiments.  The absence of Pds1 in \textit{P. bursaria} offers a potential 
+explanation for this as this protein has been implicated as playing some undefined role
+in the uptake of RNA (dsRNA or ssRNA) from digestive vacuoles \citep{Carradec2015}.
+Without this protein 
+As ``eDicer'' identified that there are a large number of 23-mer collisions
+between \textit{P. bursaria} transcripts and eukaryotic transcriptomes (especially
+the green algal endosymbionts) the loss/deactivation of the uptake of RNA from 
+digestive (or potentially perialgal) vacuoles could be a consequence of 
+a eukaryotic endosymbiont in \textit{P. bursaria}.  
+The relatively lower levels of RNAi cross-talk between
+\textit{Paramecium} and bacterial endosymbionts and/or food species may prove
+less deleterious than eukaryotic cross-talk. 
+
+Due Psd1 only likely being involved in uptake from a food vacuole it is possible
+that dsRNA could still be induced by direct microinjection.  Similarly, 
+microinjection of transgenes may still be possible.  Unfortunately, microinjection
+has proven difficult technically in \textit{P. bursaria}.  Further optimisation
+of the experimental method and training is required to thoroughly test
+the activation or deactivation of injected dsRNA or transgenes.
+
+Alternatively, the potential absence of Cid2 may indicate a deactivation/absence
+of RNAi by the pathways identified by \citep{Marker2014} in \textit{P. bursaria}.
+Further analysis of RNAi systems in \textit{P. bursaria} and other \textit{Paramecium}
+species would be required to further answer this question.
+
+
+
