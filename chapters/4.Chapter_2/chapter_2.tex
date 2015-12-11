@@ -136,7 +136,7 @@ parameters (including the utility of divergent reference genomes from related sp
 Finally, I will address the problem of the attribution of recovered transcripts into their appropriate likely originating organism.  
 \section{Methods} 
 
-\subsection{Sample Preparation and Sequencing}
+\subsection{Sample preparation and sequencing}
 
 \subsubsection{Bulk transcriptome RNA preparation}
 For bulk transcriptomic analyses CCAP 1660/12 cells were harvested in a way to minimise 
@@ -240,7 +240,7 @@ under standard PCR conditions.  5 (Dark2-2, Dark2-3, Dark2-6, Dark2-7, Dark2-8) 
 bands of appropriate size were then taken forward for library preparation and sequencing.
 
 
-\subsubsection{Illumina library preparation}
+\subsubsection{Library preparation}
 
 For both bulk and single cell preparations each cDNA sample was fragmented in \(130\mu l\) 1xTE buffer on the Covaris E220 
 with a target size of \(225bp\) (duty factor of \(10\%\), 200 cycles per burst, peak incident power
@@ -371,7 +371,7 @@ threshold to use for further assembly.
 Scripts used to conduct this are available in my thesis scripts github repository:
 \url{https://github.com/fmaguire/thesis_scripts/tree/master/chapter_2_assembly_and_binning/trimming_optimisation}
 
-\subsubsection{GC Partitioning of Reads}
+\subsubsection{GC partitioning of reads}
 
 To assess the utility of pre-assembly read partitioning an unsupervised clustering tool was created:
 Paired Arrangement of Reads via K-means On Unlabelled Reads (parKour).
@@ -405,10 +405,10 @@ The impact of each of these error correction algorithms at the read level was as
 as their subsequent impact on downstream assembly metrics, particularly RSEM-EVAL likelihood score
 as will be expanded upon below in the description of assembly assessment.
 
-\subsubsection{Kmer normalisation and trimming}
+\subsubsection{K-mer normalisation and trimming}
 
 Taxonomically screened sc-RNAseq libraries trimmed at a minimum sliding window quality
-threshold of Q30 and bulk libraries were Kmer normalised and trimmed using the Khmer package \citep{Crusoe2015}
+threshold of Q30 and bulk libraries were K-mer normalised and trimmed using the Khmer package \citep{Crusoe2015}
 
 Specifically, reads were interleaved \citep{Doring2008} and then digitally normalised using diginorm \citep{Brown2012}
 with a K-mer size and coverage cut-off of 20.  Low abundance and likely erroneous
@@ -516,7 +516,7 @@ instead of universal because it was spuriously extended transcripts
 were considered favourable to falsely truncated ones.
 This greatly reduced redundancy in the later binning analyses.
 
-\subsection{Transcript Binning}
+\subsection{Transcript binning}
 
 \subsubsection{Initial BLAST based bins}
 
@@ -930,7 +930,7 @@ read-level taxonomic assignment can be used to screen single cell libraries for 
 
 \subsection{Read pre-processing} 
 
-\subsubsection{Trimming Optimisation}
+\subsubsection{Trimming optimisation}
 
 The optimal trimming threshold was determined by a combination
 of read mapping statistics against 3 preliminary reference assemblies
@@ -1018,7 +1018,7 @@ It can be considered from this data that Q30 forms a maximum feasible stringency
     total library sizes of \(2.458*10^{7}\) and \(2.779*10^{7}\) respectively}
 \end{table}
 
-\subsubsection{GC Partitioning} 
+\subsubsection{GC partitioning} 
 
 GC partitioning was conducted on Q30 trimmed reads 
 using K-means clustering as implemented in the parKour tool described above 
@@ -1090,7 +1090,7 @@ Therefore, GC-based pre-assembly read partitioning proved incapable of improving
 the assembly of this highly heterogeneous RNAseq dataset.
 
 
-\subsubsection{Error Correction}
+\subsubsection{Error correction}
 
 Error correction was attempted on both lightly trimmed (Q5) and harshly trimmed (Q30) 
 taxonomically selected SCT reads.
@@ -1356,7 +1356,7 @@ while maintaining assembly statistics within expected ranges.
 
 \subsection{Binning}
 
-\subsubsection{ORF Calling}
+\subsubsection{ORF calling}
 
 From the 112,391 contigs in the final selected assembly (31-mer Bridger
 Normalised and Taxonomically Selected SCT and Bulk) - 1,005,370 ORFs
