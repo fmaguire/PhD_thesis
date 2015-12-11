@@ -809,7 +809,7 @@ the lower read quality found in reverse reads relative to forward reads
 in paired-end Illumina sequencing. 
 
 \begin{table}[h]
-     \begin{tabularx}{\textwidth}{|l||l|l|l|l|l|l|l|}
+    \resizebox{\textwidth}{!}{\begin{tabular}{|l||l|l|l|l|l|l|l|}
          \hline
          \textbf{SCT Library} & \textit{\textbf{PE}}          & \textbf{Eukaryote} & \textbf{Bacteria} & \textbf{Alveolate} & \textbf{Viridiplantae} &  & \textbf{Total Hits} \\ 
          \hline
@@ -836,7 +836,7 @@ in paired-end Illumina sequencing.
          \textit{Dark2-8}     & \textit{R1}                   & 28.24 +/- 0.48     & 4.45 +/- 0.13     & 12.00 +/- 0.32     & 4.69 +/- 0.06          &  & 40.50 +/- 0.37      \\ 
                               & \textit{R2}                   & 28.22 +/- 0.47     & 4.30 +/- 0.22     & 11.98 +/- 0.37     & 4.32 +/- 0.24          &  & 40.05 +/- 0.22      \\
          \hline
-     \end{tabularx}
+ \end{tabular}}
      \caption[DueyDrop Taxonomic Profile Summary]{Taxonomic profiles of raw single cell libraries generated using ``DueyDrop''. All values are percentage of reads mapping to that category +/- the standard deviation between sample replicates.  
          The analysis was conducted for both forward and reverse reads from each library (indicated as R1 and R2 in the paired-end (PE) column).
          Libraries highlighted in bold were those excluded from subsequent analysis on the basis of their very low numbers of reads identifiable as 
@@ -970,7 +970,8 @@ However, it should be noted that the difference in the number and size of assemb
 was less than was found using different assemblers and assembly parameters.
 
 \begin{table}[h!]
-     \begin{tabularx}{\textwidth}{|l| l |l |l|}
+    \centering
+    \begin{tabular}{|l| l |l |l|}
      	\hline
          \textbf{Trim Threshold} & \textbf{Number of Transcripts} & \textbf{Bases Assembled} & \textbf{Assembly Likelihood (\(-\log\))} \\
          \hline
@@ -978,7 +979,7 @@ was less than was found using different assemblers and assembly parameters.
          Q20 & 107,955 & 50,809,686 & \(-3.015*10^{10}\) \\
          Q30 & 99,784 & 47,313,963 &  \(-2.832*10^{10}\) \\ 
     \hline
-    \end{tabularx}
+\end{tabular}
     \caption[Comparison of Effect of Trimming on Trinity Assemblies]{Comparison of Trinity assemblies of taxonomically screened
         single cells reads (no bulk reads) at 3 different sliding window
         minimum average quality trimming thresholds.  Trimming largely
@@ -1108,7 +1109,7 @@ Trinity assemblies of taxonomically selected single cell libraries
 (without bulk libraries) were then compared with and without ``SEECER'' 
 error correction (see \cref{tab:errcorr_assembly}).
 \begin{table}[h]
-     \begin{tabularx}{\textwidth}{|l||r|r|l|@{}}
+    \begin{tabular}{|l||r|r|l|@{}}
      	\hline 
          \textbf{Trim Threshold} & \textbf{Number of Transcripts} & \textbf{Bases Assembled} & \textbf{Assembly Likelihood (\(-\log\))} \\
          \hline 
@@ -1117,7 +1118,7 @@ error correction (see \cref{tab:errcorr_assembly}).
          Q30 & 99,784 & 47,313,963 & \(-2.912\cdot 10^{10}\)  \\ 
          Q30 SEECER Corrected & 96,494 & 46,312,469 & \(-2.995\cdot 10^{10}\)  \\ 
     \hline
-    \end{tabularx}
+\end{tabular}
     \caption[Effect of Error Correction on Assembly]{Naive Trinity assembly of Q5 and Q30 trimmed taxonomically selected single cell libraries
         with and without SEECER error correction. While assembly likelihood increases after
     error correction for Q5 trimmed reads it is still lower than Q30 uncorrected.  For Q30
@@ -1165,7 +1166,8 @@ median contig length).  The Khmer processed assembly marginally increased
 median contig length at the expense of a lower N50. 
 
 \begin{table}[h]
-     \begin{tabularx}{\textwidth}{|l||r|r|r|r|X|}
+    \centering
+    \begin{tabular}{|l||r|r|r|r|c|}
      	\hline
         \textbf{Preprocessing} & \textbf{Number of} & \textbf{Bases} & \textbf{Contig} & \textbf{Median} & \textbf{Assembly} \\
                                 & \textbf{Transcripts} & \textbf{Assembled} & \textbf{N50} & \textbf{Contig} & \textbf{Likelihood (\(-\log\))} \\
@@ -1176,7 +1178,7 @@ median contig length at the expense of a lower N50.
     with Khmer & 	 & 			 &      & 	  & 	\\
     processing & 	 & 			 &      & 	  & 	\\
     \hline
-    \end{tabularx}
+\end{tabular}
     \caption[Effect of Digital Normalisation on Assembly]{Trinity assemblies (with --min-kmer-cov 2) 
         of Q30 trimmed, taxonomically selected single cell and bulk libraries 
     with and without Khmer digital normalisation and K-mer abundance filtering.
@@ -1223,7 +1225,8 @@ Dark1-2, Dark2-3, Dark2-6, Dark2-8) and bulk libraries are shown in
 \cref{tab:assemblies}. 
 
 \begin{table}[h]
-    \begin{tabularx}{\textwidth}{|l||c|r|c|c||}
+    \centering
+    \begin{tabular}{|l||c|r|c|c||}
         \hline
         \textbf{Assembler} & \textbf{Parameters} & \textbf{Number of} & \textbf{Bases Assembled} & \textbf{Assembly} \\
           &   & \textbf{Contigs}										& 							& \textbf{Likelihood \(-\log\)} \\
@@ -1249,7 +1252,7 @@ Dark1-2, Dark2-3, Dark2-6, Dark2-8) and bulk libraries are shown in
         Bridger & K25 & 114,582 & \( 9.707\cdot 10^{7}\)  & \(-2.587\cdot 10^{10}\)\\ 
         \hline
         
-    \end{tabularx}
+    \end{tabular}
     \caption[Summary of Different Assembler Outputs]{\textit{De novo} assemblies of Q30 trimmed taxonomically
         selected single cell libraries and bulk libraries (but not digitally normalised or K-mer abundance
             filtered) with a range of assemblers and parameters.  K-mer size used
