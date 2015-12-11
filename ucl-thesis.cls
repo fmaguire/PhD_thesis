@@ -23,6 +23,7 @@
 \RequirePackage{longtable}
 \RequirePackage[labelfont={sf,bf,small},textfont={sf,small},justification=RaggedRight,margin=0pt, figurewithin=section, tablewithin=section]{caption}
 \RequirePackage{float}
+\RequirePackage{pdfpages}
 
 % Maths
 \RequirePackage[centertags]{amsmath}
