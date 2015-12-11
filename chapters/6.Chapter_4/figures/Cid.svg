@@ -7,9 +7,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="182.8177mm"
-   height="230.80241mm"
-   viewBox="0 0 647.77927 817.80383"
+   width="194.74492mm"
+   height="214.52562mm"
+   viewBox="0 0 690.04106 760.13014"
    version="1.1"
    id="svg2"
    inkscape:version="0.91 r13725"
@@ -37,14 +37,14 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1440"
-     inkscape:window-height="900"
+     inkscape:window-width="1680"
+     inkscape:window-height="1050"
      id="namedview232"
      showgrid="false"
      inkscape:zoom="0.41667216"
-     inkscape:cx="99.984933"
-     inkscape:cy="327.72402"
-     inkscape:window-x="1680"
+     inkscape:cx="-75.642631"
+     inkscape:cy="30.214748"
+     inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg2"
@@ -54,856 +54,966 @@
      fit-margin-right="0"
      fit-margin-bottom="0" />
   <text
-     x="301.19327"
-     y="803.31329"
-     font-size="12"
      xml:space="preserve"
-     id="text6"
-     style="font-size:11.64432812px;font-family:Times;fill:#000000"><tspan
-   style="font-style:italic"
-   id="tspan4426">Tetrahymena thermophila</tspan> [XP_001012854.1]</text>
-  <text
-     x="271.11206"
-     y="769.35071"
-     font-size="12"
-     xml:space="preserve"
-     id="text8"
-     style="font-size:11.64432812px;font-family:Times;fill:#000000"><tspan
-   style="font-style:italic"
-   id="tspan4424">Tetrahymena thermophila</tspan> [XP_001012858.1]</text>
-  <text
-     x="149.81699"
-     y="736.3584"
-     font-size="12"
-     xml:space="preserve"
-     id="text10"
-     style="font-size:11.64432812px;font-family:Times;fill:#0000ff"><tspan
-   style="font-style:italic;fill:#0000ff"
-   id="tspan4434">Paramecium bursaria</tspan> SW1 [comp3906_seq0_m.68533]</text>
-  <text
-     x="274.02316"
-     y="702.39581"
-     font-size="12"
-     xml:space="preserve"
-     id="text12"
-     style="font-size:11.64432812px;font-family:Times;fill:#0000ff"><tspan
-   style="font-style:italic;fill:#0000ff"
-   id="tspan4432">Paramecium bursaria</tspan> SW1 [comp3906_seq0_m.68531]</text>
-  <text
-     x="289.54892"
-     y="669.40356"
-     font-size="12"
-     xml:space="preserve"
-     id="text14"
-     style="font-size:11.64432812px;font-family:Times;fill:#0000ff"><tspan
-   style="font-style:italic;fill:#0000ff"
-   id="tspan4430">Paramecium bursaria</tspan> Yad1g [TR17851_c0_g1_i8_m.235761]</text>
-  <text
-     x="292.46002"
-     y="635.44092"
-     font-size="12"
-     xml:space="preserve"
-     id="text16"
-     style="font-size:11.64432812px;font-family:Times;fill:#0000ff"><tspan
-   style="font-style:italic;fill:#0000ff"
-   id="tspan4428">Paramecium bursaria</tspan> Yad1g [TR432_c1_g1_i2_m.4057]</text>
-  <text
-     x="206.27023"
-     y="690.16931"
-     font-size="12"
-     xml:space="preserve"
-     id="text18"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate">80.7%/0.93</text>
-  <text
-     x="290.51929"
-     y="602.44867"
-     font-size="12"
-     xml:space="preserve"
-     id="text20"
-     style="font-size:11.64432812px;font-family:Times;fill:#000000"><tspan
-   style="font-style:italic"
-   id="tspan4592">Paramecium biaurelia</tspan> [PBIGNP33303]</text>
-  <text
-     x="297.3118"
-     y="568.48602"
-     font-size="12"
-     xml:space="preserve"
-     id="text22"
-     style="font-size:11.64432812px;font-family:Times;fill:#800000"><tspan
-   style="font-style:italic"
-   id="tspan4596">Paramecium tetaurelia</tspan> Cid3 [GSPATP00025353001]</text>
-  <text
-     x="283.72678"
-     y="535.49377"
-     font-size="12"
-     xml:space="preserve"
-     id="text24"
-     style="font-size:11.64432812px;font-family:Times;fill:#000000"><tspan
-   style="font-style:italic"
-   id="tspan4590">Paramecium sexaurelia</tspan> [PSEXPNG26288]</text>
-  <text
-     x="218.91716"
-     y="587.80481"
-     font-size="12"
-     xml:space="preserve"
-     id="text26"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate">89.8%/0.94</text>
-  <text
-     x="301.19327"
-     y="501.53116"
-     font-size="12"
-     xml:space="preserve"
-     id="text28"
-     style="font-size:11.64432812px;font-family:Times;fill:#000000"><tspan
-   style="font-style:italic"
-   id="tspan4588">Paramecium multimicronucleatum</tspan> [PMMNP07604]</text>
-  <text
-     x="208.47963"
-     y="562.98712"
-     font-size="12"
-     xml:space="preserve"
-     id="text30"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate">99.8%/1.00</text>
-  <text
-     x="258.49738"
-     y="468.53891"
-     font-size="12"
-     xml:space="preserve"
-     id="text32"
-     style="font-size:11.64432812px;font-family:Times;fill:#000000"><tspan
-   style="font-style:italic"
-   id="tspan4528">Paramecium caudatum</tspan> [PCAUDP10462]</text>
-  <text
-     x="172.69347"
-     y="533.4646"
-     font-size="12"
-     xml:space="preserve"
-     id="text34"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate">91%/0.93</text>
-  <text
-     x="208.03864"
-     y="434.57629"
-     font-size="12"
-     xml:space="preserve"
-     id="text36"
-     style="font-size:11.64432812px;font-family:Times;fill:#800000"><tspan
-   style="font-style:italic"
-   id="tspan4514">Paramecium tetaurelia</tspan> Cid1 (Marker, 2014) [PTETP9100013001]</text>
-  <text
-     x="204.15718"
-     y="401.58401"
-     font-size="12"
-     xml:space="preserve"
-     id="text38"
-     style="font-size:11.64432812px;font-family:Times;fill:#000000"><tspan
-   style="font-style:italic"
-   id="tspan4510">Paramecium biaurelia</tspan> [PBIGNP26212]</text>
-  <text
-     x="197.36467"
-     y="367.6214"
-     font-size="12"
-     xml:space="preserve"
-     id="text40"
-     style="font-size:11.64432812px;font-family:Times;fill:#000000"><tspan
-   style="font-style:italic"
-   id="tspan4512">Paramecium primaurelia</tspan> [PPRIMP23072]</text>
-  <text
-     x="162.08212"
-     y="420.021"
-     font-size="12"
-     xml:space="preserve"
-     id="text42"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate">5%/0.51</text>
-  <text
-     x="213.86079"
-     y="333.65878"
-     font-size="12"
-     xml:space="preserve"
-     id="text44"
-     style="font-size:11.64432812px;font-family:Times;fill:#000000"><tspan
-   style="font-style:italic"
-   id="tspan4508">Paramecium sexaurelia</tspan> [PSEXPNG26738]</text>
-  <text
-     x="155.95012"
-     y="394.75323"
-     font-size="12"
-     xml:space="preserve"
-     id="text46"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate">42%/0.71</text>
-  <text
-     x="211.92007"
-     y="300.6665"
-     font-size="12"
-     xml:space="preserve"
-     id="text48"
-     style="font-size:11.64432812px;font-family:Times;fill:#000000"><tspan
-   style="font-style:italic"
-   id="tspan4506">Paramecium multimicronucleatum</tspan> [PMMNP02964] </text>
-  <text
-     x="139.03253"
-     y="366.84518"
-     font-size="12"
-     xml:space="preserve"
-     id="text50"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate">98.9%/0.99</text>
-  <text
-     x="209.00899"
-     y="266.70392"
-     font-size="12"
-     xml:space="preserve"
-     id="text52"
-     style="font-size:11.64432812px;font-family:Times;fill:#000000"><tspan
-   style="font-style:italic"
-   id="tspan4594">Paramecium caudatum</tspan> [PCAUDP15935]</text>
-  <text
-     x="151.25879"
-     y="325.50797"
-     font-size="12"
-     xml:space="preserve"
-     id="text54"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate">55.4%/0.63</text>
-  <text
-     x="141.96622"
-     y="502.41315"
-     font-size="12"
-     xml:space="preserve"
-     id="text56"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate">99.7%/1.00</text>
-  <text
-     x="94.75235"
-     y="293.57999"
-     font-size="12"
-     xml:space="preserve"
-     id="text58"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate">59.5%/0.67</text>
-  <text
-     x="193.7933"
-     y="665.52216"
-     font-size="12"
-     xml:space="preserve"
-     id="text60"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate">100%/1.00</text>
-  <text
-     x="89.640854"
-     y="391.88043"
-     font-size="12"
-     xml:space="preserve"
-     id="text62"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate">97.9%/1.00</text>
-  <text
-     x="143.99483"
-     y="233.71164"
-     font-size="12"
-     xml:space="preserve"
-     id="text64"
-     style="font-size:11.64432812px;font-family:Times;fill:#000000"><tspan
-   style="font-style:italic;fill:#000000"
-   id="tspan4518">Paramecium caudatum</tspan> [PSEXPNG26858]</text>
-  <text
-     x="164.37241"
-     y="199.74902"
-     font-size="12"
-     xml:space="preserve"
-     id="text66"
-     style="font-size:11.64432812px;font-family:Times;fill:#000000"><tspan
-   style="font-style:italic"
-   id="tspan4520">Paramecium multimicronucleatum</tspan> [PMMNP03007]</text>
-  <text
-     x="162.43169"
-     y="166.75676"
-     font-size="12"
-     xml:space="preserve"
-     id="text68"
-     style="font-size:11.64432812px;font-family:Times;fill:#000000"><tspan
-   style="font-style:italic"
-   id="tspan4522">Paramecium sexaurelia</tspan> [PSEXPNG26858]</text>
-  <text
-     x="159.5206"
-     y="132.79414"
-     font-size="12"
-     xml:space="preserve"
-     id="text70"
-     style="font-size:11.64432812px;font-family:Times;fill:#000000"><tspan
-   style="font-style:italic"
-   id="tspan4524">Paramecium primaurelia</tspan> [PPRIMP27560]</text>
-  <text
-     x="163.40204"
-     y="99.801872"
-     font-size="12"
-     xml:space="preserve"
-     id="text72"
-     style="font-size:11.64432812px;font-family:Times;fill:#000000"><tspan
-   style="font-style:italic"
-   id="tspan4526">Paramecium biaurelia</tspan> [PBIGNP11073]</text>
-  <text
-     x="167.28348"
-     y="65.839256"
-     font-size="12"
-     xml:space="preserve"
-     id="text74"
-     style="font-size:11.64432812px;font-family:Times;fill:#000000"><tspan
-       style="fill:#800000"
-       id="tspan4484"><tspan
-   style="font-style:italic"
-   id="tspan4516">Paramecium tetaurelia</tspan> Cid2 (Marker, 2014) ]PTETP13400003001]</tspan></text>
-  <text
-     x="112.27209"
-     y="75.54287"
-     font-size="12"
-     xml:space="preserve"
-     id="text76"
-     style="font-size:11.64432812px;font-family:Times;fill:#000000"><tspan
-       style="font-size:7.27770519px"
-       id="tspan4486">84.1%/0.91</tspan></text>
-  <text
-     x="115.35605"
-     y="99.801872"
-     font-size="12"
-     xml:space="preserve"
-     id="text78"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate">83%/0.88</text>
-  <text
-     x="104.0442"
-     y="129.88306"
-     font-size="12"
-     xml:space="preserve"
-     id="text80"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate">95.3%/0.96</text>
-  <text
-     x="91.308853"
-     y="160.9346"
-     font-size="12"
-     xml:space="preserve"
-     id="text82"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate">83.9%/0.88</text>
-  <text
-     x="78.481613"
-     y="537.43451"
-     font-size="12"
-     xml:space="preserve"
-     id="text84"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate">59.1%/0.54</text>
-  <text
-     x="72.289215"
-     y="192.9565"
-     font-size="12"
-     xml:space="preserve"
-     id="text86"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate">99.7%/1.00</text>
-  <text
-     x="11.726255"
-     y="357.91779"
-     font-size="12"
-     xml:space="preserve"
-     id="text88"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate">86.7%/0.69</text>
-  <text
-     x="10.114353"
-     y="568.39398"
-     font-size="12"
-     xml:space="preserve"
-     id="text90"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate">100%/1.00</text>
-  <line
-     x1="183.77962"
-     y1="797.49115"
-     x2="298.28217"
-     y2="797.49115"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line92" />
-  <line
-     x1="183.77962"
-     y1="764.4989"
-     x2="268.20099"
-     y2="764.4989"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line94" />
-  <line
-     x1="183.77962"
-     y1="797.49115"
-     x2="183.77962"
-     y2="764.4989"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line96" />
-  <line
-     x1="250.7345"
-     y1="697.54401"
-     x2="271.11206"
-     y2="697.54401"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line98" />
-  <line
-     x1="250.7345"
-     y1="663.58136"
-     x2="286.63785"
-     y2="663.58136"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line100" />
-  <line
-     x1="250.7345"
-     y1="697.54401"
-     x2="250.7345"
-     y2="663.58136"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line102" />
-  <line
-     x1="237.14944"
-     y1="681.04785"
-     x2="250.7345"
-     y2="681.04785"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line104" />
-  <line
-     x1="237.14944"
-     y1="630.58911"
-     x2="289.54892"
-     y2="630.58911"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line106" />
-  <line
-     x1="237.14944"
-     y1="681.04785"
-     x2="237.14944"
-     y2="630.58911"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line108" />
-  <line
-     x1="264.31955"
-     y1="596.62646"
-     x2="288.57855"
-     y2="596.62646"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line110" />
-  <line
-     x1="264.31955"
-     y1="563.63422"
-     x2="294.40073"
-     y2="563.63422"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line112" />
-  <line
-     x1="264.31955"
-     y1="596.62646"
-     x2="264.31955"
-     y2="563.63422"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line114" />
-  <line
-     x1="252.67522"
-     y1="580.13037"
-     x2="264.31955"
-     y2="580.13037"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line116" />
-  <line
-     x1="252.67522"
-     y1="529.67163"
-     x2="280.81567"
-     y2="529.67163"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line118" />
-  <line
-     x1="252.67522"
-     y1="580.13037"
-     x2="252.67522"
-     y2="529.67163"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line120" />
-  <line
-     x1="210.94971"
-     y1="554.901"
-     x2="252.67522"
-     y2="554.901"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line122" />
-  <line
-     x1="210.94971"
-     y1="496.67938"
-     x2="298.28217"
-     y2="496.67938"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line124" />
-  <line
-     x1="210.94971"
-     y1="554.901"
-     x2="210.94971"
-     y2="496.67938"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line126" />
-  <line
-     x1="186.69069"
-     y1="525.79016"
-     x2="210.94971"
-     y2="525.79016"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line128" />
-  <line
-     x1="186.69069"
-     y1="462.71674"
-     x2="256.55667"
-     y2="462.71674"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line130" />
-  <line
-     x1="186.69069"
-     y1="525.79016"
-     x2="186.69069"
-     y2="462.71674"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line132" />
-  <line
-     x1="193.48322"
-     y1="429.72449"
-     x2="205.12755"
-     y2="429.72449"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line134" />
-  <line
-     x1="193.48322"
-     y1="395.76187"
-     x2="202.21646"
-     y2="395.76187"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line136" />
-  <line
-     x1="193.48322"
-     y1="429.72449"
-     x2="193.48322"
-     y2="395.76187"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line138" />
-  <line
-     x1="192.51286"
-     y1="412.258"
-     x2="193.48322"
-     y2="412.258"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line140" />
-  <line
-     x1="192.51286"
-     y1="362.76959"
-     x2="194.45358"
-     y2="362.76959"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line142" />
-  <line
-     x1="192.51286"
-     y1="412.258"
-     x2="192.51286"
-     y2="362.76959"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line144" />
-  <line
-     x1="183.77962"
-     y1="387.99896"
-     x2="192.51286"
-     y2="387.99896"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line146" />
-  <line
-     x1="183.77962"
-     y1="328.80698"
-     x2="210.94971"
-     y2="328.80698"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line148" />
-  <line
-     x1="183.77962"
-     y1="387.99896"
-     x2="183.77962"
-     y2="328.80698"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line150" />
-  <line
-     x1="149.81699"
-     y1="357.91779"
-     x2="183.77962"
-     y2="357.91779"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line152" />
-  <line
-     x1="149.81699"
-     y1="295.81473"
-     x2="209.00899"
-     y2="295.81473"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line154" />
-  <line
-     x1="149.81699"
-     y1="357.91779"
-     x2="149.81699"
-     y2="295.81473"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line156" />
-  <line
-     x1="138.17267"
-     y1="326.86624"
-     x2="149.81699"
-     y2="326.86624"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line158" />
-  <line
-     x1="138.17267"
-     y1="261.85211"
-     x2="206.09792"
-     y2="261.85211"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line160" />
-  <line
-     x1="138.17267"
-     y1="326.86624"
-     x2="138.17267"
-     y2="261.85211"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line162" />
-  <line
-     x1="133.32086"
-     y1="494.73865"
-     x2="186.69069"
-     y2="494.73865"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line164" />
-  <line
-     x1="133.32086"
-     y1="294.84436"
-     x2="138.17267"
-     y2="294.84436"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line166" />
-  <line
-     x1="133.32086"
-     y1="494.73865"
-     x2="133.32086"
-     y2="294.84436"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line168" />
-  <line
-     x1="75.09922"
-     y1="655.81848"
-     x2="237.14944"
-     y2="655.81848"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line170" />
-  <line
-     x1="75.09922"
-     y1="394.7915"
-     x2="133.32086"
-     y2="394.7915"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line172" />
-  <line
-     x1="75.09922"
-     y1="655.81848"
-     x2="75.09922"
-     y2="394.7915"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line174" />
-  <line
-     x1="155.63916"
-     y1="94.950081"
-     x2="160.49095"
-     y2="94.950081"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line176" />
-  <line
-     x1="155.63916"
-     y1="60.987457"
-     x2="164.37241"
-     y2="60.987457"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line178" />
-  <line
-     x1="155.63916"
-     y1="94.950081"
-     x2="155.63916"
-     y2="60.987457"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line180" />
-  <line
-     x1="152.72807"
-     y1="127.94234"
-     x2="156.60951"
-     y2="127.94234"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line182" />
-  <line
-     x1="152.72807"
-     y1="77.483589"
-     x2="155.63916"
-     y2="77.483589"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line184" />
-  <line
-     x1="152.72807"
-     y1="127.94234"
-     x2="152.72807"
-     y2="77.483589"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line186" />
-  <line
-     x1="148.84663"
-     y1="161.90495"
-     x2="160.49095"
-     y2="161.90495"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line188" />
-  <line
-     x1="148.84663"
-     y1="102.71296"
-     x2="152.72807"
-     y2="102.71296"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line190" />
-  <line
-     x1="148.84663"
-     y1="161.90495"
-     x2="148.84663"
-     y2="102.71296"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line192" />
-  <line
-     x1="137.2023"
-     y1="194.89722"
-     x2="161.46132"
-     y2="194.89722"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line194" />
-  <line
-     x1="137.2023"
-     y1="131.82379"
-     x2="148.84663"
-     y2="131.82379"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line196" />
-  <line
-     x1="137.2023"
-     y1="194.89722"
-     x2="137.2023"
-     y2="131.82379"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line198" />
-  <line
-     x1="118.76546"
-     y1="228.85985"
-     x2="141.08374"
-     y2="228.85985"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line200" />
-  <line
-     x1="118.76546"
-     y1="163.84567"
-     x2="137.2023"
-     y2="163.84567"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line202" />
-  <line
-     x1="118.76546"
-     y1="228.85985"
-     x2="118.76546"
-     y2="163.84567"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line204" />
-  <line
-     x1="56.662365"
-     y1="524.81982"
-     x2="75.09922"
-     y2="524.81982"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line206" />
-  <line
-     x1="56.662365"
-     y1="195.86758"
-     x2="118.76546"
-     y2="195.86758"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line208" />
-  <line
-     x1="56.662365"
-     y1="524.81982"
-     x2="56.662365"
-     y2="195.86758"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line210" />
-  <line
-     x1="23.670105"
-     y1="730.53625"
-     x2="147.87627"
-     y2="730.53625"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line212" />
-  <line
-     x1="23.670105"
-     y1="360.82889"
-     x2="56.662365"
-     y2="360.82889"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line214" />
-  <line
-     x1="23.670105"
-     y1="730.53625"
-     x2="23.670105"
-     y2="360.82889"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line216" />
-  <line
-     x1="10.085055"
-     y1="780.995"
-     x2="183.77962"
-     y2="780.995"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line218" />
-  <line
-     x1="10.085055"
-     y1="546.16772"
-     x2="23.670105"
-     y2="546.16772"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line220" />
-  <line
-     x1="10.085055"
-     y1="780.995"
-     x2="10.085055"
-     y2="546.16772"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line222" />
-  <line
-     x1="393.3775"
-     y1="42.550602"
-     x2="424.42905"
-     y2="42.550602"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line224" />
-  <line
-     x1="393.3775"
-     y1="46.432045"
-     x2="393.3775"
-     y2="38.669159"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line226" />
-  <line
-     x1="424.42905"
-     y1="46.432045"
-     x2="424.42905"
-     y2="38.669159"
-     style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
-     id="line228" />
-  <text
-     x="401.14041"
-     y="40.609882"
-     font-size="12"
-     xml:space="preserve"
-     id="text230"
-     style="font-size:11.64432812px;font-family:Times;fill:#000000">0.2</text>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-weight:normal;font-size:10.67396736px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="293.62054"
-     y="27.035088"
+     style="font-style:normal;font-weight:normal;font-size:9.88075542px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="330.46341"
+     y="28.206902"
      id="text4598"
      sodipodi:linespacing="125%"><tspan
        sodipodi:role="line"
        id="tspan4600"
-       x="293.62054"
-       y="27.035088"
-       style="font-weight:bold;font-size:19.40721321px">Cid</tspan></text>
+       x="330.46341"
+       y="28.206902"
+       style="font-weight:bold;font-size:17.96500778px">Cid</tspan></text>
+  <g
+     id="g5621"
+     transform="matrix(0.92568723,0,0,0.92568723,4.1855692,-221.29416)">
+    <rect
+       ry="2.8575315"
+       rx="2.8575313"
+       y="853.79126"
+       x="190.23198"
+       height="89.027924"
+       width="453.0661"
+       id="rect5556-1"
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#ececec;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00304091;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate" />
+    <rect
+       ry="2.8575315"
+       rx="2.8575315"
+       y="287.29828"
+       x="65.130287"
+       height="184.59901"
+       width="578.47614"
+       id="rect5556-0-9"
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#ececec;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00304091;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate" />
+    <rect
+       ry="2.8575313"
+       rx="2.8575313"
+       y="489.68683"
+       x="143.42424"
+       height="184.599"
+       width="500.08459"
+       id="rect5556-0"
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#ececec;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00304091;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate" />
+    <rect
+       ry="2.8575311"
+       rx="2.8575311"
+       y="688.71887"
+       x="143.55052"
+       height="154.3181"
+       width="500.19955"
+       id="rect5556"
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#ececec;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00304091;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate" />
+    <text
+       style="font-size:11.64432812px;font-family:Times;fill:#000000"
+       id="text6"
+       xml:space="preserve"
+       font-size="12"
+       y="1037.8717"
+       x="301.19327"><tspan
+   id="tspan4426"
+   style="font-style:italic">Tetrahymena thermophila</tspan> [XP_001012854.1]</text>
+    <text
+       style="font-size:11.64432812px;font-family:Times;fill:#000000"
+       id="text8"
+       xml:space="preserve"
+       font-size="12"
+       y="1003.9091"
+       x="271.11206"><tspan
+   id="tspan4424"
+   style="font-style:italic">Tetrahymena thermophila</tspan> [XP_001012858.1]</text>
+    <text
+       style="font-size:11.64432812px;font-family:Times;fill:#0000ff"
+       id="text10"
+       xml:space="preserve"
+       font-size="12"
+       y="970.91681"
+       x="149.81699"><tspan
+   id="tspan4434"
+   style="font-style:italic;fill:#0000ff">Paramecium bursaria</tspan> SW1 [comp3906_seq0_m.68533]</text>
+    <text
+       style="font-size:11.64432812px;font-family:Times;fill:#0000ff"
+       id="text12"
+       xml:space="preserve"
+       font-size="12"
+       y="936.95422"
+       x="274.02316"><tspan
+   id="tspan4432"
+   style="font-style:italic;fill:#0000ff">Paramecium bursaria</tspan> SW1 [comp3906_seq0_m.68531]</text>
+    <text
+       style="font-size:11.64432812px;font-family:Times;fill:#0000ff"
+       id="text14"
+       xml:space="preserve"
+       font-size="12"
+       y="903.96198"
+       x="289.54892"><tspan
+   id="tspan4430"
+   style="font-style:italic;fill:#0000ff">Paramecium bursaria</tspan> Yad1g [TR17851_c0_g1_i8_m.235761]</text>
+    <text
+       style="font-size:11.64432812px;font-family:Times;fill:#0000ff"
+       id="text16"
+       xml:space="preserve"
+       font-size="12"
+       y="869.99933"
+       x="292.46002"><tspan
+   id="tspan4428"
+   style="font-style:italic;fill:#0000ff">Paramecium bursaria</tspan> Yad1g [TR432_c1_g1_i2_m.4057]</text>
+    <text
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text18"
+       xml:space="preserve"
+       font-size="12"
+       y="924.72772"
+       x="206.27023">80.7%/0.93</text>
+    <text
+       style="font-size:11.64432812px;font-family:Times;fill:#000000"
+       id="text20"
+       xml:space="preserve"
+       font-size="12"
+       y="837.00708"
+       x="290.51929"><tspan
+   id="tspan4592"
+   style="font-style:italic">Paramecium biaurelia</tspan> [PBIGNP33303]</text>
+    <text
+       style="font-size:11.64432812px;font-family:Times;fill:#800000"
+       id="text22"
+       xml:space="preserve"
+       font-size="12"
+       y="803.04443"
+       x="297.3118"><tspan
+   id="tspan4596"
+   style="font-style:italic">Paramecium tetaurelia</tspan> Cid3 [GSPATP00025353001]</text>
+    <text
+       style="font-size:11.64432812px;font-family:Times;fill:#000000"
+       id="text24"
+       xml:space="preserve"
+       font-size="12"
+       y="770.05219"
+       x="283.72678"><tspan
+   id="tspan4590"
+   style="font-style:italic">Paramecium sexaurelia</tspan> [PSEXPNG26288]</text>
+    <text
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text26"
+       xml:space="preserve"
+       font-size="12"
+       y="822.36322"
+       x="218.91716">89.8%/0.94</text>
+    <text
+       style="font-size:11.64432812px;font-family:Times;fill:#000000"
+       id="text28"
+       xml:space="preserve"
+       font-size="12"
+       y="736.08954"
+       x="301.19327"><tspan
+   id="tspan4588"
+   style="font-style:italic">Paramecium multimicronucleatum</tspan> [PMMNP07604]</text>
+    <text
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text30"
+       xml:space="preserve"
+       font-size="12"
+       y="797.54553"
+       x="208.47963">99.8%/1.00</text>
+    <text
+       style="font-size:11.64432812px;font-family:Times;fill:#000000"
+       id="text32"
+       xml:space="preserve"
+       font-size="12"
+       y="703.09729"
+       x="258.49738"><tspan
+   id="tspan4528"
+   style="font-style:italic">Paramecium caudatum</tspan> [PCAUDP10462]</text>
+    <text
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text34"
+       xml:space="preserve"
+       font-size="12"
+       y="768.02301"
+       x="172.69347">91%/0.93</text>
+    <text
+       style="font-size:11.64432812px;font-family:Times;fill:#800000"
+       id="text36"
+       xml:space="preserve"
+       font-size="12"
+       y="669.1347"
+       x="208.03864"><tspan
+   id="tspan4514"
+   style="font-style:italic">Paramecium tetaurelia</tspan> Cid1 (Marker, 2014) [PTETP9100013001]</text>
+    <text
+       style="font-size:11.64432812px;font-family:Times;fill:#000000"
+       id="text38"
+       xml:space="preserve"
+       font-size="12"
+       y="636.1424"
+       x="204.15718"><tspan
+   id="tspan4510"
+   style="font-style:italic">Paramecium biaurelia</tspan> [PBIGNP26212]</text>
+    <text
+       style="font-size:11.64432812px;font-family:Times;fill:#000000"
+       id="text40"
+       xml:space="preserve"
+       font-size="12"
+       y="602.17981"
+       x="197.36467"><tspan
+   id="tspan4512"
+   style="font-style:italic">Paramecium primaurelia</tspan> [PPRIMP23072]</text>
+    <text
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text42"
+       xml:space="preserve"
+       font-size="12"
+       y="654.57941"
+       x="162.08212">5%/0.51</text>
+    <text
+       style="font-size:11.64432812px;font-family:Times;fill:#000000"
+       id="text44"
+       xml:space="preserve"
+       font-size="12"
+       y="568.21716"
+       x="213.86079"><tspan
+   id="tspan4508"
+   style="font-style:italic">Paramecium sexaurelia</tspan> [PSEXPNG26738]</text>
+    <text
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text46"
+       xml:space="preserve"
+       font-size="12"
+       y="629.31165"
+       x="155.95012">42%/0.71</text>
+    <text
+       style="font-size:11.64432812px;font-family:Times;fill:#000000"
+       id="text48"
+       xml:space="preserve"
+       font-size="12"
+       y="535.22491"
+       x="211.92007"><tspan
+   id="tspan4506"
+   style="font-style:italic">Paramecium multimicronucleatum</tspan> [PMMNP02964] </text>
+    <text
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text50"
+       xml:space="preserve"
+       font-size="12"
+       y="601.40356"
+       x="139.03253">98.9%/0.99</text>
+    <text
+       style="font-size:11.64432812px;font-family:Times;fill:#000000"
+       id="text52"
+       xml:space="preserve"
+       font-size="12"
+       y="501.2623"
+       x="209.00899"><tspan
+   id="tspan4594"
+   style="font-style:italic">Paramecium caudatum</tspan> [PCAUDP15935]</text>
+    <text
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text54"
+       xml:space="preserve"
+       font-size="12"
+       y="560.06635"
+       x="151.25879">55.4%/0.63</text>
+    <text
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text56"
+       xml:space="preserve"
+       font-size="12"
+       y="736.97156"
+       x="141.96622">99.7%/1.00</text>
+    <text
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text58"
+       xml:space="preserve"
+       font-size="12"
+       y="528.13837"
+       x="94.75235">59.5%/0.67</text>
+    <text
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text60"
+       xml:space="preserve"
+       font-size="12"
+       y="900.08057"
+       x="193.7933">100%/1.00</text>
+    <text
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text62"
+       xml:space="preserve"
+       font-size="12"
+       y="626.43884"
+       x="89.640854">97.9%/1.00</text>
+    <text
+       style="font-size:11.64432812px;font-family:Times;fill:#000000"
+       id="text64"
+       xml:space="preserve"
+       font-size="12"
+       y="468.27002"
+       x="143.99483"><tspan
+   id="tspan4518"
+   style="font-style:italic;fill:#000000">Paramecium caudatum</tspan> [PSEXPNG26858]</text>
+    <text
+       style="font-size:11.64432812px;font-family:Times;fill:#000000"
+       id="text66"
+       xml:space="preserve"
+       font-size="12"
+       y="434.3074"
+       x="164.37241"><tspan
+   id="tspan4520"
+   style="font-style:italic">Paramecium multimicronucleatum</tspan> [PMMNP03007]</text>
+    <text
+       style="font-size:11.64432812px;font-family:Times;fill:#000000"
+       id="text68"
+       xml:space="preserve"
+       font-size="12"
+       y="401.31516"
+       x="162.43169"><tspan
+   id="tspan4522"
+   style="font-style:italic">Paramecium sexaurelia</tspan> [PSEXPNG26858]</text>
+    <text
+       style="font-size:11.64432812px;font-family:Times;fill:#000000"
+       id="text70"
+       xml:space="preserve"
+       font-size="12"
+       y="367.35254"
+       x="159.5206"><tspan
+   id="tspan4524"
+   style="font-style:italic">Paramecium primaurelia</tspan> [PPRIMP27560]</text>
+    <text
+       style="font-size:11.64432812px;font-family:Times;fill:#000000"
+       id="text72"
+       xml:space="preserve"
+       font-size="12"
+       y="334.36026"
+       x="163.40204"><tspan
+   id="tspan4526"
+   style="font-style:italic">Paramecium biaurelia</tspan> [PBIGNP11073]</text>
+    <text
+       style="font-size:11.64432812px;font-family:Times;fill:#000000"
+       id="text74"
+       xml:space="preserve"
+       font-size="12"
+       y="300.39764"
+       x="167.28348"><tspan
+         id="tspan4484"
+         style="fill:#800000"><tspan
+   id="tspan4516"
+   style="font-style:italic">Paramecium tetaurelia</tspan> Cid2 (Marker, 2014) [PTETP13400003001]</tspan></text>
+    <text
+       style="font-size:11.64432812px;font-family:Times;fill:#000000"
+       id="text76"
+       xml:space="preserve"
+       font-size="12"
+       y="310.10126"
+       x="112.27209"><tspan
+         id="tspan4486"
+         style="font-size:7.27770519px">84.1%/0.91</tspan></text>
+    <text
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text78"
+       xml:space="preserve"
+       font-size="12"
+       y="334.36026"
+       x="115.35605">83%/0.88</text>
+    <text
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text80"
+       xml:space="preserve"
+       font-size="12"
+       y="364.44144"
+       x="104.0442">95.3%/0.96</text>
+    <text
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text82"
+       xml:space="preserve"
+       font-size="12"
+       y="395.49298"
+       x="91.308853">83.9%/0.88</text>
+    <text
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text84"
+       xml:space="preserve"
+       font-size="12"
+       y="771.99292"
+       x="78.481613">59.1%/0.54</text>
+    <text
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text86"
+       xml:space="preserve"
+       font-size="12"
+       y="427.51489"
+       x="72.289215">99.7%/1.00</text>
+    <text
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text88"
+       xml:space="preserve"
+       font-size="12"
+       y="592.4762"
+       x="11.726255">86.7%/0.69</text>
+    <text
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.27770519px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text90"
+       xml:space="preserve"
+       font-size="12"
+       y="802.95239"
+       x="10.114353">100%/1.00</text>
+    <line
+       id="line92"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="1032.0496"
+       x2="298.28217"
+       y1="1032.0496"
+       x1="183.77962" />
+    <line
+       id="line94"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="999.05731"
+       x2="268.20099"
+       y1="999.05731"
+       x1="183.77962" />
+    <line
+       id="line96"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="999.05731"
+       x2="183.77962"
+       y1="1032.0496"
+       x1="183.77962" />
+    <line
+       id="line98"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="932.10242"
+       x2="271.11206"
+       y1="932.10242"
+       x1="250.7345" />
+    <line
+       id="line100"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="898.13977"
+       x2="286.63785"
+       y1="898.13977"
+       x1="250.7345" />
+    <line
+       id="line102"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="898.13977"
+       x2="250.7345"
+       y1="932.10242"
+       x1="250.7345" />
+    <line
+       id="line104"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="915.60626"
+       x2="250.7345"
+       y1="915.60626"
+       x1="237.14944" />
+    <line
+       id="line106"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="865.14752"
+       x2="289.54892"
+       y1="865.14752"
+       x1="237.14944" />
+    <line
+       id="line108"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="865.14752"
+       x2="237.14944"
+       y1="915.60626"
+       x1="237.14944" />
+    <line
+       id="line110"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="831.18488"
+       x2="288.57855"
+       y1="831.18488"
+       x1="264.31955" />
+    <line
+       id="line112"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="798.19263"
+       x2="294.40073"
+       y1="798.19263"
+       x1="264.31955" />
+    <line
+       id="line114"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="798.19263"
+       x2="264.31955"
+       y1="831.18488"
+       x1="264.31955" />
+    <line
+       id="line116"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="814.68878"
+       x2="264.31955"
+       y1="814.68878"
+       x1="252.67522" />
+    <line
+       id="line118"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="764.23004"
+       x2="280.81567"
+       y1="764.23004"
+       x1="252.67522" />
+    <line
+       id="line120"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="764.23004"
+       x2="252.67522"
+       y1="814.68878"
+       x1="252.67522" />
+    <line
+       id="line122"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="789.45941"
+       x2="252.67522"
+       y1="789.45941"
+       x1="210.94971" />
+    <line
+       id="line124"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="731.23779"
+       x2="298.28217"
+       y1="731.23779"
+       x1="210.94971" />
+    <line
+       id="line126"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="731.23779"
+       x2="210.94971"
+       y1="789.45941"
+       x1="210.94971" />
+    <line
+       id="line128"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="760.34857"
+       x2="210.94971"
+       y1="760.34857"
+       x1="186.69069" />
+    <line
+       id="line130"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="697.27515"
+       x2="256.55667"
+       y1="697.27515"
+       x1="186.69069" />
+    <line
+       id="line132"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="697.27515"
+       x2="186.69069"
+       y1="760.34857"
+       x1="186.69069" />
+    <line
+       id="line134"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="664.2829"
+       x2="205.12755"
+       y1="664.2829"
+       x1="193.48322" />
+    <line
+       id="line136"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="630.32025"
+       x2="202.21646"
+       y1="630.32025"
+       x1="193.48322" />
+    <line
+       id="line138"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="630.32025"
+       x2="193.48322"
+       y1="664.2829"
+       x1="193.48322" />
+    <line
+       id="line140"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="646.81641"
+       x2="193.48322"
+       y1="646.81641"
+       x1="192.51286" />
+    <line
+       id="line142"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="597.328"
+       x2="194.45358"
+       y1="597.328"
+       x1="192.51286" />
+    <line
+       id="line144"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="597.328"
+       x2="192.51286"
+       y1="646.81641"
+       x1="192.51286" />
+    <line
+       id="line146"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="622.55737"
+       x2="192.51286"
+       y1="622.55737"
+       x1="183.77962" />
+    <line
+       id="line148"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="563.36536"
+       x2="210.94971"
+       y1="563.36536"
+       x1="183.77962" />
+    <line
+       id="line150"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="563.36536"
+       x2="183.77962"
+       y1="622.55737"
+       x1="183.77962" />
+    <line
+       id="line152"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="592.4762"
+       x2="183.77962"
+       y1="592.4762"
+       x1="149.81699" />
+    <line
+       id="line154"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="530.37311"
+       x2="209.00899"
+       y1="530.37311"
+       x1="149.81699" />
+    <line
+       id="line156"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="530.37311"
+       x2="149.81699"
+       y1="592.4762"
+       x1="149.81699" />
+    <line
+       id="line158"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="561.42462"
+       x2="149.81699"
+       y1="561.42462"
+       x1="138.17267" />
+    <line
+       id="line160"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="496.41049"
+       x2="206.09792"
+       y1="496.41049"
+       x1="138.17267" />
+    <line
+       id="line162"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="496.41049"
+       x2="138.17267"
+       y1="561.42462"
+       x1="138.17267" />
+    <line
+       id="line164"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="729.29706"
+       x2="186.69069"
+       y1="729.29706"
+       x1="133.32086" />
+    <line
+       id="line166"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="529.40277"
+       x2="138.17267"
+       y1="529.40277"
+       x1="133.32086" />
+    <line
+       id="line168"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="529.40277"
+       x2="133.32086"
+       y1="729.29706"
+       x1="133.32086" />
+    <line
+       id="line170"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="890.37689"
+       x2="237.14944"
+       y1="890.37689"
+       x1="75.09922" />
+    <line
+       id="line172"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="629.34991"
+       x2="133.32086"
+       y1="629.34991"
+       x1="75.09922" />
+    <line
+       id="line174"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="629.34991"
+       x2="75.09922"
+       y1="890.37689"
+       x1="75.09922" />
+    <line
+       id="line176"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="329.50848"
+       x2="160.49095"
+       y1="329.50848"
+       x1="155.63916" />
+    <line
+       id="line178"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="295.54584"
+       x2="164.37241"
+       y1="295.54584"
+       x1="155.63916" />
+    <line
+       id="line180"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="295.54584"
+       x2="155.63916"
+       y1="329.50848"
+       x1="155.63916" />
+    <line
+       id="line182"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="362.50073"
+       x2="156.60951"
+       y1="362.50073"
+       x1="152.72807" />
+    <line
+       id="line184"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="312.04199"
+       x2="155.63916"
+       y1="312.04199"
+       x1="152.72807" />
+    <line
+       id="line186"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="312.04199"
+       x2="152.72807"
+       y1="362.50073"
+       x1="152.72807" />
+    <line
+       id="line188"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="396.46335"
+       x2="160.49095"
+       y1="396.46335"
+       x1="148.84663" />
+    <line
+       id="line190"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="337.27136"
+       x2="152.72807"
+       y1="337.27136"
+       x1="148.84663" />
+    <line
+       id="line192"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="337.27136"
+       x2="148.84663"
+       y1="396.46335"
+       x1="148.84663" />
+    <line
+       id="line194"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="429.4556"
+       x2="161.46132"
+       y1="429.4556"
+       x1="137.2023" />
+    <line
+       id="line196"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="366.38217"
+       x2="148.84663"
+       y1="366.38217"
+       x1="137.2023" />
+    <line
+       id="line198"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="366.38217"
+       x2="137.2023"
+       y1="429.4556"
+       x1="137.2023" />
+    <line
+       id="line200"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="463.41824"
+       x2="141.08374"
+       y1="463.41824"
+       x1="118.76546" />
+    <line
+       id="line202"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="398.40405"
+       x2="137.2023"
+       y1="398.40405"
+       x1="118.76546" />
+    <line
+       id="line204"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="398.40405"
+       x2="118.76546"
+       y1="463.41824"
+       x1="118.76546" />
+    <line
+       id="line206"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="759.37823"
+       x2="75.09922"
+       y1="759.37823"
+       x1="56.662365" />
+    <line
+       id="line208"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="430.42596"
+       x2="118.76546"
+       y1="430.42596"
+       x1="56.662365" />
+    <line
+       id="line210"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="430.42596"
+       x2="56.662365"
+       y1="759.37823"
+       x1="56.662365" />
+    <line
+       id="line212"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="965.09467"
+       x2="147.87627"
+       y1="965.09467"
+       x1="23.670105" />
+    <line
+       id="line214"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="595.38727"
+       x2="56.662365"
+       y1="595.38727"
+       x1="23.670105" />
+    <line
+       id="line216"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="595.38727"
+       x2="23.670105"
+       y1="965.09467"
+       x1="23.670105" />
+    <line
+       id="line218"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="1015.5534"
+       x2="183.77962"
+       y1="1015.5534"
+       x1="10.085055" />
+    <line
+       id="line220"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="780.72614"
+       x2="23.670105"
+       y1="780.72614"
+       x1="10.085055" />
+    <line
+       id="line222"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="780.72614"
+       x2="10.085055"
+       y1="1015.5534"
+       x1="10.085055" />
+    <line
+       id="line224"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="1040.7743"
+       x2="72.584427"
+       y1="1040.7743"
+       x1="41.532848" />
+    <line
+       id="line226"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="1036.8928"
+       x2="41.532848"
+       y1="1044.6558"
+       x1="41.532848" />
+    <line
+       id="line228"
+       style="stroke:#000000;stroke-width:0.97036064;stroke-linecap:butt"
+       y2="1036.8928"
+       x2="72.584427"
+       y1="1044.6558"
+       x1="72.584427" />
+    <text
+       style="font-size:11.64432812px;font-family:Times;fill:#000000"
+       id="text230"
+       xml:space="preserve"
+       font-size="12"
+       y="1038.8335"
+       x="49.295788">0.2</text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path5449"
+       d="m 631.00455,287.52303 12.36048,0 0,184.19414 -12.36048,0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.04127181px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text5451"
+       y="383.76389"
+       x="650.19537"
+       style="font-style:normal;font-weight:normal;font-size:11px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="383.76389"
+         x="650.19537"
+         id="tspan5453"
+         sodipodi:role="line">Cid2</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path5449-7"
+       d="m 631.00455,489.87102 12.36048,0 0,184.19415 -12.36048,0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.04127181px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text5451-1"
+       y="586.11194"
+       x="650.19537"
+       style="font-style:normal;font-weight:normal;font-size:11px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="586.11194"
+         x="650.19537"
+         id="tspan5453-3"
+         sodipodi:role="line">Cid1</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path5449-7-8"
+       d="m 630.99452,689.01038 12.42613,0 0,153.70374 -12.42613,0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.95371491px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text5451-1-4"
+       y="770.00604"
+       x="650.19537"
+       style="font-style:normal;font-weight:normal;font-size:11px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="770.00604"
+         x="650.19537"
+         id="tspan5453-3-5"
+         sodipodi:role="line">Cid1</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path5449-7-8-1"
+       d="m 631.78184,854.01283 11.61567,0 0,88.57385 -11.61567,0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000012;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text5603"
+       y="895.56854"
+       x="687.48779"
+       style="font-style:normal;font-weight:normal;font-size:11px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="text-align:center;text-anchor:middle"
+         y="895.56854"
+         x="687.48779"
+         id="tspan5605"
+         sodipodi:role="line">Pre-duplication</tspan><tspan
+         style="text-align:center;text-anchor:middle"
+         id="tspan5607"
+         y="909.31854"
+         x="687.48779"
+         sodipodi:role="line">Cid</tspan></text>
+  </g>
 </svg>

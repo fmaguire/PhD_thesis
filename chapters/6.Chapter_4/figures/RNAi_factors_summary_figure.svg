@@ -23,17 +23,17 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.1441624"
-     inkscape:cx="318.26554"
-     inkscape:cy="145.86065"
+     inkscape:cx="123.03913"
+     inkscape:cy="300.8759"
      inkscape:document-units="px"
      inkscape:current-layer="g7221"
      showgrid="false"
-     inkscape:window-width="1436"
-     inkscape:window-height="843"
-     inkscape:window-x="1680"
-     inkscape:window-y="36"
+     inkscape:window-width="836"
+     inkscape:window-height="1011"
+     inkscape:window-x="840"
+     inkscape:window-y="18"
      inkscape:window-maximized="0"
-     showguides="false"
+     showguides="true"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
@@ -48,7 +48,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -312,7 +312,7 @@
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
        id="path5168-99-1-5-1-8-2-8-51"
-       style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       style="fill:#7fbf7b;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
        cx="140.96025"
        cy="107.74333"
        r="4.5348868" />
@@ -546,7 +546,7 @@
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
        id="path5168-99-1-5-1-8-2-54-3-7"
-       style="fill:#141414;fill-opacity:0.58823529;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       style="fill:#af8dc3;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
        cx="226.39246"
        cy="107.74333"
        r="4.5348868" />
@@ -735,7 +735,7 @@
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
        id="path5168-99-1-5-1-8-2-8-9-7-8"
-       style="fill:#141414;fill-opacity:0.58823529;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       style="fill:#af8dc3;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
        cx="183.67638"
        cy="107.74333"
        r="4.5348868" />
@@ -873,7 +873,7 @@
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
        id="path5168-99-1-5-1-8-2-8-9-7-89"
-       style="fill:#141414;fill-opacity:0.58823529;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       style="fill:#af8dc3;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
        cx="197.91505"
        cy="107.74333"
        r="4.5348868" />
@@ -955,92 +955,139 @@
     <g
        id="g7221"
        transform="translate(78.87535,-162.12825)">
-      <rect
-         style="fill:none;stroke:#00000f;stroke-width:0.70623416;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.94117647"
-         id="rect14267"
-         width="126.29714"
-         height="56.530807"
-         x="73.103989"
-         y="365.38306"
-         rx="2.6451786"
-         inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-         inkscape:export-xdpi="660.70001"
-         inkscape:export-ydpi="660.70001"
-         ry="2.6451786" />
       <g
-         transform="matrix(0.96852358,0,0,0.96852358,34.224924,-4.943074)"
-         id="g7206">
-        <circle
-           inkscape:export-ydpi="660.70001"
-           inkscape:export-xdpi="660.70001"
-           inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/path5440.png"
-           transform="matrix(0.58859795,0,0,0.58859795,-537.73849,385.25887)"
-           id="path5168-99-1-5-1-8-2-8-9-58-3-6-2"
-           style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
-           cx="1012.4001"
-           cy="48.447334"
-           r="7.9549513" />
-        <text
+         id="g4342"
+         transform="translate(0,-4.3260882)">
+        <rect
+           ry="2.6451786"
            inkscape:export-ydpi="660.70001"
            inkscape:export-xdpi="660.70001"
            inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-           id="text14335-2-8"
-           y="415.9819"
-           x="68.61039"
-           style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none"
-           xml:space="preserve"
-           inkscape:transform-center-x="35.355339"><tspan
-             style="font-size:8px"
-             y="415.9819"
+           rx="2.6451786"
+           y="369.09491"
+           x="79.287872"
+           height="63.321434"
+           width="115.16541"
+           id="rect14267"
+           style="fill:none;stroke:#00000f;stroke-width:0.71374935;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.94117647" />
+        <g
+           id="g7206"
+           transform="matrix(0.96852358,0,0,0.96852358,34.224924,-10.380711)">
+          <circle
+             r="7.9549513"
+             cy="48.447334"
+             cx="1012.4001"
+             style="fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
+             id="path5168-99-1-5-1-8-2-8-9-58-3-6-2"
+             transform="matrix(0.58859795,0,0,0.58859795,-537.73849,385.25887)"
+             inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/path5440.png"
+             inkscape:export-xdpi="660.70001"
+             inkscape:export-ydpi="660.70001" />
+          <text
+             inkscape:transform-center-x="35.355339"
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none"
              x="68.61039"
-             id="tspan14337-6-85"
-             sodipodi:role="line">Presence of protein</tspan></text>
+             y="415.9819"
+             id="text14335-2-8"
+             inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
+             inkscape:export-xdpi="660.70001"
+             inkscape:export-ydpi="660.70001"><tspan
+               sodipodi:role="line"
+               id="tspan14337-6-85"
+               x="68.61039"
+               y="415.9819"
+               style="font-size:8px">Presence of homologue</tspan></text>
+        </g>
+        <g
+           id="g4329">
+          <text
+             inkscape:transform-center-x="34.242479"
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:11.62228298px;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none"
+             x="101.37563"
+             y="380.2644"
+             id="text14335-2-8-5"><tspan
+               sodipodi:role="line"
+               id="tspan14337-6-85-9"
+               x="101.37563"
+               y="380.2644"
+               style="font-size:7.7481885px">Absence of homologue</tspan></text>
+          <circle
+             style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+             id="path5168-99-1-5-1-8-2-2-61-9-5"
+             inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/path5440.png"
+             inkscape:export-xdpi="660.70001"
+             inkscape:export-ydpi="660.70001"
+             cx="90.552437"
+             cy="378.12683"
+             r="4.5348873" />
+        </g>
+        <g
+           transform="translate(0,0.27047157)"
+           id="g4324">
+          <circle
+             cy="402.34271"
+             cx="90.552437"
+             style="fill:#af8dc3;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+             id="path5168-99-1-5-1-8-2-0-9-4-0-89-2-5"
+             inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/path5440.png"
+             inkscape:export-xdpi="660.70001"
+             inkscape:export-ydpi="660.70001"
+             r="4.5348873" />
+          <text
+             inkscape:transform-center-x="34.242474"
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:11.62228298px;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none"
+             x="100.76273"
+             y="405.23126"
+             id="text14335-2-8-5-5-2"
+             inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
+             inkscape:export-xdpi="660.70001"
+             inkscape:export-ydpi="660.70001"><tspan
+               sodipodi:role="line"
+               id="tspan14337-6-85-9-4-9"
+               x="100.76273"
+               y="405.23126"
+               style="font-size:7.7481885px">Unresolved</tspan></text>
+        </g>
+        <g
+           id="g7206-2"
+           transform="matrix(0.96852358,0,0,0.96852358,34.224921,14.105638)">
+          <g
+             id="g4336">
+            <circle
+               inkscape:export-ydpi="660.70001"
+               inkscape:export-xdpi="660.70001"
+               inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/path5440.png"
+               id="path5168-99-1-5-1-8-2-8-9-58-3-6-2-3"
+               style="fill:#7fbf7b;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.58859795;stroke-opacity:1"
+               cx="58.158123"
+               cy="418.77487"
+               r="4.6822681" />
+            <text
+               inkscape:export-ydpi="660.70001"
+               inkscape:export-xdpi="660.70001"
+               inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
+               id="text14335-2-8-4"
+               y="415.9819"
+               x="68.61039"
+               style="font-style:normal;font-weight:normal;font-size:12px;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none"
+               xml:space="preserve"
+               inkscape:transform-center-x="35.355339"><tspan
+                 style="font-size:8px"
+                 y="415.9819"
+                 x="68.61039"
+                 id="tspan14337-6-85-0"
+                 sodipodi:role="line">Putative unduplicated </tspan><tspan
+                 style="font-size:8px"
+                 y="425.9819"
+                 x="68.61039"
+                 sodipodi:role="line"
+                 id="tspan4334">ancestral orthologue</tspan></text>
+          </g>
+        </g>
       </g>
-      <text
-         inkscape:transform-center-x="34.242479"
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:11.62228298px;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none"
-         x="101.37562"
-         y="380.2644"
-         id="text14335-2-8-5"><tspan
-           sodipodi:role="line"
-           id="tspan14337-6-85-9"
-           x="101.37562"
-           y="380.2644"
-           style="font-size:7.7481885px">Absence of protein</tspan></text>
-      <circle
-         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
-         id="path5168-99-1-5-1-8-2-2-61-9-5"
-         inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/path5440.png"
-         inkscape:export-xdpi="660.70001"
-         inkscape:export-ydpi="660.70001"
-         cx="90.552437"
-         cy="378.12683"
-         r="4.5348873" />
-      <circle
-         cy="411.83371"
-         cx="90.552437"
-         style="fill:#131313;fill-opacity:0.58823529;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
-         id="path5168-99-1-5-1-8-2-0-9-4-0-89-2-5"
-         inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/path5440.png"
-         inkscape:export-xdpi="660.70001"
-         inkscape:export-ydpi="660.70001"
-         r="4.5348873" />
-      <text
-         inkscape:transform-center-x="34.242474"
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:11.62228298px;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none"
-         x="100.76273"
-         y="413.97128"
-         id="text14335-2-8-5-5-2"
-         inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
-         inkscape:export-xdpi="660.70001"
-         inkscape:export-ydpi="660.70001"><tspan
-           sodipodi:role="line"
-           id="tspan14337-6-85-9-4-9"
-           x="100.76273"
-           y="413.97128"
-           style="font-size:7.7481885px">Unresolved orthologues</tspan></text>
     </g>
     <text
        inkscape:export-ydpi="660.70001"
@@ -1155,7 +1202,7 @@
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
        id="path5168-99-1-5-1-8-2-0-0"
-       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       style="fill:#7fbf7b;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
        cx="254.94389"
        cy="107.74333"
        r="4.5348868" />
@@ -1218,7 +1265,7 @@
        inkscape:export-xdpi="660.70001"
        inkscape:export-filename="/home/fin-crunchbang/documents/PhD/MRO/Fig1.png"
        id="path5168-99-1-5-1-8-2-9-1"
-       style="fill:#141414;fill-opacity:0.58823529;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
+       style="fill:#af8dc3;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57007098;stroke-opacity:1"
        cx="283.4213"
        cy="107.74333"
        r="4.5348868" />
