@@ -35,7 +35,10 @@ green algal \textit{Paramecium} endosymbiont (see Chapter 1 for more details).
 \subsection{Media and Culture conditions}
 All \textit{P. bursaria} and green algae cultures were maintained in 
 New Cereal Leaf-Prescott Liquid (NCL) media 
-(\(4.3g/l CaCl_{2}.2H_{2}O\), \(1.6g/l KCl\), \(5.1g/l K_{2}HPO_{4}\), \(2.8g/l MgSO_{4}.7H_{2}O\), 
+(\(4.3g/l \quad CaCl_{2}.2H_{2}O\), 
+\(1.6g/l \quad KCl\), 
+\(5.1g/l \quad K_{2}HPO_{4}\), 
+\(2.8g/l \quad MgSO_{4}.7H_{2}O\), 
 \(1g/l\) wheat bran, gravity filtered via \(GF/C\) paper and autoclaved) \citep{NCLCCAP} and stored in 
 an incubator at 15\celsius with a 12:12 light:dark cycle.  The incubator was
 lit using 2 \(21w\) 865 daylight fluorescent tubes, producing 2000 lumen each.
@@ -1042,7 +1045,7 @@ which are capable of beating human-performance on complex image classification t
 
 Typically, we seek to set the parameters (\theta) of a function in such a way
 that another property is minimised.  For example, in linear regression the aim is to find 
-parameters of a straight line \(h_{theta}(x) = \theta_{0} + \theta_{1} * x_{1}\) which minimise the distance
+parameters of a straight line \(h_{\theta}(x) = \theta_{0} + \theta_{1} * x_{1}\) which minimise the distance
 between the line and the data (for example, the sum of squares distance).
 This distance/error is calculated using something known as the cost function e.g. \(J(\theta) = \frac{1}{2} \sum^{m}_{i=1} (h_{\theta}(x_{i}) - y_{i})^2\) 
 (where \(m\) is the number of \(x, y\) pairs in the dataset for linear regression).
@@ -1124,7 +1127,7 @@ of behaviour and the indirect reward of trial and error approaches \citep{Bishop
 In supervised (also referred to as predictive) learning the principal aim is 
 to learn a mapping between inputs/features \(x\) and outputs/response \(y\) from a set of 
 inputs and their corresponding expected output.  This is known as the training set 
-i.e. \(\mathcal{D} = {(x_{i}, y_{i}) \forall i \in N}\) where \(N\) is 
+i.e. \(\mathcal{D} = {(x_{i}, y_{i}) \quad \forall i \in N}\) where \(N\) is 
 the cardinality (size) of the training set \citep{Murphy2012}.  
 A supervised learning algorithm thus seeks to approximate \(y=f(x)\) where \(f\) is an unknown 
 function. This estimated function \(\hat{y} = \hat{f}(x)\) (see \ref{eq:sup}) would then generally
@@ -1158,7 +1161,7 @@ can use it to predict the value of \(\hat{y_{i}}\) for data in the test set \(x_
 
 On the other hand, in classification the expected outputs are 
 categorical or nominal variables such as class labels like ``host'' and ``endosymbiont'' 
-(\(y_{i} \in {host, endosymbiont, ... C}\)).  These classifications can be binary (two possible outputs i.e. 
+(\(y_{i} \in {host, endosymbiont, ..., C}\)).  These classifications can be binary (two possible outputs i.e. 
 \(y={0,1}\)), multiclass (\(\left\vert{{y}}\right\vert > 2\)),
 or multilabel (similar to multiclass but outputs aren't mutually exclusive, i.e. an input have multiple labels
 ) \citep{Murphy2012}. 
@@ -1172,13 +1175,15 @@ Generative algorithms, such as Naive Bayes or restricted Boltzmann machines,
 seek to model the process by which the output data was generated 
 from the input i.e. learn the joint probability \(p(x,y)\) and make predictions on that basis via Baye's Theorem (see \ref{eq:bayes}).
 
-\[
-    p(x,y) = p(y|x)p(x) 
-    p(x,y) = p(x|y)p(y)
-    p(y|x)p(x) = p(x|y)p(y)
-    p(y|x) = \frac({p(x|y)p(y)}{p(x)}
+\begin{equation}
+    \begin{aligned}
+    p(x,y) &= p(y|x)p(x) \\
+    p(x,y) &= p(x|y)p(y) \\
+    p(y|x)p(x) &= p(x|y)p(y) \\
+    p(y|x) &= \frac{p(x|y)p(y)}{p(x)}\\
+    \end{aligned}
     \label{eq:bayes}
-\]
+\end{equation}
 
 Whereas, discriminative classifiers, such as logistic regression/linear classifiers,
 model the posterior probability \(p(y|x)\)\footnote{strictly
@@ -1222,7 +1227,7 @@ to \(f(x) = \theta * x \) if we assume that the first element of \(x\) is fixed 
 the largest margin that correctly labels all the training data (in other words is constrained).  Fortunately, due to geometry the margin is property of
 the norm of \(\theta\) i.e. \(||\theta||\) but we use \(\frac{1}{2} ||\theta||^{2}\) for mathematical convenience.
 
-\[argmin_{\theta} J(\theta) = \frac{1}{2} ||\theta||^{2} s.t. y_{i}(\theta x_{i}) \geq 1 \forall i\]
+\[argmin_{\theta} \quad J(\theta) = \frac{1}{2} ||\theta||^{2} \quad s.t. \quad y_{i}(\theta x_{i}) \geq 1 \quad \forall i\]
 
 In reality, this cost function would be converted to a constrained optimisation problem using Lagrange multipliers and reformulated using the Lagrangian dual form. 
 
@@ -1231,12 +1236,13 @@ The 2nd major enhancement of SVMs is that of soft-margins \citep{Cortes1995}. So
 if doing so would increase the size of the margin that can be generated.  Specifically, a user defined penalty constant \(C\) is specified and 
 added to the cost function penalising the degree of misclassification \(\xi\), e.g.:
 
-\[argmin_{\theta} J(\theta) = \frac{1}{2} ||\theta||^{2}  + C \sum^{n}_{i=1} \xi_{i} s.t. y_{i}(\theta x_{i}) \geq 1 - \xi_{i} \forall i\]
+\[argmin_{\theta} \quad J(\theta) = \frac{1}{2} ||\theta||^{2}  + C \sum^{n}_{i=1} \xi_{i} \quad s.t. \quad y_{i}(\theta x_{i}) \geq 1 - \xi_{i} \quad \forall i\]
 
 This can improve robustness to outlier data and generally improve generalisability by keeping the margin as large as possible.
 
 \begin{figure}[h]
-    \includegraphics[width=\textwidth]{boundary.pdf}
+    \centering
+    \includegraphics[width=0.6\textwidth]{boundary.pdf}
     \caption[Soft-margin classifiers]{Demonstration of the utility of a soft-decision boundary to improve the overall
     fit of a decision boundary by allowing a degree of misclassification during training}
     \label{fig:boundary}
@@ -1348,6 +1354,19 @@ Therefore, the goal of k-means clustering is to find values for \({r_{nk}}\) and
 function \ref{eq:kmeans_cost}.
 \citep{Bishop2006}
 
+\begin{figure}[h!]
+    \includegraphics[width=\textwidth]{kmeans.pdf}
+    \caption[K-means clustering]{Demonstration of the K-means algorithm applying 3 rounds of Expectation-Maximisation to cluster
+        a group of 2 dimensional samples.  The 3 cluster centroids (represented by coloured rectangles) 
+        are randomly initialised in 0 before undergoing 3 rounds of EM.  
+        This involves the successive assignment of samples to their nearest centroids (1a, 2a, 3a) 
+and then the movement of the centroids to the center of the points currently assigned to that centroid (1b, 2b, 3b).
+Assignment of a given sample to a centroid is indicated by a shared colouring and centroid relocation by
+an arrow with a faded version showing the initial location.
+}
+    \label{fig:kmeans}
+\end{figure}
+
 
 The standard algorithm proceeds in two alternating steps following the initialisation of \(\mu_{k}\) with starting
 cluster centroid locations \citep{Forgy1965,Lloyd1982}:
@@ -1363,18 +1382,21 @@ assigning each point to the cluster represented by the nearest centroid or forma
 \[
     r_{nk} = 
     \begin{cases}
-        1,& \text{if} k=argmin_{j} \|x_{n} - \mu_{j}\|^{2}\\
+        1,& \text{if} \quad k=argmin_{j} \|x_{n} - \mu_{j}\|^{2}\\
         0,& \text{otherwise}
     \end{cases}
 \]
 
 Step 2 roughly corresponds to the maximisation step in EM is can be determined by taking the partial derivative of \(J\) w.r.t 
 \(\mu_{k}\) setting it to 0 and solving for \(\mu_{k}\):
-\[
-    \frac{\partial J}{\partial \mu_{k}} = 2 \sum_{n=1}^{N} r_{nk} (x_{n} - \mu_{k})
-    0 = 2 \sum_{n=1}^{N} r_{nk} (x_{n} - \mu_{k})
-    \mu_{k} = \frac{\sum_{n} r_{nk}x_{n}}{\sum_{n} r_{nk}}
-\]
+\begin{equation}
+    \begin{aligned}
+        \frac{\partial J}{\partial \mu_{k}} &= 2 \sum_{n=1}^{N} r_{nk} (x_{n} - \mu_{k}) \\
+        0 &= 2 \sum_{n=1}^{N} r_{nk} (x_{n} - \mu_{k})\\
+        \mu_{k} &= \frac{\sum_{n} r_{nk}x_{n}}{\sum_{n} r_{nk}}\\
+    \end{aligned}
+\end{equation}
+
 
 In other words set \(\mu_{k}\) to the mean of all data points \(x_{n}\) assigned to cluster \(k\) thus k-means \citep{Bishop2006}
 
@@ -1400,19 +1422,6 @@ can be used to determine the optimal number of clusters.
 Additionally, it is not guaranteed
 to discover the global optimal clusters (can converge to local optima).  This can be amortised by running multiple times 
 with different initialisations.
-
-\begin{figure}[h]
-    \includegraphics[width=\textwidth]{kmeans.pdf}
-    \caption[K-means clustering]{Demonstration of the K-means algorithm applying 3 rounds of Expectation-Maximisation to cluster
-        a group of 2 dimensional samples.  The 3 cluster centroids (represented by coloured rectangles) 
-        are randomly initialised in 0 before undergoing 3 rounds of EM.  
-        This involves the successive assignment of samples to their nearest centroids (1a, 2a, 3a) 
-and then the movement of the centroids to the center of the points currently assigned to that centroid (1b, 2b, 3b).
-Assignment of a given sample to a centroid is indicated by a shared colouring and centroid relocation by
-an arrow with a faded version showing the initial location.
-}
-    \label{fig:kmeans}
-\end{figure}
 
 \section{Phylogenetics}
 

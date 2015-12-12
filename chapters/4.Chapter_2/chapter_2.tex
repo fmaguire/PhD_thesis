@@ -591,7 +591,7 @@ ETE \citep{Huerta-Cepas2010} to support python3.  As ETE is an open source proje
 to the maintainer and they have subsequently been merged into the master.  These changes compose a significant proportion of
 the latest major release version of this toolkit \url{https://github.com/jhcepas/ete/pull/105}.
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \includegraphics[width=\textwidth]{dd_par.pdf}
     \caption[Tree generation pipeline architectures]{A explanatory plot showing 3 different possible architectures for a tree generation pipeline. 
         Serial, in which each phylogeny is run one after another.  This form makes no use of multiprocessing
@@ -734,7 +734,7 @@ With the exception of Dark1-2 and Dark2-3 this high GC peak is a greater density
 than the expected peak 30-50GC\% (from known GC\% found in genomes
 of sequenced relatives of both host and endosymbiont).
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \includegraphics[width=\textwidth]{raw_lib_gc_prop.pdf}
     \caption[GC densities of libraries]{Probability densities of per-read GC proportions for the raw data (apart from pre-trimmed bulk explained previously)
         from each sequenced library.
@@ -770,7 +770,7 @@ This possibly indicates a greater proportion of reads deriving from the low
 GC\% \textit{Paramecium bursaria} host and fewer from the 50GC\% endosymbiont
 in bulk libraries relative to single cell libraries.  
 
-\begin{figure}[h]
+\begin{figure}[h!]
 	\centering
     \includegraphics{kodama_gc_prop.pdf}
     \caption[GC densities of \textit{P. bursaria} Yad1g - \textit{C. variabilis} 1N]{Probability density of the per-read GC proportion for 6 raw libraries derived from
@@ -787,7 +787,7 @@ is apparent that trimming of reads makes nearly no difference in the density est
 The KDE of Q30 sliding window trimmed single cell reads in \cref{fig:gc_prop_q30} is nearly
 identical to that of the raw reads \cref{fig:gc_prop_raw}.
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \includegraphics[width=\textwidth]{lib_gc_prop_q30_trimmed.pdf}
     \caption[GC Densities of Bulk Libraries]{Probability densities of per-read GC proportions for trimmed reads.
              To ensure probability densities estimated in \cref{fig:gc_prop_raw}
@@ -808,7 +808,7 @@ lower proportion of hits in the reverse reads. This can likely be attributed to
 the lower read quality found in reverse reads relative to forward reads 
 in paired-end Illumina sequencing. 
 
-\begin{table}[h]
+\begin{table}[h!]
     \resizebox{\textwidth}{!}{\begin{tabular}{|l||l|l|l|l|l|l|l|}
          \hline
          \textbf{SCT Library} & \textit{\textbf{PE}}          & \textbf{Eukaryote} & \textbf{Bacteria} & \textbf{Alveolate} & \textbf{Viridiplantae} &  & \textbf{Total Hits} \\ 
@@ -853,7 +853,7 @@ to references the difference between libraries may be attributable to this alone
 Additionally, the vast majority of the lower number of hits do align to eukaryote (and alveolate) 
 taxa consistent with an non-contaminated library. 
 
-\begin{table}[h]
+\begin{table}[h!]
      \begin{tabular}{|l|l|l|l|l|l||l|}
 \hline
          \textbf{Bulk Library} & \textit{\textbf{PE}} & \textbf{Eukaryote} & \textbf{Bacteria} & \textbf{Alveolate} & \textbf{Viridiplantae} &  \textbf{Total Hits} \\ 
@@ -881,7 +881,7 @@ From this, Rhizobia species are the most prevalent high GC\% species found in th
 with this high 70GC\% peak in the KDE plots and therefore are the most likely source
 of this particular aspect of contamination. 
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \includegraphics[width=\textwidth]{krona_excluded_raw.pdf}
     \caption[Visualisation of taxonomically excluded libraries]{Krona visualisation of taxonomic profiles of two representative
         single cell libraries (Dark1-2, Dark2-2) that were excluded from further analysis due 
@@ -890,7 +890,7 @@ of this particular aspect of contamination.
     \label{fig:krona_excluded}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \includegraphics[width=\textwidth]{krona_included_raw.pdf}
     \caption[Visualisation of taxonomically included libraries]{
     Krona visualisation of the taxonomic profiles of representative 
@@ -997,6 +997,7 @@ more permissive trims Q30 was determined to be the optimal trimming threshold.
 It can be considered from this data that Q30 forms a maximum feasible stringency for trimming. 
 
 \begin{table}
+    \centering
     \begin{tabular}{|r||l|l|}
         \hline
         \textbf{Library} & \textbf{Number of raw PE Reads} & \textbf{Number of Q30 trimmed PE Reads} \\
@@ -1031,10 +1032,9 @@ clusters respectively.
 
 \begin{table}
     \centering
-    \begin{tabular}{|c||c|r|}
+    \begin{tabular}{|c||c|c|}
         \hline
-        Clustering Scheme & Centroids & Number of Reads Assigned \\
-        \hline
+        \textbf{Clustering Scheme} & \textbf{Centroids} & \textbf{Number of Reads Assigned} \\
         \hline
         2                    & (0.6674, 0.6177) & 57.3M \\
                              & (0.4557, 0.4393) & 81.6M \\
@@ -1067,7 +1067,7 @@ produce final 2 and 3 cluster targets).
 
 Therefore, over-clustering made a minimal effect on cluster centroids and read assignment.
 
-\begin{figure}[h]
+\begin{figure}[h!]
 	\centering
     \includegraphics[width=0.9\textwidth]{parKour.pdf}
     \caption[Plot of parKour clusters]{Visualisation of GC-based paired read K-means clustering on a small random subset of all single cell transcriptome
@@ -1108,7 +1108,7 @@ SCT reads were corrected.
 Trinity assemblies of taxonomically selected single cell libraries 
 (without bulk libraries) were then compared with and without ``SEECER'' 
 error correction (see \cref{tab:errcorr_assembly}).
-\begin{table}[h]
+\begin{table}[h!]
     \begin{tabular}{|l||r|r|l|@{}}
      	\hline 
          \textbf{Trim Threshold} & \textbf{Number of Transcripts} & \textbf{Bases Assembled} & \textbf{Assembly Likelihood (\(-\log\))} \\
@@ -1165,7 +1165,7 @@ while assembling more transcripts of near equal length (based on
 median contig length).  The Khmer processed assembly marginally increased
 median contig length at the expense of a lower N50. 
 
-\begin{table}[h]
+\begin{table}[h!]
     \centering
     \begin{tabular}{|l||r|r|r|r|c|}
      	\hline
@@ -1224,7 +1224,7 @@ taxonomically selected SCT libraries (Light1-9, Light1-10, Light1-11,
 Dark1-2, Dark2-3, Dark2-6, Dark2-8) and bulk libraries are shown in
 \cref{tab:assemblies}. 
 
-\begin{table}[h]
+\begin{table}[h!]
     \centering
     \begin{tabular}{|l||c|r|c|c||}
         \hline
@@ -1285,7 +1285,7 @@ Trinity and Bridger assemblies using digitally normalised and K-mer abundance
 filtered, taxonomically selected, Q30 trimmed, single cell and bulk libraries performed 
 even better in terms of assembly likelihood and read incorporation.
 
-\begin{table}[h]
+\begin{table}[h!]
     \begin{tabular}{|l|r| r| r| r|}
     	\hline
         \textbf{Assembler} & \textbf{Parameters} & \textbf{Contigs} & \textbf{Bases Assembled} & \textbf{Assembly Likelihood (\(-\log\))} \\
@@ -1320,7 +1320,7 @@ IDBA-tran, Trinity and Bridger in \cref{tab:assemblies}.  The second,
 of the 3 Bridger digitally normalised assemblies and two Trinity assemblies 
 described in \cref{tab:digassemby}.
 
-\begin{table}[h]
+\begin{table}[h!]
     \begin{tabular}{|r ||r |r | l| }
     	\hline 
         \textbf{Assembly} & \textbf{Input Contigs} & \textbf{Collapsed Contigs} & \textbf{Assembly Likelihood (\(-\log\))}\\ 
@@ -1375,7 +1375,7 @@ tested using this phylogenetic approach. The results of this analysis is plotted
 below. This demonstrates that the initial bin identifications were accurate for
 endosymbiont (\(\sim92\%\)) and food (\(\sim94\%\)) derived transcripts. 
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \includegraphics[width=\textwidth]{change_in_binning_after_phylogenetic_confirmation.pdf}
     \caption[Preliminary transcript binning analysis]{Preliminary analysis of change in binning after manual phylogenetic confirmation.
     	This analysis was based on an earlier iteration of the assembly and ORF calling.}
@@ -1404,7 +1404,7 @@ The training dataset and test datasets were visualised to ensure that the traini
 test dataset.   These plots demonstrate a possible under representation of ``Unknown'' and/or ``Food'' samples (\cref{fig:radvis_training}) but do reflect a training dataset that largely encompasses a good quantity of the same
 feature space as the test dataset (\cref{fig:radvis_test}).
 
-\begin{figure}[h]
+\begin{figure}[h!]
 		\centering
 		\includegraphics[width=\linewidth]{radviz_training.pdf}
         \caption[Radial visualisation of training data]{Radial Visualisation of Manually Parsed Training Data. All input features are normalised to 
@@ -1415,7 +1415,7 @@ feature space as the test dataset (\cref{fig:radvis_test}).
 		\label{fig:radvis_training}
 	\end{figure}
 
-\begin{figure}[h]
+\begin{figure}[h!]
 		\centering
 		\includegraphics[width=\linewidth]{radviz_traing_test.pdf}
         \caption[Radial Visualisation of Test and Training Data]{Radial Visualisation of Test Data and Training Data. All input features are normalised to 
@@ -1434,7 +1434,7 @@ hyperparameters were efficiently optimised using random search and Bayesian opti
 the cross-validation folds. The average F-1 scores across classes were tallied and compared 
 revealing K-Neighbours the most effective classification algorithm for this dataset (\cref{fig:f1_scores}).
 
-\begin{figure}[h]
+\begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.8\textwidth]{sklearn_f1s.pdf}
     \caption[F1-scores of different classifiers]{Classification report must be straightforward - a report of P/R/F-Measure for each element in your test data. In Multiclass problems, it is not a good idea to read Precision/Recall and F-Measure over the whole data any imbalance would make you feel you've reached better results. That's where such reports help.}
@@ -1447,7 +1447,7 @@ from each classifier (see appendix <++>)) K-neighbours (like the majority of cla
 poorly classified ``Unknown'' samples but largely performed well (\(0.89-0.9\) for each class
 (\cref{tab:classification_report}). 
 
-\begin{figure}[h]
+\begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.8\textwidth]{kn_confusion_matrix.pdf}
     \caption[Normalised confusion matrix of transcript classification]{Normalised Confusion Matrix for K-Neighbours.  These plots highlight
@@ -1887,6 +1887,7 @@ a training dataset.
         Host & 18,793 & 17,920 \\
         Food & 18,516 &  - \\
         Unknown & 66,107 & - \\
+        \hline
 \end{tabular}
     \caption[Summary of Transcriptome Bins]{Summary of transcriptome assembly and binned sequences}
     \label{tab:bin_assem_summary}
