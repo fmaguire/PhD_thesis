@@ -593,7 +593,7 @@ the latest major release version of this toolkit \url{https://github.com/jhcepas
 
 \begin{figure}[h]
     \includegraphics[width=\textwidth]{dd_par.pdf}
-    \caption[Tree Generation Pipeline Architectures]{A explanatory plot showing 3 different possible architectures for a tree generation pipeline. 
+    \caption[Tree generation pipeline architectures]{A explanatory plot showing 3 different possible architectures for a tree generation pipeline. 
         Serial, in which each phylogeny is run one after another.  This form makes no use of multiprocessing
         facilities, however, a moderate but significant performance improvement can be achieved by allowing
         each stage in the pipeline to utilise multiple cores i.e. the trees are generated serially but during
@@ -736,7 +736,7 @@ of sequenced relatives of both host and endosymbiont).
 
 \begin{figure}[h]
     \includegraphics[width=\textwidth]{raw_lib_gc_prop.pdf}
-    \caption[GC Densities of Libraries]{Probability densities of per-read GC proportions for the raw data (apart from pre-trimmed bulk explained previously)
+    \caption[GC densities of libraries]{Probability densities of per-read GC proportions for the raw data (apart from pre-trimmed bulk explained previously)
         from each sequenced library.
         Densities were derived using Kernel Density Estimation implemented in Seaborn. 
         Dark 1 (Dark1-2, Dark1-3, and Dark1-5) and Light 1 (Light1-9, Light1-10, Light1-11) 
@@ -773,7 +773,7 @@ in bulk libraries relative to single cell libraries.
 \begin{figure}[h]
 	\centering
     \includegraphics{kodama_gc_prop.pdf}
-    \caption[GC Densities of Kodama Libraries]{Probability density of the per-read GC proportion for 6 raw libraries derived from
+    \caption[GC densities of \textit{P. bursaria} Yad1g - \textit{C. variabilis} 1N]{Probability density of the per-read GC proportion for 6 raw libraries derived from
         \citep{Kodama2014} transcriptome analysis of a different \textit{P. bursaria} species (Yad1g)
         with and without its \textit{Chlorella variabilis} 1N endosymbiont. Individual libraries are indicated 
         in the key using their DDBJ accession.        
@@ -883,7 +883,7 @@ of this particular aspect of contamination.
 
 \begin{figure}[h]
     \includegraphics[width=\textwidth]{krona_excluded_raw.pdf}
-    \caption[Visualisation of Excluded Libraries]{Krona visualisation of taxonomic profiles of two representative
+    \caption[Visualisation of taxonomically excluded libraries]{Krona visualisation of taxonomic profiles of two representative
         single cell libraries (Dark1-2, Dark2-2) that were excluded from further analysis due 
     to aberrant profiles (typically large proportion of reads being assigned
     to Bacteria than Eukaryota). Note that nearly \(50\%\) of each library is identified as bacterial.}
@@ -892,7 +892,7 @@ of this particular aspect of contamination.
 
 \begin{figure}[h]
     \includegraphics[width=\textwidth]{krona_included_raw.pdf}
-    \caption[Visualisation of Included Libraries]{
+    \caption[Visualisation of taxonomically included libraries]{
     Krona visualisation of the taxonomic profiles of representative 
     RNAseq libraries (Bulk1, Dark2-3, and Light1-9) that were retained 
     in the analysis after taxonomic screening.  The key thing this figure
@@ -946,7 +946,7 @@ very slight decrease in total number of mapping reads but not drastically so.
 \begin{figure}[hp]
 	\centering
     \includegraphics[width=0.9\textwidth]{trimmingopt.pdf}
-    \caption[Optimising Trimming Thresholds]{Assessment of the optimal minimum average quality threshold
+    \caption[Optimising trimming thresholds]{Assessment of the optimal minimum average quality threshold
              in Trimmomatic's sliding window (size 4) trim.  Plots
              display the number of concordantly mapping reads (i.e. the forward
                  and reverse read map to assembly at a distance of approximately
@@ -1070,7 +1070,7 @@ Therefore, over-clustering made a minimal effect on cluster centroids and read a
 \begin{figure}[h]
 	\centering
     \includegraphics[width=0.9\textwidth]{parKour.pdf}
-    \caption[Plot of parKour Clusters]{Visualisation of GC-based paired read K-means clustering on a small random subset of all single cell transcriptome
+    \caption[Plot of parKour clusters]{Visualisation of GC-based paired read K-means clustering on a small random subset of all single cell transcriptome
         reads. 2 initial centroids were specified without an overclustering factor and approximate final centroids (0.6674, 06177) and (0.4557, 0.4393) are indicated by highlighted areas.  57.3M and 81.7M were assigned to each respective cluster. Comparison to other clustering regimes can be found in \cref{tab:centroids}.  This supports the finding of the \cref{fig:gc_prop_raw}that there is a clear and identifiable cluster of high GC\% reads present in the sample and it is possible to identify and group these reads using unsupervised learning. 
 } 
         \label{fig:parkour} 
@@ -1377,7 +1377,7 @@ endosymbiont (\(\sim92\%\)) and food (\(\sim94\%\)) derived transcripts.
 
 \begin{figure}[h]
     \includegraphics[width=\textwidth]{change_in_binning_after_phylogenetic_confirmation.pdf}
-    \caption[Preliminary Binning Analysis]{Preliminary analysis of change in binning after manual phylogenetic confirmation.
+    \caption[Preliminary transcript binning analysis]{Preliminary analysis of change in binning after manual phylogenetic confirmation.
     	This analysis was based on an earlier iteration of the assembly and ORF calling.}
 \end{figure}
 
@@ -1407,7 +1407,7 @@ feature space as the test dataset (\cref{fig:radvis_test}).
 \begin{figure}[h]
 		\centering
 		\includegraphics[width=\linewidth]{radviz_training.pdf}
-        \caption[Radial Visualisation of Training Data]{Radial Visualisation of Manually Parsed Training Data. All input features are normalised to 
+        \caption[Radial visualisation of training data]{Radial Visualisation of Manually Parsed Training Data. All input features are normalised to 
 			unit magnitudes.  Each point represents a single training sample (i.e. phylogeny) and its relative proximity
 			to the cardinal points of the unit circle represents a the number of closely related taxa considered part of
 			that ``class''.  Unknown and Food classes can be seen to be particularly problematic and poorly partitioned.
@@ -1437,7 +1437,7 @@ revealing K-Neighbours the most effective classification algorithm for this data
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{sklearn_f1s.pdf}
-    \caption[F1-scores of Different Classifiers]{Classification report must be straightforward - a report of P/R/F-Measure for each element in your test data. In Multiclass problems, it is not a good idea to read Precision/Recall and F-Measure over the whole data any imbalance would make you feel you've reached better results. That's where such reports help.}
+    \caption[F1-scores of different classifiers]{Classification report must be straightforward - a report of P/R/F-Measure for each element in your test data. In Multiclass problems, it is not a good idea to read Precision/Recall and F-Measure over the whole data any imbalance would make you feel you've reached better results. That's where such reports help.}
 	\label{fig:f1_scores} 
 \end{figure}
 
@@ -1450,7 +1450,7 @@ poorly classified ``Unknown'' samples but largely performed well (\(0.89-0.9\) f
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{kn_confusion_matrix.pdf}
-    \caption[Normalised Confusion Matrix]{Normalised Confusion Matrix for K-Neighbours.  These plots highlight
+    \caption[Normalised confusion matrix of transcript classification]{Normalised Confusion Matrix for K-Neighbours.  These plots highlight
 		the problematic classes in the cross-validation dataset. 
 		 The heatmap corresponds to the proportion of samples classified
 		 with a given predicted label compared with their true labels.
