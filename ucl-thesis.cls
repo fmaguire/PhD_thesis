@@ -50,6 +50,7 @@
 \RequirePackage{verbatim}
 \RequirePackage[titles]{tocloft}
 \setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
 \renewcommand{\cftchapfont}{\normalsize \scshape}
 \RequirePackage{rotating}
 \RequirePackage{lscape}

@@ -7,9 +7,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="192.35831mm"
-   height="239.15994mm"
-   viewBox="0 0 681.58455 847.41712"
+   width="194.1403mm"
+   height="220.75294mm"
+   viewBox="0 0 687.89872 782.19547"
    version="1.1"
    id="svg2"
    inkscape:version="0.91 r13725"
@@ -37,15 +37,15 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1680"
-     inkscape:window-height="1050"
+     inkscape:window-width="1440"
+     inkscape:window-height="900"
      id="namedview222"
      showgrid="false"
      units="mm"
-     inkscape:zoom="0.49631966"
-     inkscape:cx="-314.38568"
-     inkscape:cy="475.14565"
-     inkscape:window-x="0"
+     inkscape:zoom="1.9852786"
+     inkscape:cx="374.42117"
+     inkscape:cy="640.18988"
+     inkscape:window-x="1680"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg2"
@@ -54,772 +54,851 @@
      fit-margin-right="0"
      fit-margin-bottom="0" />
   <text
-     x="249.07033"
-     y="824.93732"
-     font-size="12"
      xml:space="preserve"
-     id="text6"
-     style="font-size:11.71545029px;font-family:Times;fill:#000000"
-     transform="scale(1.0000652,0.99993479)"><tspan
-   style="font-style:italic"
-   id="tspan4422">Tetrahymena thermophila</tspan> [XP_001026321.2]</text>
-  <text
-     x="295.64526"
-     y="782.95068"
-     font-size="12"
-     xml:space="preserve"
-     id="text8"
-     style="font-size:11.71545029px;font-family:Times;fill:#000000"
-     transform="scale(1.0000652,0.99993479)"><tspan
-   style="font-style:italic"
-   id="tspan4418">Oxytricha trifallax</tspan> [gi403346586]</text>
-  <text
-     x="184.14365"
-     y="740.93274"
-     font-size="12"
-     xml:space="preserve"
-     id="text10"
-     style="font-size:11.71545029px;font-family:Times;fill:#0000ff"
-     transform="scale(1.0000652,0.99993479)"><tspan
-   style="font-style:italic;fill:#0000ff"
-   id="tspan4414">Paramecium bursaria </tspan>Yad1g [TR10997_c0_g2_i5_m.152701]</text>
-  <text
-     x="178.19489"
-     y="698.00128"
-     font-size="12"
-     xml:space="preserve"
-     id="text12"
-     style="font-size:11.71545029px;font-family:Times;fill:#0000ff"
-     transform="scale(1.0000652,0.99993479)"><tspan
-   style="font-style:italic;fill:#0000ff"
-   id="tspan4416">Paramecium bursaria</tspan> SW1 [comp1394_seq3_m.27654]</text>
-  <text
-     x="247.56252"
-     y="658.6637"
-     font-size="12"
-     xml:space="preserve"
-     id="text14"
-     style="font-size:11.71545029px;font-family:Times;fill:#0000ff"
-     transform="scale(1.0000652,0.99993479)"><tspan
-   style="font-style:italic;fill:#0000ff"
-   id="tspan4426">Paramecium bursaria </tspan> Yad1g [TR24504_c0_g1_i1_m.344314]</text>
-  <text
-     x="229.68178"
-     y="615.9798"
-     font-size="12"
-     xml:space="preserve"
-     id="text16"
-     style="font-size:11.71545029px;font-family:Times;fill:#0000ff"
-     transform="scale(1.0000652,0.99993479)"><tspan
-   style="font-style:italic;fill:#0000ff"
-   id="tspan4424">Paramecium bursaria </tspan>SW1 [comp2093_seq0_m.40761]</text>
-  <text
-     x="270.59311"
-     y="570.4502"
-     font-size="12"
-     xml:space="preserve"
-     id="text22"
-     style="font-size:11.71545029px;font-family:Times;fill:#000000"
-     transform="scale(1.0000652,0.99993479)"><tspan
-   style="font-style:italic"
-   id="tspan4428">Paramecium biaurelia</tspan> [PBIGNP22852]</text>
-  <text
-     x="274.55896"
-     y="528.40643"
-     font-size="12"
-     xml:space="preserve"
-     id="text24"
-     style="font-size:11.71545029px;font-family:Times;fill:#000000"
-     transform="scale(1.0000652,0.99993479)"><tspan
-   style="font-style:italic"
-   id="tspan4430">Paramecium primaurelia </tspan>[PPRIMP16453]</text>
-  <text
-     x="287.11743"
-     y="486.41989"
-     font-size="12"
-     xml:space="preserve"
-     id="text26"
-     style="font-size:11.71545029px;font-family:Times;fill:#800000"
-     transform="scale(1.0000652,0.99993479)"><tspan
-   style="font-style:italic;fill:#800000"
-   id="tspan4432">Paramecium tetaurelia</tspan> Rdr2 (Marker, 2014) [GSPATP00036857001]</text>
-  <text
-     x="268.36777"
-     y="506.17328"
-     font-size="12"
-     xml:space="preserve"
-     id="text28"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.54251575px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-     transform="scale(1.0000652,0.99993479)">80.4%/0.82</text>
-  <text
-     x="281.32199"
-     y="443.51419"
-     font-size="12"
-     xml:space="preserve"
-     id="text30"
-     style="font-size:11.71545029px;font-family:Times;fill:#000000"
-     transform="scale(1.0000652,0.99993479)"><tspan
-   style="font-style:italic"
-   id="tspan4434">Paramecium sexaurelia</tspan> [PSEXPNG32890]</text>
-  <text
-     x="211.55046"
-     y="544.68964"
-     font-size="12"
-     xml:space="preserve"
-     id="text32"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.54251575px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-     transform="scale(1.0000652,0.99993479)">99.4%/0.97</text>
-  <text
-     x="267.39172"
-     y="401.52765"
-     font-size="12"
-     xml:space="preserve"
-     id="text34"
-     style="font-size:11.71545029px;font-family:Times;fill:#000000"
-     transform="scale(1.0000652,0.99993479)"><tspan
-   style="font-style:italic"
-   id="tspan4436">Paramecium sexaurelia</tspan> [PSEXPNG31119]</text>
-  <text
-     x="201.43243"
-     y="496.74243"
-     font-size="12"
-     xml:space="preserve"
-     id="text36"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.54251575px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-     transform="scale(1.0000652,0.99993479)">87.6%/0.83</text>
-  <text
-     x="273.88214"
-     y="361.06741"
-     font-size="12"
-     xml:space="preserve"
-     id="text38"
-     style="font-size:11.71545029px;font-family:Times;fill:#000000"
-     transform="scale(1.0000652,0.99993479)"><tspan
-   style="font-style:italic"
-   id="tspan4438">Paramecium multimicronucleatum</tspan> [PMMNP14096]</text>
-  <text
-     x="194.024"
-     y="451.83319"
-     font-size="12"
-     xml:space="preserve"
-     id="text40"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.54251575px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-     transform="scale(1.0000652,0.99993479)">100%/1.00</text>
-  <text
-     x="245.29108"
-     y="316.57825"
-     font-size="12"
-     xml:space="preserve"
-     id="text42"
-     style="font-size:11.71545029px;font-family:Times;fill:#000000"
-     transform="scale(1.0000652,0.99993479)"><tspan
-   style="font-style:italic"
-   id="tspan4440">Paramecium caudatum</tspan> [PCAUDP11670]</text>
-  <text
-     x="157.10707"
-     y="408.29019"
-     font-size="12"
-     xml:space="preserve"
-     id="text44"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.54251575px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-     transform="scale(1.0000652,0.99993479)">93.3%/0.94</text>
-  <text
-     x="167.80998"
-     y="642.65857"
-     font-size="12"
-     xml:space="preserve"
-     id="text46"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.54251575px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-     transform="scale(1.0000652,0.99993479)">100%/1.00</text>
-  <text
-     x="137.29506"
-     y="353.24991"
-     font-size="12"
-     xml:space="preserve"
-     id="text48"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.54251575px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-     transform="scale(1.0000652,0.99993479)">100%/1.00</text>
-  <text
-     x="178.47365"
-     y="281.04156"
-     font-size="12"
-     xml:space="preserve"
-     id="text54"
-     style="font-size:11.71545029px;font-family:Times;fill:#000000"
-     transform="scale(1.0000652,0.99993479)"><tspan
-   style="font-style:italic"
-   id="tspan4452">Paramecium biaurelia</tspan> [PBIGNP28717]</text>
-  <text
-     x="183.34473"
-     y="238.02144"
-     font-size="12"
-     xml:space="preserve"
-     id="text56"
-     style="font-size:11.71545029px;font-family:Times;fill:#800000"
-     transform="scale(1.0000652,0.99993479)"><tspan
-   style="font-style:italic;fill:#800000"
-   id="tspan4450">Paramecium tetaurelia</tspan> Rdr1 (Marker, 2014) [PTETP8500012001]</text>
-  <text
-     x="173.02087"
-     y="196.0349"
-     font-size="12"
-     xml:space="preserve"
-     id="text58"
-     style="font-size:11.71545029px;font-family:Times;fill:#000000"
-     transform="scale(1.0000652,0.99993479)"><tspan
-   style="font-style:italic"
-   id="tspan4448"> Paramecium primaurelia</tspan> [PPRIMP21923]</text>
-  <text
-     x="113.27773"
-     y="264.92993"
-     font-size="12"
-     xml:space="preserve"
-     id="text60"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.54251575px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-     transform="scale(1.0000652,0.99993479)">64.1%/0.81</text>
-  <text
-     x="182.49869"
-     y="154.10558"
-     font-size="12"
-     xml:space="preserve"
-     id="text62"
-     style="font-size:11.71545029px;font-family:Times;fill:#000000"
-     transform="scale(1.0000652,0.99993479)"><tspan
-   style="font-style:italic"
-   id="tspan4446">Paramecium sexaurelia</tspan> [PSEXPNG23839]</text>
-  <text
-     x="106.3546"
-     y="232.99838"
-     font-size="12"
-     xml:space="preserve"
-     id="text64"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.54251575px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-     transform="scale(1.0000652,0.99993479)">98.5%/0.98</text>
-  <text
-     x="97.586227"
-     y="198.85976"
-     font-size="12"
-     xml:space="preserve"
-     id="text68"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.54251575px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-     transform="scale(1.0000652,0.99993479)">96.7%/0.99</text>
-  <text
-     x="195.87149"
-     y="111.14264"
-     font-size="12"
-     xml:space="preserve"
-     id="text70"
-     style="font-size:11.71545029px;font-family:Times;fill:#000000"
-     transform="scale(1.0000652,0.99993479)"><tspan
-   style="font-style:italic"
-   id="tspan4442">Paramecium caudatum</tspan> [PCAUDP07869]</text>
-  <text
-     x="201.32846"
-     y="69.15609"
-     font-size="12"
-     xml:space="preserve"
-     id="text72"
-     style="font-size:11.71545029px;font-family:Times;fill:#000000"
-     transform="scale(1.0000652,0.99993479)"><tspan
-   style="font-style:italic"
-   id="tspan4444">Paramecium multimicronucleatum</tspan> [PMMNP15732]</text>
-  <text
-     x="90.798653"
-     y="84.39296"
-     font-size="12"
-     xml:space="preserve"
-     id="text76"
-     style="font-size:11.71545029px;font-family:Times;fill:#000000"
-     transform="scale(1.0000652,0.99993479)"><tspan
-       style="font-size:8.54251575px"
-       id="tspan4462">24.6%/0.5</tspan></text>
-  <text
-     x="55.093914"
-     y="518.3299"
-     font-size="12"
-     xml:space="preserve"
-     id="text78"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.54251575px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-     transform="scale(1.0000652,0.99993479)">99.9%/1.00</text>
-  <text
-     x="73.535057"
-     y="133.59401"
-     font-size="12"
-     xml:space="preserve"
-     id="text80"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.54251575px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-     transform="scale(1.0000652,0.99993479)">100%/1.00</text>
-  <text
-     x="110.02268"
-     y="724.651"
-     font-size="12"
-     xml:space="preserve"
-     id="text82"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.54251575px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-     transform="scale(1.0000652,0.99993479)">100%/1.00</text>
-  <text
-     x="14.26808"
-     y="320.49753"
-     font-size="12"
-     xml:space="preserve"
-     id="text84"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.54251575px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-     transform="scale(1.0000652,0.99993479)">76.7%/0.85</text>
-  <text
-     x="11.469785"
-     y="648.76819"
-     font-size="12"
-     xml:space="preserve"
-     id="text86"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.54251575px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-     transform="scale(1.0000652,0.99993479)">99.2%</text>
-  <line
-     x1="44.79509"
-     y1="821.5744"
-     x2="246.01765"
-     y2="821.5744"
-     style="stroke:#000000;stroke-width:0.71528524;stroke-linecap:butt"
-     id="line88" />
-  <line
-     x1="44.79509"
-     y1="779.59058"
-     x2="296.28812"
-     y2="779.59058"
-     style="stroke:#000000;stroke-width:0.61134571;stroke-linecap:butt"
-     id="line90" />
-  <line
-     x1="44.79509"
-     y1="821.5744"
-     x2="44.79509"
-     y2="779.59058"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line92" />
-  <line
-     x1="159.15082"
-     y1="737.60681"
-     x2="181.62535"
-     y2="737.60681"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line94" />
-  <line
-     x1="159.15082"
-     y1="694.64673"
-     x2="175.67621"
-     y2="694.64673"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line96" />
-  <line
-     x1="159.15082"
-     y1="737.60681"
-     x2="159.15082"
-     y2="694.64673"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line98" />
-  <line
-     x1="228.55748"
-     y1="651.99066"
-     x2="228.55748"
-     y2="651.99066"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line100" />
-  <line
-     x1="228.55748"
-     y1="610.00684"
-     x2="228.55748"
-     y2="610.00684"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line102" />
-  <line
-     x1="217.98123"
-     y1="655.3432"
-     x2="245.7439"
-     y2="655.3432"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line106" />
-  <line
-     x1="217.98123"
-     y1="612.63055"
-     x2="228.55748"
-     y2="612.63055"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line108" />
-  <line
-     x1="218.31172"
-     y1="655.78406"
-     x2="218.31172"
-     y2="612.1424"
-     style="stroke:#000000;stroke-width:0.66619277;stroke-linecap:butt"
-     id="line110" />
-  <line
-     x1="267.5574"
-     y1="525.06293"
-     x2="274.82858"
-     y2="525.06293"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line112" />
-  <line
-     x1="267.5574"
-     y1="483.07913"
-     x2="287.38788"
-     y2="483.07913"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line114" />
-  <line
-     x1="267.5574"
-     y1="525.06293"
-     x2="267.5574"
-     y2="483.07913"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line116" />
-  <line
-     x1="263.59131"
-     y1="567.04675"
-     x2="270.86249"
-     y2="567.04675"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line118" />
-  <line
-     x1="263.59131"
-     y1="503.58289"
-     x2="267.5574"
-     y2="503.58289"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line120" />
-  <line
-     x1="263.59131"
-     y1="567.04675"
-     x2="263.59131"
-     y2="503.58289"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line122" />
-  <line
-     x1="253.01503"
-     y1="535.80298"
-     x2="263.59131"
-     y2="535.80298"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line124" />
-  <line
-     x1="253.01503"
-     y1="440.11902"
-     x2="280.1167"
-     y2="440.11902"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line126" />
-  <line
-     x1="253.01503"
-     y1="535.80298"
-     x2="253.01503"
-     y2="440.11902"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line128" />
-  <line
-     x1="244.42184"
-     y1="487.96097"
-     x2="253.01503"
-     y2="487.96097"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line130" />
-  <line
-     x1="244.42184"
-     y1="398.13519"
-     x2="265.57437"
-     y2="398.13519"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line132" />
-  <line
-     x1="244.42184"
-     y1="487.96097"
-     x2="244.42184"
-     y2="398.13519"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line134" />
-  <line
-     x1="210.04904"
-     y1="443.04813"
-     x2="244.42184"
-     y2="443.04813"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line136" />
-  <line
-     x1="210.04904"
-     y1="356.15146"
-     x2="272.18454"
-     y2="356.15146"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line138" />
-  <line
-     x1="210.04904"
-     y1="443.04813"
-     x2="210.04904"
-     y2="356.15146"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line140" />
-  <line
-     x1="186.25246"
-     y1="399.1116"
-     x2="210.04904"
-     y2="399.1116"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line142" />
-  <line
-     x1="186.25246"
-     y1="313.19135"
-     x2="243.09981"
-     y2="313.19135"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line144" />
-  <line
-     x1="186.25246"
-     y1="399.1116"
-     x2="186.25246"
-     y2="313.19135"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line146" />
-  <line
-     x1="106.26955"
-     y1="633.9632"
-     x2="217.98123"
-     y2="633.9632"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line148" />
-  <line
-     x1="106.26955"
-     y1="356.15146"
-     x2="186.25246"
-     y2="356.15146"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line150" />
-  <line
-     x1="106.26955"
-     y1="634.38843"
-     x2="106.26955"
-     y2="356.15146"
-     style="stroke:#000000;stroke-width:0.7653296;stroke-linecap:butt"
-     id="line152" />
-  <line
-     x1="164.43895"
-     y1="277.65698"
-     x2="176.99825"
-     y2="277.65698"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line160" />
-  <line
-     x1="164.43895"
-     y1="234.69685"
-     x2="183.60841"
-     y2="234.69685"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line162" />
-  <line
-     x1="164.43895"
-     y1="277.65698"
-     x2="164.43895"
-     y2="234.69685"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line164" />
-  <line
-     x1="159.15082"
-     y1="256.17691"
-     x2="164.43895"
-     y2="256.17691"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line166" />
-  <line
-     x1="159.15082"
-     y1="192.71306"
-     x2="173.03215"
-     y2="192.71306"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line168" />
-  <line
-     x1="159.15082"
-     y1="256.17691"
-     x2="159.15082"
-     y2="192.71306"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line170" />
-  <line
-     x1="149.23558"
-     y1="223.95682"
-     x2="159.15082"
-     y2="223.95682"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line172" />
-  <line
-     x1="149.23558"
-     y1="150.72926"
-     x2="180.30333"
-     y2="150.72926"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line174" />
-  <line
-     x1="149.23558"
-     y1="223.95682"
-     x2="149.23558"
-     y2="150.72926"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line176" />
-  <line
-     x1="131.38817"
-     y1="187.83122"
-     x2="149.23558"
-     y2="187.83122"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line180" />
-  <line
-     x1="137.99831"
-     y1="107.76914"
-     x2="192.20161"
-     y2="107.76914"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line184" />
-  <line
-     x1="137.99831"
-     y1="65.785347"
-     x2="198.15074"
-     y2="65.785347"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line186" />
-  <line
-     x1="137.99831"
-     y1="107.76914"
-     x2="137.99831"
-     y2="65.785347"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line188" />
-  <line
-     x1="122.79496"
-     y1="187.83122"
-     x2="131.38817"
-     y2="187.83122"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line190" />
-  <line
-     x1="122.79496"
-     y1="87.265427"
-     x2="137.99831"
-     y2="87.265427"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line192" />
-  <line
-     x1="122.79496"
-     y1="188.37305"
-     x2="122.79496"
-     y2="87.265411"
-     style="stroke:#000000;stroke-width:0.60765719;stroke-linecap:butt"
-     id="line194" />
-  <line
-     x1="67.26963"
-     y1="509.4411"
-     x2="106.26955"
-     y2="509.4411"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line196" />
-  <line
-     x1="67.26963"
-     y1="137.8192"
-     x2="122.79496"
-     y2="137.8192"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line198" />
-  <line
-     x1="67.36853"
-     y1="509.4411"
-     x2="67.36853"
-     y2="137.29808"
-     style="stroke:#000000;stroke-width:0.75199717;stroke-linecap:butt"
-     id="line200" />
-  <line
-     x1="46.778141"
-     y1="716.12677"
-     x2="159.15082"
-     y2="716.12677"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line202" />
-  <line
-     x1="46.778141"
-     y1="323.36957"
-     x2="67.26963"
-     y2="323.36957"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line204" />
-  <line
-     x1="46.778141"
-     y1="716.40289"
-     x2="46.778141"
-     y2="322.89734"
-     style="stroke:#000000;stroke-width:0.74314046;stroke-linecap:butt"
-     id="line206" />
-  <line
-     x1="8.4392271"
-     y1="801.07068"
-     x2="44.79509"
-     y2="801.07068"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line208" />
-  <line
-     x1="8.4392271"
-     y1="519.65009"
-     x2="46.778141"
-     y2="519.65009"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line210" />
-  <line
-     x1="8.4392271"
-     y1="801.22388"
-     x2="8.4392271"
-     y2="519.16193"
-     style="stroke:#000000;stroke-width:0.7597608;stroke-linecap:butt"
-     id="line212" />
-  <line
-     x1="546.51434"
-     y1="48.62542"
-     x2="588.81934"
-     y2="48.62542"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line214" />
-  <line
-     x1="546.51434"
-     y1="52.53088"
-     x2="546.51434"
-     y2="44.719944"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line216" />
-  <line
-     x1="588.81934"
-     y1="52.53088"
-     x2="588.81934"
-     y2="44.719944"
-     style="stroke:#000000;stroke-width:0.80336416;stroke-linecap:butt"
-     id="line218" />
-  <text
-     x="559.60364"
-     y="46.732388"
-     font-size="12"
-     xml:space="preserve"
-     id="text220"
-     style="font-size:11.71545029px;font-family:Times;fill:#000000"
-     transform="scale(1.0000652,0.99993479)">0.2</text>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-weight:normal;font-size:10.7391634px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="279.707"
-     y="37.171188"
+     style="font-style:normal;font-weight:normal;font-size:10.1279726px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="282.61423"
+     y="25.608406"
      id="text4454"
      sodipodi:linespacing="125%"
      transform="scale(1.0000652,0.9999348)"><tspan
        sodipodi:role="line"
        id="tspan4456"
-       x="279.707"
-       y="37.171188"
-       style="font-weight:bold;font-size:19.52575111px">Rdr1 &amp; Rdr2</tspan></text>
-  <text
-     x="14.195632"
-     y="657.20044"
-     font-size="12"
-     xml:space="preserve"
-     id="text86-3"
-     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.54251575px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-     transform="scale(1.0000652,0.99993479)">/0.99</text>
+       x="282.61423"
+       y="25.608406"
+       style="font-weight:bold;font-size:18.41449547px">Rdr1 &amp; Rdr2</tspan></text>
+  <g
+     id="g5446">
+    <rect
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#ececec;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00304091;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate"
+       id="rect5556-0-7-3"
+       width="558.55151"
+       height="72.095535"
+       x="83.301506"
+       y="630.9162"
+       rx="2.6451802"
+       ry="2.6451802" />
+    <rect
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#ececec;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00304091;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate"
+       id="rect5556-0-7"
+       width="558.38379"
+       height="227.43233"
+       x="84.167229"
+       y="41.544521"
+       rx="2.6451802"
+       ry="2.6451802" />
+    <rect
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#ececec;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.00304091;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate"
+       id="rect5556-0"
+       width="559.13647"
+       height="343.57123"
+       x="83.460976"
+       y="276.87732"
+       rx="2.6451802"
+       ry="2.6451802" />
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="font-size:11.04869652px;font-family:Times;fill:#000000"
+       id="text6"
+       xml:space="preserve"
+       font-size="12"
+       y="768.54095"
+       x="237.36845"><tspan
+   id="tspan4422"
+   style="font-style:italic">Tetrahymena thermophila</tspan> [XP_001026321.2]</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="font-size:11.04869652px;font-family:Times;fill:#000000"
+       id="text8"
+       xml:space="preserve"
+       font-size="12"
+       y="728.94391"
+       x="281.29272"><tspan
+   id="tspan4418"
+   style="font-style:italic">Oxytricha trifallax</tspan> [gi403346586]</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="font-size:11.04869652px;font-family:Times;fill:#0000ff"
+       id="text10"
+       xml:space="preserve"
+       font-size="12"
+       y="689.31726"
+       x="176.1369"><tspan
+   id="tspan4414"
+   style="font-style:italic;fill:#0000ff">Paramecium bursaria </tspan>Yad1g [TR10997_c0_g2_i5_m.152701]</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="font-size:11.04869652px;font-family:Times;fill:#0000ff"
+       id="text12"
+       xml:space="preserve"
+       font-size="12"
+       y="648.8291"
+       x="170.5267"><tspan
+   id="tspan4416"
+   style="font-style:italic;fill:#0000ff">Paramecium bursaria</tspan> SW1 [comp1394_seq3_m.27654]</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="font-size:11.04869652px;font-family:Times;fill:#0000ff"
+       id="text14"
+       xml:space="preserve"
+       font-size="12"
+       y="611.73029"
+       x="235.94646"><tspan
+   id="tspan4426"
+   style="font-style:italic;fill:#0000ff">Paramecium bursaria </tspan> Yad1g [TR24504_c0_g1_i1_m.344314]</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="font-size:11.04869652px;font-family:Times;fill:#0000ff"
+       id="text16"
+       xml:space="preserve"
+       font-size="12"
+       y="571.47571"
+       x="219.08336"><tspan
+   id="tspan4424"
+   style="font-style:italic;fill:#0000ff">Paramecium bursaria </tspan>SW1 [comp2093_seq0_m.40761]</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="font-size:11.04869652px;font-family:Times;fill:#000000"
+       id="text22"
+       xml:space="preserve"
+       font-size="12"
+       y="528.53729"
+       x="257.66635"><tspan
+   id="tspan4428"
+   style="font-style:italic">Paramecium biaurelia</tspan> [PBIGNP22852]</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="font-size:11.04869652px;font-family:Times;fill:#000000"
+       id="text24"
+       xml:space="preserve"
+       font-size="12"
+       y="488.88632"
+       x="261.40649"><tspan
+   id="tspan4430"
+   style="font-style:italic">Paramecium primaurelia </tspan>[PPRIMP16453]</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="font-size:11.04869652px;font-family:Times;fill:#800000"
+       id="text26"
+       xml:space="preserve"
+       font-size="12"
+       y="449.28934"
+       x="273.25024"><tspan
+   id="tspan4432"
+   style="font-style:italic;fill:#800000">Paramecium tetaurelia</tspan> Rdr2 (Marker, 2014) [GSPATP00036857001]</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.05634212px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text28"
+       xml:space="preserve"
+       font-size="12"
+       y="467.91846"
+       x="255.56766">80.4%/0.82</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="font-size:11.04869652px;font-family:Times;fill:#000000"
+       id="text30"
+       xml:space="preserve"
+       font-size="12"
+       y="408.8255"
+       x="267.78464"><tspan
+   id="tspan4434"
+   style="font-style:italic">Paramecium sexaurelia</tspan> [PSEXPNG32890]</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.05634212px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text32"
+       xml:space="preserve"
+       font-size="12"
+       y="504.24277"
+       x="201.98393">99.4%/0.97</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="font-size:11.04869652px;font-family:Times;fill:#000000"
+       id="text34"
+       xml:space="preserve"
+       font-size="12"
+       y="369.22849"
+       x="254.64716"><tspan
+   id="tspan4436"
+   style="font-style:italic">Paramecium sexaurelia</tspan> [PSEXPNG31119]</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.05634212px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text36"
+       xml:space="preserve"
+       font-size="12"
+       y="459.02435"
+       x="192.44176">87.6%/0.83</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="font-size:11.04869652px;font-family:Times;fill:#000000"
+       id="text38"
+       xml:space="preserve"
+       font-size="12"
+       y="331.07092"
+       x="260.76819"><tspan
+   id="tspan4438"
+   style="font-style:italic">Paramecium multimicronucleatum</tspan> [PMMNP14096]</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.05634212px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text40"
+       xml:space="preserve"
+       font-size="12"
+       y="416.67099"
+       x="185.45496">100%/1.00</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="font-size:11.04869652px;font-family:Times;fill:#000000"
+       id="text42"
+       xml:space="preserve"
+       font-size="12"
+       y="289.11371"
+       x="233.80429"><tspan
+   id="tspan4440"
+   style="font-style:italic">Paramecium caudatum</tspan> [PCAUDP11670]</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.05634212px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text44"
+       xml:space="preserve"
+       font-size="12"
+       y="375.60617"
+       x="150.63905">93.3%/0.94</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.05634212px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text46"
+       xml:space="preserve"
+       font-size="12"
+       y="596.63605"
+       x="160.73283">100%/1.00</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.05634212px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text48"
+       xml:space="preserve"
+       font-size="12"
+       y="323.69836"
+       x="131.95461">100%/1.00</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="font-size:11.04869652px;font-family:Times;fill:#000000"
+       id="text54"
+       xml:space="preserve"
+       font-size="12"
+       y="255.59953"
+       x="170.7896"><tspan
+   id="tspan4452"
+   style="font-style:italic">Paramecium biaurelia</tspan> [PBIGNP28717]</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="font-size:11.04869652px;font-family:Times;fill:#800000"
+       id="text56"
+       xml:space="preserve"
+       font-size="12"
+       y="215.02779"
+       x="175.38345"><tspan
+   id="tspan4450"
+   style="font-style:italic;fill:#800000">Paramecium tetaurelia</tspan> Rdr1 (Marker, 2014) [PTETP8500012001]</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="font-size:11.04869652px;font-family:Times;fill:#000000"
+       id="text58"
+       xml:space="preserve"
+       font-size="12"
+       y="175.43082"
+       x="165.64716"><tspan
+   id="tspan4448"
+   style="font-style:italic"> Paramecium primaurelia</tspan> [PPRIMP21923]</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.05634212px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text60"
+       xml:space="preserve"
+       font-size="12"
+       y="240.40486"
+       x="109.30415">64.1%/0.81</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="font-size:11.04869652px;font-family:Times;fill:#000000"
+       id="text62"
+       xml:space="preserve"
+       font-size="12"
+       y="135.88779"
+       x="174.58557"><tspan
+   id="tspan4446"
+   style="font-style:italic">Paramecium sexaurelia</tspan> [PSEXPNG23839]</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.05634212px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text64"
+       xml:space="preserve"
+       font-size="12"
+       y="210.2906"
+       x="102.77502">98.5%/0.98</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.05634212px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text68"
+       xml:space="preserve"
+       font-size="12"
+       y="178.09491"
+       x="94.505676">96.7%/0.99</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="font-size:11.04869652px;font-family:Times;fill:#000000"
+       id="text70"
+       xml:space="preserve"
+       font-size="12"
+       y="95.369957"
+       x="187.1973"><tspan
+   id="tspan4442"
+   style="font-style:italic">Paramecium caudatum</tspan> [PCAUDP07869]</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="font-size:11.04869652px;font-family:Times;fill:#000000"
+       id="text72"
+       xml:space="preserve"
+       font-size="12"
+       y="55.772961"
+       x="192.34369"><tspan
+   id="tspan4444"
+   style="font-style:italic">Paramecium multimicronucleatum</tspan> [PMMNP15732]</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="font-size:11.04869652px;font-family:Times;fill:#000000"
+       id="text76"
+       xml:space="preserve"
+       font-size="12"
+       y="70.142693"
+       x="88.104416"><tspan
+         id="tspan4462"
+         style="font-size:8.05634212px">24.6%/0.5</tspan></text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.05634212px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text78"
+       xml:space="preserve"
+       font-size="12"
+       y="479.38324"
+       x="54.431713">99.9%/1.00</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.05634212px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text80"
+       xml:space="preserve"
+       font-size="12"
+       y="116.54359"
+       x="71.823334">100%/1.00</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.05634212px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text82"
+       xml:space="preserve"
+       font-size="12"
+       y="673.9621"
+       x="106.23436">100%/1.00</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.05634212px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text84"
+       xml:space="preserve"
+       font-size="12"
+       y="292.81"
+       x="15.929372">76.7%/0.85</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.05634212px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text86"
+       xml:space="preserve"
+       font-size="12"
+       y="602.39801"
+       x="13.290335">99.2%</text>
+    <line
+       id="line88"
+       style="stroke:#000000;stroke-width:0.6745767;stroke-linecap:butt"
+       y2="765.36993"
+       x2="234.48969"
+       y1="765.36993"
+       x1="44.719177" />
+    <line
+       id="line90"
+       style="stroke:#000000;stroke-width:0.57655257;stroke-linecap:butt"
+       y2="725.77551"
+       x2="281.89914"
+       y1="725.77551"
+       x1="44.719177" />
+    <line
+       id="line92"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="725.77551"
+       x2="44.719177"
+       y1="765.36993"
+       x1="44.719177" />
+    <line
+       id="line94"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="686.18115"
+       x2="173.76212"
+       y1="686.18115"
+       x1="152.56667" />
+    <line
+       id="line96"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="645.66602"
+       x2="168.15154"
+       y1="645.66602"
+       x1="152.56667" />
+    <line
+       id="line98"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="645.66602"
+       x2="152.56667"
+       y1="686.18115"
+       x1="152.56667" />
+    <line
+       id="line100"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="605.43768"
+       x2="218.02322"
+       y1="605.43768"
+       x1="218.02322" />
+    <line
+       id="line102"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="565.84326"
+       x2="218.02322"
+       y1="565.84326"
+       x1="218.02322" />
+    <line
+       id="line106"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="608.59943"
+       x2="234.23152"
+       y1="608.59943"
+       x1="208.0489" />
+    <line
+       id="line108"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="568.31757"
+       x2="218.02322"
+       y1="568.31757"
+       x1="208.0489" />
+    <line
+       id="line110"
+       style="stroke:#000000;stroke-width:0.62827814;stroke-linecap:butt"
+       y2="567.85724"
+       x2="208.36057"
+       y1="609.01514"
+       x1="208.36057" />
+    <line
+       id="line112"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="485.7337"
+       x2="261.66092"
+       y1="485.7337"
+       x1="254.80356" />
+    <line
+       id="line114"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="446.13934"
+       x2="273.50543"
+       y1="446.13934"
+       x1="254.80356" />
+    <line
+       id="line116"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="446.13934"
+       x2="254.80356"
+       y1="485.7337"
+       x1="254.80356" />
+    <line
+       id="line118"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="525.32812"
+       x2="257.92056"
+       y1="525.32812"
+       x1="251.0632" />
+    <line
+       id="line120"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="465.4761"
+       x2="254.80356"
+       y1="465.4761"
+       x1="251.0632" />
+    <line
+       id="line122"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="465.4761"
+       x2="251.0632"
+       y1="525.32812"
+       x1="251.0632" />
+    <line
+       id="line124"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="495.86249"
+       x2="251.0632"
+       y1="495.86249"
+       x1="241.08884" />
+    <line
+       id="line126"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="405.62415"
+       x2="266.64807"
+       y1="405.62415"
+       x1="241.08884" />
+    <line
+       id="line128"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="405.62415"
+       x2="241.08884"
+       y1="495.86249"
+       x1="241.08884" />
+    <line
+       id="line130"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="450.74335"
+       x2="241.08884"
+       y1="450.74335"
+       x1="232.9847" />
+    <line
+       id="line132"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="366.02972"
+       x2="252.93341"
+       y1="366.02972"
+       x1="232.9847" />
+    <line
+       id="line134"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="366.02972"
+       x2="232.9847"
+       y1="450.74335"
+       x1="232.9847" />
+    <line
+       id="line136"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="408.38657"
+       x2="232.9847"
+       y1="408.38657"
+       x1="200.56813" />
+    <line
+       id="line138"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="326.43542"
+       x2="259.16739"
+       y1="326.43542"
+       x1="200.56813" />
+    <line
+       id="line140"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="326.43542"
+       x2="200.56813"
+       y1="408.38657"
+       x1="200.56813" />
+    <line
+       id="line142"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="366.95056"
+       x2="200.56813"
+       y1="366.95056"
+       x1="178.12589" />
+    <line
+       id="line144"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="285.92023"
+       x2="231.73792"
+       y1="285.92023"
+       x1="178.12589" />
+    <line
+       id="line146"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="285.92023"
+       x2="178.12589"
+       y1="366.95056"
+       x1="178.12589" />
+    <line
+       id="line148"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="588.43622"
+       x2="208.0489"
+       y1="588.43622"
+       x1="102.69498" />
+    <line
+       id="line150"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="326.43542"
+       x2="178.12589"
+       y1="326.43542"
+       x1="102.69498" />
+    <line
+       id="line152"
+       style="stroke:#000000;stroke-width:0.72177291;stroke-linecap:butt"
+       y2="326.43542"
+       x2="102.69498"
+       y1="588.83716"
+       x1="102.69498" />
+    <line
+       id="line160"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="252.40822"
+       x2="169.39835"
+       y1="252.40822"
+       x1="157.55383" />
+    <line
+       id="line162"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="211.89305"
+       x2="175.63232"
+       y1="211.89305"
+       x1="157.55383" />
+    <line
+       id="line164"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="211.89305"
+       x2="157.55383"
+       y1="252.40822"
+       x1="157.55383" />
+    <line
+       id="line166"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="232.15062"
+       x2="157.55383"
+       y1="232.15062"
+       x1="152.56667" />
+    <line
+       id="line168"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="172.29863"
+       x2="165.65796"
+       y1="172.29863"
+       x1="152.56667" />
+    <line
+       id="line170"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="172.29863"
+       x2="152.56667"
+       y1="232.15062"
+       x1="152.56667" />
+    <line
+       id="line172"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="201.76425"
+       x2="152.56667"
+       y1="201.76425"
+       x1="143.21573" />
+    <line
+       id="line174"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="132.70424"
+       x2="172.51532"
+       y1="132.70424"
+       x1="143.21573" />
+    <line
+       id="line176"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="132.70424"
+       x2="143.21573"
+       y1="201.76425"
+       x1="143.21573" />
+    <line
+       id="line180"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="167.69466"
+       x2="143.21573"
+       y1="167.69466"
+       x1="126.38404" />
+    <line
+       id="line184"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="92.189102"
+       x2="183.73645"
+       y1="92.189102"
+       x1="132.61798" />
+    <line
+       id="line186"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="52.594673"
+       x2="189.34702"
+       y1="52.594673"
+       x1="132.61798" />
+    <line
+       id="line188"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="52.594673"
+       x2="132.61798"
+       y1="92.189102"
+       x1="132.61798" />
+    <line
+       id="line190"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="167.69466"
+       x2="126.38404"
+       y1="167.69466"
+       x1="118.27989" />
+    <line
+       id="line192"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="72.852272"
+       x2="132.61798"
+       y1="72.852272"
+       x1="118.27989" />
+    <line
+       id="line194"
+       style="stroke:#000000;stroke-width:0.57307398;stroke-linecap:butt"
+       y2="72.852272"
+       x2="118.27989"
+       y1="168.20564"
+       x1="118.27989" />
+    <line
+       id="line196"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="471.00095"
+       x2="102.69498"
+       y1="471.00095"
+       x1="65.914635" />
+    <line
+       id="line198"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="120.52891"
+       x2="118.27989"
+       y1="120.52891"
+       x1="65.914635" />
+    <line
+       id="line200"
+       style="stroke:#000000;stroke-width:0.70919925;stroke-linecap:butt"
+       y2="120.03744"
+       x2="66.007919"
+       y1="471.00095"
+       x1="66.007919" />
+    <line
+       id="line202"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="665.92365"
+       x2="152.56667"
+       y1="665.92365"
+       x1="46.589367" />
+    <line
+       id="line204"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="295.51917"
+       x2="65.914635"
+       y1="295.51917"
+       x1="46.589367" />
+    <line
+       id="line206"
+       style="stroke:#000000;stroke-width:0.70084655;stroke-linecap:butt"
+       y2="295.07379"
+       x2="46.589367"
+       y1="666.18402"
+       x1="46.589367" />
+    <line
+       id="line208"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="746.03314"
+       x2="44.719177"
+       y1="746.03314"
+       x1="10.432413" />
+    <line
+       id="line210"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="480.62891"
+       x2="46.589367"
+       y1="480.62891"
+       x1="10.432413" />
+    <line
+       id="line212"
+       style="stroke:#000000;stroke-width:0.71652108;stroke-linecap:butt"
+       y2="480.16855"
+       x2="10.432413"
+       y1="746.17755"
+       x1="10.432413" />
+    <line
+       id="line214"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="36.411381"
+       x2="557.7818"
+       y1="36.411381"
+       x1="517.8844" />
+    <line
+       id="line216"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="32.728142"
+       x2="517.8844"
+       y1="40.094559"
+       x1="517.8844" />
+    <line
+       id="line218"
+       style="stroke:#000000;stroke-width:0.75764287;stroke-linecap:butt"
+       y2="32.728142"
+       x2="557.7818"
+       y1="40.094559"
+       x1="557.7818" />
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="font-size:11.04869652px;font-family:Times;fill:#000000"
+       id="text220"
+       xml:space="preserve"
+       font-size="12"
+       y="34.625469"
+       x="530.22864">0.2</text>
+    <text
+       transform="scale(1.0000652,0.9999348)"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.05634212px;line-height:normal;font-family:Times;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="text86-3"
+       xml:space="preserve"
+       font-size="12"
+       y="610.3504"
+       x="15.861047">/0.99</text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.30923128px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 631.53486,277.11919 10.50267,0 0,342.70084 -10.50267,0"
+       id="path5449-7"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.32032263;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 631.4809,41.758457 10.67314,0 0,227.096523 -10.67314,0"
+       id="path5449-7-7"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.32032263;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 631.02917,630.76165 11.00282,0 0,72.80018 -11.00282,0"
+       id="path5449-7-3"
+       inkscape:connector-curvature="0" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text5297"
+       y="159.21469"
+       x="648.65796"
+       style="font-style:normal;font-weight:normal;font-size:10.37396431px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="159.21469"
+         x="648.65796"
+         id="tspan5299"
+         sodipodi:role="line">Rdr1</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text5301"
+       y="452.37762"
+       x="648.65796"
+       style="font-style:normal;font-weight:normal;font-size:10.37396431px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-weight:normal"
+         y="452.37762"
+         x="648.65796"
+         id="tspan5303"
+         sodipodi:role="line">Rdr2</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text5305"
+       y="671.0697"
+       x="648.65796"
+       style="font-style:normal;font-weight:normal;font-size:10.37396431px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="671.0697"
+         x="648.65796"
+         id="tspan5307"
+         sodipodi:role="line">Rdr1?</tspan></text>
+  </g>
 </svg>
