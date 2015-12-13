@@ -8,71 +8,230 @@
 
 \chapter{Conclusions and Recommendations}
 
-The main objective of this research was to generate ``omic'' resources
+There were 3 main objectives to this research:
+\begin{itemize}
+    \item Assessing the utility
+of \textit{P. bursaria} and its endosymbioses with green algae
+as a model organism for the study of the evolution of endosymbiosis.
+    \item Generation of ``omic'' resources to inform further analysis of this system
+    \item Investigating the the utility and feasibility 
+            of current MDA-based
+            single cell genomic and transcriptomic sequencing technique in the 
+            analysis of complex multimember single-celled eukaryotic systems.
+\end{itemize}
+
+%Endosymbiosis is widespread across the tree of life and is a fundamental
+%process in the evolution of the eukaryotes.   Unfortunately,
+%it is difficult to study the evolution of this process as host
+%and endosymbiont have developed obligate metabolic co-dependence.
+%This means hypotheses about the mechanism of the endosymbiosis
+%cannot be tested easily.  
+
+Review of literature established that \textit{Paramecium bursaria} and its
+4 algal endosymbionts: \textit{Chlorella variabilis}, \textit{Chlorella vulgaris},
+and \textit{Micractinium reisseri} make theoretically good model
+organisms for the study of this process due to the existence
+of extensive.   This is due to them being believed to share:
+\begin{itemize}
+    \item a well-developed background literature.
+    \item facultative endosymbioses allowing elimination of the endosymbiont
+        and re-introduction experiments.
+    \item the potential of a functional and tractable RNAi system for hypothesis
+        testing.
+    \item easily culturable and diverse available cultures.
+\end{itemize}
+However, with the exception of one transcriptomic analysis \citep{Kodama2014} 
+there have been no analyses of these systems using 
+contemporary transcriptomic, metabolomic or genomic techniques. 
 
 
-The feasbility of MDA-based single cell transcriptomics in the analysis
-of complex multi-member eukaryotic systems.
+%and the \textit{C. variabilis}
+%NC64A and \textit{Coccomyxa subellipsoidea}
+
+An investigation of elimination of the endosymbiont in the \textit{P. bursaria}
+-\textit{M. reisseri} culture revealed that this endosymbiosis
+may represent an obligate system, at least on the part of the
+\textit{P. bursaria} SW1 host.  Even though 3 elimination methods and
+a range of treatment concentrations were attempted (to minimise the 
+risk that the host death was related a particular susceptibility to a 
+certain treatment) all methods resulted in the same eventual host death.
+Future work is required to establish whether \textit{M. reisseri}
+algae are also obligate endosymbionts.  If this mutually obligate system is 
+the case then metabolic co-dependence may have become fixed between
+\textit{P. bursaria} and \textit{M. reisseri}.
+Testing this could be achieved
+by exploiting robustness of the chitinous cell wall
+of the algae relative to the \textit{Paramecium} membrane. Gentle agitation
+would allow the lysis of the endosymbiont without the lysis of a significant
+number of the endosymbionts.  The difficulty in this would optimising
+the culture conditions for \textit{M. reisseri} as 
+as these endosymbiont algae are known to be relatively fastidious \citep{Hoshina2009}.
+As the previously established \textit{Paramecium}.
+
+As the Yad1g1N culture has previously been established as
+a facultative further work could use the Yad1g1N and CCAP1660/12 
+transcriptomes created here to attempt to identify key differences 
+between them.  Identifying these differences may pinpoint
+the mechanism by which metabolic co-dependence becomes fixed in \textit{P. bursaria}
+- green algal endosymbioses.
+
+The ITS2 sequence analysis of the CCAP 1660/12,
+and CCAP 1660/13 cultures revealed that these cultures contained
+the same \textit{M. reisseri} endosymbiont and not a \textit{Coccomyxa}
+endosymbiont as labelled. The identity of the Yad1g1N endosymbiont
+as \textit{C. variabilis} 1N was also confirmed.
+A taxonomic analysis of the \textit{Paramecium} species
+should also be conducted targeting the single MIC copy of the rDNA
+to confirm the host identities in the primary cultures. 
+
+This ITS2 analysis also established that 
+the photobionts in the CCAP 1660/12, CCAP 1660/13
+and NBDJ Yad1g1N cultures most likely form
+clonal photobiont cultures within their host and none
+of the cultures show evidence of multiple species of photobiont.
+This suggest that clonal photobiont samples exist
+in nature as samples such as the CCAP 1660/12 and 1660/13
+cultures were sampled directly from the environment.  
+As the Yad1g1N culture creation involved
+the isolation and purification of the 1N endosymbiont, 
+clearing of the Yad1g host and then their subsequent
+reintroduction this suggests that the photobiont
+undergo little divergence and remain largely
+homogeneous within the host.
+
+Unfortunately, the utility of the single cell metagenome to further
+test endosymbiont clonality was limited due to 
+the high level of bacterial contamination.
+New tools and methods need to be developed to process and cluster
+MDA genomic contigs in the absence of reference genomes
+due to the unreliability of coverage as a feature.  The existence
+of this type of method optimised for ``de novo'' assembled eukaryotic data
+would greatly aid the analysis of complex interacting eukaryotic
+systems using MDA based genomics.   One approach could be to utilise
+blanket normalisation methods and base the variational inference
+off the normalised coverage and compositional features however,
+but using a blanket coverage threshold instead of a relative one
+there is the potential to discard a significant portion of sequencing
+data.
+
+Therefore, the first result chapter already
+shed doubt on some of the arguments supporting the utility of
+\textit{Paramecium} in the study of endosymbiosis. Specifically,
+it is not necessarily facultative and metabolic dependence if not
+necessarily co-dependence has become fixed in at least one
+species.  Additionally, due to this evidence of diversity
+in the relationships combined with the taxonomic turmoil and previous
+mislabelling means that the utility of the reference literature
+is reduced. Any data from literature prior to the establishment
+of molecular taxonomy in these species needs to be carefully
+revisited and verified before it can be effectively used to
+contextualise the ``omic'' analyses.
+
+
+In-depth analysis of the optimisation of pre-processing,
+filtering, assembly, and binning of single cell transcriptomics
+revealed that it was possible to generate and assemble
+single cell RNA-seq datasets of complex eukaryotic
+systems. Previous work has shown the potential utility
+of ``de novo'' SCT in eukaryotic micro-organisms \citep{Kolisko2014}
+however, this work represents the first analysis
+using SCT to investigate a non-axenic eukaryotic system.
+Particularly, this is also the first analysis of a pair
+of interacting eukaryotic partners using single cell methods
+in the absence of reference genomes. 
+This analysis identified that GC\% based pre-assembly read partitioning
+is ineffectual for these datasets, but taxonomic screening
+is highly necessary to minimise the levels of bacterial contamination.
+This data also emphasises the utility of phylogenetically
+informed transcript binning processes instead of relying
+exclusively on naive top BLAST hit approaches. 
+This work also determined that current recommended practices
+ in bulk RNA-seq, such as digital normalisation and error correction,
+ are still highly useful techniques in the analysis and assembly
+ of SCT datasets.
+Future work could consider the utility of phylogenetically aware
+kernels (e.g. \citep{Vert2002}) in the classification
+of transcript bins. Pre-assembly read partitioning
+should be revisited and the benefit of incorporating
+additional sequence feature such as composition
+and coverage data investigated in this form a pre-processing.
+
+
+An analysis of the endosymbiont metabolism via expressed 
+transporters and secreted proteins revealed novel
+aspects of amino acid usage by \textit{M. reissieri}
+as well as the potential synthesis of complex saccharides
+such as raffinose and arabinose within the PV lumen. 
+Metabolomic data supporting these hypotheses
+were also presented.  While the untargeted metabolomic profiling
+does require further optimisation, particularly GC-QTOF analysis
+of carbohydrate metabolism, these approaches are highly
+useful to supplement transcriptomic data.
+Further, targeted mass spectrometry is required to confirm
+the differential abundances of raffinose, arabinose.
+Additionally, the targeted amino acid analysis requires
+redone due to a failure to fit calibration curves to the peaks
+generated by the majority of the amino acids. 
+
+Comparison of the active metabolic network in \textit{M. reisseri}
+during endosymbiosis to that of \textit{C. variabilis} 1N 
+and the total metabolic capacity of \textit{C. variabilis} NC64A
+and \textit{Coccomyxa subellipsoidea} also revealed 
+unique traits.  Specifically, \textit{M. reisseri} has lost
+aspects of fatty acid degradation present in the other endosymbionts
+as well as having distinct amino acid degradation pathways that are
+congruent with the identified alternative amino acid usage in this species. 
+
+The discovery of novel traits support the potential
+ utility for single cell transcriptomics and bulk metabolomic
+ analysis for identifying the underlying molecular function
+ of a given endosymbiotic relationship.
+ Unfortunately, it also further underlines the diversity
+ and variability displayed between different \textit{P. bursaria}
+ - green algal systems.  
+
+
+ Finally, an analysis of RNAi in \textit{P. bursaria}
+ revealed a potentially inactive/absent dsRNA induced RNAi system
+ in \textit{P. bursaria} SW1 (CCAP 1660/12).  
+ The common pattern of presence and absence of the
+ previously identified components of the 
+ RNAi pathways in both \textit{P. bursaria} transcriptomes
+suggests that this system is likely to be inactive or missing in 
+\textit{P. bursaria}. The most significantly missing factor is that
+of the Pds1 gene that has been implicated in the uptake of RNA
+from the digestive vacuole. As this has been discovered to occur
+at low and natural levels in \textit{P. tetaurelia} during normal
+feeding \citep{Carradec2015} the potentially deleterious 
+presence of eukaryotic algal endosymbionts
+may offer an explanation for the deactivation/absence of this system.
+
+An ``in-silico'' study of the number of potential siRNA ``collisions''
+between the active \textit{Paramecium} transcriptomes and other
+eukaryotic transcriptomes (particularly those belonging to the endosymbionts) 
+supported this hypothesis.  Relatively more collisions occur between
+the host and eukaryotic transcriptomes than do versus bacterial ones.
+The greater number of collisions increasing the chance of deleterious
+cross-talk taking place and thus likely increasing the fitness
+cost of maintaining this system in the presence of eukaryotic endosymbiont. 
+Additional work needs done to assess the exact nature of these collisions,
+particularly between host and endosymbiont. 
 
 
 
-
-
-
-
-
-PROFOUND THOUGHTS
-
-Endosymbiosis 
-is widespread across the tree of life and
-ecologically
-
-Forms a key part of the evolution of the euks
-
-
-Understanding endosymbiosis in all its form is
-fundamental to answering both high-concept key questions 
-pertaining to the evolution
-of the eukaryotic cell as well as specific mechanistic
-and utilitarian questions about using
-endosymbiosis, bioengineering, shit.
-
-
-Green algal phylogenetics and taxonomy is a messy field still 
-undergoing a high degree of flux. 
-
-MDA-based genomes are difficult and prone to contamination 
-
-MDA-based transcriptomics 
-
-
-Digital normalisation and error correction in general is a hugely:ta
-important technique by which 
-
-
-
-
-The analysis of complex messay 
-
-
-\section{Discussion}
-
-
-\section{}
-
-\subsection{Why not further integration?}
-
-Why is there not evidence of tighter integration in this system.
+As there is evidence of both specialised adaptations in each
+host-algal system, including potentially mutually obligate dependencies,
+why is there a lack of evidence evidence of tighter 
+integration in this system?  Specifically, the type of genomic
+integration displayed in other endosymbionts such as EGT.
 
 Firstly, the protein import systems considered necessary for extensive
 EGT to start taking place are complicated
 in the cases of secondary and tertiary endosymbioses
-than basic plsatids due to the increased number
+than basic plastids due to the increased number
 of membranes that may need to be traversed especially
 for import directly to the secondary plastid from the
 host \citep{Hirakawa2012}.
-
-
 Secondly, the unusual nuclear dimorphism of the host \textit{P. bursaria}
 may prove a barrier to the vast majority of EGT activity. 
 
@@ -84,10 +243,51 @@ that it would be correctly spliced and duplicated during the conversion of the M
 back to the MAC.
 Compounding this with sexual reproduction further decreases the probability of
 effective integration.
-
-It should be noted that the prototypical hosts of the endosymbiotically ``promiscuous''
+It is notable that the prototypical hosts of the endosymbiotically ``promiscuous''
 green algae - \textit{Chlorella}, \textit{Coccomyxa} and \textit{Micractinium} 
 all display germline sequestration either through the aforementioned dimorphism
 in \textit{P. bursaria} or via standard metazoan germlines in the case of
 \textit{Hydra} and the kleptoplastic sacoglossan sea slugs. 
+
+Future work, could attempt to use the genomic contigs generated here
+and/or further sequencing to attempt to pin-point examples of endosymbiont
+genes being present in host contigs and vice versa. Then, due to the rate of 
+chimeric contigs in MDA, PCR and sanger sequencing could be used to confirm
+any putative EGTs.
+
+Another interesting angle of investigation of these systems is
+analysing what host and endosymbiont are not expressing during endosymbiosis.
+This was partially investigated by \citep{Kodama2014} however, 
+the partial genome and transcriptome could be used to further
+investigate this question.  Specifically, all genes present in the assembly
+could be identified and annotated using standard annotation pipelines
+and then the transcriptomes surveyed for their presence.  Any gene
+present in the genome that is not observed in the endosymbiosis
+transcriptomes could shed further light on the function
+and evolution of these systems.
+
+
+Ultimately, this work has identified the diverse, complex and distinct set
+of traits that different \textit{P. bursaria}-green algal endosymbioses
+and demonstrated that, while still nascent, single cell methodologies
+can be amenable to the analysis of complex multimember eukaryotic
+systems that lack prior genomic references.  Unfortunately, both due to the
+diversity of the systems discovered in the 4 \textit{P. bursaria}-algal endosymbioses
+and the inability to induce RNAi the initial 
+utility of the \textit{Paramecium bursaria} as a general model for
+the evolution of co-dependence is less than initially believed.  
+However, future work in these systems using the ``omic'' resources generated in 
+this thesis as a base dataset could help us understand how such mechanistic
+endosymbiotic diversity is possible even in closely
+related host and endosymbionts species. Understanding the answer to this
+question would greatly improve our understanding of the evolution of endosymbiosis
+and ultimately the eukaryotic cell.
+
+
+
+
+
+
+
+
 

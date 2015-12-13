@@ -19,7 +19,8 @@ In order to identify putative metabolic integration it is necessary to
 identify the primary ``points of contact'' between the metabolic networks 
 of host and endosymbiont. These ``points of contact'' comprise two
 major classes of proteins, transporters and secreted proteins. 
-Specifically, host and endosymbiont transporters which localise to the
+Specifically in \textit{P. bursaria} system, 
+host and endosymbiont transporters which localise to the
 perialgal vacuole (PV) membrane and the outer-membrane of the endosymbiont,
 and proteins which are secreted by host and endosymbiont into 
 PV lumen.  
@@ -46,11 +47,11 @@ sites of integration.
 %be used to identify possibly 
 
 Finally, a characterisation of metabolites present in the system can be used
-to further analyse host and endosymbiont metabolism.  A metabolomics
+to further analyse host and endosymbiont metabolic function.  A metabolomics
 based-approach has the benefit of directly characterising the metabolites
 themselves and thus interrogating biological activity at its level of operation.
 Therefore, relative to analyses relying on abstracted measures such as 
-transcription levels or gene copy novel information about cellular dynamics
+transcription levels or gene copy number, novel information about cellular dynamics
 can be revealed. This is particularly important in cases of 
 of cryptic regulatory systems that break-down direct mapping from genes to 
 transcripts to protein to metabolites. 
@@ -58,7 +59,7 @@ By using both targeted and untargeted chromatography and mass
 spectrometry metabolomics approaches it is possible to survey the combined
 pool of host and endosymbiont both qualitatively and quantitatively. 
 These inferences can then be correlated with other data such as the
-presence transcripts involved in the synthesis or degradation of these metabolites. 
+presence of transcripts involved in the synthesis or degradation of these metabolites. 
 
 By utilising 3 separate streams of metabolic analysis: comparative transcript annotation
 and mapping, directed identification and analysis of transporters and secreted
@@ -142,7 +143,7 @@ utilisation \citep{Kato2009a}.
 For example, while \textit{C. variabilis} F36-ZK can
 uptake all 20 amino acids, only 6 (L-arginine, L-asparagine,
 L-glutamine, L-serine, L-alanine) were found to promote growth \citep{Kato2006}.
-This was despite some these 6 being taken up at lower rates
+This was despite some of these 6 being taken up at lower rates
 than some non-utilised amino acids such as L-proline, L-cysteine or L-leucine \citep{Kato2006}.
 
 Similarly, \textit{C. variabilis} NC64A was found to have stimulated growth
@@ -165,7 +166,7 @@ Kinetic analyses and competitive assays indicate 3 amino acid transport
 systems in \textit{C. variabilis} F36-ZK, a general amino acid tranporter
 for all amino acids except L-alanine, a basic transporter for L-arginine and L-lysine
 and a specialised L-alanine transporter \citep{Kato2009b,Kato2009a}.
-All of these are constitutively expressed, active, amino-acid symporters \citep{Kato2009b,Kato2009a}.
+All of these are constitutively functioning, active, amino-acid symporters \citep{Kato2009b,Kato2009a}.
 
 %Although glucose did increase the rate of amino acid uptake by some partially defined sensing system
 %and resorted uptake in the casoe of calcium ihibtion \citep{Kato2008,Kato2009a}.
@@ -281,7 +282,7 @@ There are 5 functional groups of transporters \citep{Saier2014}:
 
 This analysis will focus on transporters of the first 4 classes.
 In the case of \textit{P. bursaria} and its endosymbiont we are
-particularly interested in the host 
+particularly interested in 
 the host perialgal vacuole membrane and the outer membrane of the green
 algal endosymbiont in the case of \textit{P. bursaria}.  
 
@@ -821,6 +822,15 @@ were re-ORF called using the appropriate encodings to result in a
 host ORF bin of 61,239 sequences
 and an endosymbiont bin of 5,565 peptides. 
 
+This is relatively reasonable dataset sizes especially
+when considered against the source of the raw sequencing data.
+Specifically, the analysis of \citep{Kodama2014}), which
+involved the elimination of endosymbionts from the culture.
+Therefore, only half of the libraries theoretically contained
+\textit{C. variabilis} sequences and the recovery of 5,565 peptides
+is reasonably good.
+
+
 \subsection{Transporter identification}
 To identify transporters present in the translated protein dataset of the 
 endosymbiont bins of the CCAP1660/12 and Yad1g1N1 
@@ -851,7 +861,9 @@ transporter proteins than those from the two binned transcriptomes.
 However, smaller subsets represent all 
 candidate transporters
 that are actively being transcribed during endosymbiosis rather than just
-all those present in the genome. Therefore, this is not necessarily problematic.
+all those present in the genome. Therefore, this is not necessarily problematic
+and could be symptomatic of the endosymbiont exhibiting a streamlined
+metabolism inside the host.
 
 
 %There are 3 main groups of eukaryotic sugar transporters in the green algae: 
@@ -955,7 +967,9 @@ as qualitative rather than quantitative data for MDA-based SCT.}
      \includegraphics{transport_exp.pdf}
      \caption{A binary filter heatmap that displays the 4 groups of transporter
          proteins identified in the \textit{P. bursaria}-\textit{M. reisseri} 
-         transcriptome.  Specifically, it shows the 34 transporters expressed only
+         transcriptome.  Specifically, it shows the way that transporters
+         fall into different expression ``groups'' and their relative sizes.
+         In detail, 34 transporters are expressed only
          in dark single cell libraries, 48 expressed only in light libraries, the 64
          expressed in both and the 14 only recovered in the bulk libraries.}
      \label{fig:binary_expression_heatmap}
@@ -1129,23 +1143,25 @@ PV membrane \citep{Kodama2009a}.
 \begin{figure}
     \includegraphics[width=\textwidth]{endo_vs_green_algae.pdf}
     \caption[KEGG maps of endosymbiont bin compared with other algae]{
-    KEGG Maps contrasting endosymbiont bin with other algae. The bottom map shows
-the aspects of \textit{M. reisseri} putative transcriptome that is unique to it
-even among the other green algae.}
+    KEGG Maps contrasting endosymbiont bin with other algae. The bottom map highlights
+the aspects of \textit{M. reisseri} putative transcriptome that are not present in
+the other green algal species (\textit{C. variabilis} NC64A and 1N, 
+and \textit{Coccomyxa subellipsoidea} C-169).}
 \label{fig:algae_comp}
 \end{figure}
 
 Comparison of the \textit{M. reisseri} metabolic map against the combined
 maps of the other 3 green algal datasets here (\textit{C. variabilis} 1N, 
 \textit{C. variabilis} NC64A, and \textit{C. subellipsoidea}) reveals
-some unique adaptations in \textit{M. reisseri} that are expressed while 
+some unique genes transcribed in \textit{M. reisseri} that are expressed while 
 an endosymbiont.  
 
 Specifically, aspects of carotenoid biosynthesis, a missing fumarate hydratase
 not present in other algae.  
 
 Additionally, there are numerous aspects of amino acid metabolism and degradation
-only present in \textit{M. reisseri}. For example, lysine degradation pathway components, 
+only present in \textit{M. reisseri} compared to the other algal endosymbionts.
+For example, lysine degradation pathway components, 
 and glutaminases (necessary for gluatmine, D-glutamate degradation and the metabolism of
 alanine and aspartate). 
 %\begin{figure}
@@ -1172,7 +1188,7 @@ indicates poor calibration of GC/MS capture parameters.
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{gcms_cloud_plots.pdf}
-    \caption[GC-QTOF Cloud Plot]{Cloud point showing for the GC-QTOF analysis. 
+    \caption[GC-QTOF cloud plot]{Cloud plot showing for the GC-QTOF analysis. 
     The radius of a given point reflected its fold change.
     Data is filtered to those 50 points with significantly 
 different expression (FDR corrected P-value of 0.01 shown by 
@@ -1206,8 +1222,17 @@ with better separation (\cref{fig:lcms_clouds}).
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{lcms_cloud_plots.pdf}
-    \caption[LC-QTOF cloud plots]{LC-QTOF Cloud Plots demonstrating
-    clear separation of metabolites}
+    \caption[LC-QTOF cloud plots]{LC-QTOF cloud plots with A showing
+        the positive polarity analysis and B showing the negative polairty. 
+        The radius
+        of a given point represents its fold change, with larger
+        radius indicating a larger fold change.   Data is filtered 
+        only to include points with significantly different expression
+        and the depth of colour indicates the P-value.   Contrary to
+        the GC-QTOF analysis LC-QTOF shows a relatively good
+        separatation of metabolites.  This plot also
+    emphasises that far more metabolites were detected and discovered
+differentially expressed under positive ionisation.}
     \label{fig:lcms_clouds}
 \end{figure}
 
@@ -1265,7 +1290,7 @@ and arabinose 2.7 fold during lit conditions.
     \includegraphics[width=\textwidth]{AA_LCMS.pdf}
     \caption[LC-QQQ Quantitative Analysis of Amino Acids]{LC-QQQ analysis
         of amino acid abundances. Normalised Peak Areas 
-        Calibration was conducted using Day1 and Night1 samples at two titrations, as well as Asn-Gln-Tryptamine and Sigma AA mixes
+        Calibration was conducted using Day1 and Night1 samples at two titrations, as well as Asn-Gln-Tryptamine and Sigma AA mixes.
     Calibration and quantitative analysis failed for the following amino acids: 
 Glutamic Acid, Tryptamine, Asparagine, Tryptophan, Isoleucine, Methionine, Valine, Serine, Glutamate, Glutamine, Aspartic acid, Cysteine or Lysine.
 Significant concentration differences between day and night (as determined via Welch's `\textit{t}' are indicated by an asterisk.}
@@ -1276,9 +1301,9 @@ The targeted quantitative analysis of the amino acids in the system
 between day and night also had mixed results.  The majority of amino
 acids were not reliably recovered and calibration curves could not be fitted.
 Therefore, several key amino acids remain unprofiled.
-The relatively massive Arginine concentration as well as significant
+The relatively large concentration of Arginine as well as significant
 day-night differences suggests that this may be an important nitrogen
-source in the endosymbiosis.
+source for \textit{M. reisseri} during endosymbiosis.
 
 
 \section{Discussion}
@@ -1290,15 +1315,15 @@ is the existence of roles for sugars not previously implicated in the
 function of \textit{P. bursaria} - green algal endosymbioses. 
 Specifically, arabinose, raffinose and fucose. 
 
-Fucose is identified as significantly up-regulated during the day 
+Fucose is identified as having a significantly higher concentration during the day 
 and the endosymbiont expresses a fucose permease in both lit and dark conditions.
-Arabinose is significantly up-regulated during the day 
+Arabinose is similarly significantly at greater abundance the day 
 however, no arabinose transporter was directly identified in the endosymbiont 
 transcriptome.  It is possible that one of the MFS group transporter identified is 
 capable of uptake of this compound though. 
 
-Finally, and most intriguingly, raffinose was both detected
-significantly down-regulated during the day in the metabolomics 
+Finally raffinose was both detected
+at significantly lower abundance during the day in the metabolomics 
 and a raffinose synthase predicted as a secreted protein.
 An uptake transporter for raffinose was not identified in the endosymbiont 
 but again it is possible that one of the MFS transporter may be capable
@@ -1306,11 +1331,12 @@ of the uptake of this compound.  Alternatively, the host could encode
 a transporter for raffinose uptake into the host cytoplasm.
 A transporter that was directly identified in the endosymbiont was that for inositol.
 As raffinose synthase function involves the production of inositol and raffinose
-and galactinol can by synthesised using inositol this suggests that inositol
+and galactinol can by synthesised using inositol \citep{Caspi2007} this suggests that inositol
 is either taken up by the endosymbiont or pumped into the PV lumen.
 
 It seems clear that raffinose plays some significant role in the endosymbiosis
-especially as it is apparently being synthesised within the PV lumen itself.
+especially as it is likely to be synthesised within the PV lumen itself due
+to the putatively secreted peptide.
 Raffinose has been associated with cold shock in
 \textit{Parachlorella kessleri} (formerly \textit{C. vulgaris}),
 accumulating during cold exposure and disappearing after return
@@ -1323,14 +1349,31 @@ Raffinose has also been found to inhibit growth under
 isosomotic conditions in a \textit{C. vulgaris} 
 \citep{Setter1979}.
 
-Therefore, it is non-obvious how raffinose may be involved. I have
+Therefore, it is non-obvious how raffinose may be involved. I present 
 2 hypotheses: firstly, that it may be involved in the stability
 and maintenance of the PV membrane due to its previously implicated
 role in cryoprotection of thykaloid membranes and secondly, that it may form a way
 in which the endosymbiont can ``sequester'' released carbohydrates 
-from the host by converting them to a format it cannot uptake.  
+from the host by converting them to a format the \textit{P. bursaria} host
+cannot uptake.  
 The explanation behind the significantly high concentration
 of raffinose at night relative to day is unclear though. 
+This could pertain to the storage of photosynthate in the absence
+of active photosynthesis.
+
+It is worth noting that the identification of other secreted
+proteins related to the hypothetical synthesis and metabolism 
+of complex sugars in the PV could have been missed due to 
+poor terminal resolution of transcripts during sequencing.
+This is particularly problematic for bulk RNA-seq and 
+low terminal coverage and thus less trust-worthy data 
+was identified in a preliminary analysis of this type 
+of transcriptomic data.  Theoretically,
+due to the ligation step, MDA based sc-RNAseq shouldn't
+have this issue.  However, it seems likely the general
+noise and biases of MDA may have rendered a reduced
+positional bias as a moot issue.
+
 %
 %
 %may support this, assuming a constant
