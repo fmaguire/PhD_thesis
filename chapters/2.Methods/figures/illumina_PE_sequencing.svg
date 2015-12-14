@@ -210,11 +210,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.5108385"
-     inkscape:cx="209.27667"
-     inkscape:cy="240.99069"
+     inkscape:zoom="0.75541925"
+     inkscape:cx="287.85945"
+     inkscape:cy="437.26255"
      inkscape:document-units="px"
-     inkscape:current-layer="g100567"
+     inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:window-width="1680"
      inkscape:window-height="1050"
@@ -240,7 +240,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -261,46 +261,6 @@
          x="263.09604"
          y="56.907898"
          style="font-weight:bold;font-size:14.2710619px">Paired-End Illumina Sequencing</tspan></text>
-    <path
-       inkscape:connector-curvature="0"
-       id="path112207"
-       style="color:#000000;visibility:visible;fill:#cccccc;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none"
-       d="m 84.301272,-62.267282 -0.388213,-0.09806 56.519471,-60.278568 0.38821,0.0981 z" />
-    <path
-       inkscape:connector-curvature="0"
-       id="path112211"
-       style="color:#000000;visibility:visible;fill:#cccccc;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none"
-       d="m 385.98827,-123.07894 -0.38821,-0.0981 -245.16753,0.53309 0.38821,0.0981 z" />
-    <path
-       inkscape:connector-curvature="0"
-       id="path112213"
-       style="color:#000000;visibility:visible;fill:#cccccc;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none"
-       d="m 329.4688,-62.800373 -0.38821,-0.09806 -245.167531,0.533091 0.388213,0.09806 z" />
-    <path
-       inkscape:connector-curvature="0"
-       id="path112217"
-       style="color:#000000;visibility:visible;fill:#cccccc;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none"
-       d="m 329.4688,-62.800373 -0.38821,-0.09806 56.51947,-60.278567 0.38821,0.0981 z" />
-    <path
-       inkscape:connector-curvature="0"
-       id="path112525"
-       style="color:#000000;visibility:visible;fill:#cccccc;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none"
-       d="m 428.19233,-62.609522 -0.38821,-0.09806 56.51947,-60.278568 0.38821,0.0981 z" />
-    <path
-       inkscape:connector-curvature="0"
-       id="path112529"
-       style="color:#000000;visibility:visible;fill:#cccccc;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none"
-       d="m 729.87933,-123.42118 -0.38822,-0.0981 -245.16752,0.53309 0.38821,0.0981 z" />
-    <path
-       inkscape:connector-curvature="0"
-       id="path112531"
-       style="color:#000000;visibility:visible;fill:#cccccc;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none"
-       d="m 673.35986,-63.142613 -0.38822,-0.09806 -245.16752,0.533091 0.38821,0.09806 z" />
-    <path
-       inkscape:connector-curvature="0"
-       id="path112535"
-       style="color:#000000;visibility:visible;fill:#cccccc;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none"
-       d="m 673.35986,-63.142613 -0.38822,-0.09806 56.51947,-60.278567 0.38822,0.0981 z" />
     <g
        id="g110607"
        transform="matrix(0.95140411,0,0,0.95140411,19.096432,19.270549)">
@@ -378,11 +338,6 @@
          id="tspan110478">leaving clonal fragments in the same orientation</tspan></text>
     <path
        inkscape:connector-curvature="0"
-       id="path114141"
-       style="color:#000000;visibility:visible;fill:#cccccc;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none"
-       d="m 427.40124,102.38196 -0.38821,-0.0981 56.51947,-60.278564 0.38821,0.09806 z" />
-    <path
-       inkscape:connector-curvature="0"
        id="path114145"
        style="color:#000000;visibility:visible;fill:#cccccc;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none"
        d="m 729.08824,41.570305 -0.38822,-0.09806 -245.16752,0.533091 0.38821,0.09806 z" />
@@ -391,11 +346,6 @@
        id="path114147"
        style="color:#000000;visibility:visible;fill:#cccccc;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none"
        d="m 672.56877,101.84887 -0.38822,-0.0981 -245.16752,0.53309 0.38821,0.0981 z" />
-    <path
-       inkscape:connector-curvature="0"
-       id="path114151"
-       style="color:#000000;visibility:visible;fill:#cccccc;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none"
-       d="m 672.56877,101.84887 -0.38822,-0.0981 56.51947,-60.278565 0.38822,0.09806 z" />
     <circle
        r="1.0297092"
        cy="499.39923"
@@ -422,11 +372,6 @@
        id="path113535"
        style="color:#000000;visibility:visible;fill:#cccccc;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none"
        d="m 728.28605,197.91384 -0.38822,-0.0981 -245.16752,0.53309 0.38821,0.0981 z" />
-    <path
-       inkscape:connector-curvature="0"
-       id="path113541"
-       style="color:#000000;visibility:visible;fill:#cccccc;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none"
-       d="m 671.76658,258.1924 -0.38822,-0.0981 56.51947,-60.27856 0.38822,0.0981 z" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.46544552px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -5246,16 +5191,6 @@
          cy="626.45764"
          r="1.0823048" />
     </g>
-    <path
-       inkscape:connector-curvature="0"
-       id="path113531"
-       style="color:#000000;visibility:visible;fill:#cccccc;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none"
-       d="m 426.59905,258.72549 -0.38821,-0.0981 56.51947,-60.27856 0.38821,0.0981 z" />
-    <path
-       inkscape:connector-curvature="0"
-       id="path113537"
-       style="color:#000000;visibility:visible;fill:#cccccc;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none"
-       d="m 671.76658,258.1924 -0.38822,-0.0981 -245.16752,0.53309 0.38821,0.0981 z" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.46544552px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"

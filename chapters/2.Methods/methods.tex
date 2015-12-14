@@ -21,7 +21,7 @@ Specifically:
     \item CCAP 1660/13: \textit{Paramecium bursaria} (unknown strain) with \textit{Coccomyxa} CCAP 216/24 \footnote{This is a mixed culture 
             containing both CCAP 1660/12 strain with \textit{Micractinium} and the \textit{Coccomyxa} bearing strain, 
         the \textit{Coccomyxa} endosymbiont has been further isolated in CCAP under the description CCAP 216/24 (pers. comm. Undine Achilles-Day CCAP)}
-    \item NBRP Yad1g1N: \textit{Paramecium bursaria} Yad1w with \textit{Chlorella variabilis} 1N\footnote{
+    \item NBRP Yad1g1N: \textit{Paramecium bursaria} Yad1g with \textit{Chlorella variabilis} 1N\footnote{
         Yad1g1N host is mating type 1 and was created by mixing of isolated and 
         cultured endosymbiont (\textit{Chlorella variabilis} Clone 1 (known as 1N strain))
         }
@@ -30,7 +30,7 @@ Specifically:
 Both CCAP cultures (1660/12 and 1660/13) were isolated from the same pond in Cambridge, UK (pers. comm. Undine Achilles-Day CCAP, Oban, Scotland)
 CCAP 1660/12 was the principal culture and all genomic, transcriptomic and metabolomic analyses were conducted using these cultures. 
 Theoretically, these 3 cultures provide us with \textit{Paramecium bursaria} strains harbouring members of 3 of the 4 species of 
-green algal \textit{Paramecium} endosymbiont (see Chapter 1 for more details).
+green algal \textit{Paramecium} endosymbiont (see Chapter 3 for more details).
 
 \subsection{Media and Culture conditions}
 All \textit{P. bursaria} and green algae cultures were maintained in 
@@ -43,7 +43,7 @@ New Cereal Leaf-Prescott Liquid (NCL) media
 an incubator at 15\celsius with a 12:12 light:dark cycle.  The incubator was
 lit using 2 \(21w\) 865 daylight fluorescent tubes, producing 2000 lumen each.
 Cultures were sub-cultured approximately every 2 weeks using fresh NCL media and were inspected using light microscopy to monitor health.  
-No bacteria was added to cultures used for ``omic'' analyses but otherwise the medium was bacterised with
+No bacteria was added to cultures used prior to ``omic'' analyses but otherwise the medium was bacterised with
 \textit{Klebsiella pneumoniae} SMC (strain donated by the Meyer Lab, Ecole Normale Supérieure, Paris, France) the day before use. 
 
 \section{Omics}
@@ -87,6 +87,10 @@ By not considering elements of a system in isolation like the classic methodolog
     Methodological reductionism: examination of simple components can be used to understand complex system \citep{Fang2011}}
 approaches ``omics'' can reveal complex systemic mechanisms/features (or at the extreme ``emergent properties'') that would
 otherwise have been missed \citep{Fang2011}.  
+Experimental design is very important when using of ``-omic'' platforms as the the number of biological replicates 
+tends to be far smaller than the number of parameters/metabolites/transcripts being
+studied. 
+
 
 
 However, until relatively recently ``omic'' methodologies were restricted to specialised 
@@ -100,9 +104,9 @@ the potential for functional and adaptive analysis of non-model organisms using
 combined ``omics'' (i.e. using genomics as a reference to guide subsequent transcriptomics) approaches 
 (e.g. \citep{Munoz-Merida2013,Feldmesser2014}) has recently been demonstrated.  
 Additionally, there are two other developments which make \textit{P. bursaria}-\textit{M. reisseri} (\textit{PbMr}) 
-increasingly amenable to
-``omic'' analysis: \textit{de novo} transcriptomics which dispense with the need to generate
-moderately accurate genome in the relatively genomically intractable \textit{Paramecium} (e.g. \citep{Kodama2014}  and
+amenable to
+``omic'' analysis: \textit{de novo} transcriptomics, which dispense with the need to generate
+accurate genomes in the relatively genomically intractable \textit{Paramecium} (e.g. \citep{Kodama2014}),  and
 single-cell approaches which allow fine-grained analysis of the \textit{Paramecium bursaria}
 - green algal relationship on a cell-by-cell basis.
 
@@ -118,116 +122,11 @@ For example, ``omics'' methods could be used to create a model of inter-organism
 metabolism and targeted approaches such as RNAi could then be used to test hypotheses generated
 by this model i.e. testing that a particular transporter protein is responsible
 for the transfer of metabolites by knocking out that transporter and observing the resultant phenotype: 
-is the relationship perturbed in a predictable manner.
+is the relationship perturbed in a predictable manner?
+
+
 
 \subsection{Genomics and Transcriptomics}
-
-%\subsubsection{Extracting Nucleic Acids}
-%
-%The first stage of any genomic or transcriptomic analysis is the extraction
-%of nucleic acids from the sample of interest.
-%Typically, this involves obtaining large amounts of source biomass either by
-%taking large environmental samples and fractionating this using methods like filtration, 
-%or flow cytometry or more typically (and with all the biases it involves) establishing
-%a culture of the organisms of interest (if possible) and growing that up to sufficient biomass.
-%
-%For bulk analyses we used a trizol based extraction
-%
-%For single cell gDNA CTAB \citep{}
-%
-%material either from a large
-%environmental sample or by culturing 
-%
-%SPADES PAPER HAS GOOD CITES
-%While the quality of the output of earlier sequencing techniques
-%was highly reliant on both the quantity and quality of the input DNA (or cDNA) (not to mention
-%characteristics such as GC\%) precluding many systems from easy analysis.  This is especially
-%problematic for the majority of systems that are not easily culturable and thus can't be
-%grown up in sufficient quantities to easily extract sufficient nucleic acids to conduct.
-%
-%Starting with single-cell single-gene sequencing experiments (e.g. \citep{Kuppers1993}) 
-%single cell methods allows obtaining data directly from individual cells
-%avoiding the bias and complication of culturing or having to decompose a complex environmental
-%metagenome or metatranscriptome containing a plethora of diverse cells \citep{Blainey2013}.  It also allows 
-%investigation of cells at particular life stages e.g. sexual reproduction without difficult
-%and potentially biasing synchronisation methodologies and the sequencing of long genes hard to obtain
-%from metagenomes.  
-%
-%Single-cell genomic (SCG) sequencing has been demonstrated across the tree-of-life as sufficient to infer 
-%cellular metabolism \citep{Chitsaz2011}, the dynamics of interactions between organisms \citep{Yoon2011} and
-%environmental diversity \citep{Swan2013,Rinke2013}.
-%
-%Likewise, single-cell transcriptomic (SCT) sequencing has been demonstrated to be an effective tool to investigate
-%
-%Bulk transcriptomic methods involve analysis of an ensemble of transcripts therefore expression 
-%inferences are an average across all cells \citep{Stegle2015}
-%
-%Sufficient for some purposes, e.g. broad-stroke comparisons it masks the underlying and potentially
-%biologically informative stochastic nature of gene expression \citep{Raj2008}.  SCT 
-%revolutionises being able to compare different tissues, populations, and cell states in both
-%single cell and multicellular systems by allowing direct interrogation of inter- and intra-
-%grouping variation and could potentially revolutionise areas such as medicine \citep{Sandberg2014}
-%and ecology (Moore Marine Microbe Project \url{http://marinemicroeukaryotes.org/}).
-%
-%While single cell level analyses have been possible for a while they have largely been restricted
-%to low-throughput methods e.g. reporter constructs, FISH etc.
-%
-%Cell isolation, FACS, microfluidics, cell picking
-%
-%SCT has relatively high levels of technical noise specifically sampling noise for low-level
-%expression and sample-specific variability in sequencing efficiency for highly-expressed 
-%transcripts for one SCT method \citep{Grun2014}.
-%
-%
-%mRNA was selected using a poly-A selection method before being fragmented, cleaned-up using ethanol and then 
-%reverse transcribed into single-stranded cDNA using random hexamer primers.
-%
-%Currently, single cell genomics still requires whole genome amplification (WGA) even with 
-%3rd generation sequencing platforms due to the relatively inefficient library preparation
-%from a single cell (on the range of nanograms). \citep{Blainey2013} %%find support quote for transcriptomics needing WGA too
-% 
-%Multiple-displacement amplification \citep{Dean2001} is the main method for
-%single-cell sequencing.
-%REASONS IT IS GREAT
-%However, it also generates many biases orders of magnitude differences in coverage
-%in different regions 
-%SINGLE CELL TRANSCRIPTOMICS ARE SUSPECT
-%potential chimeric reads and incongruent read-pairs \citep{Bankevich2012}.
-%
-%This complicates assembly RODRIQUE PAPER MENTIONED IN SPADES 
-%
-%E+VSCV paper chisatz 
-%
-%However, such a different type of data that a new algorithm was needed not just modificaitons \citep{Bankevich2012}
-%
-%Paired-end data typically only used post-processing step of de-Bruijn graphs.
-%Proper use of pairing information at the graph assembly phase is a potential 
-%source of improvement.
-%2011a medvedev PDBG but fixed insert size
-%
-%Idury and waterman DBG for assembly: originally considered infeasible as low coverage
-%sanger even qitrh few errors needs error correction
-%
-%Pezner A-bruijn graphs
-%everything else special case
-%
-%
-%Single cell methods use multiple-displacement amplification to increase the concentraion of
-%nucleic acids 
-%
-%For example. the Qiagen Repli-G kit used for both single cell transcriptomic and genomic analysis
-%of the \textit{PbMr} system.
-%
-%Transcripts are reverse transcribed and then ligated into larger fragments.  MDA
-%is then undergone on the larger fragments before the usual library preparation process.
-%
-%One interesting consideration for single cell transcriptomics is the possible generation
-%of chimeric reads that will cross the boundary between two randomly ligated transcripts.
-%
-%However, the risk of this can largely be mitigated by selection of a relatively small fragment
-%size for paired end sequencing.
-%
-%5'-3' - 5'-3'  - sequencing primers are unlikely to rpim
 
 \subsubsection{DNA sequencing}
 
@@ -265,10 +164,8 @@ disadvantages.
 
 % "as such replication is important" tom note??
 
-
 These DNA sequencing technologies can largely be divided into 3 technological eras with today (2015) 
 broadly at the transition between 2nd and 3rd generations.
-
 
 1st generation (also known as Sanger) sequencing technology originated in 1970s with the work of Sanger \&
 Coulson \citep{Sanger1975,Sanger1977,Sanger1977a} which 
@@ -364,440 +261,258 @@ Another platform, currently in testing, Oxford Nanopore's MinIon, reads individu
 pore proteins and determines the sequence at each pore based on the physical
 properties (impedance) of a particular set of bases.
 
-Unfortunately, partly as an element of their relatively nascent state and partly due to the
+Unfortunately, partly as an element of their relatively nascence and partly due to the
 poorer signal:noise of single molecule approaches compared to analysing large 
-batches of identical DNA sequences, 3rd generation technologies have a relatively high error rate.
-Thus are generally inadequate for most eukaryotic assembly tasks in and of themselves.
+batches of identical DNA sequences, 3rd generation technologies have a relatively high error rate \citep{Quail2012}.
+Therefore, they are generally inadequate for eukaryotic assembly tasks in and of themselves 
+(although that is changing as the platforms mature \citep{VanBurern2015}).
 Where they have shown great utility is in conjunction with 2nd generation datasets
 as a scaffolding tool i.e. producing long noisy reads upon which more accurate but shorter
-reads can be assembled.
-
+reads can be assembled \citep{Zhou2009}.  3rd generation platforms are also highly
+useful in the resolution of structural variation and genomic repeats \citep{Pendleton2015}.
 
 Therefore, all genomic and transcriptomic sequencing in this PhD has been performed using the 2nd generation
-Illumina HiSeq platform due to its relative maturity, high-throughput, relatively accurate
+Illumina GAII and HiSeq platforms due to their relative maturity, high-throughput, relatively accurate
 paired-end output making it currently the most amenable platform to effectively
 use \textit{de novo} genomic and transcriptomics approaches.  Additionally, Sanger sequencing
 has been used when accurate targeted sequencing was called for, such as investigating the
-taxonomic distribution of \textit{Paramecium} green algal endosymbionts (see Chapter 1).
+taxonomic distribution of \textit{Paramecium} green algal endosymbionts (see Chapter 3).
+
+\subsubsection{Read pre-processing}
+
+All sequencing platforms involve base-calling procedures in which the continous 
+primary sequencing data e.g. fluorescence with Illumina or current with IonTorrent
+is converted into a discrete nucleotide sequence.   This is typically
+achieved using parametric modelling and machine learning approaches optimised
+by the platform manufacturer \citep{Ledergerber2011}.  Researchers using
+mature platforms such as Illumina typically reply on the default
+base-calling.  However, there is much active research in improving
+these systems particularly for SMRT sequencing.  These include
+various advanced signal processing and machine learning methods
+such as Conditional Random Fields and Recursive Neural Networks. 
 
 
-%\subsubsection{Read pre-processing}
-%
-%Read pre-processing is a key stage in the assembly of next generation sequencing data regardless of the assembly
-%methodology used. 
-%
-%Typically, this involves 4 key steps:
-%\begin{itemize}
-%    \item Library quality control and contamination screening
-%    \item Trimming sequencing adapters and low probability reads
-%    \item Error corrections
-%    \item Digital normalisation
-%\end{itemize}
-%
-%
-%Arguably, trimming, error correction and normalisation are all aspects of the same process.
-%
-%
-%The specific error correction algorithms are largely based on the assumption that sequencing errors
-%are infrequent and randomly distributed 
-%
-%
-%
-%
-%Trimming
-%
-%Error correction algorithms 
-%
-%normalistion
-%
-%
-%
-%
-%\subsubsection{Assembly}
-%
-%There are two main approaches to both genome and transcriptomic assembly - referenced and \textit{de novo}.
-%A referenced assembly consists of the alignment of processed reads 
-%
-%\subsubsection{Differential expression}
-%
-%Comparison of different methods of normalisation \citep{Dillies2013}
-%
-%
+The major 2nd and 3rd generation base-calling procedures output a FastQ formatted file. 
+These are files containing the sequence of a read and a per-base quality score known as a Q score.
+These scores (Q) are calculated as a logarithmic relation to the base-called error probability (P)
+\[ Q = -10\log{10}{P} \]
+and conversely: 
+\[ P = 10^{\frac{-Q}{10}} \]
+Therefore \[Q = 30 \] corresponds to 99.9\% base call accuracy
+
+Before assembly, there are several stages of read pre-processing that generally takes
+place for both genomic and transcriptomic studies. 
+Typically, there are 4 key steps:
+\begin{itemize}
+    \item Library quality control and contamination screening
+    \item Trimming sequencing adapters and low probability reads
+    \item Error corrections
+    \item Digital normalisation
+\end{itemize}
+Library quality control (QC) and contamination screening is frequently done by 
+as part of the standard diagnostics of a sequencing facility.  It is a highly
+useful step which allows investigation of potential technical problems
+with a given sequencing run.  For this reason, QC is typically
+done by the sequencing service or facility operating the sequencers. 
+Problems with library preparation and sequencing can be detected by analysis
+of things like the distribution of per-base quality scores across sequences,
+and the presence of massively over-represented K-mers in the raw
+libraries.   The most commonly used quality control tool is FastQC \citep{fastqc2015}
+which performs tests and visualises various library metrics such as the distribution
+of quality scores across reads, distribution of low quality base reads across
+the flowcell and the identification of over-represented K-mers and sequences in the library.
+
+Identification of potential library problems can be used to either attempt to correct
+these problems, for example, if there are consistently low quality bases at the end of
+the reads then a harsher 3' trimming step can be used.  Alternatively, libraries
+with many problems may require re-sequencing.  Contamination screening
+is a highly important part of sequencing, especially for single cell approaches
+(see Chapter 4 for an in-depth analysis) as contaminant reads from non-target
+organisms can greatly complicate analysis and assembly of data.
 
 
-%\subsubsection{Assembly}
-%
-%All major 2nd and 3rd generation sequencing platforms output a FastQ formatted file.
-%These are files containing the sequence of a read and a per-base quality score known as a Q score.
-%These scores (Q) are calculated as a logarithmic relation to the base-called error probability (P)
-%\[ Q = -10\log{10}{P} \]
-%and conversely: 
-%\[ P = 10^{frac{-Q}{10}} \]
-%Therefore \[Q = 30 \] corresponds to 99.9\% base call accuracy
-%
-% mapping reads to reference can introduce biases even with relatively \citep{Wang2012}
-% but even if the reference is divergent it may still produce a higher quality assembly
-% than de novo methods \citep{Vijay2013}
-% Soap-denovo trans and trinity performed better than transabyss \citep{Vijay2013}
-% In De Bruijn graph assembly generated from exact subsequence matches - errors exponentially increase
-%possible graph traversal paths increasing graph comp-lexity and assembly time and memory \citep{Pop2009}
-%
-%
-%https://www.biostars.org/p/52178/ sequencing papers theory
-%Spades \citep{Bankevich2012}
-%
-%Trinity \citep{Grabherr2011}
-%
-%\subsubsection{Trimming}
-% Hard filters can improve assembly and mapping but will likeluy lose lowly-expressed transcripts \citep{MacManes2014}
-%\subsubsection{Error correction}
-% Error correction of Illumina sequencing reads has been acknowledged as an increasingly important step in the
-% creation of both genomic \citep{Schatz2012a} and transcriptomic \citep{Macmanes2013} high quality assemblies.  
-% Difficult for transcriptomic datasets (and SC) because can't rely of varied coverage \citep{Macmanes2015}
-% Under 50M reads bfc is best, more than 50M seecer is better and if research is sensitive to erroneous correction Lighter is best \citep{Macmanes2015}
-% Seecer developed explicitly for RNA-Seq
+While second-generation sequencing technologies have massively increased
+throughput on an individual read basis they exhibit a much higher error
+rate than earlier Sanger approaches with Illumina HiSeq reads showing \(0.5-2.5\%\)
+error rate \citep{Kelley2010}.  Typically, Illumina errors are substitution
+errors \citep{Yang2013a} and are distributed non-randomly across the read.  The error
+rate increases from 5' to the 3' end of a given read \citep{Liu2012a}. 
+The presence of sequence error does lead to assembly error \citep{Macmanes2013}.
+Sequencing error greatly complicates assembly graphs and increases
+the computational demands of graph traversal.
+Therefore, before assembly this error must be minimised.  
+This generally involves two processes, read trimming and explicit error correction. 
 
-%There are many available tools for read-trimming (as discussed in the Methods Chapter),
-%and a range of trimming tools were initially
-%considered: specifically Trimmomatic \citep{Bolger2014a}, Sickle \citep{JoshiGitHub}, FASTX-toolkit \citep{gordon2010fastx},
-%PRINSEQ \citep{Schmieder2011} and cutadapt \citep{martin2011cutadapt}. 
-%Despite Sickle, an adaptive quality trimmer, having previously been used in single-cell transcriptome datasets 
-%from free-living eukaryotes \citep{Kolisko2014}, it proved suboptimal as it was
-%not capable of removing 5' or 3' contaminants such as sequencing adapters and/or multiplexing tags by itself.  
-%These stages could be achieved with individual tools (such as Skewer \citep{Jiang2014}, 
-%TagDust \citep{Lassmann2009} and Scythe \citep{Buffalo}) but this was rejected as it was
-%deemed a needless complication.  Furthermore, Sickle proved to be relatively poorly documented
-%as a tool.   As for other trimming tools, they mostly have  
-%been found to largely perform equivalently across multiple RNA-Seq and DNA-Seq datasets and applications 
-%(see File S2 \citep{DelFabbro2013}).  Additionally, cutadapt requires either manual repair of 
-%paired read correspondence or discards all reads that are unpaired after trimming. It also requires
-%use of ancillary shell scripting to input all desired adapter sequences from a sequencing service
-%provided adapter fasta file.  Similarly, neither PRINSEQ or FASTX are competent to trim paired-end datasets 
-%natively requiring work-arounds to retain pairing fidelity.
-%Therefore, due to its advantages of maintaing read-pair correspondence during trimming, 
-%optimisation for Illumina datasets, adapter trimming functionality and thorough documentation
-%Trimmomatic \citep{Bolger2014a} proved the preferred trimming tool for this analysis.
 
-% Cluster kmers - then mininmise size of kmers clusters: kmer-spectra, suffic array, MSA, and HMM
-% Methods reviewed here \citep{Molnar2014}
-% A key component of the Spades single cell genomic assembler is the error correction using Bayeshammer 
-% SCT have very non-uniform coverage \citep{Nikolenko2013}
-%
+Read trimming serves two roles: the removal of contaminating sequencing adapters that 
+may have infiltrated 
+the library during sequencing, and the removal of low quality sequencing data. 
+Low quality sequence data is removed as these reads/parts of reads are more
+likely to contain errors.
+There are many available tools for read-trimming
+e.g. Trimmomatic \citep{Bolger2014a}, Sickle \citep{JoshiGitHub}, FASTX-toolkit \citep{gordon2010fastx},
+PRINSEQ \citep{Schmieder2011} and cutadapt \citep{martin2011cutadapt}. These
+generally fall into two algorithmic groups: running-sum based approaches e.g. Cutadapt and ERNE-FILTER
+and window-based e.g. FASTX, PRINSEQ, Sickle and Trimmomatic \citep{DelFabbro2013}.
+Briefly, running-sum approaches involve the calculation of a score for each base, \(i\), 
+from 3' to 5' e.g. \(s(i) = s(i+1)+quality(i)-Q\) for a minimum quality threshold \(Q\).
+These \(s\) are used to determine the start of the trimming point.  Alternatively,
+window-based approaches generally calculate the average quality score
+across a sliding-window of N bases.  If the score in a given window drops
+below the minimum average quality it is then trimmed. 
 
-%
-%\subsection{Assessing Assemblies}
-%
-%RSEM-eval, mappings, NG50, L50, N50
-%    
-%
+Currently, there is no clear answer to the question: which is the best trimming algorithm.
+This is due to many dataset-specific effects as well parameter-dependence \citep{DelFabbro2013}.
+In general, most trimming tools have been found to largely perform equivalently across 
+multiple RNA-Seq and DNA-Seq datasets and applications (see File S2 \citep{DelFabbro2013}). 
+Due to its ease of use and maintenance of paired-read correspondance,
+Trimmomatic has been the primarily used trimming tool throughout this thesis.
+
+Traditionally, most projects use conservative trims which only accept reads and bases
+above a high threshold such as an average score of Q30 (e.g. \citep{Looso2013}).  
+However, recentally, there have been empirical 
+studies suggesting the optimal apporach is permissive trimming (e.g. \(\geq Q2\)) 
+followed by explicit error correction \citep{Macmanes2014}.
+
+
+Error correction of Illumina sequencing reads has been acknowledged as an increasingly important step in the
+ creation of both high quality genomic \citep{Schatz2012a} and transcriptomic \citep{Macmanes2013} assemblies.  
+This pre-process step generally operates on the assumption that errors are infrequent
+and random.  An error at a given position can thus be identified and corrected
+by comparison to the sequences of the other reads which are sample from the
+same region \citep{Yang2013}.  Specifically, if the majority of other reads feature
+the same sequence but a single read has a single substitution this is more
+likely to be product of sequencing error than biological diversity. 
+
+This is most typically achieved using probabilistic approaches after decomposition of
+reads into \(K\) sized substrings (known as K-mers).  These K-mers
+are then analysed via spectral techniques and probabilistic clustering of 
+their hamming graphs (e.g. \citep{Nikolenko2013}) to identify related 
+low-abundance and likely erroneous K-mers.  Some approaches
+will also integrate sequence alignment and quality score
+features.  However, K-mer approaches are generally more computationally efficient
+and more effective at removing
+sequencing error than quality score based approaches \citep{Zhang2014}.
+
+ Error correction is more difficult for transcriptomic datasets (and single cell data) because 
+ the assumption of uniform coverage is not true for these datatypes \citep{Macmanes2015}.   
+ Therefore, correction of these datasets generally relies on explicitly probabilistic
+ approaches that 
+ 
+ 
+ \citep{Nikolenko2013} 
+
+
+
+Sequence error correction improves \textit{de novo} assembly \citep{Macmanes2013}
+
+
+
+
+ This means K-mer analyses have rely on analysis of relative K-mer abundances
+
+%Single-cell genomics sequencing reads display high variance in their coverage 
+%across the genome with some sections. Previously error correction tools (such as
+%QUAKE \citep{Kelley2010}
+%\citep{Nikolenko2013}
+
+
+
+Although, in can be argued that error correction and normalisation are different
+aspects of the same process. 
+
+ Hard filters can improve assembly and mapping but will likeluy lose lowly-expressed transcripts \citep{Macmanes2014}
+
+
+ Cluster kmers - then mininmise size of kmers clusters: kmer-spectra, suffic array, MSA, and HMM
+ Methods reviewed here \citep{Molnar2014}
+ A key component of the Spades single cell genomic assembler is the error correction using Bayeshammer 
+ SCT have very non-uniform coverage \citep{Nikolenko2013}
+
+
+
+
+\subsubsection{Assembly}
+
+There are two main approaches to both genome and transcriptomic assembly - referenced and \textit{de novo}.
+A referenced assembly consists of the alignment of processed reads to a 
+prior assembly or reference 
+
+
+
+
+\textit{De novo} assembly algorithms form two main groups: Overlap-Layout-Consensus (OLC) methods
+and de Bruijn graph methods. 
+OLC are conceptually relatively simple, a graph is constructed based on the overlap of sequencing
+reads determined using standard pair-wise alignment algorithms.   Each graph vertex
+represents a read and an edge connecting a pair of vertices indicates overlap between those
+reads. 
+
+
+
+
+
+
+
+generally falls into two major groups of graph algorithms.
+
+
+
+While explained later in \ref{Assembly}, generally OCC assembly is reliant on 
+fast and accuarte overalp calculations while de Bruijn approaches require
+robust error correction \citep{Palmer2010}.
+
+
+
+
+ mapping reads to reference can introduce biases even with relatively \citep{Wang2012}
+ but even if the reference is divergent it may still produce a higher quality assembly
+ than de novo methods \citep{Vijay2013}
+ Soap-denovo trans and trinity performed better than transabyss \citep{Vijay2013}
+ In De Bruijn graph assembly generated from exact subsequence matches - errors exponentially increase
+possible graph traversal paths increasing graph comp-lexity and assembly time and memory \citep{Pop2009}
+
+
+https://www.biostars.org/p/52178/ sequencing papers theory
+Spades \citep{Bankevich2012}
+
+Trinity \citep{Grabherr2011}
+
 %Assemblathon 1 \citep{Earl2011}
 %GAGE \citep{Schatz2012}
 %Assemblathon 2 \citep{Bradnam2013}
 %Nucleotid.es: Linux Container (specifically Docker \citep{Merkel2014})  based continuous assembly evaluation using QUAST \citep{Gurevich2013a})
-%
-
-%\subsubsection{The Problem with Ploidy}
-%
-%One important complication in the assembly on eukaryotic genomes 
-%relative to bacteria or archael sources is the issue of highly heterozygous polyploid genomes.
-%This is problematic as the de Bruijn graphs constructed during assembly
-%rapidly increase in complexity when reads from heterozygous samples become
-%incorporated \citep{Kajitani2014}.  This is because k-mers derived from heterozygous regions of 
-%homologous chromosomes will partition the assembly graph into bubbles that cannot be easily 
-%or accurately resolved by most assemblers expecting only limited structural variation during
-%assembly.  Previously, attempts to work around this included inbreeding to generate
-%homozygous lines or fosmid based approaches.
-%
-%Specialised genome assemblers have been produced to address this problem,
-%for example Platanus performed well on both highly and lowly heterozygous 
-%genomes using k-mer autoextension approaches and by merging haplotypes
-%at both contig assembly and scaffolding steps, as well as incorporation
-%of various heuristics involving bubble resolution \citep{Bradnam2013,Katjitani2014}
-%
-%Likewise, transcriptome assembly complexity rapidly increases with the number of alleles
-%expected per gene determined by ploidy, heterozygosity and complex gene families
-%and in turn how many transcripts per allele in light of alternative splicing.
-%
-%This is particularly problematic in the PbMr system owing to the massive
-%ploidy of the host \textit{Paramecium bursaria} and the numerous whole genome
-%duplications in its relatively recent evolutionary history (1).  This also 
-%explains the difficulties in using sister species, as the most sequenced Paramecium
-%genus species are the aurelia complex which have undergone 2 WGD since divergence with
-%\textit{P. bursaria} \citep{McGrath2014}.
-
-%\subsubsection{Genomics}
-%Project standards:
-%Standard Draft: Minimally filtered, incomplete, assembled into contigs, may have poor regions and be incomplete, may have some contamination
-%High-quality Draft: coverage of at least 90\% of genomes or target regions, contamination exluded, little manual review, still might be seq errors or misassemblies, no implied order and oreintation to contigs (can be assessed for gene content)
-%Improved-high quality draft: manual or automated additional work, gap resolution, no obvious missassemblies, normally adequate for comparison with other genomes
-%Annotated-Directed Imrpovement: Overlapping, improved with annotation, verified, gene models etc useful for gene comarpsiosns, alt splicing, pathway reconstruction
-%Noncontiguous finished: high quality, finished apart from a few repeats or gaps, good enough for almost all analayses
-%Finished: gold standard, less than 1 error per 100,000, replicon in contig seqs, reference quality \citep{Chain2009}
 
 
-%\subsubsection{Annotation}
-%
-%Reed \textit{et al.} \citep{Reed2006} divided components annotation into a useful dimension paradigm as follows:
-%\begin{enumerate}
-%    \item Enumeration: identification of genes and assignment of their predicted or known functions. What?
-%    \item Interaction: integration of protein-protein, regulatory and metabolic interaction data between components Can they interact?
-%    \item Genomic Localisation: analysis of genomic localisation of genes i.e. epigenetics.
-%    \item Plasticity: investigation of the change of other dimensions over evolutionary time. Does their interaction change over time? \citep{Reed2006} 
-%\end{enumerate}
-%
-%Clearly, at a systems level it is difficult (if not impossible currently), 
-%even in well defined model organisms, to complete a full 4-dimensional annotation 
-%for all cellular components. However, it is more than feasible to have a largely
-%complete 1D and even 2D annotation with 3D and 4D investigated for specific 
-%components.  Furthermore, annotation can be conducted with a range of confidences
-%from in silico predicted interactions to biochemically validating those predictions in vivo
-%and incorporating the precision and recall of various methodologies. Generally, such a process
-%is inherently iterative with successive model building and experimental testing and validation 
-%or rejection of such models \citep{Reed2006}.
-%
-%One of the major goals of this thesis is to reconstruct a preliminary predicted
-%2D annotation of the PbMr system.
-%
-%The most important step towards this goal is that of eukaryotic gene prediction.
-%
-%Eukaryotic gene prediction is achieved by generally two methods - \textit{de novo} HMM based
-%methodologies (e.g. GENESCAN, TWINSCAN \citep{}<++>) and expression evidence based methods
-%in which reads from sequenced cDNA (or in older approaches ESTs) are aligned to the 
-%assembled genomic contigs \citep{Brent2007}.  Unfortunately even relatively deep
-%sequencing of cDNA can fail to identify the structure of 20-40\% of genes in a typical
-%eukaryote genome owing to these genes being expressed only at very low levels or in
-%different conditions than that from which the cDNA was extracted \citep{Brent2007}.
-%
-%
-%
-%\subsection{Transcriptomics}
-%While generally computationally simpler than genomic assembly \citep{MacManes2014}
-%owing to the relatively fragmented nature of transcripts compared to genomic 
-%sequences (i.e. lots of transcripts of various lengths rather than several 
-%long chromosomes).  There a few key challenges to transcriptomic assembly
-%that is absent in genomic work specifically:
-%\begin{itemize}
-%    \item Handling assembly of alternative isoforms of transcripts \citep{Pyrkosz2013}
-%    \item Assembly of transcripts from gene-dense genomes with overlapping 5' UTR 
-%    \item Assembly of data with highly heterogeneous read coverage, as transcript
-%        expression level is proportional to read coverage (indeed expression analysis
-%        using RNA-Seq datasets relies upon this fact).
-%    \item Random hexamer bias
-%    \item GC content bias, particularly so in PbMr
-%\end{itemize}
-%
-%These problems are particularly problematic in \textit{de novo} approaches,
-%however referenced assembly has its own issues in transcriptomics
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%The correlation of transcript level to protein level is difficult
-%
-%
-%
-%
-%
-%Unfortunately, conventional RNA-seq requires either an established moderate-to-high
-%density culture of the organism of interest 
-%
-%
-%
-%
-%
-%
-%
-%
-%http://rnaseq.uoregon.edu/
-%http://bioinformatics.bc.edu/marthlab/scotty/scotty.php
-%
-%Experiemntal design, read depth, ENCODE, Tarazona S 2012 fdiff exp in RNA-seq
-%a matter of depth
-%
-%\begin{itemize}
-%    \item Check Quality (FASTQC)
-%    \item Trim reads (Trimmomatic)
-%    \item Re-check quality (FASTQC)
-%    \item Error-correct reads (?)
-%    \item Normalize coverage (khmer)
-%    \item Test paramters for multiple assemblers
-%    \item Run each assembler with best parameters
-%    \item Analyse all and merge best assemblies
-%    \item Annotate transcriptome
-%    \item Map reads to assembly, count
-%    \item Differential expression analysis
-%\end{itemize}
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%Further complications from single cell:
-%Fusions are created in cDNA ligation step prior to MDA in WTA
-%However, poly-A tails should mean fusion reads are unlikely as they need to a
-%span poly-A trac in all 4 possible fusions apart from 3'-5':5'-3'
-%So to get high levels of chimeric reads we would need the two same transcripts
-%in the same fused orientation multiple times.  Otherwise any other 3'-5':5'-3'
-%fusions should be fairly rare so likely discarded in error-correction etc steps
-%
-%\subsubsection{Quality Checking}
-%
-%FastQC tool and its parameters
-%
-%\subsubsection{Read trimming}
-%
-%% /storage/fin/raw_reads/raw_sct_reads/optimising_trimming_paramters/test_mapping_to_bulk
-%
-%
-%Currently, there is no clear answer to the question, which is the best trimming algorithm.
-%This is due to many dataset-specific effects as well parameter-dependence \citep{DelFabbro2013}.
-%However, 
-%
-%
-%
-%Trimming algorithms can be divided into two groups: running-sum based approaches e.g. Cutadapt and ERNE-FILTER
-%and window-based e.g. FASTX, PRINSEQ, Sickle and Trimmomatic \citep{DelFabbro2013}.
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%Difficulties: 
-%A major source of bias in transcriptomic datasets is that of compositional biases induced
-%by the random hexamer priming used in the generation of cDNA in many library preparations.
-%(see \ref{}<++>) %previous section of sequencing itself %does SCT kit do random hexamers?
-%Specifically, these random hexamers do not bind uniformly across the transcripts,
-%therefore the location of reads are not uniform \citep{Hansen2010}\citep{Hansen2010}.
-%Fortunately, the single cell kits do not utilise random hexamer priming {}<++> %Check with DAVID
-%So despite inducing other biases, they do not induce this one!
-%
-%
-%Another source of bias is the strong correlation between GC richness in read coverage
-%observed in 2nd-generation Illumina sequencing \citep{Dohm2008,}
-%This is possibly to do with the different biophysical properties of GC-rich dsDNA (high melting point) \citep{Dohm2008} %is this relevant?
-%Or biases in PCR -ampligication, or specifically i9n bridge PCR of cluster amplification
-%
-%
-%Errors are more common at the start and end of 
-%
-%
-%
-%
-%Sequencing errors: Illumina sequencing has non-random error distribution across length of read, increasing towards the 3' end liu2012. These errors are generally substitution errors yang2013 at a rate of 1-3\% globally \citep{MacManes2014}.  However, while the latest assemblers (see \ref{}<++>) are capable of %ref to assembly section
-%handling many of these errors, inevitably sequencing error does cause some
-%assembly error MacManesANDEISEN2013.
-%Furthermore, errors rapidly increase both the space and time complexity of the assembly (discussed in \ref{}<++>) problem \citep{MacManes2014}.
-%
-%One of the most important and prevalent methods to try and improve assembly
-%accuracy in the face of sequencing errors is that of read trimming, typically
-%using one of a range of tools: TRIMMOMATIC, SICKLE, FASTX-TOOLKIT, BIOPIECES \citep{}<++>. %citations for tools
-%
-%Trimmomatic is the preferred tool of choice as it more read-pair aware than
-%FASTX-TOOLKIT and BIOPIECES, retaining pair ordering and conducting more
-%advanced trimming checks using pairing information such as adaptor read-through.
-%By retaining pairing information and outputting ``surviving'' paired reads and
-%unpaired reads TRIMMOMATIC precludes lengthy repairing of header pairing information
-%in large datasets. \citep{}<++> %More information about how trimmomatic oworks and comparison to other trimmers
-%
-%The main approaches used individually or as a combination in trimming tools are that 
-%of adaptor trimming (identifying and removing sequencing adapter sequences from reads),
-%sliding windows (removing nucleotides that fall below a provided average quality threshold),
-%basic terminal quality trimming (remove individual 5' or 3' nucleotides that have an associated PHRED score
-%below a ceratin threshold) and minimum length (discard reads that fall below a minimum length). 
-%\citep{}<++> %citations explaining these methods
-%
-%The key difficulty is that all widely used tools above require user-defined thresholds
-%for the various trimming parameters e.g. for sliding window approaches - a window size
-%and a minimum average quality threshold over the window.  
-%This leads to a careful trade-off, if conservative/aggresive (i.e. high) quality thresholds
-%are used many reads will be discarded, reducing the amount of data from which to 
-%construct an assembly.  This will reduce feature resolution such as alternative splices 
-%and in will lead to the loss/reduced assembly accuracy of lowly expressed (but potentially biologically interesting) transcripts \citep{MacManes2014}. On the otherhand, instinctually if permissive (i.e. low)
-%quality parameters are set then potentially erroneous reads will be incorporated into the assembly
-%and global assembly accuracy will decline. 
-%
-%Relatively little work on the optimisation of these parameters has been conducted, and generally
-%researchers conducting high-profile \textit{de novo} assemblies utilise aggressive thresholds \citep{MacManes2014}.
-%However, for \textit{de novo} transcriptome assembly assessed using a range of metrics
-%(e.g. mismatches to previous datasets, kmer number, PE reads mapping back to assembly etc.)
-%most of the gain of assembly accuracy occurred at a threshold of \(\geq 5\).
-%Particularly, low abundance kmers are largely discarded with a threshold of \(\geq 5\).
-%Suggesting, that a very low threshold of 2 or 5 optimises assembly quality potentially
-%followed by kmer abundance based error correction \citep{MacManes2014}.
-%
-%
-%
-%% TRY THIS FOR SCT
-%
-%
-%
-%
-%
-%
-%
-%
-%\subsubsection{Error correction}
-%
-%While second-generation sequencing technologies have massively increased
-%throughput on an individual read basis they exhibit a much higher error
-%rate than earlier Sanger approaches with Illumina HiSeq reads showing \(0.5-2.5\%\)
-%error rate \citep{Kelley2010}.  
-%
-%These errors complicate assembly as they will rapidly increase
-%the complexity of the de-Bruijn graphs 
-%
-%Typically the most widely used error-correction algorithms for 2nd-generation
-%sequencing reads. 
-%
-%
-%While explained later in \ref{Assembly}, generally OCC assembly is reliant on 
-%fast and accuarte overalp calculations while de Bruijn approaches require
-%robust error correction \citep{Palmer2010}.
-%
-%
-%
-%Single-cell genomics sequencing reads display high variance in their coverage 
-%across the genome with some sections. Previously error correction tools (such as
-%QUAKE \citep{Kelley2010}
-%
-%\citep{Nikolenko2013}
-%
-%Sequence error correction improves \textit{de novo} assembly \citep{MacManes2013}
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%\subsubsection{Digital normalisation}
-%
-%\subsubsection{Assembly}
-%Optimising parameters
-%Theory
-%Combining
-%
+
+\subsubsection{The problem with ploidy}
+One important complication in the assembly on eukaryotic genomes 
+relative to bacteria or archael sources is the issue of highly heterozygous polyploid genomes.
+This is problematic as the de Bruijn graphs constructed during assembly
+rapidly increase in complexity when reads from heterozygous samples become
+incorporated \citep{Kajitani2014}.  This is because k-mers derived from heterozygous regions of 
+homologous chromosomes will partition the assembly graph into bubbles that cannot be easily 
+or accurately resolved by most assemblers expecting only limited structural variation during
+assembly.  Previously, attempts to work around this included inbreeding to generate
+homozygous lines or fosmid based approaches.
+
+Specialised genome assemblers have been produced to address this problem,
+for example Platanus performed well on both highly and lowly heterozygous 
+genomes using k-mer autoextension approaches and by merging haplotypes
+at both contig assembly and scaffolding steps, as well as incorporation
+of various heuristics involving bubble resolution \citep{Bradnam2013,Katjitani2014}
+
+Likewise, transcriptome assembly complexity rapidly increases with the number of alleles
+expected per gene determined by ploidy, heterozygosity and complex gene families
+and in turn how many transcripts per allele in light of alternative splicing.
+
+This is particularly problematic in the PbMr system owing to the massive
+ploidy of the host \textit{Paramecium bursaria} and the numerous whole genome
+duplications in its relatively recent evolutionary history (1).  This also 
+explains the difficulties in using sister species, as the most sequenced Paramecium
+genus species are the aurelia complex which have undergone 2 WGD since divergence with
+\textit{P. bursaria} \citep{McGrath2014}.
+
 %
 %Almost every \textit{de-Novo} assembly algorithm use one of two approaches:
 %overlap-contig-consensus (OCC) e.g. Celera etc
@@ -806,27 +521,11 @@ taxonomic distribution of \textit{Paramecium} green algal endosymbionts (see Cha
 %However, it has become rapidly evident with further expanding sequencing capacity
 %
 %
-%
-%
-%
-%Assembly assessment:
-%Adapter trimmed PE reads concordantly mapping to assembly \citep{MacManes2014} 
-%Number of complete ORFs (start and stop codons) using TRANSDECODER 
-%Unique transcript number using BlastP (80\% similarity over 100aa and e-10)
-%%Expression for each contig https://github.com/macmanes/trimming_paper/tree/recreate_ms_analyses/scripts
-%
-%
-%\subsubsection{Annotation}
+
 %
 %\subsubsection{Mapping}
-%
 %The tradeoff between read-mapping sensitivity (number aligned) and specificity (number correctly aligned)
 %Modern aligners overcome most errors making trimming unecessary \citep{DelFabbro2013}
-%
-%
-%
-%
-%
 %However, studies on simulated datasets have shown that the main sources of error
 %when conducting mapping to a reference transcriptome to infer expression counts
 %the most important sources fo error are splice variants and missing transcripts
@@ -874,157 +573,82 @@ taxonomic distribution of \textit{Paramecium} green algal endosymbionts (see Cha
 %a transcript is true if 
 %
 
-%\subsection{Metabolomics}
-%
-%Metabolomics revolves around the detection and characterisation of cellular metabolites via a range of techniques.
-%By qualitatively and/or quantitivately analysing these molecular substrates, cofactors and products of cellular metabolism
-%a researcher can determine cellular state or response at the level.
-%
-%Metabolites are direct signatures of biological activity \citep{}
-%
-%
-%It is the final level in the path that links genotype to cellular phenotype \citep{Fiehn2002}
-%
-%
-%
-%Mteabolomics can range from target analysis (focussing on a single metabolite) to 
-%metabolic profiling (orientated on the metaboites of a specific pathway or type) to
-%full metabolomics (uuntargeted analysis of the entire metabolome) to metabolic fingerprinting
-%(high throughput metabolomics of a large number of organisms, also sometimes referred
-%metabonomics) \citep{Fiehn2002}.
-%
-%
-%
-%
-%\begin{figure}
-%    \centering
-%    \includegraphics{separation_method.pdf}
-%    \caption[Compounds by MS Separation Method]{Groups of metabolites by which separation method is best 
-%    suited for their analysis. Figure redrawn from \url{https://www.agilent.com/cs/library/selectionguide/Public/5989-6328EN.pdf}}
-%\end{figure}
-%
-%
-%Mass spectrometry works on the principle that a charged particle moving through an electromagnetic field
-%is subject to the following two laws: the Lorentz force law (\cref{eq:lfl}) and Newton's second law of motion (\cref{eq:nsl})
-%
-%\[ F = Q(E + v \times B)\]
-%\[ F = ma = m\frac{dv}{dt}\]
-%where \(F\) is the force applied to the ion, \(m\) is the mass, \(a\) the acceleration, \(Q\) the electric charge,
-%\(E\) the electric field and \(v\times B\) the cross product of the ion's velocity and magnetic flux density. 
-%
-%Therefore, by combining these two identities:
-%\[(\frac{m}{Q}) a = E + v \times B\]
-%
-%
-%\(m/z\) denotes dimensionless quantityy from dividing the mass number of the ion by its charge number.
-%
-%
-%Mass spectrometry involves 4 components with numerous options and alternative methods for each
-%optimised for different analytes:
-%\begin{itemize}
-%    \item Sample introduction
-%    \item Ion source
-%    \item Mass analyser
-%    \item Mass detector 
-%\end{itemize}
-%
-%As mass analysers are only capable of analysing charged ions in a gaseous phase it is necessary to volatilise 
-%and charge analytes during sample introduction and ionisation respectively. 
-%
-%While samples can be directly introducted and vaporised using heat or similar, typically most metabolomic
-%analyses involve the chromatographic separation of samples using either liquid (LC) or gas (GC) chromatography.
-%
-%
-%
-%
-%
-%
-%
-%
-%\subsubsection{Targeted metabolomics}
-%
-%There are both targeted and untargeted metabolic analyses that focus on a known set of metabolites such as
-%amino acids or a global metabolic profile respectively. 
-%
-%
-%
-%
-%
-%\subsubsection{Untargeted metabolomics}
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%\begin{figure}
-%    \includegraphics[width=\textwidth]{mass_spec.pdf}
-%    \caption[Mass Spectrometry Data]{Visualisation of Mass Spectrometry data when coupled with chromatographic techniques.
-%        The X axis represents the \(m/z\) ratio of an ion, the Y axis the retention time within the chromatographic
-%    separation method (GC, HPLC etc.) and Z the intensity detected at a given m/z}
-%    \label{fig:mass_spec}
-%\end{figure}
-%
-%
-%
-%
-%
-%
-%These are nuclear magnetic resonance (NMR) spectroscopy, mass spectrometry (MS), 
-%light (usually infrared (IR) or ultraviolet (UV)) spectroscopy \citep{Kafsack2010}.
-%
-%
-%
-%
-%
-%
-%
-%There are 3 key techniques used
-%
-%
-%
-%
-%Evaluating the global metabolic profile (i.e. the presence and absence of 
-%substrates, products and cofactors) 
-%
-%
-%
-%It is possible to directly analyse samples using 
-%
-%
-%
-%
-%
-%By either qualtitatively characterising the presence and absence of various
-%metabolites under varyin
-%
-%
-%
-%
-%
-%First commercially available platform was the Vickers ``MS-2'' in 1948
-%
-%
-%
-%
-%
-%One of the key issues with ``-omic'' platforms is the number of biological replicates 
-%tends to be far smaller than the number of parameters/metabolites/transcripts being
-%studied. 
-%
-%
-%Experimental design: 
-%
-%
-%
-%
-%Reporting standards \citep{Goodacre2007}
-%
-%- experimental design
-%
+\subsection{Metabolomics}
+
+Metabolomics is based around the detection and characterisation of cellular metabolites via a range of techniques.
+By qualitatively and/or quantitivately analysing these molecular substrates, cofactors and products of cellular metabolism
+a researcher can determine cellular state or response at the level.  It is a highly useful 
+set of techniques as metabolites are a direct signature of biological activity.
+This means metabolomics data is the final level in the path that links genotype to cellular phenotype \citep{Fiehn2002}.
+
+Mteabolomics can range from target analysis (focussing on a single metabolite) to 
+metabolic profiling (orientated on the metaboites of a specific pathway or type) to
+full metabolomics (untargeted analysis of the entire metabolome) to metabolic fingerprinting
+(high throughput metabolomics of a large number of organisms, also sometimes referred
+metabonomics) \citep{Fiehn2002}.
+Metabolomics is conducted using a variety of analytical chemistry methods 
+including nuclear magnetic resonance (NMR) spectroscopy, mass spectrometry (MS), 
+light (usually infrared (IR) or ultraviolet (UV)) spectroscopy \citep{Kafsack2010}.
+
+The difficulty of mass spectrometry is using a method that allows
+quantification and analysis of the diverse range of metabolites present in 
+living cells.  Due to the large number of varying physico-chemical properties
+and a broad dynamic range of concentrations no one single
+metabolomic method will fully characterise all metabolites with equal
+accuracy.  Therefore, a comprehensive analysis of the metabolome
+is reliant on both careful experimental design and the use of a range
+of analytical techniques \citep{Dettmer2007}. Specifically, in the case of MS
+based methods, multiple separation methods must be used
+i.e. Gas (GC) and Liquid Chromatography (LC) (\cref{fig:separation})
+as well as a range of capture parameters. 
+
+\begin{figure}
+    \centering
+    \includegraphics{separation_method.pdf}
+    \caption[Compounds by MS Separation Method]{Groups of metabolites by which separation method is best 
+    suited for their analysis. Figure redrawn from \url{https://www.agilent.com/cs/library/selectionguide/Public/5989-6328EN.pdf}}
+    \label{fig:separation}
+\end{figure}
+
+
+Mass spectrometry works on the principle that a charged particle moving through an electromagnetic field
+is subject to the following two laws: the Lorentz force law (\cref{eq:lfl}) and Newton's second law of motion (\cref{eq:nsl})
+
+\[ F = Q(E + v \times B)\]
+\[ F = ma = m\frac{dv}{dt}\]
+where \(F\) is the force applied to the ion, \(m\) is the mass, \(a\) the acceleration, \(Q\) the electric charge,
+\(E\) the electric field and \(v\times B\) the cross product of the ion's velocity and magnetic flux density. 
+
+Therefore, by combining these two identities:
+\[(\frac{m}{Q}) a = E + v \times B\]
+
+
+\(m/z\) denotes dimensionless quantityy from dividing the mass number of the ion by its charge number.
+
+
+Mass spectrometry involves 4 components with numerous options and alternative methods for each
+optimised for different analytes:
+\begin{itemize}
+    \item Sample introduction
+    \item Ion source
+    \item Mass analyser
+    \item Mass detector 
+\end{itemize}
+
+As mass analysers are only capable of analysing charged ions in a gaseous phase it is necessary to volatilise 
+and charge analytes during sample introduction and ionisation respectively. 
+
+While samples can be directly introducted and vaporised using heat or similar, typically most metabolomic
+analyses involve the chromatographic separation of samples using either liquid (LC) or gas (GC) chromatography.
+
+
+\begin{figure}
+    \includegraphics[width=\textwidth]{mass_spec.pdf}
+    \caption[Mass Spectrometry Data]{Visualisation of Mass Spectrometry data when coupled with chromatographic techniques.
+        The X axis represents the \(m/z\) ratio of an ion, the Y axis the retention time within the chromatographic
+    separation method (GC, HPLC etc.) and Z the intensity detected at a given m/z}
+    \label{fig:mass_spec}
+\end{figure}
 
 
 \section{Machine Learning and Statistical Pattern Recognition}
@@ -1475,28 +1099,15 @@ sequences for inclusion in the analysis),  alignment (in which homologous sites 
 %There are 4 major sources of error in the generation of phylogenetic trees that 
 %can be reduced to greater and lesser extents depending on the methodology used.
 %Compositional bias 
-%
-%
-%
-%
 %Long branch attraction is one of the most famous artefacts, it is the erroneous grouping of long (usually fast evolving)
 %branches in a tree as sister groups.  It is caused by 
-%
-%
 %Sequence sampling is important both between taxa and within taxa.
-%
 %Hidden paralogy is another artefact that can be exacerbated with poor taxon sampling, this occurs when a sequence has
 %been duplicated within an ancestral taxa (creating paralogs) but differentially lost in its descendents.  
 %If, due to either deletion or poor sampling, the incorrect paralog is incoporated into a phylogeny 
-%
-%
 %Homoplasy - convergent evolution
 %Poor taxon sampling that is unrepresentative of the diversity that the phylogenetic tree
 %is intended to span 
-%
-
-
-
 
 One implication of most current phylogenetic methods is that they implicitly
 assume a branching tree structure is the best representative of the evolutionary
@@ -2041,11 +1652,11 @@ The main C++ libraries used in addition to the C++11 standard library were:
 \end{itemize}
 
 The majority of tasks were accomplished using the high-level python language (python2.7 or python3.4
-depending on the application) \citep{}.  In addition to the standard library, the numerical
-computation libraries numpy \citep{} and theano \citep{}, machine learning library scikit-learn \citep{},
-statistical and scientific libraries scipy \citep{} and pandas \citep{}, the bioinformatics libraries
-scikit-bio \citep{} and biopython \citep{}, and plotting libraries holoviews \citep{}, 
-matplotlib \citep{} and bokeh \citep{} were all used extensively.
+depending on the application).  In addition to the standard library, the numerical
+computation libraries numpy and theano, machine learning library scikit-learn,
+statistical and scientific libraries scipy  and pandas, the bioinformatics libraries
+scikit-bio  and biopython, and plotting libraries holoviews, 
+matplotlib, seaborn  and bokeh were all used extensively.
 Frequent use was made of literate programming offered by environments such as the ipython notebook (recently
 renamed jupyter).
 

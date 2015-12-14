@@ -181,6 +181,16 @@
     \newpage 
 }
 
+%authorlist page
+\newcommand{\publications}{
+    \pagestyle{fancy}
+    \newpage
+    \thispagestyle{fancy}
+    \chapter*{Publications}
+    \noindent \input{front_material/publications}
+    \newpage 
+}
+
 %% An environment for paragraph-style section
 %\providecommand\newthought[1]{
 %   \addvspace{1.0\baselineskip plus 0.5ex minus 0.2ex}%
