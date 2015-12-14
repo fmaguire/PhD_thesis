@@ -1437,7 +1437,8 @@ revealing K-Neighbours the most effective classification algorithm for this data
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.8\textwidth]{sklearn_f1s.pdf}
-    \caption[F1-scores of different classifiers]{Classification report must be straightforward - a report of P/R/F-Measure for each element in your test data. In Multiclass problems, it is not a good idea to read Precision/Recall and F-Measure over the whole data any imbalance would make you feel you've reached better results. That's where such reports help.}
+    \caption[F1-scores of different classifiers]{Average F1-scores of each classification algorithm attempted.  Note, that K-neighbours performed
+    the best and there was particularly poor performance in QDA and Naive Bayes.}
 	\label{fig:f1_scores} 
 \end{figure}
 
@@ -1695,7 +1696,7 @@ Other improvements could include the consideration of alternative clustering alg
 such as k-medoids \citep{Kaufman1987} with more robust outlier stability or large scale
 database clustering algorithms such as DBSCAN \citep{Ester1996} or BIRCH \citep{Zhang1996} (allowing non-convex
 clusters). Silhouette coefficients and analysis\footnote{
-	\(s = \frac{b -a}{max(a,b}\) where \(s\) is Silhouette coefficient, \(a\) is the mean distance
+    \(s = \frac{b -a}{max(a,b)}\) where \(s\) is Silhouette coefficient, \(a\) is the mean distance
 	between a sample and all other points in the same class and \(b\) is the mean distance
 	between a sample and all other points in the next nearest cluster \citep{scikit-learn}.  Therefore,
 	\(s\) is a measure of cluster definition.}

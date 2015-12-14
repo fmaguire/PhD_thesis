@@ -65,7 +65,7 @@ endosymbiont    &      0.97    &  0.99  &    0.98  &     359 \\
 avg / total    &      0.96    &  0.96  &    0.95  & 1728 \\
  \hline
  \end{tabular}
- \caption{KNeighborsClassifier(algorithm='auto', leaf\_size=30, metric='minkowski',
+ \caption[K-Neighbours classifier report]{KNeighborsClassifier(algorithm='auto', leaf\_size=30, metric='minkowski',
  metric\_params=None, n\_neighbors=50, p=2, weights='uniform')}
  \end{table}
 
@@ -82,7 +82,7 @@ endosymbiont    &      0.96    &  0.99  &    0.98  &     359 \\
 avg / total    &      0.95    &  0.95  &    0.95  & 1728 \\
  \hline
  \end{tabular}
- \caption{
+ \caption[Linear support vector classifier report]{
      LinearSVC(C=1.0, class\_weight=None, dual=True, fit\_intercept=True,
      intercept\_scaling=1, loss='squared\_hinge', max\_iter=1000,
      multi\_class='ovr', penalty='l2', random\_state=None, tol=0.0001,
@@ -102,7 +102,7 @@ endosymbiont    &      0.99    &  0.97  &    0.98  &     359 \\
 avg / total    &      0.83    &  0.70  &    0.65  & 1728 \\
  \hline
  \end{tabular}
- \caption{
+ \caption[RBF kernel support vector classifier report]{
 SVC(C=1.0, cache\_size=200, class\_weight=None, coef0=0.0, degree=3, gamma=0.0,
   kernel='rbf', max\_iter=-1, probability=False, random\_state=None,
   shrinking=True, tol=0.001, verbose=False)}
@@ -122,7 +122,7 @@ endosymbiont    &      0.98    &   0.99  &    0.99  &     359 \\
 avg / total    &      0.94    &  0.94  &    0.94 & 1728 \\
  \hline
  \end{tabular}
- \caption{
+ \caption[Decision tree classifier report]{
 DecisionTreeClassifier(class\_weight=None, criterion='gini', max\_depth=None,
             max\_features=None, max\_leaf\_nodes=None, min\_samples\_leaf=1,
             min\_samples\_split=2, min\_weight\_fraction\_leaf=0.0,
@@ -143,7 +143,7 @@ endosymbiont    &      0.97    &   0.97  &    0.97  &     359 \\
 avg / total    &      0.92    &  0.92  &    0.92 & 1728 \\
  \hline
  \end{tabular}
- \caption{ExtraTreeClassifier(class\_weight=None, criterion='gini', max\_depth=None,
+ \caption[Extra tree classifier report]{ExtraTreeClassifier(class\_weight=None, criterion='gini', max\_depth=None,
           max\_features='auto', max\_leaf\_nodes=None, min\_samples\_leaf=1,
           min\_samples\_split=2, min\_weight\_fraction\_leaf=0.0,
       random\_state=None, splitter='random')}
@@ -163,7 +163,7 @@ endosymbiont    &      0.97    &   0.96  &    0.97  &     359 \\
 avg / total    &      0.95    &  0.95  &    0.95 & 1728 \\
  \hline
  \end{tabular}
- \caption{
+ \caption[Random forest classifier report]{
 RandomForestClassifier(bootstrap=True, class\_weight=None, criterion='gini',
             max\_depth=None, max\_features='auto', max\_leaf\_nodes=None,
             min\_samples\_leaf=1, min\_samples\_split=2,
@@ -185,7 +185,7 @@ endosymbiont    &      0.98    &   0.97  &    0.98  &     359 \\
 avg / total    &      0.94    &  0.94  &    0.94 & 1728 \\
  \hline
  \end{tabular}
- \caption{
+ \caption[AdaBoost classifier report]{
 AdaBoostClassifier(algorithm='SAMME.R', base\_estimator=None,
           learning\_rate=1.0, n\_estimators=50, random\_state=None)}
 \end{table}
@@ -203,7 +203,7 @@ endosymbiont    &      0.00    &   0.00 &    0.00 &     359 \\
 avg / total    &      0.58    &  0.47  &    0.38  & 1728 \\
  \hline
  \end{tabular}
- \caption{LDA(n\_components=None, priors=None, shrinkage=None, solver='svd',
+ \caption[Linear discriminant analysis classifier report]{LDA(n\_components=None, priors=None, shrinkage=None, solver='svd',
  store\_covariance=False, tol=0.0001)}
 \end{table}
 
@@ -220,7 +220,7 @@ endosymbiont    &      0.99    &   0.93 &    0.96 &     359 \\
 avg / total    &      0.73 &  0.73 &    0.65  & 1728 \\
  \hline
  \end{tabular}
- \caption{QDA(priors=None, reg\_param=0.0)}
+ \caption[Quadratic discriminant analysis report]{QDA(priors=None, reg\_param=0.0)}
 \end{table}
 
 \begin{table}[ht!]
@@ -236,7 +236,7 @@ endosymbiont    &      0.99    &   0.93 &    0.96 &     359 \\
 avg / total    &      0.71 &  0.72 &    0.64  & 1728 \\
  \hline
  \end{tabular}
- \caption{GaussianNB()}
+ \caption[Gaussian naive Bayes classifier report]{GaussianNB()}
 \end{table}
 
 
@@ -253,7 +253,7 @@ endosymbiont    &      0.98    &   0.99 &    0.99 &     359 \\
 avg / total    &      0.93 &  0.92 &    0.91 & 1728 \\
  \hline
  \end{tabular}
- \caption{LogisticRegression(C=1.0, class\_weight=None, dual=False, fit\_intercept=True,
+ \caption[Logistic regression classifier report]{LogisticRegression(C=1.0, class\_weight=None, dual=False, fit\_intercept=True,
           intercept\_scaling=1, max\_iter=100, multi\_class='ovr',
           penalty='l2', random\_state=None, solver='liblinear', tol=0.0001,
       verbose=0)}

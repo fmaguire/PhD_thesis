@@ -34,13 +34,17 @@ green algal \textit{Paramecium} endosymbiont (see Chapter 3 for more details).
 
 \subsection{Media and Culture conditions}
 All \textit{P. bursaria} and green algae cultures were maintained in 
-New Cereal Leaf-Prescott Liquid (NCL) media 
-(\(4.3g/l \quad CaCl_{2}.2H_{2}O\), 
-\(1.6g/l \quad KCl\), 
-\(5.1g/l \quad K_{2}HPO_{4}\), 
-\(2.8g/l \quad MgSO_{4}.7H_{2}O\), 
-\(1g/l\) wheat bran, gravity filtered via \(GF/C\) paper and autoclaved) \citep{NCLCCAP} and stored in 
-an incubator at 15\celsius with a 12:12 light:dark cycle.  The incubator was
+New Cereal Leaf-Prescott Liquid (NCL) media:
+\begin{itemize}
+    \item \(4.3g/l \quad CaCl_{2}.2H_{2}O\)
+    \item \(1.6g/l \quad KCl\)
+    \item \(5.1g/l \quad K_{2}HPO_{4}\)
+    \item \(2.8g/l \quad MgSO_{4}.7H_{2}O\)
+    \item \(1g/l\) wheat bran
+\end{itemize} 
+NCL media is gravity filtered via \(GF/C\) paper and autoclaved before use \citep{NCLCCAP}. 
+Cultures were stored in 
+an incubator at 15\celsius \quad  with a 12:12 light:dark cycle.  The incubator was
 lit using 2 \(21w\) 865 daylight fluorescent tubes, producing 2000 lumen each.
 Cultures were sub-cultured approximately every 2 weeks using fresh NCL media and were inspected using light microscopy to monitor health.  
 No bacteria was added to cultures used prior to ``omic'' analyses but otherwise the medium was bacterised with
@@ -90,7 +94,6 @@ otherwise have been missed \citep{Fang2011}.
 Experimental design is very important when using of ``-omic'' platforms as the the number of biological replicates 
 tends to be far smaller than the number of parameters/metabolites/transcripts being
 studied. 
-
 
 
 However, until relatively recently ``omic'' methodologies were restricted to specialised 
@@ -386,103 +389,87 @@ likely to be product of sequencing error than biological diversity.
 
 This is most typically achieved using probabilistic approaches after decomposition of
 reads into \(K\) sized substrings (known as K-mers).  These K-mers
-are then analysed via spectral techniques and probabilistic clustering of 
-their hamming graphs (e.g. \citep{Nikolenko2013}) to identify related 
-low-abundance and likely erroneous K-mers.  Some approaches
-will also integrate sequence alignment and quality score
+are then analysed via spectral techniques 
+and the construction of hamming graphs (e.g. \citep{Nikolenko2013}) to identify related 
+low-abundance and likely erroneous K-mers.  
+Some approaches will also integrate sequence alignment and quality score
 features.  However, K-mer approaches are generally more computationally efficient
-and more effective at removing
-sequencing error than quality score based approaches \citep{Zhang2014}.
+and more effective at removing sequencing error than quality score based approaches \citep{Zhang2014}.
+See \citep{Molnar2014} for a review of error correction algorithms. 
 
- Error correction is more difficult for transcriptomic datasets (and single cell data) because 
- the assumption of uniform coverage is not true for these datatypes \citep{Macmanes2015}.   
- Therefore, correction of these datasets generally relies on explicitly probabilistic
- approaches that 
- 
- 
- \citep{Nikolenko2013} 
+Error correction is more difficult for transcriptomic datasets (and single cell data) because 
+the assumption of uniform coverage is not true for these datatypes \citep{Macmanes2015}.   
+Therefore, correction of these datasets generally relies on explicitly probabilistic
+approaches that avoid this assumption by analysing relative abundances and 
+methods such as bayesian subclustering of the hamming graphs \citep{Nikolenko2013}.
 
-
-
-Sequence error correction improves \textit{de novo} assembly \citep{Macmanes2013}
-
-
-
-
- This means K-mer analyses have rely on analysis of relative K-mer abundances
-
-%Single-cell genomics sequencing reads display high variance in their coverage 
-%across the genome with some sections. Previously error correction tools (such as
-%QUAKE \citep{Kelley2010}
-%\citep{Nikolenko2013}
-
-
-
-Although, in can be argued that error correction and normalisation are different
-aspects of the same process. 
-
- Hard filters can improve assembly and mapping but will likeluy lose lowly-expressed transcripts \citep{Macmanes2014}
-
-
- Cluster kmers - then mininmise size of kmers clusters: kmer-spectra, suffic array, MSA, and HMM
- Methods reviewed here \citep{Molnar2014}
- A key component of the Spades single cell genomic assembler is the error correction using Bayeshammer 
- SCT have very non-uniform coverage \citep{Nikolenko2013}
-
-
-
+The final form of read-processing is arguably a variant of error correction, it is
+known as digital normalisation \citep{Brown2012}.  This simply involves
+the elimination of redundant read data in a given library. As short-read
+sequencing involves the random sampling of the transcriptome
+or genome there is a high level of redundant sequencing where many
+reads are derived from the same template. The number of reads
+that map to a given portion of a template is known as the coverage. 
+While the high levels of coverage are necessary for accurate assembly
+reconstruction it generates a computational burden and increases
+the problem of sequencing error.  Therefore, by normalising
+coverage by progessively filtering out the most abundant
+reads it is possible to minimise sampling variation and
+generate much smaller libraries that still contain nearly the same
+amount of information \citep{Brown2012}. This means the computational
+demands of assembly are much lower and thus it is easier to tune
+assembly parameters.
 
 \subsubsection{Assembly}
 
-There are two main approaches to both genome and transcriptomic assembly - referenced and \textit{de novo}.
-A referenced assembly consists of the alignment of processed reads to a 
-prior assembly or reference 
+Assembly is the process by which reads are combined to recapitulate 
+the transcripts or chromosomes they were sampled from.
+There are two main approaches to both genome and transcriptome assembly - referenced and \textit{de novo}.
+A referenced assembly consists of the alignment of processed reads to a prior assembly or reference sequence
+using specialised short-read aligners such as Bowtie or BWA \citep{Langmead2012}. Unfortunately,
+these are reliant on the existence of pre-existence of genomic or transcriptomic resources
+for the organisms being analysed.
+% Mapping reads to reference can introduce biases even with relatively low levels of polymorphism \citep{Wang2012}.
+ However, even if the reference is divergent referenced assembly may still produce a higher quality assembly
+ than \textit{de novo} methods alone \citep{Vijay2013}.  For referenced transcriptome assembly
+ there are multiple tools that conduct post-processing of mapping data to account for features of 
+ transcripts such as alternative isoforms and spliced out intronic sequences \citep{Kim2013}.
 
 
+ On the other hand, \textit{de novo} assembly algorithms don't require a prior reference
+sequence and form two main groups: Overlap-Layout-Consensus (OLC) methods
+and de Bruijn graph (dBG) methods. 
 
 
-\textit{De novo} assembly algorithms form two main groups: Overlap-Layout-Consensus (OLC) methods
-and de Bruijn graph methods. 
 OLC are conceptually relatively simple, a graph is constructed based on the overlap of sequencing
 reads determined using standard pair-wise alignment algorithms.   Each graph vertex
 represents a read and an edge connecting a pair of vertices indicates overlap between those
-reads. 
+reads. Therefore, assembly is a process of finding a hamiltonian path 
+(i.e. the path that visits each vertex exactly once) across the OLC graph. Unfortunately,
+calculating overlaps is computationally demanding and hamiltonian paths are difficult to discover
+(NP-complete) \citep{Karp1972}.
 
 
+Alternatively, de Bruijn graph assembly involves the decompositon of reads into K-mer sets.  
+These K-mers are then assembled into graphs based on \(k-1\) overlaps with other K-mers.
+However, in dBGs the vertices represent the \(k-1\) overlaps with the K-mers themselves
+forming the edges. This simplifies the problem of assembling contigs from finding hamiltonian cycles
+in the graph to that of the eulerian cycle (i.e. visit each edge once) problem.  This is computationally
+much simpler and thus allows assembly of much larger datasets \citep{Compeau2011}.
+Generally OLC assembly is limited by a requirement for 
+fast and accurate overlap calculations and alignment whereas the de Bruijn approaches 
+requires robust error correction \citep{Palmer2010}.
+As de Bruijn graph generation relies on exact \(k-1\) matches 
+errors exponentially increase the number of possible graph traversal paths.  More traversal
+paths means greater graph complexity and thus increased risk of error, and higher
+computational demands \citep{Pop2009}.  Some modern assemblers utilise
+paired-end read information directly in the generation of these graphs \citep{Bankevich2012}, however,
+most assemblers just use this information to post-process assembled contigs using various heuristic methods.
 
-
-
-
-
-generally falls into two major groups of graph algorithms.
-
-
-
-While explained later in \ref{Assembly}, generally OCC assembly is reliant on 
-fast and accuarte overalp calculations while de Bruijn approaches require
-robust error correction \citep{Palmer2010}.
-
-
-
-
- mapping reads to reference can introduce biases even with relatively \citep{Wang2012}
- but even if the reference is divergent it may still produce a higher quality assembly
- than de novo methods \citep{Vijay2013}
- Soap-denovo trans and trinity performed better than transabyss \citep{Vijay2013}
- In De Bruijn graph assembly generated from exact subsequence matches - errors exponentially increase
-possible graph traversal paths increasing graph comp-lexity and assembly time and memory \citep{Pop2009}
-
-
-https://www.biostars.org/p/52178/ sequencing papers theory
-Spades \citep{Bankevich2012}
-
-Trinity \citep{Grabherr2011}
-
-%Assemblathon 1 \citep{Earl2011}
-%GAGE \citep{Schatz2012}
-%Assemblathon 2 \citep{Bradnam2013}
-%Nucleotid.es: Linux Container (specifically Docker \citep{Merkel2014})  based continuous assembly evaluation using QUAST \citep{Gurevich2013a})
-
+No one assembler will produce the optimal assembly for every dataset, indeed often the best assemblies
+are generated by combining multiple assemblies. 
+Therefore, for all genomic and transcriptomic analyses in this thesis I will use multiple assembly approaches and 
+implementations.
 
 
 \subsubsection{The problem with ploidy}
@@ -573,83 +560,76 @@ genus species are the aurelia complex which have undergone 2 WGD since divergenc
 %a transcript is true if 
 %
 
-\subsection{Metabolomics}
-
-Metabolomics is based around the detection and characterisation of cellular metabolites via a range of techniques.
-By qualitatively and/or quantitivately analysing these molecular substrates, cofactors and products of cellular metabolism
-a researcher can determine cellular state or response at the level.  It is a highly useful 
-set of techniques as metabolites are a direct signature of biological activity.
-This means metabolomics data is the final level in the path that links genotype to cellular phenotype \citep{Fiehn2002}.
-
-Mteabolomics can range from target analysis (focussing on a single metabolite) to 
-metabolic profiling (orientated on the metaboites of a specific pathway or type) to
-full metabolomics (untargeted analysis of the entire metabolome) to metabolic fingerprinting
-(high throughput metabolomics of a large number of organisms, also sometimes referred
-metabonomics) \citep{Fiehn2002}.
-Metabolomics is conducted using a variety of analytical chemistry methods 
-including nuclear magnetic resonance (NMR) spectroscopy, mass spectrometry (MS), 
-light (usually infrared (IR) or ultraviolet (UV)) spectroscopy \citep{Kafsack2010}.
-
-The difficulty of mass spectrometry is using a method that allows
-quantification and analysis of the diverse range of metabolites present in 
-living cells.  Due to the large number of varying physico-chemical properties
-and a broad dynamic range of concentrations no one single
-metabolomic method will fully characterise all metabolites with equal
-accuracy.  Therefore, a comprehensive analysis of the metabolome
-is reliant on both careful experimental design and the use of a range
-of analytical techniques \citep{Dettmer2007}. Specifically, in the case of MS
-based methods, multiple separation methods must be used
-i.e. Gas (GC) and Liquid Chromatography (LC) (\cref{fig:separation})
-as well as a range of capture parameters. 
-
-\begin{figure}
-    \centering
-    \includegraphics{separation_method.pdf}
-    \caption[Compounds by MS Separation Method]{Groups of metabolites by which separation method is best 
-    suited for their analysis. Figure redrawn from \url{https://www.agilent.com/cs/library/selectionguide/Public/5989-6328EN.pdf}}
-    \label{fig:separation}
-\end{figure}
-
-
-Mass spectrometry works on the principle that a charged particle moving through an electromagnetic field
-is subject to the following two laws: the Lorentz force law (\cref{eq:lfl}) and Newton's second law of motion (\cref{eq:nsl})
-
-\[ F = Q(E + v \times B)\]
-\[ F = ma = m\frac{dv}{dt}\]
-where \(F\) is the force applied to the ion, \(m\) is the mass, \(a\) the acceleration, \(Q\) the electric charge,
-\(E\) the electric field and \(v\times B\) the cross product of the ion's velocity and magnetic flux density. 
-
-Therefore, by combining these two identities:
-\[(\frac{m}{Q}) a = E + v \times B\]
-
-
-\(m/z\) denotes dimensionless quantityy from dividing the mass number of the ion by its charge number.
-
-
-Mass spectrometry involves 4 components with numerous options and alternative methods for each
-optimised for different analytes:
-\begin{itemize}
-    \item Sample introduction
-    \item Ion source
-    \item Mass analyser
-    \item Mass detector 
-\end{itemize}
-
-As mass analysers are only capable of analysing charged ions in a gaseous phase it is necessary to volatilise 
-and charge analytes during sample introduction and ionisation respectively. 
-
-While samples can be directly introducted and vaporised using heat or similar, typically most metabolomic
-analyses involve the chromatographic separation of samples using either liquid (LC) or gas (GC) chromatography.
-
-
-\begin{figure}
-    \includegraphics[width=\textwidth]{mass_spec.pdf}
-    \caption[Mass Spectrometry Data]{Visualisation of Mass Spectrometry data when coupled with chromatographic techniques.
-        The X axis represents the \(m/z\) ratio of an ion, the Y axis the retention time within the chromatographic
-    separation method (GC, HPLC etc.) and Z the intensity detected at a given m/z}
-    \label{fig:mass_spec}
-\end{figure}
-
+%\subsection{Metabolomics}
+%
+%Metabolomics is based around the detection and characterisation of cellular metabolites via a range of techniques.
+%By qualitatively and/or quantitivately analysing these molecular substrates, cofactors and products of cellular metabolism
+%a researcher can determine cellular state or response at the level.  It is a highly useful 
+%set of techniques as metabolites are a direct signature of biological activity.
+%This means metabolomics data is the final level in the path that links genotype to cellular phenotype \citep{Fiehn2002}.
+%
+%Mteabolomics can range from targeted analysis (focussing on a single metabolite) to 
+%metabolic profiling (orientated on the metaboites of a specific pathway or type) to
+%full metabolomics (untargeted analysis of the entire metabolome) to metabolic fingerprinting
+%(high throughput metabolomics of a large number of organisms, also sometimes referred
+%metabonomics) \citep{Fiehn2002}.
+%Metabolomics is conducted using a variety of analytical chemistry methods 
+%including nuclear magnetic resonance (NMR) spectroscopy, mass spectrometry (MS), 
+%light (usually infrared (IR) or ultraviolet (UV)) spectroscopy \citep{Kafsack2010}.
+%This thesis will exclusively use mass spectrometry based metabolomics due to its high sensitivity,
+%high throughput and ease of combination with analytical separation methods such as chromatography.
+%
+%
+%The difficulty of mass spectrometry is using a method that allows
+%quantification and analysis of the diverse range of metabolites present in 
+%living cells.  Due to the large number of varying physico-chemical properties
+%and a broad dynamic range of concentrations no one single
+%metabolomic method will fully characterise all metabolites with equal
+%accuracy.  Therefore, a comprehensive analysis of the metabolome
+%is reliant on both careful experimental design and the use of a range
+%of analytical techniques \citep{Dettmer2007}. Specifically, in the case of MS
+%based methods, multiple separation methods must be used
+%i.e. Gas (GC) and Liquid Chromatography (LC) (\cref{fig:separation})
+%as well as a range of capture parameters. 
+%
+%\begin{figure}
+%    \centering
+%    \includegraphics{separation_method.pdf}
+%    \caption[Compounds by MS Separation Method]{Groups of metabolites by which separation method is best 
+%    suited for their analysis. Figure redrawn from \url{https://www.agilent.com/cs/library/selectionguide/Public/5989-6328EN.pdf}}
+%    \label{fig:separation}
+%\end{figure}
+%
+%
+%Mass spectrometry involves 4 components with numerous options and alternative methods for each
+%optimised for different analytes:
+%\begin{itemize}
+%    \item Sample introduction
+%    \item Ion source
+%    \item Mass analyser
+%    \item Mass detector 
+%\end{itemize}
+%
+%As mass analysers are only capable of analysing charged ions in a gaseous phase it is necessary to volatilise 
+%and charge analytes during sample introduction and ionisation respectively. 
+%
+%While samples can be directly introducted and vaporised using heat or similar, typically most metabolomic
+%analyses involve the chromatographic separation of samples using either liquid (LC) or gas (GC) chromatography.
+%
+%
+%\(m/z\) denotes dimensionless quantityy from dividing the mass number of the ion by its charge number.
+%
+%
+%
+%
+%\begin{figure}
+%    \includegraphics[width=\textwidth]{mass_spec.pdf}
+%    \caption[Mass Spectrometry Data]{Visualisation of Mass Spectrometry data when coupled with chromatographic techniques.
+%        The X axis represents the \(m/z\) ratio of an ion, the Y axis the retention time within the chromatographic
+%    separation method (GC, HPLC etc.) and Z the intensity detected at a given m/z}
+%    \label{fig:mass_spec}
+%\end{figure}
+%
 
 \section{Machine Learning and Statistical Pattern Recognition}
 
@@ -1562,7 +1542,7 @@ or Subtree-Prune-and-Regraph (SPR) where whole subtrees are removed and reattach
 SPR is slower but less prone to get caught in local optima than NNI and thus will
 lead to higher likelihood phylogenies overall \citep{Criscuolo2011}.
 Expectation-maximisation can then be used to find the MLE for branch length and model parameters.
-For example, PhyML uses an initial BIONJ and standard hill-climbing which perturbs topology and branch lengths simultaneously 
+For example, PhyML uses an initial BIONJ and standard hill-climbing which perturbs topology and branch lengths simultaneously.
 
 
 The advantage of ML approaches is that they have explicit model assumptions (which can therefore be tested), are relatively robust to model

@@ -153,9 +153,6 @@ and endosymbiont genomes.  It is particularly important to do this
 and effectively discard contaminant contigs derived from 
 bacteria (food and symbionts) and viruses associated with the host. 
 
-Unfortunately, difficulties recovering and binning genomic
-contigs prevented a comprehensive analysis of genomic
-variation. 
 
 
 %However, this type of barcoding approach to species identification is 
@@ -420,7 +417,7 @@ for Phylum, Class, Order, Family, Genus and Species respectively.
 CONCOCT clusters were then evaluated using the taxonomic assignments from TAXAssign
 using the provided ``validate.pl'' script.
 
-Finally, another attempt at taxonomic assignment was attempted:
+Finally, another attempt at taxonomic assignment using a custom ORF based pipeline was attempted:
 \begin{itemize}
     \item ORFs with a minimum size of 300 were called using Tetrahymena and Universal encodings from contigs over 500bp 
     \item ORFs were then clustered at 90\% identity using CD-HIT
@@ -436,6 +433,24 @@ Finally, another attempt at taxonomic assignment was attempted:
             \item Viral contigs were all those assigned as Viral sequences. 
         \end{itemize}
 \end{itemize}
+
+\subsubsection{Variant calling}
+
+A variant calling on the binned genomic contigs was attempted 
+to assess the clonality of the endosymbiont. 
+Briefly, the top 10 longest contigs binned as ``endosymbiont'' 
+were retrieved and Q5 trimmed, error corrected reads aligned
+to them using bowtie2 and output to BAM files for each library.
+Library BAMs were then combined using samtools ``mpileup''
+with a minimum mapQ threshold of 5.  All potential variants
+with a mapping depth of 0 were filtered out.
+SNPs were called from this filtered mpileup file
+using a custom perl script designed for the 
+the wheat genome project (pers. comms. Hall, Neil).
+This SNP calling used a coverage cutoff of 10\%.
+
+Called SNPs were then visualised and statistics
+calculated using R.
 
 \subsection{Endosymbiont elimination}
 
@@ -461,6 +476,7 @@ at \(15\celsius\) and inspected every 2 weeks for clearing.
 This was to prevent providing too much light and 
 further encouraging endosymbiont growth. 
 
+
 \section{Results}
 
 \subsection{ITS2 phylogeny}
@@ -472,7 +488,7 @@ the Yad1g1N endosymbiont is positively identified as \textit{C. variabilis}.
 This phylogeny in general is consistent with previous ITS2 phylogenies \citep{Hoshina2010}.
 
 \begin{figure}
-    \includegraphics[height=\textheight,width=\textwidth]{its_phylo.pdf}
+    \includegraphics[height=0.9\textheight]{its_phylo.pdf}
     \caption[ITS2 phylogeny]{Combined MrBayes and RAxML phylogeny of all ITS2 sequences
     along with numerous reference ITS2 sequences from \citep{Hoshina2010,Hoshina2013}.
     This phylogeny highlights a single example of each of the 4 major groups of 
@@ -757,6 +773,11 @@ the variational inference of cluster numbers being partially reliant upon
 sequencing coverage features.  As MDA is known to generate very uneven coverage 
 due to amplification biases this likely explains the erroneous clustering.
 
+
+Therefore, clustering and TAXAssign binning methods were abandoned and
+the custom ORF based pipeline bins (\cref{tab:custom_tax_bin}) used
+for variant calling.
+
 \begin{table}
     \centering
     \begin{tabular}{|c|c|c|}
@@ -773,8 +794,31 @@ due to amplification biases this likely explains the erroneous clustering.
     \caption[Custom Taxonomic Binning]{Results of the customised taxonomic binning,
     note the far less conservative binning compared with TAXAssign. Note this only
 consisted of contigs over 500bp in length}.
+\label{tab:custom_tax_bin}
 \end{table}
 
+\subsubsection{Variant Calling}
+
+The variant calling demonstrated that the majority of potential
+variants were present in almost all endosymbiont genomes (\cref{fig:var_contig}).
+Indeed, the highest number of variants (\(\geq 75\)) were present in 
+\(80-90\%\) of endosymbionts.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{snp_variant_longest_contig.pdf}
+    \caption[Endosymbiont variant count and frequency density]{
+        Histogram summary of variant frequency in the longest 
+        10 custom binned ``endosymbiont'' contigs (total length 269,755bp).
+        Variant frequency is the percentage of total chromosomes
+        in the sample that share that variant and count axis shows
+        the density (blue line).  The vertical dotted line indicates
+        the mean of the sample and the heatmap shows absolute counts
+        in the histogram bins. This figure shows the majority
+        of variants are present in the majority of endosymbiont
+    cells within the host.}
+    \label{fig:var_contig}
+\end{figure}
 
 \subsection{Elimination of endosymbiont}
 
@@ -830,7 +874,9 @@ we cannot say the endosymbionts in CCAP 1660/12 and 1660/13 form a clonal popula
 However, a single SNP in the hypervariable ITS2 region represent very recent and minor
 divergence.  The most likely explanation is that this represents the emergence of a slightly modified
 line of endosymbionts within the clonal endosymbiont population of the CCAP 1660/12 culture or intranuclear
-variation within a single clonal population.
+variation within a single clonal population.  The distribution of SNP variants on endosymbiont binned
+contigs supports this hypothesis. This is because the majority of SNPs were detected to be 
+present in \(73\%\) or more of endosymbiont chromosomes. 
 Due to the uniformity of the ITS2 sequences there is no evidence of multi-strain photobiont co-habitation as 
 described by \citep{Hoshina2012}.
 
