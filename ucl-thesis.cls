@@ -11,7 +11,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{ucl-thesis}[2015/01/07 v0.5 University College London Thesis Class]
-\LoadClass[10pt, oneside, a4paper]{book}
+\LoadClass[12pt, oneside, a4paper]{book}
 %book}
 
 % Figures & Tables
