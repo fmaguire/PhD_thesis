@@ -34,7 +34,7 @@ green algal \textit{Paramecium} endosymbiont (see Chapter 3 for more details).
 
 \subsection{Media and Culture conditions}
 All \textit{P. bursaria} and green algae cultures were maintained in 
-New Cereal Leaf-Prescott Liquid (NCL) media:
+New Cereal Leaf-Prescott Liquid (NCL) medium:
 \begin{itemize}
     \item \(4.3g/l \quad CaCl_{2}.2H_{2}O\)
     \item \(1.6g/l \quad KCl\)
@@ -42,11 +42,11 @@ New Cereal Leaf-Prescott Liquid (NCL) media:
     \item \(2.8g/l \quad MgSO_{4}.7H_{2}O\)
     \item \(1g/l\) wheat bran
 \end{itemize} 
-NCL media is gravity filtered via \(GF/C\) paper and autoclaved before use \citep{NCLCCAP}. 
+NCL medium is gravity filtered via \(GF/C\) paper and autoclaved before use \citep{NCLCCAP}. 
 Cultures were stored in 
-an incubator at 15\celsius \quad  with a 12:12 light:dark cycle.  The incubator was
+an incubator at \(15\celsius\) with a 12:12 light:dark cycle.  The incubator was
 lit using 2 \(21w\) 865 daylight fluorescent tubes, producing 2000 lumen each.
-Cultures were sub-cultured approximately every 2 weeks using fresh NCL media and were inspected using light microscopy to monitor health.  
+Cultures were sub-cultured approximately every 2 weeks using fresh NCL medium and were inspected using light microscopy to monitor health.  
 No bacteria was added to cultures used prior to ``omic'' analyses but otherwise the medium was bacterised with
 \textit{Klebsiella pneumoniae} SMC (strain donated by the Meyer Lab, Ecole Normale Supérieure, Paris, France) the day before use. 
 
@@ -208,7 +208,7 @@ HiSeq, MiSeq and older Gene Analyzer II \citep{Nederbragt2013}.
 
 \begin{figure}
     \includegraphics[width=\textwidth]{illumina_lib_prep.pdf}
-    \caption[Illumina library preparation]{A brief overview of library preparation for Illumina modified from \citep{Mardis2008} and Illumina TruSeq kit documentation} 
+    \caption[Illumina library preparation]{A brief overview of library preparation for Illumina modified from \citep{Mardis2008} and Illumina TruSeq kit documentation}.
     \label{fig:libprep}
 \end{figure}
 
@@ -288,7 +288,7 @@ primary sequencing data e.g. fluorescence with Illumina or current with IonTorre
 is converted into a discrete nucleotide sequence.   This is typically
 achieved using parametric modelling and machine learning approaches optimised
 by the platform manufacturer \citep{Ledergerber2011}.  Researchers using
-mature platforms such as Illumina typically reply on the default
+mature platforms such as Illumina typically rely on the default
 base-calling.  However, there is much active research in improving
 these systems particularly for SMRT sequencing.  These include
 various advanced signal processing and machine learning methods
@@ -301,7 +301,7 @@ These scores (Q) are calculated as a logarithmic relation to the base-called err
 \[ Q = -10\log{10}{P} \]
 and conversely: 
 \[ P = 10^{\frac{-Q}{10}} \]
-Therefore \[Q = 30 \] corresponds to 99.9\% base call accuracy
+Therefore \(Q = 30\) corresponds to 99.9\% base call accuracy
 
 Before assembly, there are several stages of read pre-processing that generally takes
 place for both genomic and transcriptomic studies. 
@@ -367,7 +367,7 @@ below the minimum average quality it is then trimmed.
 Currently, there is no clear answer to the question: which is the best trimming algorithm.
 This is due to many dataset-specific effects as well parameter-dependence \citep{DelFabbro2013}.
 In general, most trimming tools have been found to largely perform equivalently across 
-multiple RNA-Seq and DNA-Seq datasets and applications (see File S2 \citep{DelFabbro2013}). 
+multiple RNA-Seq and DNA-Seq datasets and applications (see File S2 in \citep{DelFabbro2013}). 
 Due to its ease of use and maintenance of paired-read correspondance,
 Trimmomatic has been the primarily used trimming tool throughout this thesis.
 
@@ -427,10 +427,10 @@ the transcripts or chromosomes they were sampled from.
 There are two main approaches to both genome and transcriptome assembly - referenced and \textit{de novo}.
 A referenced assembly consists of the alignment of processed reads to a prior assembly or reference sequence
 using specialised short-read aligners such as Bowtie or BWA \citep{Langmead2012}. Unfortunately,
-these are reliant on the existence of pre-existence of genomic or transcriptomic resources
+these are reliant on the existence of pre-existing genomic or transcriptomic resources
 for the organisms being analysed.
 % Mapping reads to reference can introduce biases even with relatively low levels of polymorphism \citep{Wang2012}.
- However, even if the reference is divergent referenced assembly may still produce a higher quality assembly
+ However, even if the reference is divergent, referenced assembly may still produce a higher quality assembly
  than \textit{de novo} methods alone \citep{Vijay2013}.  For referenced transcriptome assembly
  there are multiple tools that conduct post-processing of mapping data to account for features of 
  transcripts such as alternative isoforms and spliced out intronic sequences \citep{Kim2013}.
@@ -473,7 +473,7 @@ implementations.
 
 
 \subsubsection{The problem with ploidy}
-One important complication in the assembly on eukaryotic genomes 
+One important complication in the assembly of eukaryotic genomes 
 relative to bacteria or archael sources is the issue of highly heterozygous polyploid genomes.
 This is problematic as the de Bruijn graphs constructed during assembly
 rapidly increase in complexity when reads from heterozygous samples become
@@ -495,7 +495,7 @@ and in turn how many transcripts per allele in light of alternative splicing.
 
 This is particularly problematic in the PbMr system owing to the massive
 ploidy of the host \textit{Paramecium bursaria} and the numerous whole genome
-duplications in its relatively recent evolutionary history (1).  This also 
+duplications in its relatively recent evolutionary history \citep{McGrath2014}.  This also 
 explains the difficulties in using sister species, as the most sequenced Paramecium
 genus species are the aurelia complex which have undergone 2 WGD since divergence with
 \textit{P. bursaria} \citep{McGrath2014}.
@@ -647,11 +647,12 @@ with millions of free parameters running on dedicated super-computers \citep{Wu2
 which are capable of beating human-performance on complex image classification tasks 
 (e.g. IMAGENET \citep{Berg2014,He2015}).
 
-Typically, we seek to set the parameters (\theta) of a function in such a way
+Typically, we seek to set the parameters (\(\theta\)) of a function in such a way
 that another property is minimised.  For example, in linear regression the aim is to find 
-parameters of a straight line \(h_{\theta}(x) = \theta_{0} + \theta_{1} * x_{1}\) which minimise the distance
+parameters of a straight line \(h_{\theta}(x) = \theta * x\) (assuming \(\x_{0} = 1\) and \(theta_{0}\) is the
+intercept) which minimise the distance
 between the line and the data (for example, the sum of squares distance).
-This distance/error is calculated using something known as the cost function e.g. \(J(\theta) = \frac{1}{2} \sum^{m}_{i=1} (h_{\theta}(x_{i}) - y_{i})^2\) 
+This distance/error is calculated using something known as the cost function e.g. \(J(\theta) = \frac{1}{2} m \sum^{m}_{i=1} (h_{\theta}(x_{i}) - y_{i})^2\) 
 (where \(m\) is the number of \(x, y\) pairs in the dataset for linear regression).
 Most algorithms will seek to minimise the value of this cost function \(J(\theta)\) with respect to 
 the parameters of the original function \(h_{\theta}(x)\).  Typically, this is achieved using a variety of algorithmic optimisation techniques.
@@ -774,7 +775,6 @@ Supervised learning algorithms can also be either probabilistic or non-probabili
 discriminative.
 Probabilistic functions will return a probability distribution associated with possible class labels or
 regression values whereas non-probabilistic approaches will only return the most likely class label or value.
-Continuing 
 Generative algorithms, such as Naive Bayes or restricted Boltzmann machines, 
 seek to model the process by which the output data was generated 
 from the input i.e. learn the joint probability \(p(x,y)\) and make predictions on that basis via Baye's Theorem (see \ref{eq:bayes}).
@@ -820,7 +820,7 @@ their cost function in a more efficient constrained way.
 
 \begin{figure}[h]
     \includegraphics[width=\textwidth]{margin.pdf}
-    \caption[SVM decision boundaries]{A: Demonstration of 3 valid decision boundaries in a 2D classification problem, B: The optimal boundary (H2) is that which maximises
+    \caption[SVM decision boundaries]{A: Demonstration of 3 valid decision boundaries in a 2D classification problem, B: The optimal boundary (H1) is that which maximises
         the separation of different classes.  This optimal boundary can be defined in terms of support vectors.  The bias/intercept has been 
     folded into \(\theta\) directly.}
     \label{fig:margin}
@@ -854,11 +854,11 @@ This can improve robustness to outlier data and generally improve generalisabili
 
 Finally, the 3rd major advantage of SVMs is that despite nominally being linear classifiers they can effectively classify data which 
 is not linearly separable in the input dimensions using the kernel trick.  Conceptually, a kernel function is used to transform
-which transforms data from the input dimensions to a higher dimensional space in which the data is linearly separable.
+data from the input dimensions to a higher dimensional space in which the data is linearly separable.
 These transformed feature spaces can have incredibly high number of dimensions (in the case of popular kernels like radial basis
 function, an infinite number of dimensions).  Explicitly transforming data in this way would be computationally intensive
 so instead the ``kernel trick'' is used, where instead of explicitly transforming all the data into the feature space
-it is done implicitly by computing the inner product of all pairs data points transformed.  This is a lot more efficient
+it is done implicitly by computing the inner product of all pairs of data points.  This is a lot more efficient
 and precludes the computationally intensive step of converting the data into the new, potentially infinite, co-ordinate space.
 Radial basis function (RBF) kernel is an example \(K(x_{i}, x_{j}) = exp ( - \frac{||x_{i} - x_{j}||^{2}}{2\sigma^{2}})\) kernel.
 Even with the kernel trick, operations on every pair of points can become infeasible for large datasets due to the combinatorial
@@ -886,7 +886,9 @@ guarantee does break with more complex kernels and soft-margins).
 The major disadvantage is not natively generating probabilistic output (i.e. attaching a probability to a certain classification).  However, this can be achieved
 using methods like Platt Scaling or the related Relevance Vector Machine algorithm.   The other disadvantage is that hyper-parameters such as the misclassification
 penalty for soft-margins (\(C\)) and kernel choice (and its parameters) need chosen, typically this is solved by training using a grid-search of permutations
-of these parameter settings and selecting the best model via cross-validation.
+of these parameter settings and selecting the best model via cross-validation. However, 
+there is both theoretical and empirical evidence that either random search \citep{Bergstra2012} or Bayesian optimisation
+\citep{Eggensperger2013} are more efficient means of selecting hyperparameter values. 
 
 
 \subsection{Unsupervised Learning}
@@ -925,7 +927,7 @@ using Gaussian distributions.
 These probabilities are then translated into positions in the map \(\mathcal{Y}\) and similarities re-calculated
 using Student's t-distributions.  The position and variance of these points and distributions respectively
 is then optimised by minimising the difference between the similarity probabilities in the input space
-and on the map \citep{Maaten2008}.
+and on the map as assessed by metrics such as Kullback-Leibler divergence \citep{Maaten2008}.
 
 \subsubsection{K-means}
 
@@ -942,8 +944,8 @@ defined by a \(\mathcal{D}\) dimensional vector \(\mu_{k}, where k=1,..,K\) for 
 This vector represents the current ``prototype'' centroid of cluster. 
 
 So, with k-means clustering we actually seek the set of K cluster centroids \({\mu_{k}}\) 
-which minimise the sum of squares distances of each data point from its closest cluster centroid.
-\citep{Bishop2006}
+which minimise the sum of squares distances of each data point from its closest cluster centroid
+\citep{Bishop2006}.
 
 If we define a 1-of-K coding scheme with \(r_{nk} \in {0,1}\) as a binary variable that is 1 when \(x_{n}\) has been
 assigned to cluster \(k\) (with centroid \(\mu_{k}\)) and 0 otherwise then we can define an objective cost function (\(J\)) 
@@ -1007,7 +1009,7 @@ In other words set \(\mu_{k}\) to the mean of all data points \(x_{n}\) assigned
 These two steps are repeated until a specified maximum number of iterations are reached or no points change cluster assignment during
 step 1.
 
-\(J\) \ref{eq:kmeans_cost} will converge but is liable to get stuck in a local rather than global minimum.
+%\(J\) \ref{eq:kmeans_cost} will converge but is liable to get stuck in a local rather than global minimum.
 
 K-means has many modifications and improvements such as refining the initialisation of the clusters by 
 the Bradley-Fayyad method (clustering random samples of the dataset and then k-means clustering the resulting clusters) \citep{Bradley1998} 
@@ -1054,7 +1056,7 @@ branch lengths that are product of a measure of divergence between the connected
 Typically, these sequences take the form of protein or DNA sequences\footnote{
 Strictly phylogenetics refers to the study of molecular sequence data although the same methods are applicable to
 non-molecular characters such as morphological traits (and occasionally originated in this domain) as well as any
-other set of discrete data vectors. It has even been applied to fields such as linguistics \citep{}
+other set of discrete data vectors. It has even been applied to fields such as linguistics \citep{Atkinson2005}
 } and the measure of relatedness is some proxy for evolutionary distance ranging from simple distance measures 
 e.g. Hamming distance (\(D = \sum_{k=0}^{N}|x_{k} - y_{k}|\) for two sequences \(x\) and \(y\) of length \(N\))
 to more complicated probabilistic estimations based on observed data.
@@ -1099,7 +1101,7 @@ a network like structure may in fact be more appropriate.
 Most analyses in this PhD are conducted using amino acid sequences.  
 DNA is more likely to display a compositional bias, independence of sites
 is often severely violated due to the structure of codons (3rd base wobble and so on)
-(non-synoynmous mutations more likely to become fixed whereas synonymous mutations are
+(non-synonymous mutations more likely to become fixed whereas synonymous mutations are
 prone to drift).  Amino acids also have more states so are less susceptible to back mutations
 than DNA.  
 
@@ -1131,7 +1133,7 @@ of interest, and violations of assumptions e.g. expectation of a uniform distrib
 Generally, increased taxon sampling has a strong positive effect on phylogenetic accuracy \citep{Zwickl2002}.
 However, it can also lead to a situation where there are too many sequences to efficiently
 reconstruct a phylogeny.
-However, care care must also be taken not to unintentionally bias datasets by removing 
+However, care must also be taken not to unintentionally bias datasets by removing 
 any sequences that are considered ``problematic'' especially when conflicting phylogenetic signal
 or model violations can be biologically informative.  Therefore, it is usually necessary to include
 borderline error-generating sequences within a phylogeny initially and to iteratively remove them 
@@ -1422,7 +1424,7 @@ Unfortunately, these models still assume other model parameters namely the equil
 sites (but just scaled).  
 However, some models have been proposed with multiple rate matrices \citep{Lartillot2004} and 
 state frequencies can be defined at each site \citep{Bruno1996b} but needs lots of taxa \citep{Lartillot2004}.
-An alternative to this is the CAT model which a mixture model mixture model with 
+An alternative to this is the CAT model which a mixture model with 
 K classes each containing a different state frequency.  If \(K=N\) then this is
 the same as Bruno's model however, generally \(K < N\).  A 
  probabilistic process known as a Dirichlet Process Prior is used to assign
@@ -1465,9 +1467,9 @@ model likelihood \citep{Akaike1974}).  Other criteria include corrected AIC \cit
 Bayesian Information Criteria \citep{Schwarz1978} and Decision Theoretic criteria \citep{Minin2003} 
 based approaches \citep{Sullivan2005}.
 
-Throughout this thesis, I will use 2 tools which incorporate these various criteria
+Throughout this thesis, I will use two tools which incorporate these various criteria
 to infer the best fitting model depending on the input data. 
-ProtTest3 \citep{Abascal2005,Darriba2011c} will used for analyses 
+ProtTest3 \citep{Abascal2005,Darriba2011c} will be used for analyses 
 involving protein sequences and jModelTest2 \citep{Posada2008,Darriba2012} for
 phylogenetic inference of DNA datasets.
 
@@ -1486,9 +1488,7 @@ Then:
 \begin{enumerate}
     \item Find the closest two branches in the distance matrix 
     \item Join the closest pair into a single branch with a new internal node connected to central node
-    \item Generate a new distance matrix reducing the selected pair to the new node (     
-        the distance of the selected pair of leafs to the new internal node 
-    and the distance between every other leaf and the new internal node)
+    \item Generate a new distance matrix consisting of the distances of each leaf from this new internal node.
     \item Repeat the process with the new matrix \citep{Nei1987}
 \end{enumerate}
 
