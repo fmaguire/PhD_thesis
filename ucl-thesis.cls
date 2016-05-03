@@ -196,3 +196,6 @@
 %   \addvspace{1.0\baselineskip plus 0.5ex minus 0.2ex}%
 %   \noindent\textsc{#1}
 %}
+\newcommand{\appr}{{\mathord{\sim}}}
+\sisetup{range-phrase=-}
+\sisetup{range-units=single}

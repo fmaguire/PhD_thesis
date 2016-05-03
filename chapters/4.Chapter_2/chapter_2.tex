@@ -21,7 +21,7 @@ would potentially identify key transcripts which play a role in the establishmen
 of this endosymbiosis. 
 
 
-``Dual-RNAseq'' is a form transcriptomics which characterises transcripts in a small number of defined organisms simultaneously \citep{Westermann2012}.
+``Dual-RNAseq'' is a form of transcriptomics which characterises transcripts in a small number of defined organisms simultaneously \citep{Westermann2012}.
 It has proven an effective method in several studies investigating host-chloroplast interactions \citep{Nowack2011,Jiggins2013,Xiang2015},
 and host-pathogen systems \citep{Tierney2012,Kawahara2012,Jones2014,Hayden2014}.
 It differentiates itself from both standard metatranscriptomics, such as those common in microbial ecology \citep{Poretsky2005,AliagaGoltsman2014},
@@ -107,16 +107,16 @@ in previously cryptic but distinct cellular subpopulations could generate a spur
 
 There are a range of possible sc-RNAseq methods (whose advantages and disadvantages are covered in the Methods Chapter).
 We used Qiagen's Repli-G Whole Transcriptome Amplification (WTA) MDA-based kit as MDA 
-is well established and characterised in single cell genomics (e.g. \citep{Spits2006}), 
+is well established and characterised in single cell genomics (e.g. \citet{Spits2006}), 
 has a simple methodology not requiring additional equipment, and is potentially more successful at
-recovering transcripts from a wide range of abundance levels than other methods i.e. recovers many lowly expressed transcripts\footnote{\hfill\url{https://www.qiagen.com/gb/shop/sample-technologies/rna-sample-technologies/total-rna/repli-g-wta-single-cell-kit/} as of 2015/08/25}.
+recovering transcripts from a wide range of abundance levels than other methods i.e. recovers many lowly expressed transcripts\footnote{\url{https://www.qiagen.com/gb/shop/sample-technologies/rna-sample-technologies/total-rna/repli-g-wta-single-cell-kit/} as of 2015/08/25}.
 Unfortunately, despite the publication of empirical comparisons of single cell transcriptomic methods \citep{Wu2014a}, 
 Qiagen's Repli-G WTA MDA-based kit has yet to be directly assessed relative to other approaches and thus its performance has not
 been independently verified. 
 Briefly, this method involves the ligation of reverse transcribed cDNAs using oligo-dT primers (after lysis and 
-removal of gDNA) before MDA by a \(\phi29\) DNA polymerase with a 5'-3' exonuclease proofreading activity 
+removal of gDNA) before MDA by a \(\phi29\) DNA polymerase with a 5'-3' exonuclease proofreading activity \citep{Korfhage2015}
 (reducing error-rate of amplification to \(9.5\cdot10^{-6}\) errors per nucleotide \citep{Paez2004} compared with
-\(10^{-4}\) to \(10^{-5}\) for Taq \citep{Tindall1988,Eckert1990}) \citep{Korfhage2015}.
+\(10^{-4}\) to \(10^{-5}\) for Taq \citep{Tindall1988,Eckert1990}).
 
 
 
@@ -126,7 +126,7 @@ This study by \citep{Kolisko2014}, briefly addressed the issues of bias, contami
 constitutes an important proof-of-concept.  
 However, it also used a different sc-RNAseq approach (SMART), focused on single organisms, 
 and didn't address, in-depth, the optimal way to process, assemble and utilise single cell datasets from protists.
-While some work has been done investigating the optimal pre-processing of bulk RNAseq datasets (e.g. \citep{Macmanes2013,Macmanes2015}) 
+While some work has been done investigating the optimal pre-processing of bulk RNAseq datasets (e.g. \citet{Macmanes2013,Macmanes2015}) 
 the effect of different trims and error correction on sc-RNAseq has yet to be characterised.  
 There are also some early indications of problems of cryptic bacterial contamination
 from samples and/or reagents in sc-RNAseq is particularly problematic \citep{Kolisko2014}. 
@@ -134,7 +134,7 @@ This further increases the importance of library screening and post-assembly tra
 
 \section{Aims}
 Therefore, this chapter will investigate the optimal use of 2nd generation bulk and sc-RNAseq libraries
-in a characterising a complex reference-free system.  Specifically, it will look at the screening of RNAseq libraries for contamination
+in characterising a complex reference-free system.  Specifically, it will look at the screening of RNAseq libraries for contamination
 before assembly, the optimal preprocessing (partitioning, trimming, digital normalisation and error correction), assembler and assembly
 parameters (including the utility of divergent reference genomes from related species) in recapitulation of host and endosymbiont transcripts.
 Finally, I will address the problem of the attribution of recovered transcripts into their appropriate likely originating organism.  
@@ -145,12 +145,12 @@ Finally, I will address the problem of the attribution of recovered transcripts 
 \subsubsection{Bulk transcriptome RNA preparation}
 For bulk transcriptomic analyses CCAP 1660/12 cells were harvested in a way to minimise 
 contamination from bacterial prey species in the culture. \(\sim 10^{6}\) 
-cell aliquots were strained through \(40\mu m\) sieves, filtered on 
-\(10 \mu m\) nylon filters, 
-before finally being filtered on \(8 \mu m\) TETP polycarbonate filters using a 
+cell aliquots were strained through \SI{40}{\micro\metre} sieves, filtered on 
+\SI{10}{\micro\metre} nylon filters, 
+before finally being filtered on \SI{8}{\micro\metre} TETP polycarbonate filters using a 
 low-pressure filtration pump.  Collected samples were either immediately 
-quick-frozen in liquid nitrogen for storage (\(-20\)\celsius for short-term storage 
-and \(-80\)\celsius for longer storage) or harvested by centrifugation.  
+quick-frozen in liquid nitrogen for storage (\SI{-20}{\degreeCelsius} for short-term storage 
+and \SI{-80}{\degreeCelsius} for longer storage) or harvested by centrifugation.  
 In order to investigate the two main metabolic states of the symbiosis 
 (i.e. under light conditions during active photosynthesis and in the dark 
 when no photosynthesis is taking place) samples were extracted 5 hours into 
@@ -160,35 +160,35 @@ To ensure extracted RNA was representative of healthy and interacting host
 and endosymbionts care was taken to the number of dead/dying cells 
 from which RNA was extracted.  In order to do this, a subsample was taken 
 from each culture during the process of harvesting and scored for dead/dying cells.  
-Cell assays were formed by taking 1-2ml of each harvest cell pellet and 
-fixed using 40\(\mu l\) Lugol's solution (0.5g \(I_{2}\) and 1g KCl in 8.5ml 
+Cell assays were formed by taking \SIrange{1}{2}{\milli\litre} of each harvest cell pellet and 
+fixed using \SI{40}{\micro\litre} Lugol's solution (\SI{0.5}{\gram} \(I_{2}\) and 1g KCl in 8.5ml 
 of MilliQ water). Dead/dying cells were identified as broken or puckered cells 
 and counted using light microscopy.  Samples containing >10\% dead/dying cells 
 were discarded and no RNA extracted from them.
 
 In order to lyse collected samples, cells were washed from the filter or the 
-pellet was resuspended in 1ml TriReagent (Sigma) heated to \(60\)\celsius. 
-Cells were vortexed with sterile \(300\mu m\) glass-beads for 15s, incubated at 
-room temperature for 10 minute, vortexed for 15s, quick-frozen in liquid 
-nitrogen and stored at \(-20\celsius\)
+pellet was resuspended in 1ml TriReagent (Sigma) heated to \SI{60}{\degreeCelsius}. 
+Cells were vortexed with sterile \SI{300}{\micro\metre} glass-beads for \SI{15}{\second}, incubated at 
+room temperature for \SI{10}{\minute}, vortexed for \SI{15}{\second}, quick-frozen in liquid 
+nitrogen and stored at \SI{-20}{\degreeCelsius}
 before further processing.  
-Samples were defrosted, vortexed for 15s, placed in a heat-block set 
-to \(60\celsius\) 
+Samples were defrosted, vortexed for \SI{15}{\second}, placed in a heat-block set 
+to \SI{60}{\degreeCelsius}
 for 10 minutes while continuing to be vortexed, removed from 
-heating and vortexed again for 15s.  
-RNA was extracted by adding 0.2ml of Chloroform to the glass-bead-trizol-sample 
-solution, shaking for 15s, incubating for 5 minutes at room temperature and 
-centrifuging at 12,000g for 15 minutes at 4\celsius.  
-The upper-phase was then transferred to an RNAse-free 1.5ml tube and an 
-equal volume (\(\sim0.5ml\)) of isopropanol was added before shaking for 15s.  
-The isolated RNA was then incubated at \(-20\)\celsius for 10 minutes 
+heating and vortexed again for \SI{15}{\second}.
+RNA was extracted by adding \SI{0.2}{\micro\litre} of Chloroform to the glass-bead-trizol-sample 
+solution, shaking for \SI{15}{\second}, incubating for 5 minutes at room temperature and 
+centrifuging at 12,000g for \SI{15}{\minute} at \SI{4}{\degreeCelsius}.  
+The upper-phase was then transferred to an RNAse-free \SI{1.5}{\milli\litre} tube and an 
+equal volume (\SI{\sim 0.5}{\milli\litre}) of isopropanol was added before shaking for \SI{15}{\second}.  
+The isolated RNA was then incubated at \SI{-20}{\degreeCelsius} for \SI{10}{\minute}
 (up to several hours) before being collected as a pellet using a centrifuge at 
-10,000g for 10 minutes at \(4\celsius\)
+10,000g for \SI{10}{\minute} at \SI{4}{\degreeCelsius}
 (supernatant was discarded). 
-The RNA pellet was then washed with 1ml of 75\% ethanol and centrifuged 
-twice at 10,000g for 10 minutes at 4\celsius with the supernatant being 
+The RNA pellet was then washed with \SI{1}{\milli\litre} of 75\% ethanol and centrifuged 
+twice at 10,000g for 10 minutes at \SI{4}{\degreeCelsius} with the supernatant being 
 discarded after each centrifugation.  
-The pellet was then dried before being resuspended in \(100\mu l\) of RNAse-free water.  
+The pellet was then dried before being resuspended in \SI{100}{\micro\litre} of RNAse-free water.  
 The RNA was cleaned further using the Qiagen RNeasy clean-up kit 
 before being assessed for quality using ND-1000 (NanoDrop) and BioAnalyzer (Agilent).
 
@@ -197,8 +197,8 @@ For single cell transcriptomics, a ``cell-picking'' approach was used in which
 \textit{P. bursaria} cells (from the CCAP1660/12 culture) were inspected on an inverted light microscope 
 before being picked using an orally aspirated drawn-glass Pasteur pipette \citep{Garcia-Cuetos2012}.
 In order to minimise contamination from food bacteria present in the media these picked cells
-were washed 3 times by serial transfer to \(10\mu l\) droplets of sterile NCL media.
-The washed cell was then transferred to a \(10\mu l\) droplet of sterile water.
+were washed 3 times by serial transfer to \SI{10}{\micro\litre} droplets of sterile NCL media.
+The washed cell was then transferred to a \SI{10}{\micro\litre} droplet of sterile water.
 Cells were picked 5 hours into both the lit and dark phase of the 12:12 hour day-night cycle 
 identically to the bulk analyses.
 As cells were picked individually, health status could be exhaustively assessed
@@ -207,18 +207,18 @@ check the status of cells in bulk preparations was unnecessary.
 
 cDNA was generated and amplified using the MDA-based Qiagen REPLI-g WTA Single Cell Kit \citep{Korfhage2015}
 with additional cell disruption steps. 
-Specifically, cells were transferred from their respective \(10\mu l\) droplets of sterile water to
-a PCR tube containing \(6\mu l\) water and \(4\mu l \) lysis buffer. 
+Specifically, cells were transferred from their respective \SI{10}{\micro\litre} droplets of sterile water to
+a PCR tube containing \SI{6}{\micro\litre} water and \SI{4}{\micro\litre} lysis buffer. 
 Due to the robust chitin cell walls of \textit{M. reisseri} \citep{Kapaun1995} it was important to
-ensure thorough cell lysis. Therefore, samples underwent mechanical disruption by bead beating (Sigma, \(425-600\mu m\), acid-washed)
-followed by freeze-thaw via submersion in liquid nitrogen for 5 seconds.
+ensure thorough cell lysis. Therefore, samples underwent mechanical disruption by bead beating (Sigma, \SIrange{425}{600}{\micro\metre}, 
+acid-washed) followed by freeze-thaw via submersion in liquid nitrogen for \SI{5}{\second}.
 In order to compare disruption methods, extractions and amplifications
 were also conducted using just lysis buffer, bead beating and vortexing (i.e. without freeze-thaw), 
 and just the lysis buffer.  Samples were then quantified using a ND-1000 (NanoDrop)
 and as extraction methods produced near identical DNA concentrations 
 the maximal disruptive method of freeze-thaw, beat beating, vortexing and lysis buffer
 described above was used for further purification and library preparation.
-The samples were then vortexed for 1 minute before a gDNA removal step.
+The samples were then vortexed for \SI{1}{\minute} before a gDNA removal step.
 
 mRNA was selectively amplified and reverse transcribed to cDNA using poly-A selection (i.e. oligo-dT) primers
 to prevent amplifying ribosomal sequences. Prior to MDA by a \(\phi29\) DNA polymerase
@@ -227,7 +227,7 @@ This reduces size-dependent amplification bias but could potentially lead to the
 of chimeric transcripts in which paired-reads cross boundaries of adjacently ligated
 cDNA transcripts.  Analysis of this is discussed below.
 
-The amplified cDNA was then purified using a QIAamp DNA mini kit and eluted in \(100\mu l\) elution buffer.
+The amplified cDNA was then purified using a QIAamp DNA mini kit and eluted in \SI{100}{\micro\litre} elution buffer.
 This kit operates by binding the DNA to a QIAmp membrane in a spin column followed by successive washing steps
 to remove impurities such as remaining proteins and cations. To create 3 dark cDNA 
 samples (Dark1-2, Dark1-3, Dark1-5) and 3 light samples (Light1-9, Light1-10, Light1-11).
@@ -246,19 +246,20 @@ bands of appropriate size were then taken forward for library preparation and se
 
 \subsubsection{Library preparation}
 
-For both bulk and single cell preparations each cDNA sample was fragmented in \(130\mu l\) 1xTE buffer on the Covaris E220 
+For both bulk and single cell preparations each cDNA sample was fragmented in \SI{130}{\micro\litre}
+1xTE buffer on the Covaris E220 
 with a target size of \(225bp\) (duty factor of \(10\%\), 200 cycles per burst, peak incident power
-of 175, \(200s\) at \(7^{o}C\)). Fragment sizes were checked on a BioAnalyzer (Agilent) 7500 DNA chip.
-cDNA was then concentrated using a GeneRead kit column with a elution in \(35\mu l\). Fragmentation
-step was then repeated 3 times (\(110s\)) until majority of cDNA in each library was between \(200-250bp\)
+of 175, \SI{200}{\second} at \SI{7}{\degreeCelsius}). Fragment sizes were checked on a BioAnalyzer (Agilent) 7500 DNA chip.
+cDNA was then concentrated using a GeneRead kit column with a elution in \SI{35}{\micro\litre}. Fragmentation
+step was then repeated 3 times (\SI{110}{\second}) until majority of cDNA in each library was between \(200-250bp\)
 
-cDNA ends were then end-repaired, adenylated and adapters ligated using the NEXTFlex (Biooscientfic) sequencing kit 
+cDNA ends were then end-repaired, adenylated and adapters ligated using the NEXTFlex (Bioo scientfic) sequencing kit 
 according to the manufacturer's instructions and using NEBNext (New England Biolabs) indices.  Also following
 the NEXTFlex kit instructions, MgNa bead purification was done before and after PCR amplification using
 NEBNext reagents.  Finally, prepared libraries were size selected using a Blue Pippin machine at a size selection
 of \(350bp\) (range \(315-385bp\)).
 
-A final bioanalyzer step was conducted with individual library concentrations ranging from \(0.66-4.09nM\).
+A final bioanalyzer step was conducted with individual library concentrations ranging from \SIrange{0.66}{4.09}{\nano\mole}.
 
 
 \subsubsection{Sequencing}
@@ -350,7 +351,7 @@ quality trim of size 4 and average window quality thresholds of Q0, Q2, Q5, Q10,
 Finally, a minimum length trimmed read length criteria of 40bp was used.  
 
 
-The trimmed samples were then mapped to 3 different \textit{de novo} draft transcriptome assemblies using bowtie2
+The trimmed samples were then mapped to three different \textit{de novo} draft transcriptome assemblies using bowtie2
 \citep{Langmead2012} with maximum and minimum insert sizes of 37bp and 1161bp (derived from library preparation
 fragment size distribution and histograms of mapped insert sizes for untrimmed reads against bulk reference).
 
@@ -428,7 +429,7 @@ The final assemblies were then compared to un-normalised and k-mer trimmed assem
 
 \subsection{Assembly}
 
-Referenced and \textit{de novo assemblies} were attempted using a range of assemblers
+Referenced and \textit{de novo} assemblies were attempted using a range of assemblers
 and assembly parameters.
 
 Firstly, trimmed bulk and taxonomically filtered single cell libraries
@@ -531,11 +532,11 @@ Host (H), Endosymbiont (E), Food (F) and Unknown (U).
 %Unknown but likely Host (U(H)), Endosymbiont (E), Unknown but likely Endosymbiont (U(E)), Food (F), Unknown but likely Food (U(F)), and
 %Unknown (U) via BLASTP. 
 
-Each of the assembled transcripts were BLASTP-ed against a database consisting of the following predicted proteomes: 
+Each of the assembled transcripts were used as a BLASTP query against a database consisting of the following predicted proteomes: 
 \textit{Chlorella} NC64A, \textit{Chlamydomonas reinhardtii}, \textit{Coccomyxa} C169,
 \textit{Paramecium tetaurelia}, \textit{Tetrahymena thermophila}, \textit{Arabidopsis thaliana}, \textit{Homo sapiens} (helping to identify contamination), \textit{Saccharomyces cerevisiae}, \textit{Schizosaccharomyces pombe}, \textit{Bacillus
 cereus} ATCC 14579, \textit{Escherichia coli} 536, \textit{Escherichia coli} O157 H-7, \textit{Salmonella typhimurium}
-LT2 and \textit{Escherichia coli} K-12 (the last 5 genome datasets helping to identify food bacterial
+LT2 and \textit{Escherichia coli} K-12 (the last five genome datasets helping to identify food bacterial
 genes). Then initial bins were determined as follows:
 \begin{itemize}
     \item Endosymbiont (E): Transcript’s highest scoring BLAST hit at an expectation of \(\leq e^{-50}\) was to \textit{Coccomyxa},
@@ -587,13 +588,13 @@ For each input sequence:
         and the trees are named with full species names.
 \end{enumerate}
 The two key improvements are that of full and efficient parallelisation of the tree generation process (see \cref{fig:ddg})
-and increased use of filestreams to pass data between pipeline stages.  This latter modification reduces costly and slowly
+and increased use of filestreams to pass data between pipeline stages.  This latter modification reduces costly and slow
 file reading and writing operations.
 
 In the process of creating this modified phylogenetic pipeline I upgraded the general purpose python phylogenetic toolkit
 ETE \citep{Huerta-Cepas2010} to support python3.  As ETE is an open source project I submitted these changes
 to the maintainer and they have subsequently been merged into the master.  These changes compose a significant proportion of
-the latest major release version of this toolkit \url{https://github.com/jhcepas/ete/pull/105}.
+the latest major release version of this toolkit (\url{https://github.com/jhcepas/ete/pull/105}).
 
 \begin{figure}[h!]
     \includegraphics[width=\textwidth]{dd_par.pdf}
@@ -715,7 +716,7 @@ described above a stand-alone sequence identity binning tool TAXAssign (\url{htt
 against the 70,605 CDS sequences.  
 
 TAXAssign queried each CDS against the entire NCBI nt database.
-The nt BLAST database was downloaded using update\_blastdb.pl script \url{http://www.ncbi.nlm.nih.gov/blast/docs/update_blastdb.pl}
+The nt BLAST database was downloaded using update\_blastdb.pl script (\url{http://www.ncbi.nlm.nih.gov/blast/docs/update_blastdb.pl})
 and TAXAssign ran BLASTN in parallel (using GNU parallel \citep{Tange2011a})
 with a maximum of 10 reference matches
 per CDS a minimum necessary percentage identity for assignment
@@ -1075,7 +1076,7 @@ Therefore, over-clustering made a minimal effect on cluster centroids and read a
 	\centering
     \includegraphics[width=0.9\textwidth]{parKour.pdf}
     \caption[Plot of parKour clusters]{Visualisation of GC-based paired read K-means clustering on a small random subset of all single cell transcriptome
-        reads. 2 initial centroids were specified without an overclustering factor and approximate final centroids (0.6674, 06177) and (0.4557, 0.4393) are indicated by highlighted areas.  57.3M and 81.7M were assigned to each respective cluster. Comparison to other clustering regimes can be found in \cref{tab:centroids}.  This supports the finding of the \cref{fig:gc_prop_raw}that there is a clear and identifiable cluster of high GC\% reads present in the sample and it is possible to identify and group these reads using unsupervised learning. 
+        reads. 2 initial centroids were specified without an overclustering factor and approximate final centroids (0.6674, 06177) and (0.4557, 0.4393) are indicated by highlighted areas.  57.3M and 81.7M were assigned to each respective cluster. Comparison to other clustering regimes can be found in \cref{tab:centroids}.  This supports the finding of the \cref{fig:gc_prop_raw} that there is a clear and identifiable cluster of high GC\% reads present in the sample and it is possible to identify and group these reads using unsupervised learning. 
 } 
         \label{fig:parkour} 
 \end{figure}
@@ -1137,7 +1138,7 @@ Additionally, Q30 trimmed reads generated marginally less likely assemblies with
 error correction than without. 
 
 Therefore, error correction
-was considered ineffective for this dataset and thus was not used 
+was considered ineffective for this dataset and thus was not 
 used for further analysis.  Instead, we elected to use uncorrected, taxonomically selected,
 Q30 trimmed reads from this point on. 
 
@@ -1448,7 +1449,8 @@ revealing K-Neighbours the most effective classification algorithm for this data
 
 
 As can be seen in the confusion matrix (and manual parsing of the classification reports
-from each classifier (see appendix <++>)) K-neighbours (like the majority of classifiers)
+from each classifier (see appendix \cref{sec:classification})
+K-neighbours (like the majority of classifiers)
 poorly classified ``Unknown'' samples but largely performed well (\(0.89-0.9\) for each class
 (\cref{tab:classification_report}). 
 
@@ -1674,7 +1676,7 @@ assembly tasks.  As well as simplifying path resolution accuracy, if this method
  speed up assembly considerably and thus allow more iterations to optimise other
 assembly parameters.
 
-This pre-assembly partitioning has been tried with mixed success in other meta-omic analyses (e.g. \citep{Droge2012}).
+This pre-assembly partitioning has been tried with mixed success in other meta-omic analyses (e.g. \citet{Droge2012}).
 However, a lack of fast efficient tools to accomplish this led to the creation of ``parKour''.
 The developed GC partitioning package proved very effective at rapidly and relatively computationally 
 efficient clustering of PE RNAseq data. ParKour generated clusters with centroids
@@ -1721,7 +1723,7 @@ Digital normalisation, a method to remove redundant read data from libraries and
 reduce the computational burden of assembly \citep{Brown2012}, was also investigated for this dataset
 and found to be a highly effective strategy in improving assemblies of mixed bulk and MDA SCT data.
 
-Interestingly, some have argued that error correction is special case of general digital normalisation
+Interestingly, some have argued that error correction is a special case of general digital normalisation
 \citep{Krasileva2013}.  This is supported by the fact that many error correction
 algorithms operate on similar principal of attempting to remove low abundance K-mers
 from input datasets. K-mers with a low abundance
@@ -1734,7 +1736,7 @@ due to the high level of contamination.
 This hypothesis is somewhat supported by the disproportionate 
 retention of bulk reads relative to noisy single cell reads.  However,
 within the context of the single cell reads the more highly
-contaminated Dark reads were retained in roughly equal proportion to the light reads.
+contaminated dark reads were retained in roughly equal proportion to the light reads.
 Suggesting, MDA derived data may also just display a greater quantity of 
 low-level sequencing error.  
 
@@ -1761,7 +1763,7 @@ it is very difficult to identify the parameters (preprocessing or otherwise) whi
     with different parameters) should ultimately be equivalent across all possible input datasets.\footnote{
     This should be taken with a pinch of salt, a proof of this theorem applied to the case of assembly is beyond
 both the scope of this thesis and my abilities}.  For this reason, it is necessary to try
-assembly using a random of assembly parameters and indeed a range of both \textit{de novo} and referenced assemblers. 
+assembly using a variety of assembly hyperparameter values and indeed a range of both \textit{de novo} and referenced assemblers. 
 
 Unfortunately, the task of identifying the ``best'' \textit{de novo} transcriptome assembly is also a non-trivial 
 task \citep{Neil2013c}.  Many widely used assembly assessment metrics have been shown to be
@@ -1796,7 +1798,7 @@ coding problems and a lack of public active development means
 it is non-trivial to successful use this tool.  In the process of 
 implementing the above analyses it was necessary to fix several
 bugs present in the assembler. These upgrades were merged into
-the code and are available on GitHub \url{https://github.com/fmaguire/Bridger_Assembler}.
+the code and are available on GitHub (\url{https://github.com/fmaguire/Bridger_Assembler}).
 Hopefully, by rehosting this code on a public development and collaboration
 platform (as well as adding continuous integration) will 
 spur further development of this promising tool.

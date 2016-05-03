@@ -16,7 +16,7 @@
 
 Over 50 strains of green algal photobionts have been identified in 
 \textit{Paramecium bursaria} species \citep{Hoshina2010,Hoshina2004,Hoshina2009,Summerer2008,Vorobyev2009}. 
-These form at least 4 distinct species groups, believed to be represented
+These form at least four distinct species groups, believed to be represented
 in the following cultures:
 \begin{itemize}
     \item \textit{Micractinium reisseri} (e.g. former ``European'' group endosymbionts such as those attributed to CCAP 1660/12)
@@ -59,7 +59,7 @@ free-living \textit{Chlorella} \citep{Hoshina2010}.
 
 To add further confusion to the system, the most recently
 accepted terms defined species of endosymbiont merely 
-as ``American'' and ``European''.  This lead to several
+as ``American'' and ``European'' leading to several
 misidentifications \citep{Kodama2007,Hoshina2010}.
 Recently, these two organisms have been redescribed as
 distinct species \textit{Chlorella variabilis} and
@@ -68,9 +68,9 @@ Therefore, care must be taken when reading older literature
 to distinguish the earlier less well-defined \textit{C. variabilis}
 from the modern usage.
 
-One source of complication in the systematics of the photobionts have been
-plagued with cases of mislabelling and loss of cultures
-by various culture collections and in papers. For example, the initial culture
+Another source of complication in the systematics of the photobionts 
+are the cases of mislabelling and loss of cultures
+by culture collections. For example, the initial culture
 which the original \textit{Chlorella variabilis} was described from was lost
 and a supposedly identical culture from a different collection
 was found to have wildly different biochemical properties \citep{Hoshina2010}.
@@ -134,7 +134,7 @@ for a multiple photobiont co-habitation within the \textit{P. bursaria}
 host.  
 
 
-Finally, one last means in which we sought 
+Finally, one last means in which we sought to
 gain additional insight into the host-endosymbiont
 system was through the use of multiple-displacement amplification (MDA)
 based sequencing \citep{Lasken2007}.  
@@ -143,11 +143,11 @@ culture densities and the prevalence of putative sources of contamination
 within the culture bulk genome sequencing was considered to be prone to 
 major difficulties.  Therefore, MDA offered a way in which 
 we could further investigate this question of photobiont clonality
-while also generating a resources with potential use for further analysis.
+while also generating a resource with potential use for further analysis.
 For example, searching for potentially biologically significant genes
 that are 
 present in the genome but are not transcribed during endosymbiosis.
-The utility of this genomic resources hinges on our ability to 
+The utility of this genomic resource hinges on our ability to 
 partition recovered genomes/contigs into the originating host
 and endosymbiont genomes.  It is particularly important to do this
 and effectively discard contaminant contigs derived from 
@@ -191,7 +191,7 @@ There have been several published methods
 for clearing endosymbionts from host cells namely, the herbicide paraquat \citep{Hosoya1995a}, 
 culturing under constant dark \citep{Karakashian1963}, herbicide DCMU \citep{Kodama2009a},
 X-ray \citep{Wichterman1948}, and cycloheximide \citep{weis1984effect,Kodama2007}.
-Therefore, we attempted 3 of these methods: specifically Paraquat, Cycloheximide, and 
+Therefore, we attempted three of these methods: specifically Paraquat, Cycloheximide, and 
 constant darkness treatments with bacterial feeding 
 in order to clear endosymbionts from the host \textit{Paramecium}.
 
@@ -257,7 +257,7 @@ using Agilent's PCR StrataClone Cl e-white screened and 5 clones
 selected for each PCR product.  
 Clones were then externally Sanger sequenced using the M13Rev primer
 at MWG Eurofins. 
-Flanking vector and primer sequences were removed: sequenced trimmed to 
+Flanking vector and primer sequences were removed, sequences trimmed to 
 areas of high chromatograph quality and ambiguously defined bases corrected
 using Sequencher \citep{Sequencher}.
 
@@ -323,7 +323,7 @@ In brief,  \(748.5 \mu l\) of CTAB extraction buffer (at \(37\celsius\) and \(10
 were added and the tube was vortexed for 5 minutes. 
 The tube was incubated for 50 minutes at \(37\celsius\), 
 vortexed again for 5 minutes and incubated for 50 minutes at \(60\celsius\).  
-This was to ensure lysis of the endosymbiont chitin cell wall.
+This was to ensure lysis of the endosymbiont's chitinous cell wall.
 DNA was extracted three times with phenol/chloroform/isoamylacohol (25:24:1, pH 8), washed with 70\% ethanol and 
 re-suspended in \(2.5 \mu l\) TE (pH 8). 
 Whole-genome amplification of purified genomic DNA was performed using the multiple-displacement amplification based
@@ -332,7 +332,7 @@ The REPLI-g amplified gDNA was purified using a QIAamp DNA mini kit and eluted i
 
 \subsubsection{Sequencing}
 
-5 prepared libraries were put forward for sequencing 
+Five prepared libraries were put forward for sequencing 
 (Pb-3, Pb-4, Pb-6, Pb-7 and Pb-8).   Samples were
 multiplexed and were rapid sequenced in an Illumina
 HiSeq 2500 in 150bp paired-end mode. 
@@ -392,7 +392,7 @@ Using the metagenomic binning tool, CONCOCT \citep{Alneberg2014}
 contigs were binned into clusters based on sequence composition
 and coverage features (derived from mapping data).
 Coverage features were derived from a coverage and linkage table
-generated via CONCOCT scripts built around BEDTools \citep{Quinlan2010,Quinlan2014}, Picard \url{http://broadinstitute.github.io/picard/} 
+generated via CONCOCT scripts built around BEDTools \citep{Quinlan2010,Quinlan2014}, Picard (\url{http://broadinstitute.github.io/picard/})
 and Samtools \citep{Li2009} 
 based parsing
 of the bowtie2 alignment files.
@@ -402,12 +402,12 @@ and the number of clusters determined through variational Bayesian inference \ci
 All CONCOCT analyses were completed using a provided pre-configured 
 Docker Image \citep{Merkel2014}, a form of lightweight 
 distributable process isolation container.
-This was downloaded from DockerHub \url{https://hub.docker.com/r/binpro/concoct/}
+This was downloaded from DockerHub (\url{https://hub.docker.com/r/binpro/concoct/})
 on 2015-10-25.
 
 Additionally, the cut contigs were taxonomically assigned 
-using TAXAssign \url{https://github.com/umerijaz/TAXAassign} against the NCBI nt database. 
-The BLAST database was downloaded using update\_blastdb.pl script \url{http://www.ncbi.nlm.nih.gov/blast/docs/update_blastdb.pl}
+using TAXAssign (\url{https://github.com/umerijaz/TAXAassign}) against the NCBI nt database. 
+The BLAST database was downloaded using update\_blastdb.pl script (\url{http://www.ncbi.nlm.nih.gov/blast/docs/update_blastdb.pl})
 and TAXAssign was run in parallel (using GNU parallel \citep{Tange2011a})
 with a maximum of 10 reference matches
 per contig a minimum percentage identity for assignment
@@ -488,7 +488,7 @@ the Yad1g1N endosymbiont is positively identified as \textit{C. variabilis}.
 This phylogeny in general is consistent with previous ITS2 phylogenies \citep{Hoshina2010}.
 
 \begin{figure}
-    \includegraphics[height=0.9\textheight]{its_phylo.pdf}
+    \includegraphics[height=0.75\textheight]{its_phylo.pdf}
     \caption[ITS2 phylogeny]{Combined MrBayes and RAxML phylogeny of all ITS2 sequences
     along with numerous reference ITS2 sequences from \citep{Hoshina2010,Hoshina2013}.
     This phylogeny highlights a single example of each of the 4 major groups of 
@@ -496,8 +496,7 @@ This phylogeny in general is consistent with previous ITS2 phylogenies \citep{Ho
     \textit{Chlorella vulgaris} and \textit{Chlorella variabilis}.  Multiple clones
     forming a polytomy have been collapsed into groups representing their biological
     replicate (i.e. 1660/12, 1660/12 A, 1660/12 B, 1660/13 Culture, 1660/13 Purified,
-    and Yad1g1N).
-    As can be observed all
+    and Yad1g1N). As can be observed all
     ITS2 sequences derived from CCAP 1660/12 replicates, and purified and non-purified CCAP 1660/13
     replicates form a single polytomy with established \textit{M. reisseri} sequences.  This indicates 
     that CCAP 1660/12 and CCAP 1660/13 endosymbionts are \textit{M. reisseri} and despite a few SNPs
@@ -537,7 +536,7 @@ There was similarly high support for the separate branching of these sequences
 from the clade containing the \textit{C. variabilis} and \textit{C. vulgaris} 
 endosymbionts (\(87.3\%/1.00\)) and the existence of a clade comprising these 3
 endosymbionts to the exclusion of any \textit{Coccomyxa} sequences was well supported
-(\(89.3\%/0.95\). 
+(\(89.3\%/0.95\)). 
 
 Sequences from the Yad1g1N culture formed a clade with high support 
 with other \textit{Chlorella variabilis} species including NC64A.
@@ -629,7 +628,7 @@ assembly (\cref{fig:assemb_nx}).
 
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{assemb_gc.pdf}
+    \includegraphics[width=0.8\textwidth]{assemb_gc.pdf}
     \caption[Genome assembly GC densities]{GC densities of the compared genome assemblies.  As expected
         all display a clear peak around \(30\%\) representing that the majority
     of the assemblies by length contigs are likely to be derived from the GC rich.
@@ -641,7 +640,7 @@ bacterial contamination.}
 
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{assemb_cum_len.pdf}
+    \includegraphics[width=0.8\textwidth]{assemb_cum_len.pdf}
     \caption[Genome Assembly Cumulative Contig Lengths]{The cumulative length of contigs as a function of
         contig number.  Again, this plot reflects
         that Q30-SPAdes generated the largest assembly
@@ -653,7 +652,7 @@ bacterial contamination.}
 
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{assemb_nx.pdf}
+    \includegraphics[width=0.8\textwidth]{assemb_nx.pdf}
     \caption[Genome assembly gaps]{The number of X (i.e. gap) in the assembled contigs as a function of their
         length.  This demonstrated that generally few Xs were assembled - however, it should 
         be noted that these are contigs and not assembly scaffolds and thus fewer Xs
@@ -760,7 +759,7 @@ However, recall was relatively poor \(0.542250\) suggesting a
 fair number of FN i.e. contigs with the same taxonomic assignments
 were not confined to a single cluster and were spread over main clusters.
 
-The \(F_1\)\footnote{\(F_1 = 2 * \frac{precision * recall)}{(precision + recall)}\)} score for CONCOCT 
+The \(F_1\)\footnote{\(F_1 = 2 * \frac{(precision * recall)}{(precision + recall)}\)} score for CONCOCT 
 clustering was therefore \(0.680389\) under the assumption that 
 TAXAssign represents the ground-truth. 
 
@@ -822,7 +821,7 @@ Indeed, the highest number of variants (\(\geq 75\)) were present in
 
 \subsection{Elimination of endosymbiont}
 
-All elimination analysis focused on the \textit{P. bursaria}-\textit{M. reisseri}
+All elimination analyses focused on the \textit{P. bursaria}-\textit{M. reisseri}
 CCAP 1660/12 strain.
 After 1 week \(10\mu g ml^{-1}\) Paraquat treated CCAP 1660/12 were partially bleached
 with few visible green \textit{M. reisseri} present in the cells under light
@@ -832,8 +831,8 @@ treated with paraquat appeared to die with lysis of the \textit{Paramecium}.
 
 To assess whether this phenotype was due to a too great concentration of paraquat
 the experiment was repeated at a lower concentration  (\(1\mu g ml^{-1}\)).
-Unfortunately, this lead to the same process of gradual bleaching of the CCAP 
-1660/12 cultures followed by their depth. The difference being at the lower concentration
+Unfortunately, this led to the same process of gradual bleaching of the CCAP 
+1660/12 cultures followed by their death. The difference being at the lower concentration
 this occurred over a 6 week timeframe instead of 2 weeks.
 
 
@@ -856,7 +855,7 @@ However, after 10 weeks the cultures died with no visible
 
 Phylogenetic analysis demonstrates that the endosymbiont present in the CCAP 1660/12
 and CCAP 1660/13 is \textit{M. reisseri}.  The ITS2 sequences derived from these
-2 cultures across 5 different biological replicates (using both primer sets and with or without 
+two cultures across five different biological replicates (using both primer sets and with or without 
 extra purification steps to minimise contamination from any algae present in the media) 
 were all identical (with the exception of individual SNPs) 
 to 3 separate previously published \textit{M. reisseri} ITS2 sequences. That this formed
@@ -910,7 +909,7 @@ pond (Cambridge, UK) by CCAP.
 
 This demonstrates the necessity of not taking culture collection labels and taxonomic
 assignments on faith. It is critical to thoroughly determine that all received
-cultures actually contain the organism 
+cultures actually contain the organism.
 
 \subsection{MDA metagenomes are non-trivial}
 
@@ -940,7 +939,7 @@ MDA-based metagenomes of the assembly tools trialled.
 This cannot be attributed to the effective read error correction
 implemented as part of SPAdes via BayesHammer as all assemblies
 were completed on BayesHammer error corrected reads. The performance
-of SPAdes is likely attributable to 2 factors: it is specifically
+of SPAdes is likely attributable to two factors: it is specifically
 designed to handle MDA-based single cell assemblies and thus is 
 highly tolerant of the coverage variability observed and secondly
 it is the lone genome assembly that effectively utilised

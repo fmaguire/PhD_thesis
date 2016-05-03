@@ -1094,16 +1094,16 @@ sequences for inclusion in the analysis),  alignment (in which homologous sites 
 One implication of most current phylogenetic methods is that they implicitly
 assume a branching tree structure is the best representative of the evolutionary
 process that is being modelled.  However, as the discovered prevalence of
-horizontal gene transfer has increased it is becoming that in some cases
+horizontal gene transfer has increased it is becoming clear that in some cases
 a network like structure may in fact be more appropriate.
 
 
 Most analyses in this PhD are conducted using amino acid sequences.  
-DNA is more likely to display a compositional bias, independence of sites
-is often severely violated due to the structure of codons (3rd base wobble and so on)
-(non-synonymous mutations more likely to become fixed whereas synonymous mutations are
-prone to drift).  Amino acids also have more states so are less susceptible to back mutations
-than DNA.  
+DNA is more likely to display a compositional bias and independence of sites
+is often severely violated due to the structure of codons (3rd base wobble and non-synonymous mutations being 
+more likely to become fixed whereas synonymous mutations are
+prone to drift).  Amino acids have more states so are less susceptible to back mutations
+than DNA and easier to align.  
 
 
 \subsection{Sequence sampling}
@@ -1626,7 +1626,7 @@ in line with the C++11 standard \citep{ISOInternationalStandard2011}
 The main C++ libraries used in addition to the C++11 standard library were:
 \begin{itemize}
     \item Seqtk - fastq/a sequence parsing library \citep{SeqtkGitHub}
-    \item MLPACK - a high-performance machine learning library \url{http://www.mlpack.org/} \citep{mlpack2013}
+    \item MLPACK - a high-performance machine learning library \citep{mlpack2013}
     \item OpenCV3 - widely used computer vision library \citep{opencv_library}
     \item Armadillo - numerical computation library \citep{Sanderson2010}
 \end{itemize}
@@ -1642,24 +1642,24 @@ renamed jupyter).
 
 The statistical programming language R \citep{RCoreTeam2015} was used for some data analysis
 and visualisation primarily using ggplot2 \citep{Wickham2009} and dplyr \citep{Wickham2014}.
-This was primarily done using the R-Studio \url{http://www.rstudio.com/} integrated development environment) and 
+This was primarily done using the R-Studio (\url{http://www.rstudio.com/}) integrated development environment) and 
 R-markdown \citep{Allaire2014}.
 
-All code was version controlled using git \url{http://git-scm.com/} and remotely hosted using github \url{https://github.com/} and bitbucket \url{https://bitbucket.org/} 
+All code was version controlled using git (\url{http://git-scm.com/}) and remotely hosted using github (\url{https://github.com/}) and bitbucket (\url{https://bitbucket.org/})
 services.  Unit tests were automatically run on synchronisation (`push') with these remote servers using 
-the Travis \url{https://travis-ci.org/} Continuous Integration service.
+the Travis (\url{https://travis-ci.org/}) Continuous Integration service.
 
 Incidental scripting was done using zsh and bash languages and all code was written using a simple vim terminal.
 
 \subsection{Hardware}
 
-All analyses were conducted on either the lab cluster (running Ubuntu Server LTS 12.04 and 14.04 \url{http://www.ubuntu.com}:
+All analyses were conducted on either the lab cluster (running Ubuntu Server LTS 12.04 and 14.04 (\url{http://www.ubuntu.com}):
 \begin{itemize} 
     \item PowerEdgeM910 with 2 x Intel Xeon CPU \(E6510 @ 1.73GHz, 512GB\) RAM
     \item PowerEdgeM910 with 2 x Intel Xeon CPU \(E7-4807 @ 1.87GHz, 512GB\) RAM
     \item PowerEdgeM620 with 2 x Intel Xeon CPU \(E5-2650 v2 @ 2.60GHz, 512GB\) RAM
 \end{itemize}
-Or on two workstations both running continuously updated versions of Arch Linux \url{https://www.archlinux.org/}.
+Or on two workstations both running continuously updated versions of Arch Linux (\url{https://www.archlinux.org/}).
 \begin{itemize}
     \item Apple MacPro with 2 x Intel Xeon CPU \(E5520 @ 2.27GHz, 16GB\) RAM
     \item Dell Precision T7500 with 2 x Intel Xeon \(E5620 @ 2.4GHz, 48GB\) RAM
