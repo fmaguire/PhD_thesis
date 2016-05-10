@@ -115,7 +115,7 @@ single-cell approaches which allow fine-grained analysis of the \textit{Parameci
 
 
 It should be noted that care must be taken with ``omics'' approaches as they can easily become purely descriptive,
-and at worse generate models that lack any biological relevance \citep{Fang2011}.  
+and at worst generate models that lack any biological relevance \citep{Fang2011}.  
 This concern holds for all systems-level approaches and has been frequently raised and discussed in the context
 of genomics \citep{Dougherty2008}.  Therefore, it is crucial to supplement ``omic'' approaches with targeted
 methods in a way that compensates for the weakness of each type of method.
@@ -474,7 +474,7 @@ implementations.
 
 \subsubsection{The problem with ploidy}
 One important complication in the assembly of eukaryotic genomes 
-relative to bacteria or archael sources is the issue of highly heterozygous polyploid genomes.
+relative to bacterial or archael sources is the issue of highly heterozygous polyploid genomes.
 This is problematic as the de Bruijn graphs constructed during assembly
 rapidly increase in complexity when reads from heterozygous samples become
 incorporated \citep{Kajitani2014}.  This is because k-mers derived from heterozygous regions of 
@@ -640,7 +640,7 @@ A commonly used formal definition of machine learning:
 ``A computer is said to learn from experience E with respect to some class of tasks 
 T and performance measure P, if its performance at tasks T, as measured by P, improves 
 with experience E.'' \citep{Mitchell1997}.
-ML encompasses techniques and methods from various areas including statistics,
+Machine learning encompasses techniques and methods from various areas including statistics,
 optimisation/control engineering, neuroscience and artificial intelligence.
 Applications range in complexity from simple linear regression to deep convolutional neural networks 
 with millions of free parameters running on dedicated super-computers \citep{Wu2014} 
@@ -767,7 +767,7 @@ can use it to predict the value of \(\hat{y_{i}}\) for data in the test set \(x_
 On the other hand, in classification the expected outputs are 
 categorical or nominal variables such as class labels like ``host'' and ``endosymbiont'' 
 (\(y_{i} \in {host, endosymbiont, ..., C}\)).  These classifications can be binary (two possible outputs i.e. 
-\(y={0,1}\)), multiclass (\(\left\vert{{y}}\right\vert > 2\)),
+\(y=\{0,1\}\)), multiclass (\(\left\vert{{y}}\right\vert > 2\)),
 or multilabel (similar to multiclass but outputs aren't mutually exclusive, i.e. an input have multiple labels
 ) \citep{Murphy2012}. 
 
@@ -777,7 +777,7 @@ Probabilistic functions will return a probability distribution associated with p
 regression values whereas non-probabilistic approaches will only return the most likely class label or value.
 Generative algorithms, such as Naive Bayes or restricted Boltzmann machines, 
 seek to model the process by which the output data was generated 
-from the input i.e. learn the joint probability \(p(x,y)\) and make predictions on that basis via Baye's Theorem (see \ref{eq:bayes}).
+from the input i.e. learn the joint probability \(p(x,y)\) and make predictions on that basis via Bayes Theorem (see \ref{eq:bayes}).
 
 \begin{equation}
     \begin{aligned}
@@ -807,7 +807,7 @@ among the most successfully applied classification algorithms \citep{Fernandez-D
 Only relatively recently have they begun to lose ground to the deep learning methods such as deep convolutional neural networks (e.g. LeNet \citep{LeCun1998}) exemplified 
 by the defeat of SVMs by the LeNet on the MNIST digit recognition dataset \citep{Hinton2006,Bengio2007,Bengio2013}.
 
-The goal of SVMs is to learn a hyperplane which separates two sets of labels in the dataset. Note, for multiclass classification a series of one-vs-all
+The goal of SVMs is to learn a hyperplane which separates two sets of labels in the dataset. Note, for multiclass classification, a series of one-vs-all
 classifiers are typically trained (that is for \(K\) classes, \(K\) SVMs are trained each classifying between a label \(k\) and all other labels).
 However, not all possible hyperplanes that could separate the labels will necessarily generalise well to novel data (and this generalisation
 is the ultimate goal of supervised learning).  Therefore, it is necessary to determine a way to select the hyperplane which should generalise best and to do
@@ -1067,7 +1067,7 @@ was conducted using protein sequences e.g. \citep{Eck1966,Fitch1967}.
 
 This phylogenetic estimation can be a non-trivial process (especially with more complex
 measures of relatedness) as the number of
-possible trees rapidly increases with the number of sequences \(N_{trees} = \prod_{x=2}^{N_{taxa}} (2x - 3)\).
+possible trees rapidly increases with the number of sequences (for rooted trees \(N_{trees} = \prod_{x=2}^{N_{taxa}} (2x - 3)\)).
 However, the key stages in a phylogenetic analysis are that of sequence sampling (selection of
 sequences for inclusion in the analysis),  alignment (in which homologous sites in the sampled sequences are aligned with one another),
  masking (in which sites which are evolutionarily informative – can be determined to be homologous 
@@ -1100,9 +1100,8 @@ a network like structure may in fact be more appropriate.
 
 Most analyses in this PhD are conducted using amino acid sequences.  
 DNA is more likely to display a compositional bias and independence of sites
-is often severely violated due to the structure of codons (3rd base wobble and non-synonymous mutations being 
-more likely to become fixed whereas synonymous mutations are
-prone to drift).  Amino acids have more states so are less susceptible to back mutations
+is often severely violated due to the structure of codons.  
+Amino acids have more states so are less susceptible to back mutations
 than DNA and easier to align.  
 
 
@@ -1140,8 +1139,8 @@ borderline error-generating sequences within a phylogeny initially and to iterat
 before repeating the phylogenetic inference.  Unfortunately, the reduction of the input sequences
 to a representative subset by heuristics and/or naive clustering can generate
 biases of their own.  However, tools exist that utilise taxonomic database 
-information to automatically find a set of sequences of a specified cardinality 
-which display the maximum possible taxonomic diversity for that set size \citep{Zhou2014}.
+information to automatically find a set of sequences of a specified cardinality/size
+which displays the maximum possible taxonomic diversity for that set size \citep{Zhou2014}.
 
 
 Another source of bias in sequence sampling is the usually heuristic choice
@@ -1342,7 +1341,7 @@ manually using the graphical tool Seaview \citep{Gouy2010}.
 While the simplest means of phylogenetic inference - parsimony i.e. finding
 the tree that requires the fewest sequence changes - does not require any explicit
 model of sequence evolution, all other means of phylogenetic inference do \citep{Le2008}.
-
+<++>
 
 A substitution model is, in its simplest sense, the same as the PAM and BLOSUM
 matrices used in pairwise and MSA.  They are a means of scoring and weighting
@@ -1353,7 +1352,7 @@ Substitution models typically assume neutrality, independence and finite sites.
 With the probability of substitution rates having an independent and identically
 distributed (i.i.d) \citep{Hasegawa1985}.
 This measure of distance can be naive models where rates of change between character
-states and the frequency of each state is equal (e.g. \(p(x \rightarrow y) \forall x \forall y \in {G,C,T,A} \text{where} x\neq y\)
+states and the frequency of each state is equal (i.e. \(p(x \rightarrow y) \quad \forall x \forall y \in {G,C,T,A} \quad \text{where} \quad x\neq y\)
 \citep{jukes1969evolution}) to models fully parameterised in terms of character frequency and rates of change by the masked alignment 
 (e.g. the generalised time-reversible (GTR) model \citep{Tavare1986}).
 %
@@ -1426,7 +1425,7 @@ However, some models have been proposed with multiple rate matrices \citep{Larti
 state frequencies can be defined at each site \citep{Bruno1996b} but needs lots of taxa \citep{Lartillot2004}.
 An alternative to this is the CAT model which a mixture model with 
 K classes each containing a different state frequency.  If \(K=N\) then this is
-the same as Bruno's model however, generally \(K < N\).  A 
+similar to Bruno's model, however, generally \(K < N\).  A 
  probabilistic process known as a Dirichlet Process Prior is used to assign
  columns to various state frequency classes and simultaneously
  determines the optimal value of \(K\) during this process \citep{Lartillot2004}.
@@ -1441,9 +1440,10 @@ requiring arbitrary user-defined partitions, which could be a source of bias.
 Finally, the rate of evolution can vary even with a site itself (a process 
 known as heterotachy) especially when large numbers of divergent taxa are included
 in a masked alignment.  One model modification which attempts to control 
-for this is that of the covarion model.  It allows sites to switch between
-on and off using an infinite mixture model.  The proportion of on and off sites
-is determined at each site \citep{Zhou2010}.
+for this is that of the concomitably variable codon or ``covarion'' model \citep{Penny2001}.
+It allows sites to switch between
+``on'' and ``off'' across the tree with te proportion of sites in the relative states
+determined at each site \citep{Zhou2010}.
 
 
 
@@ -1502,8 +1502,7 @@ substitution rates e.g. BIONJ \citep{Gascuel1997}.
 
 Distance methods are very fast but can perform
 very poorly for divergent sequences with large sampling errors as they don't generally account for variance in 
-distance estimates \citep{Yang2012} (BIONJ partially adds this).  They are also
-particularly sensitive to gaps in the alignment.
+distance estimates \citep{Yang2012}.
 
 
 
@@ -1516,7 +1515,7 @@ prior knowledge of sequence evolution when generating a tree.
 It also fails when multiple substitutions have occurred at the same site or with parallel changes in two long branches 
 and therefore is especially prone to long-branch attraction
 \citep{Felsenstein1978}.
-Prestige of parsimony methods declined with discoveries that they can produce statistically inconsistent
+The popularity of parsimony methods has declined with discoveries that they can produce statistically inconsistent
 phylogenies \citep{Felsenstein2001}.
 
 A majority consensus tree will typically be presented with each node
@@ -1541,7 +1540,7 @@ using branch swapping operations such as Nearest-Neighbour Interchanges (NNI)
 or Subtree-Prune-and-Regraph (SPR) where whole subtrees are removed and reattached to a different part of tree. 
 SPR is slower but less prone to get caught in local optima than NNI and thus will
 lead to higher likelihood phylogenies overall \citep{Criscuolo2011}.
-Expectation-maximisation can then be used to find the MLE for branch length and model parameters.
+Expectation-maximisation or the Newton-Raphson method can then be used to find the MLE for branch length and model parameters.
 For example, PhyML uses an initial BIONJ and standard hill-climbing which perturbs topology and branch lengths simultaneously.
 
 
@@ -1570,14 +1569,14 @@ computationally expensive) \citep{Anisimova2006}.
 It should be noted that all of the above methods of determining phylogenetic robustness
 can be applied to distance and parsimony methods as well.
 
-In this work, for high-throughput analyses FastTree2 was due to its considerable 
+In this work, for high-throughput analyses FastTree2 was used due to its considerable 
 greater speed relative to ML inference tools \citep{Price2010}.  For individual
 phylogenetic analyses ML trees were inferred using RAxML8 \citep{Stamatakis2014} and non-rapid
 bootstrap supports.
 
 \subsubsection{Bayesian}
 
-Bayesian inference is, as the name suggests, based on the Baye's theorem.
+Bayesian inference is, as the name suggests, based on the Bayes theorem.
 \(p(\tau, \theta_l, \theta_\mu)| D) = \frac{p(\tau, \theta_l, \theta_\mu)p(D|\tau, \theta_l, \theta_\mu)}{p(D)}\)
 with \(p(\tau, \theta_l, \theta_\mu)\)
 being the prior probability for model parameters (topology \(\tau\), branch length \(\theta_l\), substitution model \(\theta_\mu\))
@@ -1587,16 +1586,16 @@ probability.
 
 Due to the computational difficulty directly calculating the marginal likelihood 
 (integrated over all possible parameter values in all dimensions) phylogenetic inference uses 
-a process known as Monte-Carlo Markov-Chains (MCMC) to sequentially randomly sample
+a process known as Markov-Chain Monte-Carlo (MCMC) to sequentially randomly sample
 the posterior probability distribution.  Conceptually, these can be considered
 as random walkers on the probability distribution that are more likely to accept
-new movements that increase likelihood than decrease.
+new movements that increase the likelihood than decrease it.
 
 An advantage of Bayesian inference is that the posterior probability (PP) of a given
 node means ``support'' values are built-in to the inference and additional
 bootstrapping is unnecessary.  Unfortunately, posterior probabilities are
 sensitive to model violations and have been found to not be very conservative estimators
-\citep{Simmons2003} (although again there has been considerable work comparing
+of branch support \citep{Simmons2003} (although again there has been considerable work comparing
 Bootstraps to PP \citep{Anisimova2006}).
 Additionally, the prior distribution in Bayesian Inference allows information
 that is already known about the dataset to effectively be built-in to the inference.

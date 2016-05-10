@@ -95,7 +95,7 @@ This also allowed a finer-grain control over cell selection and potentially
 a method to reduce culture based contamination.
 
 
-While reasonably nascent, sc-RNAseq has shown a lot of promise in well characterised systems such as human cell cultures \citep{Bengtsson2005,Shalek2013}
+While reasonably new, sc-RNAseq has shown a lot of promise in well characterised systems such as human cell cultures \citep{Bengtsson2005,Shalek2013}
 and \textit{Saccharomyces cerevisiae} \citep{Lipson2009} and there are high expectations
 of their utility for ``dual-RNASeq'' \citep{Westermann2012}.  sc-RNAseq addresses 
 the key difficulties of analysing unculturable or poorly culturable organisms \citep{Murray2012} and investigating
@@ -568,7 +568,7 @@ The accuracy of the BLAST based binning was then determined by generating phylog
 using the method described below. Resultant phylogenies were then manually
 parsed and assessed for phylogenetic congruence with their bin.
 For example, do host binned sequences predominantly branch with other ciliate sequences?
-Do endosymbiont binned sequences mainly branch with archaeplastida sequences?
+Do endosymbiont binned sequences mainly branch with Archaeplastida sequences?
 
 \subsubsection{Automated Phylogeny Generation Pipeline - Dendrogenous}
 
@@ -666,7 +666,8 @@ NCBI taxonomy local database implemented in the ETE toolkit.  With a set of look
 sequences from ciliates can be defined as "host-like", a set of vectors is created for each phylogeny.  
 These are N-dimensional vectors where N is the number of class labels being used. 
 For example, in this specific case: "endosymbiont", "host", "food/bacterial", and "unknown".
-The magnitude of each dimension is the summed reciprocal phylogenetic distance between the root node and all
+The magnitude of each dimension is the summed reciprocal phylogenetic distance between the node containing the 
+transcript sequence and all
 of the nearest branches that have been identified as being indicative of a certain class.
 Specifically, if \(\gamma(x,y)\) is the phylogenetic distance between the terminal nodes \(x\) and \(y\), \(\psi(x)\) 
 represents the look-up filters and returns the label of the terminal node \(x\) e.g. ``host''.
@@ -1224,8 +1225,8 @@ for this dataset.
 
 \subsubsection{\textit{de novo} assembly} 
 
-The results of the initial assembler comparison using the Q30 trimmed
-taxonomically selected SCT libraries (Light1-9, Light1-10, Light1-11, 
+The results of the initial assembler comparison using the combined assembly of 
+Q30 trimmed taxonomically selected SCT libraries (Light1-9, Light1-10, Light1-11, 
 Dark1-2, Dark2-3, Dark2-6, Dark2-8) and bulk libraries are shown in
 \cref{tab:assemblies}. 
 
@@ -1258,7 +1259,7 @@ Dark1-2, Dark2-3, Dark2-6, Dark2-8) and bulk libraries are shown in
         \hline
         
     \end{tabular}
-    \caption[Summary of Different Assembler Outputs]{\textit{De novo} assemblies of Q30 trimmed taxonomically
+    \caption[Summary of Different Assembler Outputs]{\textit{De novo} combined assemblies of Q30 trimmed taxonomically
         selected single cell libraries and bulk libraries (but not digitally normalised or K-mer abundance
             filtered) with a range of assemblers and parameters.  K-mer size used
             for assemblers with that option are indicated in the Parameters column 
@@ -1787,7 +1788,7 @@ are too divergent in the case of the PbMr to be of any utility.
     
 Overall, a comparison of \textit{de novo} assemblies
 using a range of assemblers and parameters on ``optimally'' pre-processed
-read data demonstrated the clear superiority of both ``Bridger'' and ``Trininty''
+read data demonstrated the clear superiority of both ``Bridger'' and ``Trinity''
 Trinity comes with the advantages of being a generally better developed tool that interlocks effectively via several plugins and utility
 scripts with other tools and analysis pipelines.  
 
@@ -1855,7 +1856,7 @@ deep neural network classifier or using a phylogeny specific kernel
 function \citep{Vert2002} in a Gaussian process or
 SVM system all offer potential algorithmic improvements.
 Finally, incorporation of additional sequence related features such as
-K-mer coverage and composition into each samples may help greatly improve
+K-mer coverage, N-mer frequencies and composition into each samples may help greatly improve
 the fidelity of classification.
 
 \section{Conclusion}

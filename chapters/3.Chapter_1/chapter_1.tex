@@ -29,7 +29,7 @@ providing evidence for multiple separate origin events for
 the \textit{P. bursaria} endosymbiosis \citep{Hoshina2008,Hoshina2009}
 Furthermore, there is emerging evidence, in the form
 of intron HGTs and ITS2 sequencing data that strains of \textit{P. bursaria}
-are capabale of hosting double and triple co-habitations of different
+are capable of hosting double and triple co-habitations of different
 photobiont species \citep{Hoshina2012}. Therefore,
 before an effective analysis can take place of
 an endosymbiotic system it is important
@@ -70,7 +70,7 @@ from the modern usage.
 
 Another source of complication in the systematics of the photobionts 
 are the cases of mislabelling and loss of cultures
-by culture collections. For example, the initial culture
+by culture collections. For example, the initial culture from
 which the original \textit{Chlorella variabilis} was described from was lost
 and a supposedly identical culture from a different collection
 was found to have wildly different biochemical properties \citep{Hoshina2010}.
@@ -80,7 +80,7 @@ of accurate endosymbiont species identification.
 \subsection{ITS2 taxonomic profiling}
 
 The most widely accepted means of rapidly taxonomically profiling
-archaeplastida (and indeed a range of eukaryote species) is that of 
+Archaeplastida (and indeed a range of eukaryote species) is that of 
 nuclear ribosomal internal transcribed spacer 2 (ITS2) (see \cref{fig:its2_schematic}) barcoding. 
 ITS2 has shown particular utility in the identification and separation
 of closely related green algal species \citep{Buchheim2011,Heeg2015} due to being
@@ -128,7 +128,7 @@ tool in which to investigate the presence of clonality within the
 photobiont populations.  By amplifying and sequencing a large number of 
 ITS2 fragments from the same culture there is a reasonably
 good chance that all the ITS2 level diversity will be sampled. 
-If on analysis these sequences form multiple clades or 
+If, on analysis, these sequences form multiple clades or 
 display divergent groupings this could be strong evidence
 for a multiple photobiont co-habitation within the \textit{P. bursaria}
 host.  
@@ -191,7 +191,7 @@ There have been several published methods
 for clearing endosymbionts from host cells namely, the herbicide paraquat \citep{Hosoya1995a}, 
 culturing under constant dark \citep{Karakashian1963}, herbicide DCMU \citep{Kodama2009a},
 X-ray \citep{Wichterman1948}, and cycloheximide \citep{weis1984effect,Kodama2007}.
-Therefore, we attempted three of these methods: specifically Paraquat, Cycloheximide, and 
+Therefore, we attempted three of these methods: specifically paraquat, cycloheximide, and 
 constant darkness treatments with bacterial feeding 
 in order to clear endosymbionts from the host \textit{Paramecium}.
 
@@ -292,7 +292,7 @@ jModelTest2 \citep{Guindon2003,Darriba2012} was then used to pick an appropriate
 Finally, phylogenies were inferred using the maximum likelihood
 method via RAxML version 8 \citep{Stamatakis2014} with 1,000 bootstrap replicates.
 Similarly, MrBayes \citep{Huelsenbeck2001} was used to infer the phylogeny using the bayesian
-formulation.  MrBayes used 2 independent runs of 4 Monte-Carlo Markov-Chains (MCMC) for
+framework.  MrBayes used 2 independent runs of 4 Monte-Carlo Markov-Chains (MCMC) for
 3,750,000 million generations (at which point the 2 runs were considered to have converged, 
 as determined in Tracer v1.4 \citep{rambaut2007tracer}.  Trees were estimated
 from the MCMC results with a burn-in of 250,000 generations.
@@ -423,7 +423,7 @@ Finally, another attempt at taxonomic assignment using a custom ORF based pipeli
         ORFs with hits (via the ``lca\_mapper.sh'' accesory script in MEGAN)
     \item Contigs were then binned based on the identity of this taxonomic assignment:
         \begin{itemize}
-            \item Endosymbiont contigs were all those assigned to Archaeplastida or descendent node.
+            \item Endosymbiont contigs were all those assigned to Archaeplastida or a descendent node.
             \item Host contigs were all those assigned to Aveolata or a descendent node.
             \item Eukaryote was a super group containing all Eukaryote assigned contigs
             \item Contaminant contigs were all those assigned as Bacterial
@@ -620,8 +620,10 @@ assembly by a considerable margin with the highest N50.
 Plots of assembly GC (\cref{fig:assemb_gc}), cumulative length (\cref{fig:assemb_len})
 further support Q30-SPAdes as both the longest assembly
 but an assembly with similar GC profile to the other assemblies and contig length distribution.
-Finally, the plot of Xs indicates that Q30-SPAdes isn't merely a highly gapped
-assembly (\cref{fig:assemb_nx}).
+Finally, the plot of X's indicates that Q30-SPAdes isn't a disproportionately highly gapped
+assembly with low numbers of X's found in its longest contigs.  It should be noted, however,
+that it does have a higher proportion of X's in shorter contigs than the other
+assemblies (\cref{fig:assemb_nx}).
 
 \begin{figure}
     \centering
