@@ -860,6 +860,8 @@ Additionally, the vast majority of the lower number of hits do align to eukaryot
 taxa consistent with an non-contaminated library. 
 
 \begin{table}[h!]
+
+\resizebox{\textwidth}{!}{
      \begin{tabular}{|l|l|l|l|l|l||l|}
 \hline
          \textbf{Bulk Library} & \textit{\textbf{PE}} & \textbf{Eukaryote} & \textbf{Bacteria} & \textbf{Alveolate} & \textbf{Viridiplantae} &  \textbf{Total Hits} \\ 
@@ -870,7 +872,7 @@ taxa consistent with an non-contaminated library.
          \textit{Dark}   & \textit{R1}                &  4.90 +/- 0.78     & 0.36 +/- 0.11    &  3.14 +/- 0.58     &  0.50 +/- 0.16        &   5.40 +/- 0.93      \\ 
                               & \textit{R2}           &  5.50 +/- 1.25     & 0.22 +/- 0.19   &  3.82 +/- 0.81     &  0.50 +/- 0.12         &  6.02 +/- 1.22      \\ 
                               \hline
-    \end{tabular}
+     \end{tabular}}
     \caption[Taxonomic Profiles of Bulk Libraries]{Taxonomic profile of the two trimmed (Q20) bulk transcriptome libraries generated using ``DueyDrop''.
 All values are the percentage of reads mapping to that taxonomic category +/- the standard deviation between sampling replicates.  
 The analysis was conducted for both forward and reverse reads from each library (indicated as R1 and R2 in the paired-end (PE) column).
@@ -977,7 +979,7 @@ was less than was found using different assemblers and assembly parameters.
 
 \begin{table}[h!]
     \centering
-    \begin{tabular}{|l| l |l |l|}
+\resizebox{\textwidth}{!}{\begin{tabular}{|l| l |l |l|}
      	\hline
          \textbf{Trim Threshold} & \textbf{Number of Transcripts} & \textbf{Bases Assembled} & \textbf{Assembly Likelihood (\(-\log\))} \\
          \hline
@@ -985,7 +987,7 @@ was less than was found using different assemblers and assembly parameters.
          Q20 & 107,955 & 50,809,686 & \(-3.015*10^{10}\) \\
          Q30 & 99,784 & 47,313,963 &  \(-2.832*10^{10}\) \\ 
     \hline
-\end{tabular}
+\end{tabular}}
     \caption[Comparison of Effect of Trimming on Trinity Assemblies]{Comparison of Trinity assemblies of taxonomically screened
         single cells reads (no bulk reads) at 3 different sliding window
         minimum average quality trimming thresholds.  Trimming largely
@@ -1004,7 +1006,8 @@ It can be considered from this data that Q30 forms a maximum feasible stringency
 
 \begin{table}
     \centering
-    \begin{tabular}{|r||l|l|}
+
+\resizebox{\textwidth}{!}{\begin{tabular}{|r||l|l|}
         \hline
         \textbf{Library} & \textbf{Number of raw PE Reads} & \textbf{Number of Q30 trimmed PE Reads} \\
         \hline
@@ -1016,7 +1019,7 @@ It can be considered from this data that Q30 forms a maximum feasible stringency
         Light1-10 & \(1.614*10^7\) & \(1.478*10^7\) \\
         Light1-11 & \(1.474*10^7\) & \(1.334*10^7\) \\
         \hline
-    \end{tabular}
+\end{tabular}}
     \caption[Library Sizes After Trimming]{Summary of the library size of the taxonomically selected single cell 
         libraries before and after trimming at a minimum average SLIDINGWINDOW quality 
         threshold of Q30. Of interest, Dark1-2 was generally of poor quality and thus 
@@ -1115,7 +1118,8 @@ Trinity assemblies of taxonomically selected single cell libraries
 (without bulk libraries) were then compared with and without ``SEECER'' 
 error correction (see \cref{tab:errcorr_assembly}).
 \begin{table}[h!]
-    \begin{tabular}{|l||r|r|l|@{}}
+
+\resizebox{\textwidth}{!}{\begin{tabular}{|l||r|r|l|@{}}
      	\hline 
          \textbf{Trim Threshold} & \textbf{Number of Transcripts} & \textbf{Bases Assembled} & \textbf{Assembly Likelihood (\(-\log\))} \\
          \hline 
@@ -1124,7 +1128,7 @@ error correction (see \cref{tab:errcorr_assembly}).
          Q30 & 99,784 & 47,313,963 & \(-2.912\cdot 10^{10}\)  \\ 
          Q30 SEECER Corrected & 96,494 & 46,312,469 & \(-2.995\cdot 10^{10}\)  \\ 
     \hline
-\end{tabular}
+    \end{tabular}}
     \caption[Effect of Error Correction on Assembly]{Naive Trinity assembly of Q5 and Q30 trimmed taxonomically selected single cell libraries
         with and without SEECER error correction. While assembly likelihood increases after
     error correction for Q5 trimmed reads it is still lower than Q30 uncorrected.  For Q30
@@ -1232,7 +1236,8 @@ Dark1-2, Dark2-3, Dark2-6, Dark2-8) and bulk libraries are shown in
 
 \begin{table}[h!]
     \centering
-    \begin{tabular}{|l||c|r|c|c||}
+
+\resizebox{\textwidth}{!}{\begin{tabular}{|l||c|r|c|c||}
         \hline
         \textbf{Assembler} & \textbf{Parameters} & \textbf{Number of} & \textbf{Bases Assembled} & \textbf{Assembly} \\
           &   & \textbf{Contigs}										& 							& \textbf{Likelihood \(-\log\)} \\
@@ -1258,7 +1263,7 @@ Dark1-2, Dark2-3, Dark2-6, Dark2-8) and bulk libraries are shown in
         Bridger & K25 & 114,582 & \( 9.707\cdot 10^{7}\)  & \(-2.587\cdot 10^{10}\)\\ 
         \hline
         
-    \end{tabular}
+\end{tabular}}
     \caption[Summary of Different Assembler Outputs]{\textit{De novo} combined assemblies of Q30 trimmed taxonomically
         selected single cell libraries and bulk libraries (but not digitally normalised or K-mer abundance
             filtered) with a range of assemblers and parameters.  K-mer size used
@@ -1292,7 +1297,8 @@ filtered, taxonomically selected, Q30 trimmed, single cell and bulk libraries pe
 even better in terms of assembly likelihood and read incorporation.
 
 \begin{table}[h!]
-    \begin{tabular}{|l|r| r| r| r|}
+
+\resizebox{\textwidth}{!}{\begin{tabular}{|l|r| r| r| r|}
     	\hline
         \textbf{Assembler} & \textbf{Parameters} & \textbf{Contigs} & \textbf{Bases Assembled} & \textbf{Assembly Likelihood (\(-\log\))} \\
         \hline
@@ -1302,7 +1308,7 @@ even better in terms of assembly likelihood and read incorporation.
         Trinity & Minimum K-mer Coverage of 1 & 176,097 &  \(1.113*10^{8}\)& \(-1.214*10^{9}\) \\  
                 & Minimum K-mer Coverage of 2 & 147,902 & \(9.239*10^{7}\) & \(-1.238*10^9\) \\  
                 \hline
-    \end{tabular}
+\end{tabular}}
     \caption[Trinity vs. Bridger Assemblies]{Assembly summaries of Q30 trimmed taxonomically selected SCT and bulk reads 
     after digital normalisation and K-mer abundance filtering. Parameters used in the assembly
 indicates any special parameter settings used in the assembly i.e. K19 indicates a K-mer size of 19 was used.
@@ -1327,7 +1333,8 @@ of the 3 Bridger digitally normalised assemblies and two Trinity assemblies
 described in \cref{tab:digassemby}.
 
 \begin{table}[h!]
-    \begin{tabular}{|r ||r |r | l| }
+
+\resizebox{\textwidth}{!}{\begin{tabular}{|r ||r |r | l| }
     	\hline 
         \textbf{Assembly} & \textbf{Input Contigs} & \textbf{Collapsed Contigs} & \textbf{Assembly Likelihood (\(-\log\))}\\ 
         \hline
@@ -1336,7 +1343,7 @@ described in \cref{tab:digassemby}.
         \hline 
         \textbf{CD-HIT \(90\%\) meta-clustering} & 99,691 & 94,628 & \(-5.133*10^{10}\)\\
         \hline
-    \end{tabular}
+\end{tabular}}
     \caption[Merged Assembly Summary]{Summary of merged multi-assemblies.  Collapsed contigs is the number of contigs
     found in the merged set by the EvidentialGene pipeline. The level of assembly
 reduction and redundancy removal is high and, at first appearance, is impressively consistent 

@@ -688,7 +688,7 @@ there are no shortcuts in machine learning (and many other areas) or optimisatio
 cross-validation is key to generating a useful model.  Another important way to prevent overfitting is to introduce regularisation in the cost function, in other
 words a term which penalises model complexity.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \includegraphics[width=\textwidth]{fitting.pdf}
     \caption[Explanation of learning curves and fitting]{Plot showing a high bias (underfit) model in yellow and a high variance (overfit) model in yellow.
         Below are learning curves corresponding to each of these respectively.
@@ -818,7 +818,7 @@ on the relatively small subset of the training data \(\mathcal{D}\) that is near
 placing the decision boundary.  For this reason, SVMs can define the decision boundary in terms of the namesake support vectors and can reformulate
 their cost function in a more efficient constrained way.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \includegraphics[width=\textwidth]{margin.pdf}
     \caption[SVM decision boundaries]{A: Demonstration of 3 valid decision boundaries in a 2D classification problem, B: The optimal boundary (H1) is that which maximises
         the separation of different classes.  This optimal boundary can be defined in terms of support vectors.  The bias/intercept has been 
@@ -844,7 +844,7 @@ added to the cost function penalising the degree of misclassification \(\xi\), e
 
 This can improve robustness to outlier data and generally improve generalisability by keeping the margin as large as possible.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{boundary.pdf}
     \caption[Soft-margin classifiers]{Demonstration of the utility of a soft-decision boundary to improve the overall
@@ -867,7 +867,7 @@ are determined using only a subset of the training data (i.e. the support vector
 evaluated on a subset of points near the decision boundary.  This is the reason SVMs are sometimes
 referred to as sparse kernel methods.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \includegraphics[width=\textwidth]{kernel.pdf}
     \caption[Kernel trick]{A kernel transform can allow SVM to produce non-linear classification boundaries by mapping
         the data to a higher dimensional space in which they are linearly separable. This is known as the kernel
@@ -960,7 +960,7 @@ Therefore, the goal of k-means clustering is to find values for \({r_{nk}}\) and
 function \ref{eq:kmeans_cost}.
 \citep{Bishop2006}
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \includegraphics[width=\textwidth]{kmeans.pdf}
     \caption[K-means clustering]{Demonstration of the K-means algorithm applying 3 rounds of Expectation-Maximisation to cluster
         a group of 2 dimensional samples.  The 3 cluster centroids (represented by coloured rectangles) 

@@ -671,8 +671,11 @@ were cut to 10kb fragments for decomposition to generate 64,852 contigs.
 phylum level assignment, \cref{tab:genome_taxassign}.
 
 
+
 \begin{table}
-	\begin{tabular}{| r | r r c |}
+    \centering
+
+\resizebox{\textwidth}{!}{\begin{tabular}{| r | r r c |}
 \hline
 \textbf{Source Group} & \textbf{Number of Contigs} & \textbf{Total Length} & \textbf{Phylum-Level Breakdown} \\
 \hline
@@ -700,7 +703,7 @@ phylum level assignment, \cref{tab:genome_taxassign}.
 \hline
 \textbf{Unknown} & 540 & 345,834 & Unclassified \\
 \hline
-	\end{tabular}
+\end{tabular}}
     \caption[Taxonomic Assignment of Genomic Contigs]{Summary of taxonomic assignments via TAXAassign grouped into putative ``source groups'' reflecting
 		the most probable source of 10kb chunked contigs of that specific taxonomic provenance.  Of note, is the disproportionate
 		number of contigs from contaminating sources. Specifically, bacteria such as Firmicutes and potential
@@ -726,7 +729,7 @@ as the ``ground-truth''.
 \end{figure}
 
 \begin{table}
-    \begin{tabular}{| c || c | c |}
+    \resizebox{\textwidth}{!}{\begin{tabular}{| c || c | c |}
     	\hline
 		 - & Positive & Negative \\
 		 \hline
@@ -737,7 +740,7 @@ as the ``ground-truth''.
 		False &  Contigs with \textbf{different} taxonomic assignments  & Contigs with the \textbf{same} taxonomic assignment \\
 		& are assigned to the \textbf{same} cluster & are assigned to \textbf{different} clusters  \\
 		\hline
-	\end{tabular}
+    \end{tabular}}
     \caption[Explanation of Clustering Errors]{A contextual explanation of True and False Positive and Negatives in the context of contig binning/clustering.  Top left indicates what a
 		True Positive (TP) means in this context, bottom left a False Positive (FP).  Similarly Top Right explains a True Negative (TN) and Bottom Right a
 		False Negative (FN)}

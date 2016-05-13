@@ -30,6 +30,8 @@
 \RequirePackage{amssymb}
 \RequirePackage{gensymb}
 \RequirePackage{mathspec}
+\RequirePackage{filecontents}
+\RequirePackage{listings}
 
 %Physics
 \RequirePackage{siunitx}
