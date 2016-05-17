@@ -1,8 +1,12 @@
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
+% arara: xelatex
+% arara: bibtex
+% arara: nomencl
+% arara: xelatex
+% arara: xelatex
 
 \documentclass{ucl-thesis}
-
 \begin{document}
 
 % front_material
@@ -15,6 +19,7 @@
 \tableofcontents
 \listoffigures
 \listoftables
+\mathsnot
 \acknowledgements
 
 % for remaining text/tex

@@ -124,7 +124,7 @@ Unfortunately, despite its utility sc-RNAseq generates a new set of difficulties
 First and foremost, there has only been a single published use of sc-RNAseq, to my knowledge, in non-model unicellular eukaryotes.   
 This study by \citep{Kolisko2014}, briefly addressed the issues of bias, contamination and gene discovery effectiveness in a set of model and non-model eukaryotes and
 constitutes an important proof-of-concept.  
-However, it also used a different sc-RNAseq approach (SMART), focused on single organisms, 
+However, it also used a different sc-RNAseq approach (SMRT), focused on single organisms, 
 and didn't address, in-depth, the optimal way to process, assemble and utilise single cell datasets from protists.
 While some work has been done investigating the optimal pre-processing of bulk RNAseq datasets (e.g. \citet{Macmanes2013,Macmanes2015}) 
 the effect of different trims and error correction on sc-RNAseq has yet to be characterised.  
@@ -356,7 +356,7 @@ The trimmed samples were then mapped to three different \textit{de novo} draft t
 fragment size distribution and histograms of mapped insert sizes for untrimmed reads against bulk reference).
 
 These 3 draft assemblies were a ``baseline'' bulk RNASeq transcriptome reference consisting of a Trinity \citep{Haas2013} 
-assembly of the light and dark bulk libraries preprocessed to remove low quality bases (<Q20) and adapters using Fastq-MCF \citep{Aronesty2013};
+assembly of the light and dark bulk libraries preprocessed to remove low quality bases (<Q20) and adapters using FastQ-MCF \citep{Aronesty2013};
 and two Trinity assemblies of the taxonomically filtered sc-RNASeq libraries previously trimmed 
 at an average window quality threshold of Q5 and Q30 respectively.
 
@@ -1288,7 +1288,7 @@ However, Trinity and Bridger both consistently generated assemblies of approxima
 equal size (100-130,000 contigs of rational sizes: N50s of 700-850
     and mean and median contig sizes of 600-660 and 410-470) across a variety 
     of assembly parameters (not shown).  Furthermore, they both consistently
-    generated the assemblies with the greatest likelihoods (from RSEM-Eval), 
+    generated the assemblies with the greatest likelihoods (from RSEM-EVAL), 
     and ran most computationally efficiently. 
 
 

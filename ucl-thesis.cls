@@ -16,6 +16,7 @@
 
 % Figures & Tables
 \RequirePackage{graphicx}
+\RequirePackage{nomencl}
 \RequirePackage[closeFloats, noSeparatorLine]{fltpage} 
 \RequirePackage{subcaption}
 \RequirePackage{multirow}
@@ -27,6 +28,7 @@
 
 % Maths
 \RequirePackage[centertags]{amsmath}
+\RequirePackage{bm}
 \RequirePackage{amssymb}
 \RequirePackage{gensymb}
 \RequirePackage{mathspec}
@@ -173,6 +175,16 @@
 	\newpage
 }
 
+% maths page
+\newcommand{\mathsnot}{
+    \chapter*{Maths Notation}
+	\noindent
+	\input{front_material/maths_notation}
+	\vspace*{\fill} 
+	\newpage
+}
+
+
 %authorlist page
 \newcommand{\authorlist}{
     \pagestyle{fancy}
@@ -201,3 +213,9 @@
 \newcommand{\appr}{{\mathord{\sim}}}
 \sisetup{range-phrase=-}
 \sisetup{range-units=single}
+
+
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+\makenomenclature

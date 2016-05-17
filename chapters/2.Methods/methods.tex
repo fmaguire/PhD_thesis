@@ -79,7 +79,7 @@ The utility of ``-omic'' approaches is they allow a researcher to characterise a
 of a biological system's function in a way that is faster, cheaper and requires less \textit{a priori} 
 knowledge of the system than more targeted approaches.
 For example, in order to estimate the abundance of all mRNA transcripts in a sample using specific
-approach such as RT-PCR would require sequence knowledge to design primers as well as an infeasible amount of
+approach such as qPCR or RT-PCR would require sequence knowledge to design primers as well as an infeasible amount of
 reactions to acquire a characterisation comparable to that obtainable by a transcriptomic approach such as RNA-Seq. 
 Additionally, due to being ``non-targeted'' (or rather less targeted) ``omics'' also removes one aspect of 
 researched-induced bias caused by a conscious selection of molecule specific probes.
@@ -203,7 +203,7 @@ These technologies generate huge amounts (on the order of \(10^{6}-10^{9}\) of r
 
 
 Commercially available 2nd generation platforms include 454's GSLFLX and GSJunior (now Roche),
-Ion Torrent's (now Life Technologies) PGM, Applied Biosystem's (now Life Technologies) SOLiD and Illumina's (formerly Solexa) 
+Ion Torrent's (now Life Technologies) Personal Genome Machine, Applied Biosystem's (now Life Technologies) SOLiD and Illumina's (formerly Solexa) 
 HiSeq, MiSeq and older Gene Analyzer II \citep{Nederbragt2013}.
 
 \begin{figure}
@@ -296,12 +296,12 @@ such as Conditional Random Fields and Recursive Neural Networks.
 
 
 The major 2nd and 3rd generation base-calling procedures output a FastQ formatted file. 
-These are files containing the sequence of a read and a per-base quality score known as a Q score.
-These scores (Q) are calculated as a logarithmic relation to the base-called error probability (P)
-\[ Q = -10\log{10}{P} \]
+These are files containing the sequence of a read and a per-base quality score known as a (\(q\)) score.
+These scores (\(q\)) are calculated as a logarithmic relation to the base-called error probability (\(p\))
+\[ q = -10\log{10}{p} \]
 and conversely: 
-\[ P = 10^{\frac{-Q}{10}} \]
-Therefore \(Q = 30\) corresponds to 99.9\% base call accuracy
+\[ p = 10^{\frac{-q}{10}} \]
+Therefore \(q = 30\) corresponds to 99.9\% base call accuracy
 
 Before assembly, there are several stages of read pre-processing that generally takes
 place for both genomic and transcriptomic studies. 
@@ -319,11 +319,11 @@ with a given sequencing run.  For this reason, QC is typically
 done by the sequencing service or facility operating the sequencers. 
 Problems with library preparation and sequencing can be detected by analysis
 of things like the distribution of per-base quality scores across sequences,
-and the presence of massively over-represented K-mers in the raw
+and the presence of massively over-represented \(k\)-mers in the raw
 libraries.   The most commonly used quality control tool is FastQC \citep{fastqc2015}
 which performs tests and visualises various library metrics such as the distribution
 of quality scores across reads, distribution of low quality base reads across
-the flowcell and the identification of over-represented K-mers and sequences in the library.
+the flowcell and the identification of over-represented \(k\)-mers and sequences in the library.
 
 Identification of potential library problems can be used to either attempt to correct
 these problems, for example, if there are consistently low quality bases at the end of
@@ -358,7 +358,7 @@ PRINSEQ \citep{Schmieder2011} and cutadapt \citep{martin2011cutadapt}. These
 generally fall into two algorithmic groups: running-sum based approaches e.g. Cutadapt and ERNE-FILTER
 and window-based e.g. FASTX, PRINSEQ, Sickle and Trimmomatic \citep{DelFabbro2013}.
 Briefly, running-sum approaches involve the calculation of a score for each base, \(i\), 
-from 3' to 5' e.g. \(s(i) = s(i+1)+quality(i)-Q\) for a minimum quality threshold \(Q\).
+from 3' to 5' e.g. \(s(i) = s(i+1)+\textrm{quality}(i)-Q\) for a minimum quality threshold \(Q\).
 These \(s\) are used to determine the start of the trimming point.  Alternatively,
 window-based approaches generally calculate the average quality score
 across a sliding-window of N bases.  If the score in a given window drops
@@ -374,7 +374,7 @@ Trimmomatic has been the primarily used trimming tool throughout this thesis.
 Traditionally, most projects use conservative trims which only accept reads and bases
 above a high threshold such as an average score of Q30 (e.g. \citep{Looso2013}).  
 However, recentally, there have been empirical 
-studies suggesting the optimal apporach is permissive trimming (e.g. \(\geq Q2\)) 
+studies suggesting the optimal apporach is permissive trimming (e.g. \(q \geq 2\)) 
 followed by explicit error correction \citep{Macmanes2014}.
 
 
@@ -388,12 +388,12 @@ the same sequence but a single read has a single substitution this is more
 likely to be product of sequencing error than biological diversity. 
 
 This is most typically achieved using probabilistic approaches after decomposition of
-reads into \(K\) sized substrings (known as K-mers).  These K-mers
+reads into \(k\) sized substrings (known as \(k\)-mers).  These \(k\)-mers
 are then analysed via spectral techniques 
 and the construction of hamming graphs (e.g. \citep{Nikolenko2013}) to identify related 
-low-abundance and likely erroneous K-mers.  
+low-abundance and likely erroneous \(k\)-mers.  
 Some approaches will also integrate sequence alignment and quality score
-features.  However, K-mer approaches are generally more computationally efficient
+features.  However, \(k\)-mer approaches are generally more computationally efficient
 and more effective at removing sequencing error than quality score based approaches \citep{Zhang2014}.
 See \citep{Molnar2014} for a review of error correction algorithms. 
 
@@ -450,9 +450,9 @@ calculating overlaps is computationally demanding and hamiltonian paths are diff
 (NP-complete) \citep{Karp1972}.
 
 
-Alternatively, de Bruijn graph assembly involves the decompositon of reads into K-mer sets.  
-These K-mers are then assembled into graphs based on \(k-1\) overlaps with other K-mers.
-However, in dBGs the vertices represent the \(k-1\) overlaps with the K-mers themselves
+Alternatively, de Bruijn graph assembly involves the decompositon of reads into \(k\)-mer sets.  
+These \(k\)-mers are then assembled into graphs based on \(k-1\) overlaps with other \(k\)-mers.
+However, in dBGs the vertices represent the \(k-1\) overlaps with the \(k\)-mers themselves
 forming the edges. This simplifies the problem of assembling contigs from finding hamiltonian cycles
 in the graph to that of the eulerian cycle (i.e. visit each edge once) problem.  This is computationally
 much simpler and thus allows assembly of much larger datasets \citep{Compeau2011}.
@@ -477,7 +477,7 @@ One important complication in the assembly of eukaryotic genomes
 relative to bacterial or archael sources is the issue of highly heterozygous polyploid genomes.
 This is problematic as the de Bruijn graphs constructed during assembly
 rapidly increase in complexity when reads from heterozygous samples become
-incorporated \citep{Kajitani2014}.  This is because k-mers derived from heterozygous regions of 
+incorporated \citep{Kajitani2014}.  This is because \(k\)-mers derived from heterozygous regions of 
 homologous chromosomes will partition the assembly graph into bubbles that cannot be easily 
 or accurately resolved by most assemblers expecting only limited structural variation during
 assembly.  Previously, attempts to work around this included inbreeding to generate
@@ -485,7 +485,7 @@ homozygous lines or fosmid based approaches.
 
 Specialised genome assemblers have been produced to address this problem,
 for example Platanus performed well on both highly and lowly heterozygous 
-genomes using k-mer autoextension approaches and by merging haplotypes
+genomes using \(k\)-mer autoextension approaches and by merging haplotypes
 at both contig assembly and scaffolding steps, as well as incorporation
 of various heuristics involving bubble resolution \citep{Bradnam2013,Kajitani2014a}
 
@@ -649,16 +649,16 @@ which are capable of beating human-performance on complex image classification t
 
 Typically, we seek to set the parameters (\(\theta\)) of a function in such a way
 that another property is minimised.  For example, in linear regression the aim is to find 
-parameters of a straight line \(h_{\theta}(x) = \theta * x\) (assuming \(x_{0} = 1\) and \(\theta_{0}\) is the
+parameters of a straight line \(h_{\vec{\theta}}(\vec{x}) = \vec{theta} * \vec{x}\) (assuming \(x_{0} = 1\) and \(\theta_{0}\) is the
 intercept) which minimise the distance
 between the line and the data (for example, the sum of squares distance).
-This distance/error is calculated using something known as the cost function e.g. \(J(\theta) = \frac{1}{2} m \sum^{m}_{i=1} (h_{\theta}(x_{i}) - y_{i})^2\) 
+This distance/error is calculated using something known as the cost function e.g. \(J(\vec{theta}) = \frac{1}{2} m \sum^{m}_{i=1} (h_{\vec{theta}}(x_{i}) - y_{i})^2\) 
 (where \(m\) is the number of \(x, y\) pairs in the dataset for linear regression).
-Most algorithms will seek to minimise the value of this cost function \(J(\theta)\) with respect to 
-the parameters of the original function \(h_{\theta}(x)\).  Typically, this is achieved using a variety of algorithmic optimisation techniques.
-The most prevalent of these are gradient descent based methods in which the value of \(\theta\) is modified 
+Most algorithms will seek to minimise the value of this cost function \(J(\vec{theta})\) with respect to 
+the parameters of the original function \(h_{\vec{theta}}(\vec{x})\).  Typically, this is achieved using a variety of algorithmic optimisation techniques.
+The most prevalent of these are gradient descent based methods in which the value of \(\\vec{theta}\) is modified 
 in the direction of the gradient of the cost function (determined using the 
-partial derivative of \(J\) with respect to \(\theta\): \(\frac{\partial J_{\theta}}{\partial\theta}\)).  
+partial derivative of \(J\) with respect to \(\vec{theta}\): \(\frac{\partial J_{\vec{\theta}}}{\partial\vec{theta}\)).  
 
 
 In an ideal world, the best machine learning model trained using our data will 
@@ -766,7 +766,7 @@ can use it to predict the value of \(\hat{y_{i}}\) for data in the test set \(x_
 
 On the other hand, in classification the expected outputs are 
 categorical or nominal variables such as class labels like ``host'' and ``endosymbiont'' 
-(\(y_{i} \in {host, endosymbiont, ..., C}\)).  These classifications can be binary (two possible outputs i.e. 
+(\(y_{i} \in {\textrm{host}, \textrm{endosymbiont}, ..., C}\)).  These classifications can be binary (two possible outputs i.e. 
 \(y=\{0,1\}\)), multiclass (\(\left\vert{{y}}\right\vert > 2\)),
 or multilabel (similar to multiclass but outputs aren't mutually exclusive, i.e. an input have multiple labels
 ) \citep{Murphy2012}. 
@@ -792,8 +792,8 @@ from the input i.e. learn the joint probability \(p(x,y)\) and make predictions 
 Whereas, discriminative classifiers, such as logistic regression/linear classifiers,
 model the posterior probability \(p(y|x)\)\footnote{strictly
     in cases of bayesian inference this would actually be likelihood
-    as the posterior would be over the parameters i.e. \(p(w|Y,X)\) (where \(Y\) and \(X\) are the whole
-dataset and \(w\) the parameters).}.
+    as the posterior would be over the parameters i.e. \(p(\bm{W}|\bm{Y},\bm{X})\) (where \(bm{Y}\) and \(\bm{X}\) are the whole
+dataset and \(\bm{W}\) the parameters).}.
 In other words, for classification problems a generative model would determine the statistical distribution of
 individual classes whereas discriminative models would just determine the boundaries between them.
 Generative models often perform better on small training sets by preventing overfitting with discriminative
@@ -808,7 +808,7 @@ Only relatively recently have they begun to lose ground to the deep learning met
 by the defeat of SVMs by the LeNet on the MNIST digit recognition dataset \citep{Hinton2006,Bengio2007,Bengio2013}.
 
 The goal of SVMs is to learn a hyperplane which separates two sets of labels in the dataset. Note, for multiclass classification, a series of one-vs-all
-classifiers are typically trained (that is for \(K\) classes, \(K\) SVMs are trained each classifying between a label \(k\) and all other labels).
+classifiers are typically trained (that is for \(k\) classes, \(k\) SVMs are trained each classifying between label \(k\) and all other labels).
 However, not all possible hyperplanes that could separate the labels will necessarily generalise well to novel data (and this generalisation
 is the ultimate goal of supervised learning).  Therefore, it is necessary to determine a way to select the hyperplane which should generalise best and to do
 this in a manner that will be relatively efficient especially with high dimension datasets.  This optimal hyperplane for separable classes can be demonstrated to be
@@ -829,9 +829,9 @@ their cost function in a more efficient constrained way.
 A naive formulation of this problem is simple specifically we are trying to find a linear model \(f(x) = \theta_{0} + \theta^{T}x\) which can be simplified 
 to \(f(x) = \theta * x \) if we assume that the first element of \(x\) is fixed to \(1\). We thus want to minimise \(J\) in terms of \(\theta\) to find
 the largest margin that correctly labels all the training data (in other words is constrained).  Fortunately, due to geometry the margin is property of
-the norm of \(\theta\) i.e. \(||\theta||\) but we use \(\frac{1}{2} ||\theta||^{2}\) for mathematical convenience.
+the norm of \(\theta\) i.e. \(\norm{\theta}\) but we use \(\frac{1}{2} \norm{\theta}^{2}\) for mathematical convenience.
 
-\[argmin_{\theta} \quad J(\theta) = \frac{1}{2} ||\theta||^{2} \quad s.t. \quad y_{i}(\theta x_{i}) \geq 1 \quad \forall i\]
+\[argmin_{\theta} \quad J(\theta) = \frac{1}{2} \norm{\theta}^{2} \quad s.t. \quad y_{i}(\theta x_{i}) \geq 1 \quad \forall i\]
 
 In reality, this cost function would be converted to a constrained optimisation problem using Lagrange multipliers and reformulated using the Lagrangian dual form. 
 
@@ -840,7 +840,7 @@ The 2nd major enhancement of SVMs is that of soft-margins \citep{Cortes1995}. So
 if doing so would increase the size of the margin that can be generated.  Specifically, a user defined penalty constant \(C\) is specified and 
 added to the cost function penalising the degree of misclassification \(\xi\), e.g.:
 
-\[argmin_{\theta} \quad J(\theta) = \frac{1}{2} ||\theta||^{2}  + C \sum^{n}_{i=1} \xi_{i} \quad s.t. \quad y_{i}(\theta x_{i}) \geq 1 - \xi_{i} \quad \forall i\]
+\[argmin_{\theta} \quad J(\theta) = \frac{1}{2} \norm{\theta}^{2}  + C \sum^{n}_{i=1} \xi_{i} \quad s.t. \quad y_{i}(\theta x_{i}) \geq 1 - \xi_{i} \quad \forall i\]
 
 This can improve robustness to outlier data and generally improve generalisability by keeping the margin as large as possible.
 
@@ -860,7 +860,7 @@ function, an infinite number of dimensions).  Explicitly transforming data in th
 so instead the ``kernel trick'' is used, where instead of explicitly transforming all the data into the feature space
 it is done implicitly by computing the inner product of all pairs of data points.  This is a lot more efficient
 and precludes the computationally intensive step of converting the data into the new, potentially infinite, co-ordinate space.
-Radial basis function (RBF) kernel is an example \(K(x_{i}, x_{j}) = exp ( - \frac{||x_{i} - x_{j}||^{2}}{2\sigma^{2}})\) kernel.
+Radial basis function (RBF) kernel is an example \(K(x_{i}, x_{j}) = exp ( - \frac{\norm{x_{i} - x_{j}}^{2}}{2\sigma^{2}})\) kernel.
 Even with the kernel trick, operations on every pair of points can become infeasible for large datasets due to the combinatorial
 explosion in necessary operations as the dataset increases in size.  However, in the same way that the decision boundary parameters 
 are determined using only a subset of the training data (i.e. the support vectors) the kernel trick only needs
@@ -885,7 +885,7 @@ Additionally, in simple form finding the hyperplane of an SVM is a true convex o
 guarantee does break with more complex kernels and soft-margins).  
 The major disadvantage is not natively generating probabilistic output (i.e. attaching a probability to a certain classification).  However, this can be achieved
 using methods like Platt Scaling or the related Relevance Vector Machine algorithm.   The other disadvantage is that hyper-parameters such as the misclassification
-penalty for soft-margins (\(C\)) and kernel choice (and its parameters) need chosen, typically this is solved by training using a grid-search of permutations
+penalty for soft-margins (\(c\)) and kernel choice (and its parameters) need chosen, typically this is solved by training using a grid-search of permutations
 of these parameter settings and selecting the best model via cross-validation. However, 
 there is both theoretical and empirical evidence that either random search \citep{Bergstra2012} or Bayesian optimisation
 \citep{Eggensperger2013} are more efficient means of selecting hyperparameter values. 
@@ -935,8 +935,8 @@ K-means clustering is a non-probabilistic unsupervised learning
 method in which we seek to partition data points in multidimensional space into 
 K clusters. It is often used to initialise Gaussian mixture models.
 
-Specifically, given a set of \(N\) observations \(X = {x_{1},...,x_{N}}\) 
-of \(\mathcal{D}\) dimensions partition each point \((x_{n})\) into K clusters
+Specifically, given a set of \(N\) observations \(x = {x_{1},...,x_{N}}\) 
+of \(\mathcal{D}\) dimensions partition each point \((x_{n})\) into k clusters
 
 A cluster can be intuitively considered as a group of observations/points which are 
 ``closer'' to one another than to other observations and the k-th cluster can 
@@ -952,7 +952,7 @@ assigned to cluster \(k\) (with centroid \(\mu_{k}\)) and 0 otherwise then we ca
 that represents the sum of squares distances of each data point \(x_{n}\) from its assigned cluster centroid \(\mu_{k}\).
 
 \[ 
-    J = \sum_{n=1}^{N}\sum_{k=1}^{K} = r_{nk} \|x_{n} - \mu_{k}\|^{2}
+    J = \sum_{n=1}^{N}\sum_{k=1}^{K} = r_{nk} \norm{x_{n} - \mu_{k}}^{2}
     \label{eq:kmeans_cost}
 \]
 
@@ -988,7 +988,7 @@ assigning each point to the cluster represented by the nearest centroid or forma
 \[
     r_{nk} = 
     \begin{cases}
-        1,& \text{if} \quad k=argmin_{j} \|x_{n} - \mu_{j}\|^{2}\\
+        1,& \text{if} \quad k=argmin_{j} \norm{x_{n} - \mu_{j}}^{2}\\
         0,& \text{otherwise}
     \end{cases}
 \]
@@ -1058,7 +1058,7 @@ Strictly phylogenetics refers to the study of molecular sequence data although t
 non-molecular characters such as morphological traits (and occasionally originated in this domain) as well as any
 other set of discrete data vectors. It has even been applied to fields such as linguistics \citep{Atkinson2005}
 } and the measure of relatedness is some proxy for evolutionary distance ranging from simple distance measures 
-e.g. Hamming distance (\(D = \sum_{k=0}^{N}|x_{k} - y_{k}|\) for two sequences \(x\) and \(y\) of length \(N\))
+e.g. Hamming distance (\(D = \sum_{k=0}^{N}|x_{k} - y_{k}|\) for two sequences \(\vec{x}\) and \(\vec{y}\) of length \(N\))
 to more complicated probabilistic estimations based on observed data.
 A character is an element of a sequence such as an individual base or amino acid, homologous 
 characters are those in separate sequences that are descended from a common ancestor.  
