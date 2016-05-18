@@ -313,17 +313,14 @@ Typically, there are 4 key steps:
     \item Digital normalisation
 \end{itemize}
 Library quality control (QC) and contamination screening is frequently done by 
-as part of the standard diagnostics of a sequencing facility.  It is a highly
-useful step which allows investigation of potential technical problems
-with a given sequencing run.  For this reason, QC is typically
-done by the sequencing service or facility operating the sequencers. 
+as part of the standard sequencing facility diagnostics 
+due to their utility in identifying technical problems.
 Problems with library preparation and sequencing can be detected by analysis
-of things like the distribution of per-base quality scores across sequences,
-and the presence of massively over-represented \(k\)-mers in the raw
-libraries.   The most commonly used quality control tool is FastQC \citep{fastqc2015}
-which performs tests and visualises various library metrics such as the distribution
-of quality scores across reads, distribution of low quality base reads across
-the flowcell and the identification of over-represented \(k\)-mers and sequences in the library.
+of various metrics such as the distribution of per-base quality scores across sequences,
+distribution of low quality base reads across the flowcell
+and the presence of massively over-represented \(k\)-mers and sequences in the raw
+libraries.  One of the most commonly used quality control tool is FastQC \citep{fastqc2015}
+which performs tests and visualises these metrics and highlights aberrant values.
 
 Identification of potential library problems can be used to either attempt to correct
 these problems, for example, if there are consistently low quality bases at the end of
@@ -367,7 +364,7 @@ below the minimum average quality it is then trimmed.
 Currently, there is no clear answer to the question: which is the best trimming algorithm.
 This is due to many dataset-specific effects as well parameter-dependence \citep{DelFabbro2013}.
 In general, most trimming tools have been found to largely perform equivalently across 
-multiple RNA-Seq and DNA-Seq datasets and applications (see File S2 in \citep{DelFabbro2013}). 
+multiple RNA-Seq and DNA-Seq datasets and applications (see `File S2' in \citep{DelFabbro2013}). 
 Due to its ease of use and maintenance of paired-read correspondance,
 Trimmomatic has been the primarily used trimming tool throughout this thesis.
 
@@ -427,7 +424,7 @@ the transcripts or chromosomes they were sampled from.
 There are two main approaches to both genome and transcriptome assembly - referenced and \textit{de novo}.
 A referenced assembly consists of the alignment of processed reads to a prior assembly or reference sequence
 using specialised short-read aligners such as Bowtie or BWA \citep{Langmead2012}. Unfortunately,
-these are reliant on the existence of pre-existing genomic or transcriptomic resources
+these are reliant on the availability of pre-existing genomic or transcriptomic resources
 for the organisms being analysed.
 % Mapping reads to reference can introduce biases even with relatively low levels of polymorphism \citep{Wang2012}.
  However, even if the reference is divergent, referenced assembly may still produce a higher quality assembly
@@ -678,7 +675,8 @@ of some new data than a much simpler model that while it fits the original train
 Likewise, a model that is misspecified
 or cannot fit the training data well e.g. the training data follows a non-linear distribution but the model is linear, is known as underfitted.
 Underfitted models will perform poorly on both the training and test data.  However, it isn't particularly useful to only discover
-how useful your model is likely to be on the test data therefore almost all machine learning analyses uses the principal of cross-validation.
+how useful your model is likely to be on the test data (and will lead to overfitting) 
+therefore almost all machine learning analyses uses the principal of cross-validation.
 Cross-validation is the partitioning of the training dataset to create a validation dataset which can be used as a proxy test set.
 
 %% SORT
@@ -1059,7 +1057,7 @@ Strictly phylogenetics refers to the study of molecular sequence data although t
 non-molecular characters such as morphological traits (and occasionally originated in this domain) as well as any
 other set of discrete data vectors. It has even been applied to fields such as linguistics \citep{Atkinson2005}
 } and the measure of relatedness is some proxy for evolutionary distance ranging from simple distance measures 
-e.g. Hamming distance (\(D = \sum_{k=0}^{N}|x_{k} - y_{k}|\) for two sequences \(\vec{x}\) and \(\vec{y}\) of length \(N\))
+e.g. Hamming distance (\(D = \sum_{k=0}^{N}\norm{x_{k} - y_{k}}\) for two sequences \(\vec{x}\) and \(\vec{y}\) of length \(N\))
 to more complicated probabilistic estimations based on observed data.
 A character is an element of a sequence such as an individual base or amino acid, homologous 
 characters are those in separate sequences that are descended from a common ancestor.  
@@ -1443,8 +1441,9 @@ known as heterotachy) especially when large numbers of divergent taxa are includ
 in a masked alignment.  One model modification which attempts to control 
 for this is that of the concomitably variable codon or ``covarion'' model \citep{Penny2001}.
 It allows sites to switch between
-``on'' and ``off'' across the tree with te proportion of sites in the relative states
+``on'' and ``off'' across the tree with the proportion of sites in the relative states
 determined at each site \citep{Zhou2010}.
+%<++> fix citation
 
 
 
