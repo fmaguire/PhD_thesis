@@ -217,9 +217,9 @@ of number of reads and their respective lengths) they all largely follow the sam
 \begin{enumerate}
         \item Library generation: Randomly fragmenting input DNA into short fragments of a specific size
             followed by ligation of adapter sequences with some platforms allowing development of ``paired-end'' or ``mate-pair'' libraries in which
-            each end of a fragment is sequenced separated with a known size unsequenced fragment aiding subsequent assembly (see \ref{fig:libprep})
+            each end of a fragment is sequenced separated with a known size unsequenced fragment aiding subsequent assembly (see \cref{fig:libprep})
         \item Clonal amplification: Generation of clonally identical spatially distinct clusters of DNA mainly via emulsion PCR \citep{Dressman2003} (SOLiD, Ion Torrent, 454)
-            or bridge PCR \citep{Adessi2000,Fedurco2006} (Illumina) (see \ref{fig:libseq})
+            or bridge PCR \citep{Adessi2000,Fedurco2006} (Illumina) (see \cref{fig:libseq})
         \item Sequencing-by-synthesis: In which a complementary DNA strand is generated base by base via sequentially flooding and clearing a
             chamber with each dNTP and a polymerase (or ligase in the case of SOLiD).  On incorporation of a base into a cluster a detectable signal is released such as emission of certain wavelengths of light 
 detectable using optics (e.g. Illumina, 454, SOLiD) or release of hydrogen ion (e.g. Ion Torrent).
@@ -654,11 +654,11 @@ intercept) which minimise the distance
 between the line and the data (for example, the sum of squares distance).
 This distance/error is calculated using something known as the cost function e.g. \(J(\vec{theta}) = \frac{1}{2} m \sum^{m}_{i=1} (h_{\vec{theta}}(x_{i}) - y_{i})^2\) 
 (where \(m\) is the number of \(x, y\) pairs in the dataset for linear regression).
-Most algorithms will seek to minimise the value of this cost function \(J(\vec{theta})\) with respect to 
-the parameters of the original function \(h_{\vec{theta}}(\vec{x})\).  Typically, this is achieved using a variety of algorithmic optimisation techniques.
-The most prevalent of these are gradient descent based methods in which the value of \(\\vec{theta}\) is modified 
+Most algorithms will seek to minimise the value of this cost function \(J(\theta)\) with respect to 
+the parameters of the original function \(h_{\theta}(x)\).  Typically, this is achieved using a variety of algorithmic optimisation techniques.
+The most prevalent of these are gradient descent based methods in which the value of \(\theta\) is modified 
 in the direction of the gradient of the cost function (determined using the 
-partial derivative of \(J\) with respect to \(\vec{theta}\): \(\frac{\partial J_{\vec{\theta}}}{\partial\vec{theta}\)).  
+partial derivative of \(J\) with respect to \(\theta\): \(\frac{\partial J_{\theta}}{\partial\theta}\)).  
 
 
 In an ideal world, the best machine learning model trained using our data will 
@@ -735,7 +735,7 @@ inputs and their corresponding expected output.  This is known as the training s
 i.e. \(\mathcal{D} = {(x_{i}, y_{i}) \quad \forall i \in N}\) where \(N\) is 
 the cardinality (size) of the training set \citep{Murphy2012}.  
 A supervised learning algorithm thus seeks to approximate \(y=f(x)\) where \(f\) is an unknown 
-function. This estimated function \(\hat{y} = \hat{f}(x)\) (see \ref{eq:sup}) would then generally
+function. This estimated function \(\hat{y} = \hat{f}(x)\) (see \cref{eq:sup}) would then generally
 be applied to new data known as the test data for which the expected outputs are not known (i.e. 
 \(x_{i} \not \in \mathcal{D}\)).
 
@@ -777,7 +777,7 @@ Probabilistic functions will return a probability distribution associated with p
 regression values whereas non-probabilistic approaches will only return the most likely class label or value.
 Generative algorithms, such as Naive Bayes or restricted Boltzmann machines, 
 seek to model the process by which the output data was generated 
-from the input i.e. learn the joint probability \(p(x,y)\) and make predictions on that basis via Bayes Theorem (see \ref{eq:bayes}).
+from the input i.e. learn the joint probability \(p(x,y)\) and make predictions on that basis via Bayes Theorem (see \cref{eq:bayes}).
 
 \begin{equation}
     \begin{aligned}
@@ -956,8 +956,9 @@ that represents the sum of squares distances of each data point \(x_{n}\) from i
     \label{eq:kmeans_cost}
 \]
 
-Therefore, the goal of k-means clustering is to find values for \({r_{nk}}\) and \({\mu_{k}}\) that minimise this linear 
-function \ref{eq:kmeans_cost}.
+Therefore, the goal of k-means clustering is to find values 
+for \({r_{nk}}\) and \({\mu_{k}}\) that minimise this linear 
+function \cref{eq:kmeans_cost}.
 \citep{Bishop2006}
 
 \begin{figure}[H]
@@ -977,9 +978,9 @@ an arrow with a faded version showing the initial location.
 The standard algorithm proceeds in two alternating steps following the initialisation of \(\mu_{k}\) with starting
 cluster centroid locations \citep{Forgy1965,Lloyd1982}:
 \begin{enumerate}
-    \item \(argmin_{r_{nk}} J\) i.e. minimise \ref{eq:kmeans_cost} w.r.t the assignment of points to clusters while keeping
+    \item \(argmin_{r_{nk}} J\) i.e. minimise \cref{eq:kmeans_cost} w.r.t the assignment of points to clusters while keeping
         the cluster centroids fixed.
-    \item \(argmin_{\mu_{k}} J\) i.e. minimise \ref{eq:kmeans_cost} w.r.t the position of the cluster centroids while keeping
+    \item \(argmin_{\mu_{k}} J\) i.e. minimise \cref{eq:kmeans_cost} w.r.t the position of the cluster centroids while keeping
         the assignment of points to centroids fixed.
 \end{enumerate}
 
@@ -1009,7 +1010,7 @@ In other words set \(\mu_{k}\) to the mean of all data points \(x_{n}\) assigned
 These two steps are repeated until a specified maximum number of iterations are reached or no points change cluster assignment during
 step 1.
 
-%\(J\) \ref{eq:kmeans_cost} will converge but is liable to get stuck in a local rather than global minimum.
+%\(J\) \cref{eq:kmeans_cost} will converge but is liable to get stuck in a local rather than global minimum.
 
 K-means has many modifications and improvements such as refining the initialisation of the clusters by 
 the Bradley-Fayyad method (clustering random samples of the dataset and then k-means clustering the resulting clusters) \citep{Bradley1998} 

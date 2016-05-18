@@ -210,12 +210,17 @@
 %   \addvspace{1.0\baselineskip plus 0.5ex minus 0.2ex}%
 %   \noindent\textsc{#1}
 %}
-\newcommand{\appr}{{\mathord{\sim}}}
+% SI commands
 \sisetup{range-phrase=-}
 \sisetup{range-units=single}
 
-
+% Maths commands
+\newcommand{\appr}{{\mathord{\sim}}}
 \providecommand{\abs}[1]{\lvert#1\rvert}
 \providecommand{\norm}[1]{\lVert#1\rVert}
 
+% Nomenclature List
 \makenomenclature
+
+\renewcommand{\cftfignumwidth}{2.5cm}
+\renewcommand{\cfttabnumwidth}{2.5cm}
