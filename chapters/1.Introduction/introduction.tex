@@ -41,7 +41,10 @@ as this can be considered as an external surface of the host. These latter symbi
         biological units, which may be anything from individual species to whole populations. The outcome column 
         contains a tuple relating the effect an interaction has on a pair of interacting biological units. 
         This ``effect'' is often assessed in terms of metrics such as individual fitness, population size and/or
-        growth rate.
+        growth rate.  Specifically, \(+\) represents a positive, \(-\) a negative, and \(0\) a neutral outcome.
+        Therefore, \((+,+)\) indicates an interaction which is beneficial 
+        to both partners and \((+, 0)\) one that is beneficial to one partner and neutral to
+        the other.
         Note: parasitism and predation are mechanisms by which an antagonistic interaction may take place \citep{Abrams1987}
         in the same sense that endosymbiosis is a mechanism by which a mutualistic interaction can take place.
         In reality most interactions will not fall neatly into one of these categories and throughout its duration
@@ -81,11 +84,11 @@ well due to the increased selective pressure to minimise lethal aberrant interac
 in the extreme of host-symbiont integration: that of the endosymbiotic organelles, which are so highly integrated they were considered part of the cell by
 mainstream scientific establishment until only relatively recently \citep{Archibald2014}.
 
-\begin{figure}[H]
+\begin{figure}
     \centering
 \includegraphics[width=\textwidth]{integration_vs_dependence.pdf}
 \caption[The spectrum of endosymbioses]{ 
-        Plot demonstrating a fragment of the diversity of endosymbioses and specifically hi-lighting the possibility of
+        Plot demonstrating a fragment of the diversity of endosymbioses and specifically hilighting the possibility of
         a well integrated by facultative endosymbiosis.
         Host-symbiont integration is a rough measure of how connected the host and symbiont have become genomically, metabolomically
         and in terms of life history.  Whereas, interdependence is an approximate measure of the degree to 
@@ -153,18 +156,18 @@ For example:\footnote{Although with all these examples it is important not
 
 Endosymbiosis is the one of the most significant evolutionary processes in eukaryotic cell.
 It offers a means for eukaryotes to benefit from the extensive metabolic diversity
-present in the bacterial and archael pangenome, especially the only known forms of primary energy
+present in the bacterial and archaeal pangenome, especially the only known forms of primary energy
 production - photosynthesis and chemosynthesis \citep{Wernegreen2012}.
 
 \subsection{Plastid Endosymbioses}
 Most molecular evidence currently points towards a single primary endosymbiotic event between a phagotrophic ancestral
 eukaryote (with mitochondria and developed endomembrane system \citep{Rockwell2014}) and a cyanobacteria (blue-green algae) as giving rise to 
-the archaeplastida (that is the green algae, red algae, glaucophytes and land plants \citep{Green2011}) and their double membrane bound plastids \citep{Keeling2013}.   
+the Archaeplastida (that is the green algae, red algae, glaucophytes and land plants \citep{Green2011}) and their double membrane bound plastids \citep{Keeling2013}.   
 While, this event is one of the must fundamental events in the evolution of life in and of itself it is only capable of explaining a small 
 proportion of the diversity of plastids across the eTOL \citep{Keeling2013}.
 Apart from one other putative primary endosymbiosis in \textit{Paulinella chromatophora} (a euglyphid amoeba with photosynthetic 
 chromatophores that are vertically inherited, synchronised to host and bear a much stronger molecular and morphological resemblance to reduced 
-cyanobacteria than the chloroplast of the archaeplastida \citep{Kies1979,McFadden2014}) all other oxygenic phototrophs 
+cyanobacteria than the chloroplast of the Archaeplastida \citep{Kies1979,McFadden2014}) all other oxygenic phototrophs 
 (as well as several non-photosynthetic but plastid bearing pathogens \citep{Sato2011}) have arisen by secondary or 
 higher order endosymbioses \citep{Hoshina2009}.
 Secondary endosymbioses are those in which another eukaryotic lineage has engulfed a primary plastid bearing algae and reduced and integrated them in a 
@@ -312,7 +315,7 @@ traits found in \textit{P. tetaurelia}, as \textit{P. bursaria} shares ciliate s
 of B-family polymerases \(\alpha, \zeta\), and the proofreading exonuclease of DNA polymerase \(\epsilon\) believed to be adaptions to
 improve replication fidelity and a necessary adaptation when maintaining a separate germline \citep{Sung2012}.
 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \caption[Life cycle of \textit{P. bursaria}]{
         Figure redrawn and modified from \citep{Duret2008}.
@@ -400,7 +403,7 @@ Therefore, RNAi is likely available in \textit{P. bursaria} as a means of testin
 %\subsection{Endosymbionts in \textit{Paramecium}}
 \textit{Paramecium} appears to be particularly competent for endosymbioses with an array of over 60 
 genetically diverse putative endosymbionts described \citep{Gortz2009}. 
-This is no surprise as ciliates have been known to have bacterial \citep{Gortz2009}, archael \citep{Wrede2012} and 
+This is no surprise as ciliates have been known to have bacterial \citep{Gortz2009}, archaeal \citep{Wrede2012} and 
 eukaryotic \citep{Kodama2009a} endosymbionts.
 These endosymbionts range in degree from mutualist to parasitic and are cytoplastmic, endomicronucleic,
 endomacronucleic and/or perinuclear. 
@@ -515,7 +518,7 @@ Several of these endosymbionts have been shown to require specific \textit{Param
 
 
 
-\begin{figure}[H]
+\begin{figure}
     \includegraphics[width=\textwidth]{trees_of_life.pdf}
     \caption[Taxonomic context of host and endosymbiont]{\textbf{A}: Schematic of the current best estimate of the tree of life demonstrating the 2D and 3D hypotheses,
 dashed lines indicate multiple potential branch location, arrowed lines demonstrate known endosymbiotic events (based on work reviewed in \citep{Gribaldo2010})
@@ -634,7 +637,7 @@ This new perialgal vacuole (PV) is released into the cytoplasm and each PV conta
 The PV appears resistant to lysosome fusion and further digestive steps suggesting molecular modification of the vacuole membrane \citep{Johnson2011}
 These perialgal vacuoles then bind the host cortex and compete for attachment with host structures known as trichocysts \citep{Kodama2012} in a region with low to no lysosome activity \citep{Kodama2009a}
 This suggests the observed resistance to lysosome fusion may be a by-product of localisation. 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \includegraphics{symbiont_infection.pdf}
     \caption[Established of endosymbiosis in \textit{P. bursaria}]{

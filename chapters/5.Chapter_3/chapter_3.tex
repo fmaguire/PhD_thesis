@@ -611,7 +611,7 @@ error correction.
 
 Assemblies were compared using RSEM-EVAL \citep{Li2014} and the best
 overall assembly selected on the basis of likelihood.
-ORFs were called from the best assembly using universal and tetrahymena encodings 
+ORFs were called from the best assembly using universal and \textit{Tetrahymena} encodings 
 via TransDecoder \citep{Haas2013} retaining the best scoring sequences and those
 with HMMR hits to PFAM and BLASTP hits to the SwissProt database. 
 
@@ -649,17 +649,17 @@ cultures at the midpoint of both the day and night cycles.
 Samples were then dried, flash-frozen in liquid nitrogen, and homogenised
 using a cell disruptor. 
 
-For each sample, \(10mg\) was dissolved in \(400\mu l\)
-of a solution of \(80\%\) MeOH containing \(7.2mg ml^{-1}\) of
+For each sample, \SI{10}{\milli\gram} was dissolved in \SI{400}{\micro\litre}
+of a solution of \SI{80}{\percent} MeOH containing \SI{7.2}{\milli\gram\per\milli\litre} of
 an umbelliferone internal standard.  This solution was kept on ice
-and vortexed for 30s every 10 minutes for 30 minutes.
+and vortexed for \SI{30}{\second} every \SI{10}{\minute} for \SI{30}{\minute}.
 Samples were sonicated in ice cold water for 15 minutes and then centrifuged
-at 13k rpm for 10 minutes.  Retaining the supernatant in a separate tube, the pellet
-was resuspended in \(400\mu l 80\%\) MeOH and vortexing, sonication and centrifugation
+at \SI{13}{\kilo\rpm} for \SI{10}{\minute}.  Retaining the supernatant in a separate tube, the pellet
+was resuspended in \SI{400}{\micro\litre} \SI{80}{\percent} MeOH and vortexing, sonication and centrifugation
 steps repeated.  The two supernatants were combined and filtered through 
-a \(0.2\mu m\) syringe filter (Chromacol).  Samples were sub-divided into two 
-a \(5\mu l\) of each was loaded into an Agilent 1200 Series HPLC with
-a \(3.5\mu m\), \(2.1\times 150mm\) Eclipse Plus C18 Agilent column.
+a \SI{0.2}{\micro\metre} syringe filter (Chromacol).  Samples were sub-divided into two 
+a \SI{5}{\micro\litre} of each was loaded into an Agilent 1200 Series HPLC with
+a \SI{3.5}{\micro\metre}, \(2.1 \times \SI{150}{\milli\metre}\) Eclipse Plus C18 Agilent column.
 One sample was then analysed using a positive electron spray ionisation
 and the other a negative ionisation on an Agilent 6520 accurate mass
 quadrupole time of flight (QTOF) mass spectrometer. Data was captured
@@ -669,9 +669,10 @@ The same process was repeated for 7 blank samples under both ionisation conditio
 as well as an apigenin QC standard.
 
 Samples were analysed primarily using the XCMS R package \citep{Smith2006,Tautenhahn2012}.
-Peak features were detected in each samples using the centWave algorithm with a 30ppm tolerated m/z deviation,
-minimum peak width of 10 and maximum peak width of 60 \citep{Tautenhahn2008}. 
-Peaks were aligned with a 0.025 m/z width overlap, and a maximum bandwidth 5 retention time
+Peak features were detected in each samples using the centWave algorithm with a \(30\)ppm 
+tolerated \si{\mz} deviation,
+minimum peak width of \(10\) and maximum peak width of \(60\) \citep{Tautenhahn2008}. 
+Peaks were aligned with a \SI{0.025}{\mz} width overlap, and a maximum bandwidth 5 retention time
 deviation. Using the aligned peaks, the retention time deviation between samples were
 calculated.  The samples were then realigned correcting for retention time deviation and
 integrated using fillPeaks. 
@@ -679,11 +680,11 @@ integrated using fillPeaks.
 In order to determine differential presence of globally detected metabolites
 unpaired Welch's \textit{t}-tests were conducted comparing the 5 day samples to the 5
 night samples. Welch's tests were used as they don't assume equal sample sizes or variances
-between the two groups\citep{Welch1947}\footnote{
-    \(t' = \frac{\mu_1 - \mu_2}{\sqrt{\frac{s^2_1}{n_1} + {s^2_2}{n_2}}}\)
+between the two groups \citep{Welch1947}\footnote{
+    \[t' = \frac{\mu_1 - \mu_2}{\sqrt{\frac{s^2_1}{n_1} + {s^2_2}{n_2}}}\]
     with degrees of freedom determined via the Welch-Satterwaite-equation:
-    \(df = \frac{(\frac{s^2_1}{n_1} + \frac{s^2_2}{n_2})^2}{\frac{(\frac{s^2_1}{n_1})^2}{n_1 - 1} + \frac{(\frac{s^2_2}{n_2})^2}{n_2 - 1}}\)
-    \citep{Ruxton2006}
+    \[df = \frac{(\frac{s^2_1}{n_1} + \frac{s^2_2}{n_2})^2}{\frac{(\frac{s^2_1}{n_1})^2}{n_1 - 1} + \frac{(\frac{s^2_2}{n_2})^2}{n_2 - 1}}\]
+    \citep{Ruxton2006}.
 }
 
 P-values from this were corrected 
@@ -699,7 +700,7 @@ Features were then annotated using the METLIN metabolite database \citep{Smith20
 Extracted ion base peak chromatograms were manually inspected for each significantly expressed feature
 and any that weren't clear distinct peaks were discarded. Any sample without
 an annotation against METLIN was similarly discarded. Finally, annotations
-were manually parsed and samples with impossible annotations (e.g. 
+were manually parsed and samples with implausible annotations (e.g. 
 chemotherapeutic drugs) discarded.  
 
 \subsubsection{Untargeted GC-QTOF profiling}
@@ -791,7 +792,7 @@ assembly chosen on score.
 
 Therefore, the optimal assembly chosen for further analysis was the Trinity
 Q5 normalised assembly.
-From the 101,957 transcripts 193,906 ORFs were called using tetrahymena 
+From the 101,957 transcripts 193,906 ORFs were called using \textit{Tetrahymena}
 encoding and 20,875 universal.
 These were subsequently binned using the same approach as used in 
 Chapter 4.
@@ -829,11 +830,6 @@ is reasonably good.
 
 
 \subsection{Transporter identification}
-To identify transporters present in the translated protein dataset of the 
-endosymbiont bins of the CCAP1660/12 and Yad1g1N1 
-\textit{Paramecium bursaria} transcriptome assemblies, as well as the Chlorella NC64A 
-and Coccomyxa C-169 predicted proteomes the following process was used:
-
 \begin{table}
     \centering
 
@@ -853,7 +849,8 @@ and Coccomyxa C-169 predicted proteomes the following process was used:
     and \textit{C. subellipsoidea} C-169).}
 \end{table}
 
-The genome based predictions from \textit{C. variabilis} NC64A and \textit{Coccomyxa}
+Based on the results of the transporter identification pipeline the 
+genome based predictions from \textit{C. variabilis} NC64A and \textit{Coccomyxa}
 led to a much larger set of candidate
 transporter proteins than those from the two binned transcriptomes.
 However, smaller subsets represent all 
@@ -870,11 +867,6 @@ metabolism inside the host.
 %and SWEETs \citep{Chen2010a,Chen2015}.
 %Additionally, there are a few transporters mainly associated with intracellular transport such as 
 %vacuolar glucose transporter I (VGT1), ERD-like transporters and tonoplast monosaccharide transporters.
-
-The \textit{M. reisseri} predictions were then supplemented using standard
-annotation pipelines \cref{fig:endo_annot}.
-
-
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{endosymbiont_bin_annotation.pdf}
@@ -883,6 +875,9 @@ annotation pipelines \cref{fig:endo_annot}.
 were successfully annotated.} 
 \label{fig:endo_annot}
 \end{figure}
+
+The \textit{M. reisseri} predictions were then supplemented using standard
+annotation pipelines \cref{fig:endo_annot}.
 
 From the GO based annotations there were 427 proteins associated
 with the GO term for transmembrane transport (GO:0006810).
@@ -1144,6 +1139,7 @@ in \textit{M. reisseri} during endosymbiosis.  Carotenoid liposomes
 have previously been implicated in the prevention of phototoxicity
 in \textit{Paramecium caudatum} \citep{Rich1992}.  This means
 it is possible that these carotenoids could play a role in the observed photoprotective
+phenotype.
 Additionally, there are numerous aspects of amino acid metabolism and degradation
 only present in \textit{M. reisseri} compared to the other algal endosymbionts.
 For example, lysine degradation pathway components, 
@@ -1289,7 +1285,7 @@ and arabinose (2.7 fold) during lit conditions.
         Calibration was conducted using Day1 and Night1 samples at two titrations, as well as Asn-Gln-Tryptamine and Sigma AA mixes.
     Calibration and quantitative analysis failed for the following amino acids: 
 Glutamic Acid, Tryptamine, Asparagine, Tryptophan, Isoleucine, Methionine, Valine, Serine, Glutamate, Glutamine, Aspartic acid, Cysteine or Lysine.
-Significant concentration differences between day and night (as determined via Welch's `\textit{t}' are indicated by an asterisk.}
+    Significant concentration differences between day and night (as determined via Welch's `\textit{t}' are indicated by an asterisk).}
     \label{fig:amino_acids}
 \end{figure}
 
@@ -1493,7 +1489,7 @@ problematic is that of proteins which have recently undergone endosymbiotic
 gene transfer (EGT) between endosymbiont and host \citep{Timmis2004} or that have been horizontally
 acquired from other sources.  In the former case,
 this is well observed phenomenon that has resulted in the eventual loss
-of the endosymbiotic in the majority of algal secondary endosymbiotic organelles
+of the endosymbiont in the majority of algal secondary endosymbiotic organelles
 as genes are transferred to the host nucleus
 \citep{Keeling2008a,Archibald2005,Timmis2004,Keeling2004a}.
 It is unknown and difficult to determine to what extent the 

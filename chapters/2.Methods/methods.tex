@@ -155,7 +155,7 @@ step to convert transcripts to cDNA. As ribosomal RNA makes up a sizeable propor
 it is often necessary to enrich or select the RNA fraction of choice in order to minimise wasted effort when
 sequencing \citep{Wilhelm2009}.  For eukaryotic mRNA enrichment this can be easily achieved by
 using poly-T primers during RT which selectively bind to the poly-adenylated tail of these messenger 
-transcripts.  However, for bacterial/archael work and transcriptomic analyses focusing on non-poly-adenylated
+transcripts.  However, for bacterial/archaeal work and transcriptomic analyses focusing on non-poly-adenylated
 transcripts such as ncRNAs/siRNAs/miRNAs etc. ribosomal depletion is used \citep{ONeil2013}.  This is a process by which 
 ribosomal probes are attached to magnetic beads. Ribosomal RNAs bind to these probes and the magnetic
 beads can be used to partition the majority of ribosomal sequences away from the other RNA \citep{ONeil2013}.
@@ -441,7 +441,7 @@ and de Bruijn graph (dBG) methods.
 OLC are conceptually relatively simple, a graph is constructed based on the overlap of sequencing
 reads determined using standard pair-wise alignment algorithms.   Each graph vertex
 represents a read and an edge connecting a pair of vertices indicates overlap between those
-reads. Therefore, assembly is a process of finding a hamiltonian path 
+reads. Therefore, assembly is a process of finding a hamiltonian path (HPP)
 (i.e. the path that visits each vertex exactly once) across the OLC graph. Unfortunately,
 calculating overlaps is computationally demanding and hamiltonian paths are difficult to discover
 (NP-complete) \citep{Karp1972}.
@@ -451,8 +451,18 @@ Alternatively, de Bruijn graph assembly involves the decompositon of reads into 
 These \(k\)-mers are then assembled into graphs based on \(k-1\) overlaps with other \(k\)-mers.
 However, in dBGs the vertices represent the \(k-1\) overlaps with the \(k\)-mers themselves
 forming the edges. This simplifies the problem of assembling contigs from finding hamiltonian cycles
-in the graph to that of the eulerian cycle (i.e. visit each edge once) problem.  This is computationally
-much simpler and thus allows assembly of much larger datasets \citep{Compeau2011}.
+in the graph (\(NP\)-complete complexity) to that of the 
+eulerian cycle (i.e. visit each edge once) problem (EPP) (\(\P\) complexity).  
+This is a computationally much simpler problem as it has far fewer degrees of freedom
+because all edges (and therefore all non-disjoint vertices) must be visited 
+whereas in the hamiltonian problem not all edges will necessarily be used.  
+Furthermore, the existence of a path within a graph (or subgraph) can be 
+easily determined by observing whether that a) the graph is connected and b) the order
+of only \(\leq 2\) vertices is odd (i.e. an even number of edges connected to them).
+This reduced computational complexity therefore 
+allows assembly of much larger datasets \citep{Compeau2011}.
+
+
 Generally OLC assembly is limited by a requirement for 
 fast and accurate overlap calculations and alignment whereas the de Bruijn approaches 
 requires robust error correction \citep{Palmer2010}.
@@ -471,7 +481,7 @@ implementations.
 
 \subsubsection{The problem with ploidy}
 One important complication in the assembly of eukaryotic genomes 
-relative to bacterial or archael sources is the issue of highly heterozygous polyploid genomes.
+relative to bacterial or archaeal sources is the issue of highly heterozygous polyploid genomes.
 This is problematic as the de Bruijn graphs constructed during assembly
 rapidly increase in complexity when reads from heterozygous samples become
 incorporated \citep{Kajitani2014}.  This is because \(k\)-mers derived from heterozygous regions of 
@@ -735,7 +745,10 @@ the cardinality (size) of the training set \citep{Murphy2012}.
 A supervised learning algorithm thus seeks to approximate \(y=f(x)\) where \(f\) is an unknown 
 function. This estimated function \(\hat{y} = \hat{f}(x)\) (see \cref{eq:sup}) would then generally
 be applied to new data known as the test data for which the expected outputs are not known (i.e. 
-\(x_{i} \not \in \mathcal{D}\)).
+\(x_{i} \not \in \mathcal{D}\)).  In other words, \(i\) samples comprised of \(j\) 
+dimensions each can be arranged as an \(i \times j\) matrix \(\bm{X}\) and the outputs
+to a vector \(\vec{y}\) of length \(i\). Therefore supervised learning
+can be formulated as a means of identifying a mapping between \(\bm{X}\) and \(\vec{y}\):
 
 \[
     \begin{bmatrix}
@@ -1056,8 +1069,13 @@ Typically, these sequences take the form of protein or DNA sequences\footnote{
 Strictly phylogenetics refers to the study of molecular sequence data although the same methods are applicable to
 non-molecular characters such as morphological traits (and occasionally originated in this domain) as well as any
 other set of discrete data vectors. It has even been applied to fields such as linguistics \citep{Atkinson2005}
-} and the measure of relatedness is some proxy for evolutionary distance ranging from simple distance measures 
-e.g. Hamming distance (\(D = \sum_{k=0}^{N}\norm{x_{k} - y_{k}}\) for two sequences \(\vec{x}\) and \(\vec{y}\) of length \(N\))
+} and the measure of relatedness is some proxy for evolutionary distance ranging from simple distance measures
+\footnote{e.g. the Hamming distance \(d\), which can be defined for 
+two sequences (in the form of two vectors \(\vec{x}\) and \(\vec{y}\) of length \(k\)) as the sum
+of the number of positions the sequences differ:
+\[
+    d = \sum_{i=0}^{k} ( 1 - \delta_{x_{i}, y_{i}} ) 
+\]}
 to more complicated probabilistic estimations based on observed data.
 A character is an element of a sequence such as an individual base or amino acid, homologous 
 characters are those in separate sequences that are descended from a common ancestor.  
@@ -1066,7 +1084,18 @@ was conducted using protein sequences e.g. \citep{Eck1966,Fitch1967}.
 
 This phylogenetic estimation can be a non-trivial process (especially with more complex
 measures of relatedness) as the number of
-possible trees rapidly increases with the number of sequences (for rooted trees \(N_{trees} = \prod_{x=2}^{N_{taxa}} (2x - 3)\)).
+possible trees rapidly increases with the number of sequences.
+Specifically, for rooted and unrooted trees the number of possible trees \(n\) increases
+by the number of taxa \(t\) as follows:
+\[
+    \text{For rooted phylogenies}: 
+        n = \prod_{i=2}^{t} (3i - 3)
+
+    \text{For unrooted phylogenies}:
+        n = \prod_{i=2}^{t - 1} (3i - 3)
+
+\]
+
 However, the key stages in a phylogenetic analysis are that of sequence sampling (selection of
 sequences for inclusion in the analysis),  alignment (in which homologous sites in the sampled sequences are aligned with one another),
  masking (in which sites which are evolutionarily informative – can be determined to be homologous 
@@ -1339,8 +1368,13 @@ manually using the graphical tool Seaview \citep{Gouy2010}.
 
 While the simplest means of phylogenetic inference - parsimony i.e. finding
 the tree that requires the fewest sequence changes - does not require any explicit
-model of sequence evolution, all other means of phylogenetic inference do \citep{Le2008}.
-<++>
+model of sequence evolution\footnote{
+Although it is worth noting that maximum likelihood inference under 
+the no common mechanism model (which involves independent branch-length estimation 
+for every site and branch) will result in the same phylogeny as parsimony \citep{Tuffley1997}.
+Therefore, arguably parsimony is a special case of likelihood under this model}
+, all other means of phylogenetic inference do \citep{Le2008}.
+
 
 A substitution model is, in its simplest sense, the same as the PAM and BLOSUM
 matrices used in pairwise and MSA.  They are a means of scoring and weighting

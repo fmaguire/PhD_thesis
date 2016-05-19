@@ -59,7 +59,7 @@
 \RequirePackage{rotating}
 \RequirePackage{lscape}
 \RequirePackage{lettrine}
-\RequirePackage[margin=20mm, bindingoffset=20mm, a4paper]{geometry}
+\RequirePackage[headheight=15pt, margin=20mm, bindingoffset=20mm, a4paper]{geometry}
 \RequirePackage{fancyhdr} 
 \pagestyle{plain} % options: empty , plain , fancy
 \RequirePackage[helvetica]{quotchap}
@@ -214,6 +214,8 @@
 \sisetup{range-phrase=-}
 \sisetup{range-units=single}
 \DeclareSIUnit\bp{bp}
+\DeclareSIUnit\rpm{rpm}
+\DeclareSIUnit\mz{m/z}
 
 % Maths commands
 \newcommand{\appr}{{\mathord{\sim}}}
@@ -223,7 +225,6 @@
 % Nomenclature List
 \makenomenclature
 
-\renewcommand{\cftfignumwidth}{2.5cm}
-\renewcommand{\cfttabnumwidth}{2.5cm}
-
+\renewcommand{\cftfignumwidth}{1.5cm}
+\renewcommand{\cfttabnumwidth}{1.5cm}
 
