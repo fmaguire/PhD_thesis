@@ -529,7 +529,7 @@ such as Bowtie2 \citep{Langmead2012}.  Instead of specifically
 mapping a read to a set of co-ordinates it instead
 determines which transcripts are compatible with the alignment 
 of a given read.  This is achieved via decomposition of transcripts
-in de-Bruijn graphs and fast k-mer hashing to compare reads to transcript
+in de-Bruijn graphs and fast \(k\)-mer hashing to compare reads to transcript
 graph nodes in constant time.  These k-compatibility classes are then used with
 bootstrapped expectation-maximisation to estimate transcript quantification and
 determine uncertainty \citep{Bray2015}. 
@@ -581,7 +581,7 @@ to identify key aspects of differences between the algal species and
 host and endosymbiont metabolic.
 
 \subsubsection{\textit{Chlorella variabilis} 1 N assembly}
-\(232.3M\) 100bp paired-end reads from \citep{Kodama2014}'s 
+\(232.3M\) \SI{100}{\bp} paired-end reads from \citep{Kodama2014}'s 
 bulk RNAseq transcriptome of \textit{Paramecium bursaria} Yad1g1N (syngen
 3, mating type 1) bearing \textit{Chlorella variabilis} 1N endosymbionts
 were downloaded from the DNA Data Bank of Japan (DDBJ) \citep{Tateno2002,Kaminuma2011}
@@ -592,17 +592,17 @@ These reads were then converted to fastq using ``fastq-dump'' using the SRA Tool
 for sequencing adapters using ILLUMINACLIP and SLIDINGWINDOW with a window size
 of 4 and a minimum average quality of 5 in Trimmomatic \citep{Bolger2014a}.
 
-Reads were then error-corrected using ``SEECER'' with a k-mer size of 25 and 
+Reads were then error-corrected using ``SEECER'' with a \(k\)-mer size of 25 and 
 default settings otherwise (entropy of 0.6 and a cluster log-likelihood
 of -1) \citep{Le2013}.  Error-corrected reads were digitally normalised
-using a K-mer size of 25 and a coverage of 20 \citep{Brown2012} and 
-low abundance K-mers in high coverage reads were filtered \citep{Zhang2014,Zhang2015}
+using a \(k\)-mer size of 25 and a coverage of 20 \citep{Brown2012} and 
+low abundance \(k\)-mers in high coverage reads were filtered \citep{Zhang2014,Zhang2015}
 using the Khmer software package \citep{Doring2008,Crusoe2015}.
 
 Assemblies were completed in a modified/fixed version of 
 Bridger 2014-12-01 \citep{Chang2015} (available at
 \url{https://github.com/fmaguire/Bridger_Assembler}) and 
-Trinity v2.0.6 \citep{Grabherr2011,Haas2013} both with K-mer
+Trinity v2.0.6 \citep{Grabherr2011,Haas2013} both with \(k\)-mer
 sizes of 25.
 
 An alternative Trinity assembly was also completed using
@@ -749,13 +749,13 @@ with peaks normalised in respect to the umbelliferone standard.
         \textbf{Q5 Trimmed}  & \(2.127\cdot10^{8} \) \\
         \textbf{Q5 Error Corrected}  & \(2.021\cdot10^{8}\)\\
         \textbf{Q5 Digital Normalisation} & \(1.09 \cdot10^{7}\)\\ 
-        \textbf{Q5 K-mer abundance filtering} & \(1.055\cdot10^{7}\)\\
+        \textbf{Q5 \(k\)-mer abundance filtering} & \(1.055\cdot10^{7}\)\\
         \hline
     \end{tabular}
     \caption[Results of various types of pre-processing for the Yad1g1N transcriptome]{
         Summary of read pre-processing stages for the Kodama library.  This
         table further emphasises the massive amount of redundancy that digital normalisation 
-        removes from the assembly. The minimal effect of K-mer abundance filtering
+        removes from the assembly. The minimal effect of \(k\)-mer abundance filtering
         is likely due to a relative redundancy in this pre-processing from the error
     correction step.}
     \label{tab:kodama_preproc}

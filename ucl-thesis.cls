@@ -213,6 +213,7 @@
 % SI commands
 \sisetup{range-phrase=-}
 \sisetup{range-units=single}
+\DeclareSIUnit\bp{bp}
 
 % Maths commands
 \newcommand{\appr}{{\mathord{\sim}}}
@@ -224,3 +225,5 @@
 
 \renewcommand{\cftfignumwidth}{2.5cm}
 \renewcommand{\cfttabnumwidth}{2.5cm}
+
+

@@ -80,7 +80,7 @@ assembled transcripts into bins relating to their likely originating organisms
     \caption[Summary of Single Cell Transcriptome Analysis]{A flowchart summarising the full analysis and transcript binning of the PbMr single cell transcriptome data.  Key stages are indicated by square boxes and blue colouring, individual analyses are shown in rounded square boxes and iterative parameter optimisation steps are shown in circles and highlighted with red-dotted dependency arrows.}
 \end{figure}
 
-To this end, bulk RNAseq libraries from cultured PbMr was sequenced using 76bp paired-end reads and the Illumina Gene Analyzer II platform 
+To this end, bulk RNAseq libraries from cultured PbMr was sequenced using \SI{76}{\bp} paired-end reads and the Illumina Gene Analyzer II platform 
 taking care to minimise contamination by filtering and washing cultures and carefully
 assessing culture health to maximise the number of healthy PbMr sequenced. 
 Unfortunately, due to limitations in the maintainable culture density of the 
@@ -157,7 +157,7 @@ when no photosynthesis is taking place) samples were extracted 5 hours into
 the light and dark phase of the 12:12 hour day-night cycle.
 
 To ensure extracted RNA was representative of healthy and interacting host 
-and endosymbionts care was taken to the number of dead/dying cells 
+and endosymbionts care was taken to minimise the number of dead/dying cells 
 from which RNA was extracted.  In order to do this, a subsample was taken 
 from each culture during the process of harvesting and scored for dead/dying cells.  
 Cell assays were formed by taking \SIrange{1}{2}{\milli\litre} of each harvest cell pellet and 
@@ -229,8 +229,8 @@ cDNA transcripts.  Analysis of this is discussed below.
 
 The amplified cDNA was then purified using a QIAamp DNA mini kit and eluted in \SI{100}{\micro\litre} elution buffer.
 This kit operates by binding the DNA to a QIAmp membrane in a spin column followed by successive washing steps
-to remove impurities such as remaining proteins and cations. To create 3 dark cDNA 
-samples (Dark1-2, Dark1-3, Dark1-5) and 3 light samples (Light1-9, Light1-10, Light1-11).
+to remove impurities such as remaining proteins and cations. This lead to the creation of 3 dark cDNA 
+libraries (Dark1-2, Dark1-3, Dark1-5) and 3 light libraries (Light1-9, Light1-10, Light1-11).
 
 
 Due to low quantities of eukaryote identifiable reads in the initial 3 sequenced single cell
@@ -251,24 +251,24 @@ For both bulk and single cell preparations each cDNA sample was fragmented in \S
 with a target size of \(225bp\) (duty factor of \(10\%\), 200 cycles per burst, peak incident power
 of 175, \SI{200}{\second} at \SI{7}{\degreeCelsius}). Fragment sizes were checked on a BioAnalyzer (Agilent) 7500 DNA chip.
 cDNA was then concentrated using a GeneRead kit column with a elution in \SI{35}{\micro\litre}. Fragmentation
-step was then repeated 3 times (\SI{110}{\second}) until majority of cDNA in each library was between \(200-250bp\)
+step was then repeated 3 times (\SI{110}{\second}) until majority of cDNA in each library was between \SIrange{200}{250}{\bp}.
 
 cDNA ends were then end-repaired, adenylated and adapters ligated using the NEXTFlex (Bioo scientfic) sequencing kit 
 according to the manufacturer's instructions and using NEBNext (New England Biolabs) indices.  Also following
 the NEXTFlex kit instructions, MgNa bead purification was done before and after PCR amplification using
 NEBNext reagents.  Finally, prepared libraries were size selected using a Blue Pippin machine at a size selection
-of \(350bp\) (range \(315-385bp\)).
+of \SI{350}{\bp} (range \SIrange{315}{385}{\bp}).
 
 A final bioanalyzer step was conducted with individual library concentrations ranging from \SIrange{0.66}{4.09}{\nano\mole}.
 
 
 \subsubsection{Sequencing}
 
-The bulk day and night library were paired-end (PE) \(76bp\) sequenced using an Illumina Genome
+The bulk day and night library were paired-end (PE) \SI{76}{\bp} sequenced using an Illumina Genome
 Analyzer II by the Exeter University Sequencing Service.  The two libraries were sequenced
 on separate flowcells (Bulk-Light, Bulk-Dark).
 
-Single cell libraries were paired-end \(150bp\) using an Illumina HiSeq 2500 by Exeter
+Single cell libraries were paired-end \SI{150}{\bp} using an Illumina HiSeq 2500 by Exeter
 Sequencing Service. 3 dark (Dark1-2, Dark1-3, Dark1-5) and 3 light (Light1-9, Light1-10, Light1-11)
 samples were multiplexed sequenced on a single flowcell lane.  The 5 additional 
 dark samples (Dark2-2, Dark2-3, Dark2-6, Dark2-7, Dark2-8) were multiplexed and sequenced on a single
@@ -348,11 +348,11 @@ Trimmomatic \citep{Bolger2014a} was run on these samples with adapter clipping (
 using sequencing service provided fasta file of adapters, a maximum mismatch count of 2,
 a palindromic clip threshold of Q35 and a simple clip threshold of Q15, a sliding window
 quality trim of size 4 and average window quality thresholds of Q0, Q2, Q5, Q10, Q15, Q20, Q25, Q30, Q35, and Q40.
-Finally, a minimum length trimmed read length criteria of 40bp was used.  
+Finally, a minimum length trimmed read length criteria of \SI{40}{\bp} was used.  
 
 
 The trimmed samples were then mapped to three different \textit{de novo} draft transcriptome assemblies using bowtie2
-\citep{Langmead2012} with maximum and minimum insert sizes of 37bp and 1161bp (derived from library preparation
+\citep{Langmead2012} with minimum and maximum insert sizes of \SI{37}{\bp} and \SI{1161}{\bp} (derived from library preparation
 fragment size distribution and histograms of mapped insert sizes for untrimmed reads against bulk reference).
 
 These 3 draft assemblies were a ``baseline'' bulk RNASeq transcriptome reference consisting of a Trinity \citep{Haas2013} 
@@ -410,20 +410,20 @@ The impact of each of these error correction algorithms at the read level was as
 as their subsequent impact on downstream assembly metrics, particularly RSEM-EVAL likelihood score
 as will be expanded upon below in the description of assembly assessment.
 
-\subsubsection{K-mer normalisation and trimming}
+\subsubsection{\(k\)-mer normalisation and trimming}
 
 Taxonomically screened sc-RNAseq libraries trimmed at a minimum sliding window quality
-threshold of Q30 and bulk libraries were K-mer normalised and trimmed using the Khmer package \citep{Crusoe2015}
+threshold of Q30 and bulk libraries were \(k\)-mer normalised and trimmed using the Khmer package \citep{Crusoe2015}
 
 Specifically, reads were interleaved \citep{Doring2008} and then digitally normalised using diginorm \citep{Brown2012}
-with a K-mer size and coverage cut-off of 20.  Low abundance and likely erroneous
-K-mers were then filtered relative to the read coverage i.e. low abundance k-mers were removed
+with a \(k\)-mer size and coverage cut-off of 20.  Low abundance and likely erroneous
+\(k\)-mers were then filtered relative to the read coverage i.e. low abundance \(k\)-mers were removed
 from high coverage reads but would be more likely to be retained for low coverage reads \citep{Zhang2015,Zhang2014}.  
 
-Filtered data was then assembled using Trinity (with minimum K-mer coverage of 2) 
+Filtered data was then assembled using Trinity (with minimum \(k\)-mer coverage of 2) 
 and the subsequent assembly partitioned into transcript families in Khmer \citep{Pell2012}.
 
-The final assemblies were then compared to un-normalised and k-mer trimmed assemblies 
+The final assemblies were then compared to un-normalised and \(k\)-mer trimmed assemblies 
 (see \cref{sec:assembly_assessment} for details.
 
 
@@ -445,11 +445,11 @@ Cufflinks \citep{Trapnell2011} was then used to extract isoforms from the splice
 For \textit{de novo} assembly, assemblies were conducted using following 
 assemblers with default settings unless specified otherwise:
 \begin{itemize}
-    \item Trinity v2.0.6 \citep{Grabherr2011} with and without a minimum K-mer coverage of 2
-    \item SOAPdenovo-Trans v1.03 \citep{Xie2014} with K-mer sizes of 20, 32, 64, and 80   
-    \item TransAbyss v1.5.3 \citep{Robertson2010} with K-mer sizes 20, 32, and 64 
-    \item Velvet v1.2.10 \citep{Zerbino2008} and Oases v0.2.08 \citep{Schulz2012} with K-mer size of 
-        21, a minimum K-mer coverage of 2 and a minimum transcript length
+    \item Trinity v2.0.6 \citep{Grabherr2011} with and without a minimum \(k\)-mer coverage of 2
+    \item SOAPdenovo-Trans v1.03 \citep{Xie2014} with \(k\)-mer sizes of 20, 32, 64, and 80   
+    \item TransAbyss v1.5.3 \citep{Robertson2010} with \(k\)-mer sizes 20, 32, and 64 
+    \item Velvet v1.2.10 \citep{Zerbino2008} and Oases v0.2.08 \citep{Schulz2012} with \(k\)-mer size of 
+        21, a minimum \(k\)-mer coverage of 2 and a minimum transcript length
         of 100.
     \item Iterative de Bruijn Graph Assembler (IDBA)-tran \citep{Peng2010,Peng2012,Peng2013} 
     \item IDBA-MTP \citep{Leung2014}, IDBA-UD \citep{Peng2012}, IDBA-MT \citep{Leung2013} workflow.
@@ -458,7 +458,7 @@ assemblers with default settings unless specified otherwise:
 
 Trinity was used for all further downstream assembly optimisation due to its performance
 and consistency.
-Specifically, a minimum K-mer coverage of 1-3 were attempted as well as various
+Specifically, a minimum \(k\)-mer coverage of 1-3 were attempted as well as various
 combinations of libraries (i.e. bulk and screened sc-RNAseq libraries) and also
 sequencing data from Kodama's previously published \textit{P. bursaria} bulk
 RNAseq analysis \citep{Kodama2014c}.
@@ -517,7 +517,7 @@ using both universal encoding and this alternative code. However, for
 the later BLAST-based bin accuracy verification purposes and subsequent
 automated phylogeny based binning all ORFs were initially only called using 
 the alternative ciliate encoding. The ciliate encoding was used
-instead of universal because it was spuriously extended transcripts
+instead of universal because it spuriously extended transcripts
 were considered favourable to falsely truncated ones.
 This greatly reduced redundancy in the later binning analyses.
 
@@ -854,7 +854,7 @@ in paired-end Illumina sequencing.
 The bulk libraries demonstrate a very low level of hits compared to single cell libraries (see \cref{tab:bulk_duey}), 
 to the point where if they were single cell libraries they would be taxonomically excluded. 
 However, it should be noted that the bulk libraries were sequenced on a Gene Analyzer II and are on average
-half the length of single cell reads (76bp vs 150bp). Due to the difficulty aligning short reads
+half the length of single cell reads (\SI{76}{\bp} vs \SI{150}{\bp}). Due to the difficulty aligning short reads
 to references the difference between libraries may be attributable to this alone. 
 Additionally, the vast majority of the lower number of hits do align to eukaryote (and alveolate) 
 taxa consistent with an non-contaminated library. 
@@ -1037,7 +1037,7 @@ to attempt to remove GC\% rich contamination from single cell libraries.
 The 2 different clustering schemes attempted using 2 and 3 target clusters.
 Additionally, both clustering schemes were also run with an initial overclustering factor of 3
 i.e. parKour originally found 6 and 12 clusters and then merged them to produce the target 2 and 3 
-clusters respectively. 
+clusters respectively. Therefore, over-clustering made a minimal effect on cluster centroids and read assignment.
 
 \begin{table}
     \centering
@@ -1070,11 +1070,6 @@ clusters respectively.
     \label{tab:centroids} 
 \end{table} 
 
-2 and 3 target clusters with and without an initial 
-overclustering factor of 3 (i.e. initially finding 6 and 12 clusters originally before merging to
-produce final 2 and 3 cluster targets). 
-
-Therefore, over-clustering made a minimal effect on cluster centroids and read assignment.
 
 \begin{figure}[h!]
 	\centering
@@ -1148,7 +1143,7 @@ used for further analysis.  Instead, we elected to use uncorrected, taxonomicall
 Q30 trimmed reads from this point on. 
 
 \subsubsection{Digital Normalisation} 
-Digital normalisation and removal of likely erroneous k-mers (i.e. low abundance) 
+Digital normalisation and removal of likely erroneous \(k\)-mers (i.e. low abundance) 
 via Khmer reduced the total input reads from the Q30 trimmed taxonomically
 filtered SCT and bulk libraries from 
 \(2.912\cdot 10^{8}\) to \(8.473\cdot 10^6\) paired reads.
@@ -1191,7 +1186,7 @@ median contig length at the expense of a lower N50.
 \end{tabular}
     \caption[Effect of Digital Normalisation on Assembly]{Trinity assemblies (with --min-kmer-cov 2) 
         of Q30 trimmed, taxonomically selected single cell and bulk libraries 
-    with and without Khmer digital normalisation and K-mer abundance filtering.
+    with and without Khmer digital normalisation and \(k\)-mer abundance filtering.
     Khmer pre-processing improved the assembly likelihood by an order of magnitude,
     and significantly increased the total size of the assembly while only having
     a marginally negative effect on contig N50s. 
@@ -1201,7 +1196,7 @@ median contig length at the expense of a lower N50.
 
 As Khmer pre-processing both significantly improved assembly run time as well as the overall
 assembly quality (as assessed in the Trinity assembly comparison metrics above \cref{tab:diginorm_assembly})
-digitally normalised and K-mer abundance filtered bulk and taxonomically selected Q30
+digitally normalised and \(k\)-mer abundance filtered bulk and taxonomically selected Q30
 trimmed SCT were determined to be the optimal pre-processing for this dataset. 
 
 \subsection{Assembly}
@@ -1265,8 +1260,8 @@ Dark1-2, Dark2-3, Dark2-6, Dark2-8) and bulk libraries are shown in
         
 \end{tabular}}
     \caption[Summary of Different Assembler Outputs]{\textit{De novo} combined assemblies of Q30 trimmed taxonomically
-        selected single cell libraries and bulk libraries (but not digitally normalised or K-mer abundance
-            filtered) with a range of assemblers and parameters.  K-mer size used
+        selected single cell libraries and bulk libraries (but not digitally normalised or \(k\)-mer abundance
+            filtered) with a range of assemblers and parameters.  \(k\)-mer size used
             for assemblers with that option are indicated in the Parameters column 
             e.g. K23 indicates a 23-mers. Bridger and Trinity outperformed 
             other assemblers in terms of assembly likelihood and rational
@@ -1278,9 +1273,9 @@ Dark1-2, Dark2-3, Dark2-6, Dark2-8) and bulk libraries are shown in
         \label{tab:assemblies}
 \end{table}
 
-Critically, Oases, the IDA-MTP/UD/MT pipeline and SOAPdenovo-Trans at higher K-mer values
+Critically, Oases, the IDA-MTP/UD/MT pipeline and SOAPdenovo-Trans at higher \(k\)-mer values
 all failed to run to completion correctly with the dataset.  In the case of Oases
-and SOAPdenovo-Trans at higher K-mer values this was due to exhaustion
+and SOAPdenovo-Trans at higher \(k\)-mer values this was due to exhaustion
 of system memory and in the case of IDBA-MTP/UD/MT workflow an unresolved coding error 
 resulting in repeated segmentation faults.
 
@@ -1292,7 +1287,7 @@ equal size (100-130,000 contigs of rational sizes: N50s of 700-850
     and ran most computationally efficiently. 
 
 
-Trinity and Bridger assemblies using digitally normalised and K-mer abundance 
+Trinity and Bridger assemblies using digitally normalised and \(k\)-mer abundance 
 filtered, taxonomically selected, Q30 trimmed, single cell and bulk libraries performed 
 even better in terms of assembly likelihood and read incorporation.
 
@@ -1305,19 +1300,19 @@ even better in terms of assembly likelihood and read incorporation.
         Bridger & K19 & 102,686 & \(8,209*10^{7}\)  & \(-1.729*10^{9}\) \\
                 & K25 & 113,106 & \(9.866*10^{7}\)  & \(-1.183*10^{9} \) \\ 
                 & K31 & 112,391 & \(8.941*10^{7}\)  & \(-1.143*10^9\) \\ 
-        Trinity & Minimum K-mer Coverage of 1 & 176,097 &  \(1.113*10^{8}\)& \(-1.214*10^{9}\) \\  
-                & Minimum K-mer Coverage of 2 & 147,902 & \(9.239*10^{7}\) & \(-1.238*10^9\) \\  
+        Trinity & Minimum \(k\)-mer Coverage of 1 & 176,097 &  \(1.113*10^{8}\)& \(-1.214*10^{9}\) \\  
+                & Minimum \(k\)-mer Coverage of 2 & 147,902 & \(9.239*10^{7}\) & \(-1.238*10^9\) \\  
                 \hline
 \end{tabular}}
     \caption[Trinity vs. Bridger Assemblies]{Assembly summaries of Q30 trimmed taxonomically selected SCT and bulk reads 
-    after digital normalisation and K-mer abundance filtering. Parameters used in the assembly
-indicates any special parameter settings used in the assembly i.e. K19 indicates a K-mer size of 19 was used.
+    after digital normalisation and \(k\)-mer abundance filtering. Parameters used in the assembly
+indicates any special parameter settings used in the assembly i.e. K19 indicates a \(k\)-mer size of 19 was used.
 }
     \label{tab:digassemby}
 \end{table}
 
-Smaller K-mer values (19-mer) performed worse in the case of the Bridger assembly
-with the optimal assembly in terms of contig number and size was the K-mer size 
+Smaller \(k\)-mer values (19-mer) performed worse in the case of the Bridger assembly
+with the optimal assembly in terms of contig number and size was the \(k\)-mer size 
 of 25.  This was slightly lower in terms of likelihood than the 31-mer Bridger
 assembly. The digitally normalised and filtered Trinity assemblies 
 generated much larger assemblies overall but still produced good likelihoods.
@@ -1326,7 +1321,7 @@ generated much larger assemblies overall but still produced good likelihoods.
 
 Two assemblies were combined using the tr2aacds.pl script in EvidentialGene 
 and a minimum CDS size of 100. The first consisted of all successfully completed
-assemblies of non-normalised/filtered reads i.e. SOAPdenovo-Trans, TransAbyss (multiple K-mer
+assemblies of non-normalised/filtered reads i.e. SOAPdenovo-Trans, TransAbyss (multiple \(k\)-mer
 assembly merged using built-in tool),
 IDBA-tran, Trinity and Bridger in \cref{tab:assemblies}.  The second, 
 of the 3 Bridger digitally normalised assemblies and two Trinity assemblies 
@@ -1362,8 +1357,8 @@ generating similar numbers of contigs there was next to no overlap between
 the two combinations as assessed by clustering using CD-HIT at a similarity of \(90\%\).
 
 Therefore, the assembly selected for downstream binning and analysis was Bridger 
-assembly of bulk and library screened single cell normalised and K-mer
-abundancy filtered reads with a K-mer size of 31 as it displayed the best likelihood
+assembly of bulk and library screened single cell normalised and \(k\)-mer
+abundancy filtered reads with a \(k\)-mer size of 31 as it displayed the best likelihood
 while maintaining assembly statistics within expected ranges. 
 
 
@@ -1390,8 +1385,11 @@ endosymbiont (\(\sim92\%\)) and food (\(\sim94\%\)) derived transcripts.
 
 \begin{figure}[h!]
     \includegraphics[width=\textwidth]{change_in_binning_after_phylogenetic_confirmation.pdf}
-    \caption[Preliminary transcript binning analysis]{Preliminary analysis of change in binning after manual phylogenetic confirmation.
-    	This analysis was based on an earlier iteration of the assembly and ORF calling.}
+    \caption[Preliminary transcript binning analysis]{Preliminary analysis of change in binning after manual phylogenetic confirmation.  These results demonstrate that individual top BLAST hits is a sub-optimal means of 
+    identifying transcript bins as they are partially inconsistent with full phylogenetic analyses. Furthermore,
+    this error is unevenly distributed across initial bins i.e. BLAST bins perform worse for potential Host transcripts
+    than they do for other bins. 
+    	This analysis was based on an earlier iteration of the assembly and ORF calling. }
 \end{figure}
 
 \subsubsection{Phylogeny-based bin classification}
@@ -1573,7 +1571,7 @@ obvious otherwise.  For instance, our profiles revealed systematically low
 low levels of Viridiplantae related reads across both bulk and sc-RNAseq libraries and in both lit and dark conditions.  
 Despite care being taken to ensure thorough lysis of the chitinous \textit{Micractinium} cells during 
 RNA extraction and a ratio of \(\sim 300:1\) endosymbiont to host cell ratio this may be related to lytic inefficiencies \citep{Korfhage2015} or potentially
-just relatively fewer endosymbiont transcriptomic activity relative to host and associated bacteria species.
+just relatively lower endosymbiont transcriptomic activity relative to host and associated bacteria species.
 Finally, it is possible that due to the endosymbiont being largely provisioned by the host it may be relatively
 transcriptionally inactive and thus relatively fewer transcripts can be recovered. 
 
@@ -1600,14 +1598,14 @@ generated from a relatively small random subsample of a library is largely consi
 with that of the profile generated from the library as a whole.
  
 ``DueyDrop'' could potentially be improved in such a way that an entire library can be screened quickly instead of just subsamples.
-Briefly, this would involve quantifying exact K-mer matches between library reads and a pre-generated database of known taxa
+Briefly, this would involve quantifying exact \(k\)-mer matches between library reads and a pre-generated database of known taxa
 using efficient probabilistic hashing data structures such as a bloom filter, or more likely count-min sketch and an efficient
-k-mer counting library such as Jellyfish \citep{Marcais2011}.  This would have a major speed advantage compared to the BLASTX-based method of ``DueyDrop''
+\(k\)-mer counting library such as Jellyfish \citep{Marcais2011}.  This would have a major speed advantage compared to the BLASTX-based method of ``DueyDrop''
 and would thus allow entire libraries to be checked in reasonable time.  A similar approach to this has been implemented as a service
 by \url{https://www.onecodex.com/}, although this focuses specifically on screening for medically relevant taxa. 
 However, it would require laborious workarounds to handle
-K-mers shared between multiple taxa in the database, translation of reads and/or database sequences into a matching sense and form (e.g. protein),
-and use of a locality-sensitive hash function to handle scenarios where there is no exact k-mer match. This latter issue is particularly
+\(k\)-mers shared between multiple taxa in the database, translation of reads and/or database sequences into a matching sense and form (e.g. protein),
+and use of a locality-sensitive hash function to handle scenarios where there is no exact \(k\)-mer match. This latter issue is particularly
 problematic for libraries consisting of transcripts from poorly sampled sections of the tree of life where exact matches would become
 commensurately rarer as sampling sparsity increases.  
 While still affected by this problem, the BLASTX/Diamond approach implemented in the ``DueyDrop'' scripts are relatively more robust to these
@@ -1625,8 +1623,8 @@ permissive trims \citep{Macmanes2014}, error correction \citep{Macmanes2013,Macm
 \citep{Nakasugi2014} have been demonstrated as effective tactics in recapitulating a comprehensive
 set of transcripts \textit{de novo}, MDA-based SCT and bulk datasets such as the one investigated
 above exhibit different properties.  
-It is important to pick a trimming threshold which minimises sequence error (mostly substitutions \citep{Yang2013}) as these
-result in assembly of spurious sequences but doesn't discard reads necessary to complete transcripts \citep{Macmanes2013,Macmanes2014}. 
+It is important to pick a trimming threshold which minimises sequence error (mostly substitutions \citep{Yang2013}),
+as these result in assembly of spurious sequences, but doesn't discard reads necessary to complete transcripts \citep{Macmanes2013,Macmanes2014}. 
 For the \textit{P. bursaria} - \textit{M. reisseri} bulk and SCT dataset the optimal trimming threshold - based on both
 mapping statistics to preliminary assemblies and final assembly likelihoods proved to be a harsh threshold of Q30. 
 
@@ -1655,8 +1653,8 @@ Finally, merging multiple assemblies proved a sub-optimal strategy with all
 merged assemblies generating lower likelihood assemblies than the
 best individual assembly.  While not merging assemblies might mean specific
 transcripts might not have been recovered, especially assemblies at a range
-of K-mer sizes (short K-mers generally recover lower expression transcripts
-and vice versa for long K-mers), the much higher likelihoods meant the
+of \(k\)-mer sizes (short \(k\)-mers generally recover lower expression transcripts
+and vice versa for long \(k\)-mers), the much higher likelihoods meant the
 best performing individual assembly (Bridger using 31-mers, Q30 trimmed
 taxonomically selected SCT and bulk libraries) was preferred.
 
@@ -1692,7 +1690,7 @@ reasonably where they may be expected from inspection of per read GC probability
 i.e. partitioning out the GC rich potentially contaminant reads likely from \textit{Rhizobia}
 bacterial species.  Unfortunately, in the case of this dataset clustering proved ineffective
 at improving assembly accuracy and fully removing groups of contaminant reads with large GC skews. 
-The likely explanation for this is that even 150bp paired end reads are too short to consistently
+The likely explanation for this is that even \SI{150}{\bp} paired end reads are too short to consistently
 statistically demonstrate the GC-AT bias of the originating organism. This means any partitioning
 is likely to remove a significant number of reads necessary to complete transcripts due to local
 variation in AT bias.  The high number of shorter contigs is indicative of the kind of assembly
@@ -1721,7 +1719,7 @@ available.
 Alternatively,
 a variational Bayes approach could be implemented to determine the optimal number of clusters (e.g. CONCOCT \citep{Alneberg2014}).
 Finally, memory efficiency can be improved by use of streaming clustering algorithms (e.g. those discussed in
-\citep{OCallaghan2002})
+\citet{OCallaghan2002})
 in which all data does not require to be loaded into a matrix at a given time and be clustered
 as they are parsed.  
 
@@ -1733,8 +1731,8 @@ and found to be a highly effective strategy in improving assemblies of mixed bul
 
 Interestingly, some have argued that error correction is a special case of general digital normalisation
 \citep{Krasileva2013}.  This is supported by the fact that many error correction
-algorithms operate on similar principal of attempting to remove low abundance K-mers
-from input datasets. K-mers with a low abundance
+algorithms operate on similar principal of attempting to remove low abundance \(k\)-mers
+from input datasets. \(k\)-mers with a low abundance
 are more likely to be due to sequencing errors than representing novel biological
 diversity.   
 This said digital normalisation has the potential to
@@ -1748,7 +1746,7 @@ contaminated dark reads were retained in roughly equal proportion to the light r
 Suggesting, MDA derived data may also just display a greater quantity of 
 low-level sequencing error.  
 
-It should be noted that the digitally normalised and K-mer abundance filtered assemblies also
+It should be noted that the digitally normalised and \(k\)-mer abundance filtered assemblies also
 incorporated more bases overall than the equivalent assembly using the full
 libraries therefore resultant assemblies were just high confidence (and likelihood)
 subsets of the initial input data.
@@ -1782,7 +1780,7 @@ towards \citep{Neil2013c}.  Furthermore, the number of possible metrics is great
 if assessment is mainly conducted in a reference-free manner \citep{Li2014}.  As the majority of
 assemblies were \textit{de novo} and the suitability of the related but divergent genomes
 proved lacking it was necessary to restrict to reference-free assembly assessments.  
-Therefore, a model-based reference-free assembly scoring algorithm (RSEM-EVAL \citep{Li2014} was,
+Therefore, a model-based reference-free assembly scoring algorithm (RSEM-EVAL \citep{Li2014}) was,
  along with standard (if imperfect) metrics, used to evaluate different assemblies in this study.
  The assumption of the accuracy of the RSEM-EVAL likelihood is a strong one, and deserves careful re-consideration
  in further work.
@@ -1803,7 +1801,7 @@ However, despite being relatively newer and consisting of
 a less mature and tested codebase, Bridger proved to be
 a slightly more effective assembly tool overall. Unfortunately,
 coding problems and a lack of public active development means 
-it is non-trivial to successful use this tool.  In the process of 
+it is non-trivial to successfully use this tool.  In the process of 
 implementing the above analyses it was necessary to fix several
 bugs present in the assembler. These upgrades were merged into
 the code and are available on GitHub (\url{https://github.com/fmaguire/Bridger_Assembler}).
@@ -1863,15 +1861,15 @@ deep neural network classifier or using a phylogeny specific kernel
 function \citep{Vert2002} in a Gaussian process or
 SVM system all offer potential algorithmic improvements.
 Finally, incorporation of additional sequence related features such as
-K-mer coverage, N-mer frequencies and composition into each samples may help greatly improve
+\(k\)-mer coverage, N-mer frequencies and composition into each samples may help greatly improve
 the fidelity of classification.
 
 \section{Conclusion}
 In conclusion, for this dataset the optimal pre-processing
 was determined to be careful taxonomic screening of input libraries,
 followed by trimming at a high (Q30) threshold and subsequent
-digital normalisation and low-abundance K-mer filtering. 
-The optimal assemblies were generated using larger (25-31 K-mer)
+digital normalisation and low-abundance \(k\)-mer filtering. 
+The optimal assemblies were generated using larger (25-31 \(k\)-mer)
 sizes and utilised the Bridger (and to lesser extent Trinity)
 assembly algorithms.  While pre-assembly read partitioning proved 
 ineffective in this implementation, in future a less naive

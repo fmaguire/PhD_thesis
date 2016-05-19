@@ -288,12 +288,12 @@ and an ampicillin resistance marker (shown in \cref{fig:vec_map}).
     \textbf{Gene} & \textbf{Function} & \textbf{RNAi phenotype in}      & Vector Design & Reference \\
                   &                   & \textbf{\textit{P. tetaurelia}} &               &           \\
         \hline
-        \textit{epi2} & Epiplasmin & ``Monstrous'' cells  & 500bp via \textit{Pst}I and \textit{Hind}III & \citep{Damaj2009} \\
-        NSF & Membrane fusion factor & Lethal & 500bp via \textit{Pst}I and \textit{Hind}III & \citep{Galvani2002} \\
-        pTMB.422c & Binding protein & Lethal & 500bp via \textit{Pst}I and \textit{Hind}III & \citep{Nowack2011} \\
-        \textit{bug22} & Basal body/ciliary protein & Slow swimming and death & 313bp via \textit{Xba}I and \textit{Hind}III & \citep{Laligne2010} \\
-        BBS7 & Ciliary ion transport & Fewer, shorter ciliar & 486bp via \textit{Xho}I and \textit{Hind}III & \citep{Valentine2012} \\
-        PGM & PGM endonuclease & Post-autogamous cells unable to resume normal growth & 500bp via \textit{Pst}I and \textit{Hind}III & \citep{Baudry2009} \\
+        \textit{epi2} & Epiplasmin & ``Monstrous'' cells  & \SI{500}{\bp} via \textit{Pst}I and \textit{Hind}III & \citep{Damaj2009} \\
+        NSF & Membrane fusion factor & Lethal & \SI{500}{\bp} via \textit{Pst}I and \textit{Hind}III & \citep{Galvani2002} \\
+        pTMB.422c & Binding protein & Lethal & \SI{500}{\bp} via \textit{Pst}I and \textit{Hind}III & \citep{Nowack2011} \\
+        \textit{bug22} & Basal body/ciliary protein & Slow swimming and death & \SI{313}{\bp} via \textit{Xba}I and \textit{Hind}III & \citep{Laligne2010} \\
+        BBS7 & Ciliary ion transport & Fewer, shorter ciliar & \SI{486}{\bp} via \textit{Xho}I and \textit{Hind}III & \citep{Valentine2012} \\
+        PGM & PGM endonuclease & Post-autogamous cells unable to resume normal growth & \SI{500}{\bp} via \textit{Pst}I and \textit{Hind}III & \citep{Baudry2009} \\
         \hline
 \end{tabular}}
     \caption[Table of RNAi vectors and inserts used]{Details of RNAi vectors used in dsRNA experiments.  
@@ -361,7 +361,7 @@ of \(1e^{-5}\).
 
 Finally, if a component could not be identified in the transcriptomes
 it was additionally searched for in the assembled \textit{P. bursaria}-\textit{M. reisseri} SW1-ZK
-genomic contigs (over 500bp) using tBLASTx with a minimum expectation \(1e^{-5}\).
+genomic contigs (over \SI{500}{\bp}) using tBLASTx with a minimum expectation \(1e^{-5}\).
 This would theoretically allow the identification of present but non-expressed components.
 
 \begin{table}
@@ -440,9 +440,9 @@ with default settings.
 In order to investigate the prevalence of ``cross-talk'' between 
 host and endosymbiont a tool to analyse short sequence collisions between two sets
 of transcripts was created.  ``eDicer'' is built around 
-the Jellyfish K-mer counter \citep{Marcais2011} 
-and the K-mer Analysis Toolkit (KAT) \citep{ClavijoKAT}.  Using efficient
-K-mer hashing it allows the identification of shared K-mers between
+the Jellyfish \(k\)-mer counter \citep{Marcais2011} 
+and the \(k\)-mer Analysis Toolkit (KAT) \citep{ClavijoKAT}.  Using efficient
+\(k\)-mer hashing it allows the identification of shared \(k\)-mers between
 two sets of sequences.  As Dcr1 in \textit{P. tetaurelia} generates
 23nt fragments, by identifying the number of shared 23-mers between
 two datasets e.g. the set of host and endosymbiont transcripts 
@@ -454,17 +454,17 @@ set of transcripts (endosymbiont transcripts in this case)
 the following
 values were calculated and tabulated:
 \begin{itemize}
-    \item Number of K-mers in the query, in other words the length of the query
-        in K-mers (\(\frac{\sum^s_{n=1} len(x_{n})}{w}\)
-        for a set containing \(s\) transcripts and a K-mer size of \(w\)).
-    \item Number of unique K-mers in the query, the non-redundant length of 
+    \item Number of \(k\)-mers in the query, in other words the length of the query
+        in \(k\)-mers (\(\frac{\sum^s_{n=1} len(x_{n})}{w}\)
+        for a set containing \(s\) transcripts and a \(k\)-mer size of \(w\)).
+    \item Number of unique \(k\)-mers in the query, the non-redundant length of 
         the query.
-    \item Number of shared  K-mers (``collisions'') between query and subject bin.
-    \item Number of unique shared K-mers betwee query and subject bin.
-    \item Shared K-mers normalised by subject length in K-mers.
-    \item Shared K-mers normalised by the subject length in unique K-mers.
-    \item Shared unique K-mers normalised by subject length in K-mers.
-    \item Shared unique K-mers normalised by the subject length in unique K-mers.
+    \item Number of shared  \(k\)-mers (``collisions'') between query and subject bin.
+    \item Number of unique shared \(k\)-mers betwee query and subject bin.
+    \item Shared \(k\)-mers normalised by subject length in \(k\)-mers.
+    \item Shared \(k\)-mers normalised by the subject length in unique \(k\)-mers.
+    \item Shared unique \(k\)-mers normalised by subject length in \(k\)-mers.
+    \item Shared unique \(k\)-mers normalised by the subject length in unique \(k\)-mers.
 \end{itemize}
 
 In order to contextualise the number of collisions between the 2
@@ -1007,12 +1007,12 @@ more problematic than that of bacterial cross-talk.
 
 
 It might be interesting to test the linear relationship between phylogenetic
-relatedness and the number of K-mer collisions.  For example, phylogentic distances
+relatedness and the number of \(k\)-mer collisions.  For example, phylogentic distances
 between the endosymbiont and various taxa could be derived from an established
 published multi-gene analysis that includes these species and regression
 conducted using this as a feature. 
 
-One down-side of the efficient K-mer hashing based ``eDicer'' design is that
+One down-side of the efficient \(k\)-mer hashing based ``eDicer'' design is that
 it only finds exact matches.  RNAi has been found to not always require exact
 sequence matches to induce knock-down \citep{Elbashir2001} therefore,
 this analysis potentially misses a large amount of near-identical collisions.
