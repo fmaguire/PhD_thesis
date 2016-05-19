@@ -895,7 +895,7 @@ for analysis of more divergent taxa, it was considered
 unecessary to conduct structural analysis for taxonomic analysis of these
 endosymbionts.
 
-\subsection{Reliability of culture collection}
+\subsection{Reliability of culture collections}
 
 One clear result and point worth raising is that contrary to previous studies 
 (accession \(AB260896.1\) \citep{Hoshina2008}) and CCAPs culture description 
@@ -951,11 +951,16 @@ it is the lone genome assembler that effectively utilised
 paired-end data during assembly.  The vast majority of assemblers
 will only utilise this data in ad-hoc post-assembly heuristic operations
 to improve contigs and scaffold the dataset.  On the other hand,
-SPAdes generates the assembly de-Bruijn using siamese rectangular
+SPAdes generates the assembly dBG using siamese rectangular
 graphs that incorporate both forward and reverse reads and their 
 respective insert. 
 In future, it may be worth re-analysing this data using
 other MDA-specific tools such as HyDA to assess their performance. 
+Additionally, likelihood/probabilistic methods such as
+CGAL \citep{Rahman2013} or ALE \citep{Clark2013} could be applied
+to the problem of genome assembly assessment instead of somewhat arbitrary
+individual metrics.
+
 
 The relative performance of Q30-SPAdes with and without the ``careful''
 setting is interesting. This setting minimises the risk of mismatch and indels
