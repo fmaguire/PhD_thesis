@@ -296,12 +296,12 @@ such as Conditional Random Fields and Recursive Neural Networks.
 
 
 The major 2nd and 3rd generation base-calling procedures output a FastQ formatted file. 
-These are files containing the sequence of a read and a per-base quality score known as a (\(q\)) score.
-These scores (\(q\)) are calculated as a logarithmic relation to the base-called error probability (\(p\))
-\[ q = -10\log{10}{p} \]
+These are files containing the sequence of a read and a per-base quality score known as a (\(Q\)) score.
+These scores (\(Q\)) are calculated as a logarithmic relation to the base-called error probability (\(p\))
+\[ Q = -10\log{10}{p} \]
 and conversely: 
-\[ p = 10^{\frac{-q}{10}} \]
-Therefore \(q = 30\) corresponds to 99.9\% base call accuracy
+\[ Q = 10^{\frac{-q}{10}} \]
+Therefore \(Q = 30\) corresponds to 99.9\% base call accuracy
 
 Before assembly, there are several stages of read pre-processing that generally takes
 place for both genomic and transcriptomic studies. 
@@ -1075,7 +1075,12 @@ two sequences (in the form of two vectors \(\vec{x}\) and \(\vec{y}\) of length 
 of the number of positions the sequences differ:
 \[
     d = \sum_{i=0}^{k} ( 1 - \delta_{x_{i}, y_{i}} ) 
-\]}
+\].  Note that \(\delta\) is the Kronecker delta function:
+    \(\delta_{ij}= \begin{cases}
+	1, &  i = j\\
+	0, & i \neq j 
+	\end{cases} \)}
+
 to more complicated probabilistic estimations based on observed data.
 A character is an element of a sequence such as an individual base or amino acid, homologous 
 characters are those in separate sequences that are descended from a common ancestor.  

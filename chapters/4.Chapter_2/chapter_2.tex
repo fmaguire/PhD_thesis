@@ -239,7 +239,7 @@ These followed the same protocol as above but also featured an additional
 final PCR-based screening of synthesised cDNA using primers specific for \textit{Paramecium}
 Bug22 sequence. Bug22 is a highly conserved ciliary protein found in a large number of organisms
 including the ciliates \citep{Smith2005,Laligne2010}, green algae \citep{Keller2005,Laligne2010,Meng2014}, higher plants \citep{Hodges2011}, and animals \citep{MendesMaia2014} we used as a marker for \textit{Paramecium} derived cDNA.
-Primers used were Bug22BFWD "GCATTCTAGACCAATCTGGCTTTCTGTCAA" and Bug22BREV "GCATTTCGAATTTGAGGCTCTAAATCTTCTTCTCA",
+Primers used were Bug22BFWD ``GCATTCTAGACCAATCTGGCTTTCTGTCAA'' and Bug22BREV ``GCATTTCGAATTTGAGGCTCTAAATCTTCTTCTCA'',
 under standard PCR conditions.  5 (Dark2-2, Dark2-3, Dark2-6, Dark2-7, Dark2-8) samples with 
 bands of appropriate size were then taken forward for library preparation and sequencing.
 
@@ -660,31 +660,40 @@ The cardinalities of each label in training set was relatively balanced (i.e. al
 the same order of magnitude) 1975 endosymbiont phylogenies, 2600 host, 3456 food, and 1969
 unknown. 
 
-``Arboretum'' parses phylogenies and identifies the k (default of 10) nearest branches to the seed transcript
+``Arboretum'' parses phylogenies and identifies the \(k\) (default of 10) nearest branches to the seed transcript
 the phylogeny was generated from.  The species of these closest leaves is queried taxonomically using the
 NCBI taxonomy local database implemented in the ETE toolkit.  With a set of look-up filters e.g.
 sequences from ciliates can be defined as "host-like", a set of vectors is created for each phylogeny.  
-These are N-dimensional vectors where N is the number of class labels being used. 
-For example, in this specific case: "endosymbiont", "host", "food/bacterial", and "unknown".
+Each of these vectors is of length \(p\) where \(p\) is the number of class labels being used.
+\(\vec{l}\) is a list of the class labels of length \(p\) e.g. 
+in this specific case: \(\vec{l} = \left\{\text{``endosymbiont''}, \text{``host''}, \text{``food/bacterial''}, \text{``unknown''}\right\}\) (although in practice they will represented as integers using a \(1\)-of-\(k\) encoding).
 The magnitude of each dimension is the summed reciprocal phylogenetic distance between the node containing the 
 transcript sequence and all
 of the nearest branches that have been identified as being indicative of a certain class.
-Specifically, if \(\gamma(x,y)\) is the phylogenetic distance between the terminal nodes \(x\) and \(y\), \(\psi(x)\) 
-represents the look-up filters and returns the label of the terminal node \(x\) e.g. ``host''.
+Concretely, if \(\vec{a}\) is a \(k\)+1 length vector of \(k\) nearest terminal nodes to a 
+phylogeny and the node representing the transcript as \(a_{0}\), \(\gamma(x,y)\) 
+is a function which returns the phylogenetic distance between two 
+terminal nodes \(x\) and \(y\), \(\psi(x)\) is a function which represents the `look-up' filters
+(i.e. if terminal node \(x\) is an Archaeplastida species \(\psi(x)\) will return the ``endosymbiont'' label),
 and \(\delta_{ij}\) is the Kronecker delta\footnote{
     \(\delta_{ij}= \begin{cases}
 	1, &  i = j\\
 	0, & i \neq j 
-	\end{cases} \)}, then for a phylogeny \(A\):
+    \end{cases} \)}, then for a given phylogeny a vector \(\vec{z}\) of length \(p\) is 
+generated as follows:
+
 \begin{center}
 	\[
-X_{A, class} = \sum_{k=1}^K \left( \frac{1}{\gamma(A_k, A_{root})} * \delta_{\psi(A_k),class} \right)
+        \vec{z} = \begin{bmatrix}
+            \sum_{i=1}^k \left( \frac{1}{\gamma(a_{0},a_{i})} * \delta_{\psi(a_{i}),l_{0}} \right),
+            \cdots,
+            \sum_{i=1}^k \left( \frac{1}{\gamma(a_{0},a_{i})} * \delta_{\psi(a_{i}),l_{p}} \right)
+        \end{bmatrix}
 	\]
 \end{center}
-Where in this specific example ``class'' is one of the set \(\left\{endosymbiont, host, food, unknown\right\}\)
-although naturally the classes will be encoded using integer labels.
-Therefore, the dimensions of X are \(|A|,|class|\) i.e. the number of training phylogenies by the
-number of pre-defined class labels.
+
+These vectors are then stacked to form matrix \(\bm{X}\) with dimensions \(t \times l\) where \(t\)
+is the number of phylogenies and \(l\) is the number of class labels. 
 
 Training data was visualised using Radial Visualisation (RadViz) \citep{Hoffman1997,Fayyad2001}.
 RadViz is a form of radial co-ordinate visualisation that non-linearly maps a set of N-dimensional 
