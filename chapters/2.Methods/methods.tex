@@ -297,10 +297,10 @@ such as Conditional Random Fields and Recursive Neural Networks.
 
 The major 2nd and 3rd generation base-calling procedures output a FastQ formatted file. 
 These are files containing the sequence of a read and a per-base quality score known as a (\(Q\)) score.
-These scores (\(Q\)) are calculated as a logarithmic relation to the base-called error probability (\(p\))
-\[ Q = -10\log{10}{p} \]
+These scores (\(Q\)) are calculated as a logarithmic relation to the base-called error probability (\(P\))
+\[ Q = -10\log{10}{P} \]
 and conversely: 
-\[ Q = 10^{\frac{-q}{10}} \]
+\[ Q = 10^{\frac{-Q}{10}} \]
 Therefore \(Q = 30\) corresponds to 99.9\% base call accuracy
 
 Before assembly, there are several stages of read pre-processing that generally takes
@@ -656,12 +656,12 @@ which are capable of beating human-performance on complex image classification t
 
 Typically, we seek to set the parameters (\(\theta\)) of a function in such a way
 that another property is minimised.  For example, in linear regression the aim is to find 
-parameters of a straight line \(h_{\vec{\theta}}(\vec{x}) = \vec{theta} * \vec{x}\) (assuming \(x_{0} = 1\) and \(\theta_{0}\) is the
+parameters of a straight line \(h_{\vec{\theta}}(\vec{x}) = \vec{\theta} * \vec{x}\) (assuming \(x_{0} = 1\) and \(\theta_{0}\) is the
 intercept) which minimise the distance
 between the line and the data (for example, the sum of squares distance).
-This distance/error is calculated using something known as the cost function e.g. \(J(\vec{theta}) = \frac{1}{2} m \sum^{m}_{i=1} (h_{\vec{theta}}(x_{i}) - y_{i})^2\) 
+This distance/error is calculated using something known as the cost function e.g. \(J(\vec{\theta}) = \frac{1}{2} m \sum^{m}_{i=1} (h_{\vec{\theta}}(x_{i}) - y_{i})^2\) 
 (where \(m\) is the number of \(x, y\) pairs in the dataset for linear regression).
-Most algorithms will seek to minimise the value of this cost function \(J(\theta)\) with respect to 
+Most algorithms will seek to minimise the value of this cost function \(J(\\theta)\) with respect to 
 the parameters of the original function \(h_{\theta}(x)\).  Typically, this is achieved using a variety of algorithmic optimisation techniques.
 The most prevalent of these are gradient descent based methods in which the value of \(\theta\) is modified 
 in the direction of the gradient of the cost function (determined using the 
@@ -1072,11 +1072,7 @@ other set of discrete data vectors. It has even been applied to fields such as l
 } and the measure of relatedness is some proxy for evolutionary distance ranging from simple distance measures
 \footnote{e.g. the Hamming distance \(d\), which can be defined for 
 two sequences (in the form of two vectors \(\vec{x}\) and \(\vec{y}\) of length \(k\)) as the sum
-of the number of positions the sequences differ:
-\[
-    d = \sum_{i=0}^{k} ( 1 - \delta_{x_{i}, y_{i}} ) 
-\].  Note that \(\delta\) is the Kronecker delta function:
-    \(\delta_{ij}= \begin{cases}
+of the number of positions the sequences differ: \( d = \sum_{i=0}^{k} ( 1 - \delta_{x_{i}, y_{i}} )\). Note that \(\delta\) is the Kronecker delta function: \(\delta_{ij}= \begin{cases}
 	1, &  i = j\\
 	0, & i \neq j 
 	\end{cases} \)}
@@ -1092,13 +1088,10 @@ measures of relatedness) as the number of
 possible trees rapidly increases with the number of sequences.
 Specifically, for rooted and unrooted trees the number of possible trees \(n\) increases
 by the number of taxa \(t\) as follows:
-\[
-    \text{For rooted phylogenies}: 
-        n = \prod_{i=2}^{t} (3i - 3)
-
-    \text{For unrooted phylogenies}:
-        n = \prod_{i=2}^{t - 1} (3i - 3)
-
+\[\text{For rooted phylogenies}: 
+        n = \prod_{i=2}^{t}(3i - 3) \\
+ \text{For unrooted phylogenies}:
+        n = \prod_{i=2}^{t - 1}(3i - 3)
 \]
 
 However, the key stages in a phylogenetic analysis are that of sequence sampling (selection of
@@ -1615,12 +1608,13 @@ bootstrap supports.
 
 \subsubsection{Bayesian}
 
-Bayesian inference is, as the name suggests, based on the Bayes theorem.
-\(p(\tau, \theta_l, \theta_\mu)| D) = \frac{p(\tau, \theta_l, \theta_\mu)p(D|\tau, \theta_l, \theta_\mu)}{p(D)}\)
-with \(p(\tau, \theta_l, \theta_\mu)\)
-being the prior probability for model parameters (topology \(\tau\), branch length \(\theta_l\), substitution model \(\theta_\mu\))
-\(p(D|\tau, \theta_l, \theta_\mu)\)
-being the likelihood of the data given a certain set of parameters with \(p(D)\) as the marginal 
+Bayesian inference is, as the name suggests, based on the Bayes theorem 
+(\cref{eq:bayes}). Specifically, the most probable tree is recovered
+based on the posterior probability:
+\[p(\tau, \theta_l, \theta_\mu| D) = \frac{p(\tau, \theta_l, \theta_\mu)p(D|\tau, \theta_l, \theta_\mu)}{p(D)}\]
+where \(p(\tau, \theta_l, \theta_\mu)\)
+are the prior probability for model parameters (topology \(\tau\), branch length \(\theta_l\), substitution model \(\theta_\mu\)) and \(p(D|\tau, \theta_l, \theta_\mu)\)
+is the likelihood of the data given a certain set of parameters with \(p(D)\) as the marginal 
 probability.
 
 Due to the computational difficulty directly calculating the marginal likelihood 

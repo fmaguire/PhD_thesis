@@ -46,8 +46,8 @@ $(DRAFT).pdf: $(DRAFT).tex #figs
 
 
 clean:
-	latexmk -c
-	-@rm -f -v *pdfsync *synctex.gz *.fls *.log *.bbl
+	latexmk -c -CA
+	-@rm -f -v *pdfsync *synctex.gz *.fls *.log *.bbl *.nlo *.nls
 
 reset:
 	latexmk -CA
