@@ -77,7 +77,7 @@ assembled transcripts into bins relating to their likely originating organisms
 
 \begin{figure}[h!]
     \includegraphics[width=\textwidth]{chapter_flowchart.pdf}
-    \caption[Summary of Single Cell Transcriptome Analysis]{A flowchart summarising the full analysis and transcript binning of the PbMr single cell transcriptome data.  Key stages are indicated by square boxes and blue colouring, individual analyses are shown in rounded square boxes and iterative parameter optimisation steps are shown in circles and highlighted with red-dotted dependency arrows.}
+    \caption[Overview of chapter]{A flowchart summarising the full analysis and transcript binning of the PbMr single cell transcriptome data.  Key stages are indicated by square boxes and blue colouring, individual analyses are shown in rounded square boxes and iterative parameter optimisation steps are shown in circles and highlighted with red-dotted dependency arrows.}
 \end{figure}
 
 To this end, bulk RNAseq libraries from cultured PbMr was sequenced using \SI{76}{\bp} paired-end reads and the Illumina Gene Analyzer II platform 
@@ -804,7 +804,7 @@ identical to that of the raw reads \cref{fig:gc_prop_raw}.
 
 \begin{figure}[h!]
     \includegraphics[width=\textwidth]{lib_gc_prop_q30_trimmed.pdf}
-    \caption[GC Densities of Bulk Libraries]{Probability densities of per-read GC proportions for trimmed reads.
+    \caption[GC densities of bulk libraries]{Probability densities of per-read GC proportions for trimmed reads.
              To ensure probability densities estimated in \cref{fig:gc_prop_raw}
          weren't biased by low quality ambiguous reads the same analysis was
      repeated using reads trimmed using a sliding window approach with a stringent average
@@ -852,7 +852,7 @@ in paired-end Illumina sequencing.
                               & \textit{R2}                   & 28.22 +/- 0.47     & 4.30 +/- 0.22     & 11.98 +/- 0.37     & 4.32 +/- 0.24          &  & 40.05 +/- 0.22      \\
          \hline
  \end{tabular}}
-     \caption[DueyDrop Taxonomic Profile Summary]{Taxonomic profiles of raw single cell libraries generated using ``DueyDrop''. All values are percentage of reads mapping to that category +/- the standard deviation between sample replicates.  
+     \caption[DueyDrop taxonomic profile summary]{Taxonomic profiles of raw single cell libraries generated using ``DueyDrop''. All values are percentage of reads mapping to that category +/- the standard deviation between sample replicates.  
          The analysis was conducted for both forward and reverse reads from each library (indicated as R1 and R2 in the paired-end (PE) column).
          Libraries highlighted in bold were those excluded from subsequent analysis on the basis of their very low numbers of reads identifiable as 
  eukaryotic (or specifically alveolate or Archaeplastida). All forward and reverse read pairs display similar profiles to one another suggesting
@@ -882,7 +882,7 @@ taxa consistent with an non-contaminated library.
                               & \textit{R2}           &  5.50 +/- 1.25     & 0.22 +/- 0.19   &  3.82 +/- 0.81     &  0.50 +/- 0.12         &  6.02 +/- 1.22      \\ 
                               \hline
      \end{tabular}}
-    \caption[Taxonomic Profiles of Bulk Libraries]{Taxonomic profile of the two trimmed (Q20) bulk transcriptome libraries generated using ``DueyDrop''.
+    \caption[Taxonomic profiles of bulk libraries]{Taxonomic profile of the two trimmed (Q20) bulk transcriptome libraries generated using ``DueyDrop''.
 All values are the percentage of reads mapping to that taxonomic category +/- the standard deviation between sampling replicates.  
 The analysis was conducted for both forward and reverse reads from each library (indicated as R1 and R2 in the paired-end (PE) column).
 Overall only a very small number of bulk reads could be assigned to any taxonomic class by ``DueyDrop''.}
@@ -922,7 +922,7 @@ of this particular aspect of contamination.
 
 \begin{figure}[hp]
     \includegraphics[width=\textwidth]{krona_all_vs_sample.pdf}
-    \caption[Comparison of Subsample to Whole Library Profiles]{Comparison of taxonomic profiles derived from small \(\leq1\%\)
+    \caption[Comparison of subsamples to whole library taxonomic profiles]{Comparison of taxonomic profiles derived from small \(\leq1\%\)
         random subsamples of libraries compared to profiles generated using the
         full library.  Light1-11 and Dark2-5 are used as representative examples
         as they display the trends common for all single cell libraries. 
@@ -963,7 +963,7 @@ very slight decrease in total number of mapping reads but not drastically so.
 \begin{figure}[hp]
 	\centering
     \includegraphics[width=0.9\textwidth]{trimmingopt.pdf}
-    \caption[Optimising trimming thresholds]{Assessment of the optimal minimum average quality threshold
+    \caption[Assessment of optimal trimming thresholds]{Assessment of the optimal minimum average quality threshold
              in Trimmomatic's sliding window (size 4) trim.  Plots
              display the number of concordantly mapping reads (i.e. the forward
                  and reverse read map to assembly at a distance of approximately
@@ -997,7 +997,7 @@ was less than was found using different assemblers and assembly parameters.
          Q30 & 99,784 & 47,313,963 &  \(-2.832*10^{10}\) \\ 
     \hline
 \end{tabular}}
-    \caption[Comparison of Effect of Trimming on Trinity Assemblies]{Comparison of Trinity assemblies of taxonomically screened
+    \caption[Summary trimming effect in trinity assemblies]{Comparison of Trinity assemblies of taxonomically screened
         single cells reads (no bulk reads) at 3 different sliding window
         minimum average quality trimming thresholds.  Trimming largely
         does not cause a major difference between assemblies in terms of number
@@ -1029,7 +1029,7 @@ It can be considered from this data that Q30 forms a maximum feasible stringency
         Light1-11 & \(1.474*10^7\) & \(1.334*10^7\) \\
         \hline
 \end{tabular}}
-    \caption[Library Sizes After Trimming]{Summary of the library size of the taxonomically selected single cell 
+    \caption[Library sizes after trimming]{Summary of the library size of the taxonomically selected single cell 
         libraries before and after trimming at a minimum average SLIDINGWINDOW quality 
         threshold of Q30. Of interest, Dark1-2 was generally of poor quality and thus 
         was disproportionately minimised by trimming. Additionally, the 
@@ -1069,7 +1069,7 @@ clusters respectively. Therefore, over-clustering made a minimal effect on clust
                              & (0.4235, 0.4098) & 51.7M \\
         \hline
     \end{tabular} 
-    \caption[ParKour Cluster Summaries]{Final cluster centroids and number of reads assigned
+    \caption[ParKour cluster characteristics]{Final cluster centroids and number of reads assigned
     to each cluster in parKour using various run settings.  Centroids
     are the mid-point of each cluster, therefore in the 2 cluster scheme
     ``parKour'' identified one cluster of reads centred around  
@@ -1133,7 +1133,7 @@ error correction (see \cref{tab:errcorr_assembly}).
          Q30 SEECER Corrected & 96,494 & 46,312,469 & \(-2.995\cdot 10^{10}\)  \\ 
     \hline
     \end{tabular}}
-    \caption[Effect of Error Correction on Assembly]{Naive Trinity assembly of Q5 and Q30 trimmed taxonomically selected single cell libraries
+    \caption[Effect of error correction on assembly]{Naive Trinity assembly of Q5 and Q30 trimmed taxonomically selected single cell libraries
         with and without SEECER error correction. While assembly likelihood increases after
     error correction for Q5 trimmed reads it is still lower than Q30 uncorrected.  For Q30
 trimmed reads error correction marginally decreases assembly likelihood.}
@@ -1193,7 +1193,7 @@ median contig length at the expense of a lower N50.
     processing & 	 & 			 &      & 	  & 	\\
     \hline
 \end{tabular}
-    \caption[Effect of Digital Normalisation on Assembly]{Trinity assemblies (with --min-kmer-cov 2) 
+    \caption[Effect of digital normalisation on assembly]{Trinity assemblies (with --min-kmer-cov 2) 
         of Q30 trimmed, taxonomically selected single cell and bulk libraries 
     with and without Khmer digital normalisation and \(k\)-mer abundance filtering.
     Khmer pre-processing improved the assembly likelihood by an order of magnitude,
@@ -1268,7 +1268,7 @@ Dark1-2, Dark2-3, Dark2-6, Dark2-8) and bulk libraries are shown in
         \hline
         
 \end{tabular}}
-    \caption[Summary of Different Assembler Outputs]{\textit{De novo} combined assemblies of Q30 trimmed taxonomically
+    \caption[Summary of different assembler outputs]{\textit{De novo} combined assemblies of Q30 trimmed taxonomically
         selected single cell libraries and bulk libraries (but not digitally normalised or \(k\)-mer abundance
             filtered) with a range of assemblers and parameters.  \(k\)-mer size used
             for assemblers with that option are indicated in the Parameters column 
@@ -1313,7 +1313,7 @@ even better in terms of assembly likelihood and read incorporation.
                 & Minimum \(k\)-mer Coverage of 2 & 147,902 & \(9.239*10^{7}\) & \(-1.238*10^9\) \\  
                 \hline
 \end{tabular}}
-    \caption[Trinity vs. Bridger Assemblies]{Assembly summaries of Q30 trimmed taxonomically selected SCT and bulk reads 
+    \caption[Trinity vs. bridger assemblies]{Assembly summaries of Q30 trimmed taxonomically selected SCT and bulk reads 
     after digital normalisation and \(k\)-mer abundance filtering. Parameters used in the assembly
 indicates any special parameter settings used in the assembly i.e. K19 indicates a \(k\)-mer size of 19 was used.
 }
@@ -1348,7 +1348,7 @@ described in \cref{tab:digassemby}.
         \textbf{CD-HIT \(90\%\) meta-clustering} & 99,691 & 94,628 & \(-5.133*10^{10}\)\\
         \hline
 \end{tabular}}
-    \caption[Merged Assembly Summary]{Summary of merged multi-assemblies.  Collapsed contigs is the number of contigs
+    \caption[Merged assembly summary]{Summary of merged multi-assemblies.  Collapsed contigs is the number of contigs
     found in the merged set by the EvidentialGene pipeline. The level of assembly
 reduction and redundancy removal is high and, at first appearance, is impressively consistent 
 between meta-assemblies despite differences in preprocessing. 
@@ -1438,7 +1438,7 @@ feature space as the test dataset (\cref{fig:radvis_test}).
 \begin{figure}[h!]
 		\centering
 		\includegraphics[width=\linewidth]{radviz_traing_test.pdf}
-        \caption[Radial Visualisation of Test and Training Data]{Radial Visualisation of Test Data and Training Data. All input features are normalised to 
+        \caption[Radial visualisation of test and training Data]{Radial Visualisation of Test Data and Training Data. All input features are normalised to 
 			unit magnitudes.  Each point represents a single training sample (i.e. phylogeny) and its relative proximity
 			to the cardinal points of the unit circle represents a the number of closely related taxa considered part of
 			that ``class''. 
@@ -1472,7 +1472,7 @@ poorly classified ``Unknown'' samples but largely performed well (\(0.89-0.9\) f
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.8\textwidth]{kn_confusion_matrix.pdf}
-    \caption[Normalised confusion matrix of transcript classification]{Normalised Confusion Matrix for K-Neighbours.  These plots highlight
+    \caption[Normalised confusion matrix of transcript classification]{Normalised confusion matrix for K-neighbours.  These plots highlight
 		the problematic classes in the cross-validation dataset. 
 		 The heatmap corresponds to the proportion of samples classified
 		 with a given predicted label compared with their true labels.
@@ -1497,8 +1497,8 @@ poorly classified ``Unknown'' samples but largely performed well (\(0.89-0.9\) f
 		average / total & 0.95 & 0.96 & 0.95 & 1728 \\
 		\hline 
 	\end{tabular}
-    \caption[Classification Report for K-Neighbours]{Classification report of a trained and optimised 
-	K-Neighbours Classifier using a leaf size of 30, minkowski
+    \caption[Classification report for K-neighbours]{Classification report of a trained and optimised 
+	K-neighbours classifier using a leaf size of 30, minkowski
 	distance metric and 50 neighbours.  Note the poor performance
 	on ``Unknown'' samples but generally good (\(\geq90\%\)) on
 	other labels. This can likely be explained by the ``miscellaneous''
@@ -1541,7 +1541,7 @@ Of these top level assignments:
 			& Arthropoda & 7 \\
 			\hline 
 	\end{tabular}
-    \caption[TAXAssign Taxonomic Assignments]{Phylum level TAXAssign assignments for (\(2,043/70,605\)) CDS called from the Bridger 31-mer assembly.
+    \caption[TAXAssign taxonomic assignments]{Phylum level TAXAssign assignments for (\(2,043/70,605\)) CDS called from the Bridger 31-mer assembly.
             Only \(2.893\%\) were assigned using this method relative to  \(39.72\%\) for 
         the phylogenetic supervised learning (Dendrogenous-Arboretum) method.  Therefore, this demonstrates the
         the how well this method works relative to conventional binning approaches like TAXAssign.}
@@ -1911,7 +1911,7 @@ a training dataset.
         Unknown & 66,107 & - \\
         \hline
 \end{tabular}
-    \caption[Summary of Transcriptome Bins]{Summary of transcriptome assembly and binned sequences}
+    \caption[Summary of transcriptome bins]{Summary of transcriptome assembly and binned sequences}
     \label{tab:bin_assem_summary}
 \end{table}
 
