@@ -283,7 +283,7 @@ taxonomic distribution of \textit{Paramecium} green algal endosymbionts (see Cha
 
 \subsubsection{Read pre-processing}
 
-All sequencing platforms involve base-calling procedures in which the continous 
+All sequencing platforms involve base-calling procedures in which the continuous 
 primary sequencing data e.g. fluorescence with Illumina or current with IonTorrent
 is converted into a discrete nucleotide sequence.   This is typically
 achieved using parametric modelling and machine learning approaches optimised
@@ -365,13 +365,13 @@ Currently, there is no clear answer to the question: which is the best trimming 
 This is due to many dataset-specific effects as well parameter-dependence \citep{DelFabbro2013}.
 In general, most trimming tools have been found to largely perform equivalently across 
 multiple RNA-Seq and DNA-Seq datasets and applications (see `File S2' in \citep{DelFabbro2013}). 
-Due to its ease of use and maintenance of paired-read correspondance,
+Due to its ease of use and maintenance of paired-read correspondence,
 Trimmomatic has been the primarily used trimming tool throughout this thesis.
 
 Traditionally, most projects use conservative trims which only accept reads and bases
 above a high threshold such as an average score of Q30 (e.g. \citep{Looso2013}).  
-However, recentally, there have been empirical 
-studies suggesting the optimal apporach is permissive trimming (e.g. \(q \geq 2\)) 
+However, recently, there have been empirical 
+studies suggesting the optimal approach is permissive trimming (e.g. \(q \geq 2\)) 
 followed by explicit error correction \citep{Macmanes2014}.
 
 
@@ -410,7 +410,7 @@ that map to a given portion of a template is known as the coverage.
 While the high levels of coverage are necessary for accurate assembly
 reconstruction it generates a computational burden and increases
 the problem of sequencing error.  Therefore, by normalising
-coverage by progessively filtering out the most abundant
+coverage by progressively filtering out the most abundant
 reads it is possible to minimise sampling variation and
 generate much smaller libraries that still contain nearly the same
 amount of information \citep{Brown2012}. This means the computational
@@ -447,7 +447,7 @@ calculating overlaps is computationally demanding and hamiltonian paths are diff
 (NP-complete) \citep{Karp1972}.
 
 
-Alternatively, de Bruijn graph assembly involves the decompositon of reads into \(k\)-mer sets.  
+Alternatively, de Bruijn graph assembly involves the decomposition of reads into \(k\)-mer sets.  
 These \(k\)-mers are then assembled into graphs based on \(k-1\) overlaps with other \(k\)-mers.
 However, in dBGs the vertices represent the \(k-1\) overlaps with the \(k\)-mers themselves
 forming the edges. This simplifies the problem of assembling contigs from finding hamiltonian cycles
@@ -1050,7 +1050,7 @@ well as indicate what the sequence most likely looked like in a shared common
 ancestor (ancestral node reconstruction). Phylogenetic methods also allow estimation
 of evolutionary processes such as selection pressure,
 migration, genome reduction, and horizontal gene transfer.
-In the contex of endosymbiosis, phylogenetics can be used to determine evolutionary ancestry of 
+In the context of endosymbiosis, phylogenetics can be used to determine evolutionary ancestry of 
 the genes recovered in a transcriptome and to aid identification of the likely origin 
 (host, endosymbiont, contaminant) of these transcripts. Additionally, it can pinpoint
 potential horizontal gene transfer events between host and endosymbiont by searching for single 
@@ -1471,7 +1471,7 @@ requiring arbitrary user-defined partitions, which could be a source of bias.
 Finally, the rate of evolution can vary even with a site itself (a process 
 known as heterotachy) especially when large numbers of divergent taxa are included
 in a masked alignment.  One model modification which attempts to control 
-for this is that of the concomitably variable codon or ``covarion'' model \citep{Penny2001}.
+for this is that of the concomitantly variable codon or ``covarion'' model \citep{Penny2001}.
 It allows sites to switch between
 ``on'' and ``off'' across the tree with the proportion of sites in the relative states
 determined at each site \citep{Zhou2010}.

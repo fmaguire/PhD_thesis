@@ -121,3 +121,4 @@ sympy-plots-for-*.tex/
 ## fasta and txt
 *.fasta
 *.txt
+*.tex.bak
