@@ -33,7 +33,7 @@ Theoretically, these 3 cultures provide us with \textit{Paramecium bursaria} str
 green algal \textit{Paramecium} endosymbiont (see Chapter 3 for more details).
 
 \subsection{Media and culture conditions}
-All \textit{P. bursaria} and green algae cultures were maintained in 
+All \textit{P. bursaria} cultures were maintained in 
 New Cereal Leaf-Prescott Liquid (NCL) medium:
 \begin{itemize}
     \item \SI{4.3}{\gram\per\litre} \(CaCl_{2}.2H_{2}O\)
@@ -70,17 +70,18 @@ Typically, the metabolome and proteome are interrogated using various forms of m
 There are also a plethora of additional approaches which seek to characterise
 different subsets of these biomolecules e.g. epigenomics (epigenetic modification to DNA such as methylation
 and histone binding), gylcomics (characterisation of cellular saccharides).
+Another frequently encountered term is that of ``meta-\ldots-omics''.
 ``Meta-\ldots-omics'' is the application of specific ``omic'' method to a biological sample 
 containing multiple organisms. For example, ``metagenomics'' has been used to investigate
 the cellular community composition of marine micro-eukaryotes \citep{Cuvelier2010}
 and ``metatranscriptomics'' has been used to analyse the transcriptomes of the microbes present in the gut of metazoa \citep{Perez-Cobas2013}.
 
-The utility of ``-omic'' approaches is they allow a researcher to characterise a high proportion 
+The utility of ``-omic'' approaches is that they allow a researcher to characterise a high proportion 
 of a biological system's function in a way that is faster, cheaper and requires less \textit{a priori} 
 knowledge of the system than more targeted approaches.
 For example, in order to estimate the abundance of all mRNA transcripts in a sample using specific
-approach such as qPCR or RT-PCR would require sequence knowledge to design primers as well as an infeasible amount of
-reactions to acquire a characterisation comparable to that obtainable by a transcriptomic approach such as RNA-Seq. 
+approach such as qPCR would require sequence knowledge to design primers as well as an infeasible amount of
+reactions to acquire a characterisation comparable to that obtainable by a transcriptomic approach such as RNAseq. 
 Additionally, due to being ``non-targeted'' (or rather less targeted) ``omics'' also removes one aspect of 
 researched-induced bias caused by a conscious selection of molecule specific probes.
 By not considering elements of a system in isolation like the classic methodologically reductionist\footnote{
@@ -105,11 +106,11 @@ era (2000-today) particularly compared to organisms such as \textit{Arabidopsis 
 cerevisiae}. Fortunately, due to the development and maturation of both technologies and databases 
 the potential for functional and adaptive analysis of non-model organisms using 
 combined ``omics'' (i.e. using genomics as a reference to guide subsequent transcriptomics) approaches 
-(e.g. \citep{Munoz-Merida2013,Feldmesser2014}) has recently been demonstrated.  
+e.g. \citep{Munoz-Merida2013,Feldmesser2014} has recently been demonstrated.  
 Additionally, there are two other developments which make \textit{P. bursaria}-\textit{M. reisseri} (\textit{PbMr}) 
 amenable to
 ``omic'' analysis: \textit{de novo} transcriptomics, which dispense with the need to generate
-accurate genomes in the relatively genomically intractable \textit{Paramecium} (e.g. \citep{Kodama2014}),  and
+accurate genomes in the relatively genomically intractable \textit{Paramecium} e.g. \citep{Kodama2014},  and
 single-cell approaches which allow fine-grained analysis of the \textit{Paramecium bursaria}
 - green algal relationship on a cell-by-cell basis.
 
@@ -120,7 +121,7 @@ This concern holds for all systems-level approaches and has been frequently rais
 of genomics \citep{Dougherty2008}.  Therefore, it is crucial to supplement ``omic'' approaches with targeted
 methods in a way that compensates for the weakness of each type of method.
 Specifically, the systems approach should be used to generate novel and interesting
-hypotheses which can then be tested in isolation using reductionist methods \citep{Casadevall2008}.  
+hypotheses which can then be tested (and falsified) in isolation using reductionist methods \citep{Casadevall2008}.  
 For example, ``omics'' methods could be used to create a model of inter-organism host-endosymbiont
 metabolism and targeted approaches such as RNAi could then be used to test hypotheses generated
 by this model i.e. testing that a particular transporter protein is responsible
@@ -143,7 +144,7 @@ designed for any novel system. Additionally, while microarrays can determine rel
 of transcripts by the comparison of the fluorescence intensity at given complementary probe(s)
 the continuous nature of this output, difficulty distinguishing alternative isoforms 
 and more limited dynamic range (combined with previously mentioned limitations) 
-has meant the sequencing of cellular transcripts (RNA-Seq) has largely supplanted microarrays \citep{Wang2009}.
+has meant the sequencing of cellular transcripts (RNAseq) has largely supplanted microarrays \citep{Wang2009}.
 However, both SNP tiling arrays and microarrays do have the advantage of throughput and ease of analysis
 in situations where the host organism is well known and suitable arrays have already been designed
 and evaluated.  For this reason they are still frequently encountered in specialist area of medical 
@@ -208,7 +209,9 @@ HiSeq, MiSeq and older Gene Analyzer II \citep{Nederbragt2013}.
 
 \begin{figure}
     \includegraphics[width=\textwidth]{illumina_lib_prep.pdf}
-    \caption[Illumina library preparation overview]{A brief overview of library preparation for Illumina modified from \citep{Mardis2008} and Illumina TruSeq kit documentation}.
+    \caption[Illumina library preparation overview]{A brief overview of library preparation for Illumina modified from \citep{Mardis2008} and Illumina TruSeq kit documentation. 
+    DNA is fragmented before various steps (end-repair and poly-adenylation) to facilitate attachment of adapters. Finally, fragments with adaptors are size-selected
+    according to the specification of that particular sequencing run.}
     \label{fig:libprep}
 \end{figure}
 
@@ -226,19 +229,24 @@ detectable using optics (e.g. Illumina, 454, SOLiD) or release of hydrogen ion (
 \end{enumerate}
 
 The explosion in sequencing throughput on 2nd-generation platforms has driven a massive decrease in per-base sequencing cost
-and the subsequent expansions in the amount of available data (e.g. the US National Center for Biotechnology (NCBI)'s short-read archive (SRA)) 
-has made both genomic and RNA-Seq analysis and annotation easier and more effective. 
+and the subsequent expansions in the amount of available data (e.g. the US National Center for Biotechnology's (NCBI) short-read archive (SRA)) 
+has made both genomic and RNAseq analysis and annotation easier and more effective. 
 
 \begin{figure}
     \includegraphics[width=\textwidth]{illumina_PE_sequencing.pdf}
     \caption[Principles of paired-end sequencing]{A brief overview of paired end sequencing in an Illumina flowcell after library preparation, derived
-    from \citep{Mardis2008} and Illumina}
+    from \citep{Mardis2008} and Illumina. Briefly, prepared sequences with adapters 
+    are ligated to the flowcell and undergone bridge amplification to generate
+    clonal clusters. These clusters are treated to ensure all fragments are in the
+    same orientation before iterative sequencing-by-synthesis stages and washes.
+    Finally, the clusters are regenerated and cleaved to sequence the opposite
+    orientation (i.e. read 2 in paired end sequencing).}
     \label{fig:libseq}
 \end{figure}
 
-While, 2nd generation sequencing has driven down per-base sequencing costs the cost of library preparation 
+While 2nd generation sequencing has driven down per-base sequencing costs, the cost of library preparation 
 has fallen more slowly \citep{Blainey2013}.
-For this reason, combined with the higher throughput it has become common to multiplex difference samples 
+For this reason, combined with the higher throughput, it has become common to multiplex difference samples 
 during sequencing runs.  Multiple distinct samples can be be sequenced
 in the same reaction (e.g. flowcell lane for Illumina platforms) by adding an indexed tags during library
 preparation.  These tags can then be used to partition the reads back to their original separate samples
@@ -252,10 +260,10 @@ and the lowest cost per \si{\mega\bp} (\(\leq\$0.04\) \citep{Glenn2011}).
 
 Finally, 3rd generation technologies are generally known as single-molecule sequencing.
 These platforms sequence individual DNA (or RNA molecules \citep{Ozsolak2009}) without
-bias and error-prone amplification. 
+a potentially bias generating and error-prone amplification step. 
 The first 3rd generation platform was that of the now defunct Helicos Bioscience's Helicoscope \citep{Harris2008}
 based on breakthroughs in the resolution of fluoresence visualiation using paired FRET methods \citep{Braslavsky2003}.
-There is only one publically available platform: Pacific Biosciences (PacBio) RS platform. PacBio operates on a similar principal
+Currently there is only one publically available platform: Pacific Biosciences (PacBio) RS platform. PacBio operates on a similar principal
 of sequencing-by-synthesis as the 2nd generation platforms but uses fixed polymerases at the base
 of specially wave-guide structures allowing the detection of fluorescence from a single reaction
 instead of many parallel reactions in a clonal cluster.  This produces few (compared to 2nd generation 
@@ -274,14 +282,14 @@ as a scaffolding tool i.e. producing long noisy reads upon which more accurate b
 reads can be assembled \citep{Zhou2009}.  3rd generation platforms are also highly
 useful in the resolution of structural variation and genomic repeats \citep{Pendleton2015}.
 
-Therefore, all genomic and transcriptomic sequencing in this PhD has been performed using the 2nd generation
+Therefore, all genomic and transcriptomic sequencing in this thesis has been performed using the 2nd generation
 Illumina GAII and HiSeq platforms due to their relative maturity, high-throughput, relatively accurate
 paired-end output making it currently the most amenable platform to effectively
 use \textit{de novo} genomic and transcriptomics approaches.  Additionally, Sanger sequencing
 has been used when accurate targeted sequencing was called for, such as investigating the
 taxonomic distribution of \textit{Paramecium} green algal endosymbionts (see Chapter 3).
 
-\subsubsection{Read pre-processing}
+\subsubsection{Base-calling}
 
 All sequencing platforms involve base-calling procedures in which the continuous 
 primary sequencing data e.g. fluorescence with Illumina or current with IonTorrent
@@ -292,16 +300,18 @@ mature platforms such as Illumina typically rely on the default
 base-calling.  However, there is much active research in improving
 these systems particularly for SMRT sequencing.  These include
 various advanced signal processing and machine learning methods
-such as Conditional Random Fields and Recursive Neural Networks. 
+such as Conditional Random Fields (CRF) and Recursive Neural Networks (RNN). 
 
 
 The major 2nd and 3rd generation base-calling procedures output a FastQ formatted file. 
-These are files containing the sequence of a read and a per-base quality score known as a (\(Q\)) score.
-These scores (\(Q\)) are calculated as a logarithmic relation to the base-called error probability (\(P\))
-\[ Q = -10\log{10}{P} \]
+These are files containing the sequence of a read and a per-base quality score known as a \(Q\) score.
+These scores (\(Q\)) are calculated as a logarithmic relation to the base-called error probability (\(p\))
+\[ Q = -10\log{10}{p} \]
 and conversely: 
 \[ Q = 10^{\frac{-Q}{10}} \]
 Therefore \(Q = 30\) corresponds to 99.9\% base call accuracy
+
+\subsubsection{Read pre-processing}
 
 Before assembly, there are several stages of read pre-processing that generally takes
 place for both genomic and transcriptomic studies. 
@@ -322,11 +332,12 @@ and the presence of massively over-represented \(k\)-mers and sequences in the r
 libraries.  One of the most commonly used quality control tool is FastQC \citep{fastqc2015}
 which performs tests and visualises these metrics and highlights aberrant values.
 
-Identification of potential library problems can be used to either attempt to correct
+Identification of potential library problems can be used to attempt to ameliorate
 these problems, for example, if there are consistently low quality bases at the end of
 the reads then a harsher 3' trimming step can be used.  Alternatively, libraries
-with many problems may require re-sequencing.  Contamination screening
-is a highly important part of sequencing, especially for single cell approaches
+with many problems may require re-sequencing.  
+Contamination screening
+is also a highly important part of sequencing, especially for single cell approaches
 (see Chapter 4 for an in-depth analysis) as contaminant reads from non-target
 organisms can greatly complicate analysis and assembly of data.
 
@@ -355,21 +366,25 @@ PRINSEQ \citep{Schmieder2011} and cutadapt \citep{martin2011cutadapt}. These
 generally fall into two algorithmic groups: running-sum based approaches e.g. Cutadapt and ERNE-FILTER
 and window-based e.g. FASTX, PRINSEQ, Sickle and Trimmomatic \citep{DelFabbro2013}.
 Briefly, running-sum approaches involve the calculation of a score for each base, \(i\), 
-from 3' to 5' e.g. \(s(i) = s(i+1)+\textrm{quality}(i)-Q\) for a minimum quality threshold \(Q\).
-These \(s\) are used to determine the start of the trimming point.  Alternatively,
+from 3' to 5': 
+\[s(i) = s(i+1)+\phi(i) - Q_{min}\]
+where \(\phi\) is a function returning the \(Q\) score for that base and 
+\(Q_{min}\) is the minimum defined quality threshold.
+These \(s\) scores are then used to determine the start of the trimming point.  
+Alternatively,
 window-based approaches generally calculate the average quality score
-across a sliding-window of N bases.  If the score in a given window drops
+across a sliding-window of \(n\) bases.  If the score in a given window drops
 below the minimum average quality it is then trimmed. 
 
-Currently, there is no clear answer to the question: which is the best trimming algorithm.
+Currently, there is no clear answer to the question `which is the best trimming algorithm?'.
 This is due to many dataset-specific effects as well parameter-dependence \citep{DelFabbro2013}.
 In general, most trimming tools have been found to largely perform equivalently across 
-multiple RNA-Seq and DNA-Seq datasets and applications (see `File S2' in \citep{DelFabbro2013}). 
+multiple RNAseq and DNAseq datasets and applications (see `File S2' in \citet{DelFabbro2013}). 
 Due to its ease of use and maintenance of paired-read correspondence,
 Trimmomatic has been the primarily used trimming tool throughout this thesis.
 
 Traditionally, most projects use conservative trims which only accept reads and bases
-above a high threshold such as an average score of Q30 (e.g. \citep{Looso2013}).  
+above a high threshold such as an average score of Q30 e.g. \citep{Looso2013}.  
 However, recently, there have been empirical 
 studies suggesting the optimal approach is permissive trimming (e.g. \(q \geq 2\)) 
 followed by explicit error correction \citep{Macmanes2014}.
@@ -452,11 +467,11 @@ These \(k\)-mers are then assembled into graphs based on \(k-1\) overlaps with o
 However, in dBGs the vertices represent the \(k-1\) overlaps with the \(k\)-mers themselves
 forming the edges. This simplifies the problem of assembling contigs from finding hamiltonian cycles
 in the graph (\(NP\)-complete complexity) to that of the 
-eulerian cycle (i.e. visit each edge once) problem (EPP) (\(\P\) complexity).  
-This is a computationally much simpler problem as it has far fewer degrees of freedom
-because all edges (and therefore all non-disjoint vertices) must be visited 
-whereas in the hamiltonian problem not all edges will necessarily be used.  
-Furthermore, the existence of a path within a graph (or subgraph) can be 
+eulerian cycle (i.e. visit each edge once) problem (EPP) (\(P\) complexity).  
+This is a computationally much simpler problem as it has far fewer degrees of freedom.
+This is because all edges (and therefore all non-disjoint vertices) must be visited 
+whereas in the HPP not all edges will necessarily be used.  
+Furthermore, the existence of solution to the EPP within a graph (or subgraph) can be 
 easily determined by observing whether that a) the graph is connected and b) the order
 of only \(\leq 2\) vertices is odd (i.e. an even number of edges connected to them).
 This reduced computational complexity therefore 
@@ -468,7 +483,7 @@ fast and accurate overlap calculations and alignment whereas the de Bruijn appro
 requires robust error correction \citep{Palmer2010}.
 As de Bruijn graph generation relies on exact \(k-1\) matches 
 errors exponentially increase the number of possible graph traversal paths.  More traversal
-paths means greater graph complexity and thus increased risk of error, and higher
+paths means greater graph complexity and thus increased risk of error as well as higher
 computational demands \citep{Pop2009}.  Some modern assemblers utilise
 paired-end read information directly in the generation of these graphs \citep{Bankevich2012}, however,
 most assemblers just use this information to post-process assembled contigs using various heuristic methods.
@@ -490,20 +505,19 @@ or accurately resolved by most assemblers expecting only limited structural vari
 assembly.  Previously, attempts to work around this included inbreeding to generate
 homozygous lines or fosmid based approaches.
 
-Specialised genome assemblers have been produced to address this problem,
-for example Platanus performed well on both highly and lowly heterozygous 
-genomes using \(k\)-mer autoextension approaches and by merging haplotypes
-at both contig assembly and scaffolding steps, as well as incorporation
-of various heuristics involving bubble resolution \citep{Bradnam2013,Kajitani2014a}
+Specialised genome assemblers have been produced to address this problem
+e.g. Platanus. By using a range of approaches such as \(k\)-mer autoextension,
+merging haplotypes at both contig assembly and scaffolding steps, and incorporation
+of various heuristics in bubble resolution these assemblers
+have performed reasonable well on both highly and lowly heterozygous genomes \citep{Bradnam2013,Kajitani2014a}.
 
 Likewise, transcriptome assembly complexity rapidly increases with the number of alleles
-expected per gene determined by ploidy, heterozygosity and complex gene families
-and in turn how many transcripts per allele in light of alternative splicing.
-
-This is particularly problematic in the PbMr system owing to the massive
+expected per gene, ploidy, heterozygosity, presence of 
+complex gene families and alternative splicing.
+This is particularly problematic in the \textit{PbMr} system owing to the massive
 ploidy of the host \textit{Paramecium bursaria} and the numerous whole genome
 duplications in its relatively recent evolutionary history \citep{McGrath2014}.  This also 
-explains the difficulties in using sister species, as the most sequenced Paramecium
+explains the difficulties in using sister species, as the most sequenced \textit{Paramecium}
 genus species are the aurelia complex which have undergone 2 WGD since divergence with
 \textit{P. bursaria} \citep{McGrath2014}.
 
@@ -547,7 +561,7 @@ genus species are the aurelia complex which have undergone 2 WGD since divergenc
 %This is true for both bulk and SC RNA-Seq \citep{Stegle2015}.
 %
 %
-% \subsubsection{Transcriptome Assembly Assessment}
+% \subsubsection{Assembly Assessment}
 % who could http://www.ccforum.com/1471-2164/14/465 \citep{Neil2013c}
 
 % Reference-free assessment is more difficult. 
@@ -644,28 +658,31 @@ Machine learning is a field of computer science
 devoted to the challenge of developing and applying algorithms capable of 
 automatically inferring and utilising patterns in data \citep{Murphy2012}.
 A commonly used formal definition of machine learning:
-``A computer is said to learn from experience E with respect to some class of tasks 
-T and performance measure P, if its performance at tasks T, as measured by P, improves 
-with experience E.'' \citep{Mitchell1997}.
+``A computer is said to learn from experience \(e\) with respect to some class of tasks 
+\(t\) and performance measure \(p\), if its performance at tasks \(t\), as measured by \(p\), improves 
+with experience \(e\).'' \citep{Mitchell1997}.
 Machine learning encompasses techniques and methods from various areas including statistics,
 optimisation/control engineering, neuroscience and artificial intelligence.
-Applications range in complexity from simple linear regression to deep convolutional neural networks 
+Applications range in complexity from simple linear regression to deep convolutional neural networks (CNN)
 with millions of free parameters running on dedicated super-computers \citep{Wu2014} 
 which are capable of beating human-performance on complex image classification tasks 
-(e.g. IMAGENET \citep{Berg2014,He2015}).
+e.g. IMAGENET \citep{Berg2014,He2015}.
 
 Typically, we seek to set the parameters (\(\theta\)) of a function in such a way
 that another property is minimised.  For example, in linear regression the aim is to find 
-parameters of a straight line \(h_{\vec{\theta}}(\vec{x}) = \vec{\theta} * \vec{x}\) (assuming \(x_{0} = 1\) and \(\theta_{0}\) is the
-intercept) which minimise the distance
-between the line and the data (for example, the sum of squares distance).
-This distance/error is calculated using something known as the cost function e.g. \(J(\vec{\theta}) = \frac{1}{2} m \sum^{m}_{i=1} (h_{\vec{\theta}}(x_{i}) - y_{i})^2\) 
+parameters of a straight line \(h_{\theta}(x) = \vec{\theta}\vec{x}\) (assuming \(x_{0} = 1\) and \(\theta_{0}\) is the
+intercept) which minimise the distance 
+between the line and the dependent variable (\(y\)). In this case \(x\) and \(y\) 
+are most commonly vectors, however, more complicated regression tasks will involve
+higher order tensors.
+The distance/error is calculated using something known as the cost function e.g. 
+for the sum of squares distance measure: \[J(\theta) = \frac{1}{2} m \sum^{m}_{i=1} (h_{\theta}(x_{i}) - y_{i})^2\]
 (where \(m\) is the number of \(x, y\) pairs in the dataset for linear regression).
-Most algorithms will seek to minimise the value of this cost function \(J(\\theta)\) with respect to 
+Most algorithms will seek to minimise the value of this cost function \(J(\theta)\) with respect to 
 the parameters of the original function \(h_{\theta}(x)\).  Typically, this is achieved using a variety of algorithmic optimisation techniques.
 The most prevalent of these are gradient descent based methods in which the value of \(\theta\) is modified 
 in the direction of the gradient of the cost function (determined using the 
-partial derivative of \(J\) with respect to \(\theta\): \(\frac{\partial J_{\theta}}{\partial\theta}\)).  
+partial derivative of \(J\) with respect to \(\theta\): \(\frac{\partial J}{\partial\theta}\)).  
 
 
 In an ideal world, the best machine learning model trained using our data will 
@@ -673,37 +690,38 @@ generalise well for novel data generated from the same underlying process
 which generated the training data.  
 This is known as generalisability and it plays into the concept of `fit'.  
 A model that minimises its particular cost function on the training dataset has 
-been fit to that dataset, however, it is possible for the model to fit the training
+been fitted to that dataset, however, it is possible for the model to fit the training
 data in such a way that it has low error on the training data but performs 
 incredibly poorly when applied to new data from the same process.
 This is typically the case when a model has overfit the data.  
 
 
 The classic example of this is fitting a line to a set of points using a
-high degree polynomial (see \cref{fig:fitting}) .  This polynomial will perfectly pass through all the points but is likely to be a worse predictor for the value 
-of some new data than a much simpler model that while it fits the original training data, may not fit quite as well.  
+high degree polynomial (\cref{fig:fitting}) .  This polynomial will perfectly pass through all the points but is likely to be a worse predictor for the value 
+of some new data than a much simpler model which might appear to have a worse
+fit to the original training data. 
 Likewise, a model that is misspecified
 or cannot fit the training data well e.g. the training data follows a non-linear distribution but the model is linear, is known as underfitted.
-Underfitted models will perform poorly on both the training and test data.  However, it isn't particularly useful to only discover
-how useful your model is likely to be on the test data (and will lead to overfitting) 
-therefore almost all machine learning analyses uses the principal of cross-validation.
+Underfitted models will perform poorly on both the training and test data.  
+
+As constantly assessing generalisability using the test data essentially
+makes this part of the training data (and thus will lead to overfitting) 
+almost all machine learning analyses use the principal of cross-validation.
 Cross-validation is the partitioning of the training dataset to create a validation dataset which can be used as a proxy test set.
 
-%% SORT
-
-Unfortunately, no single model will perform best for all tasks (to paraphrase and simplify Wolpert and McCreedy's ``No Free Lunch Theorem'' \citep{Wolpert1996}),
+No single model will perform best for all tasks (to paraphrase and simplify Wolpert and McCreedy's ``No Free Lunch Theorem'' \citep{Wolpert1996}),
 there are no shortcuts in machine learning (and many other areas) or optimisation.  Therefore, testing different models (and hyperparameter values) using
-cross-validation is key to generating a useful model.  Another important way to prevent overfitting is to introduce regularisation in the cost function, in other
-words a term which penalises model complexity.
+cross-validation is key to generating a useful model.  Another important way to prevent overfitting is to introduce regularisation in the cost function i.e. a term 
+which penalises higher model complexity.
 
 \begin{figure}[H]
     \includegraphics[width=\textwidth]{fitting.pdf}
-    \caption[Explanation of learning curves and model fitting]{Plot showing a high bias (underfit) model in yellow and a high variance (overfit) model in yellow.
+    \caption[Explanation of learning curves and model fitting]{Plot showing a high bias (underfit) model in yellow and a high variance (overfit) model in red.
         Below are learning curves corresponding to each of these respectively.
         Learning curves show the effect of different training set sizes on the training and test error of misspecified models.
         Overfitted models show a large gap between test and training errors, they fit to the training data well but don't generalise
         to new data (i.e. test data).
-        Underfit models show a very high training error and little difference between test and training data as the model is too simple
+        Underfitted models show a very high training error and little difference between test and training data as the model is too simple
         to fit the training data at all.
     }
     \label{fig:fitting}
@@ -740,15 +758,15 @@ of behaviour and the indirect reward of trial and error approaches \citep{Bishop
 In supervised (also referred to as predictive) learning the principal aim is 
 to learn a mapping between inputs/features \(x\) and outputs/response \(y\) from a set of 
 inputs and their corresponding expected output.  This is known as the training set 
-i.e. \(\mathcal{D} = {(x_{i}, y_{i}) \quad \forall i \in N}\) where \(N\) is 
+i.e. \(\mathcal{D} = {(x_{i}, y_{i}) \quad \forall i \in n}\) where \(n\) is 
 the cardinality (size) of the training set \citep{Murphy2012}.  
 A supervised learning algorithm thus seeks to approximate \(y=f(x)\) where \(f\) is an unknown 
-function. This estimated function \(\hat{y} = \hat{f}(x)\) (see \cref{eq:sup}) would then generally
+function. This estimated function \(\hat{y} = \hat{f}(x)\) would then generally
 be applied to new data known as the test data for which the expected outputs are not known (i.e. 
-\(x_{i} \not \in \mathcal{D}\)).  In other words, \(i\) samples comprised of \(j\) 
-dimensions each can be arranged as an \(i \times j\) matrix \(\mathbf{X}\) and the outputs
+\((x_{i}, y_{i}) \not \in \mathcal{D}\)).  In other words, \(i\) samples comprised of \(j\) 
+dimensions each can be arranged as an \(i \times j\) matrix \(\mathbfit{X}\) and the outputs
 to a vector \(\vec{y}\) of length \(i\). Therefore supervised learning
-can be formulated as a means of identifying a mapping between \(\mathbf{X}\) and \(\vec{y}\):
+can be formulated as a means of identifying a mapping (\(\hat{f}\)) between \(\mathbfit{X}\) and \(\vec{y}\):
 
 \[
     \begin{bmatrix}
@@ -764,15 +782,15 @@ can be formulated as a means of identifying a mapping between \(\mathbf{X}\) and
 \]
 
 Supervised learning is further subdivided into two approaches depending on the nature of the expected
-outputs: classification and regression\footnote{It is worth noting that the somewhat confusingly named
-    ``logistic regression'' is typically a form of classification}.
+outputs: classification and regression.\footnote{It is worth noting that the somewhat confusingly named
+    ``logistic regression'' is typically a form of classification.}
 
 In regression the desired outputs are real-valued (or ordinal) i.e. \(y_{i} \in \mathbb{R}\) and we seek to
 estimate a particular output quantity for a specific input.
 The simplest example of this would be the 2-dimensional linear regression problem mentioned above in which
 we are determining the parameters of a line (gradient/weight and intercept/bias) which best fits the training 
 dataset (\(\mathcal{D}\)) composed of pairs of \(x\) and \(y\) values.  Once this line has been found we 
-can use it to predict the value of \(\hat{y_{i}}\) for data in the test set \(x_{i} \not \in \mathcal{D}\).
+can use it to predict the value of \(\hat{y_{i}}\) for data in the test set (\(x_{i} \not \in \mathcal{D}\)).
 
 
 On the other hand, in classification the expected outputs are 
@@ -786,9 +804,9 @@ Supervised learning algorithms can also be either probabilistic or non-probabili
 discriminative.
 Probabilistic functions will return a probability distribution associated with possible class labels or
 regression values whereas non-probabilistic approaches will only return the most likely class label or value.
-Generative algorithms, such as Naive Bayes or restricted Boltzmann machines, 
+Generative algorithms, such as Naive Bayes or Restricted Boltzmann Machines (RBMs), 
 seek to model the process by which the output data was generated 
-from the input i.e. learn the joint probability \(p(x,y)\) and make predictions on that basis via Bayes Theorem (see \cref{eq:bayes}).
+from the input i.e. learn the joint probability \(p(x,y)\) and make predictions on that basis via Bayes Theorem:
 
 \begin{equation}
     \begin{aligned}
@@ -800,22 +818,18 @@ from the input i.e. learn the joint probability \(p(x,y)\) and make predictions 
     \label{eq:bayes}
 \end{equation}
 
-Whereas, discriminative classifiers, such as logistic regression/linear classifiers,
-model the posterior probability \(p(y|x)\)\footnote{strictly
-    in cases of bayesian inference this would actually be likelihood
-    as the posterior would be over the parameters i.e. \(p(\mathbf{W}|\mathbf{Y},\mathbf{X})\) (where \(\mathbf{Y}\) and \(\mathbf{X}\) are the whole
-dataset and \(\mathbf{W}\) the parameters).}.
 In other words, for classification problems a generative model would determine the statistical distribution of
-individual classes whereas discriminative models would just determine the boundaries between them.
-Generative models often perform better on small training sets by preventing overfitting with discriminative
-classifiers performing better as the training set grows \citep{Ng2002}.
+individual classes whereas discriminative models (such as logistic regression/linear classifiers)
+would just determine the boundaries between them.
+Generative models often perform better on small training sets by preventing overfitting whereas discriminative
+classifiers perform better as the training set grows \citep{Ng2002}.
 
 \subsubsection{Support vector machines}
 
 Support Vector Machines (SVMs) are a type of sparse kernel maximum-margin supervised classification algorithm.
-With the innovation of the kernel trick in 1992 \citep{Boser1992} and soft-margins in 1993 (not published until \citep{Cortes1995}) SVMs have been 
+With the innovation of the kernel trick in 1992 \citep{Boser1992} and soft-margins in 1993 (not published until \citet{Cortes1995}) SVMs have been 
 among the most successfully applied classification algorithms \citep{Fernandez-Delgado2014}.
-Only relatively recently have they begun to lose ground to the deep learning methods such as deep convolutional neural networks (e.g. LeNet \citep{LeCun1998}) exemplified 
+Only relatively recently have they begun to lose ground to the deep learning methods such as deep convolutional neural networks e.g. LeNet \citep{LeCun1998} exemplified 
 by the defeat of SVMs by the LeNet on the MNIST digit recognition dataset \citep{Hinton2006,Bengio2007,Bengio2013}.
 
 The goal of SVMs is to learn a hyperplane which separates two sets of labels in the dataset. Note, for multiclass classification, a series of one-vs-all
@@ -838,9 +852,9 @@ their cost function in a more efficient constrained way.
 \end{figure}
 
 A naive formulation of this problem is simple specifically we are trying to find a linear model \(f(x) = \theta_{0} + \theta^{T}x\) which can be simplified 
-to \(f(x) = \theta * x \) if we assume that the first element of \(x\) is fixed to \(1\). We thus want to minimise \(J\) in terms of \(\theta\) to find
+to \(f(x) = \theta x \) if we assume that the first element of \(x\) is fixed to \(1\). We thus want to minimise \(J\) in terms of \(\theta\) to find
 the largest margin that correctly labels all the training data (in other words is constrained).  Fortunately, due to geometry the margin is property of
-the norm of \(\theta\) i.e. \(\norm{\theta}\) but we use \(\frac{1}{2} \norm{\theta}^{2}\) for mathematical convenience.
+the norm of \(\theta\) i.e. \(\norm{\theta}\) but we use \(\frac{1}{2} \norm{\theta}^{2}\) for mathematical convenience. Therefore:
 
 \[argmin_{\theta} \quad J(\theta) = \frac{1}{2} \norm{\theta}^{2} \quad s.t. \quad y_{i}(\theta x_{i}) \geq 1 \quad \forall i\]
 
@@ -848,10 +862,10 @@ In reality, this cost function would be converted to a constrained optimisation 
 
 
 The 2nd major enhancement of SVMs is that of soft-margins \citep{Cortes1995}. Soft-margins are a way of allowing a degree of misclassification
-if doing so would increase the size of the margin that can be generated.  Specifically, a user defined penalty constant \(C\) is specified and 
+if doing so would increase the size of the margin that can be generated.  Specifically, a user defined penalty constant \(c\) is specified and 
 added to the cost function penalising the degree of misclassification \(\xi\), e.g.:
 
-\[argmin_{\theta} \quad J(\theta) = \frac{1}{2} \norm{\theta}^{2}  + C \sum^{n}_{i=1} \xi_{i} \quad s.t. \quad y_{i}(\theta x_{i}) \geq 1 - \xi_{i} \quad \forall i\]
+\[argmin_{\theta} \quad J(\theta) = \frac{1}{2} \norm{\theta}^{2}  + c \sum^{n}_{i=1} \xi_{i} \quad s.t. \quad y_{i}(\theta x_{i}) \geq 1 - \xi_{i} \quad \forall i\]
 
 This can improve robustness to outlier data and generally improve generalisability by keeping the margin as large as possible.
 
@@ -859,7 +873,8 @@ This can improve robustness to outlier data and generally improve generalisabili
     \centering
     \includegraphics[width=0.6\textwidth]{boundary.pdf}
     \caption[Soft-margin classifiers]{Demonstration of the utility of a soft-decision boundary to improve the overall
-    fit of a decision boundary by allowing a degree of misclassification during training}
+    fit of a decision boundary by allowing a degree of misclassification during training.
+    The dotted line represents a hard-margin classifier which must have a much smaller margin to correctly classify the class 0 outlier. On the otherhand by accepting this misclassification the soft-margin boundary allows a much wider margin.}
     \label{fig:boundary}
 \end{figure}
 
@@ -869,9 +884,11 @@ data from the input dimensions to a higher dimensional space in which the data i
 These transformed feature spaces can have incredibly high number of dimensions (in the case of popular kernels like radial basis
 function, an infinite number of dimensions).  Explicitly transforming data in this way would be computationally intensive
 so instead the ``kernel trick'' is used, where instead of explicitly transforming all the data into the feature space
-it is done implicitly by computing the inner product of all pairs of data points.  This is a lot more efficient
+it is done implicitly by computing the inner product of all pairs of data points (\cref{fig:kernel}).  This is a lot more efficient
 and precludes the computationally intensive step of converting the data into the new, potentially infinite, co-ordinate space.
-Radial basis function (RBF) kernel is an example \(K(x_{i}, x_{j}) = exp ( - \frac{\norm{x_{i} - x_{j}}^{2}}{2\sigma^{2}})\) kernel.
+Radial basis function (RBF) is an example of a commonly used kernel (\(\sigma\) 
+forming a hyperparamter):
+\[K(x_{i}, x_{j}) = exp \left( - \frac{\norm{x_{i} - x_{j}}^{2}}{2\sigma^{2}}\right)\]
 Even with the kernel trick, operations on every pair of points can become infeasible for large datasets due to the combinatorial
 explosion in necessary operations as the dataset increases in size.  However, in the same way that the decision boundary parameters 
 are determined using only a subset of the training data (i.e. the support vectors) the kernel trick only needs
@@ -883,7 +900,7 @@ referred to as sparse kernel methods.
     \caption[Kernel trick]{A kernel transform can allow SVM to produce non-linear classification boundaries by mapping
         the data to a higher dimensional space in which they are linearly separable. This is known as the kernel
         trick and the key to its efficiency in SVM is that it is only evaluated for those sets of points near the 
-    decision boundary}
+    decision boundary.}
     \label{fig:kernel}
 \end{figure}
 
@@ -892,10 +909,10 @@ referred to as sparse kernel methods.
 The advantages of SVM is that they are somewhat resistant to the curse of dimensionality i.e. they are effective with large numbers of features
 even if the number of features is greater than the size of the training set.  By using support vectors, the kernel trick, and Lagrange bound optimisation 
 they are relatively fast and memory efficient to train and as classification only depends on the location of the decision boundary very fast to test.
-Additionally, in simple form finding the hyperplane of an SVM is a true convex optimisation therefore is guaranteed to always find the global optimum (this
+Additionally, in simple form, finding the hyperplane of an SVM is a true convex optimisation therefore is guaranteed to always find the global optimum (this
 guarantee does break with more complex kernels and soft-margins).  
 The major disadvantage is not natively generating probabilistic output (i.e. attaching a probability to a certain classification).  However, this can be achieved
-using methods like Platt Scaling or the related Relevance Vector Machine algorithm.   The other disadvantage is that hyper-parameters such as the misclassification
+using methods like Platt Scaling or the related Relevance Vector Machine (RVM) algorithm.   The other disadvantage is that hyperparameters such as the misclassification
 penalty for soft-margins (\(c\)) and kernel choice (and its parameters) need chosen, typically this is solved by training using a grid-search of permutations
 of these parameter settings and selecting the best model via cross-validation. However, 
 there is both theoretical and empirical evidence that either random search \citep{Bergstra2012} or Bayesian optimisation
@@ -905,25 +922,26 @@ there is both theoretical and empirical evidence that either random search \cite
 \subsection{Unsupervised learning}
 
 The other main form of machine learning is that of unsupervised or descriptive learning.
-In which the training dataset has no provided output labels (y) i.e. 
-\(\mathcal{D} = {x_{i} \forall i \in N}\) (where again N is the cardinality of 
-this training dataset). In other words, we just have our dataset and have no additional information.
+In which the training dataset has no provided output labels i.e. 
+\(\mathcal{D} = \{x_{i} \quad \forall i \in n\}\) and \(y \not \in \mathcal{D}\) (where again \(n\) is the cardinality of 
+this training dataset). 
+In other words, we just have our dataset and have no additional information.
 This is slightly more difficult problem as it lacks an obvious error metric like supervised learning 
 (i.e. difference between actual output and expected output) but is important and useful tool to
 try to discover patterns in datasets.
 
 There are two major groups of unsupervised learning algorithms, the first of which is clustering algorithms
-such as K-means that seeks to partition a dataset into a set of groups (see \cref{fig:kmeans} for more details).
+such as \(k\)-means that seeks to partition a dataset into a set of groups (see \cref{fig:kmeans} for more details).
 The other major group of unsupervised algorithms are those used for visualisation and/or
 dimensionality reduction.  Dimensionality reduction is a way of projecting a multidimensional
 dataset into a lower number of dimensions in a way that still corresponds to
 ``shape'' of the data in the original number of dimensions.  
 
 Formally, dimensionality reduction seeks to take a set of data (\(\mathcal{D}\)) and convert it
-to a lower dimension form \(\mathcal{Y}\) known as a map \(\mathcal{Y} = {y_{i} \forall i \in N}\) 
+to a lower dimension form \(\mathcal{Y}\) known as a map \(\mathcal{Y} = \{y_{i} \quad \forall i \in n\}\) 
 with each individual \(x_{i}\) in \(\mathcal{D}\) represented by a corresponding map point \(y_{i}\). It
 also seeks to do this in a way that maintains as much of the structure found in the original data 
-as is possible \citep{Maaten2008} therefore, if two data points are similar in the original dimensions
+as is possible \citep{Maaten2008}. Therefore, if two data points are similar in the original dimensions
 they should still be similar in the map \(\mathcal{Y}\) (and the inverse).
 Some dimensionality reduction approaches are well known in biology, specifically: principal component analysis (PCA) 
 \citep{hotelling1933analysis} and multidimensional scaling (MDS) \citep{Torgerson1952} which both aim to identify
@@ -932,49 +950,50 @@ hidden features within the dataset that can explain a high degree of the variati
 
 As ever different methodologies have a range of pros and cons, with
 some better at preserving global structure (e.g. isomap) and others local data structures (e.g. local linear embedding) and so on.
-One of the most recent innovations in this area is that of t-distributed stochastic neighbour-embedding
+One of the most recent innovations in this area is that of \(t\)-distributed stochastic neighbour-embedding
 (t-SNE) in which the similarity of data points in the input space is modelled as pairwise probabilities 
 using Gaussian distributions.
 These probabilities are then translated into positions in the map \(\mathcal{Y}\) and similarities re-calculated
 using Student's t-distributions.  The position and variance of these points and distributions respectively
 is then optimised by minimising the difference between the similarity probabilities in the input space
-and on the map as assessed by metrics such as Kullback-Leibler divergence \citep{Maaten2008}.
+and on the map as assessed by metrics such as Kullback-Leibler (KL) divergence \citep{Maaten2008}.
 
 \subsubsection{K-means}
 
-K-means clustering is a non-probabilistic unsupervised learning 
+\(k\)-means clustering is a non-probabilistic unsupervised learning 
 method in which we seek to partition data points in multidimensional space into 
-K clusters. It is often used to initialise Gaussian mixture models.
+\(k\) clusters. It is often used to initialise Gaussian mixture models (GMMs).
 
-Specifically, given a set of \(N\) observations \(x = {x_{1},...,x_{N}}\) 
-of \(\mathcal{D}\) dimensions partition each point \((x_{n})\) into k clusters
+Specifically, given a set of \(n\) observations \(x = \{x_{1},...,x_{n}\}\) 
+partition each point \((x_{n})\) into \(k\) clusters, where typically \(x\) is a large
+matrix.
 
 A cluster can be intuitively considered as a group of observations/points which are 
-``closer'' to one another than to other observations and the k-th cluster can 
-defined by a \(\mathcal{D}\) dimensional vector \(\mu_{k}, where k=1,..,K\) for all clusters.
-This vector represents the current ``prototype'' centroid of cluster. 
-
-So, with k-means clustering we actually seek the set of K cluster centroids \({\mu_{k}}\) 
+``closer'' to one another than to other observations and the \(k\)th cluster can 
+defined by its centroid. 
+So, with k-means clustering we actually seek the set of \(k\) cluster centroids \(\mu\) 
 which minimise the sum of squares distances of each data point from its closest cluster centroid
 \citep{Bishop2006}.
 
-If we define a 1-of-K coding scheme with \(r_{nk} \in {0,1}\) as a binary variable that is 1 when \(x_{n}\) has been
+If we define a 1-of-\(k\) coding scheme with \(r_{nk} \in {0,1}\) as a binary variable that is 1 when \(x_{n}\) has been
 assigned to cluster \(k\) (with centroid \(\mu_{k}\)) and 0 otherwise then we can define an objective cost function (\(J\)) 
 that represents the sum of squares distances of each data point \(x_{n}\) from its assigned cluster centroid \(\mu_{k}\).
 
-\[ 
-    J = \sum_{n=1}^{N}\sum_{k=1}^{K} = r_{nk} \norm{x_{n} - \mu_{k}}^{2}
+\begin{equation}
+    \begin{aligned}
+    J = \sum_{i=1}^{n}\sum_{j=1}^{k} = r_{ij} \norm{x_{i} - \mu_{j}}^{2}
     \label{eq:kmeans_cost}
-\]
+    \end{aligned}
+\end{equation}
 
-Therefore, the goal of k-means clustering is to find values 
+Therefore, the goal of \(k\)-means clustering is to find values 
 for \({r_{nk}}\) and \({\mu_{k}}\) that minimise this linear 
 function \cref{eq:kmeans_cost}.
 \citep{Bishop2006}
 
 \begin{figure}[H]
     \includegraphics[width=\textwidth]{kmeans.pdf}
-    \caption[K-means clustering]{Demonstration of the K-means algorithm applying 3 rounds of Expectation-Maximisation to cluster
+    \caption[K-means clustering]{Demonstration of the \(k\)-means algorithm applying 3 rounds of Expectation-Maximisation (EM) to cluster
         a group of 2 dimensional samples.  The 3 cluster centroids (represented by coloured rectangles) 
         are randomly initialised in 0 before undergoing 3 rounds of EM.  
         This involves the successive assignment of samples to their nearest centroids (1a, 2a, 3a) 
@@ -986,12 +1005,13 @@ an arrow with a faded version showing the initial location.
 \end{figure}
 
 
-The standard algorithm proceeds in two alternating steps following the initialisation of \(\mu_{k}\) with starting
+The standard algorithm proceeds in two alternating steps following the initialisation of \(\mu\) with starting
 cluster centroid locations \citep{Forgy1965,Lloyd1982}:
 \begin{enumerate}
-    \item \(argmin_{r_{nk}} J\) i.e. minimise \cref{eq:kmeans_cost} w.r.t the assignment of points to clusters while keeping
+    \item \(argmin_{r_{nk}} J\) i.e. minimise \cref{eq:kmeans_cost}  w.r.t the assignment of points to clusters while keeping
         the cluster centroids fixed.
-    \item \(argmin_{\mu_{k}} J\) i.e. minimise \cref{eq:kmeans_cost} w.r.t the position of the cluster centroids while keeping
+    \item \(argmin_{\mu} J\) i.e. 
+        i.e. minimise \cref{eq:kmeans_cost} w.r.t the position of the cluster centroids while keeping
         the assignment of points to centroids fixed.
 \end{enumerate}
 
@@ -1006,35 +1026,35 @@ assigning each point to the cluster represented by the nearest centroid or forma
 \]
 
 Step 2 roughly corresponds to the maximisation step in EM is can be determined by taking the partial derivative of \(J\) w.r.t 
-\(\mu_{k}\) setting it to 0 and solving for \(\mu_{k}\):
+\(\mu\) setting it to 0 and solving for \(\mu\):
 \begin{equation}
     \begin{aligned}
-        \frac{\partial J}{\partial \mu_{k}} &= 2 \sum_{n=1}^{N} r_{nk} (x_{n} - \mu_{k}) \\
-        0 &= 2 \sum_{n=1}^{N} r_{nk} (x_{n} - \mu_{k})\\
-        \mu_{k} &= \frac{\sum_{n} r_{nk}x_{n}}{\sum_{n} r_{nk}}\\
+        \frac{\partial J}{\partial \mu_{k}} &= 2 \sum_{i=1}^{n} r_{ik} (x_{i} - \mu_{k}) \\
+        0 &= 2 \sum_{i=1}^{n} r_{ik} (x_{i} - \mu_{k})\\
+        \mu_{k} &= \frac{\sum^{n}_{i=1} r_{ik}x_{i}}{\sum_{i} r_{ik}}\\
     \end{aligned}
 \end{equation}
 
 
-In other words set \(\mu_{k}\) to the mean of all data points \(x_{n}\) assigned to cluster \(k\) thus k-means \citep{Bishop2006}
+In other words set \(\mu_{k}\) to the mean of all data points \(x_{n}\) assigned io cluster \(k\) (thus \(k\)-means) \citep{Bishop2006}
 
 These two steps are repeated until a specified maximum number of iterations are reached or no points change cluster assignment during
 step 1.
 
 %\(J\) \cref{eq:kmeans_cost} will converge but is liable to get stuck in a local rather than global minimum.
 
-K-means has many modifications and improvements such as refining the initialisation of the clusters by 
-the Bradley-Fayyad method (clustering random samples of the dataset and then k-means clustering the resulting clusters) \citep{Bradley1998} 
-or over-clustering (running more than k-means clustering with more than the specified number of clusters and merging clusters at the end
-to generate the correct number of clusters). One of the most recent and promising improvements is that of ``ying-yang'' k-means
+\(k\)-means has many modifications and improvements such as refining the initialisation of the clusters by 
+the Bradley-Fayyad method (clustering random samples of the dataset and then \(k\)-means clustering the resulting clusters) \citep{Bradley1998} 
+or over-clustering (running more than \(k\)-means clustering with more than the specified number of clusters and merging clusters at the end
+to generate the correct number of clusters). One of the most recent and promising improvements is that of ``ying-yang'' \(k\)-means
 clustering which gains a moderate speed-up over the conventional algorithm by minimising the number of distance calculation required.
 This is achieved by creating upper and lower bound distance filters using the triangle inequality (i.e. \(d(a,b) \leq d(a,c) + d(b,c)\) where 
 \(d\) is a function that calculates the distance between 2 points) \citep{Ding2015}.
 
 
 
-An efficient implementation of the k-means algorithm is available in the MLPACK C++ Machine Learning library \citep{mlpack2013}.
-While very efficient and effective, k-means has some limitations, it requires a user specified number of clusters
+An efficient implementation of the \(k\)-means algorithm is available in the MLPACK C++ Machine Learning library \citep{mlpack2013}.
+While very efficient and effective, \(k\)-means has some limitations, it requires a user specified number of clusters
 and therefore diagnostics to check for obvious misspecification in the number clusters.  Information criterion
 can be used to determine the optimal number of clusters.
 Additionally, it is not guaranteed
@@ -1068,14 +1088,14 @@ branch lengths that are product of a measure of divergence between the connected
 Typically, these sequences take the form of protein or DNA sequences\footnote{
 Strictly phylogenetics refers to the study of molecular sequence data although the same methods are applicable to
 non-molecular characters such as morphological traits (and occasionally originated in this domain) as well as any
-other set of discrete data vectors. It has even been applied to fields such as linguistics \citep{Atkinson2005}
+other set of discrete data vectors. It has even been applied to fields such as linguistics \citep{Atkinson2005}.
 } and the measure of relatedness is some proxy for evolutionary distance ranging from simple distance measures
-\footnote{e.g. the Hamming distance \(d\), which can be defined for 
+e.g. the Hamming distance \(d\), which can be defined for 
 two sequences (in the form of two vectors \(\vec{x}\) and \(\vec{y}\) of length \(k\)) as the sum
-of the number of positions the sequences differ: \( d = \sum_{i=0}^{k} ( 1 - \delta_{x_{i}, y_{i}} )\). Note that \(\delta\) is the Kronecker delta function: \(\delta_{ij}= \begin{cases}
+of the number of positions the sequences differ: \[ d = \sum_{i=0}^{k} ( 1 - \delta_{x_{i}, y_{i}} )\]. Note that \(\delta\) is the Kronecker delta function: \[\delta_{ij}= \begin{cases}
 	1, &  i = j\\
 	0, & i \neq j 
-	\end{cases} \)}
+\end{cases} \]
 
 to more complicated probabilistic estimations based on observed data.
 A character is an element of a sequence such as an individual base or amino acid, homologous 
@@ -1089,8 +1109,9 @@ possible trees rapidly increases with the number of sequences.
 Specifically, for rooted and unrooted trees the number of possible trees \(n\) increases
 by the number of taxa \(t\) as follows:
 \[\text{For rooted phylogenies}: 
-        n = \prod_{i=2}^{t}(3i - 3) \\
- \text{For unrooted phylogenies}:
+        n = \prod_{i=2}^{t}(3i - 3)\]
+
+\[ \text{For unrooted phylogenies}:
         n = \prod_{i=2}^{t - 1}(3i - 3)
 \]
 
@@ -1100,7 +1121,7 @@ sequences for inclusion in the analysis),  alignment (in which homologous sites 
      but also non-invariant are selected), model selection (in which the best fitting
  evolutionary model is selected or calculated) and finally, phylogenetic reconstruction (in which the tree
  is generated that minimises some measure e.g. most likely tree for probabilistic models or 
- least distance).
+most parsimonious).
 
 
 %
@@ -1124,11 +1145,11 @@ horizontal gene transfer has increased it is becoming clear that in some cases
 a network like structure may in fact be more appropriate.
 
 
-Most analyses in this PhD are conducted using amino acid sequences.  
+Most analyses in this thesis are conducted using amino acid sequences.  
 DNA is more likely to display a compositional bias and independence of sites
 is often severely violated due to the structure of codons.  
 Amino acids have more states so are less susceptible to back mutations
-than DNA and easier to align.  
+than DNA and are easier to align.  
 
 
 \subsection{Sequence sampling}
@@ -1146,7 +1167,7 @@ Phylogenetic accuracy is usually considered in terms of consistency (as data inc
 occur), and robustness (how sensitive is the phylogeny to violation of assumptions in reconstruction) \citep{Nabhan2012}
 Typically, sequence sampling will be conducted from the basis of a single
 seed sequence which will be used to query existing databases using alignment 
-tools such as BLAST and HMMs (explained below) to attempt to discover
+tools such as BLAST and HMMs to attempt to discover
 potentially homologous sequences from different organisms.  
 
 
@@ -1158,7 +1179,7 @@ of interest, and violations of assumptions e.g. expectation of a uniform distrib
 Generally, increased taxon sampling has a strong positive effect on phylogenetic accuracy \citep{Zwickl2002}.
 However, it can also lead to a situation where there are too many sequences to efficiently
 reconstruct a phylogeny.
-However, care must also be taken not to unintentionally bias datasets by removing 
+Care must also be taken not to unintentionally bias datasets by removing 
 any sequences that are considered ``problematic'' especially when conflicting phylogenetic signal
 or model violations can be biologically informative.  Therefore, it is usually necessary to include
 borderline error-generating sequences within a phylogeny initially and to iteratively remove them 
@@ -1180,12 +1201,6 @@ Care must be taken to ensure the selected outgroup doesn't actively
 distort the accuracy of inference of the rest of the phylogeny regardless
 of the issue of root placement \citep{Milinkovitch1998}.
 
-The two principal ways in which putatively homologous sequences are identified in
-sequence databases are those based upon Basic Local Alignment Search Tool (BLAST) and
-its variants and Hidden-Markov Model based approaches (HMM).
-Essentially these methods identify and align homologous sequences in 
-a target sequence database to our query sequence.
-
 %
 %\subsubsection{BLAST}
 %
@@ -1204,7 +1219,6 @@ a target sequence database to our query sequence.
 %
 %to identity likely homologous sequences 
 %to a given query.
-%
 %
 %
 %\subsubsection{HMM}
@@ -1261,12 +1275,11 @@ that derive from the same common ancestor and have evolved in each sequence line
 It is also possible that insertion or deletion events have taken place
 and a particular residue is absent in the ancestral node or sequence lineage.
 
-This is a non-trivial computational problem which has been proven to have an NP-complete
-\footnote{A decision problem for which an answer can be verified in polynomial time 
+This is a non-trivial computational problem which has been proven to have an NP-complete\footnote{A decision problem for which an answer can be verified in polynomial time 
     by a non-deterministic Turing machine and to and from which any NP-hard problem
     can be translated \citep{Karp1972}.} computational complexity \citep{Wang1994}.
-Specifically, the optimal alignment of N sequences has a complexity of \(O(L^{N})\)
-for \(N\) sequences of length \( L \)\citep{Sievers2011}.
+Specifically, the optimal alignment of \(n\) sequences has a complexity of \(O(l^{n})\)
+for \(n\) sequences of length \(l\)\citep{Sievers2011}.
 
 Due to this complexity, the majority of MSA algorithms implement heuristic approaches
 in order to get, if not the optimal solution, a sufficiently good one in a reasonable
@@ -1302,10 +1315,10 @@ each pair of sequences. From this matrix a ``guide-tree'' is generated using sim
 neighbour-joining methods (in which a tree is built by recursively clustering
 the least dissimilar sequences \citep{Saitou1987}).  Sequences are then progressively
 aligned using their branching order within this guide-tree \citep{Thompson1994}.
-This drastically reduces the \(O(L^{N})\) complexity to approximately \(O(N^{2})\)
+This drastically reduces the \(O(l^{n})\) complexity to approximately \(O(n^{2})\)
 \citep{Sievers2011}. While there have been various improvements and alternative approaches
 created such as merging both local and global alignment \citep{Notredame2000}, 
-rapid identification of homologous regions using Fast Fourier Transforms \citep{Katoh2002},
+rapid identification of homologous regions using Fast Fourier Transforms (FFT) \citep{Katoh2002},
 iterative refinement of alignments \citep{Edgar2004a} and use of Hidden-Markov Models \citep{Eddy1995}.
 
 
@@ -1366,13 +1379,7 @@ manually using the graphical tool Seaview \citep{Gouy2010}.
 
 While the simplest means of phylogenetic inference - parsimony i.e. finding
 the tree that requires the fewest sequence changes - does not require any explicit
-model of sequence evolution\footnote{
-Although it is worth noting that maximum likelihood inference under 
-the no common mechanism model (which involves independent branch-length estimation 
-for every site and branch) will result in the same phylogeny as parsimony \citep{Tuffley1997}.
-Therefore, arguably parsimony is a special case of likelihood under this model}
-, all other means of phylogenetic inference do \citep{Le2008}.
-
+model of sequence evolution (see \cref{sec:phyloinf}), all other means of phylogenetic inference do \citep{Le2008}.
 
 A substitution model is, in its simplest sense, the same as the PAM and BLOSUM
 matrices used in pairwise and MSA.  They are a means of scoring and weighting
@@ -1385,7 +1392,7 @@ distributed (i.i.d) \citep{Hasegawa1985}.
 This measure of distance can be naive models where rates of change between character
 states and the frequency of each state is equal (i.e. \(p(x \rightarrow y) \quad \forall x \forall y \in {G,C,T,A} \quad \text{where} \quad x\neq y\)
 \citep{jukes1969evolution}) to models fully parameterised in terms of character frequency and rates of change by the masked alignment 
-(e.g. the generalised time-reversible (GTR) model \citep{Tavare1986}).
+e.g. the generalised time-reversible (GTR) model \citep{Tavare1986}.
 %
 %\begin{figure}
 %    \[
@@ -1437,16 +1444,17 @@ accuracy.
 
 
 The most frequent violation that is controlled for is allowing the rate of substitution to vary across
-sites by using a \(\Gamma\) distribution \(Var = \frac{\alpha}{\beta^{2}}, \mu = \frac{\alpha}{\beta}\) with a given shape \(\alpha\) and 
-trivial scale factor \(\beta\) depending on the dataset to scale rates at each site.
+sites by using a \(\Gamma\) distribution: \[var_\Gamma = \frac{\alpha}{\beta^{2}}\]
+\[\mu_\Gamma = \frac{\alpha}{\beta}\]
+with a given shape \(\alpha\) and trivial scale factor \(\beta\) depending on the dataset to scale rates at each site.
 For datasets that have a high degree of rate heterogeneity a low valued \(\alpha\) produces a broad distribution of rates, whereas a high value will generate 
 a narrow distribution for datasets with low rate heterogeneity \citep{Yang1993}.
 For reasons of computational efficiency \(\Gamma\) is typically approximated as a discrete distribution of 4 to 8 
 categories of equal probability \citep{Yang1994a}. 
 A more limited version of this is the invariant sites model in which sites are divided into 2 classes, one considered invariable while the 
-other has normal substitution rates applied\footnote{
+other has normal substitution rates applied \citep{Hasegawa1985}.\footnote{
     This can also be used with \(\Gamma\) and is approximately equivalent
-to the addition of another discrete \(\Gamma\) category.}\citep{Hasegawa1985}.
+to the addition of another discrete \(\Gamma\) category.}
 
 
 
@@ -1454,17 +1462,17 @@ Unfortunately, these models still assume other model parameters namely the equil
 sites (but just scaled).  
 However, some models have been proposed with multiple rate matrices \citep{Lartillot2004} and 
 state frequencies can be defined at each site \citep{Bruno1996b} but needs lots of taxa \citep{Lartillot2004}.
-An alternative to this is the CAT model which a mixture model with 
-K classes each containing a different state frequency.  If \(K=N\) then this is
-similar to Bruno's model, however, generally \(K < N\).  A 
- probabilistic process known as a Dirichlet Process Prior is used to assign
+Another alternative is the CAT model which is a mixture model with 
+\(k\) classes each containing a different state frequency.  If \(k=n\) then this is
+similar to the aforementioned Bruno's model, however, generally \(k < n\).  A 
+ probabilistic process known as a Dirichlet Process Prior (DPP) is used to assign
  columns to various state frequency classes and simultaneously
- determines the optimal value of \(K\) during this process \citep{Lartillot2004}.
+ determines the optimal value of \(k\) during this process \citep{Lartillot2004}.
 An alternative to this approach is explicitly partitioning a masked alignment
 and generating a model and state frequencies for each partition, 
 some consider this equivalent to a CAT model depending akin to preferences
-for fixed-effects vs random-effects models \citep{Yang2012}.  However, personally,
-automated partitioning using a Dirichlet process has the advantage of not
+for fixed-effects vs random-effects models \citep{Yang2012}.  However, 
+automated partitioning using a DPP has the advantage of not
 requiring arbitrary user-defined partitions, which could be a source of bias.
 
 
@@ -1481,12 +1489,11 @@ determined at each site \citep{Zhou2010}.
 
 Generally, simpler models such as the ``null'' parsimony model or basic models
 that don't account for complex evolutionary phenomena are more susceptible to
-artefacts such as long-branch attraction (LBA)\footnote{
+artefacts such as long-branch attraction (LBA) \citep{Yang1996}.\footnote{
     LBA is a distorting effect in which long branches (rapidly diverging)
     are incorrectly placed close to one another regardless of actual shared
     homology.  This is due to the increased chance of rapidly diverging sequences
 to share independently acquired residues \citep{Bergsten2005}.}
-\citep{Yang1996}.
 
 However, in the grand tradition of
 ``no-free lunch'', there is no universally best model for all datasets.
@@ -1494,7 +1501,7 @@ Therefore, it is necessary to test multiple competing models using a provided
 MSA.  Typically, these models are then compared for their fit to the observed
 data using information criterion \citep{Sullivan2005} such as Akaike's (AIC) which assess
 fit while penalising model complexity in a standard regularisation trade-off 
-(\(AIC=2k-2ln(L)\) where \(k\) is the number of parameters and \(L\) the 
+(\(AIC=2k-2ln(l)\) where \(k\) is the number of parameters and \(l\) the 
 model likelihood \citep{Akaike1974}).  Other criteria include corrected AIC \citep{sugiura1978further},
 Bayesian Information Criteria \citep{Schwarz1978} and Decision Theoretic criteria \citep{Minin2003} 
 based approaches \citep{Sullivan2005}.
@@ -1505,8 +1512,8 @@ ProtTest3 \citep{Abascal2005,Darriba2011c} will be used for analyses
 involving protein sequences and jModelTest2 \citep{Posada2008,Darriba2012} for
 phylogenetic inference of DNA datasets.
 
-\subsection{Phylogenetic inference}
-
+\subsection{Phylogenetic inference}\label{sec:phyloinf}
+\subsubsection{Distance and parsimony methods}
 The simplest phylogenetic inferences are those of distance matrix methods.
 Distance matrix methods \citep{Fitch1967} work on the basis of generating 
 a matrix representing the pairwise distances of each sequence using the selected
@@ -1528,8 +1535,8 @@ It works on the assumption that the true tree has the smallest expected length (
 fast simple agglomerative algorithm.  NJ is one of the best distance methods and 
 is more reliable than maximum-parsimony which can be asymptotically inconsistent
 While already efficient (possibly efficient as possible) NJ can be made more efficient 
-using effective heuristics to search tree space \citep{Kumar1996}.
-As well as improvements where variance is minimised instead of pure distance improving performance in datasets with high
+using effective heuristics to search tree space \citep{Kumar1996}
+as well as improvements where variance is minimised instead of pure distance improving performance in datasets with high
 substitution rates e.g. BIONJ \citep{Gascuel1997}.
 
 Distance methods are very fast but can perform
@@ -1537,27 +1544,26 @@ very poorly for divergent sequences with large sampling errors as they don't gen
 distance estimates \citep{Yang2012}.
 
 
-
 Parsimony approaches \citep{Camin1965} on molecular sequences \citep{Eck1966} seek to infer the maximum parsimony (MP) tree.
 That is the tree which requires the smallest number of character changes (has the best tree score).  Where the tree score is the sum of 
 all character lengths (the minimum number of changes for each site in the alignment).  Any site that is invariable is not
 informative for generation of a parsimony tree.
-It has no explicit assumptions relative to other methods however, this means it is difficult to build in 
+MP has no explicit assumptions relative to other methods however, this also means it is difficult to build in 
 prior knowledge of sequence evolution when generating a tree.
 It also fails when multiple substitutions have occurred at the same site or with parallel changes in two long branches 
 and therefore is especially prone to long-branch attraction
 \citep{Felsenstein1978}.
 The popularity of parsimony methods has declined with discoveries that they can produce statistically inconsistent
-phylogenies \citep{Felsenstein2001}.
-
-A majority consensus tree will typically be presented with each node
-annotated with the number of bootstrapped trees that supported its existence.
+phylogenies \citep{Felsenstein2001}.  Interestingly, maximum likelihood inference under 
+the no common mechanism model (which involves independent branch-length estimation 
+for every site and branch) will result in the same phylogeny as parsimony \citep{Tuffley1997}.
+Therefore, arguably parsimony can be a special case of likelihood.
 
 \subsubsection{Maximum likelihood}
 
 Maximum likelihood (ML) methods seek to discover the maximum-likelihood estimates (MLEs) of the tree parameters 
 (topology \(\tau\), branch length \(\theta_l\) and usually substitution model parameters \(\theta_\mu\))
-for the data i.e. MLE of \(L(\tau, \theta_l, \theta_\mu)\). 
+for the data i.e. MLE of \(l(\tau, \theta_l, \theta_\mu)\). 
 
 These MLEs are estimated numerically using standard iterative optimisation algorithms.
 They were developed relatively early in molecular phylogenetics using relatively
@@ -1653,46 +1659,46 @@ in detail are omitted elsewhere.
 Languages and libraries were chosen depending on their best fit for a particular task.
 Performance sensitive code such as those dealing with large datasets (e.g. high-throughput sequencing 
 libraries or image data) were principally conducted using the C++ language 
-in line with the C++11 standard \citep{ISOInternationalStandard2011}
+in line with the \texttt{C++11} standard \citep{ISOInternationalStandard2011}
 
-The main C++ libraries used in addition to the C++11 standard library were:
+The main \texttt{C++} libraries used in addition to the C++11 standard library were:
 \begin{itemize}
-    \item Seqtk - fastq/a sequence parsing library \citep{SeqtkGitHub}
-    \item MLPACK - a high-performance machine learning library \citep{mlpack2013}
-    \item OpenCV3 - widely used computer vision library \citep{opencv_library}
-    \item Armadillo - numerical computation library \citep{Sanderson2010}
+    \item \texttt{Seqtk} - fastq/a sequence parsing library \citep{SeqtkGitHub}
+    \item \texttt{MLPACK} - a high-performance machine learning library \citep{mlpack2013}
+    \item \texttt{OpenCV3} - widely used computer vision library \citep{opencv_library}
+    \item \texttt{Armadillo} - numerical computation library \citep{Sanderson2010}
 \end{itemize}
 
-The majority of tasks were accomplished using the high-level python language (python2.7 or python3.4
+The majority of tasks were accomplished using the high-level python language (\texttt{python2.7} or \texttt{python3.4}
 depending on the application).  In addition to the standard library, the numerical
-computation libraries numpy and theano, machine learning library scikit-learn,
-statistical and scientific libraries scipy  and pandas, the bioinformatics libraries
-scikit-bio  and biopython, and plotting libraries holoviews, 
-matplotlib, seaborn  and bokeh were all used extensively.
-Frequent use was made of literate programming offered by environments such as the ipython notebook (recently
-renamed jupyter).
+computation libraries \texttt{numpy} and \texttt{theano}, machine learning library \texttt{scikit-learn},
+statistical and scientific libraries \texttt{scipy} and \texttt{pandas}, the bioinformatics libraries
+\texttt{scikit-bio}  and \texttt{biopython}, and plotting libraries \texttt{holoviews}, 
+\texttt{matplotlib}, and \texttt{seaborn} were all used extensively.
+Frequent use was made of literate programming offered by environments such as the \texttt{ipython notebook} (recently
+renamed \texttt{jupyter}).
 
-The statistical programming language R \citep{RCoreTeam2015} was used for some data analysis
-and visualisation primarily using ggplot2 \citep{Wickham2009} and dplyr \citep{Wickham2014}.
-This was primarily done using the R-Studio (\url{http://www.rstudio.com/}) integrated development environment) and 
+The statistical programming language \texttt{R} \citep{RCoreTeam2015} was used for some data analysis
+and visualisation primarily using \texttt{ggplot2} \citep{Wickham2009} and \texttt{dplyr} \citep{Wickham2014}.
+This was primarily done using the \texttt{R-Studio} (\url{http://www.rstudio.com/}) integrated development environment) and 
 R-markdown \citep{Allaire2014}.
 
-All code was version controlled using git (\url{http://git-scm.com/}) and remotely hosted using github (\url{https://github.com/}) and bitbucket (\url{https://bitbucket.org/})
+All code was version controlled using \texttt{git} (\url{http://git-scm.com/}) and remotely hosted using \texttt{github} (\url{https://github.com/}) and \texttt{bitbucket} (\url{https://bitbucket.org/})
 services.  Unit tests were automatically run on synchronisation (`push') with these remote servers using 
-the Travis (\url{https://travis-ci.org/}) Continuous Integration service.
+the \texttt{Travis} (\url{https://travis-ci.org/}) Continuous Integration (CI) service.
 
-Incidental scripting was done using zsh and bash languages and all code was written using a simple vim terminal.
+Incidental scripting was done using \texttt{zsh} and \texttt{bash} languages and all code was written using \texttt{vim} in an \texttt{st} terminal.
 
 \subsection{Hardware}
 
 All analyses were conducted on either the lab cluster (running Ubuntu Server LTS 12.04 and 14.04 (\url{http://www.ubuntu.com}):
 \begin{itemize} 
-    \item PowerEdgeM910 with 2 x Intel Xeon CPU \(E6510 @ 1.73GHz, 512GB\) RAM
-    \item PowerEdgeM910 with 2 x Intel Xeon CPU \(E7-4807 @ 1.87GHz, 512GB\) RAM
-    \item PowerEdgeM620 with 2 x Intel Xeon CPU \(E5-2650 v2 @ 2.60GHz, 512GB\) RAM
+    \item \texttt{PowerEdgeM910} with 2 x Intel Xeon CPU \texttt{E6510 @ 1.73GHz, 512GB} RAM
+    \item \texttt{PowerEdgeM910} with 2 x Intel Xeon CPU \texttt{E7-4807 @ 1.87GHz, 512GB} RAM
+    \item \texttt{PowerEdgeM620} with 2 x Intel Xeon CPU \texttt{E5-2650 v2 @ 2.60GHz, 512GB}RAM
 \end{itemize}
-Or on two workstations both running continuously updated versions of Arch Linux (\url{https://www.archlinux.org/}).
+Or on two workstations both running continuously updated versions of \texttt{Arch Linux} (\url{https://www.archlinux.org/}).
 \begin{itemize}
-    \item Apple MacPro with 2 x Intel Xeon CPU \(E5520 @ 2.27GHz, 16GB\) RAM
-    \item Dell Precision T7500 with 2 x Intel Xeon \(E5620 @ 2.4GHz, 48GB\) RAM
+    \item Apple MacPro with 2 x Intel Xeon CPU \texttt{E5520 @ 2.27GHz, 16GB} RAM
+    \item Dell Precision T7500 with 2 x Intel Xeon \texttt{E5620 @ 2.4GHz, 48GB} RAM
 \end{itemize}

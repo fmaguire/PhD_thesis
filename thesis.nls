@@ -1,0 +1,340 @@
+\begin{thenomenclature} 
+
+ \nomgroup{A}
+
+  \item [{\(\mathbb{R}\)}]\begingroup Real Numbers\nomeqref {0}
+		\nompageref{8}
+  \item [{\(\mathbb{Z}\)}]\begingroup Integers\nomeqref {0}
+		\nompageref{8}
+  \item [{\(\mathcal{D}\)}]\begingroup Training Data\nomeqref {0}
+		\nompageref{8}
+  \item [{\(\theta\)}]\begingroup Parameters\nomeqref {0}\nompageref{8}
+  \item [{AA}]\begingroup Amino Acid\nomeqref {0}\nompageref{8}
+  \item [{ABC}]\begingroup ATP-Binding Cassette\nomeqref {0}
+		\nompageref{8}
+  \item [{AGO}]\begingroup Argonaute proteins\nomeqref {0}
+		\nompageref{8}
+  \item [{AIC}]\begingroup Akaike Information Criterion\nomeqref {0}
+		\nompageref{8}
+  \item [{ALE}]\begingroup Assembly Likelihood Evaluation\nomeqref {0}
+		\nompageref{8}
+  \item [{AMP}]\begingroup Adenosine Monophosphate\nomeqref {0}
+		\nompageref{8}
+  \item [{ATCC}]\begingroup American Type Culture Collection\nomeqref {0}
+		\nompageref{8}
+  \item [{ATP}]\begingroup Adenosine Triphosphate\nomeqref {0}
+		\nompageref{8}
+  \item [{BIC}]\begingroup Bayesian Information Criterion\nomeqref {0}
+		\nompageref{8}
+  \item [{BLAST}]\begingroup Basic Local Alignment Search Tool\nomeqref {0}
+		\nompageref{8}
+  \item [{BLASTN}]\begingroup Nucleotide BLAST\nomeqref {0}
+		\nompageref{8}
+  \item [{BLASTP}]\begingroup Protein BLAST\nomeqref {0}\nompageref{8}
+  \item [{BLASTX}]\begingroup BLAST against a Protein Database using a Translated Nucleotide Query\nomeqref {0}
+		\nompageref{8}
+  \item [{BLAT}]\begingroup BLAST-Like Alignment Tool\nomeqref {0}
+		\nompageref{8}
+  \item [{BLOSUM}]\begingroup Blocks Substitution Matrix\nomeqref {0}
+		\nompageref{8}
+  \item [{CCAP}]\begingroup Culture Collection of Algae and Protozoa\nomeqref {0}
+		\nompageref{8}
+  \item [{CD-HIT}]\begingroup Clustering Database at High Identity with Tolerance\nomeqref {0}
+		\nompageref{8}
+  \item [{CDF}]\begingroup Cumulative Distribution Function\nomeqref {0}
+		\nompageref{8}
+  \item [{CDS}]\begingroup Coding DNA Sequence\nomeqref {0}
+		\nompageref{8}
+  \item [{CGAT}]\begingroup Computational Genomics Analysis and Training\nomeqref {0}
+		\nompageref{8}
+  \item [{CI}]\begingroup Continuous Integration\nomeqref {0}
+		\nompageref{8}
+  \item [{CNN}]\begingroup Convolutional Neural Network\nomeqref {0}
+		\nompageref{8}
+  \item [{CONCOCT}]\begingroup Clustering Contigs with Coverage and Composition\nomeqref {0}
+		\nompageref{8}
+  \item [{CPU}]\begingroup Central Processing Unit\nomeqref {0}
+		\nompageref{8}
+  \item [{CRF}]\begingroup Conditional Random Fields\nomeqref {0}
+		\nompageref{8}
+  \item [{CRISPR}]\begingroup Clustered Regularly Interspaced Short Palindromic Repeats\nomeqref {0}
+		\nompageref{8}
+  \item [{CTAB}]\begingroup Cetrimonium bromide\nomeqref {0}
+		\nompageref{8}
+  \item [{CV}]\begingroup Cross-Validation\nomeqref {0}\nompageref{8}
+  \item [{DAPI}]\begingroup 4',6-diamidino-2-phenylindole\nomeqref {0}
+		\nompageref{8}
+  \item [{dBG}]\begingroup de Bruijn graph\nomeqref {0}\nompageref{8}
+  \item [{DBSCAN}]\begingroup Density-Based Spatial Clustering of Applications with Noise\nomeqref {0}
+		\nompageref{8}
+  \item [{DCMU}]\begingroup 3-(3,4-dichlorophenyl)-1,1-dimethylurea\nomeqref {0}
+		\nompageref{8}
+  \item [{DDBJ}]\begingroup DNA Data Bank of Japan\nomeqref {0}
+		\nompageref{8}
+  \item [{ddNTP}]\begingroup Dideoxy Nucleoside Triphosphate\nomeqref {0}
+		\nompageref{8}
+  \item [{DETONATE}]\begingroup \textit{de novo} Transcriptome RNA-Seq Assembly with or without Truth Evaluation\nomeqref {0}
+		\nompageref{8}
+  \item [{DNA}]\begingroup Deoxyribonucleic Acid\nomeqref {0}
+		\nompageref{8}
+  \item [{dNTP}]\begingroup Deoxy Nucleoside Triphosphate\nomeqref {0}
+		\nompageref{8}
+  \item [{DPP}]\begingroup Dirichlet Process Prior\nomeqref {0}
+		\nompageref{8}
+  \item [{DT}]\begingroup Decision trees\nomeqref {0}\nompageref{8}
+  \item [{DV}]\begingroup Digestive Vacuole\nomeqref {0}\nompageref{8}
+  \item [{EGT}]\begingroup Endosymbiotic Gene Transfer\nomeqref {0}
+		\nompageref{8}
+  \item [{EIC}]\begingroup Extracted-Ion Chromatogram\nomeqref {0}
+		\nompageref{8}
+  \item [{EM}]\begingroup Expectation-Maximisation\nomeqref {0}
+		\nompageref{8}
+  \item [{EPP}]\begingroup Eulerian Path Problem\nomeqref {0}
+		\nompageref{8}
+  \item [{ER}]\begingroup Endoplasmic Reticulum\nomeqref {0}
+		\nompageref{8}
+  \item [{EST}]\begingroup Expressed Sequence Tags\nomeqref {0}
+		\nompageref{8}
+  \item [{ETE}]\begingroup Environment for Tree Exploration\nomeqref {0}
+		\nompageref{8}
+  \item [{ETS}]\begingroup External Transcribed Spacers\nomeqref {0}
+		\nompageref{8}
+  \item [{FAT}]\begingroup Fatty Acid Translocation\nomeqref {0}
+		\nompageref{8}
+  \item [{FDR}]\begingroup False Discovery Rate\nomeqref {0}
+		\nompageref{8}
+  \item [{FFT}]\begingroup Fast Fourier Transform\nomeqref {0}
+		\nompageref{8}
+  \item [{FN}]\begingroup False Negative\nomeqref {0}\nompageref{8}
+  \item [{FP}]\begingroup False Positive\nomeqref {0}\nompageref{8}
+  \item [{FRET}]\begingroup Fluorescence Resonance Energy Transfer\nomeqref {0}
+		\nompageref{8}
+  \item [{GAII}]\begingroup Genome Analyzer 2\nomeqref {0}
+		\nompageref{8}
+  \item [{GC}]\begingroup Guanine Cysteine\nomeqref {0}\nompageref{8}
+  \item [{GC-}]\begingroup Gas Chromatography\nomeqref {0}
+		\nompageref{8}
+  \item [{GFF}]\begingroup General Feature Format\nomeqref {0}
+		\nompageref{8}
+  \item [{GFP}]\begingroup Green Fluorescent Protein\nomeqref {0}
+		\nompageref{8}
+  \item [{GI}]\begingroup Gene Identifier\nomeqref {0}\nompageref{8}
+  \item [{GMM}]\begingroup Gaussian Mixture Model\nomeqref {0}
+		\nompageref{8}
+  \item [{GNU}]\begingroup GNU's not UNIX\nomeqref {0}\nompageref{8}
+  \item [{GO}]\begingroup Gene Ontology\nomeqref {0}\nompageref{8}
+  \item [{GTF}]\begingroup General Transfer Format\nomeqref {0}
+		\nompageref{8}
+  \item [{GTR}]\begingroup Generalised Time Reversible model\nomeqref {0}
+		\nompageref{8}
+  \item [{HAMAP}]\begingroup High-quality Automated and Manual Annotation of Proteins\nomeqref {0}
+		\nompageref{8}
+  \item [{HGT}]\begingroup Horizontal Gene Transfer\nomeqref {0}
+		\nompageref{8}
+  \item [{HMM}]\begingroup Hidden Markov Model\nomeqref {0}
+		\nompageref{8}
+  \item [{HPLC}]\begingroup High Performance Liquid Chromatography\nomeqref {0}
+		\nompageref{8}
+  \item [{HPP}]\begingroup Hamiltonian Path Problem\nomeqref {0}
+		\nompageref{8}
+  \item [{IDBA}]\begingroup Iterative de Bruijn Assembler\nomeqref {0}
+		\nompageref{8}
+  \item [{IDBA-MT}]\begingroup Iterative de Bruijn Assembler - Metatranscriptome\nomeqref {0}
+		\nompageref{8}
+  \item [{IDBA-MTP}]\begingroup Iterative de Bruijn Assembler - Metatranscriptome with Protein Alignment\nomeqref {0}
+		\nompageref{8}
+  \item [{IDBA-UD}]\begingroup Iterative de Bruijn Assembler - Uneven Sequencing Depth\nomeqref {0}
+		\nompageref{8}
+  \item [{IES}]\begingroup Internal Eliminated Sequences\nomeqref {0}
+		\nompageref{8}
+  \item [{iid}]\begingroup Independent and Identically Distributed\nomeqref {0}
+		\nompageref{8}
+  \item [{IPTG}]\begingroup Isopropyl \(\beta\)-D-1-thiogalactopyranoside\nomeqref {0}
+		\nompageref{8}
+  \item [{IR}]\begingroup Infrared\nomeqref {0}\nompageref{8}
+  \item [{ITS}]\begingroup Internal Transcribed Spacer\nomeqref {0}
+		\nompageref{8}
+  \item [{JGI}]\begingroup Joint Genome Institute\nomeqref {0}
+		\nompageref{8}
+  \item [{KAAS}]\begingroup KEGG Automatic Annotation Server\nomeqref {0}
+		\nompageref{8}
+  \item [{KAT}]\begingroup K-mer Analysis Toolkit\nomeqref {0}
+		\nompageref{8}
+  \item [{KDE}]\begingroup Kernel Density Estimate\nomeqref {0}
+		\nompageref{8}
+  \item [{KEGG}]\begingroup Kyoto Encyclopedia of Genes and Genomes\nomeqref {0}
+		\nompageref{8}
+  \item [{LB}]\begingroup Luria Broth\nomeqref {0}\nompageref{8}
+  \item [{LBA}]\begingroup Long Branch Attraction\nomeqref {0}
+		\nompageref{8}
+  \item [{LC-}]\begingroup Liquid Chromatography\nomeqref {0}
+		\nompageref{8}
+  \item [{LCA}]\begingroup Lowest Common Ancestor\nomeqref {0}
+		\nompageref{8}
+  \item [{LDA}]\begingroup Linear Discriminant Analysis\nomeqref {0}
+		\nompageref{8}
+  \item [{LECA}]\begingroup Last Eukaryote Common Ancestor\nomeqref {0}
+		\nompageref{8}
+  \item [{LG}]\begingroup Le-Gascuel model\nomeqref {0}\nompageref{8}
+  \item [{LTS}]\begingroup Long-Term Support\nomeqref {0}\nompageref{8}
+  \item [{MAC}]\begingroup Macronucleus\nomeqref {0}\nompageref{8}
+  \item [{MAFFT}]\begingroup Multiple Alignment using Fast Fourier Transform\nomeqref {0}
+		\nompageref{8}
+  \item [{MCMC}]\begingroup Markov Chain Monte Carlo\nomeqref {0}
+		\nompageref{8}
+  \item [{MCMCMC}]\begingroup Metropolis-Coupled MCMC\nomeqref {0}
+		\nompageref{8}
+  \item [{MDA}]\begingroup Multiple Displacement Amplification\nomeqref {0}
+		\nompageref{8}
+  \item [{MDS}]\begingroup Multidimensional Scaling\nomeqref {0}
+		\nompageref{8}
+  \item [{MEGAN}]\begingroup Metagenome Analyzer\nomeqref {0}
+		\nompageref{8}
+  \item [{METLIN}]\begingroup Metabolite Link Database\nomeqref {0}
+		\nompageref{8}
+  \item [{MFS}]\begingroup Major Facilitator Superfamily\nomeqref {0}
+		\nompageref{8}
+  \item [{MIC}]\begingroup Micronucleus\nomeqref {0}\nompageref{8}
+  \item [{ML}]\begingroup Maximum Likelihood\nomeqref {0}\nompageref{8}
+  \item [{MLE}]\begingroup Maximum Likelihood Estimator\nomeqref {0}
+		\nompageref{8}
+  \item [{MNIST}]\begingroup Mixed National Institute of Standards and Technology\nomeqref {0}
+		\nompageref{8}
+  \item [{MP}]\begingroup Maximum Parsimony\nomeqref {0}\nompageref{8}
+  \item [{MPP}]\begingroup Mitochondria and Plastid Porin family\nomeqref {0}
+		\nompageref{8}
+  \item [{MS}]\begingroup Mass Spectrometry\nomeqref {0}\nompageref{8}
+  \item [{MSA}]\begingroup Multiple Sequence Alignment\nomeqref {0}
+		\nompageref{8}
+  \item [{MUSCLE}]\begingroup Multiple Sequence Comparison by Log-Expectation\nomeqref {0}
+		\nompageref{8}
+  \item [{NADH}]\begingroup Nicotinamide adenine dinucleotide (reduced)\nomeqref {0}
+		\nompageref{8}
+  \item [{NBRP}]\begingroup National BioResource Project\nomeqref {0}
+		\nompageref{8}
+  \item [{NCBI}]\begingroup National Center for Biotechnology Information\nomeqref {0}
+		\nompageref{8}
+  \item [{NCL}]\begingroup New Cereal Leaf-Prescott\nomeqref {0}
+		\nompageref{8}
+  \item [{ND}]\begingroup NanoDrop\nomeqref {0}\nompageref{8}
+  \item [{NIST}]\begingroup National Institute of Standards and Technology\nomeqref {0}
+		\nompageref{8}
+  \item [{NJ}]\begingroup Neighbour-Joining\nomeqref {0}\nompageref{8}
+  \item [{NMR}]\begingroup Nuclear Magnetic Resonance\nomeqref {0}
+		\nompageref{8}
+  \item [{NNI}]\begingroup Nearest Neighbour Interchange\nomeqref {0}
+		\nompageref{8}
+  \item [{NP}]\begingroup Non-deterministic Polynomial Time\nomeqref {0}
+		\nompageref{8}
+  \item [{NR}]\begingroup Non-Redundant\nomeqref {0}\nompageref{8}
+  \item [{NTS}]\begingroup Non-transcribed Spacers\nomeqref {0}
+		\nompageref{8}
+  \item [{OLC}]\begingroup Overlap Consensus\nomeqref {0}\nompageref{8}
+  \item [{ORF}]\begingroup Open Reading Frame\nomeqref {0}
+		\nompageref{8}
+  \item [{P}]\begingroup Polynomial Time\nomeqref {0}\nompageref{8}
+  \item [{PAM}]\begingroup Protein Data Bank\nomeqref {0}\nompageref{8}
+  \item [{PBCV}]\begingroup \textit{Paramecium bursaria}-\textit{Chlorella} Virus\nomeqref {0}
+		\nompageref{8}
+  \item [{PbMr}]\begingroup \textit{Paramecium bursaria}-\textit{Micractinium reisseri}\nomeqref {0}
+		\nompageref{8}
+  \item [{PCA}]\begingroup Principal Component Analysis\nomeqref {0}
+		\nompageref{8}
+  \item [{PCR}]\begingroup Polymerase Chain Reaction\nomeqref {0}
+		\nompageref{8}
+  \item [{PDB}]\begingroup Protein Data Bank\nomeqref {0}\nompageref{8}
+  \item [{PE}]\begingroup Paired-End\nomeqref {0}\nompageref{8}
+  \item [{PFAM}]\begingroup Protein Families Database\nomeqref {0}
+		\nompageref{8}
+  \item [{PGM}]\begingroup PiggyMac\nomeqref {0}\nompageref{8}
+  \item [{PP}]\begingroup Posterior Probability\nomeqref {0}
+		\nompageref{8}
+  \item [{PTGS}]\begingroup Post-Transcription Gene Silencing\nomeqref {0}
+		\nompageref{8}
+  \item [{PV}]\begingroup Perialgal Vacuole\nomeqref {0}\nompageref{8}
+  \item [{QC}]\begingroup Quality Control\nomeqref {0}\nompageref{8}
+  \item [{QDA}]\begingroup Quadratic Discriminant Analysis\nomeqref {0}
+		\nompageref{8}
+  \item [{qPCR}]\begingroup Quantitative Polymerase Chain Reaction\nomeqref {0}
+		\nompageref{8}
+  \item [{QQQ}]\begingroup Triple Quadrupole\nomeqref {0}\nompageref{8}
+  \item [{QTOF}]\begingroup Quadrupole Time-of-Flight\nomeqref {0}
+		\nompageref{8}
+  \item [{QUAST}]\begingroup Quality Assessment Tool for Genome Assemblies\nomeqref {0}
+		\nompageref{8}
+  \item [{RAM}]\begingroup Random Access Memory\nomeqref {0}
+		\nompageref{8}
+  \item [{RBF}]\begingroup Radial Basis Function\nomeqref {0}
+		\nompageref{8}
+  \item [{RBM}]\begingroup Restricted Boltzmann Machine\nomeqref {0}
+		\nompageref{8}
+  \item [{RdRP}]\begingroup RNA-Dependent RNA polymerase\nomeqref {0}
+		\nompageref{8}
+  \item [{RFO}]\begingroup Raffinose Family Oligosaccharide\nomeqref {0}
+		\nompageref{8}
+  \item [{RNA}]\begingroup Ribonucleic Acid\nomeqref {0}\nompageref{8}
+  \item [{RNN}]\begingroup Recurrent Neural Network\nomeqref {0}
+		\nompageref{8}
+  \item [{RSEM-EVAL}]\begingroup RNA-Seq by Expectation-Maximisation - Evaluation\nomeqref {0}
+		\nompageref{8}
+  \item [{RT}]\begingroup Reverse Transcription\nomeqref {0}
+		\nompageref{8}
+  \item [{RT-PCR}]\begingroup Reverse Transcription PCR\nomeqref {0}
+		\nompageref{8}
+  \item [{RVM}]\begingroup Relevance Vector Machine\nomeqref {0}
+		\nompageref{8}
+  \item [{SC}]\begingroup Single Cell\nomeqref {0}\nompageref{8}
+  \item [{SCT}]\begingroup Single-Cell Transcriptome\nomeqref {0}
+		\nompageref{8}
+  \item [{SDC}]\begingroup Single Digested \textit{Chlorella}\nomeqref {0}
+		\nompageref{8}
+  \item [{SEECER}]\begingroup Sequencing Error Correction for RNA Reads\nomeqref {0}
+		\nompageref{8}
+  \item [{SGC}]\begingroup Single Green \textit{Chlorella}\nomeqref {0}
+		\nompageref{8}
+  \item [{SGLT}]\begingroup Sodium-Glucose symporters\nomeqref {0}
+		\nompageref{8}
+  \item [{SI}]\begingroup International System of Units\nomeqref {0}
+		\nompageref{8}
+  \item [{SMART}]\begingroup Single Molecular Analysis Research Tool\nomeqref {0}
+		\nompageref{8}
+  \item [{SMRT}]\begingroup Single Molecule Real-Time\nomeqref {0}
+		\nompageref{8}
+  \item [{SNP}]\begingroup Single Nucleotide Polymorphism\nomeqref {0}
+		\nompageref{8}
+  \item [{SPR}]\begingroup Subtree-Prune-and-Regraph\nomeqref {0}
+		\nompageref{8}
+  \item [{SRA}]\begingroup Sequence Read Archive\nomeqref {0}
+		\nompageref{8}
+  \item [{SSF}]\begingroup Sodium-Solute Symporter Family\nomeqref {0}
+		\nompageref{8}
+  \item [{SVM}]\begingroup Support Vector Machine\nomeqref {0}
+		\nompageref{8}
+  \item [{t-SNE}]\begingroup t-Distributed Stochastic Neighbour Embedding\nomeqref {0}
+		\nompageref{8}
+  \item [{TA}]\begingroup Thymine-Adenine\nomeqref {0}\nompageref{8}
+  \item [{TCDB}]\begingroup Transporter Classification Database\nomeqref {0}
+		\nompageref{8}
+  \item [{TM}]\begingroup Transmembrane\nomeqref {0}\nompageref{8}
+  \item [{TMHMM}]\begingroup Transmembrane Hidden Markov Model\nomeqref {0}
+		\nompageref{8}
+  \item [{TN}]\begingroup True Negative\nomeqref {0}\nompageref{8}
+  \item [{TP}]\begingroup True Positive\nomeqref {0}\nompageref{8}
+  \item [{TPM}]\begingroup Transcripts Per Million\nomeqref {0}
+		\nompageref{8}
+  \item [{TST}]\begingroup Tonoplast Sugar Transporter\nomeqref {0}
+		\nompageref{8}
+  \item [{UK}]\begingroup United Kingdom\nomeqref {0}\nompageref{8}
+  \item [{UTR}]\begingroup Untranslated Region\nomeqref {0}
+		\nompageref{8}
+  \item [{UV}]\begingroup Ultraviolet\nomeqref {0}\nompageref{8}
+  \item [{VCS}]\begingroup Version Control System\nomeqref {0}
+		\nompageref{8}
+  \item [{WGD}]\begingroup Whole Genome Duplication\nomeqref {0}
+		\nompageref{8}
+  \item [{WTA}]\begingroup Whole Transcriptome Amplification\nomeqref {0}
+		\nompageref{8}
+  \item [{XCMS}]\begingroup X-Chromatography Mass Spectrometry Library\nomeqref {0}
+		\nompageref{8}
+
+\end{thenomenclature}

@@ -179,6 +179,12 @@
 	\newpage
 }
 
+\newcommand{\nomenpage}{
+    \noindent \input{front_material/abbreviations}
+	\vspace*{\fill} 
+	\newpage
+}
+
 % maths page
 \newcommand{\mathsnot}{
     \chapter*{Maths Notation}
@@ -198,6 +204,7 @@
     \noindent \input{front_material/authorlist}
     \newpage 
 }
+
 
 %authorlist page
 \newcommand{\publications}{

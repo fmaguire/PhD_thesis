@@ -97,7 +97,7 @@ a method to reduce culture based contamination.
 
 While reasonably new, sc-RNAseq has shown a lot of promise in well characterised systems such as human cell cultures \citep{Bengtsson2005,Shalek2013}
 and \textit{Saccharomyces cerevisiae} \citep{Lipson2009} and there are high expectations
-of their utility for ``dual-RNASeq'' \citep{Westermann2012}.  sc-RNAseq addresses 
+of their utility for ``dual-RNAseq'' \citep{Westermann2012}.  sc-RNAseq addresses 
 the key difficulties of analysing unculturable or poorly culturable organisms \citep{Murray2012} and investigating
 cell-cell heterogeneity in expression patterns \citep{Raj2008,Shalek2013}).  
 Uninvestigated, this heterogeneity (either from biological and/or genomic variance or just the stochasticity of gene expression),
@@ -1112,7 +1112,7 @@ Bayeshammer, as implemented in the Spades genome assembler, even on permissively
 (\(Q>5\)) reads corrected only a maximum \(0.0007\%\) of reads in the 7 taxonomically selected SCT libraries.
 As this affected on the order of 10s of reads it was not considered worth pursuing this tool further.
 
-``SEECER'', an RNA-Seq specific error correction tool was used to correct 
+``SEECER'', an RNAseq specific error correction tool was used to correct 
 lightly trimmed (Q5) and harshly trimmed (Q30) SCT reads.  
 Approximately, \(5.37\%\) of Q5 trimmed SCT reads
 were corrected in ``SEECER''. \(0.51\%\) of Q30 trimmed
@@ -1557,7 +1557,7 @@ using the phylogeny and supervised classification system..
 
 Despite evidence and hope that nanoscale methods can greatly reduce levels of contamination \citep{Blainey2011}, 
 the taxonomic profiling conducted here
-indicates a high level of bacterial (and viral) contamination in the scRNA-Seq.  
+indicates a high level of bacterial (and viral) contamination in the scRNAseq.  
 Therefore, much as library contamination is one of the key issues with single cell genomics \citep{Blainey2013,Lusk2014}, it is also highly
 important in SCT.  This is in concordance with the findings of \citep{Kolisko2014}, 
 in which enigmatic, bacterial contamination was a problem in single cell eukaryotic
@@ -1627,7 +1627,7 @@ and resolving conflicting phylogenetic signal using a lowest common ancestor alg
 
 \subsection{Combining single cell and bulk transcriptome data creates new challenges}
 
-Contrary to previous studies in optimising conventional RNA-seq assemblies where:
+Contrary to previous studies in optimising conventional RNAseq assemblies where:
 permissive trims \citep{Macmanes2014}, error correction \citep{Macmanes2013,Macmanes2015} and the combination of multiple assemblies
 \citep{Nakasugi2014} have been demonstrated as effective tactics in recapitulating a comprehensive
 set of transcripts \textit{de novo}, MDA-based SCT and bulk datasets such as the one investigated
@@ -1651,8 +1651,8 @@ in this dataset might be a consequence of the lack of error correction tools
 designed for MDA-based sc-RNAseq datasets. It will likely prove beneficial, as 
 datasets of this type become more prevalent, to develop tools for this specific
 use case combining the most effective features of the MDA aware BayesHammer 
-and the RNA-seq optimised SEECER.  This said, there are several other available 
-Illumina RNA-Seq error correction tools 
+and the RNAseq optimised SEECER.  This said, there are several other available 
+Illumina RNASeq error correction tools 
 which were not trialled, ``SEECER'' was chosen in accordance to the recommendations based on dataset and hardware
 heuristics (\(>50M\) reads and the availability of a high memory system) \citep{Macmanes2015} but
 as we've demonstrated the limitations of such heuristics on new types of data it might 
@@ -1668,10 +1668,10 @@ best performing individual assembly (Bridger using 31-mers, Q30 trimmed
 taxonomically selected SCT and bulk libraries) was preferred.
 
 These results suggest that MDA-based single cell transcriptomic datasets
-do not behave in a qualitatively similar way to bulk RNA-seq in terms of
+do not behave in a qualitatively similar way to bulk RNAseq in terms of
 pre-processing and assembly parameters.  
 This means care must be taken incorporating advice and heuristics
-derived from studies based on analysis bulk RNA-seq datasets (e.g. \citep{Macmanes2013,Macmanes2014,Macmanes2015,Nakasugi2014}).
+derived from studies based on analysis bulk RNAseq datasets (e.g. \citep{Macmanes2013,Macmanes2014,Macmanes2015,Nakasugi2014}).
 As further studies using MDA SCTs are completed (e.g. \citep{Kolisko2014}) 
 a greater understanding of the optimal analysis of this type of 
 dataset will emerge.
