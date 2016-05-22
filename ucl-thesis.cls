@@ -28,12 +28,16 @@
 
 % Maths
 \RequirePackage[centertags]{amsmath}
-\RequirePackage{bm}
 \RequirePackage{amssymb}
 \RequirePackage{gensymb}
 \RequirePackage{mathspec}
+\RequirePackage{isomath}
+
+
+% Fasta
 \RequirePackage{filecontents}
 \RequirePackage{listings}
+
 
 %Physics
 \RequirePackage{siunitx}

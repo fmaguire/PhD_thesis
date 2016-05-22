@@ -746,9 +746,9 @@ A supervised learning algorithm thus seeks to approximate \(y=f(x)\) where \(f\)
 function. This estimated function \(\hat{y} = \hat{f}(x)\) (see \cref{eq:sup}) would then generally
 be applied to new data known as the test data for which the expected outputs are not known (i.e. 
 \(x_{i} \not \in \mathcal{D}\)).  In other words, \(i\) samples comprised of \(j\) 
-dimensions each can be arranged as an \(i \times j\) matrix \(\bm{X}\) and the outputs
+dimensions each can be arranged as an \(i \times j\) matrix \(\mathbf{X}\) and the outputs
 to a vector \(\vec{y}\) of length \(i\). Therefore supervised learning
-can be formulated as a means of identifying a mapping between \(\bm{X}\) and \(\vec{y}\):
+can be formulated as a means of identifying a mapping between \(\mathbf{X}\) and \(\vec{y}\):
 
 \[
     \begin{bmatrix}
@@ -803,8 +803,8 @@ from the input i.e. learn the joint probability \(p(x,y)\) and make predictions 
 Whereas, discriminative classifiers, such as logistic regression/linear classifiers,
 model the posterior probability \(p(y|x)\)\footnote{strictly
     in cases of bayesian inference this would actually be likelihood
-    as the posterior would be over the parameters i.e. \(p(\bm{W}|\bm{Y},\bm{X})\) (where \(bm{Y}\) and \(\bm{X}\) are the whole
-dataset and \(\bm{W}\) the parameters).}.
+    as the posterior would be over the parameters i.e. \(p(\mathbf{W}|\mathbf{Y},\mathbf{X})\) (where \(\mathbf{Y}\) and \(\mathbf{X}\) are the whole
+dataset and \(\mathbf{W}\) the parameters).}.
 In other words, for classification problems a generative model would determine the statistical distribution of
 individual classes whereas discriminative models would just determine the boundaries between them.
 Generative models often perform better on small training sets by preventing overfitting with discriminative
