@@ -102,12 +102,12 @@ highly variable \textit{rbcL} \citep{Buchheim2011}.
         ITS2 is highlighted in green and forms an effective taxonomic barcode at sequence level 
         for eukaryotic species analyses.  The ITS2 secondary structure
         shows a greater level of conservation and can be used to investigate
-        lower distance systematic relationships.  Figure was redrawn from \citep{Shi2005}}
+        lower distance systematic relationships.  Figure was redrawn from \citep{Shi2005}.}
 \label{fig:its2_schematic}
 \end{figure}
 
 In many species the rDNA cistron is present in multiple copies
-as tandem head-to-tail repeats varying in copy number from 1,2 copies
+as tandem head-to-tail repeats varying in copy number from one or two copies
 to thousands \citep{Torres-Machorro2010}.  While these copies are
 frequently homogeneous there are many organisms that display
 intranuclear variation \citep{Buchheim2011}.
@@ -141,7 +141,7 @@ system was through the use of multiple-displacement amplification (MDA)
 based sequencing \citep{Lasken2007}.  
 Due to difficulties in obtaining sufficient
 culture densities and the prevalence of putative sources of contamination
-within the culture bulk genome sequencing was considered to be prone to 
+within the culture, bulk genome sequencing was considered to be prone to 
 major difficulties.  Therefore, MDA offered a way in which 
 we could further investigate this question of photobiont clonality
 while also generating a resource with potential use for further analysis.
@@ -185,7 +185,7 @@ investigated the differential global metatranscriptome profile of \textit{P. bur
 \citep{Kodama2014c}.   While, this is a different strain of both host and endosymbiont to the SW1-ZK 
 strains in the CCAP1660/12 culture
 (\textit{P. bursaria} and \textit{Micractinium reisseri}) reproduction of this endosymbiont
-clearing offers a potential avenue by which to further investigate and, combined with RNAi 
+clearing offers a potential avenue by which to further investigate and, combined with RNAi, 
 to test the functional underpinning of this relationship. 
 
 There have been several published methods
@@ -222,13 +222,13 @@ at \SI{18}{\degreeCelsius} with 12:12 hour light/dark cycle.  In order to mitiga
 the risk of sequencing free-living algae in the CCAP 1660/13 culture, ITS2
 sequences were acquired from both pure culture samples and carefully purified samples.
 Purification involved successive filtering and washing steps of isolated cells in sterile NCL media. 
-Specifically, filtration using a \SI{10}{\micro\metre} filter, washing off, re suspension and 3 serial subcultures
+Specifically, filtration using a \SI{10}{\micro\metre} filter, washing off, re-suspension and 3 serial subcultures
 in sterile NCL media. 
 
 ITS2 sequences were amplified using 2 pairs of primers: ITS2-S2F primer (``ATGCGATACTTGGTGTGAAT'')
-binding to conserved 5.8S sequences from \citep{Chen2010} with the CHspeHLR1R \\
+binding to conserved 5.8S sequences from \citep{Chen2010} with the CHspeHLR1R 
 (``CACTAGACTACAATTCGCCAGCC'')
-reverse primer specific to chlorophyte 28S \citep{Hoshina2004} and the ITS4 primer \\
+reverse primer specific to chlorophyte 28S \citep{Hoshina2004} and the ITS4 primer 
 (``TCCTCCGCTTATTGATATGC'')
 \citep{white1990amplification} (see \cref{fig:its2_primers}).  The reason for the dual primer
 approach was that it was observed in the smaller biological samples created during the cleaning
@@ -294,15 +294,20 @@ Finally, phylogenies were inferred using the maximum likelihood
 method via RAxML version 8 \citep{Stamatakis2014} with 1,000 bootstrap replicates.
 Similarly, MrBayes \citep{Huelsenbeck2001} was used to infer the phylogeny using the bayesian
 framework.  MrBayes used 2 independent runs of 4 Monte-Carlo Markov-Chains (MCMC) for
-3,750,000 million generations (at which point the 2 runs were considered to have converged, 
+3,750,000 generations (at which point the 2 runs were considered to have converged, 
 as determined in Tracer v1.4 \citep{rambaut2007tracer}.  Trees were estimated
 from the MCMC results with a burn-in of 250,000 generations.
 Trees were then visualised and support values combined using TreeGraph2 \citep{Stover2010}.
 
-Trees were rooted using a Microthamniales outgroup composed of
-\textit{Trebouxia gigantea} AJ249577.2, \textit{Trebouxia arboricola} SAG219-1a Z68705.1,
-\textit{Trebouxia jamesii} Hp-MT1 AJ511357.1, \textit{Trebouxia impressa} AJ249576.1,
-\textit{Trebouxia corticola} AJ249566.1, and \textit{Trebouxia higginsiae} AJ249574.1.
+Trees were rooted using a Microthamniales outgroup composed of:
+\begin{itemize}
+    \item \textit{Trebouxia gigantea} AJ249577.2 
+    \item \textit{Trebouxia arboricola} SAG219-1a Z68705.1,
+    \item \textit{Trebouxia jamesii} Hp-MT1 AJ511357.1
+    \item \textit{Trebouxia impressa} AJ249576.1
+    \item \textit{Trebouxia corticola} AJ249566.1
+    \item \textit{Trebouxia higginsiae} AJ249574.1.
+\end{itemize}
 
 \subsection{Single cell genomics}
 
@@ -316,9 +321,9 @@ bacterial foodstocks in the culture media.
 Cells were added to a final \(10\mu l\) drop of sterile water before being added
 to a microcentrifuge tube.
 
-DNA was then extracted using a Cetrimonium bromide based method adapted from \citep{Winnepenninckx1993}. 
+DNA was then extracted using a cetrimonium bromide (CTAB) based method adapted from \citep{Winnepenninckx1993}. 
 In brief,  \(748.5 \mu l\) of CTAB extraction buffer (at \(37\celsius\) and \(100 \mu l\) beads (Sigma, \(425 – 600 \mu m\); acid washed) 
-were added and the tube was vortexed for 5 minutes. 
+was added and the tube vortexed for 5 minutes. 
 The tube was incubated for 50 minutes at \(37\celsius\), 
 vortexed again for 5 minutes and incubated for 50 minutes at \(60\celsius\).  
 This was to ensure lysis of the endosymbiont's chitinous cell wall.
@@ -354,12 +359,10 @@ using the Khmer package \citep{Crusoe2015}.
 
 Assemblies were then generated using the following sets
 of data:
-
 \begin{itemize}
     \item Q5 trimmed reads with error correction
     \item Q30 trimmed reads with error correction
 \end{itemize}
-
 The following assemblers were used:
 \begin{itemize}
     \item SPAdes assembler \citep{Bankevich2012,Nurk2013}
@@ -390,7 +393,9 @@ Using the metagenomic binning tool, CONCOCT \citep{Alneberg2014}
 contigs were binned into clusters based on sequence composition
 and coverage features (derived from mapping data).
 Coverage features were derived from a coverage and linkage table
-generated via CONCOCT scripts built around BEDTools \citep{Quinlan2010,Quinlan2014}, Picard (\url{http://broadinstitute.github.io/picard/})
+generated via CONCOCT scripts built 
+around BEDTools \citep{Quinlan2010,Quinlan2014}, 
+Picard (\url{http://broadinstitute.github.io/picard/})
 and Samtools \citep{Li2009} 
 based parsing
 of the bowtie2 alignment files.
@@ -413,15 +418,15 @@ to a given taxonomic level of 60, 70, 80, 95, 95, and 97
 for Phylum, Class, Order, Family, Genus and Species respectively. 
 
 CONCOCT clusters were then evaluated using the taxonomic assignments from TAXAssign
-using the provided ``validate.pl'' script.
+via the provided \texttt{validate.pl} script.
 
 Finally, another attempt at taxonomic assignment using a custom ORF based pipeline was attempted:
 \begin{itemize}
-    \item ORFs with a minimum size of 300 were called using Tetrahymena and Universal encodings from contigs over \SI{500}{\bp} 
+    \item ORFs with a minimum size of 300 were called using \textit{Tetrahymena} and Universal encodings from contigs over \SI{500}{\bp} 
     \item ORFs were then clustered at 90\% identity using CD-HIT
     \item Diamond BLASTP searches were then done against the NR protein database
     \item Taxonomy was assigned to each contig based on the lowest common ancestor of all its
-        ORFs with hits (via the ``lca\_mapper.sh'' accesory script in MEGAN)
+        ORFs with hits (via the \texttt{lca\_mapper.sh} accesory script in MEGAN)
     \item Contigs were then binned based on the identity of this taxonomic assignment:
         \begin{itemize}
             \item Endosymbiont contigs were all those assigned to Archaeplastida or a descendent node.
@@ -525,7 +530,7 @@ the ITS2 across the genomic copies.}
     \label{fig:its2_snp}
 \end{figure}
 
-With the exception of these SNPs these sequences were identical to 3 from previously sequenced \textit{M. reisseri} endosymbionts, 
+With the exception of these SNPs the sequences were identical to 3 from previously sequenced \textit{M. reisseri} endosymbionts, 
 specifically CCAP 211/83 culture with \textit{P. bursaria} Pbi host (AB206547.1), the SW1-ZK symbiont from a \textit{P. bursaria} PB-SW1 host (AB506070.1),
 and TP-2008b from the SAG241.80 culture (FM205851.1) (see \cref{fig:its2_phylo}).
 
@@ -633,8 +638,9 @@ assemblies (\cref{fig:assemb_nx}).
     \includegraphics[width=0.8\textwidth]{assemb_gc.pdf}
     \caption[Comparative genome assembly GC densities]{GC densities of the compared genome assemblies.  As expected
         all display a clear peak around \(30\%\) representing that the majority
-    of the assemblies by length contigs are likely to be derived from the GC rich.
-The height of the Q30-SPAdes peak reflects the relative size of this assembly.
+    of the assemblies by length contigs are likely to be derived from the AT rich
+    \textit{Paramecium bursaria} host.
+The overall height of the Q30-SPAdes peak reflects the relative size of this assembly.
 Peaks around \(50\%\) GC may reflect endosymbiont contigs and possibly
 bacterial contamination.}
     \label{fig:assemb_gc}
@@ -646,8 +652,7 @@ bacterial contamination.}
     \caption[Comparative cumulative contig lengths of genome assemblies]{The cumulative length of contigs as a function of
         contig number.  Again, this plot reflects
         that Q30-SPAdes generated the largest assembly
-        by a considerable margin and while generating
-        clean consistent contigs Platanus failed to recover
+        by a considerable margin. Platanus failed to recover
     many contigs found in other assemblies.}
     \label{fig:assemb_len}
 \end{figure}
@@ -725,9 +730,8 @@ as the ``ground-truth''.
 		cluster assignments.  Clusters are assigned via a Gaussian Mixture Model (GMM) 
 		based on sequence compositional and coverage features as implemented in CONCOCT.
 		Unfortunately, as can be observed clusters are both poorly distinguished even
-        in the dimensions of the 2 principal components (PCA1 and PCA2) and there are many of them (34).
-    This figure highlights how poorly resolved and noisy the decomposition of this single cell
-    metagenome.}
+        in the dimensions of the 2 principal components (PCA1 and PCA2) and there are many clusters (34).
+    This figure highlights that the single cell metagenome decomposition is poorly resolved and noisy.}
 	\label{fig:concoct_clusters}
 \end{figure}
 
@@ -756,11 +760,11 @@ where \(TP\) are True Positives and \(FP\) and \(FN\) are False Positives
 and Negatives respectively (see \cref{tab:cluster_outcome_explanation} for an 
 explanation of what these terms mean in the context of clustering).
 
-CONCOCT assigned clusters were relatively precise \(0.912608\) 
+CONCOCT assigned clusters were relatively precise (\(0.912608\))
 therefore there were relatively few \(FP\) i.e. the majority of clusters 
 contained contigs with the same taxonomic assignments. 
 
-However, recall was relatively poor \(0.542250\) suggesting a
+However, recall was relatively poor (\(0.542250\)) suggesting a
 fair number of FN i.e. contigs with the same taxonomic assignments
 were not confined to a single cluster and were spread over main clusters.
 
@@ -796,7 +800,7 @@ for variant calling.
         \hline
     \end{tabular}
     \caption[Custom taxonomic binning results]{Results of the customised taxonomic binning,
-    note the far less conservative binning compared with TAXAssign. Note this only
+    note the far less conservative binning compared with TAXAssign. This analysis only
     consisted of contigs over \SI{500}{\bp} in length}.
 \label{tab:custom_tax_bin}
 \end{table}
@@ -815,10 +819,10 @@ Indeed, the highest number of variants (\(\geq 75\)) were present in
         Histogram summary of variant frequency in the longest 
         10 custom binned ``endosymbiont'' contigs (total length \SI{269,755}{\bp}).
         Variant frequency is the percentage of total chromosomes
-        in the sample that share that variant and count axis shows
+        in the sample that share that variant and y axis shows
         the density (blue line).  The vertical dotted line indicates
         the mean of the sample and the heatmap shows absolute counts
-        in the histogram bins. This figure shows the majority
+        in the histogram bins. This figure shows that the majority
         of variants are present in the majority of endosymbiont
     cells within the host.}
     \label{fig:var_contig}
@@ -828,7 +832,7 @@ Indeed, the highest number of variants (\(\geq 75\)) were present in
 
 All elimination analyses focused on the \textit{P. bursaria}-\textit{M. reisseri}
 CCAP 1660/12 strain.
-After 1 week \(10\mu g ml^{-1}\) Paraquat treated CCAP 1660/12 were partially bleached
+After 1 week \(10\mu g ml^{-1}\) paraquat treated CCAP 1660/12 were partially bleached
 with few visible green \textit{M. reisseri} present in the cells under light
 microscopy.
 Unfortunately, after 2 weeks, and despite regular feeding, all CCAP 1660/12
@@ -1006,7 +1010,7 @@ Cycloheximide does partially inhibit host protein synthesis
 therefore it is possible that in the host strain found in the
 CCAP 1660/12 culture that this partial inhibition is lethal to both
 host and endosymbiont. However, the failure of this method in conjunction
-with the Paraquat, a herbicide which theoretically should only affect the endosymbiont, 
+with the paraquat, a herbicide which theoretically should only affect the endosymbiont, 
 and constant dark culturing suggests it is potentially the loss of the endosymbiont
 that is lethal to the host cells (as adequate bacterial
 foodstocks were included in these cultures).   
