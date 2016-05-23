@@ -13,6 +13,8 @@
   \item [{AA}]\begingroup Amino Acid\nomeqref {0}\nompageref{14}
   \item [{ABC}]\begingroup ATP-Binding Cassette\nomeqref {0}
 		\nompageref{14}
+  \item [{AdaBoost}]\begingroup Adaptive Boosting\nomeqref {0}
+		\nompageref{14}
   \item [{AGO}]\begingroup Argonaute proteins\nomeqref {0}
 		\nompageref{14}
   \item [{AIC}]\begingroup Akaike Information Criterion\nomeqref {0}
@@ -38,6 +40,7 @@
 		\nompageref{14}
   \item [{BLOSUM}]\begingroup Blocks Substitution Matrix\nomeqref {0}
 		\nompageref{14}
+  \item [{bp}]\begingroup Base Pair\nomeqref {0}\nompageref{14}
   \item [{CCAP}]\begingroup Culture Collection of Algae and Protozoa\nomeqref {0}
 		\nompageref{14}
   \item [{CD-HIT}]\begingroup Clustering Database at High Identity with Tolerance\nomeqref {0}
@@ -280,6 +283,7 @@
   \item [{RFO}]\begingroup Raffinose Family Oligosaccharide\nomeqref {0}
 		\nompageref{14}
   \item [{RNA}]\begingroup Ribonucleic Acid\nomeqref {0}\nompageref{14}
+  \item [{RNase}]\begingroup Ribonuclease\nomeqref {0}\nompageref{14}
   \item [{RNN}]\begingroup Recurrent Neural Network\nomeqref {0}
 		\nompageref{14}
   \item [{RSEM-EVAL}]\begingroup RNA-Seq by Expectation-Maximisation - Evaluation\nomeqref {0}
