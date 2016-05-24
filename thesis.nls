@@ -10,6 +10,8 @@
 		\nompageref{14}
   \item [{\(\theta\)}]\begingroup Parameters\nomeqref {0}
 		\nompageref{14}
+  \item [{\(OD_{600}\)}]\begingroup Optical Density at 600 nanometre wavelength\nomeqref {0}
+		\nompageref{14}
   \item [{AA}]\begingroup Amino Acid\nomeqref {0}\nompageref{14}
   \item [{ABC}]\begingroup ATP-Binding Cassette\nomeqref {0}
 		\nompageref{14}
@@ -85,6 +87,8 @@
 		\nompageref{14}
   \item [{DPP}]\begingroup Dirichlet Process Prior\nomeqref {0}
 		\nompageref{14}
+  \item [{dsRNA}]\begingroup Double-Stranded RNA\nomeqref {0}
+		\nompageref{14}
   \item [{DT}]\begingroup Decision trees\nomeqref {0}\nompageref{14}
   \item [{DV}]\begingroup Digestive Vacuole\nomeqref {0}\nompageref{14}
   \item [{EGT}]\begingroup Endosymbiotic Gene Transfer\nomeqref {0}
@@ -100,6 +104,8 @@
   \item [{EST}]\begingroup Expressed Sequence Tags\nomeqref {0}
 		\nompageref{14}
   \item [{ETE}]\begingroup Environment for Tree Exploration\nomeqref {0}
+		\nompageref{14}
+  \item [{eToL}]\begingroup Eukaryotic Tree of Life\nomeqref {0}
 		\nompageref{14}
   \item [{ETS}]\begingroup External Transcribed Spacers\nomeqref {0}
 		\nompageref{14}
@@ -200,6 +206,7 @@
   \item [{MFS}]\begingroup Major Facilitator Superfamily\nomeqref {0}
 		\nompageref{14}
   \item [{MIC}]\begingroup Micronucleus\nomeqref {0}\nompageref{14}
+  \item [{miRNA}]\begingroup Micro RNA\nomeqref {0}\nompageref{14}
   \item [{ML}]\begingroup Maximum Likelihood\nomeqref {0}
 		\nompageref{14}
   \item [{MLE}]\begingroup Maximum Likelihood Estimator\nomeqref {0}
@@ -209,6 +216,7 @@
   \item [{MP}]\begingroup Maximum Parsimony\nomeqref {0}\nompageref{14}
   \item [{MPP}]\begingroup Mitochondria and Plastid Porin family\nomeqref {0}
 		\nompageref{14}
+  \item [{mRNA}]\begingroup Messenger RNA\nomeqref {0}\nompageref{14}
   \item [{MS}]\begingroup Mass Spectrometry\nomeqref {0}\nompageref{14}
   \item [{MSA}]\begingroup Multiple Sequence Alignment\nomeqref {0}
 		\nompageref{14}
@@ -222,6 +230,7 @@
 		\nompageref{14}
   \item [{NCL}]\begingroup New Cereal Leaf-Prescott\nomeqref {0}
 		\nompageref{14}
+  \item [{ncRNA}]\begingroup Non-Coding RNA\nomeqref {0}\nompageref{14}
   \item [{ND}]\begingroup NanoDrop\nomeqref {0}\nompageref{14}
   \item [{NIST}]\begingroup National Institute of Standards and Technology\nomeqref {0}
 		\nompageref{14}
@@ -256,6 +265,8 @@
   \item [{PFAM}]\begingroup Protein Families Database\nomeqref {0}
 		\nompageref{14}
   \item [{PGM}]\begingroup PiggyMac\nomeqref {0}\nompageref{14}
+  \item [{piRNA}]\begingroup Piwi-Interacting RNA\nomeqref {0}
+		\nompageref{14}
   \item [{PP}]\begingroup Posterior Probability\nomeqref {0}
 		\nompageref{14}
   \item [{PTGS}]\begingroup Post-Transcription Gene Silencing\nomeqref {0}
@@ -283,6 +294,8 @@
   \item [{RFO}]\begingroup Raffinose Family Oligosaccharide\nomeqref {0}
 		\nompageref{14}
   \item [{RNA}]\begingroup Ribonucleic Acid\nomeqref {0}\nompageref{14}
+  \item [{RNAi}]\begingroup RNA-mediated Interference\nomeqref {0}
+		\nompageref{14}
   \item [{RNase}]\begingroup Ribonuclease\nomeqref {0}\nompageref{14}
   \item [{RNN}]\begingroup Recurrent Neural Network\nomeqref {0}
 		\nompageref{14}
@@ -295,6 +308,7 @@
   \item [{RVM}]\begingroup Relevance Vector Machine\nomeqref {0}
 		\nompageref{14}
   \item [{SC}]\begingroup Single Cell\nomeqref {0}\nompageref{14}
+  \item [{scnRNA}]\begingroup Scan RNA\nomeqref {0}\nompageref{14}
   \item [{SCT}]\begingroup Single-Cell Transcriptome\nomeqref {0}
 		\nompageref{14}
   \item [{SDC}]\begingroup Single Digested \textit{Chlorella}\nomeqref {0}
@@ -306,6 +320,8 @@
   \item [{SGLT}]\begingroup Sodium-Glucose symporters\nomeqref {0}
 		\nompageref{14}
   \item [{SI}]\begingroup International System of Units\nomeqref {0}
+		\nompageref{14}
+  \item [{siRNA}]\begingroup Short-Interfering RNA\nomeqref {0}
 		\nompageref{14}
   \item [{SMART}]\begingroup Single Molecular Analysis Research Tool\nomeqref {0}
 		\nompageref{14}
@@ -319,6 +335,8 @@
 		\nompageref{14}
   \item [{SSF}]\begingroup Sodium-Solute Symporter Family\nomeqref {0}
 		\nompageref{14}
+  \item [{ssRNA}]\begingroup Single-Stranded RNA\nomeqref {0}
+		\nompageref{14}
   \item [{SVM}]\begingroup Support Vector Machine\nomeqref {0}
 		\nompageref{14}
   \item [{t-SNE}]\begingroup t-Distributed Stochastic Neighbour Embedding\nomeqref {0}
@@ -330,6 +348,7 @@
   \item [{TMHMM}]\begingroup Transmembrane Hidden Markov Model\nomeqref {0}
 		\nompageref{14}
   \item [{TN}]\begingroup True Negative\nomeqref {0}\nompageref{14}
+  \item [{ToL}]\begingroup Tree of Life\nomeqref {0}\nompageref{14}
   \item [{TP}]\begingroup True Positive\nomeqref {0}\nompageref{14}
   \item [{TPM}]\begingroup Transcripts Per Million\nomeqref {0}
 		\nompageref{14}
